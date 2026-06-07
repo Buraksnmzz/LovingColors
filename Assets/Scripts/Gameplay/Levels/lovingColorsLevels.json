@@ -1,0 +1,6502 @@
+[
+  {
+    "levelId": 1,
+    "rules": "LockEdges",
+    "columnCount": 3,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#6DFDFF",
+      "topRight": "#6DFDFF",
+      "bottomLeft": "#28A6FF",
+      "bottomRight": "#28A6FF"
+    }
+  },
+  {
+    "levelId": 2,
+    "rules": "LockEdges",
+    "columnCount": 4,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#F8E88B",
+      "topRight": "#F8E88B",
+      "bottomLeft": "#FFA658",
+      "bottomRight": "#FFA658"
+    }
+  },
+  {
+    "levelId": 3,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 5,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#08C2FF",
+      "topRight": "#08C2FF",
+      "bottomLeft": "#006BFF",
+      "bottomRight": "#006BFF"
+    }
+  },
+  {
+    "levelId": 4,
+    "rules": "LockEdges",
+    "columnCount": 6,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#82C342",
+      "topRight": "#E1C641",
+      "bottomLeft": "#1DDF54",
+      "bottomRight": "#3B73E3"
+    }
+  },
+  {
+    "levelId": 5,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 6,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#BAE92D",
+      "topRight": "#D53AC3",
+      "bottomLeft": "#319C73",
+      "bottomRight": "#3BA146"
+    }
+  },
+  {
+    "levelId": 6,
+    "rules": "LockMiddle",
+    "columnCount": 6,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#AAD10D",
+      "topRight": "#AD0D20",
+      "bottomLeft": "#201BC5",
+      "bottomRight": "#40E143"
+    }
+  },
+  {
+    "levelId": 7,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#3CBD7F",
+      "topRight": "#31AA59",
+      "bottomLeft": "#D9AB2F",
+      "bottomRight": "#43B236"
+    }
+  },
+  {
+    "levelId": 8,
+    "rules": "LockOneByOne",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1DC436",
+      "topRight": "#B5185F",
+      "bottomLeft": "#DF773B",
+      "bottomRight": "#9EE14B"
+    }
+  },
+  {
+    "levelId": 9,
+    "rules": "LockCorners",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#D8A418",
+      "topRight": "#AB3D57",
+      "bottomLeft": "#1AE0A4",
+      "bottomRight": "#BE7010"
+    }
+  },
+  {
+    "levelId": 10,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#0AC581",
+      "topRight": "#2BBED8",
+      "bottomLeft": "#8DA224",
+      "bottomRight": "#939A35"
+    }
+  },
+  {
+    "levelId": 11,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#424FE1",
+      "topRight": "#2FAFEA",
+      "bottomLeft": "#5128E5",
+      "bottomRight": "#1544A1"
+    }
+  },
+  {
+    "levelId": 12,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#87DA14",
+      "topRight": "#E2BD59",
+      "bottomLeft": "#1480C3",
+      "bottomRight": "#A4206D"
+    }
+  },
+  {
+    "levelId": 13,
+    "rules": "LockEdges",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2199A3",
+      "topRight": "#F0E10D",
+      "bottomLeft": "#BA4085",
+      "bottomRight": "#0BD89A"
+    }
+  },
+  {
+    "levelId": 14,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#CB3EB3",
+      "topRight": "#BD2F0B",
+      "bottomLeft": "#321CAA",
+      "bottomRight": "#3EAD54"
+    }
+  },
+  {
+    "levelId": 15,
+    "rules": "LockMiddle",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#5439CD",
+      "topRight": "#1783A4",
+      "bottomLeft": "#EB342A",
+      "bottomRight": "#08AB92"
+    }
+  },
+  {
+    "levelId": 16,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9D3189",
+      "topRight": "#8317A7",
+      "bottomLeft": "#E5C155",
+      "bottomRight": "#BF4276"
+    }
+  },
+  {
+    "levelId": 17,
+    "rules": "LockOneByOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#4DC25B",
+      "topRight": "#1F5BBC",
+      "bottomLeft": "#8CD247",
+      "bottomRight": "#BC168D"
+    }
+  },
+  {
+    "levelId": 18,
+    "rules": "LockCorners",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#B526BD",
+      "topRight": "#A17B3A",
+      "bottomLeft": "#3E8FAA",
+      "bottomRight": "#1866CD"
+    }
+  },
+  {
+    "levelId": 19,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#80A71B",
+      "topRight": "#33EDE3",
+      "bottomLeft": "#2BD870",
+      "bottomRight": "#0E6CA6"
+    }
+  },
+  {
+    "levelId": 20,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#22C4A9",
+      "topRight": "#2821F1",
+      "bottomLeft": "#B79B36",
+      "bottomRight": "#2F7BC1"
+    }
+  },
+  {
+    "levelId": 21,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2F9953",
+      "topRight": "#2620A5",
+      "bottomLeft": "#22B1A0",
+      "bottomRight": "#A77309"
+    }
+  },
+  {
+    "levelId": 22,
+    "rules": "LockEdges",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#E342EE",
+      "topRight": "#A2711C",
+      "bottomLeft": "#E56441",
+      "bottomRight": "#129B64"
+    }
+  },
+  {
+    "levelId": 23,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#D61838",
+      "topRight": "#3BE3B6",
+      "bottomLeft": "#E7C953",
+      "bottomRight": "#A016DF"
+    }
+  },
+  {
+    "levelId": 24,
+    "rules": "LockMiddle",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B32548",
+      "topRight": "#C8EF1A",
+      "bottomLeft": "#BD16E7",
+      "bottomRight": "#D416B8"
+    }
+  },
+  {
+    "levelId": 25,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#BC8925",
+      "topRight": "#8131A2",
+      "bottomLeft": "#8DB83D",
+      "bottomRight": "#6E3CC0"
+    }
+  },
+  {
+    "levelId": 26,
+    "rules": "LockOneByOne",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#AFBA15",
+      "topRight": "#5D99EE",
+      "bottomLeft": "#EC1A1A",
+      "bottomRight": "#F06347"
+    }
+  },
+  {
+    "levelId": 27,
+    "rules": "LockCorners",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#1532F0",
+      "topRight": "#CE3194",
+      "bottomLeft": "#EB613F",
+      "bottomRight": "#4314A8"
+    }
+  },
+  {
+    "levelId": 28,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#0DE681",
+      "topRight": "#38A2DA",
+      "bottomLeft": "#9E961D",
+      "bottomRight": "#A4332A"
+    }
+  },
+  {
+    "levelId": 29,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#31A2CB",
+      "topRight": "#10E1BE",
+      "bottomLeft": "#1552E0",
+      "bottomRight": "#39C74A"
+    }
+  },
+  {
+    "levelId": 30,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#39A7DE",
+      "topRight": "#AF15B4",
+      "bottomLeft": "#A51D6F",
+      "bottomRight": "#76E846"
+    }
+  },
+  {
+    "levelId": 31,
+    "rules": "LockEdges",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#B855E9",
+      "topRight": "#997520",
+      "bottomLeft": "#B8E516",
+      "bottomRight": "#BA2438"
+    }
+  },
+  {
+    "levelId": 32,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#4322C9",
+      "topRight": "#C6C246",
+      "bottomLeft": "#AA2654",
+      "bottomRight": "#743BDF"
+    }
+  },
+  {
+    "levelId": 33,
+    "rules": "LockMiddle",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#39C2BB",
+      "topRight": "#B85037",
+      "bottomLeft": "#4881CC",
+      "bottomRight": "#6A20CA"
+    }
+  },
+  {
+    "levelId": 34,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#A77716",
+      "topRight": "#47D22C",
+      "bottomLeft": "#77C13B",
+      "bottomRight": "#46D092"
+    }
+  },
+  {
+    "levelId": 35,
+    "rules": "LockOneByOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#A00847",
+      "topRight": "#8F0FD4",
+      "bottomLeft": "#1DE584",
+      "bottomRight": "#DBCE16"
+    }
+  },
+  {
+    "levelId": 36,
+    "rules": "LockCorners",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#C76D0D",
+      "topRight": "#5DDA36",
+      "bottomLeft": "#A22CB2",
+      "bottomRight": "#341A9B"
+    }
+  },
+  {
+    "levelId": 37,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9C2C7E",
+      "topRight": "#4C10BB",
+      "bottomLeft": "#F1703D",
+      "bottomRight": "#3859C5"
+    }
+  },
+  {
+    "levelId": 38,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1BC73D",
+      "topRight": "#DC0EA1",
+      "bottomLeft": "#55B916",
+      "bottomRight": "#A73F54"
+    }
+  },
+  {
+    "levelId": 39,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2A37EA",
+      "topRight": "#8FBD4B",
+      "bottomLeft": "#9114F0",
+      "bottomRight": "#AF3C9A"
+    }
+  },
+  {
+    "levelId": 40,
+    "rules": "LockEdges",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#90D912",
+      "topRight": "#ED2F1A",
+      "bottomLeft": "#DAD12D",
+      "bottomRight": "#2ABA33"
+    }
+  },
+  {
+    "levelId": 41,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#0ED339",
+      "topRight": "#A88418",
+      "bottomLeft": "#D82923",
+      "bottomRight": "#7D14D9"
+    }
+  },
+  {
+    "levelId": 42,
+    "rules": "LockMiddle",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#F1EA22",
+      "topRight": "#8AB22E",
+      "bottomLeft": "#10CD43",
+      "bottomRight": "#2464B1"
+    }
+  },
+  {
+    "levelId": 43,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#8C4BE8",
+      "topRight": "#BD2996",
+      "bottomLeft": "#1EC9B2",
+      "bottomRight": "#BD0FE8"
+    }
+  },
+  {
+    "levelId": 44,
+    "rules": "LockOneByOne",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#43DC83",
+      "topRight": "#8F19B6",
+      "bottomLeft": "#3335C9",
+      "bottomRight": "#15C1DC"
+    }
+  },
+  {
+    "levelId": 45,
+    "rules": "LockCorners",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#34EC3D",
+      "topRight": "#AD4417",
+      "bottomLeft": "#5CD229",
+      "bottomRight": "#0F6BCD"
+    }
+  },
+  {
+    "levelId": 46,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#4A46BC",
+      "topRight": "#B30AA5",
+      "bottomLeft": "#559E15",
+      "bottomRight": "#7F30AD"
+    }
+  },
+  {
+    "levelId": 47,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#EC112A",
+      "topRight": "#AE4FC8",
+      "bottomLeft": "#4C76C0",
+      "bottomRight": "#40B782"
+    }
+  },
+  {
+    "levelId": 48,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#34B5A8",
+      "topRight": "#541A9C",
+      "bottomLeft": "#459F2A",
+      "bottomRight": "#1429B0"
+    }
+  },
+  {
+    "levelId": 49,
+    "rules": "LockEdges",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#5C3DB7",
+      "topRight": "#0A83CE",
+      "bottomLeft": "#55E8E8",
+      "bottomRight": "#4D1FBA"
+    }
+  },
+  {
+    "levelId": 50,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#B3206C",
+      "topRight": "#22D7B6",
+      "bottomLeft": "#A38F3F",
+      "bottomRight": "#D11248"
+    }
+  },
+  {
+    "levelId": 51,
+    "rules": "LockMiddle",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#321DA7",
+      "topRight": "#D7153B",
+      "bottomLeft": "#12B9D3",
+      "bottomRight": "#4AB7E9"
+    }
+  },
+  {
+    "levelId": 52,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#D18F15",
+      "topRight": "#4BC440",
+      "bottomLeft": "#32EF6E",
+      "bottomRight": "#824BD3"
+    }
+  },
+  {
+    "levelId": 53,
+    "rules": "LockOneByOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#BC1872",
+      "topRight": "#D01DB2",
+      "bottomLeft": "#167BA6",
+      "bottomRight": "#1FEF0C"
+    }
+  },
+  {
+    "levelId": 54,
+    "rules": "LockCorners",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#E12210",
+      "topRight": "#34C85E",
+      "bottomLeft": "#AEA915",
+      "bottomRight": "#AC085A"
+    }
+  },
+  {
+    "levelId": 55,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#EC0E24",
+      "topRight": "#B7168F",
+      "bottomLeft": "#315B99",
+      "bottomRight": "#6154EB"
+    }
+  },
+  {
+    "levelId": 56,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#4AD72A",
+      "topRight": "#36D8EA",
+      "bottomLeft": "#3214C6",
+      "bottomRight": "#F07856"
+    }
+  },
+  {
+    "levelId": 57,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#44D3F0",
+      "topRight": "#23DE7A",
+      "bottomLeft": "#E428C8",
+      "bottomRight": "#20759A"
+    }
+  },
+  {
+    "levelId": 58,
+    "rules": "LockEdges",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#21B3EC",
+      "topRight": "#A3DA50",
+      "bottomLeft": "#9B195C",
+      "bottomRight": "#B7833E"
+    }
+  },
+  {
+    "levelId": 59,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#5359D1",
+      "topRight": "#4BDFAD",
+      "bottomLeft": "#AB332A",
+      "bottomRight": "#BF2988"
+    }
+  },
+  {
+    "levelId": 60,
+    "rules": "LockMiddle",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#A24C1E",
+      "topRight": "#3C2F9E",
+      "bottomLeft": "#D3AD44",
+      "bottomRight": "#75C927"
+    }
+  },
+  {
+    "levelId": 61,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B05D3A",
+      "topRight": "#328CA8",
+      "bottomLeft": "#A80D67",
+      "bottomRight": "#98D42F"
+    }
+  },
+  {
+    "levelId": 62,
+    "rules": "LockOneByOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#AD1D35",
+      "topRight": "#46D4BE",
+      "bottomLeft": "#74CA32",
+      "bottomRight": "#C67723"
+    }
+  },
+  {
+    "levelId": 63,
+    "rules": "LockCorners",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#11D01A",
+      "topRight": "#C34F15",
+      "bottomLeft": "#BA2E97",
+      "bottomRight": "#A8AA0C"
+    }
+  },
+  {
+    "levelId": 64,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#AC681F",
+      "topRight": "#AFCD1C",
+      "bottomLeft": "#57E7E0",
+      "bottomRight": "#A935A5"
+    }
+  },
+  {
+    "levelId": 65,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#D40A68",
+      "topRight": "#5D25A8",
+      "bottomLeft": "#E54B25",
+      "bottomRight": "#1BBD56"
+    }
+  },
+  {
+    "levelId": 66,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#32BDEF",
+      "topRight": "#2A1E9C",
+      "bottomLeft": "#37EEC1",
+      "bottomRight": "#7A40E7"
+    }
+  },
+  {
+    "levelId": 67,
+    "rules": "LockEdges",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#CB4341",
+      "topRight": "#102AEF",
+      "bottomLeft": "#B9770C",
+      "bottomRight": "#C91BBD"
+    }
+  },
+  {
+    "levelId": 68,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#941ECF",
+      "topRight": "#0FD2E8",
+      "bottomLeft": "#4EBF15",
+      "bottomRight": "#3BC654"
+    }
+  },
+  {
+    "levelId": 69,
+    "rules": "LockMiddle",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#3CBA0E",
+      "topRight": "#E7991C",
+      "bottomLeft": "#EB1A52",
+      "bottomRight": "#3C2DE5"
+    }
+  },
+  {
+    "levelId": 70,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#E72EA3",
+      "topRight": "#EF588F",
+      "bottomLeft": "#3BD5B4",
+      "bottomRight": "#AC4AE4"
+    }
+  },
+  {
+    "levelId": 71,
+    "rules": "LockOneByOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#69CF41",
+      "topRight": "#14AD68",
+      "bottomLeft": "#12B037",
+      "bottomRight": "#1F21AC"
+    }
+  },
+  {
+    "levelId": 72,
+    "rules": "LockCorners",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#5CCE2B",
+      "topRight": "#C6ED5B",
+      "bottomLeft": "#3DEC4B",
+      "bottomRight": "#8C30BE"
+    }
+  },
+  {
+    "levelId": 73,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#88BE1D",
+      "topRight": "#3EC034",
+      "bottomLeft": "#A22AD6",
+      "bottomRight": "#11A76B"
+    }
+  },
+  {
+    "levelId": 74,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2384E5",
+      "topRight": "#26E07D",
+      "bottomLeft": "#8E36A0",
+      "bottomRight": "#C1B125"
+    }
+  },
+  {
+    "levelId": 75,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#45ACBA",
+      "topRight": "#9E2D6F",
+      "bottomLeft": "#9331AC",
+      "bottomRight": "#20CB78"
+    }
+  },
+  {
+    "levelId": 76,
+    "rules": "LockEdges",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1CBEB0",
+      "topRight": "#70B12A",
+      "bottomLeft": "#C03B1A",
+      "bottomRight": "#71B140"
+    }
+  },
+  {
+    "levelId": 77,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#6CBC0B",
+      "topRight": "#6E40BE",
+      "bottomLeft": "#0B32BE",
+      "bottomRight": "#AE9132"
+    }
+  },
+  {
+    "levelId": 78,
+    "rules": "LockMiddle",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#339D36",
+      "topRight": "#8EE54B",
+      "bottomLeft": "#AE673B",
+      "bottomRight": "#EF3284"
+    }
+  },
+  {
+    "levelId": 79,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#9415CA",
+      "topRight": "#A6BE1E",
+      "bottomLeft": "#B8495D",
+      "bottomRight": "#27A88E"
+    }
+  },
+  {
+    "levelId": 80,
+    "rules": "LockOneByOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#AAC62C",
+      "topRight": "#4BEAD2",
+      "bottomLeft": "#ECA22B",
+      "bottomRight": "#95C535"
+    }
+  },
+  {
+    "levelId": 81,
+    "rules": "LockCorners",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#9E0A3E",
+      "topRight": "#D01F19",
+      "bottomLeft": "#2CB039",
+      "bottomRight": "#C4930D"
+    }
+  },
+  {
+    "levelId": 82,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#3459B5",
+      "topRight": "#B35914",
+      "bottomLeft": "#89BB1D",
+      "bottomRight": "#48B4C2"
+    }
+  },
+  {
+    "levelId": 83,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#22CC7F",
+      "topRight": "#9042AC",
+      "bottomLeft": "#1D95BD",
+      "bottomRight": "#ED288A"
+    }
+  },
+  {
+    "levelId": 84,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2AF14B",
+      "topRight": "#9A3116",
+      "bottomLeft": "#0FD2F0",
+      "bottomRight": "#453AAB"
+    }
+  },
+  {
+    "levelId": 85,
+    "rules": "LockEdges",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#8EE012",
+      "topRight": "#A3350D",
+      "bottomLeft": "#A6833E",
+      "bottomRight": "#31C756"
+    }
+  },
+  {
+    "levelId": 86,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2CA9A2",
+      "topRight": "#E94755",
+      "bottomLeft": "#32A96E",
+      "bottomRight": "#5B4AE1"
+    }
+  },
+  {
+    "levelId": 87,
+    "rules": "LockMiddle",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#79A123",
+      "topRight": "#29A76C",
+      "bottomLeft": "#ABCB0B",
+      "bottomRight": "#CF261A"
+    }
+  },
+  {
+    "levelId": 88,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#A33A8A",
+      "topRight": "#3241C3",
+      "bottomLeft": "#19A0D6",
+      "bottomRight": "#A95035"
+    }
+  },
+  {
+    "levelId": 89,
+    "rules": "LockOneByOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1ECCA0",
+      "topRight": "#B42692",
+      "bottomLeft": "#C13415",
+      "bottomRight": "#E01D3D"
+    }
+  },
+  {
+    "levelId": 90,
+    "rules": "LockCorners",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#26B12B",
+      "topRight": "#E76D1B",
+      "bottomLeft": "#CA2115",
+      "bottomRight": "#53CEF0"
+    }
+  },
+  {
+    "levelId": 91,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#CEAF23",
+      "topRight": "#207ADB",
+      "bottomLeft": "#24A18A",
+      "bottomRight": "#B6B619"
+    }
+  },
+  {
+    "levelId": 92,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#BF6B11",
+      "topRight": "#9D3827",
+      "bottomLeft": "#51BA13",
+      "bottomRight": "#0D9B24"
+    }
+  },
+  {
+    "levelId": 93,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#DA3E7C",
+      "topRight": "#56EB8D",
+      "bottomLeft": "#A3F15B",
+      "bottomRight": "#A10D23"
+    }
+  },
+  {
+    "levelId": 94,
+    "rules": "LockEdges",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#29A659",
+      "topRight": "#44E451",
+      "bottomLeft": "#E96036",
+      "bottomRight": "#295BA7"
+    }
+  },
+  {
+    "levelId": 95,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#A81031",
+      "topRight": "#801AA8",
+      "bottomLeft": "#CE2CB6",
+      "bottomRight": "#1965B7"
+    }
+  },
+  {
+    "levelId": 96,
+    "rules": "LockMiddle",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#3162A2",
+      "topRight": "#B1933A",
+      "bottomLeft": "#6CDB12",
+      "bottomRight": "#DD0BD3"
+    }
+  },
+  {
+    "levelId": 97,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#9C8222",
+      "topRight": "#1682BD",
+      "bottomLeft": "#A8EC2A",
+      "bottomRight": "#1FEEE7"
+    }
+  },
+  {
+    "levelId": 98,
+    "rules": "LockOneByOne",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#4A379D",
+      "topRight": "#3E52C3",
+      "bottomLeft": "#6C12B5",
+      "bottomRight": "#32D3C8"
+    }
+  },
+  {
+    "levelId": 99,
+    "rules": "LockCorners",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#E03D40",
+      "topRight": "#6343C2",
+      "bottomLeft": "#B7D012",
+      "bottomRight": "#9829AE"
+    }
+  },
+  {
+    "levelId": 100,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B44074",
+      "topRight": "#B7E923",
+      "bottomLeft": "#4FF052",
+      "bottomRight": "#9BEC30"
+    }
+  },
+  {
+    "levelId": 101,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#46D4D4",
+      "topRight": "#A07F32",
+      "bottomLeft": "#1CD619",
+      "bottomRight": "#C41AE6"
+    }
+  },
+  {
+    "levelId": 102,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#C42EDF",
+      "topRight": "#0DDFDF",
+      "bottomLeft": "#99092D",
+      "bottomRight": "#47EE9D"
+    }
+  },
+  {
+    "levelId": 103,
+    "rules": "LockEdges",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#A7F014",
+      "topRight": "#B44277",
+      "bottomLeft": "#15B577",
+      "bottomRight": "#79C92E"
+    }
+  },
+  {
+    "levelId": 104,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2B36D6",
+      "topRight": "#C54857",
+      "bottomLeft": "#285BC2",
+      "bottomRight": "#D99A41"
+    }
+  },
+  {
+    "levelId": 105,
+    "rules": "LockMiddle",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#25ACA5",
+      "topRight": "#3ECDC6",
+      "bottomLeft": "#32E71A",
+      "bottomRight": "#8BA32B"
+    }
+  },
+  {
+    "levelId": 106,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#AF394F",
+      "topRight": "#32C832",
+      "bottomLeft": "#CB4B9A",
+      "bottomRight": "#D24931"
+    }
+  },
+  {
+    "levelId": 107,
+    "rules": "LockOneByOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#5DF113",
+      "topRight": "#A6E016",
+      "bottomLeft": "#BDB81D",
+      "bottomRight": "#E50F3A"
+    }
+  },
+  {
+    "levelId": 108,
+    "rules": "LockCorners",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#A0762E",
+      "topRight": "#8C2BB2",
+      "bottomLeft": "#68E34C",
+      "bottomRight": "#B2AA40"
+    }
+  },
+  {
+    "levelId": 109,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#4E33E7",
+      "topRight": "#4CC4A4",
+      "bottomLeft": "#B61E83",
+      "bottomRight": "#8DC846"
+    }
+  },
+  {
+    "levelId": 110,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#115EA1",
+      "topRight": "#A0931D",
+      "bottomLeft": "#29A709",
+      "bottomRight": "#0BC56E"
+    }
+  },
+  {
+    "levelId": 111,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#C6DF22",
+      "topRight": "#54BB38",
+      "bottomLeft": "#9B5F27",
+      "bottomRight": "#20B398"
+    }
+  },
+  {
+    "levelId": 112,
+    "rules": "LockEdges",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#C90F19",
+      "topRight": "#AE901A",
+      "bottomLeft": "#CA863E",
+      "bottomRight": "#BD4027"
+    }
+  },
+  {
+    "levelId": 113,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2A6EE2",
+      "topRight": "#A46729",
+      "bottomLeft": "#8C49B8",
+      "bottomRight": "#A51974"
+    }
+  },
+  {
+    "levelId": 114,
+    "rules": "LockMiddle",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#99B12C",
+      "topRight": "#EDAD0B",
+      "bottomLeft": "#2EBAB3",
+      "bottomRight": "#28A535"
+    }
+  },
+  {
+    "levelId": 115,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2EE5C4",
+      "topRight": "#6F9F34",
+      "bottomLeft": "#1D54B3",
+      "bottomRight": "#B27D34"
+    }
+  },
+  {
+    "levelId": 116,
+    "rules": "LockOneByOne",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#7D37C2",
+      "topRight": "#0D429D",
+      "bottomLeft": "#A5EB3D",
+      "bottomRight": "#555ED7"
+    }
+  },
+  {
+    "levelId": 117,
+    "rules": "LockCorners",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#7113A3",
+      "topRight": "#3ABC65",
+      "bottomLeft": "#67E419",
+      "bottomRight": "#A71C7B"
+    }
+  },
+  {
+    "levelId": 118,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#3579A1",
+      "topRight": "#E35259",
+      "bottomLeft": "#A84ED5",
+      "bottomRight": "#0ECA56"
+    }
+  },
+  {
+    "levelId": 119,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#37E951",
+      "topRight": "#BA594A",
+      "bottomLeft": "#45990C",
+      "bottomRight": "#B73C9A"
+    }
+  },
+  {
+    "levelId": 120,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B4254B",
+      "topRight": "#A89A1D",
+      "bottomLeft": "#B23FAC",
+      "bottomRight": "#4E41C2"
+    }
+  },
+  {
+    "levelId": 121,
+    "rules": "LockEdges",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#38D70C",
+      "topRight": "#B08320",
+      "bottomLeft": "#D11683",
+      "bottomRight": "#AD1608"
+    }
+  },
+  {
+    "levelId": 122,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#4CC7E3",
+      "topRight": "#A32774",
+      "bottomLeft": "#B5BE0A",
+      "bottomRight": "#310FBA"
+    }
+  },
+  {
+    "levelId": 123,
+    "rules": "LockMiddle",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#5F42A6",
+      "topRight": "#2485A3",
+      "bottomLeft": "#8F3AAB",
+      "bottomRight": "#DF1AD5"
+    }
+  },
+  {
+    "levelId": 124,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#46AA21",
+      "topRight": "#BE1A98",
+      "bottomLeft": "#D42EC7",
+      "bottomRight": "#7714B0"
+    }
+  },
+  {
+    "levelId": 125,
+    "rules": "LockOneByOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#ED526C",
+      "topRight": "#D01C25",
+      "bottomLeft": "#195AB4",
+      "bottomRight": "#EBD232"
+    }
+  },
+  {
+    "levelId": 126,
+    "rules": "LockCorners",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#A25838",
+      "topRight": "#3E83DF",
+      "bottomLeft": "#B21187",
+      "bottomRight": "#4B29C3"
+    }
+  },
+  {
+    "levelId": 127,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B828C8",
+      "topRight": "#2A4B99",
+      "bottomLeft": "#EC3862",
+      "bottomRight": "#E08D55"
+    }
+  },
+  {
+    "levelId": 128,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#E84E84",
+      "topRight": "#0E8EBC",
+      "bottomLeft": "#5C3CB3",
+      "bottomRight": "#349E6E"
+    }
+  },
+  {
+    "levelId": 129,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#24B73F",
+      "topRight": "#AB1795",
+      "bottomLeft": "#F0C84F",
+      "bottomRight": "#9D2648"
+    }
+  },
+  {
+    "levelId": 130,
+    "rules": "LockEdges",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#D8196F",
+      "topRight": "#3F42AB",
+      "bottomLeft": "#33B194",
+      "bottomRight": "#D3E835"
+    }
+  },
+  {
+    "levelId": 131,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#3F3BB2",
+      "topRight": "#D6C34A",
+      "bottomLeft": "#6A36EC",
+      "bottomRight": "#D96A4E"
+    }
+  },
+  {
+    "levelId": 132,
+    "rules": "LockMiddle",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1B10DC",
+      "topRight": "#6EBD24",
+      "bottomLeft": "#1EA6C5",
+      "bottomRight": "#5E3ADF"
+    }
+  },
+  {
+    "levelId": 133,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#240BA1",
+      "topRight": "#B22585",
+      "bottomLeft": "#1351D6",
+      "bottomRight": "#ECC539"
+    }
+  },
+  {
+    "levelId": 134,
+    "rules": "LockOneByOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B54663",
+      "topRight": "#D7E518",
+      "bottomLeft": "#5250CA",
+      "bottomRight": "#5A0DB7"
+    }
+  },
+  {
+    "levelId": 135,
+    "rules": "LockCorners",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#2AD892",
+      "topRight": "#2959B7",
+      "bottomLeft": "#17AAEE",
+      "bottomRight": "#4B3BAA"
+    }
+  },
+  {
+    "levelId": 136,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#D7476B",
+      "topRight": "#7FA241",
+      "bottomLeft": "#979A36",
+      "bottomRight": "#1C82E9"
+    }
+  },
+  {
+    "levelId": 137,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#196EDD",
+      "topRight": "#18CE45",
+      "bottomLeft": "#DA4D88",
+      "bottomRight": "#44C1D7"
+    }
+  },
+  {
+    "levelId": 138,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#6AB52C",
+      "topRight": "#2CBADA",
+      "bottomLeft": "#0CB3CD",
+      "bottomRight": "#D6B313"
+    }
+  },
+  {
+    "levelId": 139,
+    "rules": "LockEdges",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#71BE2D",
+      "topRight": "#EE1710",
+      "bottomLeft": "#20D8AD",
+      "bottomRight": "#3697A6"
+    }
+  },
+  {
+    "levelId": 140,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#0F9B0F",
+      "topRight": "#D4F053",
+      "bottomLeft": "#2ECC75",
+      "bottomRight": "#3C4EEE"
+    }
+  },
+  {
+    "levelId": 141,
+    "rules": "LockMiddle",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1377B0",
+      "topRight": "#400AAC",
+      "bottomLeft": "#BFBF3D",
+      "bottomRight": "#48D4A0"
+    }
+  },
+  {
+    "levelId": 142,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#EA7318",
+      "topRight": "#45A5D6",
+      "bottomLeft": "#BDA30D",
+      "bottomRight": "#6017DE"
+    }
+  },
+  {
+    "levelId": 143,
+    "rules": "LockOneByOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#DB973E",
+      "topRight": "#B3139D",
+      "bottomLeft": "#979B3C",
+      "bottomRight": "#43B599"
+    }
+  },
+  {
+    "levelId": 144,
+    "rules": "LockCorners",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#9A2D50",
+      "topRight": "#8645AF",
+      "bottomLeft": "#D96B34",
+      "bottomRight": "#2D45CD"
+    }
+  },
+  {
+    "levelId": 145,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#22F0D5",
+      "topRight": "#C0A234",
+      "bottomLeft": "#7E3BB7",
+      "bottomRight": "#AF1F76"
+    }
+  },
+  {
+    "levelId": 146,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#E62AC7",
+      "topRight": "#E38F20",
+      "bottomLeft": "#CA3116",
+      "bottomRight": "#AA3935"
+    }
+  },
+  {
+    "levelId": 147,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#45DE9B",
+      "topRight": "#45AF1F",
+      "bottomLeft": "#B0A70F",
+      "bottomRight": "#B6E51B"
+    }
+  },
+  {
+    "levelId": 148,
+    "rules": "LockEdges",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1DE7AE",
+      "topRight": "#AED72A",
+      "bottomLeft": "#F142D1",
+      "bottomRight": "#791AC6"
+    }
+  },
+  {
+    "levelId": 149,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#316BD6",
+      "topRight": "#514FE2",
+      "bottomLeft": "#7919A9",
+      "bottomRight": "#A01EAE"
+    }
+  },
+  {
+    "levelId": 150,
+    "rules": "LockMiddle",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#4E10A5",
+      "topRight": "#D1DF53",
+      "bottomLeft": "#369C2C",
+      "bottomRight": "#4D52D4"
+    }
+  },
+  {
+    "levelId": 151,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#AF38A3",
+      "topRight": "#CE7640",
+      "bottomLeft": "#DA7C50",
+      "bottomRight": "#E32F77"
+    }
+  },
+  {
+    "levelId": 152,
+    "rules": "LockOneByOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#52B53B",
+      "topRight": "#80EF12",
+      "bottomLeft": "#2AD057",
+      "bottomRight": "#909E24"
+    }
+  },
+  {
+    "levelId": 153,
+    "rules": "LockCorners",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#C12066",
+      "topRight": "#45EAAE",
+      "bottomLeft": "#1F5F9F",
+      "bottomRight": "#7830A1"
+    }
+  },
+  {
+    "levelId": 154,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#3C79C4",
+      "topRight": "#AD3770",
+      "bottomLeft": "#94A126",
+      "bottomRight": "#2EBC40"
+    }
+  },
+  {
+    "levelId": 155,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#17949D",
+      "topRight": "#51A42B",
+      "bottomLeft": "#DF7422",
+      "bottomRight": "#29CCC7"
+    }
+  },
+  {
+    "levelId": 156,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#3CCA9D",
+      "topRight": "#7A4DEB",
+      "bottomLeft": "#DE6E2E",
+      "bottomRight": "#EEBA38"
+    }
+  },
+  {
+    "levelId": 157,
+    "rules": "LockEdges",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#BE2FA6",
+      "topRight": "#D14339",
+      "bottomLeft": "#45E94E",
+      "bottomRight": "#D1A925"
+    }
+  },
+  {
+    "levelId": 158,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#5E81EC",
+      "topRight": "#EE642A",
+      "bottomLeft": "#AED319",
+      "bottomRight": "#E8A843"
+    }
+  },
+  {
+    "levelId": 159,
+    "rules": "LockMiddle",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#DF392A",
+      "topRight": "#2117DB",
+      "bottomLeft": "#2BA989",
+      "bottomRight": "#353DD2"
+    }
+  },
+  {
+    "levelId": 160,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#A935BB",
+      "topRight": "#28AFD1",
+      "bottomLeft": "#BEBE40",
+      "bottomRight": "#27A616"
+    }
+  },
+  {
+    "levelId": 161,
+    "rules": "LockOneByOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#26AE8C",
+      "topRight": "#0B5BA1",
+      "bottomLeft": "#178EAB",
+      "bottomRight": "#B08238"
+    }
+  },
+  {
+    "levelId": 162,
+    "rules": "LockCorners",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#B5EF52",
+      "topRight": "#B70E57",
+      "bottomLeft": "#2CA081",
+      "bottomRight": "#3F90DC"
+    }
+  },
+  {
+    "levelId": 163,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#15D1AF",
+      "topRight": "#D79431",
+      "bottomLeft": "#AD1561",
+      "bottomRight": "#6125C9"
+    }
+  },
+  {
+    "levelId": 164,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#4EA63C",
+      "topRight": "#2C69BD",
+      "bottomLeft": "#CBBB0C",
+      "bottomRight": "#31BED7"
+    }
+  },
+  {
+    "levelId": 165,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#541AE5",
+      "topRight": "#1444B4",
+      "bottomLeft": "#12C060",
+      "bottomRight": "#1354B6"
+    }
+  },
+  {
+    "levelId": 166,
+    "rules": "LockEdges",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#373BAB",
+      "topRight": "#1C6C9B",
+      "bottomLeft": "#27AD78",
+      "bottomRight": "#C88E22"
+    }
+  },
+  {
+    "levelId": 167,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#50BE4A",
+      "topRight": "#EB0D4C",
+      "bottomLeft": "#29ACD8",
+      "bottomRight": "#2E68C5"
+    }
+  },
+  {
+    "levelId": 168,
+    "rules": "LockMiddle",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#C214C5",
+      "topRight": "#742FAD",
+      "bottomLeft": "#D90D95",
+      "bottomRight": "#A77F30"
+    }
+  },
+  {
+    "levelId": 169,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#34AC9C",
+      "topRight": "#5019A2",
+      "bottomLeft": "#219F94",
+      "bottomRight": "#4D5CE6"
+    }
+  },
+  {
+    "levelId": 170,
+    "rules": "LockOneByOne",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#0B33AB",
+      "topRight": "#2D9C6E",
+      "bottomLeft": "#92AE15",
+      "bottomRight": "#4086C7"
+    }
+  },
+  {
+    "levelId": 171,
+    "rules": "LockCorners",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#4A2DB2",
+      "topRight": "#C6341D",
+      "bottomLeft": "#35B815",
+      "bottomRight": "#27C4AA"
+    }
+  },
+  {
+    "levelId": 172,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1F3CB0",
+      "topRight": "#3DBCEA",
+      "bottomLeft": "#A43278",
+      "bottomRight": "#BE8925"
+    }
+  },
+  {
+    "levelId": 173,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B71BC5",
+      "topRight": "#2BF2BD",
+      "bottomLeft": "#41E73B",
+      "bottomRight": "#AF903F"
+    }
+  },
+  {
+    "levelId": 174,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2A42BC",
+      "topRight": "#35ED8B",
+      "bottomLeft": "#3AB953",
+      "bottomRight": "#AABE0E"
+    }
+  },
+  {
+    "levelId": 175,
+    "rules": "LockEdges",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#C0C536",
+      "topRight": "#3C319C",
+      "bottomLeft": "#3B7EA2",
+      "bottomRight": "#2BA122"
+    }
+  },
+  {
+    "levelId": 176,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#0C7BA7",
+      "topRight": "#B71A34",
+      "bottomLeft": "#6E25BD",
+      "bottomRight": "#44E1BC"
+    }
+  },
+  {
+    "levelId": 177,
+    "rules": "LockMiddle",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9C256A",
+      "topRight": "#2DB0AA",
+      "bottomLeft": "#D04E4E",
+      "bottomRight": "#3FC35B"
+    }
+  },
+  {
+    "levelId": 178,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#0FF070",
+      "topRight": "#38A20E",
+      "bottomLeft": "#30CA22",
+      "bottomRight": "#2C9F97"
+    }
+  },
+  {
+    "levelId": 179,
+    "rules": "LockOneByOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9E8734",
+      "topRight": "#A83838",
+      "bottomLeft": "#EF0E2C",
+      "bottomRight": "#E6A249"
+    }
+  },
+  {
+    "levelId": 180,
+    "rules": "LockCorners",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#CC24CF",
+      "topRight": "#14BF11",
+      "bottomLeft": "#EC0C32",
+      "bottomRight": "#1C679D"
+    }
+  },
+  {
+    "levelId": 181,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#379F53",
+      "topRight": "#7641B2",
+      "bottomLeft": "#292EC0",
+      "bottomRight": "#7D50E5"
+    }
+  },
+  {
+    "levelId": 182,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9421A9",
+      "topRight": "#E927B6",
+      "bottomLeft": "#15BABF",
+      "bottomRight": "#99D53F"
+    }
+  },
+  {
+    "levelId": 183,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9F3789",
+      "topRight": "#8333A5",
+      "bottomLeft": "#BC2729",
+      "bottomRight": "#0C13CC"
+    }
+  },
+  {
+    "levelId": 184,
+    "rules": "LockEdges",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#3954BF",
+      "topRight": "#A9813B",
+      "bottomLeft": "#E88030",
+      "bottomRight": "#AFCD1B"
+    }
+  },
+  {
+    "levelId": 185,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1ABA8D",
+      "topRight": "#238DB7",
+      "bottomLeft": "#350DE9",
+      "bottomRight": "#DA50B5"
+    }
+  },
+  {
+    "levelId": 186,
+    "rules": "LockMiddle",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2785EA",
+      "topRight": "#4E39B8",
+      "bottomLeft": "#456DB6",
+      "bottomRight": "#1EB0AE"
+    }
+  },
+  {
+    "levelId": 187,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B9AA0C",
+      "topRight": "#64C10D",
+      "bottomLeft": "#339928",
+      "bottomRight": "#3F6BB7"
+    }
+  },
+  {
+    "levelId": 188,
+    "rules": "LockOneByOne",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#F12491",
+      "topRight": "#61C14B",
+      "bottomLeft": "#51BAD8",
+      "bottomRight": "#673A9A"
+    }
+  },
+  {
+    "levelId": 189,
+    "rules": "LockCorners",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#23DCC4",
+      "topRight": "#569A1B",
+      "bottomLeft": "#32A438",
+      "bottomRight": "#BC2933"
+    }
+  },
+  {
+    "levelId": 190,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#228CCE",
+      "topRight": "#DC4479",
+      "bottomLeft": "#994D0E",
+      "bottomRight": "#E7335A"
+    }
+  },
+  {
+    "levelId": 191,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#7FB72C",
+      "topRight": "#3E63C0",
+      "bottomLeft": "#AE3BC8",
+      "bottomRight": "#3834A4"
+    }
+  },
+  {
+    "levelId": 192,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#23CB3A",
+      "topRight": "#DA4615",
+      "bottomLeft": "#36A26E",
+      "bottomRight": "#611FD4"
+    }
+  },
+  {
+    "levelId": 193,
+    "rules": "LockEdges",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#0F489C",
+      "topRight": "#15BEAA",
+      "bottomLeft": "#13AB7E",
+      "bottomRight": "#AF2750"
+    }
+  },
+  {
+    "levelId": 194,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#2CC391",
+      "topRight": "#C6131F",
+      "bottomLeft": "#2788D1",
+      "bottomRight": "#96C116"
+    }
+  },
+  {
+    "levelId": 195,
+    "rules": "LockMiddle",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#45AFE9",
+      "topRight": "#96EB35",
+      "bottomLeft": "#24D37E",
+      "bottomRight": "#E5E239"
+    }
+  },
+  {
+    "levelId": 196,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#19A0E3",
+      "topRight": "#13CA99",
+      "bottomLeft": "#B2513D",
+      "bottomRight": "#833CE0"
+    }
+  },
+  {
+    "levelId": 197,
+    "rules": "LockOneByOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#10D337",
+      "topRight": "#0E64CD",
+      "bottomLeft": "#E6DD3E",
+      "bottomRight": "#BF2B48"
+    }
+  },
+  {
+    "levelId": 198,
+    "rules": "LockCorners",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#A9A924",
+      "topRight": "#3017EB",
+      "bottomLeft": "#49C3D6",
+      "bottomRight": "#85D015"
+    }
+  },
+  {
+    "levelId": 199,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#3DB247",
+      "topRight": "#2259A5",
+      "bottomLeft": "#22BB1D",
+      "bottomRight": "#1344B5"
+    }
+  },
+  {
+    "levelId": 200,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#6CD621",
+      "topRight": "#DB2AAF",
+      "bottomLeft": "#149B24",
+      "bottomRight": "#C14D64"
+    }
+  },
+  {
+    "levelId": 201,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#32A759",
+      "topRight": "#25B078",
+      "bottomLeft": "#C54CC5",
+      "bottomRight": "#65F13E"
+    }
+  },
+  {
+    "levelId": 202,
+    "rules": "LockEdges",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#7035DD",
+      "topRight": "#9C36B3",
+      "bottomLeft": "#A63B48",
+      "bottomRight": "#146FAF"
+    }
+  },
+  {
+    "levelId": 203,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#CC4B74",
+      "topRight": "#B1CC45",
+      "bottomLeft": "#E54340",
+      "bottomRight": "#33A898"
+    }
+  },
+  {
+    "levelId": 204,
+    "rules": "LockMiddle",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#0DD071",
+      "topRight": "#2143C8",
+      "bottomLeft": "#C04B7E",
+      "bottomRight": "#3D28C6"
+    }
+  },
+  {
+    "levelId": 205,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1EAD9E",
+      "topRight": "#4468D7",
+      "bottomLeft": "#AA34CB",
+      "bottomRight": "#7C4AC1"
+    }
+  },
+  {
+    "levelId": 206,
+    "rules": "LockOneByOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#206FEE",
+      "topRight": "#C447C7",
+      "bottomLeft": "#399FCB",
+      "bottomRight": "#15F14C"
+    }
+  },
+  {
+    "levelId": 207,
+    "rules": "LockCorners",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#E79121",
+      "topRight": "#67C833",
+      "bottomLeft": "#64A020",
+      "bottomRight": "#8BA320"
+    }
+  },
+  {
+    "levelId": 208,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#7E9F1C",
+      "topRight": "#C156D8",
+      "bottomLeft": "#DA5E1B",
+      "bottomRight": "#5A1AB4"
+    }
+  },
+  {
+    "levelId": 209,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#5BF174",
+      "topRight": "#3A5CD7",
+      "bottomLeft": "#99179E",
+      "bottomRight": "#30A49D"
+    }
+  },
+  {
+    "levelId": 210,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#8AC125",
+      "topRight": "#2ACE4E",
+      "bottomLeft": "#CF8139",
+      "bottomRight": "#23B612"
+    }
+  },
+  {
+    "levelId": 211,
+    "rules": "LockEdges",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2DC41C",
+      "topRight": "#7F1DB4",
+      "bottomLeft": "#D02841",
+      "bottomRight": "#B28128"
+    }
+  },
+  {
+    "levelId": 212,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#C254D8",
+      "topRight": "#533FAB",
+      "bottomLeft": "#C236F0",
+      "bottomRight": "#1D9C5F"
+    }
+  },
+  {
+    "levelId": 213,
+    "rules": "LockMiddle",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#C9D24C",
+      "topRight": "#5517C1",
+      "bottomLeft": "#44A03F",
+      "bottomRight": "#5551D7"
+    }
+  },
+  {
+    "levelId": 214,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#10A113",
+      "topRight": "#139A64",
+      "bottomLeft": "#2FA4C7",
+      "bottomRight": "#43B030"
+    }
+  },
+  {
+    "levelId": 215,
+    "rules": "LockOneByOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#511AA4",
+      "topRight": "#33C463",
+      "bottomLeft": "#3EB630",
+      "bottomRight": "#7B1EB4"
+    }
+  },
+  {
+    "levelId": 216,
+    "rules": "LockCorners",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#C1EF0D",
+      "topRight": "#DFEC28",
+      "bottomLeft": "#CE5919",
+      "bottomRight": "#D71737"
+    }
+  },
+  {
+    "levelId": 217,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#3D98B7",
+      "topRight": "#3438A8",
+      "bottomLeft": "#BB31AD",
+      "bottomRight": "#A740DE"
+    }
+  },
+  {
+    "levelId": 218,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#86AA19",
+      "topRight": "#14B029",
+      "bottomLeft": "#21D7C7",
+      "bottomRight": "#D63110"
+    }
+  },
+  {
+    "levelId": 219,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#8F28CF",
+      "topRight": "#F045A0",
+      "bottomLeft": "#EAA124",
+      "bottomRight": "#C71E5C"
+    }
+  },
+  {
+    "levelId": 220,
+    "rules": "LockEdges",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1DC96D",
+      "topRight": "#6333D3",
+      "bottomLeft": "#70DE21",
+      "bottomRight": "#2657A4"
+    }
+  },
+  {
+    "levelId": 221,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#44369F",
+      "topRight": "#BFD64A",
+      "bottomLeft": "#D63F68",
+      "bottomRight": "#AD1F36"
+    }
+  },
+  {
+    "levelId": 222,
+    "rules": "LockMiddle",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2FDC0D",
+      "topRight": "#863DA0",
+      "bottomLeft": "#610BD3",
+      "bottomRight": "#3426B3"
+    }
+  },
+  {
+    "levelId": 223,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#42B2A1",
+      "topRight": "#A23F88",
+      "bottomLeft": "#1379B5",
+      "bottomRight": "#53A13F"
+    }
+  },
+  {
+    "levelId": 224,
+    "rules": "LockOneByOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#CE0B93",
+      "topRight": "#1874B2",
+      "bottomLeft": "#E845E5",
+      "bottomRight": "#641CD9"
+    }
+  },
+  {
+    "levelId": 225,
+    "rules": "LockCorners",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#4CC7D9",
+      "topRight": "#26D6B5",
+      "bottomLeft": "#E24F74",
+      "bottomRight": "#B4782A"
+    }
+  },
+  {
+    "levelId": 226,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#D08E37",
+      "topRight": "#3809AF",
+      "bottomLeft": "#B05518",
+      "bottomRight": "#D013E1"
+    }
+  },
+  {
+    "levelId": 227,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#43B92C",
+      "topRight": "#DC0E3E",
+      "bottomLeft": "#3856BB",
+      "bottomRight": "#38DDEC"
+    }
+  },
+  {
+    "levelId": 228,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#5E39A3",
+      "topRight": "#442DD7",
+      "bottomLeft": "#CE3535",
+      "bottomRight": "#9F149A"
+    }
+  },
+  {
+    "levelId": 229,
+    "rules": "LockEdges",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#EDE35B",
+      "topRight": "#AB863C",
+      "bottomLeft": "#9EBF1C",
+      "bottomRight": "#16C1C1"
+    }
+  },
+  {
+    "levelId": 230,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#4FE335",
+      "topRight": "#C4CC4B",
+      "bottomLeft": "#4968D8",
+      "bottomRight": "#64B71C"
+    }
+  },
+  {
+    "levelId": 231,
+    "rules": "LockMiddle",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#269A94",
+      "topRight": "#B6AC20",
+      "bottomLeft": "#2C489C",
+      "bottomRight": "#C90E2D"
+    }
+  },
+  {
+    "levelId": 232,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#52C248",
+      "topRight": "#B313C2",
+      "bottomLeft": "#B87345",
+      "bottomRight": "#0D4F9C"
+    }
+  },
+  {
+    "levelId": 233,
+    "rules": "LockOneByOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#91A43A",
+      "topRight": "#AA2DED",
+      "bottomLeft": "#EA5DBB",
+      "bottomRight": "#2609A4"
+    }
+  },
+  {
+    "levelId": 234,
+    "rules": "LockCorners",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#9C2769",
+      "topRight": "#E85875",
+      "bottomLeft": "#166BEC",
+      "bottomRight": "#E38635"
+    }
+  },
+  {
+    "levelId": 235,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#14B727",
+      "topRight": "#1BCFE7",
+      "bottomLeft": "#7BD34F",
+      "bottomRight": "#269E96"
+    }
+  },
+  {
+    "levelId": 236,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#38CE5B",
+      "topRight": "#48B98C",
+      "bottomLeft": "#2FDBC4",
+      "bottomRight": "#BF1CD4"
+    }
+  },
+  {
+    "levelId": 237,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#20AB7A",
+      "topRight": "#9356DD",
+      "bottomLeft": "#13C7AC",
+      "bottomRight": "#21EC65"
+    }
+  },
+  {
+    "levelId": 238,
+    "rules": "LockEdges",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2976F1",
+      "topRight": "#13AA16",
+      "bottomLeft": "#1B20BF",
+      "bottomRight": "#903AA8"
+    }
+  },
+  {
+    "levelId": 239,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#A94742",
+      "topRight": "#0CB0CE",
+      "bottomLeft": "#A47821",
+      "bottomRight": "#D6EC46"
+    }
+  },
+  {
+    "levelId": 240,
+    "rules": "LockMiddle",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#E820B6",
+      "topRight": "#3BB87D",
+      "bottomLeft": "#DF713B",
+      "bottomRight": "#47D634"
+    }
+  },
+  {
+    "levelId": 241,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#1859BA",
+      "topRight": "#0EAE2E",
+      "bottomLeft": "#CB3D7B",
+      "bottomRight": "#84A71B"
+    }
+  },
+  {
+    "levelId": 242,
+    "rules": "LockOneByOne",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#97279F",
+      "topRight": "#BB57F1",
+      "bottomLeft": "#C78A19",
+      "bottomRight": "#E82FA1"
+    }
+  },
+  {
+    "levelId": 243,
+    "rules": "LockCorners",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#2EC3E1",
+      "topRight": "#A5398A",
+      "bottomLeft": "#7122A5",
+      "bottomRight": "#53EF6B"
+    }
+  },
+  {
+    "levelId": 244,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#76C63D",
+      "topRight": "#B8101B",
+      "bottomLeft": "#BA29A2",
+      "bottomRight": "#0B3BB4"
+    }
+  },
+  {
+    "levelId": 245,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#73CC2A",
+      "topRight": "#23BC1B",
+      "bottomLeft": "#39B89F",
+      "bottomRight": "#E2447B"
+    }
+  },
+  {
+    "levelId": 246,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#C87545",
+      "topRight": "#7A45DD",
+      "bottomLeft": "#2684BA",
+      "bottomRight": "#2DD53B"
+    }
+  },
+  {
+    "levelId": 247,
+    "rules": "LockEdges",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#E8E539",
+      "topRight": "#673EC7",
+      "bottomLeft": "#AFF121",
+      "bottomRight": "#9D236A"
+    }
+  },
+  {
+    "levelId": 248,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1A3CE7",
+      "topRight": "#17AD64",
+      "bottomLeft": "#2E6DA5",
+      "bottomRight": "#9FC439"
+    }
+  },
+  {
+    "levelId": 249,
+    "rules": "LockMiddle",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#86EF1D",
+      "topRight": "#D648E3",
+      "bottomLeft": "#388A9E",
+      "bottomRight": "#CB355B"
+    }
+  },
+  {
+    "levelId": 250,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#2F83D3",
+      "topRight": "#8A24B3",
+      "bottomLeft": "#20D7AC",
+      "bottomRight": "#194E9D"
+    }
+  },
+  {
+    "levelId": 251,
+    "rules": "LockOneByOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1CD34A",
+      "topRight": "#ACD611",
+      "bottomLeft": "#2DB9C0",
+      "bottomRight": "#A61896"
+    }
+  },
+  {
+    "levelId": 252,
+    "rules": "LockCorners",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#37D1F0",
+      "topRight": "#68149C",
+      "bottomLeft": "#BA940C",
+      "bottomRight": "#5166D0"
+    }
+  },
+  {
+    "levelId": 253,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#13BA3A",
+      "topRight": "#9A3EC5",
+      "bottomLeft": "#EB2662",
+      "bottomRight": "#1C82E2"
+    }
+  },
+  {
+    "levelId": 254,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#C6E914",
+      "topRight": "#AD24CC",
+      "bottomLeft": "#EA8725",
+      "bottomRight": "#11AF7B"
+    }
+  },
+  {
+    "levelId": 255,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#7B12B7",
+      "topRight": "#35BCDB",
+      "bottomLeft": "#3769A3",
+      "bottomRight": "#56C332"
+    }
+  },
+  {
+    "levelId": 256,
+    "rules": "LockEdges",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B6233E",
+      "topRight": "#A1C20C",
+      "bottomLeft": "#4BC8CA",
+      "bottomRight": "#4F9B1F"
+    }
+  },
+  {
+    "levelId": 257,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#10BCEB",
+      "topRight": "#DBD336",
+      "bottomLeft": "#793FE4",
+      "bottomRight": "#9C255A"
+    }
+  },
+  {
+    "levelId": 258,
+    "rules": "LockMiddle",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2626DA",
+      "topRight": "#A646C0",
+      "bottomLeft": "#5ECDF2",
+      "bottomRight": "#F0C31F"
+    }
+  },
+  {
+    "levelId": 259,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#BA1D25",
+      "topRight": "#CCE842",
+      "bottomLeft": "#C7973F",
+      "bottomRight": "#21A3BD"
+    }
+  },
+  {
+    "levelId": 260,
+    "rules": "LockOneByOne",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#302E9B",
+      "topRight": "#23D62C",
+      "bottomLeft": "#E0BA0E",
+      "bottomRight": "#8718BB"
+    }
+  },
+  {
+    "levelId": 261,
+    "rules": "LockCorners",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#44D52A",
+      "topRight": "#0CAF1F",
+      "bottomLeft": "#779D0D",
+      "bottomRight": "#3FC878"
+    }
+  },
+  {
+    "levelId": 262,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#AB4055",
+      "topRight": "#46DEEC",
+      "bottomLeft": "#0C5E9E",
+      "bottomRight": "#16A149"
+    }
+  },
+  {
+    "levelId": 263,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#0C9968",
+      "topRight": "#3F33A1",
+      "bottomLeft": "#A6C121",
+      "bottomRight": "#43B14A"
+    }
+  },
+  {
+    "levelId": 264,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#BB115E",
+      "topRight": "#416CB2",
+      "bottomLeft": "#4BC680",
+      "bottomRight": "#CD6727"
+    }
+  },
+  {
+    "levelId": 265,
+    "rules": "LockEdges",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#AF3663",
+      "topRight": "#1E7A9B",
+      "bottomLeft": "#B126C3",
+      "bottomRight": "#DB2E25"
+    }
+  },
+  {
+    "levelId": 266,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#6F4CC9",
+      "topRight": "#55D912",
+      "bottomLeft": "#1132F2",
+      "bottomRight": "#9C41BD"
+    }
+  },
+  {
+    "levelId": 267,
+    "rules": "LockMiddle",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B17532",
+      "topRight": "#F020BF",
+      "bottomLeft": "#17A5D9",
+      "bottomRight": "#D04B51"
+    }
+  },
+  {
+    "levelId": 268,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#DDD20B",
+      "topRight": "#B05C32",
+      "bottomLeft": "#3D26E7",
+      "bottomRight": "#941DB1"
+    }
+  },
+  {
+    "levelId": 269,
+    "rules": "LockOneByOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#76F133",
+      "topRight": "#5AEA77",
+      "bottomLeft": "#49D1E3",
+      "bottomRight": "#D12EAE"
+    }
+  },
+  {
+    "levelId": 270,
+    "rules": "LockCorners",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#A728B3",
+      "topRight": "#2A5EE1",
+      "bottomLeft": "#4A8CC3",
+      "bottomRight": "#4528A6"
+    }
+  },
+  {
+    "levelId": 271,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#16CB88",
+      "topRight": "#BCEE18",
+      "bottomLeft": "#9C48B8",
+      "bottomRight": "#E1923F"
+    }
+  },
+  {
+    "levelId": 272,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#A15B0B",
+      "topRight": "#C140C7",
+      "bottomLeft": "#0D7AA2",
+      "bottomRight": "#7EAD38"
+    }
+  },
+  {
+    "levelId": 273,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#D2145D",
+      "topRight": "#4867CE",
+      "bottomLeft": "#AF3C0F",
+      "bottomRight": "#3FE3AC"
+    }
+  },
+  {
+    "levelId": 274,
+    "rules": "LockEdges",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#3AAF8C",
+      "topRight": "#CF562E",
+      "bottomLeft": "#E7B43D",
+      "bottomRight": "#F05E76"
+    }
+  },
+  {
+    "levelId": 275,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#A70F3D",
+      "topRight": "#E3DD38",
+      "bottomLeft": "#211699",
+      "bottomRight": "#1094BC"
+    }
+  },
+  {
+    "levelId": 276,
+    "rules": "LockMiddle",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B03BB4",
+      "topRight": "#5112CF",
+      "bottomLeft": "#D85844",
+      "bottomRight": "#5CDA4E"
+    }
+  },
+  {
+    "levelId": 277,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#E1E730",
+      "topRight": "#E0C256",
+      "bottomLeft": "#BD2E3F",
+      "bottomRight": "#A53465"
+    }
+  },
+  {
+    "levelId": 278,
+    "rules": "LockOneByOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#A732C8",
+      "topRight": "#362CC7",
+      "bottomLeft": "#539EDC",
+      "bottomRight": "#B9C324"
+    }
+  },
+  {
+    "levelId": 279,
+    "rules": "LockCorners",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#C8B54D",
+      "topRight": "#094B9C",
+      "bottomLeft": "#DADA12",
+      "bottomRight": "#58C4DF"
+    }
+  },
+  {
+    "levelId": 280,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#50A725",
+      "topRight": "#E87742",
+      "bottomLeft": "#B324B8",
+      "bottomRight": "#EE1980"
+    }
+  },
+  {
+    "levelId": 281,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#256BB2",
+      "topRight": "#81D82F",
+      "bottomLeft": "#DA7138",
+      "bottomRight": "#66D940"
+    }
+  },
+  {
+    "levelId": 282,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#EC784A",
+      "topRight": "#EE844F",
+      "bottomLeft": "#E23B94",
+      "bottomRight": "#3EA583"
+    }
+  },
+  {
+    "levelId": 283,
+    "rules": "LockEdges",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#48EC6E",
+      "topRight": "#D2EC2D",
+      "bottomLeft": "#3681A4",
+      "bottomRight": "#10A066"
+    }
+  },
+  {
+    "levelId": 284,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#A37A28",
+      "topRight": "#71CD21",
+      "bottomLeft": "#2FE797",
+      "bottomRight": "#1BB835"
+    }
+  },
+  {
+    "levelId": 285,
+    "rules": "LockMiddle",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#43D765",
+      "topRight": "#ED685E",
+      "bottomLeft": "#132FE4",
+      "bottomRight": "#E4BB52"
+    }
+  },
+  {
+    "levelId": 286,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#41CA44",
+      "topRight": "#50A02E",
+      "bottomLeft": "#EA5B0E",
+      "bottomRight": "#F11D56"
+    }
+  },
+  {
+    "levelId": 287,
+    "rules": "LockOneByOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#D97B16",
+      "topRight": "#DE4ABE",
+      "bottomLeft": "#3E8EDF",
+      "bottomRight": "#8E18B6"
+    }
+  },
+  {
+    "levelId": 288,
+    "rules": "LockCorners",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#C01BE1",
+      "topRight": "#8139C3",
+      "bottomLeft": "#BDA229",
+      "bottomRight": "#2EA8C7"
+    }
+  },
+  {
+    "levelId": 289,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#BB543F",
+      "topRight": "#0E099A",
+      "bottomLeft": "#2A11A7",
+      "bottomRight": "#10BA4E"
+    }
+  },
+  {
+    "levelId": 290,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#3F0BDA",
+      "topRight": "#F06656",
+      "bottomLeft": "#0F9908",
+      "bottomRight": "#C01C84"
+    }
+  },
+  {
+    "levelId": 291,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#0D9A19",
+      "topRight": "#8B9B31",
+      "bottomLeft": "#E75160",
+      "bottomRight": "#2ADE60"
+    }
+  },
+  {
+    "levelId": 292,
+    "rules": "LockEdges",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2E0BDC",
+      "topRight": "#3874AF",
+      "bottomLeft": "#DAE92B",
+      "bottomRight": "#A852E5"
+    }
+  },
+  {
+    "levelId": 293,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#41BEB1",
+      "topRight": "#3CCE76",
+      "bottomLeft": "#9DC129",
+      "bottomRight": "#E352AC"
+    }
+  },
+  {
+    "levelId": 294,
+    "rules": "LockMiddle",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#A226BB",
+      "topRight": "#3D9BCD",
+      "bottomLeft": "#6E48D4",
+      "bottomRight": "#20C7C5"
+    }
+  },
+  {
+    "levelId": 295,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#47A0B2",
+      "topRight": "#38D091",
+      "bottomLeft": "#3E993B",
+      "bottomRight": "#C37521"
+    }
+  },
+  {
+    "levelId": 296,
+    "rules": "LockOneByOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9930A9",
+      "topRight": "#9B1A8A",
+      "bottomLeft": "#A06830",
+      "bottomRight": "#4649C8"
+    }
+  },
+  {
+    "levelId": 297,
+    "rules": "LockCorners",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#BE9E0C",
+      "topRight": "#1577EE",
+      "bottomLeft": "#D126E8",
+      "bottomRight": "#3652A0"
+    }
+  },
+  {
+    "levelId": 298,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9941AC",
+      "topRight": "#7AC243",
+      "bottomLeft": "#BD594B",
+      "bottomRight": "#A45609"
+    }
+  },
+  {
+    "levelId": 299,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#EE3C21",
+      "topRight": "#4BDAC7",
+      "bottomLeft": "#38EC62",
+      "bottomRight": "#369E2E"
+    }
+  },
+  {
+    "levelId": 300,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#8C3ABF",
+      "topRight": "#2DEEC1",
+      "bottomLeft": "#B6E840",
+      "bottomRight": "#B17C28"
+    }
+  },
+  {
+    "levelId": 301,
+    "rules": "LockEdges",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1326B2",
+      "topRight": "#1B5CAC",
+      "bottomLeft": "#8516CB",
+      "bottomRight": "#42E16D"
+    }
+  },
+  {
+    "levelId": 302,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#D17F20",
+      "topRight": "#28CE83",
+      "bottomLeft": "#2F67C1",
+      "bottomRight": "#D2325C"
+    }
+  },
+  {
+    "levelId": 303,
+    "rules": "LockMiddle",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#EF31A9",
+      "topRight": "#4C25A2",
+      "bottomLeft": "#9C2BA9",
+      "bottomRight": "#50E622"
+    }
+  },
+  {
+    "levelId": 304,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#4410AE",
+      "topRight": "#3262AB",
+      "bottomLeft": "#19ABB0",
+      "bottomRight": "#CB4E78"
+    }
+  },
+  {
+    "levelId": 305,
+    "rules": "LockOneByOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1E9F43",
+      "topRight": "#259B1E",
+      "bottomLeft": "#3ECBDE",
+      "bottomRight": "#3113DB"
+    }
+  },
+  {
+    "levelId": 306,
+    "rules": "LockCorners",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#B21573",
+      "topRight": "#90B337",
+      "bottomLeft": "#62CE44",
+      "bottomRight": "#BCAF39"
+    }
+  },
+  {
+    "levelId": 307,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#E15C58",
+      "topRight": "#45D90F",
+      "bottomLeft": "#D8D33D",
+      "bottomRight": "#CDF05A"
+    }
+  },
+  {
+    "levelId": 308,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#288FB8",
+      "topRight": "#7BBD30",
+      "bottomLeft": "#D2E319",
+      "bottomRight": "#3D9E58"
+    }
+  },
+  {
+    "levelId": 309,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2AD2C9",
+      "topRight": "#7032E3",
+      "bottomLeft": "#0FCA4A",
+      "bottomRight": "#57A239"
+    }
+  },
+  {
+    "levelId": 310,
+    "rules": "LockEdges",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#AB37E9",
+      "topRight": "#386AC7",
+      "bottomLeft": "#B00D39",
+      "bottomRight": "#82C63F"
+    }
+  },
+  {
+    "levelId": 311,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#291CB9",
+      "topRight": "#9D1B4A",
+      "bottomLeft": "#EFEC1C",
+      "bottomRight": "#DA28D4"
+    }
+  },
+  {
+    "levelId": 312,
+    "rules": "LockMiddle",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#E5314F",
+      "topRight": "#AC106B",
+      "bottomLeft": "#78349A",
+      "bottomRight": "#A21280"
+    }
+  },
+  {
+    "levelId": 313,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#993F2F",
+      "topRight": "#713FC0",
+      "bottomLeft": "#DB9B56",
+      "bottomRight": "#54B846"
+    }
+  },
+  {
+    "levelId": 314,
+    "rules": "LockOneByOne",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#5320C2",
+      "topRight": "#8AD43F",
+      "bottomLeft": "#389E81",
+      "bottomRight": "#C01F93"
+    }
+  },
+  {
+    "levelId": 315,
+    "rules": "LockCorners",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#5AEF6B",
+      "topRight": "#A63F7F",
+      "bottomLeft": "#27D3CB",
+      "bottomRight": "#E85F2E"
+    }
+  },
+  {
+    "levelId": 316,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9E2313",
+      "topRight": "#9CA82E",
+      "bottomLeft": "#0E34F0",
+      "bottomRight": "#35D89F"
+    }
+  },
+  {
+    "levelId": 317,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9C6E38",
+      "topRight": "#9C2C9A",
+      "bottomLeft": "#B63EC8",
+      "bottomRight": "#52BA29"
+    }
+  },
+  {
+    "levelId": 318,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#CB9B4C",
+      "topRight": "#2DDA80",
+      "bottomLeft": "#12F125",
+      "bottomRight": "#BD1886"
+    }
+  },
+  {
+    "levelId": 319,
+    "rules": "LockEdges",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#9B9D3C",
+      "topRight": "#33A11A",
+      "bottomLeft": "#87DF3F",
+      "bottomRight": "#8EE30F"
+    }
+  },
+  {
+    "levelId": 320,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#18BFE5",
+      "topRight": "#2DC878",
+      "bottomLeft": "#3338A3",
+      "bottomRight": "#B42756"
+    }
+  },
+  {
+    "levelId": 321,
+    "rules": "LockMiddle",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#5F24E0",
+      "topRight": "#2BDC34",
+      "bottomLeft": "#16B261",
+      "bottomRight": "#27509B"
+    }
+  },
+  {
+    "levelId": 322,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#DE4B11",
+      "topRight": "#62C342",
+      "bottomLeft": "#1AE75B",
+      "bottomRight": "#7FAA2F"
+    }
+  },
+  {
+    "levelId": 323,
+    "rules": "LockOneByOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B22EB5",
+      "topRight": "#0BBCB0",
+      "bottomLeft": "#31B467",
+      "bottomRight": "#AD5F23"
+    }
+  },
+  {
+    "levelId": 324,
+    "rules": "LockCorners",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#3F72E8",
+      "topRight": "#BB1712",
+      "bottomLeft": "#BF4BE5",
+      "bottomRight": "#12CCCC"
+    }
+  },
+  {
+    "levelId": 325,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#46C965",
+      "topRight": "#0C6AD6",
+      "bottomLeft": "#39BC8E",
+      "bottomRight": "#579D38"
+    }
+  },
+  {
+    "levelId": 326,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B7F03D",
+      "topRight": "#32E960",
+      "bottomLeft": "#5A39B0",
+      "bottomRight": "#AD0C1E"
+    }
+  },
+  {
+    "levelId": 327,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1ECB30",
+      "topRight": "#3550A2",
+      "bottomLeft": "#ED1854",
+      "bottomRight": "#8FAA22"
+    }
+  },
+  {
+    "levelId": 328,
+    "rules": "LockEdges",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#22BDA6",
+      "topRight": "#45CE13",
+      "bottomLeft": "#16B03A",
+      "bottomRight": "#DB4FD0"
+    }
+  },
+  {
+    "levelId": 329,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#ED0C44",
+      "topRight": "#5B3EA4",
+      "bottomLeft": "#8B0BB6",
+      "bottomRight": "#1CBAB5"
+    }
+  },
+  {
+    "levelId": 330,
+    "rules": "LockMiddle",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#0CDB66",
+      "topRight": "#D638E7",
+      "bottomLeft": "#9B5932",
+      "bottomRight": "#A70F3A"
+    }
+  },
+  {
+    "levelId": 331,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B343BE",
+      "topRight": "#76CF43",
+      "bottomLeft": "#12C453",
+      "bottomRight": "#A23B64"
+    }
+  },
+  {
+    "levelId": 332,
+    "rules": "LockOneByOne",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B7277B",
+      "topRight": "#BC481A",
+      "bottomLeft": "#EE3CD6",
+      "bottomRight": "#34B96E"
+    }
+  },
+  {
+    "levelId": 333,
+    "rules": "LockCorners",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#CF2F27",
+      "topRight": "#5438B9",
+      "bottomLeft": "#CDD23F",
+      "bottomRight": "#BF3147"
+    }
+  },
+  {
+    "levelId": 334,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#DF2B3D",
+      "topRight": "#3986B9",
+      "bottomLeft": "#521EB4",
+      "bottomRight": "#493FC9"
+    }
+  },
+  {
+    "levelId": 335,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#5BB72D",
+      "topRight": "#AD43A1",
+      "bottomLeft": "#AB8816",
+      "bottomRight": "#23B42C"
+    }
+  },
+  {
+    "levelId": 336,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#E31149",
+      "topRight": "#379B81",
+      "bottomLeft": "#3EA97A",
+      "bottomRight": "#4185A9"
+    }
+  },
+  {
+    "levelId": 337,
+    "rules": "LockEdges",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#49B343",
+      "topRight": "#AB4499",
+      "bottomLeft": "#A43F34",
+      "bottomRight": "#5137C8"
+    }
+  },
+  {
+    "levelId": 338,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#2A86BC",
+      "topRight": "#D2225F",
+      "bottomLeft": "#AF7F41",
+      "bottomRight": "#EDD657"
+    }
+  },
+  {
+    "levelId": 339,
+    "rules": "LockMiddle",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#A42C7A",
+      "topRight": "#ECDB22",
+      "bottomLeft": "#F149E6",
+      "bottomRight": "#2193BD"
+    }
+  },
+  {
+    "levelId": 340,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B9563A",
+      "topRight": "#59C042",
+      "bottomLeft": "#77329C",
+      "bottomRight": "#DB4B6A"
+    }
+  },
+  {
+    "levelId": 341,
+    "rules": "LockOneByOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#C52250",
+      "topRight": "#9E2D69",
+      "bottomLeft": "#CF8320",
+      "bottomRight": "#84A331"
+    }
+  },
+  {
+    "levelId": 342,
+    "rules": "LockCorners",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#1C479B",
+      "topRight": "#0BE0E0",
+      "bottomLeft": "#AE251E",
+      "bottomRight": "#C816AB"
+    }
+  },
+  {
+    "levelId": 343,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B1117B",
+      "topRight": "#EB2C21",
+      "bottomLeft": "#B43DA1",
+      "bottomRight": "#98E951"
+    }
+  },
+  {
+    "levelId": 344,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#EA1EB7",
+      "topRight": "#71AF1B",
+      "bottomLeft": "#ED232A",
+      "bottomRight": "#A4204C"
+    }
+  },
+  {
+    "levelId": 345,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9B9F30",
+      "topRight": "#5496D4",
+      "bottomLeft": "#3923B9",
+      "bottomRight": "#AD5B1C"
+    }
+  },
+  {
+    "levelId": 346,
+    "rules": "LockEdges",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#9438BE",
+      "topRight": "#41DDE8",
+      "bottomLeft": "#BD2998",
+      "bottomRight": "#190D9C"
+    }
+  },
+  {
+    "levelId": 347,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#71F04D",
+      "topRight": "#29C5BB",
+      "bottomLeft": "#3ED259",
+      "bottomRight": "#95CA0D"
+    }
+  },
+  {
+    "levelId": 348,
+    "rules": "LockMiddle",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#329D77",
+      "topRight": "#46CA8C",
+      "bottomLeft": "#A9288B",
+      "bottomRight": "#4672CA"
+    }
+  },
+  {
+    "levelId": 349,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2DD05E",
+      "topRight": "#19B011",
+      "bottomLeft": "#611CA6",
+      "bottomRight": "#71D835"
+    }
+  },
+  {
+    "levelId": 350,
+    "rules": "LockOneByOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#3BD76A",
+      "topRight": "#C08838",
+      "bottomLeft": "#4788E4",
+      "bottomRight": "#5C19A8"
+    }
+  },
+  {
+    "levelId": 351,
+    "rules": "LockCorners",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#741BCD",
+      "topRight": "#5E38C7",
+      "bottomLeft": "#F040C1",
+      "bottomRight": "#35F0A5"
+    }
+  },
+  {
+    "levelId": 352,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#3ED33E",
+      "topRight": "#C62E20",
+      "bottomLeft": "#C98D0A",
+      "bottomRight": "#357E99"
+    }
+  },
+  {
+    "levelId": 353,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#D0952F",
+      "topRight": "#35CC3A",
+      "bottomLeft": "#E61D2B",
+      "bottomRight": "#2E38EF"
+    }
+  },
+  {
+    "levelId": 354,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#63D815",
+      "topRight": "#24CBB8",
+      "bottomLeft": "#1C96BF",
+      "bottomRight": "#B20922"
+    }
+  },
+  {
+    "levelId": 355,
+    "rules": "LockEdges",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#E650AD",
+      "topRight": "#53E137",
+      "bottomLeft": "#D6371E",
+      "bottomRight": "#0EA9BD"
+    }
+  },
+  {
+    "levelId": 356,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9D813C",
+      "topRight": "#E232D6",
+      "bottomLeft": "#26C2A3",
+      "bottomRight": "#5BAC25"
+    }
+  },
+  {
+    "levelId": 357,
+    "rules": "LockMiddle",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#10C3AB",
+      "topRight": "#E7B44D",
+      "bottomLeft": "#408DAC",
+      "bottomRight": "#2850E3"
+    }
+  },
+  {
+    "levelId": 358,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#27BF66",
+      "topRight": "#64BF15",
+      "bottomLeft": "#9844BC",
+      "bottomRight": "#AA3F5B"
+    }
+  },
+  {
+    "levelId": 359,
+    "rules": "LockOneByOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#622FD0",
+      "topRight": "#23799E",
+      "bottomLeft": "#CA7E4B",
+      "bottomRight": "#2F24C8"
+    }
+  },
+  {
+    "levelId": 360,
+    "rules": "LockCorners",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#6312C7",
+      "topRight": "#D23CE6",
+      "bottomLeft": "#70AA3D",
+      "bottomRight": "#B4217C"
+    }
+  },
+  {
+    "levelId": 361,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#29BC29",
+      "topRight": "#C16D15",
+      "bottomLeft": "#A634E7",
+      "bottomRight": "#AD26B9"
+    }
+  },
+  {
+    "levelId": 362,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#4B47D1",
+      "topRight": "#1C64A3",
+      "bottomLeft": "#DAD349",
+      "bottomRight": "#44B23A"
+    }
+  },
+  {
+    "levelId": 363,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#74A43A",
+      "topRight": "#0BA632",
+      "bottomLeft": "#71D752",
+      "bottomRight": "#3045E8"
+    }
+  },
+  {
+    "levelId": 364,
+    "rules": "LockEdges",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#6716B2",
+      "topRight": "#BE530C",
+      "bottomLeft": "#1773E3",
+      "bottomRight": "#DBC057"
+    }
+  },
+  {
+    "levelId": 365,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#BE4644",
+      "topRight": "#B10F83",
+      "bottomLeft": "#B4C93A",
+      "bottomRight": "#BE3BD3"
+    }
+  },
+  {
+    "levelId": 366,
+    "rules": "LockMiddle",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#45E1AD",
+      "topRight": "#B3C136",
+      "bottomLeft": "#BB3A3E",
+      "bottomRight": "#D15A22"
+    }
+  },
+  {
+    "levelId": 367,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#3AC952",
+      "topRight": "#C7D324",
+      "bottomLeft": "#4DB620",
+      "bottomRight": "#4AD039"
+    }
+  },
+  {
+    "levelId": 368,
+    "rules": "LockOneByOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9A197E",
+      "topRight": "#AA542D",
+      "bottomLeft": "#7F3FCD",
+      "bottomRight": "#37BCD4"
+    }
+  },
+  {
+    "levelId": 369,
+    "rules": "LockCorners",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#3719DD",
+      "topRight": "#C1BE0B",
+      "bottomLeft": "#9B2E73",
+      "bottomRight": "#25DE14"
+    }
+  },
+  {
+    "levelId": 370,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#23139C",
+      "topRight": "#A749D2",
+      "bottomLeft": "#7C0EA3",
+      "bottomRight": "#0BB598"
+    }
+  },
+  {
+    "levelId": 371,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#4F22D4",
+      "topRight": "#2EA5DC",
+      "bottomLeft": "#B226C8",
+      "bottomRight": "#0BA382"
+    }
+  },
+  {
+    "levelId": 372,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#681DCA",
+      "topRight": "#A42211",
+      "bottomLeft": "#405FD0",
+      "bottomRight": "#AF27A2"
+    }
+  },
+  {
+    "levelId": 373,
+    "rules": "LockEdges",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#C8EE57",
+      "topRight": "#33B3AD",
+      "bottomLeft": "#152EBA",
+      "bottomRight": "#C34459"
+    }
+  },
+  {
+    "levelId": 374,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#4ED11E",
+      "topRight": "#E93F39",
+      "bottomLeft": "#9A9828",
+      "bottomRight": "#3ECFC3"
+    }
+  },
+  {
+    "levelId": 375,
+    "rules": "LockMiddle",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#41D918",
+      "topRight": "#20289E",
+      "bottomLeft": "#DF7D44",
+      "bottomRight": "#1FB861"
+    }
+  },
+  {
+    "levelId": 376,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#CB932C",
+      "topRight": "#4B1ABE",
+      "bottomLeft": "#3479BD",
+      "bottomRight": "#2ACDB7"
+    }
+  },
+  {
+    "levelId": 377,
+    "rules": "LockOneByOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#BD7640",
+      "topRight": "#CBEF2C",
+      "bottomLeft": "#459DC9",
+      "bottomRight": "#DAD742"
+    }
+  },
+  {
+    "levelId": 378,
+    "rules": "LockCorners",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#D59331",
+      "topRight": "#27A529",
+      "bottomLeft": "#8E34A0",
+      "bottomRight": "#43B076"
+    }
+  },
+  {
+    "levelId": 379,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#D65D48",
+      "topRight": "#4A68CB",
+      "bottomLeft": "#51CE3B",
+      "bottomRight": "#4330D3"
+    }
+  },
+  {
+    "levelId": 380,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#11AD9B",
+      "topRight": "#98E024",
+      "bottomLeft": "#DF1E6E",
+      "bottomRight": "#A33032"
+    }
+  },
+  {
+    "levelId": 381,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#E69255",
+      "topRight": "#22A35E",
+      "bottomLeft": "#1327A7",
+      "bottomRight": "#67AE3D"
+    }
+  },
+  {
+    "levelId": 382,
+    "rules": "LockEdges",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2EE20F",
+      "topRight": "#BC9A2C",
+      "bottomLeft": "#43D281",
+      "bottomRight": "#35C8C8"
+    }
+  },
+  {
+    "levelId": 383,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1D75C2",
+      "topRight": "#CB441F",
+      "bottomLeft": "#E7162B",
+      "bottomRight": "#4E0AB4"
+    }
+  },
+  {
+    "levelId": 384,
+    "rules": "LockMiddle",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#DC3A37",
+      "topRight": "#4FB5C9",
+      "bottomLeft": "#1417AB",
+      "bottomRight": "#B64687"
+    }
+  },
+  {
+    "levelId": 385,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#A9A137",
+      "topRight": "#DF4F42",
+      "bottomLeft": "#9A3AC0",
+      "bottomRight": "#9E2D7A"
+    }
+  },
+  {
+    "levelId": 386,
+    "rules": "LockOneByOne",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#28C674",
+      "topRight": "#9A49D3",
+      "bottomLeft": "#B96E2C",
+      "bottomRight": "#DE0C91"
+    }
+  },
+  {
+    "levelId": 387,
+    "rules": "LockCorners",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#2936C5",
+      "topRight": "#E214B6",
+      "bottomLeft": "#982DA6",
+      "bottomRight": "#E9560C"
+    }
+  },
+  {
+    "levelId": 388,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#8CAC3C",
+      "topRight": "#53E1EE",
+      "bottomLeft": "#89AA26",
+      "bottomRight": "#A537A7"
+    }
+  },
+  {
+    "levelId": 389,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#D35E49",
+      "topRight": "#1A64CB",
+      "bottomLeft": "#1FA5DF",
+      "bottomRight": "#67AA3A"
+    }
+  },
+  {
+    "levelId": 390,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#51DCD3",
+      "topRight": "#CE249B",
+      "bottomLeft": "#EF331F",
+      "bottomRight": "#3721C4"
+    }
+  },
+  {
+    "levelId": 391,
+    "rules": "LockEdges",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#1A6CA3",
+      "topRight": "#18A19C",
+      "bottomLeft": "#B5DC40",
+      "bottomRight": "#75E958"
+    }
+  },
+  {
+    "levelId": 392,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#68B73B",
+      "topRight": "#BB9E1C",
+      "bottomLeft": "#387DD8",
+      "bottomRight": "#6B23BD"
+    }
+  },
+  {
+    "levelId": 393,
+    "rules": "LockMiddle",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#0FC11E",
+      "topRight": "#16E980",
+      "bottomLeft": "#25BEB1",
+      "bottomRight": "#9C26B4"
+    }
+  },
+  {
+    "levelId": 394,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#BF24DF",
+      "topRight": "#1DDCED",
+      "bottomLeft": "#3D9DC3",
+      "bottomRight": "#34C921"
+    }
+  },
+  {
+    "levelId": 395,
+    "rules": "LockOneByOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#602FC3",
+      "topRight": "#2ED539",
+      "bottomLeft": "#E8C549",
+      "bottomRight": "#99290A"
+    }
+  },
+  {
+    "levelId": 396,
+    "rules": "LockCorners",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#CB5133",
+      "topRight": "#9B57DB",
+      "bottomLeft": "#8CBF33",
+      "bottomRight": "#94C01B"
+    }
+  },
+  {
+    "levelId": 397,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#8DC51E",
+      "topRight": "#294DDC",
+      "bottomLeft": "#AB40AB",
+      "bottomRight": "#1E13EB"
+    }
+  },
+  {
+    "levelId": 398,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#D4B84B",
+      "topRight": "#D70E91",
+      "bottomLeft": "#18E918",
+      "bottomRight": "#C1C424"
+    }
+  },
+  {
+    "levelId": 399,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#A3334D",
+      "topRight": "#7BDE45",
+      "bottomLeft": "#901EE7",
+      "bottomRight": "#B5B92E"
+    }
+  },
+  {
+    "levelId": 400,
+    "rules": "LockEdges",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#D94952",
+      "topRight": "#29E27F",
+      "bottomLeft": "#880899",
+      "bottomRight": "#493BA0"
+    }
+  },
+  {
+    "levelId": 401,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#CB2A1E",
+      "topRight": "#AFC948",
+      "bottomLeft": "#39D94B",
+      "bottomRight": "#E74A35"
+    }
+  },
+  {
+    "levelId": 402,
+    "rules": "LockMiddle",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#C850E0",
+      "topRight": "#87C549",
+      "bottomLeft": "#ED0E72",
+      "bottomRight": "#9238CA"
+    }
+  },
+  {
+    "levelId": 403,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#EE2EEB",
+      "topRight": "#28A42C",
+      "bottomLeft": "#5DB2EE",
+      "bottomRight": "#36C59D"
+    }
+  },
+  {
+    "levelId": 404,
+    "rules": "LockOneByOne",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9A6826",
+      "topRight": "#6D3A9C",
+      "bottomLeft": "#E63D7B",
+      "bottomRight": "#DE5F51"
+    }
+  },
+  {
+    "levelId": 405,
+    "rules": "LockCorners",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#96269E",
+      "topRight": "#BC0B81",
+      "bottomLeft": "#2A9DE5",
+      "bottomRight": "#8A39AA"
+    }
+  },
+  {
+    "levelId": 406,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#4D6DE1",
+      "topRight": "#C51449",
+      "bottomLeft": "#1AE2BD",
+      "bottomRight": "#A31C0A"
+    }
+  },
+  {
+    "levelId": 407,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#E4B723",
+      "topRight": "#23A614",
+      "bottomLeft": "#623A9F",
+      "bottomRight": "#29BEDC"
+    }
+  },
+  {
+    "levelId": 408,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#42E22D",
+      "topRight": "#C44586",
+      "bottomLeft": "#A6532F",
+      "bottomRight": "#E89D35"
+    }
+  },
+  {
+    "levelId": 409,
+    "rules": "LockEdges",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#9AA737",
+      "topRight": "#15A02C",
+      "bottomLeft": "#0A98BF",
+      "bottomRight": "#410CEE"
+    }
+  },
+  {
+    "levelId": 410,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#C46E46",
+      "topRight": "#61B430",
+      "bottomLeft": "#33B835",
+      "bottomRight": "#7E2E9B"
+    }
+  },
+  {
+    "levelId": 411,
+    "rules": "LockMiddle",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#31C76B",
+      "topRight": "#72B43B",
+      "bottomLeft": "#AC2F78",
+      "bottomRight": "#BE5F20"
+    }
+  },
+  {
+    "levelId": 412,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#4282A7",
+      "topRight": "#B93D89",
+      "bottomLeft": "#55D249",
+      "bottomRight": "#F14998"
+    }
+  },
+  {
+    "levelId": 413,
+    "rules": "LockOneByOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B9411C",
+      "topRight": "#39B550",
+      "bottomLeft": "#9B480C",
+      "bottomRight": "#C0C612"
+    }
+  },
+  {
+    "levelId": 414,
+    "rules": "LockCorners",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#7A25F1",
+      "topRight": "#10E943",
+      "bottomLeft": "#85DD37",
+      "bottomRight": "#2383A6"
+    }
+  },
+  {
+    "levelId": 415,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#304CC7",
+      "topRight": "#5DF0C9",
+      "bottomLeft": "#B31263",
+      "bottomRight": "#6CEF30"
+    }
+  },
+  {
+    "levelId": 416,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#6EEB52",
+      "topRight": "#2471B4",
+      "bottomLeft": "#D62DD4",
+      "bottomRight": "#3CC4B4"
+    }
+  },
+  {
+    "levelId": 417,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#312ABA",
+      "topRight": "#1B2DD2",
+      "bottomLeft": "#6B14BD",
+      "bottomRight": "#42ECB6"
+    }
+  },
+  {
+    "levelId": 418,
+    "rules": "LockEdges",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#B63F47",
+      "topRight": "#2452AE",
+      "bottomLeft": "#A77E2E",
+      "bottomRight": "#AB2DA0"
+    }
+  },
+  {
+    "levelId": 419,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#879B15",
+      "topRight": "#E556D9",
+      "bottomLeft": "#1AD148",
+      "bottomRight": "#A352D5"
+    }
+  },
+  {
+    "levelId": 420,
+    "rules": "LockMiddle",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9F192B",
+      "topRight": "#8FB640",
+      "bottomLeft": "#54A2D9",
+      "bottomRight": "#1619C7"
+    }
+  },
+  {
+    "levelId": 421,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#820BB9",
+      "topRight": "#9B983E",
+      "bottomLeft": "#3288D8",
+      "bottomRight": "#26C4B4"
+    }
+  },
+  {
+    "levelId": 422,
+    "rules": "LockOneByOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#D85436",
+      "topRight": "#1D80AB",
+      "bottomLeft": "#18D2D9",
+      "bottomRight": "#CE2ABB"
+    }
+  },
+  {
+    "levelId": 423,
+    "rules": "LockCorners",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#742DC5",
+      "topRight": "#64A829",
+      "bottomLeft": "#24CCD2",
+      "bottomRight": "#2397B4"
+    }
+  },
+  {
+    "levelId": 424,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B54777",
+      "topRight": "#D253D6",
+      "bottomLeft": "#245FDD",
+      "bottomRight": "#D0110B"
+    }
+  },
+  {
+    "levelId": 425,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#AFDB3E",
+      "topRight": "#4ACB33",
+      "bottomLeft": "#C06121",
+      "bottomRight": "#F03262"
+    }
+  },
+  {
+    "levelId": 426,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9D122B",
+      "topRight": "#7B149D",
+      "bottomLeft": "#993807",
+      "bottomRight": "#B1841B"
+    }
+  },
+  {
+    "levelId": 427,
+    "rules": "LockEdges",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1B87D3",
+      "topRight": "#4D56CC",
+      "bottomLeft": "#8D15A2",
+      "bottomRight": "#9A4AE9"
+    }
+  },
+  {
+    "levelId": 428,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1AADE2",
+      "topRight": "#B04BDE",
+      "bottomLeft": "#B69F0D",
+      "bottomRight": "#D33499"
+    }
+  },
+  {
+    "levelId": 429,
+    "rules": "LockMiddle",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#17C13F",
+      "topRight": "#739C14",
+      "bottomLeft": "#9137DB",
+      "bottomRight": "#55DEA9"
+    }
+  },
+  {
+    "levelId": 430,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#55E67E",
+      "topRight": "#9D2982",
+      "bottomLeft": "#20B6B8",
+      "bottomRight": "#46990E"
+    }
+  },
+  {
+    "levelId": 431,
+    "rules": "LockOneByOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#7C3FA1",
+      "topRight": "#25BFB2",
+      "bottomLeft": "#5AC620",
+      "bottomRight": "#B6413A"
+    }
+  },
+  {
+    "levelId": 432,
+    "rules": "LockCorners",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#0AA82F",
+      "topRight": "#419E21",
+      "bottomLeft": "#424BC3",
+      "bottomRight": "#BA7535"
+    }
+  },
+  {
+    "levelId": 433,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#A39D31",
+      "topRight": "#ED0C17",
+      "bottomLeft": "#E01844",
+      "bottomRight": "#2EB77C"
+    }
+  },
+  {
+    "levelId": 434,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9744C1",
+      "topRight": "#EF0D20",
+      "bottomLeft": "#593BB2",
+      "bottomRight": "#BF6B45"
+    }
+  },
+  {
+    "levelId": 435,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#85CC12",
+      "topRight": "#26A0CC",
+      "bottomLeft": "#DA45AD",
+      "bottomRight": "#CA200E"
+    }
+  },
+  {
+    "levelId": 436,
+    "rules": "LockEdges",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#CABF28",
+      "topRight": "#D72862",
+      "bottomLeft": "#D8CC1E",
+      "bottomRight": "#268CA6"
+    }
+  },
+  {
+    "levelId": 437,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#39AB5D",
+      "topRight": "#DA21E7",
+      "bottomLeft": "#5C3ED4",
+      "bottomRight": "#B50BA4"
+    }
+  },
+  {
+    "levelId": 438,
+    "rules": "LockMiddle",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#A746D3",
+      "topRight": "#4052C4",
+      "bottomLeft": "#2B46BE",
+      "bottomRight": "#EC49C6"
+    }
+  },
+  {
+    "levelId": 439,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#2F34D7",
+      "topRight": "#E86524",
+      "bottomLeft": "#9ECA51",
+      "bottomRight": "#15B1D8"
+    }
+  },
+  {
+    "levelId": 440,
+    "rules": "LockOneByOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#41CDCF",
+      "topRight": "#0E3DD4",
+      "bottomLeft": "#0EAD1E",
+      "bottomRight": "#28EB8D"
+    }
+  },
+  {
+    "levelId": 441,
+    "rules": "LockCorners",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#B8C14D",
+      "topRight": "#A3E90E",
+      "bottomLeft": "#1EE442",
+      "bottomRight": "#3D82D0"
+    }
+  },
+  {
+    "levelId": 442,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#AE387F",
+      "topRight": "#D11BD4",
+      "bottomLeft": "#719D38",
+      "bottomRight": "#E44A61"
+    }
+  },
+  {
+    "levelId": 443,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2367D5",
+      "topRight": "#E0A956",
+      "bottomLeft": "#3518C6",
+      "bottomRight": "#3BD9B4"
+    }
+  },
+  {
+    "levelId": 444,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#BC2BCA",
+      "topRight": "#6E3DC9",
+      "bottomLeft": "#242DD6",
+      "bottomRight": "#9FA413"
+    }
+  },
+  {
+    "levelId": 445,
+    "rules": "LockEdges",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#521FC2",
+      "topRight": "#397EDF",
+      "bottomLeft": "#11AD5A",
+      "bottomRight": "#B63645"
+    }
+  },
+  {
+    "levelId": 446,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#99691A",
+      "topRight": "#812CAC",
+      "bottomLeft": "#2F41AA",
+      "bottomRight": "#532CE3"
+    }
+  },
+  {
+    "levelId": 447,
+    "rules": "LockMiddle",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1A77A5",
+      "topRight": "#A02399",
+      "bottomLeft": "#A6387F",
+      "bottomRight": "#B81C26"
+    }
+  },
+  {
+    "levelId": 448,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#9F2711",
+      "topRight": "#9E3D75",
+      "bottomLeft": "#7134CB",
+      "bottomRight": "#43CEF1"
+    }
+  },
+  {
+    "levelId": 449,
+    "rules": "LockOneByOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#8919A8",
+      "topRight": "#D4914F",
+      "bottomLeft": "#18A18A",
+      "bottomRight": "#1C4BA1"
+    }
+  },
+  {
+    "levelId": 450,
+    "rules": "LockCorners",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#C23BAE",
+      "topRight": "#1B18DA",
+      "bottomLeft": "#BC324E",
+      "bottomRight": "#EBCD38"
+    }
+  },
+  {
+    "levelId": 451,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#8328F1",
+      "topRight": "#4C64F0",
+      "bottomLeft": "#AC26C4",
+      "bottomRight": "#1FE3E7"
+    }
+  },
+  {
+    "levelId": 452,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#5C7FEA",
+      "topRight": "#2CD90D",
+      "bottomLeft": "#14D6EF",
+      "bottomRight": "#BE210C"
+    }
+  },
+  {
+    "levelId": 453,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#EAD955",
+      "topRight": "#B54B28",
+      "bottomLeft": "#13E990",
+      "bottomRight": "#3A5BD1"
+    }
+  },
+  {
+    "levelId": 454,
+    "rules": "LockEdges",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#DD2D24",
+      "topRight": "#DECF46",
+      "bottomLeft": "#3597B2",
+      "bottomRight": "#B1780E"
+    }
+  },
+  {
+    "levelId": 455,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#CC42A5",
+      "topRight": "#BB9333",
+      "bottomLeft": "#6D20A1",
+      "bottomRight": "#BE4B2B"
+    }
+  },
+  {
+    "levelId": 456,
+    "rules": "LockMiddle",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#ED4CA7",
+      "topRight": "#DD52BF",
+      "bottomLeft": "#9A5718",
+      "bottomRight": "#BB43EE"
+    }
+  },
+  {
+    "levelId": 457,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#1BAB42",
+      "topRight": "#6047B8",
+      "bottomLeft": "#4CDEAE",
+      "bottomRight": "#28B9D5"
+    }
+  },
+  {
+    "levelId": 458,
+    "rules": "LockOneByOne",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#3909B0",
+      "topRight": "#386BE1",
+      "bottomLeft": "#57D834",
+      "bottomRight": "#BD14B1"
+    }
+  },
+  {
+    "levelId": 459,
+    "rules": "LockCorners",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#1DB8A6",
+      "topRight": "#ED971F",
+      "bottomLeft": "#D5B748",
+      "bottomRight": "#29B054"
+    }
+  },
+  {
+    "levelId": 460,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#C30D2C",
+      "topRight": "#CE15DB",
+      "bottomLeft": "#BB4822",
+      "bottomRight": "#D10EA0"
+    }
+  },
+  {
+    "levelId": 461,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#E01990",
+      "topRight": "#3599A8",
+      "bottomLeft": "#ED6347",
+      "bottomRight": "#AD436D"
+    }
+  },
+  {
+    "levelId": 462,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1F4E9F",
+      "topRight": "#2379A4",
+      "bottomLeft": "#404AB7",
+      "bottomRight": "#7538B2"
+    }
+  },
+  {
+    "levelId": 463,
+    "rules": "LockEdges",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#522FD3",
+      "topRight": "#AEEB58",
+      "bottomLeft": "#E125AF",
+      "bottomRight": "#B7383A"
+    }
+  },
+  {
+    "levelId": 464,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#52B03D",
+      "topRight": "#CD4C4C",
+      "bottomLeft": "#0CA120",
+      "bottomRight": "#B0C321"
+    }
+  },
+  {
+    "levelId": 465,
+    "rules": "LockMiddle",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2C6ACE",
+      "topRight": "#2FA58F",
+      "bottomLeft": "#18E079",
+      "bottomRight": "#80DF4D"
+    }
+  },
+  {
+    "levelId": 466,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#C04651",
+      "topRight": "#4A52DC",
+      "bottomLeft": "#17A5D4",
+      "bottomRight": "#28AB9E"
+    }
+  },
+  {
+    "levelId": 467,
+    "rules": "LockOneByOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#226FBB",
+      "topRight": "#34A1AB",
+      "bottomLeft": "#5BDF40",
+      "bottomRight": "#B3DA4E"
+    }
+  },
+  {
+    "levelId": 468,
+    "rules": "LockCorners",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#3B97DE",
+      "topRight": "#7A44B9",
+      "bottomLeft": "#33CD4D",
+      "bottomRight": "#DA8D3A"
+    }
+  },
+  {
+    "levelId": 469,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#2D25B4",
+      "topRight": "#0FBFC5",
+      "bottomLeft": "#22EF85",
+      "bottomRight": "#2BAAD4"
+    }
+  },
+  {
+    "levelId": 470,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#21D38C",
+      "topRight": "#BF36D7",
+      "bottomLeft": "#EEE31F",
+      "bottomRight": "#C22684"
+    }
+  },
+  {
+    "levelId": 471,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B5A320",
+      "topRight": "#12429A",
+      "bottomLeft": "#C734E1",
+      "bottomRight": "#4E16E9"
+    }
+  },
+  {
+    "levelId": 472,
+    "rules": "LockEdges",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#A72A1C",
+      "topRight": "#ACCB0D",
+      "bottomLeft": "#3121E0",
+      "bottomRight": "#C8640C"
+    }
+  },
+  {
+    "levelId": 473,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#1BA562",
+      "topRight": "#B6B61A",
+      "bottomLeft": "#CC1357",
+      "bottomRight": "#CF32E7"
+    }
+  },
+  {
+    "levelId": 474,
+    "rules": "LockMiddle",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#35B9A3",
+      "topRight": "#7D34AA",
+      "bottomLeft": "#15AE3E",
+      "bottomRight": "#33B5CF"
+    }
+  },
+  {
+    "levelId": 475,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#EF267A",
+      "topRight": "#9D333E",
+      "bottomLeft": "#12A94E",
+      "bottomRight": "#6F19A1"
+    }
+  },
+  {
+    "levelId": 476,
+    "rules": "LockOneByOne",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#AB2360",
+      "topRight": "#0BCC14",
+      "bottomLeft": "#ACB646",
+      "bottomRight": "#8619E5"
+    }
+  },
+  {
+    "levelId": 477,
+    "rules": "LockCorners",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#CD2D2A",
+      "topRight": "#397EA6",
+      "bottomLeft": "#179F25",
+      "bottomRight": "#25959B"
+    }
+  },
+  {
+    "levelId": 478,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#7031A8",
+      "topRight": "#51329F",
+      "bottomLeft": "#16B643",
+      "bottomRight": "#0FC8C2"
+    }
+  },
+  {
+    "levelId": 479,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#C60FBD",
+      "topRight": "#37B8C1",
+      "bottomLeft": "#D2B10C",
+      "bottomRight": "#9B1012"
+    }
+  },
+  {
+    "levelId": 480,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#D0CB4B",
+      "topRight": "#A7652E",
+      "bottomLeft": "#B3670A",
+      "bottomRight": "#6239C2"
+    }
+  },
+  {
+    "levelId": 481,
+    "rules": "LockEdges",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#15A88F",
+      "topRight": "#382EA2",
+      "bottomLeft": "#3A59AD",
+      "bottomRight": "#B020CA"
+    }
+  },
+  {
+    "levelId": 482,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#6B47EF",
+      "topRight": "#B6BF13",
+      "bottomLeft": "#A53043",
+      "bottomRight": "#3FE198"
+    }
+  },
+  {
+    "levelId": 483,
+    "rules": "LockMiddle",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#54E93D",
+      "topRight": "#E9CF3F",
+      "bottomLeft": "#55DCAB",
+      "bottomRight": "#803DAD"
+    }
+  },
+  {
+    "levelId": 484,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#8DC53F",
+      "topRight": "#AC29D0",
+      "bottomLeft": "#79E547",
+      "bottomRight": "#F0499C"
+    }
+  },
+  {
+    "levelId": 485,
+    "rules": "LockOneByOne",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#3FA347",
+      "topRight": "#1E74D1",
+      "bottomLeft": "#37AD53",
+      "bottomRight": "#B52ADB"
+    }
+  },
+  {
+    "levelId": 486,
+    "rules": "LockCorners",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#9B1C88",
+      "topRight": "#2DE2DF",
+      "bottomLeft": "#6D29EC",
+      "bottomRight": "#A26629"
+    }
+  },
+  {
+    "levelId": 487,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#65A23A",
+      "topRight": "#A02B8B",
+      "bottomLeft": "#A83D4D",
+      "bottomRight": "#5B9B3B"
+    }
+  },
+  {
+    "levelId": 488,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#0DA237",
+      "topRight": "#57E345",
+      "bottomLeft": "#674CE0",
+      "bottomRight": "#EB572E"
+    }
+  },
+  {
+    "levelId": 489,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#8FE940",
+      "topRight": "#CD330C",
+      "bottomLeft": "#3553AD",
+      "bottomRight": "#41A0A8"
+    }
+  },
+  {
+    "levelId": 490,
+    "rules": "LockEdges",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#A25D13",
+      "topRight": "#8B9A28",
+      "bottomLeft": "#EC2B89",
+      "bottomRight": "#0F7AED"
+    }
+  },
+  {
+    "levelId": 491,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#C4B44A",
+      "topRight": "#31C3D7",
+      "bottomLeft": "#D93D1A",
+      "bottomRight": "#749D2D"
+    }
+  },
+  {
+    "levelId": 492,
+    "rules": "LockMiddle",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#8EDF23",
+      "topRight": "#0DA817",
+      "bottomLeft": "#699920",
+      "bottomRight": "#16A870"
+    }
+  },
+  {
+    "levelId": 493,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#5DCC4F",
+      "topRight": "#224FAF",
+      "bottomLeft": "#DB568C",
+      "bottomRight": "#6FA71C"
+    }
+  },
+  {
+    "levelId": 494,
+    "rules": "LockOneByOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#A147D1",
+      "topRight": "#7BA71C",
+      "bottomLeft": "#26D63E",
+      "bottomRight": "#D34515"
+    }
+  },
+  {
+    "levelId": 495,
+    "rules": "LockCorners",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Super Hard",
+    "cornerColors": {
+      "topLeft": "#E3F124",
+      "topRight": "#C58D0C",
+      "bottomLeft": "#B445B4",
+      "bottomRight": "#24A962"
+    }
+  },
+  {
+    "levelId": 496,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#0CE3D1",
+      "topRight": "#E54B65",
+      "bottomLeft": "#4859C9",
+      "bottomRight": "#446CBC"
+    }
+  },
+  {
+    "levelId": 497,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#86DE47",
+      "topRight": "#1E90B3",
+      "bottomLeft": "#190CCE",
+      "bottomRight": "#35E94A"
+    }
+  },
+  {
+    "levelId": 498,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#549C20",
+      "topRight": "#A93FA1",
+      "bottomLeft": "#186BAF",
+      "bottomRight": "#9B2E16"
+    }
+  },
+  {
+    "levelId": 499,
+    "rules": "LockEdges",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#E33832",
+      "topRight": "#C20EAD",
+      "bottomLeft": "#63A634",
+      "bottomRight": "#BE7E20"
+    }
+  },
+  {
+    "levelId": 500,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#B0900F",
+      "topRight": "#68CA1C",
+      "bottomLeft": "#50EE5D",
+      "bottomRight": "#38D660"
+    }
+  }
+]
