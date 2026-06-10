@@ -2,6 +2,7 @@ using Collectible;
 using Core.Scripts.Services;
 using Gameplay;
 using General;
+using General.EventDispatcher;
 using IAP;
 using MainMenu;
 using UnityEngine;
@@ -49,6 +50,7 @@ public class Installer : MonoBehaviour
 
     private void InstallServices()
     {
+        ServiceLocator.Register<IEventDispatcherService>(new EventDispatcherService());
         ServiceLocator.Register<ISoundService>(new SoundService());
         ServiceLocator.Register<IHapticService>(new HapticService());
         ServiceLocator.Register<IUIService>(new UIService(uiRoot));

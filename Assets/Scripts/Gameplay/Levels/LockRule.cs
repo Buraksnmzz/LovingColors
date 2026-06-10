@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using DefaultNamespace;
-using UnityEngine;
 
 namespace Gameplay.Levels
 {
-    public abstract class LockRule: ScriptableObject
+    public abstract class LockRule
     {
         public virtual void LockCards(List<Card> cards, int columnCount, int rowCount)
         {

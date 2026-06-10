@@ -27,7 +27,7 @@ namespace General
         {
             ServiceLocator.Register<ISavedDataService>(new SavedDataService());
             ServiceLocator.Register<IRemoteConfigService>(new RemoteConfigService());
-            ServiceLocator.Register<ILocalizationService>(new LocalizationService());
+            //ServiceLocator.Register<ILocalizationService>(new LocalizationService());
         }
 
         private void Start()

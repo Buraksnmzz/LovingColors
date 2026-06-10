@@ -1,11 +1,9 @@
 using System.Collections.Generic;
 using DefaultNamespace;
-using UnityEngine;
 
 namespace Gameplay.Levels
 {
-    [CreateAssetMenu(menuName = "LockRules/LockOneRowSkipOne")] 
-    public class LockOneRowSkipOne: LockRule
+    public class LockOneRowSkipOne : LockRule
     {
         public override void LockCards(List<Card> cards, int columnCount, int rowCount)
         {
@@ -16,7 +14,7 @@ namespace Gameplay.Levels
                     cards[row * columnCount + col].IsLocked = true;
                 }
             }
-            
+
             base.LockCards(cards, columnCount, rowCount);
         }
     }

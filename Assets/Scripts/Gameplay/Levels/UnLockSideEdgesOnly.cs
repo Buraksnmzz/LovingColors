@@ -1,10 +1,8 @@
 using System.Collections.Generic;
 using DefaultNamespace;
-using UnityEngine;
 
 namespace Gameplay.Levels
 {
-    [CreateAssetMenu(menuName = "LockRules/LockSideEdgesOnly")] 
     public class UnLockSideEdgesOnly : LockRule
     {
         public override void LockCards(List<Card> cards, int columnCount, int rowCount)

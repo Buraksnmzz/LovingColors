@@ -1,11 +1,9 @@
 using System.Collections.Generic;
 using DefaultNamespace;
-using UnityEngine;
 
 namespace Gameplay.Levels
 {
-    [CreateAssetMenu(menuName = "LockRules/LockMiddle")] 
-    public class LockMiddle:LockRule
+    public class LockMiddle : LockRule
     {
         public override void LockCards(List<Card> cards, int columnCount, int rowCount)
         {
