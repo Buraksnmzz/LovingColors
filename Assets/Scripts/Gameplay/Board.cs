@@ -13,15 +13,20 @@ namespace Gameplay
     [RequireComponent(typeof(GridLayoutGroup))]
     public class Board : MonoBehaviour
     {
+        private const float WinAnimationStartDelay = 0.5f;
+        private const float WinColumnRotateDuration = 0.4f;
+        private const float WinAnimationColumnDelay = 0.2f;
+        private const float WinAnimationCardDelay = 0.04f;
         private const float ShuffleHideDuration = 0.7f;
         private const float ShuffleShowDuration = 0.7f;
-        private const float ShuffleStepDelay = 0.06f;
+        private const float ShuffleStepDelay = 0.04f;
         private const float SwapDuration = 0.22f;
 
         [SerializeField] private Card cardPrefab;
         [SerializeField] private RectTransform boardRect;
         [SerializeField] private GridLayoutGroup gridLayoutGroup;
         [SerializeField] private Button reshuffleButton;
+        [SerializeField] private ParticleSystem winParticle;
 
         private int _rowCount;
         private int _columnCount;
@@ -36,6 +41,10 @@ namespace Gameplay
         private Card _draggedCard;
         private Card _currentDragTarget;
         private bool _isInteractionLocked;
+        private bool _hasCompletedBoard;
+
+        public event Action Solved;
+        public event Action WinSequenceCompleted;
 
 
         private void Awake()
@@ -54,20 +63,77 @@ namespace Gameplay
             StartShuffleAnimation();
         }
 
-        public void Initialize(LevelDefinition levelDefinition)
+        public void UseHint()
         {
-            if (levelDefinition == null)
+            if (_isInteractionLocked || _draggedCard != null || _hasCompletedBoard)
             {
-                Debug.LogError("Board could not be initialized because level definition is null.");
                 return;
             }
 
+            var targetIndex = GetFirstMisplacedCardIndex();
+            if (targetIndex < 0)
+            {
+                return;
+            }
+
+            var currentCard = _cards[targetIndex];
+            var correctCard = FindCardById(targetIndex);
+            if (correctCard == null || correctCard == currentCard || currentCard.IsLocked || correctCard.IsLocked)
+            {
+                return;
+            }
+
+            StartSwap(currentCard, correctCard);
+        }
+
+        public void CompleteImmediately()
+        {
+            if (_hasCompletedBoard || _cards == null || _cards.Count == 0)
+            {
+                return;
+            }
+
+            StopAllCoroutines();
+            ClearSelection();
+            ClearCurrentDragTarget();
+            _draggedCard = null;
+
+            var solvedCards = new Card[_cards.Count];
+            for (var index = 0; index < _cards.Count; index++)
+            {
+                var card = _cards[index];
+                card.transform.DOKill();
+                card.transform.localScale = Vector3.one;
+                card.transform.localRotation = Quaternion.identity;
+                solvedCards[card.CardId] = card;
+            }
+
+            for (var index = 0; index < solvedCards.Length; index++)
+            {
+                var card = solvedCards[index];
+                _cards[index] = card;
+                card.Order = index;
+                card.SnapTo(_slotPositions[index]);
+            }
+
+            NormalizeSiblingOrder();
+            TryCompleteBoard();
+        }
+
+        public void Initialize(LevelDefinition levelDefinition)
+        {
+            _hasCompletedBoard = false;
             _rowCount = levelDefinition.RowCount;
             _columnCount = levelDefinition.ColumnCount;
             _colorA = levelDefinition.TopLeftColor;
             _colorB = levelDefinition.TopRightColor;
             _colorC = levelDefinition.BottomLeftColor;
             _colorD = levelDefinition.BottomRightColor;
+
+            if (reshuffleButton != null)
+            {
+                reshuffleButton.interactable = true;
+            }
 
             ConfigureGrid();
             CreateCards();
@@ -164,6 +230,7 @@ namespace Gameplay
             _draggedCard = null;
             _currentDragTarget = null;
             _isInteractionLocked = false;
+            _hasCompletedBoard = false;
             _cards.Clear();
             _slotPositions.Clear();
         }
@@ -435,6 +502,11 @@ namespace Gameplay
             sequence.Join(secondCard.TweenMoveTo(secondTargetPosition, SwapDuration));
             sequence.OnComplete(() =>
             {
+                if (TryCompleteBoard())
+                {
+                    return;
+                }
+
                 _isInteractionLocked = false;
                 _draggedCard = null;
                 RestoreCardInteractivity();
@@ -525,6 +597,114 @@ namespace Gameplay
         private Card CreateCardInstance(int index)
         {
             return Instantiate(cardPrefab, transform);
+        }
+
+        private int GetFirstMisplacedCardIndex()
+        {
+            for (var index = 0; index < _cards.Count; index++)
+            {
+                var card = _cards[index];
+                if (!card.IsLocked && card.CardId != index)
+                {
+                    return index;
+                }
+            }
+
+            return -1;
+        }
+
+        private Card FindCardById(int cardId)
+        {
+            for (var index = 0; index < _cards.Count; index++)
+            {
+                if (_cards[index].CardId == cardId)
+                {
+                    return _cards[index];
+                }
+            }
+
+            return null;
+        }
+
+        private bool TryCompleteBoard()
+        {
+            if (_hasCompletedBoard || !IsBoardSolved())
+            {
+                return false;
+            }
+
+            _hasCompletedBoard = true;
+            LockInteractionForWin();
+            Solved?.Invoke();
+            PlayWinSequence();
+            return true;
+        }
+
+        private bool IsBoardSolved()
+        {
+            for (var index = 0; index < _cards.Count; index++)
+            {
+                if (_cards[index].CardId != index)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private void LockInteractionForWin()
+        {
+            StopAllCoroutines();
+            _isInteractionLocked = true;
+            _draggedCard = null;
+            ClearSelection();
+            ClearCurrentDragTarget();
+
+            if (reshuffleButton != null)
+            {
+                reshuffleButton.interactable = false;
+            }
+
+            foreach (var card in _cards)
+            {
+                card.transform.DOKill();
+                card.IsLocked = false;
+                card.IsClickable = false;
+                card.StopDragSquashStretch();
+                card.SetTargetPreview(false);
+            }
+
+            NormalizeSiblingOrder();
+        }
+
+        private void PlayWinSequence()
+        {
+            var sequence = DOTween.Sequence();
+            sequence.AppendInterval(WinAnimationStartDelay);
+            sequence.AppendCallback(() =>
+            {
+                if (winParticle != null)
+                {
+                    winParticle.Play();
+                }
+            });
+
+            for (var column = 0; column < _columnCount; column++)
+            {
+                var columnDelay = column * WinAnimationColumnDelay;
+                for (var row = 0; row < _rowCount; row++)
+                {
+                    var card = _cards[row * _columnCount + column];
+                    var delay = columnDelay + row * WinAnimationCardDelay;
+                    card.transform.localRotation = Quaternion.identity;
+                    sequence.Insert(WinAnimationStartDelay + delay,
+                        card.transform.DOLocalRotate(new Vector3(0f, 180f, 0f), WinColumnRotateDuration, RotateMode.FastBeyond360)
+                            .SetEase(Ease.InOutQuad));
+                }
+            }
+
+            sequence.OnComplete(() => WinSequenceCompleted?.Invoke());
         }
     }
 }
