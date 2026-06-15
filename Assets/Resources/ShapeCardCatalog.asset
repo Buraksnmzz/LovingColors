@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df58eede35902431a99438e5bcda26ce, type: 3}
+  m_Name: ShapeCardCatalog
+  m_EditorClassIdentifier: 
+  entries:
+  - shapeId: hexPuzzle1
+    piecePrefabs:
+    - {fileID: 3317414412662012854, guid: dd7fcd89002ab44d5865fda35dce2f9f, type: 3}
+  - shapeId: tiePuzzle2
+    piecePrefabs:
+    - {fileID: 3317414412662012854, guid: 53ce6351d3a754eafa2f1798baa6fb7f, type: 3}
+  - shapeId: wavePuzzle3
+    piecePrefabs:
+    - {fileID: 3317414412662012854, guid: 43246d80a16784a1f919ddfbc180dab0, type: 3}
+    - {fileID: 3317414412662012854, guid: befaeee3c76984f14837f8cacdefed4d, type: 3}
+  - shapeId: octaSquarePuzzle4
+    piecePrefabs:
+    - {fileID: 3317414412662012854, guid: a2c1abf1127dd49b69dcf3a2c43a3e6f, type: 3}
+    - {fileID: 3317414412662012854, guid: 39062d7027693454383aa0f5ba4b97b7, type: 3}

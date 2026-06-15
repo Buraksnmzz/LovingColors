@@ -57,6 +57,7 @@ namespace Gameplay
 
         private void LoadLevelAtIndex(int levelIndex, bool clampToPreviousValidLevel)
         {
+            View.SetLevelText(levelIndex + 1);
             var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
             var currentLevelIndex = Mathf.Max(0, levelIndex);
             var currentLevelId = currentLevelIndex + 1;

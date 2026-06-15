@@ -118,15 +118,17 @@
   },
   {
     "levelId": 10,
+    "shapeId": "hexPuzzle1",
     "rules": "LockOneRowSkipOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 5,
+    "rowCount": 4,
+    "lockedSlots": [0, 1, 2, 3, 4, 8, 9, 14, 15, 19, 20, 21, 22, 23],
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#0AC581",
-      "topRight": "#2BBED8",
-      "bottomLeft": "#8DA224",
-      "bottomRight": "#939A35"
+      "topLeft": "#FF0052",
+      "topRight": "#FFD400",
+      "bottomLeft": "#00C68D",
+      "bottomRight": "#0055DA"
     }
   },
   {
@@ -248,9 +250,11 @@
   },
   {
     "levelId": 20,
+    "shapeId": "tiePuzzle2",
     "rules": "LockEdgesAndWindow",
-    "columnCount": 7,
+    "columnCount": 5,
     "rowCount": 7,
+    "lockedSlots": [0, 1, 2, 3, 4, 5, 9, 10, 14, 15, 19, 20, 24, 25, 29, 30, 31, 32, 33, 34],
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#22C4A9",
@@ -378,9 +382,11 @@
   },
   {
     "levelId": 30,
+    "shapeId": "wavePuzzle3",
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 5,
+    "rowCount": 7,
+    "lockedSlots": [0, 1, 2, 3, 4, 5, 9, 10, 14, 15, 19, 20, 24, 25, 29, 30, 31, 32, 33, 34],
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#39A7DE",
@@ -508,9 +514,11 @@
   },
   {
     "levelId": 40,
+    "shapeId": "octaSquarePuzzle4",
     "rules": "LockEdges",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 4,
+    "rowCount": 6,
+    "lockedSlots": [0, 3, 4, 7, 8, 11, 12, 15, 16, 19, 20, 23],
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#90D912",
@@ -638,9 +646,10 @@
   },
   {
     "levelId": 50,
+    "shapeId": "hexSquareTrianglePuzzle5",
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 3,
+    "rowCount": 3,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#B3206C",

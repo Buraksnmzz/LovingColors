@@ -33,6 +33,9 @@ namespace DefaultNamespace
         private Tween _movementTween;
         private Tween _loopingScaleTween;
         private Tween _scaleTween;
+        private Tween _rotationTween;
+        private Vector3 _baseScale = Vector3.one;
+        private float _baseRotation;
 
         public event Action<Card> CardClicked;
         public event Action<Card> DragStarted;
@@ -43,6 +46,7 @@ namespace DefaultNamespace
 
         public int CardId { get; set; }
         public int Order { get; set; }
+        public int PieceType { get; set; }
 
         public RectTransform RectTransform => _rectTransform;
 
@@ -147,6 +151,28 @@ namespace DefaultNamespace
             _rectTransform.anchoredPosition = anchoredPosition;
         }
 
+        public void SnapRotation(float zAngle)
+        {
+            _rotationTween?.Kill();
+            _baseRotation = zAngle;
+            _rectTransform.localRotation = Quaternion.Euler(0f, 0f, zAngle);
+        }
+
+        public Tween TweenRotateTo(float zAngle, float duration)
+        {
+            _rotationTween?.Kill();
+            _baseRotation = zAngle;
+            _rotationTween = _rectTransform.DOLocalRotate(new Vector3(0f, 0f, zAngle), duration)
+                .SetEase(Ease.InOutQuad);
+            return _rotationTween;
+        }
+
+        public void SetBaseScale(Vector3 baseScale)
+        {
+            _baseScale = baseScale;
+            _rectTransform.localScale = baseScale;
+        }
+
         public void SetTargetPreview(bool isActive)
         {
             if (_isTargetPreviewActive == isActive)
@@ -156,13 +182,13 @@ namespace DefaultNamespace
 
             _isTargetPreviewActive = isActive;
             _scaleTween?.Kill();
-            _scaleTween = _rectTransform.DOScale(isActive ? TargetPreviewScale : DefaultScale, 0.14f)
+            _scaleTween = _rectTransform.DOScale(isActive ? Vector3.Scale(_baseScale, TargetPreviewScale) : _baseScale, 0.14f)
                 .SetEase(Ease.OutQuad);
         }
 
         public void StartDragSquashStretch()
         {
-            StartLoopingScaleAnimation(DragSquashScale, DragStretchScale, DragAnimationStepDuration, Vector3.one);
+            StartLoopingScaleAnimation(DragSquashScale, DragStretchScale, DragAnimationStepDuration, _baseScale);
         }
 
         public void StopDragSquashStretch()
@@ -257,7 +283,7 @@ namespace DefaultNamespace
         {
             _loopingScaleTween?.Kill();
             _scaleTween?.Kill();
-            _scaleTween = _rectTransform.DOScale(DefaultScale, 0.12f)
+            _scaleTween = _rectTransform.DOScale(_baseScale, 0.12f)
                 .SetEase(Ease.OutQuad);
         }
 

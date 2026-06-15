@@ -2,6 +2,7 @@
 using System;
 using General;
 using Gameplay.Levels;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +20,7 @@ namespace Gameplay
         [SerializeField] private Button debugPrevButton;
         [SerializeField] private Button debugCompleteButton;
         [SerializeField] private Button hintButton;
+        [SerializeField] private TextMeshProUGUI levelText;
 
         private Board _board;
         private LevelCatalog _levelCatalog;
@@ -43,6 +45,11 @@ namespace Gameplay
                 _board.Solved += OnBoardSolved;
                 _board.WinSequenceCompleted += OnBoardCompleted;
             }
+        }
+
+        public void SetLevelText(int level)
+        {
+            levelText.text = "Level " + level;
         }
 
         private void OnDebugCompleteButtonClick()

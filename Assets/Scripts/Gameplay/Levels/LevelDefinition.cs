@@ -18,6 +18,12 @@ namespace Gameplay.Levels
         [JsonProperty("rowCount")]
         public int RowCount { get; private set; }
 
+        [JsonProperty("shapeId")]
+        public string ShapeId { get; private set; }
+
+        [JsonProperty("lockedSlots")]
+        public int[] LockedSlots { get; private set; }
+
         [JsonProperty("difficulty")]
         public string DifficultyRaw { get; private set; }
 
@@ -49,6 +55,9 @@ namespace Gameplay.Levels
 
         [JsonIgnore]
         public Color BottomRightColor => ParseColor(CornerColors?.BottomRight);
+
+        [JsonIgnore]
+        public bool HasCustomShape => !string.IsNullOrWhiteSpace(ShapeId);
 
         public bool IsValid()
         {
