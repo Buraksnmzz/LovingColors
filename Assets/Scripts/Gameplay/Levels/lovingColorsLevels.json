@@ -21,8 +21,8 @@
     "cornerColors": {
       "topLeft": "#F8E88B",
       "topRight": "#F8E88B",
-      "bottomLeft": "#FFA658",
-      "bottomRight": "#FFA658"
+      "bottomLeft": "#EB342A",
+      "bottomRight": "#3B73E3"
     }
   },
   {
@@ -34,7 +34,7 @@
     "cornerColors": {
       "topLeft": "#08C2FF",
       "topRight": "#08C2FF",
-      "bottomLeft": "#006BFF",
+      "bottomLeft": "#F1EA22",
       "bottomRight": "#006BFF"
     }
   },
@@ -61,7 +61,7 @@
       "topLeft": "#BAE92D",
       "topRight": "#D53AC3",
       "bottomLeft": "#319C73",
-      "bottomRight": "#3BA146"
+      "bottomRight": "#1FEFB0"
     }
   },
   {
@@ -84,10 +84,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#3CBD7F",
-      "topRight": "#31AA59",
-      "bottomLeft": "#D9AB2F",
-      "bottomRight": "#43B236"
+      "topLeft": "#FF6F3C",
+      "topRight": "#FFD700",
+      "bottomLeft": "#A566FF",
+      "bottomRight": "#FF85A1"
     }
   },
   {
@@ -97,10 +97,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#1DC436",
-      "topRight": "#B5185F",
-      "bottomLeft": "#DF773B",
-      "bottomRight": "#9EE14B"
+      "topLeft": "#FF76CE",
+      "topRight": "#EC347C",
+      "bottomLeft": "#94FFFA",
+      "bottomRight": "#53AEF1"
     }
   },
   {
@@ -119,16 +119,31 @@
   {
     "levelId": 10,
     "shapeId": "hexPuzzle1",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      8,
+      9,
+      14,
+      15,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
     "rules": "LockOneRowSkipOne",
     "columnCount": 5,
     "rowCount": 4,
-    "lockedSlots": [0, 1, 2, 3, 4, 8, 9, 14, 15, 19, 20, 21, 22, 23],
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#FF0052",
-      "topRight": "#FFD400",
-      "bottomLeft": "#00C68D",
-      "bottomRight": "#0055DA"
+      "topLeft": "#3EC1D3",
+      "topRight": "#F6F7D7",
+      "bottomLeft": "#FF9A00",
+      "bottomRight": "#FF165D"
     }
   },
   {
@@ -138,10 +153,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#424FE1",
-      "topRight": "#2FAFEA",
-      "bottomLeft": "#5128E5",
-      "bottomRight": "#1544A1"
+      "topLeft": "#FF6600",
+      "topRight": "#F5F5F5",
+      "bottomLeft": "#8FD14F",
+      "bottomRight": "#604CC3"
     }
   },
   {
@@ -203,10 +218,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#9D3189",
-      "topRight": "#8317A7",
-      "bottomLeft": "#E5C155",
-      "bottomRight": "#BF4276"
+      "topLeft": "#3EC1D3",
+      "topRight": "#F6F7D7",
+      "bottomLeft": "#FF9A00",
+      "bottomRight": "#FF165D"
     }
   },
   {
@@ -227,7 +242,7 @@
     "rules": "LockCorners",
     "columnCount": 9,
     "rowCount": 9,
-    "difficulty": "Super Hard",
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#B526BD",
       "topRight": "#A17B3A",
@@ -251,10 +266,31 @@
   {
     "levelId": 20,
     "shapeId": "tiePuzzle2",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      14,
+      15,
+      19,
+      20,
+      24,
+      25,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
     "rules": "LockEdgesAndWindow",
     "columnCount": 5,
     "rowCount": 7,
-    "lockedSlots": [0, 1, 2, 3, 4, 5, 9, 10, 14, 15, 19, 20, 24, 25, 29, 30, 31, 32, 33, 34],
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#22C4A9",
@@ -346,12 +382,12 @@
     "rules": "LockCorners",
     "columnCount": 8,
     "rowCount": 8,
-    "difficulty": "Super Hard",
+    "difficulty": "SuperHard",
     "cornerColors": {
-      "topLeft": "#1532F0",
-      "topRight": "#CE3194",
-      "bottomLeft": "#EB613F",
-      "bottomRight": "#4314A8"
+      "topLeft": "#9400D3",
+      "topRight": "#B960E5",
+      "bottomLeft": "#FF4500",
+      "bottomRight": "#FFD700"
     }
   },
   {
@@ -383,10 +419,31 @@
   {
     "levelId": 30,
     "shapeId": "wavePuzzle3",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      14,
+      15,
+      19,
+      20,
+      24,
+      25,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
     "rules": "UnLockSideEdgesOnly",
     "columnCount": 5,
     "rowCount": 7,
-    "lockedSlots": [0, 1, 2, 3, 4, 5, 9, 10, 14, 15, 19, 20, 24, 25, 29, 30, 31, 32, 33, 34],
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#39A7DE",
@@ -515,10 +572,27 @@
   {
     "levelId": 40,
     "shapeId": "octaSquarePuzzle4",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      7,
+      8,
+      11,
+      12,
+      15,
+      16,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
     "rules": "LockEdges",
     "columnCount": 4,
     "rowCount": 6,
-    "lockedSlots": [0, 3, 4, 7, 8, 11, 12, 15, 16, 19, 20, 23],
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#90D912",
@@ -584,7 +658,7 @@
     "rules": "LockCorners",
     "columnCount": 8,
     "rowCount": 8,
-    "difficulty": "Super Hard",
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#34EC3D",
       "topRight": "#AD4417",
@@ -647,6 +721,24 @@
   {
     "levelId": 50,
     "shapeId": "hexSquareTrianglePuzzle5",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      14,
+      16,
+      17,
+      24,
+      26,
+      28
+    ],
     "rules": "LockOneLineSkipTwo",
     "columnCount": 3,
     "rowCount": 3,
@@ -702,7 +794,7 @@
     "rules": "LockCorners",
     "columnCount": 9,
     "rowCount": 9,
-    "difficulty": "Super Hard",
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#E12210",
       "topRight": "#34C85E",
@@ -754,7 +846,7 @@
     "rules": "LockEdges",
     "columnCount": 11,
     "rowCount": 11,
-    "difficulty": "Super Hard",
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#21B3EC",
       "topRight": "#A3DA50",
@@ -777,9 +869,26 @@
   },
   {
     "levelId": 60,
+    "shapeId": "hexTrianglePuzzle6",
+    "lockedSlots": [
+      13,
+      14,
+      18,
+      22,
+      23,
+      26,
+      27,
+      32,
+      34,
+      36,
+      37,
+      39,
+      40,
+      41
+    ],
     "rules": "LockMiddle",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 3,
+    "rowCount": 3,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#A24C1E",
@@ -819,7 +928,7 @@
     "rules": "LockCorners",
     "columnCount": 10,
     "rowCount": 10,
-    "difficulty": "Super Hard",
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#11D01A",
       "topRight": "#C34F15",
@@ -907,9 +1016,32 @@
   },
   {
     "levelId": 70,
+    "shapeId": "octaSquarePuzzle7",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      14,
+      15,
+      19,
+      20,
+      24,
+      25,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 5,
+    "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#E72EA3",
@@ -936,7 +1068,7 @@
     "rules": "LockCorners",
     "columnCount": 9,
     "rowCount": 9,
-    "difficulty": "Super Hard",
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#5CCE2B",
       "topRight": "#C6ED5B",
@@ -1037,9 +1169,30 @@
   },
   {
     "levelId": 80,
+    "shapeId": "triHexPuzzle8",
+    "lockedSlots": [
+      2,
+      3,
+      4,
+      7,
+      8,
+      9,
+      15,
+      16,
+      17,
+      24,
+      25,
+      26,
+      30,
+      34,
+      35,
+      36,
+      37,
+      41
+    ],
     "rules": "LockOneByOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 3,
+    "rowCount": 2,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#AAC62C",
@@ -1053,7 +1206,7 @@
     "rules": "LockCorners",
     "columnCount": 10,
     "rowCount": 10,
-    "difficulty": "Super Hard",
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#9E0A3E",
       "topRight": "#D01F19",
@@ -1167,10 +1320,31 @@
   },
   {
     "levelId": 90,
+    "shapeId": "starTrianglePuzzle9",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      16,
+      18,
+      24,
+      25,
+      26,
+      27
+    ],
     "rules": "LockCorners",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Super Hard",
+    "columnCount": 3,
+    "rowCount": 4,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#26B12B",
       "topRight": "#E76D1B",
@@ -1287,7 +1461,7 @@
     "rules": "LockCorners",
     "columnCount": 8,
     "rowCount": 8,
-    "difficulty": "Super Hard",
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#E03D40",
       "topRight": "#6343C2",
@@ -1297,9 +1471,28 @@
   },
   {
     "levelId": 100,
+    "shapeId": "arrowPuzzle10",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      11,
+      12,
+      23,
+      24,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
     "rules": "LockOneRowSkipOne",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 6,
+    "rowCount": 6,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B44074",
@@ -1311,7 +1504,7 @@
   {
     "levelId": 101,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 8,
+    "columnCount": 4,
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
@@ -1324,8 +1517,8 @@
   {
     "levelId": 102,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 5,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#C42EDF",
@@ -1337,8 +1530,8 @@
   {
     "levelId": 103,
     "rules": "LockEdges",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 6,
+    "rowCount": 8,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#A7F014",
@@ -1350,8 +1543,8 @@
   {
     "levelId": 104,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 7,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#2B36D6",
@@ -1363,8 +1556,8 @@
   {
     "levelId": 105,
     "rules": "LockMiddle",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 7,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#25ACA5",
@@ -1376,8 +1569,8 @@
   {
     "levelId": 106,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 7,
+    "rowCount": 8,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#AF394F",
@@ -1402,8 +1595,8 @@
   {
     "levelId": 108,
     "rules": "LockCorners",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#A0762E",
@@ -1427,9 +1620,34 @@
   },
   {
     "levelId": 110,
+    "shapeId": "hexPuzzle1",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      12,
+      13,
+      20,
+      21,
+      29,
+      30,
+      37,
+      38,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
     "rules": "LockEdgesAndWindow",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 7,
+    "rowCount": 6,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#115EA1",
@@ -1441,8 +1659,8 @@
   {
     "levelId": 111,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#C6DF22",
@@ -1467,8 +1685,8 @@
   {
     "levelId": 113,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#2A6EE2",
@@ -1480,8 +1698,8 @@
   {
     "levelId": 114,
     "rules": "LockMiddle",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#99B12C",
@@ -1506,8 +1724,8 @@
   {
     "levelId": 116,
     "rules": "LockOneByOne",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#7D37C2",
@@ -1519,9 +1737,9 @@
   {
     "levelId": 117,
     "rules": "LockCorners",
-    "columnCount": 8,
-    "rowCount": 8,
-    "difficulty": "Super Hard",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#7113A3",
       "topRight": "#3ABC65",
@@ -1532,8 +1750,8 @@
   {
     "levelId": 118,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#3579A1",
@@ -1545,8 +1763,8 @@
   {
     "levelId": 119,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#37E951",
@@ -1557,9 +1775,36 @@
   },
   {
     "levelId": 120,
+    "shapeId": "tiePuzzle2",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      12,
+      17,
+      18,
+      23,
+      24,
+      29,
+      30,
+      35,
+      36,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 6,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B4254B",
@@ -1571,8 +1816,8 @@
   {
     "levelId": 121,
     "rules": "LockEdges",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#38D70C",
@@ -1584,8 +1829,8 @@
   {
     "levelId": 122,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#4CC7E3",
@@ -1597,8 +1842,8 @@
   {
     "levelId": 123,
     "rules": "LockMiddle",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#5F42A6",
@@ -1610,8 +1855,8 @@
   {
     "levelId": 124,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#46AA21",
@@ -1623,8 +1868,8 @@
   {
     "levelId": 125,
     "rules": "LockOneByOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#ED526C",
@@ -1636,9 +1881,9 @@
   {
     "levelId": 126,
     "rules": "LockCorners",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Super Hard",
+    "columnCount": 12,
+    "rowCount": 12,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#A25838",
       "topRight": "#3E83DF",
@@ -1649,8 +1894,8 @@
   {
     "levelId": 127,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B828C8",
@@ -1662,8 +1907,8 @@
   {
     "levelId": 128,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#E84E84",
@@ -1675,8 +1920,8 @@
   {
     "levelId": 129,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#24B73F",
@@ -1687,10 +1932,37 @@
   },
   {
     "levelId": 130,
+    "shapeId": "wavePuzzle3",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      12,
+      17,
+      18,
+      23,
+      24,
+      29,
+      30,
+      35,
+      36,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
     "rules": "LockEdges",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Super Hard",
+    "columnCount": 6,
+    "rowCount": 8,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#D8196F",
       "topRight": "#3F42AB",
@@ -1701,8 +1973,8 @@
   {
     "levelId": 131,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#3F3BB2",
@@ -1714,8 +1986,8 @@
   {
     "levelId": 132,
     "rules": "LockMiddle",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#1B10DC",
@@ -1727,8 +1999,8 @@
   {
     "levelId": 133,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#240BA1",
@@ -1740,8 +2012,8 @@
   {
     "levelId": 134,
     "rules": "LockOneByOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B54663",
@@ -1753,9 +2025,9 @@
   {
     "levelId": 135,
     "rules": "LockCorners",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Super Hard",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#2AD892",
       "topRight": "#2959B7",
@@ -1766,8 +2038,8 @@
   {
     "levelId": 136,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#D7476B",
@@ -1779,8 +2051,8 @@
   {
     "levelId": 137,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#196EDD",
@@ -1792,8 +2064,8 @@
   {
     "levelId": 138,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#6AB52C",
@@ -1805,8 +2077,8 @@
   {
     "levelId": 139,
     "rules": "LockEdges",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#71BE2D",
@@ -1817,8 +2089,31 @@
   },
   {
     "levelId": 140,
+    "shapeId": "octaSquarePuzzle4",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      14,
+      15,
+      19,
+      20,
+      24,
+      25,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 7,
+    "columnCount": 5,
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
@@ -1831,8 +2126,8 @@
   {
     "levelId": 141,
     "rules": "LockMiddle",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#1377B0",
@@ -1844,8 +2139,8 @@
   {
     "levelId": 142,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#EA7318",
@@ -1857,8 +2152,8 @@
   {
     "levelId": 143,
     "rules": "LockOneByOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#DB973E",
@@ -1870,9 +2165,9 @@
   {
     "levelId": 144,
     "rules": "LockCorners",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Super Hard",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#9A2D50",
       "topRight": "#8645AF",
@@ -1883,8 +2178,8 @@
   {
     "levelId": 145,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#22F0D5",
@@ -1896,8 +2191,8 @@
   {
     "levelId": 146,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#E62AC7",
@@ -1909,8 +2204,8 @@
   {
     "levelId": 147,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#45DE9B",
@@ -1922,8 +2217,8 @@
   {
     "levelId": 148,
     "rules": "LockEdges",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#1DE7AE",
@@ -1935,8 +2230,8 @@
   {
     "levelId": 149,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#316BD6",
@@ -1947,9 +2242,36 @@
   },
   {
     "levelId": 150,
+    "shapeId": "hexSquareTrianglePuzzle5",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      6,
+      7,
+      11,
+      12,
+      15,
+      16,
+      17,
+      18,
+      19,
+      21,
+      23,
+      26,
+      33,
+      35,
+      36,
+      47,
+      55,
+      56,
+      58,
+      60
+    ],
     "rules": "LockMiddle",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 5,
+    "rowCount": 3,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#4E10A5",
@@ -1961,8 +2283,8 @@
   {
     "levelId": 151,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#AF38A3",
@@ -1974,8 +2296,8 @@
   {
     "levelId": 152,
     "rules": "LockOneByOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#52B53B",
@@ -1987,9 +2309,9 @@
   {
     "levelId": 153,
     "rules": "LockCorners",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Super Hard",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#C12066",
       "topRight": "#45EAAE",
@@ -2000,8 +2322,8 @@
   {
     "levelId": 154,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#3C79C4",
@@ -2013,8 +2335,8 @@
   {
     "levelId": 155,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#17949D",
@@ -2026,8 +2348,8 @@
   {
     "levelId": 156,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#3CCA9D",
@@ -2039,8 +2361,8 @@
   {
     "levelId": 157,
     "rules": "LockEdges",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#BE2FA6",
@@ -2052,8 +2374,8 @@
   {
     "levelId": 158,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#5E81EC",
@@ -2065,8 +2387,8 @@
   {
     "levelId": 159,
     "rules": "LockMiddle",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#DF392A",
@@ -2077,9 +2399,30 @@
   },
   {
     "levelId": 160,
+    "shapeId": "hexTrianglePuzzle6",
+    "lockedSlots": [
+      22,
+      23,
+      27,
+      31,
+      32,
+      36,
+      43,
+      46,
+      47,
+      54,
+      56,
+      59,
+      64,
+      67,
+      68,
+      70,
+      71,
+      72
+    ],
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 5,
+    "rowCount": 3,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#A935BB",
@@ -2091,8 +2434,8 @@
   {
     "levelId": 161,
     "rules": "LockOneByOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#26AE8C",
@@ -2104,9 +2447,9 @@
   {
     "levelId": 162,
     "rules": "LockCorners",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Super Hard",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#B5EF52",
       "topRight": "#B70E57",
@@ -2117,8 +2460,8 @@
   {
     "levelId": 163,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#15D1AF",
@@ -2130,8 +2473,8 @@
   {
     "levelId": 164,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#4EA63C",
@@ -2143,8 +2486,8 @@
   {
     "levelId": 165,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#541AE5",
@@ -2156,8 +2499,8 @@
   {
     "levelId": 166,
     "rules": "LockEdges",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#373BAB",
@@ -2169,8 +2512,8 @@
   {
     "levelId": 167,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#50BE4A",
@@ -2182,8 +2525,8 @@
   {
     "levelId": 168,
     "rules": "LockMiddle",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#C214C5",
@@ -2195,8 +2538,8 @@
   {
     "levelId": 169,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#34AC9C",
@@ -2207,9 +2550,40 @@
   },
   {
     "levelId": 170,
+    "shapeId": "octaSquarePuzzle7",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      13,
+      14,
+      20,
+      21,
+      27,
+      28,
+      34,
+      35,
+      41,
+      42,
+      48,
+      49,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62
+    ],
     "rules": "LockOneByOne",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 7,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#0B33AB",
@@ -2221,9 +2595,9 @@
   {
     "levelId": 171,
     "rules": "LockCorners",
-    "columnCount": 8,
-    "rowCount": 8,
-    "difficulty": "Super Hard",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#4A2DB2",
       "topRight": "#C6341D",
@@ -2234,8 +2608,8 @@
   {
     "levelId": 172,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#1F3CB0",
@@ -2247,8 +2621,8 @@
   {
     "levelId": 173,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B71BC5",
@@ -2260,8 +2634,8 @@
   {
     "levelId": 174,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#2A42BC",
@@ -2273,8 +2647,8 @@
   {
     "levelId": 175,
     "rules": "LockEdges",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#C0C536",
@@ -2286,8 +2660,8 @@
   {
     "levelId": 176,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#0C7BA7",
@@ -2299,8 +2673,8 @@
   {
     "levelId": 177,
     "rules": "LockMiddle",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#9C256A",
@@ -2312,8 +2686,8 @@
   {
     "levelId": 178,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#0FF070",
@@ -2325,8 +2699,8 @@
   {
     "levelId": 179,
     "rules": "LockOneByOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#9E8734",
@@ -2337,9 +2711,42 @@
   },
   {
     "levelId": 180,
+    "shapeId": "triHexPuzzle8",
+    "lockedSlots": [
+      2,
+      3,
+      4,
+      8,
+      9,
+      14,
+      15,
+      20,
+      21,
+      25,
+      26,
+      27,
+      33,
+      34,
+      35,
+      60,
+      61,
+      62,
+      66,
+      70,
+      71,
+      72,
+      77,
+      78,
+      83,
+      84,
+      89,
+      90,
+      91,
+      95
+    ],
     "rules": "LockCorners",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 3,
+    "rowCount": 5,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#CC24CF",
@@ -2351,8 +2758,8 @@
   {
     "levelId": 181,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#379F53",
@@ -2364,8 +2771,8 @@
   {
     "levelId": 182,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#9421A9",
@@ -2377,8 +2784,8 @@
   {
     "levelId": 183,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#9F3789",
@@ -2390,8 +2797,8 @@
   {
     "levelId": 184,
     "rules": "LockEdges",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#3954BF",
@@ -2403,8 +2810,8 @@
   {
     "levelId": 185,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#1ABA8D",
@@ -2416,8 +2823,8 @@
   {
     "levelId": 186,
     "rules": "LockMiddle",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#2785EA",
@@ -2429,8 +2836,8 @@
   {
     "levelId": 187,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B9AA0C",
@@ -2442,8 +2849,8 @@
   {
     "levelId": 188,
     "rules": "LockOneByOne",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#F12491",
@@ -2455,9 +2862,9 @@
   {
     "levelId": 189,
     "rules": "LockCorners",
-    "columnCount": 8,
-    "rowCount": 8,
-    "difficulty": "Super Hard",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#23DCC4",
       "topRight": "#569A1B",
@@ -2467,9 +2874,42 @@
   },
   {
     "levelId": 190,
+    "shapeId": "starTrianglePuzzle9",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      9,
+      10,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      27,
+      29,
+      35,
+      37,
+      46,
+      48,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65
+    ],
     "rules": "LockOneRowSkipOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 4,
+    "rowCount": 6,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#228CCE",
@@ -2481,8 +2921,8 @@
   {
     "levelId": 191,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#7FB72C",
@@ -2494,8 +2934,8 @@
   {
     "levelId": 192,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#23CB3A",
@@ -2507,8 +2947,8 @@
   {
     "levelId": 193,
     "rules": "LockEdges",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#0F489C",
@@ -2520,8 +2960,8 @@
   {
     "levelId": 194,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#2CC391",
@@ -2533,8 +2973,8 @@
   {
     "levelId": 195,
     "rules": "LockMiddle",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#45AFE9",
@@ -2546,8 +2986,8 @@
   {
     "levelId": 196,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#19A0E3",
@@ -2559,8 +2999,8 @@
   {
     "levelId": 197,
     "rules": "LockOneByOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#10D337",
@@ -2572,9 +3012,9 @@
   {
     "levelId": 198,
     "rules": "LockCorners",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Super Hard",
+    "columnCount": 12,
+    "rowCount": 12,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#A9A924",
       "topRight": "#3017EB",
@@ -2585,8 +3025,8 @@
   {
     "levelId": 199,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#3DB247",
@@ -2597,9 +3037,33 @@
   },
   {
     "levelId": 200,
+    "shapeId": "arrowPuzzle10",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      15,
+      16,
+      31,
+      32,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55
+    ],
     "rules": "LockEdgesAndWindow",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 7,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#6CD621",
@@ -2611,8 +3075,8 @@
   {
     "levelId": 201,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 4,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#32A759",
@@ -2624,9 +3088,9 @@
   {
     "levelId": 202,
     "rules": "LockEdges",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Super Hard",
+    "columnCount": 5,
+    "rowCount": 8,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#7035DD",
       "topRight": "#9C36B3",
@@ -2637,7 +3101,7 @@
   {
     "levelId": 203,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 8,
+    "columnCount": 6,
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
@@ -2651,7 +3115,7 @@
     "levelId": 204,
     "rules": "LockMiddle",
     "columnCount": 7,
-    "rowCount": 7,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#0DD071",
@@ -2663,7 +3127,7 @@
   {
     "levelId": 205,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 8,
+    "columnCount": 7,
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
@@ -2676,8 +3140,8 @@
   {
     "levelId": 206,
     "rules": "LockOneByOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 7,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#206FEE",
@@ -2689,9 +3153,9 @@
   {
     "levelId": 207,
     "rules": "LockCorners",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Super Hard",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#E79121",
       "topRight": "#67C833",
@@ -2702,8 +3166,8 @@
   {
     "levelId": 208,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#7E9F1C",
@@ -2715,8 +3179,8 @@
   {
     "levelId": 209,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#5BF174",
@@ -2727,9 +3191,34 @@
   },
   {
     "levelId": 210,
+    "shapeId": "hexPuzzle1",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      12,
+      13,
+      20,
+      21,
+      29,
+      30,
+      37,
+      38,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 7,
+    "rowCount": 6,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#8AC125",
@@ -2754,8 +3243,8 @@
   {
     "levelId": 212,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#C254D8",
@@ -2767,8 +3256,8 @@
   {
     "levelId": 213,
     "rules": "LockMiddle",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#C9D24C",
@@ -2780,8 +3269,8 @@
   {
     "levelId": 214,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#10A113",
@@ -2793,8 +3282,8 @@
   {
     "levelId": 215,
     "rules": "LockOneByOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#511AA4",
@@ -2808,7 +3297,7 @@
     "rules": "LockCorners",
     "columnCount": 9,
     "rowCount": 9,
-    "difficulty": "Super Hard",
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#C1EF0D",
       "topRight": "#DFEC28",
@@ -2832,8 +3321,8 @@
   {
     "levelId": 218,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#86AA19",
@@ -2845,8 +3334,8 @@
   {
     "levelId": 219,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#8F28CF",
@@ -2857,9 +3346,36 @@
   },
   {
     "levelId": 220,
+    "shapeId": "tiePuzzle2",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      12,
+      17,
+      18,
+      23,
+      24,
+      29,
+      30,
+      35,
+      36,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
     "rules": "LockEdges",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 6,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#1DC96D",
@@ -2871,8 +3387,8 @@
   {
     "levelId": 221,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#44369F",
@@ -2884,8 +3400,8 @@
   {
     "levelId": 222,
     "rules": "LockMiddle",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#2FDC0D",
@@ -2897,8 +3413,8 @@
   {
     "levelId": 223,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#42B2A1",
@@ -2910,8 +3426,8 @@
   {
     "levelId": 224,
     "rules": "LockOneByOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#CE0B93",
@@ -2923,9 +3439,9 @@
   {
     "levelId": 225,
     "rules": "LockCorners",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Super Hard",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#4CC7D9",
       "topRight": "#26D6B5",
@@ -2936,8 +3452,8 @@
   {
     "levelId": 226,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#D08E37",
@@ -2949,8 +3465,8 @@
   {
     "levelId": 227,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#43B92C",
@@ -2962,8 +3478,8 @@
   {
     "levelId": 228,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#5E39A3",
@@ -2975,8 +3491,8 @@
   {
     "levelId": 229,
     "rules": "LockEdges",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#EDE35B",
@@ -2987,9 +3503,36 @@
   },
   {
     "levelId": 230,
+    "shapeId": "wavePuzzle3",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      12,
+      17,
+      18,
+      23,
+      24,
+      29,
+      30,
+      35,
+      36,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 6,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#4FE335",
@@ -3001,8 +3544,8 @@
   {
     "levelId": 231,
     "rules": "LockMiddle",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#269A94",
@@ -3014,8 +3557,8 @@
   {
     "levelId": 232,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#52C248",
@@ -3027,8 +3570,8 @@
   {
     "levelId": 233,
     "rules": "LockOneByOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#91A43A",
@@ -3040,9 +3583,9 @@
   {
     "levelId": 234,
     "rules": "LockCorners",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Super Hard",
+    "columnCount": 12,
+    "rowCount": 12,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#9C2769",
       "topRight": "#E85875",
@@ -3053,8 +3596,8 @@
   {
     "levelId": 235,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#14B727",
@@ -3066,8 +3609,8 @@
   {
     "levelId": 236,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#38CE5B",
@@ -3079,8 +3622,8 @@
   {
     "levelId": 237,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#20AB7A",
@@ -3092,8 +3635,8 @@
   {
     "levelId": 238,
     "rules": "LockEdges",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#2976F1",
@@ -3105,8 +3648,8 @@
   {
     "levelId": 239,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#A94742",
@@ -3117,9 +3660,32 @@
   },
   {
     "levelId": 240,
+    "shapeId": "octaSquarePuzzle4",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      14,
+      15,
+      19,
+      20,
+      24,
+      25,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
     "rules": "LockMiddle",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 5,
+    "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#E820B6",
@@ -3131,8 +3697,8 @@
   {
     "levelId": 241,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#1859BA",
@@ -3144,8 +3710,8 @@
   {
     "levelId": 242,
     "rules": "LockOneByOne",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#97279F",
@@ -3157,9 +3723,9 @@
   {
     "levelId": 243,
     "rules": "LockCorners",
-    "columnCount": 8,
-    "rowCount": 8,
-    "difficulty": "Super Hard",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#2EC3E1",
       "topRight": "#A5398A",
@@ -3170,8 +3736,8 @@
   {
     "levelId": 244,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#76C63D",
@@ -3183,8 +3749,8 @@
   {
     "levelId": 245,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#73CC2A",
@@ -3196,8 +3762,8 @@
   {
     "levelId": 246,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#C87545",
@@ -3209,8 +3775,8 @@
   {
     "levelId": 247,
     "rules": "LockEdges",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#E8E539",
@@ -3222,8 +3788,8 @@
   {
     "levelId": 248,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#1A3CE7",
@@ -3235,8 +3801,8 @@
   {
     "levelId": 249,
     "rules": "LockMiddle",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#86EF1D",
@@ -3247,9 +3813,30 @@
   },
   {
     "levelId": 250,
+    "shapeId": "hexSquareTrianglePuzzle5",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      9,
+      10,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      33,
+      34,
+      35
+    ],
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 4,
+    "rowCount": 4,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#2F83D3",
@@ -3261,8 +3848,8 @@
   {
     "levelId": 251,
     "rules": "LockOneByOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#1CD34A",
@@ -3274,8 +3861,8 @@
   {
     "levelId": 252,
     "rules": "LockCorners",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#37D1F0",
@@ -3287,8 +3874,8 @@
   {
     "levelId": 253,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#13BA3A",
@@ -3300,8 +3887,8 @@
   {
     "levelId": 254,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#C6E914",
@@ -3313,8 +3900,8 @@
   {
     "levelId": 255,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#7B12B7",
@@ -3326,8 +3913,8 @@
   {
     "levelId": 256,
     "rules": "LockEdges",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B6233E",
@@ -3339,8 +3926,8 @@
   {
     "levelId": 257,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#10BCEB",
@@ -3352,8 +3939,8 @@
   {
     "levelId": 258,
     "rules": "LockMiddle",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#2626DA",
@@ -3365,8 +3952,8 @@
   {
     "levelId": 259,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#BA1D25",
@@ -3377,9 +3964,36 @@
   },
   {
     "levelId": 260,
+    "shapeId": "hexTrianglePuzzle6",
+    "lockedSlots": [
+      43,
+      44,
+      48,
+      52,
+      56,
+      60,
+      64,
+      65,
+      94,
+      95,
+      122,
+      125,
+      128,
+      129,
+      156,
+      159,
+      187,
+      188,
+      193,
+      197,
+      201,
+      205,
+      208,
+      209
+    ],
     "rules": "LockOneByOne",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 6,
+    "rowCount": 6,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#302E9B",
@@ -3391,9 +4005,9 @@
   {
     "levelId": 261,
     "rules": "LockCorners",
-    "columnCount": 8,
-    "rowCount": 8,
-    "difficulty": "Super Hard",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#44D52A",
       "topRight": "#0CAF1F",
@@ -3404,8 +4018,8 @@
   {
     "levelId": 262,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#AB4055",
@@ -3417,8 +4031,8 @@
   {
     "levelId": 263,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#0C9968",
@@ -3430,8 +4044,8 @@
   {
     "levelId": 264,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#BB115E",
@@ -3443,8 +4057,8 @@
   {
     "levelId": 265,
     "rules": "LockEdges",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#AF3663",
@@ -3456,8 +4070,8 @@
   {
     "levelId": 266,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#6F4CC9",
@@ -3469,8 +4083,8 @@
   {
     "levelId": 267,
     "rules": "LockMiddle",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B17532",
@@ -3482,8 +4096,8 @@
   {
     "levelId": 268,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#DDD20B",
@@ -3495,8 +4109,8 @@
   {
     "levelId": 269,
     "rules": "LockOneByOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#76F133",
@@ -3507,10 +4121,37 @@
   },
   {
     "levelId": 270,
+    "shapeId": "octaSquarePuzzle7",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      12,
+      17,
+      18,
+      23,
+      24,
+      29,
+      30,
+      35,
+      36,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
     "rules": "LockCorners",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Super Hard",
+    "columnCount": 6,
+    "rowCount": 8,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#A728B3",
       "topRight": "#2A5EE1",
@@ -3521,8 +4162,8 @@
   {
     "levelId": 271,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#16CB88",
@@ -3534,8 +4175,8 @@
   {
     "levelId": 272,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#A15B0B",
@@ -3547,8 +4188,8 @@
   {
     "levelId": 273,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#D2145D",
@@ -3560,9 +4201,9 @@
   {
     "levelId": 274,
     "rules": "LockEdges",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Super Hard",
+    "columnCount": 12,
+    "rowCount": 12,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#3AAF8C",
       "topRight": "#CF562E",
@@ -3573,8 +4214,8 @@
   {
     "levelId": 275,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#A70F3D",
@@ -3586,8 +4227,8 @@
   {
     "levelId": 276,
     "rules": "LockMiddle",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B03BB4",
@@ -3599,8 +4240,8 @@
   {
     "levelId": 277,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#E1E730",
@@ -3612,8 +4253,8 @@
   {
     "levelId": 278,
     "rules": "LockOneByOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#A732C8",
@@ -3625,9 +4266,9 @@
   {
     "levelId": 279,
     "rules": "LockCorners",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Super Hard",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#C8B54D",
       "topRight": "#094B9C",
@@ -3637,9 +4278,32 @@
   },
   {
     "levelId": 280,
+    "shapeId": "triHexPuzzle8",
+    "lockedSlots": [
+      2,
+      3,
+      8,
+      9,
+      14,
+      15,
+      21,
+      22,
+      43,
+      44,
+      52,
+      53,
+      72,
+      73,
+      78,
+      83,
+      84,
+      89,
+      90,
+      95
+    ],
     "rules": "LockOneRowSkipOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 4,
+    "rowCount": 3,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#50A725",
@@ -3651,8 +4315,8 @@
   {
     "levelId": 281,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#256BB2",
@@ -3664,8 +4328,8 @@
   {
     "levelId": 282,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#EC784A",
@@ -3677,8 +4341,8 @@
   {
     "levelId": 283,
     "rules": "LockEdges",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#48EC6E",
@@ -3690,8 +4354,8 @@
   {
     "levelId": 284,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#A37A28",
@@ -3703,8 +4367,8 @@
   {
     "levelId": 285,
     "rules": "LockMiddle",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#43D765",
@@ -3716,8 +4380,8 @@
   {
     "levelId": 286,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#41CA44",
@@ -3729,8 +4393,8 @@
   {
     "levelId": 287,
     "rules": "LockOneByOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#D97B16",
@@ -3742,9 +4406,9 @@
   {
     "levelId": 288,
     "rules": "LockCorners",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Super Hard",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#C01BE1",
       "topRight": "#8139C3",
@@ -3755,8 +4419,8 @@
   {
     "levelId": 289,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#BB543F",
@@ -3767,9 +4431,36 @@
   },
   {
     "levelId": 290,
+    "shapeId": "starTrianglePuzzle9",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      21,
+      23,
+      29,
+      31,
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
     "rules": "LockEdgesAndWindow",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 4,
+    "rowCount": 5,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#3F0BDA",
@@ -3781,8 +4472,8 @@
   {
     "levelId": 291,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#0D9A19",
@@ -3794,8 +4485,8 @@
   {
     "levelId": 292,
     "rules": "LockEdges",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#2E0BDC",
@@ -3807,8 +4498,8 @@
   {
     "levelId": 293,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#41BEB1",
@@ -3820,8 +4511,8 @@
   {
     "levelId": 294,
     "rules": "LockMiddle",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#A226BB",
@@ -3833,8 +4524,8 @@
   {
     "levelId": 295,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#47A0B2",
@@ -3846,8 +4537,8 @@
   {
     "levelId": 296,
     "rules": "LockOneByOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#9930A9",
@@ -3859,9 +4550,9 @@
   {
     "levelId": 297,
     "rules": "LockCorners",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Super Hard",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#BE9E0C",
       "topRight": "#1577EE",
@@ -3872,8 +4563,8 @@
   {
     "levelId": 298,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#9941AC",
@@ -3885,8 +4576,8 @@
   {
     "levelId": 299,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#EE3C21",
@@ -3897,6 +4588,28 @@
   },
   {
     "levelId": 300,
+    "shapeId": "arrowPuzzle10",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      13,
+      14,
+      27,
+      28,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48
+    ],
     "rules": "UnLockSideEdgesOnly",
     "columnCount": 7,
     "rowCount": 7,
@@ -3911,8 +4624,8 @@
   {
     "levelId": 301,
     "rules": "LockEdges",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 5,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#1326B2",
@@ -3924,7 +4637,7 @@
   {
     "levelId": 302,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 9,
+    "columnCount": 6,
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
@@ -3937,8 +4650,8 @@
   {
     "levelId": 303,
     "rules": "LockMiddle",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 7,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#EF31A9",
@@ -3950,7 +4663,7 @@
   {
     "levelId": 304,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 9,
+    "columnCount": 8,
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
@@ -3963,8 +4676,8 @@
   {
     "levelId": 305,
     "rules": "LockOneByOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 8,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#1E9F43",
@@ -3976,9 +4689,9 @@
   {
     "levelId": 306,
     "rules": "LockCorners",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Super Hard",
+    "columnCount": 8,
+    "rowCount": 9,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#B21573",
       "topRight": "#90B337",
@@ -3989,8 +4702,8 @@
   {
     "levelId": 307,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#E15C58",
@@ -4002,8 +4715,8 @@
   {
     "levelId": 308,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#288FB8",
@@ -4015,8 +4728,8 @@
   {
     "levelId": 309,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#2AD2C9",
@@ -4027,9 +4740,34 @@
   },
   {
     "levelId": 310,
+    "shapeId": "hexPuzzle1",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      12,
+      13,
+      20,
+      21,
+      29,
+      30,
+      37,
+      38,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
     "rules": "LockEdges",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 7,
+    "rowCount": 6,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#AB37E9",
@@ -4041,8 +4779,8 @@
   {
     "levelId": 311,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#291CB9",
@@ -4054,8 +4792,8 @@
   {
     "levelId": 312,
     "rules": "LockMiddle",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#E5314F",
@@ -4093,9 +4831,9 @@
   {
     "levelId": 315,
     "rules": "LockCorners",
-    "columnCount": 8,
-    "rowCount": 8,
-    "difficulty": "Super Hard",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#5AEF6B",
       "topRight": "#A63F7F",
@@ -4106,8 +4844,8 @@
   {
     "levelId": 316,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#9E2313",
@@ -4119,8 +4857,8 @@
   {
     "levelId": 317,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#9C6E38",
@@ -4132,8 +4870,8 @@
   {
     "levelId": 318,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#CB9B4C",
@@ -4145,8 +4883,8 @@
   {
     "levelId": 319,
     "rules": "LockEdges",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#9B9D3C",
@@ -4157,8 +4895,39 @@
   },
   {
     "levelId": 320,
+    "shapeId": "tiePuzzle2",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      13,
+      14,
+      20,
+      21,
+      27,
+      28,
+      34,
+      35,
+      41,
+      42,
+      48,
+      49,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62
+    ],
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 9,
+    "columnCount": 7,
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
@@ -4197,8 +4966,8 @@
   {
     "levelId": 323,
     "rules": "LockOneByOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B22EB5",
@@ -4210,8 +4979,8 @@
   {
     "levelId": 324,
     "rules": "LockCorners",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#3F72E8",
@@ -4223,8 +4992,8 @@
   {
     "levelId": 325,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#46C965",
@@ -4236,8 +5005,8 @@
   {
     "levelId": 326,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 13,
+    "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B7F03D",
@@ -4287,9 +5056,40 @@
   },
   {
     "levelId": 330,
+    "shapeId": "wavePuzzle3",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      13,
+      14,
+      20,
+      21,
+      27,
+      28,
+      34,
+      35,
+      41,
+      42,
+      48,
+      49,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62
+    ],
     "rules": "LockMiddle",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 7,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#0CDB66",
@@ -4301,8 +5101,8 @@
   {
     "levelId": 331,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B343BE",
@@ -4314,8 +5114,8 @@
   {
     "levelId": 332,
     "rules": "LockOneByOne",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B7277B",
@@ -4327,9 +5127,9 @@
   {
     "levelId": 333,
     "rules": "LockCorners",
-    "columnCount": 8,
-    "rowCount": 8,
-    "difficulty": "Super Hard",
+    "columnCount": 12,
+    "rowCount": 12,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#CF2F27",
       "topRight": "#5438B9",
@@ -4340,8 +5140,8 @@
   {
     "levelId": 334,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 13,
+    "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#DF2B3D",
@@ -4405,8 +5205,8 @@
   {
     "levelId": 339,
     "rules": "LockMiddle",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#A42C7A",
@@ -4417,9 +5217,36 @@
   },
   {
     "levelId": 340,
+    "shapeId": "octaSquarePuzzle4",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      12,
+      17,
+      18,
+      23,
+      24,
+      29,
+      30,
+      35,
+      36,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 6,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B9563A",
@@ -4431,8 +5258,8 @@
   {
     "levelId": 341,
     "rules": "LockOneByOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#C52250",
@@ -4444,9 +5271,9 @@
   {
     "levelId": 342,
     "rules": "LockCorners",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Super Hard",
+    "columnCount": 13,
+    "rowCount": 13,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#1C479B",
       "topRight": "#0BE0E0",
@@ -4498,7 +5325,7 @@
     "rules": "LockEdges",
     "columnCount": 11,
     "rowCount": 11,
-    "difficulty": "Super Hard",
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#9438BE",
       "topRight": "#41DDE8",
@@ -4509,8 +5336,8 @@
   {
     "levelId": 347,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#71F04D",
@@ -4522,8 +5349,8 @@
   {
     "levelId": 348,
     "rules": "LockMiddle",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#329D77",
@@ -4535,8 +5362,8 @@
   {
     "levelId": 349,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#2DD05E",
@@ -4547,9 +5374,44 @@
   },
   {
     "levelId": 350,
+    "shapeId": "hexSquareTrianglePuzzle5",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      10,
+      11,
+      17,
+      18,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      31,
+      33,
+      35,
+      37,
+      40,
+      53,
+      55,
+      56,
+      73,
+      87,
+      88,
+      90,
+      92,
+      94,
+      96
+    ],
     "rules": "LockOneByOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 5,
+    "rowCount": 5,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#3BD76A",
@@ -4563,7 +5425,7 @@
     "rules": "LockCorners",
     "columnCount": 10,
     "rowCount": 10,
-    "difficulty": "Super Hard",
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#741BCD",
       "topRight": "#5E38C7",
@@ -4613,8 +5475,8 @@
   {
     "levelId": 355,
     "rules": "LockEdges",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#E650AD",
@@ -4626,8 +5488,8 @@
   {
     "levelId": 356,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#9D813C",
@@ -4639,8 +5501,8 @@
   {
     "levelId": 357,
     "rules": "LockMiddle",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#10C3AB",
@@ -4652,8 +5514,8 @@
   {
     "levelId": 358,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 13,
+    "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#27BF66",
@@ -4677,10 +5539,43 @@
   },
   {
     "levelId": 360,
+    "shapeId": "hexTrianglePuzzle6",
+    "lockedSlots": [
+      61,
+      62,
+      66,
+      70,
+      74,
+      78,
+      82,
+      86,
+      87,
+      91,
+      106,
+      110,
+      127,
+      130,
+      131,
+      148,
+      150,
+      153,
+      168,
+      172,
+      185,
+      188,
+      189,
+      191,
+      193,
+      195,
+      197,
+      199,
+      200,
+      201
+    ],
     "rules": "LockCorners",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Super Hard",
+    "columnCount": 7,
+    "rowCount": 7,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#6312C7",
       "topRight": "#D23CE6",
@@ -4717,8 +5612,8 @@
   {
     "levelId": 363,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#74A43A",
@@ -4730,8 +5625,8 @@
   {
     "levelId": 364,
     "rules": "LockEdges",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#6716B2",
@@ -4743,8 +5638,8 @@
   {
     "levelId": 365,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#BE4644",
@@ -4756,8 +5651,8 @@
   {
     "levelId": 366,
     "rules": "LockMiddle",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 13,
+    "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#45E1AD",
@@ -4797,7 +5692,7 @@
     "rules": "LockCorners",
     "columnCount": 10,
     "rowCount": 10,
-    "difficulty": "Super Hard",
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#3719DD",
       "topRight": "#C1BE0B",
@@ -4807,9 +5702,40 @@
   },
   {
     "levelId": 370,
+    "shapeId": "octaSquarePuzzle7",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      13,
+      14,
+      20,
+      21,
+      27,
+      28,
+      34,
+      35,
+      41,
+      42,
+      48,
+      49,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62
+    ],
     "rules": "LockOneRowSkipOne",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 7,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#23139C",
@@ -4821,8 +5747,8 @@
   {
     "levelId": 371,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#4F22D4",
@@ -4834,8 +5760,8 @@
   {
     "levelId": 372,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#681DCA",
@@ -4847,8 +5773,8 @@
   {
     "levelId": 373,
     "rules": "LockEdges",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#C8EE57",
@@ -4860,8 +5786,8 @@
   {
     "levelId": 374,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 13,
+    "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#4ED11E",
@@ -4914,7 +5840,7 @@
     "rules": "LockCorners",
     "columnCount": 11,
     "rowCount": 11,
-    "difficulty": "Super Hard",
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#D59331",
       "topRight": "#27A529",
@@ -4925,8 +5851,8 @@
   {
     "levelId": 379,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#D65D48",
@@ -4937,9 +5863,46 @@
   },
   {
     "levelId": 380,
+    "shapeId": "triHexPuzzle8",
+    "lockedSlots": [
+      2,
+      3,
+      4,
+      8,
+      9,
+      14,
+      15,
+      19,
+      20,
+      21,
+      27,
+      28,
+      49,
+      50,
+      57,
+      58,
+      59,
+      84,
+      85,
+      86,
+      94,
+      95,
+      114,
+      115,
+      120,
+      124,
+      125,
+      126,
+      131,
+      132,
+      137,
+      138,
+      139,
+      143
+    ],
     "rules": "LockEdgesAndWindow",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 5,
+    "rowCount": 4,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#11AD9B",
@@ -4951,8 +5914,8 @@
   {
     "levelId": 381,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#E69255",
@@ -4964,8 +5927,8 @@
   {
     "levelId": 382,
     "rules": "LockEdges",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 13,
+    "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#2EE20F",
@@ -5029,9 +5992,9 @@
   {
     "levelId": 387,
     "rules": "LockCorners",
-    "columnCount": 8,
-    "rowCount": 8,
-    "difficulty": "Super Hard",
+    "columnCount": 12,
+    "rowCount": 12,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#2936C5",
       "topRight": "#E214B6",
@@ -5042,8 +6005,8 @@
   {
     "levelId": 388,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#8CAC3C",
@@ -5055,8 +6018,8 @@
   {
     "levelId": 389,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#D35E49",
@@ -5067,9 +6030,42 @@
   },
   {
     "levelId": 390,
+    "shapeId": "starTrianglePuzzle9",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      9,
+      10,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      27,
+      29,
+      35,
+      37,
+      46,
+      48,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65
+    ],
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 5,
+    "rowCount": 6,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#51DCD3",
@@ -5133,8 +6129,8 @@
   {
     "levelId": 395,
     "rules": "LockOneByOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#602FC3",
@@ -5146,8 +6142,8 @@
   {
     "levelId": 396,
     "rules": "LockCorners",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#CB5133",
@@ -5159,8 +6155,8 @@
   {
     "levelId": 397,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#8DC51E",
@@ -5172,8 +6168,8 @@
   {
     "levelId": 398,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 13,
+    "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#D4B84B",
@@ -5197,9 +6193,34 @@
   },
   {
     "levelId": 400,
+    "shapeId": "arrowPuzzle10",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      15,
+      16,
+      31,
+      32,
+      47,
+      48,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ],
     "rules": "LockEdges",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#D94952",
@@ -5211,8 +6232,8 @@
   {
     "levelId": 401,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 5,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#CB2A1E",
@@ -5224,8 +6245,8 @@
   {
     "levelId": 402,
     "rules": "LockMiddle",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 6,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#C850E0",
@@ -5237,8 +6258,8 @@
   {
     "levelId": 403,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 7,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#EE2EEB",
@@ -5250,8 +6271,8 @@
   {
     "levelId": 404,
     "rules": "LockOneByOne",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 8,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#9A6826",
@@ -5264,8 +6285,8 @@
     "levelId": 405,
     "rules": "LockCorners",
     "columnCount": 8,
-    "rowCount": 8,
-    "difficulty": "Super Hard",
+    "rowCount": 9,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#96269E",
       "topRight": "#BC0B81",
@@ -5276,7 +6297,7 @@
   {
     "levelId": 406,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 9,
+    "columnCount": 8,
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
@@ -5289,8 +6310,8 @@
   {
     "levelId": 407,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#E4B723",
@@ -5315,8 +6336,8 @@
   {
     "levelId": 409,
     "rules": "LockEdges",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#9AA737",
@@ -5327,9 +6348,34 @@
   },
   {
     "levelId": 410,
+    "shapeId": "hexPuzzle1",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      12,
+      13,
+      20,
+      21,
+      29,
+      30,
+      37,
+      38,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 7,
+    "rowCount": 6,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#C46E46",
@@ -5341,8 +6387,8 @@
   {
     "levelId": 411,
     "rules": "LockMiddle",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#31C76B",
@@ -5354,8 +6400,8 @@
   {
     "levelId": 412,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#4282A7",
@@ -5367,8 +6413,8 @@
   {
     "levelId": 413,
     "rules": "LockOneByOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B9411C",
@@ -5380,9 +6426,9 @@
   {
     "levelId": 414,
     "rules": "LockCorners",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Super Hard",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#7A25F1",
       "topRight": "#10E943",
@@ -5393,8 +6439,8 @@
   {
     "levelId": 415,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#304CC7",
@@ -5406,8 +6452,8 @@
   {
     "levelId": 416,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#6EEB52",
@@ -5419,8 +6465,8 @@
   {
     "levelId": 417,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#312ABA",
@@ -5434,7 +6480,7 @@
     "rules": "LockEdges",
     "columnCount": 11,
     "rowCount": 11,
-    "difficulty": "Super Hard",
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#B63F47",
       "topRight": "#2452AE",
@@ -5445,8 +6491,8 @@
   {
     "levelId": 419,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#879B15",
@@ -5457,9 +6503,40 @@
   },
   {
     "levelId": 420,
+    "shapeId": "tiePuzzle2",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      13,
+      14,
+      20,
+      21,
+      27,
+      28,
+      34,
+      35,
+      41,
+      42,
+      48,
+      49,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62
+    ],
     "rules": "LockMiddle",
     "columnCount": 7,
-    "rowCount": 7,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#9F192B",
@@ -5471,8 +6548,8 @@
   {
     "levelId": 421,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#820BB9",
@@ -5484,8 +6561,8 @@
   {
     "levelId": 422,
     "rules": "LockOneByOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#D85436",
@@ -5497,9 +6574,9 @@
   {
     "levelId": 423,
     "rules": "LockCorners",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Super Hard",
+    "columnCount": 12,
+    "rowCount": 12,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#742DC5",
       "topRight": "#64A829",
@@ -5510,8 +6587,8 @@
   {
     "levelId": 424,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B54777",
@@ -5523,8 +6600,8 @@
   {
     "levelId": 425,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#AFDB3E",
@@ -5536,8 +6613,8 @@
   {
     "levelId": 426,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 13,
+    "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#9D122B",
@@ -5549,8 +6626,8 @@
   {
     "levelId": 427,
     "rules": "LockEdges",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#1B87D3",
@@ -5562,8 +6639,8 @@
   {
     "levelId": 428,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#1AADE2",
@@ -5575,8 +6652,8 @@
   {
     "levelId": 429,
     "rules": "LockMiddle",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#17C13F",
@@ -5587,8 +6664,39 @@
   },
   {
     "levelId": 430,
+    "shapeId": "wavePuzzle3",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      13,
+      14,
+      20,
+      21,
+      27,
+      28,
+      34,
+      35,
+      41,
+      42,
+      48,
+      49,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62
+    ],
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 9,
+    "columnCount": 7,
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
@@ -5601,8 +6709,8 @@
   {
     "levelId": 431,
     "rules": "LockOneByOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#7C3FA1",
@@ -5614,9 +6722,9 @@
   {
     "levelId": 432,
     "rules": "LockCorners",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Super Hard",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#0AA82F",
       "topRight": "#419E21",
@@ -5627,8 +6735,8 @@
   {
     "levelId": 433,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#A39D31",
@@ -5640,8 +6748,8 @@
   {
     "levelId": 434,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 13,
+    "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#9744C1",
@@ -5653,8 +6761,8 @@
   {
     "levelId": 435,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#85CC12",
@@ -5666,8 +6774,8 @@
   {
     "levelId": 436,
     "rules": "LockEdges",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#CABF28",
@@ -5679,8 +6787,8 @@
   {
     "levelId": 437,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#39AB5D",
@@ -5692,8 +6800,8 @@
   {
     "levelId": 438,
     "rules": "LockMiddle",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#A746D3",
@@ -5705,8 +6813,8 @@
   {
     "levelId": 439,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#2F34D7",
@@ -5717,9 +6825,36 @@
   },
   {
     "levelId": 440,
+    "shapeId": "octaSquarePuzzle4",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      12,
+      17,
+      18,
+      23,
+      24,
+      29,
+      30,
+      35,
+      36,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
     "rules": "LockOneByOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 6,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#41CDCF",
@@ -5731,9 +6866,9 @@
   {
     "levelId": 441,
     "rules": "LockCorners",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Super Hard",
+    "columnCount": 12,
+    "rowCount": 12,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#B8C14D",
       "topRight": "#A3E90E",
@@ -5744,8 +6879,8 @@
   {
     "levelId": 442,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 13,
+    "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#AE387F",
@@ -5757,8 +6892,8 @@
   {
     "levelId": 443,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#2367D5",
@@ -5770,8 +6905,8 @@
   {
     "levelId": 444,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#BC2BCA",
@@ -5783,8 +6918,8 @@
   {
     "levelId": 445,
     "rules": "LockEdges",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#521FC2",
@@ -5796,8 +6931,8 @@
   {
     "levelId": 446,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#99691A",
@@ -5809,8 +6944,8 @@
   {
     "levelId": 447,
     "rules": "LockMiddle",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#1A77A5",
@@ -5822,8 +6957,8 @@
   {
     "levelId": 448,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#9F2711",
@@ -5835,8 +6970,8 @@
   {
     "levelId": 449,
     "rules": "LockOneByOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#8919A8",
@@ -5847,10 +6982,45 @@
   },
   {
     "levelId": 450,
+    "shapeId": "hexSquareTrianglePuzzle5",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      10,
+      11,
+      17,
+      18,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      31,
+      33,
+      35,
+      37,
+      40,
+      53,
+      55,
+      56,
+      73,
+      87,
+      88,
+      90,
+      92,
+      94,
+      96
+    ],
     "rules": "LockCorners",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Super Hard",
+    "columnCount": 5,
+    "rowCount": 5,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#C23BAE",
       "topRight": "#1B18DA",
@@ -5861,8 +7031,8 @@
   {
     "levelId": 451,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#8328F1",
@@ -5874,8 +7044,8 @@
   {
     "levelId": 452,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#5C7FEA",
@@ -5887,8 +7057,8 @@
   {
     "levelId": 453,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#EAD955",
@@ -5900,8 +7070,8 @@
   {
     "levelId": 454,
     "rules": "LockEdges",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#DD2D24",
@@ -5913,8 +7083,8 @@
   {
     "levelId": 455,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#CC42A5",
@@ -5926,8 +7096,8 @@
   {
     "levelId": 456,
     "rules": "LockMiddle",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#ED4CA7",
@@ -5939,8 +7109,8 @@
   {
     "levelId": 457,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#1BAB42",
@@ -5952,8 +7122,8 @@
   {
     "levelId": 458,
     "rules": "LockOneByOne",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 13,
+    "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#3909B0",
@@ -5965,9 +7135,9 @@
   {
     "levelId": 459,
     "rules": "LockCorners",
-    "columnCount": 8,
-    "rowCount": 8,
-    "difficulty": "Super Hard",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#1DB8A6",
       "topRight": "#ED971F",
@@ -5977,6 +7147,39 @@
   },
   {
     "levelId": 460,
+    "shapeId": "hexTrianglePuzzle6",
+    "lockedSlots": [
+      61,
+      62,
+      66,
+      70,
+      74,
+      78,
+      82,
+      86,
+      87,
+      91,
+      106,
+      110,
+      127,
+      130,
+      131,
+      148,
+      150,
+      153,
+      168,
+      172,
+      185,
+      188,
+      189,
+      191,
+      193,
+      195,
+      197,
+      199,
+      200,
+      201
+    ],
     "rules": "LockOneRowSkipOne",
     "columnCount": 7,
     "rowCount": 7,
@@ -5991,8 +7194,8 @@
   {
     "levelId": 461,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#E01990",
@@ -6004,8 +7207,8 @@
   {
     "levelId": 462,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#1F4E9F",
@@ -6017,8 +7220,8 @@
   {
     "levelId": 463,
     "rules": "LockEdges",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#522FD3",
@@ -6030,8 +7233,8 @@
   {
     "levelId": 464,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#52B03D",
@@ -6043,8 +7246,8 @@
   {
     "levelId": 465,
     "rules": "LockMiddle",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#2C6ACE",
@@ -6056,8 +7259,8 @@
   {
     "levelId": 466,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 13,
+    "rowCount": 13,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#C04651",
@@ -6069,8 +7272,8 @@
   {
     "levelId": 467,
     "rules": "LockOneByOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#226FBB",
@@ -6082,8 +7285,8 @@
   {
     "levelId": 468,
     "rules": "LockCorners",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#3B97DE",
@@ -6095,8 +7298,8 @@
   {
     "levelId": 469,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#2D25B4",
@@ -6107,8 +7310,39 @@
   },
   {
     "levelId": 470,
+    "shapeId": "octaSquarePuzzle7",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      13,
+      14,
+      20,
+      21,
+      27,
+      28,
+      34,
+      35,
+      41,
+      42,
+      48,
+      49,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62
+    ],
     "rules": "LockEdgesAndWindow",
-    "columnCount": 9,
+    "columnCount": 7,
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
@@ -6121,8 +7355,8 @@
   {
     "levelId": 471,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B5A320",
@@ -6134,8 +7368,8 @@
   {
     "levelId": 472,
     "rules": "LockEdges",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#A72A1C",
@@ -6147,8 +7381,8 @@
   {
     "levelId": 473,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#1BA562",
@@ -6160,8 +7394,8 @@
   {
     "levelId": 474,
     "rules": "LockMiddle",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 13,
+    "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#35B9A3",
@@ -6173,8 +7407,8 @@
   {
     "levelId": 475,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#EF267A",
@@ -6186,8 +7420,8 @@
   {
     "levelId": 476,
     "rules": "LockOneByOne",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#AB2360",
@@ -6199,9 +7433,9 @@
   {
     "levelId": 477,
     "rules": "LockCorners",
-    "columnCount": 8,
-    "rowCount": 8,
-    "difficulty": "Super Hard",
+    "columnCount": 10,
+    "rowCount": 10,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#CD2D2A",
       "topRight": "#397EA6",
@@ -6212,8 +7446,8 @@
   {
     "levelId": 478,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#7031A8",
@@ -6225,8 +7459,8 @@
   {
     "levelId": 479,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#C60FBD",
@@ -6237,9 +7471,46 @@
   },
   {
     "levelId": 480,
+    "shapeId": "triHexPuzzle8",
+    "lockedSlots": [
+      2,
+      3,
+      4,
+      8,
+      9,
+      14,
+      15,
+      19,
+      20,
+      21,
+      27,
+      28,
+      49,
+      50,
+      57,
+      58,
+      59,
+      84,
+      85,
+      86,
+      94,
+      95,
+      114,
+      115,
+      120,
+      124,
+      125,
+      126,
+      131,
+      132,
+      137,
+      138,
+      139,
+      143
+    ],
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 5,
+    "rowCount": 4,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#D0CB4B",
@@ -6251,8 +7522,8 @@
   {
     "levelId": 481,
     "rules": "LockEdges",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#15A88F",
@@ -6264,8 +7535,8 @@
   {
     "levelId": 482,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 13,
+    "rowCount": 13,
     "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#6B47EF",
@@ -6277,8 +7548,8 @@
   {
     "levelId": 483,
     "rules": "LockMiddle",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#54E93D",
@@ -6290,8 +7561,8 @@
   {
     "levelId": 484,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#8DC53F",
@@ -6303,8 +7574,8 @@
   {
     "levelId": 485,
     "rules": "LockOneByOne",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#3FA347",
@@ -6316,9 +7587,9 @@
   {
     "levelId": 486,
     "rules": "LockCorners",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Super Hard",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#9B1C88",
       "topRight": "#2DE2DF",
@@ -6329,8 +7600,8 @@
   {
     "levelId": 487,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#65A23A",
@@ -6342,8 +7613,8 @@
   {
     "levelId": 488,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#0DA237",
@@ -6355,8 +7626,8 @@
   {
     "levelId": 489,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#8FE940",
@@ -6367,10 +7638,43 @@
   },
   {
     "levelId": 490,
+    "shapeId": "starTrianglePuzzle9",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      9,
+      10,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      27,
+      29,
+      35,
+      37,
+      46,
+      48,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65
+    ],
     "rules": "LockEdges",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Super Hard",
+    "columnCount": 5,
+    "rowCount": 6,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#A25D13",
       "topRight": "#8B9A28",
@@ -6381,8 +7685,8 @@
   {
     "levelId": 491,
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#C4B44A",
@@ -6394,8 +7698,8 @@
   {
     "levelId": 492,
     "rules": "LockMiddle",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#8EDF23",
@@ -6407,8 +7711,8 @@
   {
     "levelId": 493,
     "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#5DCC4F",
@@ -6420,8 +7724,8 @@
   {
     "levelId": 494,
     "rules": "LockOneByOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#A147D1",
@@ -6433,9 +7737,9 @@
   {
     "levelId": 495,
     "rules": "LockCorners",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Super Hard",
+    "columnCount": 12,
+    "rowCount": 12,
+    "difficulty": "SuperHard",
     "cornerColors": {
       "topLeft": "#E3F124",
       "topRight": "#C58D0C",
@@ -6446,8 +7750,8 @@
   {
     "levelId": 496,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 9,
-    "rowCount": 9,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#0CE3D1",
@@ -6459,8 +7763,8 @@
   {
     "levelId": 497,
     "rules": "LockEdgesAndWindow",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 12,
+    "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#86DE47",
@@ -6472,8 +7776,8 @@
   {
     "levelId": 498,
     "rules": "UnLockSideEdgesOnly",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 13,
+    "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#549C20",
@@ -6485,8 +7789,8 @@
   {
     "levelId": 499,
     "rules": "LockEdges",
-    "columnCount": 8,
-    "rowCount": 8,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#E33832",
@@ -6497,9 +7801,34 @@
   },
   {
     "levelId": 500,
+    "shapeId": "arrowPuzzle10",
+    "lockedSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      15,
+      16,
+      31,
+      32,
+      47,
+      48,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ],
     "rules": "LockOneLineSkipTwo",
-    "columnCount": 7,
-    "rowCount": 7,
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B0900F",

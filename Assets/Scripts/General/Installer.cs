@@ -1,6 +1,7 @@
 using Collectible;
 using Core.Scripts.Services;
 using Gameplay;
+using Gameplay.Levels;
 using General;
 using General.EventDispatcher;
 using IAP;
@@ -17,6 +18,7 @@ public class Installer : MonoBehaviour
 {
     [Header("UI References")]
     public Transform uiRoot;
+    public TextAsset levelConfig;
 
     void Awake()
     {
@@ -58,16 +60,17 @@ public class Installer : MonoBehaviour
         ServiceLocator.Register<ICollectibleService>(new CollectibleService());
         ServiceLocator.Register<IIAPService>(new IAPService());
         ServiceLocator.Register<IAdsService>(new AdsService());
+        ServiceLocator.Register<ILevelService>(new LevelService(levelConfig));
         var savedDataService = ServiceLocator.GetService<ISavedDataService>();
         if (!savedDataService.GetModel<SettingsModel>().IsNoAds)
             YoogoLabManager.ShowBanner();
 
         var uiService = ServiceLocator.GetService<IUIService>();
-        if (PlayerPrefs.GetInt(StringConstants.IsTutorialShown) == 0)
-        {
-            uiService.ShowPopup<GameplayPresenter>();
-        }
-        else
+        // if (PlayerPrefs.GetInt(StringConstants.IsTutorialShown) == 0)
+        // {
+        //     uiService.ShowPopup<GameplayPresenter>();
+        // }
+        // else
         {
             uiService.ShowPopup<HomePresenter>();
         }

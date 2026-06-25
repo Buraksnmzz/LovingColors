@@ -27,3 +27,26 @@ MonoBehaviour:
     piecePrefabs:
     - {fileID: 3317414412662012854, guid: a2c1abf1127dd49b69dcf3a2c43a3e6f, type: 3}
     - {fileID: 3317414412662012854, guid: 39062d7027693454383aa0f5ba4b97b7, type: 3}
+  - shapeId: hexSquareTrianglePuzzle5
+    piecePrefabs:
+    - {fileID: 3317414412662012854, guid: 36fe560abd8db44138cffa3dbf9fc2e2, type: 3}
+    - {fileID: 3317414412662012854, guid: 8faff388afd1643abb40d9d626ae7735, type: 3}
+    - {fileID: 3317414412662012854, guid: ae9c43b8dd7ba4cef9bdb3b51229008f, type: 3}
+  - shapeId: hexTrianglePuzzle6
+    piecePrefabs:
+    - {fileID: 3317414412662012854, guid: cdb97319c39c74e47bdc40d12a3c5b4c, type: 3}
+    - {fileID: 3317414412662012854, guid: ddb30f61c1f7f4854a29c92b6557bd42, type: 3}
+  - shapeId: octaSquarePuzzle7
+    piecePrefabs:
+    - {fileID: 3317414412662012854, guid: d779c7afb442d46009c5f55928fbc014, type: 3}
+    - {fileID: 3317414412662012854, guid: 463c762e37abe45fbaecffe2605d32ec, type: 3}
+  - shapeId: triHexPuzzle8
+    piecePrefabs:
+    - {fileID: 3317414412662012854, guid: 6fcdab790868e4c64a08382ff044a646, type: 3}
+  - shapeId: starTrianglePuzzle9
+    piecePrefabs:
+    - {fileID: 3317414412662012854, guid: 218a2caa7d7294c35a3649b980d7578a, type: 3}
+    - {fileID: 3317414412662012854, guid: 0751c5d7103a3463e997550dbdccaf2d, type: 3}
+  - shapeId: arrowPuzzle10
+    piecePrefabs:
+    - {fileID: 3317414412662012854, guid: a9d9adfd8b68a4819b9c88a0e2da34da, type: 3}

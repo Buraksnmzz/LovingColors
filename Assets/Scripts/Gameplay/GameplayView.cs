@@ -1,7 +1,7 @@
 
 using System;
-using General;
 using Gameplay.Levels;
+using General;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,15 +15,16 @@ namespace Gameplay
         public event Action Completed;
         public event Action<int> DebugLevelStepRequested;
 
-        [SerializeField] private TextAsset levelConfig;
         [SerializeField] private Button debugNextButton;
+        [SerializeField] private Button debugNext10Button;
         [SerializeField] private Button debugPrevButton;
+        [SerializeField] private Button debugPrev10Button;
         [SerializeField] private Button debugCompleteButton;
         [SerializeField] private Button hintButton;
         [SerializeField] private TextMeshProUGUI levelText;
+        [SerializeField] private TextMeshProUGUI difficultyText;
 
         private Board _board;
-        private LevelCatalog _levelCatalog;
         private CanvasGroup _canvasGroup;
 
         protected override void Awake()
@@ -35,9 +36,10 @@ namespace Gameplay
             {
                 _canvasGroup = gameObject.AddComponent<CanvasGroup>();
             }
-            _levelCatalog = LevelCatalog.Parse(levelConfig);
             debugNextButton.onClick.AddListener(OnDebugNextButtonClick);
             debugPrevButton.onClick.AddListener(OnDebugPrevButtonClick);
+            debugNext10Button.onClick.AddListener(OnDebugNext10ButtonClick);
+            debugPrev10Button.onClick.AddListener(OnDebugPrev10ButtonClick);
             debugCompleteButton.onClick.AddListener(OnDebugCompleteButtonClick);
             hintButton.onClick.AddListener(OnHintButtonClick);
             if (_board != null)
@@ -47,9 +49,23 @@ namespace Gameplay
             }
         }
 
+        private void OnDebugPrev10ButtonClick()
+        {
+            DebugLevelStepRequested?.Invoke(-10);
+        }
+
+        private void OnDebugNext10ButtonClick()
+        {
+            DebugLevelStepRequested?.Invoke(10);
+        }
+
         public void SetLevelText(int level)
         {
             levelText.text = "Level " + level;
+        }
+        public void SetDifficultyText(string difficulty)
+        {
+            difficultyText.text = difficulty;
         }
 
         private void OnDebugCompleteButtonClick()
@@ -92,12 +108,6 @@ namespace Gameplay
             base.OnShown();
             SetInteractionLocked(false);
             Shown?.Invoke();
-        }
-
-        public bool TryGetLevelDefinition(int levelId, out LevelDefinition levelDefinition)
-        {
-            levelDefinition = null;
-            return _levelCatalog != null && _levelCatalog.TryGetLevel(levelId, out levelDefinition);
         }
 
         public void InitializeBoard(LevelDefinition levelDefinition)

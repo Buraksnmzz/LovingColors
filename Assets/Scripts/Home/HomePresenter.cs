@@ -1,6 +1,7 @@
 using Collectible;
 using General;
 using General.EventDispatcher;
+using Gameplay.Levels;
 using Home;
 using IAP;
 using Level;
@@ -22,6 +23,7 @@ namespace MainMenu
         private IEventDispatcherService _eventDispatcherService;
         private IRemoteConfigService _remoteConfigService;
         private ILocalizationService _localizationService;
+        private ILevelService _levelService;
         protected override void OnInitialize()
         {
             base.OnInitialize();
@@ -29,7 +31,8 @@ namespace MainMenu
             _uiService = ServiceLocator.GetService<IUIService>();
             _eventDispatcherService = ServiceLocator.GetService<IEventDispatcherService>();
             _remoteConfigService = ServiceLocator.GetService<IRemoteConfigService>();
-            _localizationService = ServiceLocator.GetService<ILocalizationService>();
+            //_localizationService = ServiceLocator.GetService<ILocalizationService>();
+            _levelService = ServiceLocator.GetService<ILevelService>();
             _eventDispatcherService.AddListener<RewardGivenSignal>(OnRewardGiven);
             View.PlayLevelButtonClicked += OnPlayClicked;
             View.RemoveAdsButtonClicked += OnRemoveAdsClicked;
@@ -67,10 +70,10 @@ namespace MainMenu
             SafeAreaHelper.RefreshForBannerVisibility(false);
             _eventDispatcherService.Dispatch(new BannerVisibilityChangedSignal(false));
             var currentLevelNumber = levelProgressModel.CurrentLevelIndex + 1;
-            //var currentDifficultyType = _remoteConfigService.GetLevelDifficultyType(currentLevelNumber);
-            var currentDifficultyType = LevelDifficultyType.Normal;
+            var currentDifficultyType = GetDifficultyType(currentLevelNumber);
             View.SetCoinText(collectibleModel.TotalCoins);
-            var levelText = _localizationService.GetLocalizedString(LocalizationStrings.Level);
+            //var levelText = _localizationService.GetLocalizedString(LocalizationStrings.Level);
+            var levelText = "Level";
             View.SetLevelText(levelText + " " + currentLevelNumber);
             View.SetDifficultyView(currentDifficultyType);
             var nextDifficultyTypes = GetNextDifficultyTypes(currentLevelNumber, View.NextFrameCount);
@@ -94,17 +97,7 @@ namespace MainMenu
             var difficultyTypes = new LevelDifficultyType[frameCount];
             for (var index = 0; index < frameCount; index++)
             {
-                //difficultyTypes[index] = _remoteConfigService.GetLevelDifficultyType(currentLevelNumber + index + 1);
-                if (index % 3 == 0)
-                {
-                    difficultyTypes[index] = LevelDifficultyType.Hard;
-                }
-                else if (index % 5 == 0)
-                {
-                    difficultyTypes[index] = LevelDifficultyType.VeryHard;
-                }
-                else
-                    difficultyTypes[index] = LevelDifficultyType.Normal;
+                difficultyTypes[index] = GetDifficultyType(currentLevelNumber + index + 1);
             }
 
             return difficultyTypes;
@@ -116,13 +109,20 @@ namespace MainMenu
             for (var index = 0; index < frameCount; index++)
             {
                 var previousLevelNumber = currentLevelNumber - index - 1;
-                difficultyTypes[index] = previousLevelNumber >= 1
-                    //? _remoteConfigService.GetLevelDifficultyType(previousLevelNumber)
-                    ? LevelDifficultyType.Normal
-                    : LevelDifficultyType.Normal;
+                difficultyTypes[index] = GetDifficultyType(previousLevelNumber);
             }
 
             return difficultyTypes;
+        }
+
+        private LevelDifficultyType GetDifficultyType(int levelNumber)
+        {
+            if (levelNumber < 1 || !_levelService.TryGetLevelById(levelNumber, out var levelDefinition))
+            {
+                return LevelDifficultyType.Normal;
+            }
+
+            return levelDefinition.Difficulty;
         }
     }
 }

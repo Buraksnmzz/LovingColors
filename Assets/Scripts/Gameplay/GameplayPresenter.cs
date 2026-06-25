@@ -12,12 +12,14 @@ namespace Gameplay
     {
         private ISavedDataService _savedDataService;
         private IUIService _uiService;
+        private ILevelService _levelService;
 
         protected override void OnInitialize()
         {
             base.OnInitialize();
             _savedDataService = ServiceLocator.GetService<ISavedDataService>();
             _uiService = ServiceLocator.GetService<IUIService>();
+            _levelService = ServiceLocator.GetService<ILevelService>();
             View.Shown += OnViewShownCompleted;
             View.Solved += OnViewSolved;
             View.Completed += OnViewCompleted;
@@ -58,12 +60,13 @@ namespace Gameplay
         private void LoadLevelAtIndex(int levelIndex, bool clampToPreviousValidLevel)
         {
             View.SetLevelText(levelIndex + 1);
+            
             var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
             var currentLevelIndex = Mathf.Max(0, levelIndex);
             var currentLevelId = currentLevelIndex + 1;
             LevelDefinition levelDefinition;
 
-            while (!View.TryGetLevelDefinition(currentLevelId, out levelDefinition))
+            while (!_levelService.TryGetLevelById(currentLevelId, out levelDefinition))
             {
                 if (!clampToPreviousValidLevel || currentLevelIndex == 0)
                 {
@@ -79,7 +82,7 @@ namespace Gameplay
                 levelProgressModel.CurrentLevelIndex = currentLevelIndex;
                 _savedDataService.SaveData(levelProgressModel);
             }
-
+            View.SetDifficultyText(levelDefinition.Difficulty.ToString());
             View.InitializeBoard(levelDefinition);
         }
 

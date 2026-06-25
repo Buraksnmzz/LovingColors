@@ -7,11 +7,16 @@ namespace Gameplay.Layouts
     {
         private static readonly Dictionary<string, PuzzleBoardLayout> LayoutsByShapeId = new(StringComparer.OrdinalIgnoreCase)
         {
+            { "hexPuzzle1", new HexPuzzleBoardLayout() },
             { "tiePuzzle2", new TiePuzzle2BoardLayout() },
-            { "puzzle3", new HexPuzzleBoardLayout() },
             { "wavePuzzle3", new WavePuzzleBoardLayout() },
             { "OctaSquarePuzzle4", new OctaSquarePuzzle4BoardLayout() },
-            { "hexSquareTrianglePuzzle5", new HexSquareTrianglePuzzle5BoardLayout() }
+            { "hexSquareTrianglePuzzle5", new HexSquareTrianglePuzzle5BoardLayout() },
+            { "hexTrianglePuzzle6", new HexTrianglePuzzle6BoardLayout() },
+            { "octaSquarePuzzle7", new OctaSquarePuzzle7BoardLayout() },
+            { "triHexPuzzle8", new TriHexPuzzle8BoardLayout() },
+            { "starTrianglePuzzle9", new HexStarTrianglePuzzle9BoardLayout() },
+            { "arrowPuzzle10", new ArrowPuzzle10BoardLayout() }
         };
 
         public static bool TryGet(string shapeId, out PuzzleBoardLayout layout)
