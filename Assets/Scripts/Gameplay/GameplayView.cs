@@ -13,6 +13,8 @@ namespace Gameplay
         public event Action Shown;
         public event Action Solved;
         public event Action Completed;
+        public event Action BackButtonClicked;
+        public event Action<int, int> MovesChanged;
         public event Action<int> DebugLevelStepRequested;
 
         [SerializeField] private Button debugNextButton;
@@ -21,8 +23,11 @@ namespace Gameplay
         [SerializeField] private Button debugPrev10Button;
         [SerializeField] private Button debugCompleteButton;
         [SerializeField] private Button hintButton;
+        [SerializeField] private Button backButton;
         [SerializeField] private TextMeshProUGUI levelText;
         [SerializeField] private TextMeshProUGUI difficultyText;
+        [SerializeField] private TextMeshProUGUI dcDateText;
+        [SerializeField] private TextMeshProUGUI movesText;
 
         private Board _board;
         private CanvasGroup _canvasGroup;
@@ -42,10 +47,12 @@ namespace Gameplay
             debugPrev10Button.onClick.AddListener(OnDebugPrev10ButtonClick);
             debugCompleteButton.onClick.AddListener(OnDebugCompleteButtonClick);
             hintButton.onClick.AddListener(OnHintButtonClick);
+            backButton.onClick.AddListener(() => BackButtonClicked?.Invoke());
             if (_board != null)
             {
                 _board.Solved += OnBoardSolved;
                 _board.WinSequenceCompleted += OnBoardCompleted;
+                _board.MovesChanged += OnBoardMovesChanged;
             }
         }
 
@@ -68,6 +75,41 @@ namespace Gameplay
             difficultyText.text = difficulty;
         }
 
+        public void SetDailyChallengeInfo(bool isDailyChallenge, string dateText)
+        {
+            if (levelText != null)
+            {
+                levelText.gameObject.SetActive(!isDailyChallenge);
+            }
+
+            if (difficultyText != null)
+            {
+                difficultyText.gameObject.SetActive(!isDailyChallenge);
+            }
+
+            if (dcDateText != null)
+            {
+                dcDateText.gameObject.SetActive(isDailyChallenge);
+                dcDateText.text = dateText;
+            }
+
+            if (movesText != null)
+            {
+                movesText.gameObject.SetActive(isDailyChallenge);
+                movesText.text = isDailyChallenge ? "0/0" : string.Empty;
+            }
+        }
+
+        public void SetMovesText(int moveCount, int totalMoveCount)
+        {
+            if (movesText == null)
+            {
+                return;
+            }
+
+            movesText.text = moveCount + "/" + totalMoveCount;
+        }
+
         private void OnDebugCompleteButtonClick()
         {
             _board?.CompleteImmediately();
@@ -79,6 +121,7 @@ namespace Gameplay
             {
                 _board.Solved -= OnBoardSolved;
                 _board.WinSequenceCompleted -= OnBoardCompleted;
+                _board.MovesChanged -= OnBoardMovesChanged;
             }
 
             debugNextButton.onClick.RemoveListener(OnDebugNextButtonClick);
@@ -141,6 +184,11 @@ namespace Gameplay
         private void OnBoardCompleted()
         {
             Completed?.Invoke();
+        }
+
+        private void OnBoardMovesChanged(int moveCount, int totalMoveCount)
+        {
+            MovesChanged?.Invoke(moveCount, totalMoveCount);
         }
     }
 }

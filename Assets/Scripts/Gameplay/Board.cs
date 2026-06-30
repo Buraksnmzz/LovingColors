@@ -53,9 +53,12 @@ namespace Gameplay
         private bool _hasCompletedBoard;
         private bool _usesCustomLayout;
         private Card _activeCardPrefab;
+        private int _moveCount;
+        private int _totalMoveCount;
 
         public event Action Solved;
         public event Action WinSequenceCompleted;
+        public event Action<int, int> MovesChanged;
 
 
         private void Awake()
@@ -135,6 +138,9 @@ namespace Gameplay
         public void Initialize(LevelDefinition levelDefinition)
         {
             _hasCompletedBoard = false;
+            _moveCount = 0;
+            _totalMoveCount = 0;
+            MovesChanged?.Invoke(_moveCount, _totalMoveCount);
             _usesCustomLayout = false;
             _rowCount = levelDefinition.RowCount;
             _columnCount = levelDefinition.ColumnCount;
@@ -413,6 +419,8 @@ namespace Gameplay
                 card.SnapTo(_slotPositions[boardIndex]);
                 card.SnapRotation(GetSlotRotation(boardIndex));
             }
+            _totalMoveCount = CalculateTotalMoveCount();
+            MovesChanged?.Invoke(_moveCount, _totalMoveCount);
             NormalizeSiblingOrder();
 
             var showSequence = DOTween.Sequence();
@@ -735,6 +743,8 @@ namespace Gameplay
 
             var firstIndex = firstCard.Order;
             var secondIndex = secondCard.Order;
+            _moveCount++;
+            MovesChanged?.Invoke(_moveCount, _totalMoveCount);
             var firstTargetPosition = _slotPositions[secondIndex];
             var secondTargetPosition = _slotPositions[firstIndex];
 
@@ -818,28 +828,62 @@ namespace Gameplay
 
         private static void ShuffleCards(List<Card> cards)
         {
-            for (var index = cards.Count - 1; index > 0; index--)
+            if (cards.Count <= 1)
             {
-                var randomIndex = Random.Range(0, index + 1);
-                (cards[index], cards[randomIndex]) = (cards[randomIndex], cards[index]);
+                return;
             }
 
-            var hasSameOrder = true;
+            var targetSwapCount = GetTargetShuffleSwapCount(cards.Count);
+            var indices = new List<int>(cards.Count);
             for (var index = 0; index < cards.Count; index++)
             {
-                if (cards[index].Order == index)
-                {
-                    continue;
-                }
-
-                hasSameOrder = false;
-                break;
+                indices.Add(index);
             }
 
-            if (hasSameOrder)
+            ShuffleIndices(indices);
+            var cursor = 0;
+            while (targetSwapCount > 0 && cursor < indices.Count)
             {
-                (cards[0], cards[^1]) = (cards[^1], cards[0]);
+                var cycleLength = Mathf.Min(targetSwapCount + 1, indices.Count - cursor);
+                RotateCards(cards, indices, cursor, cycleLength);
+                targetSwapCount -= cycleLength - 1;
+                cursor += cycleLength;
             }
+        }
+
+        private static int GetTargetShuffleSwapCount(int cardCount)
+        {
+            if (cardCount <= 1)
+            {
+                return 0;
+            }
+
+            return Mathf.Max(1, cardCount / 2 - 1);
+        }
+
+        private static void ShuffleIndices(List<int> indices)
+        {
+            for (var index = indices.Count - 1; index > 0; index--)
+            {
+                var randomIndex = Random.Range(0, index + 1);
+                (indices[index], indices[randomIndex]) = (indices[randomIndex], indices[index]);
+            }
+        }
+
+        private static void RotateCards(List<Card> cards, List<int> indices, int startIndex, int cycleLength)
+        {
+            if (cycleLength <= 1)
+            {
+                return;
+            }
+
+            var firstCard = cards[indices[startIndex]];
+            for (var index = 0; index < cycleLength - 1; index++)
+            {
+                cards[indices[startIndex + index]] = cards[indices[startIndex + index + 1]];
+            }
+
+            cards[indices[startIndex + cycleLength - 1]] = firstCard;
         }
 
         private void ShuffleCardsWithinPieceTypes(List<Card> cards, List<int> slotIndices)
@@ -865,7 +909,7 @@ namespace Gameplay
                 var groupCards = new List<Card>(positions.Count);
                 for (var i = 0; i < positions.Count; i++)
                 {
-                    groupCards.Add(cards[positions[i]]);
+                    groupCards.Add(FindCardById(slotIndices[positions[i]]));
                 }
 
                 ShuffleCards(groupCards);
@@ -1013,6 +1057,42 @@ namespace Gameplay
             return true;
         }
 
+        private int CalculateTotalMoveCount()
+        {
+            var minimumMoveCount = CalculateMinimumMoveCount();
+            return minimumMoveCount + minimumMoveCount / 2;
+        }
+
+        private int CalculateMinimumMoveCount()
+        {
+            var visited = new bool[_cards.Count];
+            var swapCount = 0;
+
+            for (var index = 0; index < _cards.Count; index++)
+            {
+                if (visited[index] || _cards[index].CardId == index)
+                {
+                    continue;
+                }
+
+                var cycleLength = 0;
+                var currentIndex = index;
+                while (!visited[currentIndex])
+                {
+                    visited[currentIndex] = true;
+                    currentIndex = _cards[currentIndex].CardId;
+                    cycleLength++;
+                }
+
+                if (cycleLength > 1)
+                {
+                    swapCount += cycleLength - 1;
+                }
+            }
+
+            return swapCount;
+        }
+
         private void LockInteractionForWin()
         {
             StopAllCoroutines();
@@ -1106,11 +1186,13 @@ namespace Gameplay
 
             for (var index = 0; index < orderedIndices.Count; index++)
             {
-                var card = _cards[orderedIndices[index]];
+                var slotIndex = orderedIndices[index];
+                var card = _cards[slotIndex];
                 var delay = index * WinAnimationCardDelay;
-                card.transform.localRotation = Quaternion.identity;
+                var slotRotation = GetSlotRotation(slotIndex);
+                card.transform.localRotation = Quaternion.Euler(0f, 0f, slotRotation);
                 sequence.Insert(WinAnimationStartDelay + delay,
-                    card.transform.DOLocalRotate(new Vector3(0f, 180f, 0f), WinColumnRotateDuration, RotateMode.FastBeyond360)
+                    card.transform.DOLocalRotate(new Vector3(0f, 360f, slotRotation), WinColumnRotateDuration * 1.5f, RotateMode.FastBeyond360)
                         .SetEase(Ease.InOutQuad));
             }
 

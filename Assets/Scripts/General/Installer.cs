@@ -1,5 +1,6 @@
 using Collectible;
 using Core.Scripts.Services;
+using DailyChallenge;
 using Gameplay;
 using Gameplay.Levels;
 using General;
@@ -19,6 +20,7 @@ public class Installer : MonoBehaviour
     [Header("UI References")]
     public Transform uiRoot;
     public TextAsset levelConfig;
+    public TextAsset dailyChallengeLevelConfig;
 
     void Awake()
     {
@@ -60,7 +62,8 @@ public class Installer : MonoBehaviour
         ServiceLocator.Register<ICollectibleService>(new CollectibleService());
         ServiceLocator.Register<IIAPService>(new IAPService());
         ServiceLocator.Register<IAdsService>(new AdsService());
-        ServiceLocator.Register<ILevelService>(new LevelService(levelConfig));
+        ServiceLocator.Register<ILevelService>(new LevelService(levelConfig, dailyChallengeLevelConfig));
+        ServiceLocator.Register<IDailyChallengeService>(new DailyChallengeService());
         var savedDataService = ServiceLocator.GetService<ISavedDataService>();
         if (!savedDataService.GetModel<SettingsModel>().IsNoAds)
             YoogoLabManager.ShowBanner();

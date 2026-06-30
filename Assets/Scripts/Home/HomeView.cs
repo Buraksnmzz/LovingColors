@@ -11,6 +11,7 @@ namespace Home
         public event Action PlayLevelButtonClicked;
         public event Action RemoveAdsButtonClicked;
         public event Action CoinButtonClicked;
+        public event Action DailyChallengeButtonClicked;
 
         [SerializeField] private Transform topBar;
         [SerializeField] private Transform pawnObject;
@@ -21,6 +22,7 @@ namespace Home
 
         [SerializeField] private Button removeAdsButton;
         [SerializeField] private Button coinButton;
+        [SerializeField] private Button dailyChallengeButton;
         [SerializeField] private TextMeshProUGUI currentLevelText;
         [SerializeField] private TextMeshProUGUI currentLevelTextHard;
         [SerializeField] private TextMeshProUGUI currentLevelTextSuperHard;
@@ -76,6 +78,7 @@ namespace Home
             playLevelButton.onClick.AddListener(() => PlayLevelButtonClicked?.Invoke());
             removeAdsButton.onClick.AddListener(() => RemoveAdsButtonClicked?.Invoke());
             coinButton.onClick.AddListener(() => CoinButtonClicked?.Invoke());
+            dailyChallengeButton.onClick.AddListener(()=>DailyChallengeButtonClicked?.Invoke());
         }
 
         protected override void OnShown()

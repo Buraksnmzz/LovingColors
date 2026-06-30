@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Collectible;
+using DailyChallenge;
 using GameConfig;
 using Level;
 using Newtonsoft.Json;
@@ -29,6 +30,7 @@ namespace SavedData
             var settingsModel = LoadData<SettingsModel>();
             var collectibleModel = LoadData<CollectibleModel>();
             LoadData<LevelProgressModel>();
+            LoadData<DailyChallengeModel>();
         }
         public T GetModel<T>() where T : IModel
         {

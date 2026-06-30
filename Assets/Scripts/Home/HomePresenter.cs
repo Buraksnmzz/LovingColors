@@ -1,4 +1,6 @@
 using Collectible;
+using DailyChallenge;
+using Gameplay;
 using General;
 using General.EventDispatcher;
 using Gameplay.Levels;
@@ -37,6 +39,13 @@ namespace MainMenu
             View.PlayLevelButtonClicked += OnPlayClicked;
             View.RemoveAdsButtonClicked += OnRemoveAdsClicked;
             View.CoinButtonClicked += OnCoinButtonClicked;
+            View.DailyChallengeButtonClicked += OnDailyChallengeButtonClicked;
+        }
+
+        private void OnDailyChallengeButtonClicked()
+        {
+            _uiService.HidePopup<HomePresenter>();
+            _uiService.ShowPopup<DailyChallengePresenter>();
         }
 
         private void OnRewardGiven(RewardGivenSignal obj)
@@ -57,6 +66,8 @@ namespace MainMenu
 
         private void OnPlayClicked()
         {
+            _uiService.HidePopup<HomePresenter>();
+            _uiService.ShowPopup<GameplayPresenter>();
         }
 
         public override void ViewShown()

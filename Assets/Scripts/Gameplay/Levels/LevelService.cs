@@ -6,8 +6,14 @@ namespace Gameplay.Levels
     public sealed class LevelService : ILevelService
     {
         private readonly LevelCatalog _levelCatalog;
+        private readonly LevelCatalog _dailyChallengeLevelCatalog;
 
         public LevelService(TextAsset levelConfig)
+            : this(levelConfig, null)
+        {
+        }
+
+        public LevelService(TextAsset levelConfig, TextAsset dailyChallengeLevelConfig)
         {
             if (levelConfig == null)
             {
@@ -15,11 +21,19 @@ namespace Gameplay.Levels
             }
 
             _levelCatalog = LevelCatalog.Parse(levelConfig);
+            _dailyChallengeLevelCatalog = dailyChallengeLevelConfig != null
+                ? LevelCatalog.Parse(dailyChallengeLevelConfig)
+                : _levelCatalog;
         }
 
         public bool TryGetLevelById(int levelId, out LevelDefinition levelDefinition)
         {
             return _levelCatalog.TryGetLevel(levelId, out levelDefinition);
+        }
+
+        public bool TryGetDailyChallengeLevelById(int levelId, out LevelDefinition levelDefinition)
+        {
+            return _dailyChallengeLevelCatalog.TryGetLevel(levelId, out levelDefinition);
         }
 
         public bool TryGetLevelByIndex(int levelIndex, out LevelDefinition levelDefinition)
