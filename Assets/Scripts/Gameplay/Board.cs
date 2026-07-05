@@ -55,10 +55,12 @@ namespace Gameplay
         private Card _activeCardPrefab;
         private int _moveCount;
         private int _totalMoveCount;
+        private bool _hasReachedMoveLimit;
 
         public event Action Solved;
         public event Action WinSequenceCompleted;
         public event Action<int, int> MovesChanged;
+        public event Action MoveLimitReached;
 
 
         private void Awake()
@@ -135,9 +137,25 @@ namespace Gameplay
             TryCompleteBoard();
         }
 
+        public void AddExtraMoves(int additionalMoveCount)
+        {
+            if (_hasCompletedBoard || additionalMoveCount <= 0)
+            {
+                return;
+            }
+
+            _totalMoveCount += additionalMoveCount;
+            _hasReachedMoveLimit = false;
+            _isInteractionLocked = false;
+            _draggedCard = null;
+            RestoreCardInteractivity();
+            MovesChanged?.Invoke(_moveCount, _totalMoveCount);
+        }
+
         public void Initialize(LevelDefinition levelDefinition)
         {
             _hasCompletedBoard = false;
+            _hasReachedMoveLimit = false;
             _moveCount = 0;
             _totalMoveCount = 0;
             MovesChanged?.Invoke(_moveCount, _totalMoveCount);
@@ -765,6 +783,17 @@ namespace Gameplay
                     return;
                 }
 
+                if (HasReachedMoveLimit())
+                {
+                    _isInteractionLocked = true;
+                    _hasReachedMoveLimit = true;
+                    _draggedCard = null;
+                    RestoreCardInteractivity();
+                    NormalizeSiblingOrder();
+                    MoveLimitReached?.Invoke();
+                    return;
+                }
+
                 _isInteractionLocked = false;
                 _draggedCard = null;
                 RestoreCardInteractivity();
@@ -1091,6 +1120,11 @@ namespace Gameplay
             }
 
             return swapCount;
+        }
+
+        private bool HasReachedMoveLimit()
+        {
+            return _totalMoveCount > 0 && _moveCount >= _totalMoveCount && !_hasReachedMoveLimit;
         }
 
         private void LockInteractionForWin()

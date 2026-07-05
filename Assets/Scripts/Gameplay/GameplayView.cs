@@ -15,6 +15,7 @@ namespace Gameplay
         public event Action Completed;
         public event Action BackButtonClicked;
         public event Action<int, int> MovesChanged;
+        public event Action MoveLimitReached;
         public event Action<int> DebugLevelStepRequested;
 
         [SerializeField] private Button debugNextButton;
@@ -53,6 +54,7 @@ namespace Gameplay
                 _board.Solved += OnBoardSolved;
                 _board.WinSequenceCompleted += OnBoardCompleted;
                 _board.MovesChanged += OnBoardMovesChanged;
+                _board.MoveLimitReached += OnBoardMoveLimitReached;
             }
         }
 
@@ -110,6 +112,11 @@ namespace Gameplay
             movesText.text = moveCount + "/" + totalMoveCount;
         }
 
+        public void AddExtraMoves(int moveCount)
+        {
+            _board?.AddExtraMoves(moveCount);
+        }
+
         private void OnDebugCompleteButtonClick()
         {
             _board?.CompleteImmediately();
@@ -122,6 +129,7 @@ namespace Gameplay
                 _board.Solved -= OnBoardSolved;
                 _board.WinSequenceCompleted -= OnBoardCompleted;
                 _board.MovesChanged -= OnBoardMovesChanged;
+                _board.MoveLimitReached -= OnBoardMoveLimitReached;
             }
 
             debugNextButton.onClick.RemoveListener(OnDebugNextButtonClick);
@@ -189,6 +197,11 @@ namespace Gameplay
         private void OnBoardMovesChanged(int moveCount, int totalMoveCount)
         {
             MovesChanged?.Invoke(moveCount, totalMoveCount);
+        }
+
+        private void OnBoardMoveLimitReached()
+        {
+            MoveLimitReached?.Invoke();
         }
     }
 }

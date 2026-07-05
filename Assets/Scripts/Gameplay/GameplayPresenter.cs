@@ -1,9 +1,12 @@
 using DailyChallenge;
+using GameConfig;
 using Gameplay.Levels;
 using Level;
 using SavedData;
 using General;
+using General.EventDispatcher;
 using MainMenu;
+using Sound;
 using UI.General;
 using UnityEngine;
 using Win;
@@ -16,6 +19,9 @@ namespace Gameplay
         private IUIService _uiService;
         private ILevelService _levelService;
         private IDailyChallengeService _dailyChallengeService;
+        private IEventDispatcherService _eventDispatcherService;
+        private ISoundService _soundService;
+        private IHapticService _hapticService;
 
         protected override void OnInitialize()
         {
@@ -24,12 +30,44 @@ namespace Gameplay
             _uiService = ServiceLocator.GetService<IUIService>();
             _levelService = ServiceLocator.GetService<ILevelService>();
             _dailyChallengeService = ServiceLocator.GetService<IDailyChallengeService>();
+            _eventDispatcherService = ServiceLocator.GetService<IEventDispatcherService>();
+            _soundService = ServiceLocator.GetService<ISoundService>();
+            _hapticService = ServiceLocator.GetService<IHapticService>();
             View.Shown += OnViewShownCompleted;
             View.Solved += OnViewSolved;
             View.Completed += OnViewCompleted;
             View.MovesChanged += OnViewMovesChanged;
+            View.MoveLimitReached += OnViewMoveLimitReached;
             View.DebugLevelStepRequested += OnDebugLevelStepRequested;
             View.BackButtonClicked += OnBackButtonClicked;
+            _eventDispatcherService.AddListener<ContinueWithCoinSignal>(OnContinueWithCoinSignal);
+            _eventDispatcherService.AddListener<ContinueWithRewardedSignal>(OnContinueWithRewardedSignal);
+            _eventDispatcherService.AddListener<RestartButtonClickSignal>(OnRestartButtonClick);
+        }
+
+        private void OnRestartButtonClick(RestartButtonClickSignal obj)
+        {
+            _uiService.HidePopup<DailyChallengeLosePresenter>();
+            RestartGame();
+        }
+
+        private void OnContinueWithRewardedSignal(ContinueWithRewardedSignal obj)
+        {
+            HandleAddMoves();
+        }
+
+        private void OnContinueWithCoinSignal(ContinueWithCoinSignal obj)
+        {
+            HandleAddMoves();
+        }
+
+        private void HandleAddMoves()
+        {
+            var extraMoves = _savedDataService.GetModel<RemoteConfigModel>().ExtraMovesCount;
+            _soundService.PlaySound(ClipName.PowerUp);
+            _hapticService.HapticLow();
+            View.AddExtraMoves(extraMoves);
+            _uiService.HidePopup<DailyChallengeLosePresenter>();
         }
 
         private void OnBackButtonClicked()
@@ -59,8 +97,16 @@ namespace Gameplay
                 View.Solved -= OnViewSolved;
                 View.Completed -= OnViewCompleted;
                 View.MovesChanged -= OnViewMovesChanged;
+                View.MoveLimitReached -= OnViewMoveLimitReached;
                 View.DebugLevelStepRequested -= OnDebugLevelStepRequested;
                 View.BackButtonClicked -= OnBackButtonClicked;
+            }
+
+            if (_eventDispatcherService != null)
+            {
+                _eventDispatcherService.RemoveListener<ContinueWithCoinSignal>(OnContinueWithCoinSignal);
+                _eventDispatcherService.RemoveListener<ContinueWithRewardedSignal>(OnContinueWithRewardedSignal);
+                _eventDispatcherService.RemoveListener<RestartButtonClickSignal>(OnRestartButtonClick);
             }
 
             base.Cleanup();
@@ -146,6 +192,28 @@ namespace Gameplay
             }
 
             View.SetMovesText(moveCount, totalMoveCount);
+        }
+
+        private void OnViewMoveLimitReached()
+        {
+            if (!_dailyChallengeService.HasActiveDailyChallengeGame)
+            {
+                return;
+            }
+
+            _uiService.ShowPopup<DailyChallengeLosePresenter>();
+        }
+
+        private void RestartGame()
+        {
+            if (_dailyChallengeService.HasActiveDailyChallengeGame)
+            {
+                LoadDailyChallengeLevel();
+                return;
+            }
+
+            var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
+            LoadLevelAtIndex(levelProgressModel.CurrentLevelIndex, true);
         }
 
         private void OnViewCompleted()

@@ -29,15 +29,7 @@ namespace DailyChallenge
 
         private void OnContinueClicked()
         {
-            if (_dailyChallengeService.SelectFirstPlayableUncompletedDay())
-            {
-                _dailyChallengeService.StartSelectedDayGame();
-                _uiService.HidePopup<GameplayPresenter>(false);
-                _uiService.ShowPopup<GameplayPresenter>();
-                _uiService.HidePopup<DailyChallengeWinPresenter>();
-                return;
-            }
-
+            _dailyChallengeService.SelectLatestPlayableUncompletedDayFromCurrentDate();
             _uiService.HidePopup<GameplayPresenter>(false);
             _uiService.HidePopup<DailyChallengeWinPresenter>();
             _uiService.ShowPopup<DailyChallengePresenter>();

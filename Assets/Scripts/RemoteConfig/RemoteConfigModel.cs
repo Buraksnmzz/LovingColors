@@ -6,6 +6,8 @@ namespace GameConfig
     {
         public string RateTriggerLevels = "6,20,50";
         public int ShopCoinReward1 = 200;
+        public int ExtraMovesCost = 1500;
+        public int ExtraMovesCount = 10;
         public int StartingCoins { get; set; } = 100;
         public int WinRewardCoins { get; set; } = 25;
     }

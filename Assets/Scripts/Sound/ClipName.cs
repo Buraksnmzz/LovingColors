@@ -8,5 +8,7 @@ namespace Sound
         ShopPurchase,
         CoinIncrease,
         CoinCreate,
+        Lose,
+        PowerUp
     }
 }

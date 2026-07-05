@@ -27,10 +27,11 @@ namespace SavedData
 
         public void RegisterModels()
         {
-            var settingsModel = LoadData<SettingsModel>();
-            var collectibleModel = LoadData<CollectibleModel>();
+            LoadData<SettingsModel>();
+            LoadData<CollectibleModel>();
             LoadData<LevelProgressModel>();
             LoadData<DailyChallengeModel>();
+            LoadData<RemoteConfigModel>();
         }
         public T GetModel<T>() where T : IModel
         {
