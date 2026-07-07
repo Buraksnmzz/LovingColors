@@ -1,3 +1,4 @@
+using DailyChallenge.Award;
 using Gameplay;
 using General;
 using MainMenu;
@@ -18,11 +19,17 @@ namespace DailyChallenge
             View.PreviousMonthClicked += OnPreviousMonthClicked;
             View.NextMonthClicked += OnNextMonthClicked;
             View.PlayClicked += OnPlayClicked;
+            View.AwardsClicked += OnAwardsClicked;
             View.DayClicked += OnDayClicked;
             View.DebugCompleteDayClicked += OnDebugCompleteDayClicked;
             View.DebugResetAllDaysClicked += OnDebugResetAllDaysClicked;
             View.DebugCompleteAllDaysClicked += OnDebugCompleteAllDaysClicked;
             View.BackButtonClicked += OnBackButtonClicked;
+        }
+
+        private void OnAwardsClicked()
+        {
+            _uiService.ShowPopup<AwardsPresenter>();
         }
 
         private void OnBackButtonClicked()

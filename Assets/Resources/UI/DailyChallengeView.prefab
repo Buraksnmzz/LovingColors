@@ -3411,6 +3411,7 @@ MonoBehaviour:
   nextMonthButton: {fileID: 1574531567347361310}
   playButton: {fileID: 3975824933396677226}
   backButton: {fileID: 5386702995321084166}
+  awardsButton: {fileID: 8063259623952275148}
   debugCompleteDayButton: {fileID: 4559551605467861361}
   debugResetAllDaysButton: {fileID: 7259490590877017844}
   debugCompleteAllDaysButton: {fileID: 7481870265529059297}

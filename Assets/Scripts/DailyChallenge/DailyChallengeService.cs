@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using DailyChallenge.Award;
 using General;
 using SavedData;
 using UnityEngine;
@@ -41,6 +42,27 @@ namespace DailyChallenge
             }
 
             return days;
+        }
+
+        public IReadOnlyList<AwardMonthModel> GetAwardMonths()
+        {
+            var awards = new List<AwardMonthModel>();
+            var monthDate = FirstAvailableMonthDate;
+            var lastAwardMonthDate = new DateTime(CurrentYear, 12, 1);
+
+            while (monthDate <= lastAwardMonthDate)
+            {
+                awards.Add(new AwardMonthModel
+                {
+                    Year = monthDate.Year,
+                    Month = monthDate.Month,
+                    State = GetAwardState(monthDate)
+                });
+
+                monthDate = monthDate.AddMonths(1);
+            }
+
+            return awards;
         }
 
         public DailyChallengeDay GetDay(int day)
@@ -451,6 +473,30 @@ namespace DailyChallenge
         private bool IsCompleted(DateTime date)
         {
             return _model.CompletedDays.Contains(ToKey(date));
+        }
+
+        private AwardState GetAwardState(DateTime monthDate)
+        {
+            if (monthDate > CurrentMonthDate)
+                return AwardState.Inactive;
+
+            return IsMonthCompleted(monthDate) ? AwardState.Completed : AwardState.Active;
+        }
+
+        private bool IsMonthCompleted(DateTime monthDate)
+        {
+            var daysInMonth = DateTime.DaysInMonth(monthDate.Year, monthDate.Month);
+            for (var day = 1; day <= daysInMonth; day++)
+            {
+                var date = new DateTime(monthDate.Year, monthDate.Month, day);
+                if (date > DateTime.Today)
+                    break;
+
+                if (!IsCompleted(date))
+                    return false;
+            }
+
+            return monthDate <= CurrentMonthDate;
         }
 
         private void CompleteDay(DateTime date)

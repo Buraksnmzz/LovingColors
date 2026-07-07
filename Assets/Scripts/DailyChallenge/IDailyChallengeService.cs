@@ -1,6 +1,7 @@
 using General;
 using System;
 using System.Collections.Generic;
+using DailyChallenge.Award;
 
 namespace DailyChallenge
 {
@@ -17,6 +18,7 @@ namespace DailyChallenge
         bool HasActiveDailyChallengeGame { get; }
 
         IReadOnlyList<DailyChallengeDayModel> GetCalendarGrid();
+        IReadOnlyList<AwardMonthModel> GetAwardMonths();
         IReadOnlyList<DailyChallengeDay> GetDisplayedMonthDays();
         DailyChallengeDay GetDay(int day);
         DailyChallengeDay GetDay(DateTime date);

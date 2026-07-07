@@ -11,6 +11,7 @@ namespace DailyChallenge
         public event Action PreviousMonthClicked;
         public event Action NextMonthClicked;
         public event Action PlayClicked;
+        public event Action AwardsClicked;
         public event Action<int> DayClicked;
         public event Action DebugCompleteDayClicked;
         public event Action DebugResetAllDaysClicked;
@@ -21,6 +22,7 @@ namespace DailyChallenge
         [SerializeField] private Button nextMonthButton;
         [SerializeField] private Button playButton;
         [SerializeField] private Button backButton;
+        [SerializeField] private Button awardsButton;
         [SerializeField] private Button debugCompleteDayButton;
         [SerializeField] private Button debugResetAllDaysButton;
         [SerializeField] private Button debugCompleteAllDaysButton;
@@ -36,6 +38,7 @@ namespace DailyChallenge
             previousMonthButton.onClick.AddListener(() => PreviousMonthClicked?.Invoke());
             nextMonthButton.onClick.AddListener(() => NextMonthClicked?.Invoke());
             playButton.onClick.AddListener(() => PlayClicked?.Invoke());
+            awardsButton.onClick.AddListener(() => AwardsClicked?.Invoke());
             debugCompleteDayButton.onClick.AddListener(() => DebugCompleteDayClicked?.Invoke());
             debugResetAllDaysButton.onClick.AddListener(() => DebugResetAllDaysClicked?.Invoke());
             debugCompleteAllDaysButton.onClick.AddListener(() => DebugCompleteAllDaysClicked?.Invoke());
