@@ -3,6 +3,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Button = UnityEngine.UI.Button;
+using Image = UnityEngine.UI.Image;
 
 namespace DefaultNamespace
 {
@@ -11,6 +12,7 @@ namespace DefaultNamespace
         private const float SelectionIntroDuration = 0.18f;
         private const float SelectionAnimationStepDuration = 0.26f;
         private const float DragAnimationStepDuration = 0.18f;
+        private const float AlphaHitTestMinimumThreshold = 0.1f;
         private static readonly Vector3 DefaultScale = Vector3.one;
         private static readonly Vector3 SelectionBaseScale = new(1.15f, 1.15f, 1f);
         private static readonly Vector3 SelectionSquashScale = new(1.03f, 0.97f, 1f);
@@ -30,6 +32,7 @@ namespace DefaultNamespace
         private bool _isTargetPreviewActive;
         private RectTransform _rectTransform;
         private Canvas _rootCanvas;
+        private Image _cardImage;
         private Tween _movementTween;
         private Tween _loopingScaleTween;
         private Tween _scaleTween;
@@ -109,6 +112,8 @@ namespace DefaultNamespace
         {
             _rectTransform = (RectTransform)transform;
             _rootCanvas = GetComponentInParent<Canvas>();
+            _cardImage = GetComponent<Image>();
+            ConfigureCardHitTest();
             if (selectImage != null)
             {
                 selectImage.SetActive(false);
@@ -129,6 +134,8 @@ namespace DefaultNamespace
             button = targetButton;
             lockImage = targetLockImage;
             selectImage = targetSelectImage;
+            _cardImage = button != null ? button.targetGraphic as Image : GetComponent<Image>();
+            ConfigureCardHitTest();
             RefreshInteractableState();
         }
 
@@ -260,6 +267,16 @@ namespace DefaultNamespace
             {
                 button.interactable = _isClickable && !_isLocked;
             }
+        }
+
+        private void ConfigureCardHitTest()
+        {
+            if (_cardImage == null)
+            {
+                return;
+            }
+
+            _cardImage.alphaHitTestMinimumThreshold = AlphaHitTestMinimumThreshold;
         }
 
         private void StartSelectionSquashStretch()

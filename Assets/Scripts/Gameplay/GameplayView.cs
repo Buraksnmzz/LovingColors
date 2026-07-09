@@ -1,7 +1,7 @@
 
 using System;
+using DG.Tweening;
 using Gameplay.Levels;
-using General;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,9 +29,13 @@ namespace Gameplay
         [SerializeField] private TextMeshProUGUI difficultyText;
         [SerializeField] private TextMeshProUGUI dcDateText;
         [SerializeField] private TextMeshProUGUI movesText;
+        [SerializeField] private Image handImage;
+        [SerializeField] private Image tutorialInfoImage;
+
 
         private Board _board;
         private CanvasGroup _canvasGroup;
+        private Sequence _tutorialHandSequence;
 
         protected override void Awake()
         {
@@ -55,7 +59,85 @@ namespace Gameplay
                 _board.WinSequenceCompleted += OnBoardCompleted;
                 _board.MovesChanged += OnBoardMovesChanged;
                 _board.MoveLimitReached += OnBoardMoveLimitReached;
+                _board.TutorialDragRequested += PlayTutorialDrag;
+                _board.TutorialTapRequested += PlayTutorialTap;
+                _board.TutorialHandHideRequested += HideTutorialHand;
+                _board.TutorialCompleted += OnBoardTutorialCompleted;
             }
+        }
+
+        private void PlayTutorialDrag(Vector3 startWorldPosition, Vector3 targetWorldPosition)
+        {
+            PrepareTutorialHand(startWorldPosition, 0f);
+
+            var handRectTransform = handImage.rectTransform;
+            _tutorialHandSequence = DOTween.Sequence();
+            _tutorialHandSequence.Append(handImage.DOFade(1f, 0.2f));
+            _tutorialHandSequence.Join(tutorialInfoImage.DOFade(1f, 0.2f));
+            _tutorialHandSequence.Append(handRectTransform.DOScale(Vector3.one * 1.12f, 0.15f).SetEase(Ease.OutBack));
+            _tutorialHandSequence.Append(handRectTransform.DOMove(targetWorldPosition, 0.5f).SetEase(Ease.InOutQuad));
+            _tutorialHandSequence.Append(handRectTransform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutQuad));
+            _tutorialHandSequence.AppendInterval(0.35f);
+            _tutorialHandSequence.Append(handImage.DOFade(0f, 0.25f));
+            _tutorialHandSequence.Join(tutorialInfoImage.DOFade(0f, 0.25f));
+            _tutorialHandSequence.AppendCallback(() => handRectTransform.position = startWorldPosition);
+            _tutorialHandSequence.AppendInterval(0.2f);
+            _tutorialHandSequence.SetLoops(-1, LoopType.Restart);
+            _tutorialHandSequence.OnKill(() => _tutorialHandSequence = null);
+        }
+
+        private void PlayTutorialTap(Vector3 worldPosition)
+        {
+            PrepareTutorialHand(worldPosition, 1f);
+
+            var handRectTransform = handImage.rectTransform;
+            _tutorialHandSequence = DOTween.Sequence();
+            _tutorialHandSequence.Append(handRectTransform.DOScale(Vector3.one * 1.15f, 0.25f).SetEase(Ease.OutQuad));
+            _tutorialHandSequence.Append(handRectTransform.DOScale(Vector3.one * 0.9f, 0.2f).SetEase(Ease.InOutQuad));
+            _tutorialHandSequence.Append(handRectTransform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack));
+            _tutorialHandSequence.SetLoops(-1, LoopType.Restart);
+            _tutorialHandSequence.OnKill(() => _tutorialHandSequence = null);
+        }
+
+        private void PrepareTutorialHand(Vector3 worldPosition, float alpha)
+        {
+            _tutorialHandSequence?.Kill();
+            var handRectTransform = handImage.rectTransform;
+            handImage.gameObject.SetActive(true);
+            tutorialInfoImage.gameObject.SetActive(true);
+            handImage.DOKill();
+            tutorialInfoImage.DOKill();
+            handRectTransform.DOKill();
+            handImage.color = new Color(handImage.color.r, handImage.color.g, handImage.color.b, alpha);
+            tutorialInfoImage.color = new Color(tutorialInfoImage.color.r, tutorialInfoImage.color.g, tutorialInfoImage.color.b, alpha);
+            handRectTransform.position = worldPosition;
+            handRectTransform.localScale = Vector3.one;
+            handRectTransform.localRotation = Quaternion.identity;
+        }
+
+        private void HideTutorialHand()
+        {
+            _tutorialHandSequence?.Kill();
+            handImage.DOKill();
+            tutorialInfoImage.DOKill();
+            handImage.rectTransform.DOKill();
+            handImage.color = new Color(handImage.color.r, handImage.color.g, handImage.color.b, 0f);
+            tutorialInfoImage.color = new Color(tutorialInfoImage.color.r, tutorialInfoImage.color.g, tutorialInfoImage.color.b, 0f);
+            handImage.rectTransform.localScale = Vector3.one;
+            handImage.rectTransform.localRotation = Quaternion.identity;
+            handImage.gameObject.SetActive(false);
+            tutorialInfoImage.gameObject.SetActive(false);
+        }
+
+        public void StartFirstLevelTutorial()
+        {
+            _board?.StartFirstLevelTutorial();
+        }
+
+        public void StopFirstLevelTutorial()
+        {
+            _board?.StopFirstLevelTutorial();
+            HideTutorialHand();
         }
 
         private void OnDebugPrev10ButtonClick()
@@ -130,12 +212,19 @@ namespace Gameplay
                 _board.WinSequenceCompleted -= OnBoardCompleted;
                 _board.MovesChanged -= OnBoardMovesChanged;
                 _board.MoveLimitReached -= OnBoardMoveLimitReached;
+                _board.TutorialDragRequested -= PlayTutorialDrag;
+                _board.TutorialTapRequested -= PlayTutorialTap;
+                _board.TutorialHandHideRequested -= HideTutorialHand;
+                _board.TutorialCompleted -= OnBoardTutorialCompleted;
             }
 
             debugNextButton.onClick.RemoveListener(OnDebugNextButtonClick);
             debugPrevButton.onClick.RemoveListener(OnDebugPrevButtonClick);
+            debugNext10Button.onClick.RemoveListener(OnDebugNext10ButtonClick);
+            debugPrev10Button.onClick.RemoveListener(OnDebugPrev10ButtonClick);
             debugCompleteButton.onClick.RemoveListener(OnDebugCompleteButtonClick);
             hintButton.onClick.RemoveListener(OnHintButtonClick);
+            StopFirstLevelTutorial();
             base.OnDestroy();
         }
 
@@ -161,15 +250,16 @@ namespace Gameplay
             Shown?.Invoke();
         }
 
-        public void InitializeBoard(LevelDefinition levelDefinition)
+        public void InitializeBoard(LevelDefinition levelDefinition, bool isMoveLimitEnabled)
         {
+            StopFirstLevelTutorial();
             if (levelDefinition == null)
             {
                 return;
             }
 
             SetInteractionLocked(false);
-            _board.Initialize(levelDefinition);
+            _board.Initialize(levelDefinition, isMoveLimitEnabled);
         }
 
         public void SetInteractionLocked(bool isLocked)
@@ -202,6 +292,11 @@ namespace Gameplay
         private void OnBoardMoveLimitReached()
         {
             MoveLimitReached?.Invoke();
+        }
+
+        private void OnBoardTutorialCompleted()
+        {
+            HideTutorialHand();
         }
     }
 }

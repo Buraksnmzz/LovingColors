@@ -69,11 +69,11 @@ public class Installer : MonoBehaviour
             YoogoLabManager.ShowBanner();
 
         var uiService = ServiceLocator.GetService<IUIService>();
-        // if (PlayerPrefs.GetInt(StringConstants.IsTutorialShown) == 0)
-        // {
-        //     uiService.ShowPopup<GameplayPresenter>();
-        // }
-        // else
+        if (PlayerPrefs.GetInt(StringConstants.IsTutorialShown) == 0)
+        {
+            uiService.ShowPopup<GameplayPresenter>();
+        }
+        else
         {
             uiService.ShowPopup<HomePresenter>();
         }

@@ -17,6 +17,7 @@ namespace DailyChallenge
         public event Action DebugResetAllDaysClicked;
         public event Action DebugCompleteAllDaysClicked;
         public event Action BackButtonClicked;
+        public event Action CompletedDayPulseCompleted;
 
         [SerializeField] private Button previousMonthButton;
         [SerializeField] private Button nextMonthButton;
@@ -82,6 +83,20 @@ namespace DailyChallenge
             }
         }
 
+        public void PlayCompletedDayPulse(int day)
+        {
+            foreach (var dayView in _dayViews)
+            {
+                if (dayView == null || !dayView.IsDay(day))
+                    continue;
+
+                dayView.PlayCompletedPulse(() => CompletedDayPulseCompleted?.Invoke());
+                return;
+            }
+
+            CompletedDayPulseCompleted?.Invoke();
+        }
+
         protected override void OnDestroy()
         {
             if (previousMonthButton != null)
@@ -96,6 +111,10 @@ namespace DailyChallenge
                 debugResetAllDaysButton.onClick.RemoveAllListeners();
             if (debugCompleteAllDaysButton != null)
                 debugCompleteAllDaysButton.onClick.RemoveAllListeners();
+            if (awardsButton != null)
+                awardsButton.onClick.RemoveAllListeners();
+            if (backButton != null)
+                backButton.onClick.RemoveAllListeners();
 
             ClearDays();
 

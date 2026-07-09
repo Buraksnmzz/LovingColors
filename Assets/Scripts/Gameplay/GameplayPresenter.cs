@@ -146,7 +146,7 @@ namespace Gameplay
             }
 
             View.SetDailyChallengeInfo(true, _dailyChallengeService.GetPlayedDateText());
-            View.InitializeBoard(levelDefinition);
+            View.InitializeBoard(levelDefinition, true);
         }
 
         private void LoadLevelAtIndex(int levelIndex, bool clampToPreviousValidLevel)
@@ -176,7 +176,16 @@ namespace Gameplay
                 _savedDataService.SaveData(levelProgressModel);
             }
             View.SetDifficultyText(levelDefinition.Difficulty.ToString());
-            View.InitializeBoard(levelDefinition);
+            View.InitializeBoard(levelDefinition, false);
+            if (ShouldShowFirstLevelTutorial(currentLevelIndex))
+            {
+                View.StartFirstLevelTutorial();
+            }
+        }
+
+        private bool ShouldShowFirstLevelTutorial(int levelIndex)
+        {
+            return levelIndex == 0 && PlayerPrefs.GetInt(StringConstants.IsTutorialShown) == 0;
         }
 
         private void OnViewSolved()
@@ -223,6 +232,12 @@ namespace Gameplay
                 _dailyChallengeService.CompletePlayedDay();
                 _uiService.ShowPopup<DailyChallengeWinPresenter>();
                 return;
+            }
+
+            if (PlayerPrefs.GetInt(StringConstants.IsTutorialShown) == 0)
+            {
+                PlayerPrefs.SetInt(StringConstants.IsTutorialShown, 1);
+                PlayerPrefs.Save();
             }
 
             _uiService.ShowPopup<WinPresenter>();

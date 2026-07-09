@@ -23,6 +23,7 @@ namespace Gameplay
         private const float ShuffleShowDuration = 0.7f;
         private const float ShuffleWaveDuration = 1.2f;
         private const float SwapDuration = 0.22f;
+        private const float FirstLevelTutorialStartDelay = 0.25f;
 
         [SerializeField] private Card cardPrefab;
         [SerializeField] private ShapeCardCatalog shapeCardCatalog;
@@ -55,12 +56,25 @@ namespace Gameplay
         private Card _activeCardPrefab;
         private int _moveCount;
         private int _totalMoveCount;
+        private bool _isMoveLimitEnabled;
         private bool _hasReachedMoveLimit;
+        private bool _isFirstLevelTutorialActive;
+        private bool _isFirstLevelTutorialWaitingForFirstCard;
+        private bool _isFirstLevelTutorialWaitingForTargetCard;
+        private bool _isFirstLevelTutorialWaitingForDrag;
+        private bool _shouldStartFirstLevelTutorialAfterShuffle;
+        private Card _tutorialFirstCard;
+        private Card _tutorialTargetCard;
+        private Tween _firstLevelTutorialDelayTween;
 
         public event Action Solved;
         public event Action WinSequenceCompleted;
         public event Action<int, int> MovesChanged;
         public event Action MoveLimitReached;
+        public event Action<Vector3, Vector3> TutorialDragRequested;
+        public event Action<Vector3> TutorialTapRequested;
+        public event Action TutorialHandHideRequested;
+        public event Action TutorialCompleted;
 
 
         private void Awake()
@@ -73,6 +87,7 @@ namespace Gameplay
         private void OnDestroy()
         {
             reshuffleButton.onClick.RemoveListener(Reshuffle);
+            StopFirstLevelTutorial();
         }
 
         private void Reshuffle()
@@ -152,9 +167,45 @@ namespace Gameplay
             MovesChanged?.Invoke(_moveCount, _totalMoveCount);
         }
 
-        public void Initialize(LevelDefinition levelDefinition)
+        public void StartFirstLevelTutorial()
         {
+            if (_hasCompletedBoard || _cards == null || _cards.Count == 0)
+            {
+                return;
+            }
+
+            StopFirstLevelTutorial();
+            _isFirstLevelTutorialActive = true;
+            _isInteractionLocked = true;
+            _shouldStartFirstLevelTutorialAfterShuffle = true;
+            RestoreCardInteractivity();
+            SetReshuffleInteractable(false);
+        }
+
+        public void StopFirstLevelTutorial()
+        {
+            _firstLevelTutorialDelayTween?.Kill();
+            _firstLevelTutorialDelayTween = null;
+            _isFirstLevelTutorialActive = false;
+            _isFirstLevelTutorialWaitingForFirstCard = false;
+            _isFirstLevelTutorialWaitingForTargetCard = false;
+            _isFirstLevelTutorialWaitingForDrag = false;
+            _shouldStartFirstLevelTutorialAfterShuffle = false;
+            _tutorialFirstCard = null;
+            _tutorialTargetCard = null;
+            if (!_hasCompletedBoard && !_hasReachedMoveLimit)
+            {
+                _isInteractionLocked = false;
+                RestoreCardInteractivity();
+                SetReshuffleInteractable(true);
+            }
+        }
+
+        public void Initialize(LevelDefinition levelDefinition, bool isMoveLimitEnabled)
+        {
+            StopFirstLevelTutorial();
             _hasCompletedBoard = false;
+            _isMoveLimitEnabled = isMoveLimitEnabled;
             _hasReachedMoveLimit = false;
             _moveCount = 0;
             _totalMoveCount = 0;
@@ -169,7 +220,7 @@ namespace Gameplay
 
             if (reshuffleButton != null)
             {
-                reshuffleButton.interactable = true;
+                SetReshuffleInteractable(true);
             }
 
             var customLayout = GetCustomLayout(levelDefinition);
@@ -437,7 +488,7 @@ namespace Gameplay
                 card.SnapTo(_slotPositions[boardIndex]);
                 card.SnapRotation(GetSlotRotation(boardIndex));
             }
-            _totalMoveCount = CalculateTotalMoveCount();
+            _totalMoveCount = _isMoveLimitEnabled ? CalculateTotalMoveCount() : 0;
             MovesChanged?.Invoke(_moveCount, _totalMoveCount);
             NormalizeSiblingOrder();
 
@@ -451,7 +502,78 @@ namespace Gameplay
             }
 
             yield return showSequence.WaitForCompletion();
+            if (_shouldStartFirstLevelTutorialAfterShuffle)
+            {
+                _shouldStartFirstLevelTutorialAfterShuffle = false;
+                _firstLevelTutorialDelayTween = DOVirtual.DelayedCall(FirstLevelTutorialStartDelay, PlayFirstTutorialDrag, false);
+                _firstLevelTutorialDelayTween.OnKill(() => _firstLevelTutorialDelayTween = null);
+                yield break;
+            }
+
             RestoreCardInteractivity();
+        }
+
+        private void PlayFirstTutorialDrag()
+        {
+            _firstLevelTutorialDelayTween = null;
+            if (!TryGetNextTutorialPair(out var firstCard, out var targetCard))
+            {
+                CompleteFirstLevelTutorial();
+                return;
+            }
+
+            _tutorialFirstCard = firstCard;
+            _tutorialTargetCard = targetCard;
+            _isInteractionLocked = false;
+            _isFirstLevelTutorialWaitingForDrag = true;
+            RestoreCardInteractivity();
+            TutorialDragRequested?.Invoke(firstCard.RectTransform.position, targetCard.RectTransform.position);
+        }
+
+        private void BeginTutorialTapStep()
+        {
+            if (!TryGetNextTutorialPair(out var firstCard, out var targetCard))
+            {
+                CompleteFirstLevelTutorial();
+                return;
+            }
+
+            _tutorialFirstCard = firstCard;
+            _tutorialTargetCard = targetCard;
+            _isInteractionLocked = false;
+            _isFirstLevelTutorialWaitingForFirstCard = true;
+            _isFirstLevelTutorialWaitingForTargetCard = false;
+            RestoreCardInteractivity();
+            TutorialTapRequested?.Invoke(firstCard.RectTransform.position);
+        }
+
+        private bool TryGetNextTutorialPair(out Card firstCard, out Card targetCard)
+        {
+            firstCard = null;
+            targetCard = null;
+            var targetIndex = GetFirstMisplacedCardIndex();
+            if (targetIndex < 0)
+            {
+                return false;
+            }
+
+            firstCard = _cards[targetIndex];
+            targetCard = FindCardById(targetIndex);
+            return targetCard != null && targetCard != firstCard && !firstCard.IsLocked && !targetCard.IsLocked;
+        }
+
+        private void CompleteFirstLevelTutorial()
+        {
+            _isFirstLevelTutorialActive = false;
+            _isFirstLevelTutorialWaitingForFirstCard = false;
+            _isFirstLevelTutorialWaitingForTargetCard = false;
+            _isFirstLevelTutorialWaitingForDrag = false;
+            _tutorialFirstCard = null;
+            _tutorialTargetCard = null;
+            _isInteractionLocked = false;
+            RestoreCardInteractivity();
+            SetReshuffleInteractable(true);
+            TutorialCompleted?.Invoke();
         }
 
         private List<int> GetShuffleAnimationOrder(List<int> boardIndices)
@@ -517,6 +639,24 @@ namespace Gameplay
         {
             foreach (var card in _cards)
             {
+                if (_isFirstLevelTutorialWaitingForFirstCard)
+                {
+                    card.IsClickable = card == _tutorialFirstCard && !card.IsLocked;
+                    continue;
+                }
+
+                if (_isFirstLevelTutorialWaitingForTargetCard)
+                {
+                    card.IsClickable = card == _tutorialTargetCard && !card.IsLocked;
+                    continue;
+                }
+
+                if (_isFirstLevelTutorialWaitingForDrag)
+                {
+                    card.IsClickable = card == _tutorialFirstCard && !card.IsLocked && _draggedCard == null;
+                    continue;
+                }
+
                 card.IsClickable = !_isInteractionLocked && _draggedCard == null && !card.IsLocked;
             }
         }
@@ -617,6 +757,11 @@ namespace Gameplay
 
         private void HandleCardClicked(Card clickedCard)
         {
+            if (TryHandleFirstLevelTutorialClick(clickedCard))
+            {
+                return;
+            }
+
             if (_isInteractionLocked || _draggedCard != null || clickedCard.IsLocked)
             {
                 return;
@@ -646,6 +791,16 @@ namespace Gameplay
 
         private void HandleCardDragStarted(Card draggedCard)
         {
+            if (_isFirstLevelTutorialActive && !_isFirstLevelTutorialWaitingForDrag)
+            {
+                return;
+            }
+
+            if (_isFirstLevelTutorialWaitingForDrag && draggedCard != _tutorialFirstCard)
+            {
+                return;
+            }
+
             if (_isInteractionLocked || draggedCard.IsLocked)
             {
                 return;
@@ -654,6 +809,11 @@ namespace Gameplay
             ClearSelection();
             ClearCurrentDragTarget();
             _draggedCard = draggedCard;
+            if (_isFirstLevelTutorialWaitingForDrag)
+            {
+                TutorialHandHideRequested?.Invoke();
+            }
+
             BringCardsToFront(draggedCard);
 
             foreach (var card in _cards)
@@ -704,6 +864,29 @@ namespace Gameplay
             {
                 var swapTarget = _currentDragTarget;
                 ClearCurrentDragTarget();
+                if (_isFirstLevelTutorialWaitingForDrag)
+                {
+                    if (draggedCard == _tutorialFirstCard && swapTarget == _tutorialTargetCard)
+                    {
+                        _isFirstLevelTutorialWaitingForDrag = false;
+                        StartSwap(draggedCard, swapTarget, _isFirstLevelTutorialWaitingForTargetCard ? CompleteFirstLevelTutorial : BeginTutorialTapStep);
+                        _draggedCard = null;
+                        return;
+                    }
+
+                    draggedCard.TweenMoveTo(_slotPositions[draggedCard.Order], SwapDuration)
+                        .OnComplete(() =>
+                        {
+                            _draggedCard = null;
+                            RestoreCardInteractivity();
+                            NormalizeSiblingOrder();
+                            TutorialDragRequested?.Invoke(_tutorialFirstCard.RectTransform.position, _tutorialTargetCard.RectTransform.position);
+                        });
+                    draggedCard.TweenRotateTo(GetSlotRotation(draggedCard.Order), SwapDuration);
+                    _draggedCard = null;
+                    return;
+                }
+
                 StartSwap(draggedCard, swapTarget);
                 _draggedCard = null;
                 return;
@@ -715,6 +898,10 @@ namespace Gameplay
                     _draggedCard = null;
                     RestoreCardInteractivity();
                     NormalizeSiblingOrder();
+                    if (_isFirstLevelTutorialWaitingForDrag)
+                    {
+                        TutorialDragRequested?.Invoke(_tutorialFirstCard.RectTransform.position, _tutorialTargetCard.RectTransform.position);
+                    }
                 });
             draggedCard.TweenRotateTo(GetSlotRotation(draggedCard.Order), SwapDuration);
         }
@@ -724,7 +911,7 @@ namespace Gameplay
             Card nearestCard = null;
             var smallestDistance = float.MaxValue;
             var draggedPosition = draggedCard.RectTransform.anchoredPosition;
-            var threshold = Mathf.Max(_cellSize.x, _cellSize.y) * 0.55f;
+            var draggedSize = GetSlotSize(draggedCard.Order);
 
             foreach (var card in _cards)
             {
@@ -734,8 +921,16 @@ namespace Gameplay
                 }
 
                 var slotPosition = _slotPositions[card.Order];
+                var targetSize = GetSlotSize(card.Order);
+                var threshold = Vector2.Min(draggedSize, targetSize) * 0.6f;
+                var offset = draggedPosition - slotPosition;
+                if (Mathf.Abs(offset.x) > threshold.x || Mathf.Abs(offset.y) > threshold.y)
+                {
+                    continue;
+                }
+
                 var distance = Vector2.Distance(draggedPosition, slotPosition);
-                if (distance > threshold || distance >= smallestDistance)
+                if (distance >= smallestDistance)
                 {
                     continue;
                 }
@@ -748,6 +943,11 @@ namespace Gameplay
         }
 
         private void StartSwap(Card firstCard, Card secondCard)
+        {
+            StartSwap(firstCard, secondCard, null);
+        }
+
+        private void StartSwap(Card firstCard, Card secondCard, Action completed)
         {
             if (firstCard == null || secondCard == null || firstCard == secondCard)
             {
@@ -798,7 +998,59 @@ namespace Gameplay
                 _draggedCard = null;
                 RestoreCardInteractivity();
                 NormalizeSiblingOrder();
+                completed?.Invoke();
             });
+        }
+
+        private bool TryHandleFirstLevelTutorialClick(Card clickedCard)
+        {
+            if (!_isFirstLevelTutorialActive)
+            {
+                return false;
+            }
+
+            if (_isFirstLevelTutorialWaitingForFirstCard)
+            {
+                if (clickedCard != _tutorialFirstCard)
+                {
+                    return true;
+                }
+
+                SelectCard(clickedCard);
+                _isFirstLevelTutorialWaitingForFirstCard = false;
+                _isFirstLevelTutorialWaitingForTargetCard = true;
+                RestoreCardInteractivity();
+                TutorialTapRequested?.Invoke(_tutorialTargetCard.RectTransform.position);
+                return true;
+            }
+
+            if (_isFirstLevelTutorialWaitingForTargetCard)
+            {
+                if (clickedCard != _tutorialTargetCard)
+                {
+                    return true;
+                }
+
+                _isFirstLevelTutorialWaitingForTargetCard = false;
+                TutorialHandHideRequested?.Invoke();
+                StartSwap(_tutorialFirstCard, _tutorialTargetCard, CompleteFirstLevelTutorial);
+                return true;
+            }
+
+            if (_isFirstLevelTutorialWaitingForDrag)
+            {
+                return true;
+            }
+
+            return true;
+        }
+
+        private void SetReshuffleInteractable(bool isInteractable)
+        {
+            if (reshuffleButton != null)
+            {
+                reshuffleButton.interactable = isInteractable;
+            }
         }
 
         private void SelectCard(Card card)
@@ -862,7 +1114,7 @@ namespace Gameplay
                 return;
             }
 
-            var targetSwapCount = GetTargetShuffleSwapCount(cards.Count);
+            var targetChangedCardCount = GetTargetChangedCardCount(cards.Count);
             var indices = new List<int>(cards.Count);
             for (var index = 0; index < cards.Count; index++)
             {
@@ -870,24 +1122,17 @@ namespace Gameplay
             }
 
             ShuffleIndices(indices);
-            var cursor = 0;
-            while (targetSwapCount > 0 && cursor < indices.Count)
-            {
-                var cycleLength = Mathf.Min(targetSwapCount + 1, indices.Count - cursor);
-                RotateCards(cards, indices, cursor, cycleLength);
-                targetSwapCount -= cycleLength - 1;
-                cursor += cycleLength;
-            }
+            RotateCards(cards, indices, 0, targetChangedCardCount);
         }
 
-        private static int GetTargetShuffleSwapCount(int cardCount)
+        private static int GetTargetChangedCardCount(int cardCount)
         {
             if (cardCount <= 1)
             {
                 return 0;
             }
 
-            return Mathf.Max(1, cardCount / 2 - 1);
+            return Mathf.Clamp(cardCount / 2 + 1, 2, cardCount);
         }
 
         private static void ShuffleIndices(List<int> indices)
@@ -1124,7 +1369,7 @@ namespace Gameplay
 
         private bool HasReachedMoveLimit()
         {
-            return _totalMoveCount > 0 && _moveCount >= _totalMoveCount && !_hasReachedMoveLimit;
+            return _isMoveLimitEnabled && _totalMoveCount > 0 && _moveCount >= _totalMoveCount && !_hasReachedMoveLimit;
         }
 
         private void LockInteractionForWin()
@@ -1137,7 +1382,7 @@ namespace Gameplay
 
             if (reshuffleButton != null)
             {
-                reshuffleButton.interactable = false;
+                SetReshuffleInteractable(false);
             }
 
             foreach (var card in _cards)

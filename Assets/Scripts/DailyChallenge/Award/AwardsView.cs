@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ namespace DailyChallenge.Award
         [SerializeField] private GridLayoutGroup awardMonthGridPrefab;
         [SerializeField] private Transform awardContent;
         [SerializeField] private AwardMonthSpriteConfig awardMonthSpriteConfig;
+        [SerializeField] private ScrollRect awardsScrollRect;
         [SerializeField] private Button backButton;
 
         private readonly List<GameObject> _awardItems = new List<GameObject>();
@@ -29,6 +31,8 @@ namespace DailyChallenge.Award
                 return;
 
             var previousYear = 0;
+            var currentMonthDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+            RectTransform currentMonthTarget = null;
             GridLayoutGroup currentMonthGrid = null;
             foreach (var award in awards)
             {
@@ -46,7 +50,13 @@ namespace DailyChallenge.Award
 
                 var awardMonth = Instantiate(awardMonthPrefab, currentMonthGrid.transform);
                 awardMonth.SetMonth(award, awardMonthSpriteConfig);
+
+                if (award.Date == currentMonthDate)
+                    currentMonthTarget = awardMonth.transform as RectTransform;
             }
+
+            if (currentMonthTarget != null)
+                StartCoroutine(ScrollToCurrentMonth(currentMonthTarget));
         }
 
         protected override void OnDestroy()
@@ -84,6 +94,33 @@ namespace DailyChallenge.Award
             var monthGrid = Instantiate(awardMonthGridPrefab, awardContent);
             _awardItems.Add(monthGrid.gameObject);
             return monthGrid;
+        }
+
+        private IEnumerator ScrollToCurrentMonth(RectTransform currentMonthTarget)
+        {
+            yield return null;
+
+            if (currentMonthTarget == null)
+                yield break;
+
+            var scrollRect = awardsScrollRect != null ? awardsScrollRect : GetComponentInChildren<ScrollRect>();
+            if (scrollRect == null || scrollRect.content == null)
+                yield break;
+
+            var viewport = scrollRect.viewport != null ? scrollRect.viewport : scrollRect.transform as RectTransform;
+            if (viewport == null)
+                yield break;
+
+            Canvas.ForceUpdateCanvases();
+            LayoutRebuilder.ForceRebuildLayoutImmediate(scrollRect.content);
+            Canvas.ForceUpdateCanvases();
+
+            var targetBounds = RectTransformUtility.CalculateRelativeRectTransformBounds(viewport, currentMonthTarget);
+            var offsetToViewportTop = viewport.rect.yMax - targetBounds.max.y;
+            var maxScroll = Mathf.Max(0f, scrollRect.content.rect.height - viewport.rect.height);
+            var targetY = Mathf.Clamp(scrollRect.content.anchoredPosition.y + offsetToViewportTop, 0f, maxScroll);
+            scrollRect.content.anchoredPosition = new Vector2(scrollRect.content.anchoredPosition.x, targetY);
+            scrollRect.velocity = Vector2.zero;
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,14 +20,33 @@ namespace DailyChallenge
         [SerializeField] private Color selectedTextColor = Color.white;
         [SerializeField] private Color completedTextColor = Color.clear;
         [SerializeField] private Color futureTextColor = new Color(0.75f, 0.75f, 0.75f, 1f);
+        [SerializeField] private float completedPulseScale = 1.25f;
+        [SerializeField] private float completedPulseDuration = 0.2f;
 
         private int _dayNumber;
+        private Tween _completedPulseTween;
+        private Vector3 _completedRootInitialScale = Vector3.one;
 
         private void Awake()
         {
+            if (completedRoot != null)
+            {
+                _completedRootInitialScale = completedRoot.transform.localScale;
+            }
+
             if (button != null)
             {
                 button.onClick.AddListener(OnButtonClicked);
+            }
+        }
+
+        private void OnDestroy()
+        {
+            _completedPulseTween?.Kill();
+
+            if (button != null)
+            {
+                button.onClick.RemoveListener(OnButtonClicked);
             }
         }
 
@@ -84,6 +104,27 @@ namespace DailyChallenge
             SetActive(completedRoot, day.Completed);
             SetActive(inactiveRoot, !day.Active);
             SetActive(emptyRoot, false);
+        }
+
+        public bool IsDay(int day)
+        {
+            return _dayNumber == day;
+        }
+
+        public void PlayCompletedPulse(Action onComplete)
+        {
+            if (completedRoot == null || !completedRoot.activeSelf)
+            {
+                onComplete?.Invoke();
+                return;
+            }
+
+            _completedPulseTween?.Kill();
+            completedRoot.transform.localScale = _completedRootInitialScale;
+            _completedPulseTween = DOTween.Sequence()
+                .Append(completedRoot.transform.DOScale(_completedRootInitialScale * completedPulseScale, completedPulseDuration).SetEase(Ease.OutBack))
+                .Append(completedRoot.transform.DOScale(_completedRootInitialScale, completedPulseDuration).SetEase(Ease.InOutSine))
+                .OnComplete(() => onComplete?.Invoke());
         }
 
         private void OnButtonClicked()

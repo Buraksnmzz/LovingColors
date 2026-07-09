@@ -29,10 +29,10 @@ namespace DailyChallenge
 
         private void OnContinueClicked()
         {
-            _dailyChallengeService.SelectLatestPlayableUncompletedDayFromCurrentDate();
             _uiService.HidePopup<GameplayPresenter>(false);
             _uiService.HidePopup<DailyChallengeWinPresenter>();
-            _uiService.ShowPopup<DailyChallengePresenter>();
+            var dailyChallengePresenter = _uiService.ShowPopup<DailyChallengePresenter>();
+            dailyChallengePresenter?.PlayCompletedDayRewardFlow();
         }
     }
 }

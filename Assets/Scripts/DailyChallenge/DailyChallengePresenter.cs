@@ -10,6 +10,7 @@ namespace DailyChallenge
     {
         private IDailyChallengeService _dailyChallengeService;
         private IUIService _uiService;
+        private bool _shouldShowCompletedReward;
 
         protected override void OnInitialize()
         {
@@ -25,6 +26,7 @@ namespace DailyChallenge
             View.DebugResetAllDaysClicked += OnDebugResetAllDaysClicked;
             View.DebugCompleteAllDaysClicked += OnDebugCompleteAllDaysClicked;
             View.BackButtonClicked += OnBackButtonClicked;
+            View.CompletedDayPulseCompleted += OnCompletedDayPulseCompleted;
         }
 
         private void OnAwardsClicked()
@@ -57,6 +59,9 @@ namespace DailyChallenge
                 View.DebugCompleteDayClicked -= OnDebugCompleteDayClicked;
                 View.DebugResetAllDaysClicked -= OnDebugResetAllDaysClicked;
                 View.DebugCompleteAllDaysClicked -= OnDebugCompleteAllDaysClicked;
+                View.AwardsClicked -= OnAwardsClicked;
+                View.BackButtonClicked -= OnBackButtonClicked;
+                View.CompletedDayPulseCompleted -= OnCompletedDayPulseCompleted;
             }
 
             base.Cleanup();
@@ -126,6 +131,27 @@ namespace DailyChallenge
                 _dailyChallengeService.GetActiveCountInDisplayedMonth());
             View.SetPlayButton(selectedDay != null && selectedDay.Active && !selectedDay.Completed);
             View.SetDays(_dailyChallengeService.GetCalendarGrid());
+        }
+
+        public void PlayCompletedDayRewardFlow()
+        {
+            var playedDate = _dailyChallengeService.GetPlayedDate();
+            if (!playedDate.HasValue)
+                return;
+
+            _shouldShowCompletedReward = true;
+            _dailyChallengeService.SetDisplayedMonth(playedDate.Value.Year, playedDate.Value.Month);
+            RefreshView();
+            View.PlayCompletedDayPulse(playedDate.Value.Day);
+        }
+
+        private void OnCompletedDayPulseCompleted()
+        {
+            if (!_shouldShowCompletedReward)
+                return;
+
+            _shouldShowCompletedReward = false;
+            _uiService.ShowPopup<DailyChallengeReward1Presenter>();
         }
     }
 }
