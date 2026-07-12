@@ -12,8 +12,8 @@ namespace IAP
         public const string CoinPack3 = "dropmarble_pack_3";
         public const string CoinPack4 = "dropmarble_pack_4";
         public const string CoinPack5 = "dropmarble_pack_5";
-        public const string NoAdsOnly = "dropmarble_noads";
-        public const string NoAdsPack = "dropmarble_noadspack"; 
+        public const string NoAdsOnly = "lovingcolors_noads";
+        public const string NoAdsPack = "lovingcolors_noadspack"; 
 
         public static readonly Dictionary<string, ProductType> ProductTypeMap = new Dictionary<string, ProductType>
         {

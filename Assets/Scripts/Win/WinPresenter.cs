@@ -21,10 +21,6 @@ namespace Win
 
         private void OnNextButtonClicked()
         {
-            var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
-            levelProgressModel.CurrentLevelIndex++;
-            _savedDataService.SaveData(levelProgressModel);
-
             _uiService.HidePopup<GameplayPresenter>(false);
             _uiService.ShowPopup<GameplayPresenter>();
             _uiService.HidePopup<WinPresenter>();

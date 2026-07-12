@@ -32,10 +32,13 @@ namespace Gameplay
         [SerializeField] private Image handImage;
         [SerializeField] private Image tutorialInfoImage;
 
+        private const float MovesTextFadeDuration = 0.25f;
 
         private Board _board;
         private CanvasGroup _canvasGroup;
         private Sequence _tutorialHandSequence;
+        private bool _isDailyChallenge;
+        private bool _hasShownDailyChallengeTargetMoves;
 
         protected override void Awake()
         {
@@ -161,6 +164,9 @@ namespace Gameplay
 
         public void SetDailyChallengeInfo(bool isDailyChallenge, string dateText)
         {
+            _isDailyChallenge = isDailyChallenge;
+            _hasShownDailyChallengeTargetMoves = false;
+
             if (levelText != null)
             {
                 levelText.gameObject.SetActive(!isDailyChallenge);
@@ -181,6 +187,8 @@ namespace Gameplay
             {
                 movesText.gameObject.SetActive(isDailyChallenge);
                 movesText.text = isDailyChallenge ? "0/0" : string.Empty;
+                movesText.DOKill();
+                movesText.alpha = isDailyChallenge ? 0f : 1f;
             }
         }
 
@@ -192,6 +200,12 @@ namespace Gameplay
             }
 
             movesText.text = moveCount + "/" + totalMoveCount;
+            if (_isDailyChallenge && !_hasShownDailyChallengeTargetMoves && totalMoveCount > 0)
+            {
+                _hasShownDailyChallengeTargetMoves = true;
+                movesText.DOKill();
+                movesText.DOFade(1f, MovesTextFadeDuration).SetEase(Ease.OutQuad);
+            }
         }
 
         public void AddExtraMoves(int moveCount)

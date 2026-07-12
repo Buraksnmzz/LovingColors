@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
-using DG.Tweening;
+using System.Linq;
 using General;
+using General.EventDispatcher;
 using SavedData;
 using UI.Settings;
 using Unity.Services.Core;
@@ -11,19 +12,19 @@ using UnityEngine.Purchasing;
 
 namespace IAP
 {
-    public class IAPService : IIAPService, IStoreListener
+    public class IAPService : IIAPService
     {
         private readonly ISavedDataService _savedDataService;
+        private readonly IEventDispatcherService _eventDispatcherService;
 
-        private IStoreController m_StoreController;
-        private IExtensionProvider m_StoreExtensionProvider;
-#if UNITY_IOS
-        private static IAppleExtensions appleExtensions;
-#endif
+        private StoreController _storeController;
+
         public bool IsInitialized { get; private set; }
+
         private Action<bool> _purchaseCallback;
-        private HashSet<string> _processedTransactions = new HashSet<string>();
         private string _pendingPurchaseProductId;
+
+        private readonly HashSet<string> _processedOrderIds = new();
 
         private const string NoAdsProductID = ProductIds.NoAdsOnly;
         private const string NoAdsPackProductID = ProductIds.NoAdsPack;
@@ -31,228 +32,252 @@ namespace IAP
         public IAPService()
         {
             _savedDataService = ServiceLocator.GetService<ISavedDataService>();
-            InitializePurchasing();
+            _eventDispatcherService = ServiceLocator.GetService<IEventDispatcherService>();
+            _ = InitializeAsync();
+        }
+
+        private async System.Threading.Tasks.Task InitializeAsync()
+        {
+            try
+            {
+                var options = new InitializationOptions().SetEnvironmentName("production");
+                await UnityServices.InitializeAsync(options);
+                _storeController = UnityIAPServices.StoreController();
+                _storeController.OnPurchasePending += OnPurchasePending;
+                _storeController.OnPurchaseConfirmed += OnPurchaseConfirmed;
+                _storeController.OnPurchaseFailed += OnPurchaseFailed;
+                await _storeController.Connect();
+                _storeController.OnProductsFetched += OnProductsFetched;
+                _storeController.OnProductsFetchFailed += OnProductsFetchFailed;
+                _storeController.OnPurchasesFetched += OnPurchasesFetched;
+                _storeController.OnPurchasesFetchFailed += OnPurchasesFetchFailed;
+                _storeController.OnStoreDisconnected += OnStoreDisconnected;
+
+                var products = ProductIds.ProductTypeMap
+                    .Select(kv => new ProductDefinition(kv.Key, kv.Value))
+                    .ToList();
+
+                _storeController.FetchProducts(products);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"[IAP] InitializeAsync failed: {e.Message}");
+                IsInitialized = false;
+                DispatchBannerVisibility();
+            }
+        }
+
+        private void OnProductsFetched(List<Product> products)
+        {
+            Debug.Log($"[IAP] Products fetched: {products.Count}");
+            IsInitialized = true;
+            _storeController.FetchPurchases();
+        }
+
+        private void OnProductsFetchFailed(ProductFetchFailed failure)
+        {
+            Debug.LogWarning($"[IAP] Products fetch failed: {failure.FailureReason}");
+            IsInitialized = false;
+            DispatchBannerVisibility();
+        }
+
+        private void OnPurchasesFetched(Orders orders)
+        {
+            Debug.Log($"[IAP] Purchases fetched. Confirmed orders: {orders.ConfirmedOrders.Count}");
+
+            bool ownsNoAds = orders.ConfirmedOrders.Any(o =>
+                o.CartOrdered.Items().Any(item =>
+                    item.Product.definition.id == NoAdsProductID ||
+                    item.Product.definition.id == NoAdsPackProductID));
+
+            SyncNoAdsEntitlement(ownsNoAds, source: "FetchPurchases");
+        }
+
+        private void OnPurchasesFetchFailed(PurchasesFetchFailureDescription failure)
+        {
+            Debug.LogWarning($"[IAP] Purchases fetch failed: {failure.FailureReason} | {failure.Message}");
+            DispatchBannerVisibility();
+        }
+
+        private void OnStoreDisconnected(StoreConnectionFailureDescription failure)
+        {
+            Debug.LogWarning($"[IAP] Store disconnected: {failure.Message}");
+            IsInitialized = false;
+            DispatchBannerVisibility();
         }
 
         public void Purchase(string productId, Action<bool> onComplete)
         {
             _purchaseCallback = onComplete;
-            if (!IsInitialized)
+
+            if (!IsInitialized || _storeController == null)
             {
-                Debug.LogError("IAP not initialized");
-                _purchaseCallback?.Invoke(false);
-                _purchaseCallback = null;
-                _pendingPurchaseProductId = null;
-                return;
-            }
-            if (IsInitialized && m_StoreController != null)
-            {
-                var product = m_StoreController.products.WithID(productId);
-                if (product != null && product.availableToPurchase)
-                {
-                    Debug.Log($"Initiating purchase: {productId}");
-                    _pendingPurchaseProductId = productId;
-                    m_StoreController.InitiatePurchase(product);
-                    return;
-                }
-
-                Debug.LogError($"Product not available for purchase: {productId}");
-                _purchaseCallback?.Invoke(false);
-                _purchaseCallback = null;
-                _pendingPurchaseProductId = null;
-                return;
-            }
-            Debug.Log("IAPService: falling back to simulated purchase: " + productId);
-            _purchaseCallback?.Invoke(false);
-            _purchaseCallback = null;
-            _pendingPurchaseProductId = null;
-        }
-
-        public string GetLocalizedPrice(string productId)
-        {
-            if (string.IsNullOrEmpty(productId)) return string.Empty;
-
-            if (IsInitialized && m_StoreController != null)
-            {
-                var prod = m_StoreController.products.WithID(productId);
-                if (prod != null && prod.metadata != null && !string.IsNullOrEmpty(prod.metadata.localizedPriceString))
-                    return prod.metadata.localizedPriceString;
-            }
-
-            return string.Empty;
-        }
-
-        private async void InitializePurchasing()
-        {
-            if (IsInitialized) return;
-
-            var options = new InitializationOptions().SetEnvironmentName("production");
-            //var options = new InitializationOptions().SetEnvironmentName("test");
-            await UnityServices.InitializeAsync(options);
-            var module = StandardPurchasingModule.Instance();
-            var builder = ConfigurationBuilder.Instance(module);
-
-            foreach (var kv in ProductIds.ProductTypeMap)
-            {
-                builder.AddProduct(kv.Key, kv.Value);
-            }
-            UnityPurchasing.Initialize(this, builder);
-        }
-
-        public void OnInitialized(IStoreController controller, IExtensionProvider extensions)
-        {
-            Debug.Log("IAP initialized");
-            m_StoreController = controller;
-            m_StoreExtensionProvider = extensions;
-#if UNITY_IOS
-            appleExtensions = extensions.GetExtension<IAppleExtensions>();
-#endif
-#if UNITY_ANDROID
-            DOVirtual.DelayedCall(2f, () =>
-            {
-                SyncNoAdsEntitlementFromStore();
-            });
-#endif
-            IsInitialized = true;
-        }
-        
-        
-        private void SyncNoAdsEntitlementFromStore()
-        {
-            var settingsModel = _savedDataService.GetModel<SettingsModel>();
-
-            var noAds = m_StoreController.products.WithID(NoAdsProductID);
-            var noAdsPack = m_StoreController.products.WithID(NoAdsPackProductID);
-
-            bool ownsNoAds =
-                (noAds != null && noAds.hasReceipt) ||
-                (noAdsPack != null && noAdsPack.hasReceipt);
-
-            Debug.Log(
-                $"[IAP SYNC] " +
-                $"localBefore:{settingsModel.IsNoAds} | " +
-                $"noAds.exists:{noAds != null} | noAds.receipt:{noAds?.hasReceipt} | " +
-                $"pack.exists:{noAdsPack != null} | pack.receipt:{noAdsPack?.hasReceipt} | " +
-                $"ownsNoAds:{ownsNoAds}"
-            );
-
-            settingsModel.IsNoAds = ownsNoAds;
-            _savedDataService.SaveData(settingsModel);
-
-            Debug.Log($"[IAP SYNC] localAfter:{settingsModel.IsNoAds}");
-        }
-
-        public void OnInitializeFailed(InitializationFailureReason error)
-        {
-            Debug.LogWarning("IAP initialization failed: " + error);
-            IsInitialized = false;
-        }
-
-        public void OnInitializeFailed(InitializationFailureReason error, string message = null)
-        {
-            Debug.LogWarning("IAP initialization failed: " + error);
-            IsInitialized = false;
-        }
-
-        public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs args)
-        {
-            var settingsModel = _savedDataService.GetModel<SettingsModel>();
-            var product = args.purchasedProduct;
-            string transactionId = product.transactionID;
-            if (transactionId != null && _processedTransactions.Contains(transactionId))
-            {
-                return PurchaseProcessingResult.Complete;
-            }
-
-            var hasReceipt = product.hasReceipt;
-            var productId = product.definition.id;
-            var isUserInitiatedPurchase = _purchaseCallback != null && !string.IsNullOrEmpty(_pendingPurchaseProductId) && _pendingPurchaseProductId == productId;
-
-            if (hasReceipt)
-            {
-                if (isUserInitiatedPurchase)
-                {
-                    if (productId != NoAdsProductID && productId != NoAdsPackProductID)
-                        YoogoLabManager.IAP(product);
-                    else if (!settingsModel.IsNoAds)
-                        YoogoLabManager.IAP(product);
-                }
-
-                if (productId == NoAdsProductID || productId == NoAdsPackProductID)
-                    settingsModel.IsNoAds = true;
-                if (transactionId != null) _processedTransactions.Add(transactionId);
-                Debug.Log("Purchase successful: " + args.purchasedProduct.definition.id);
-                _purchaseCallback?.Invoke(true);
-                _purchaseCallback = null;
-                _pendingPurchaseProductId = null;
-            }
-            else
-            {
-                _purchaseCallback?.Invoke(false);
-                _purchaseCallback = null;
-                _pendingPurchaseProductId = null;
-            }
-            _savedDataService.SaveData(settingsModel);
-            return PurchaseProcessingResult.Complete;
-        }
-
-        public void OnPurchaseFailed(Product product, PurchaseFailureReason failureReason)
-        {
-            Debug.LogWarning($"Purchase failed: {product.definition.id}, Reason: {failureReason}");
-            _purchaseCallback?.Invoke(false);
-            _purchaseCallback = null;
-            _pendingPurchaseProductId = null;
-        }
-
-        private void RestorePurchases()
-        {
-            Debug.Log("[IAP RESTORE] RestorePurchases() called");
-
-            var product1 = m_StoreController.products.WithID(NoAdsProductID);
-            var product2 = m_StoreController.products.WithID(NoAdsPackProductID);
-            if (product1 == null && product2 == null)
-            {
-                Debug.LogError("[IAP RESTORE] ERROR: Product not found in catalog");
+                Debug.LogError("[IAP] Purchase called before initialization.");
+                FailPurchase();
                 return;
             }
 
-            var settingsModel = _savedDataService.GetModel<SettingsModel>();
-            var hasReceiptFlag = (product1 != null && product1.hasReceipt) || (product2 != null && product2.hasReceipt);
-
-            if (hasReceiptFlag)
+            var product = _storeController.GetProductById(productId);
+            if (product == null || !product.availableToPurchase)
             {
-                Debug.Log("[IAP RESTORE] VALID purchase detected → Granting entitlement");
+                Debug.LogError($"[IAP] Product not available: {productId}");
+                FailPurchase();
+                return;
+            }
+
+            Debug.Log($"[IAP] Initiating purchase: {productId}");
+            _pendingPurchaseProductId = productId;
+            _storeController.PurchaseProduct(product);
+        }
+
+        private void OnPurchasePending(PendingOrder pendingOrder)
+        {
+            var orderId = pendingOrder.Info.TransactionID;
+            var productId = pendingOrder.CartOrdered.Items().FirstOrDefault()?.Product.definition.id;
+
+            Debug.Log($"[IAP] OnPurchasePending | orderId:{orderId} | product:{productId}");
+
+            if (orderId != null && _processedOrderIds.Contains(orderId))
+            {
+                Debug.Log($"[IAP] Duplicate order skipped: {orderId}");
+                _storeController.ConfirmPurchase(pendingOrder);
+                return;
+            }
+
+            if (orderId != null)
+                _processedOrderIds.Add(orderId);
+
+            _storeController.ConfirmPurchase(pendingOrder);
+        }
+
+        private void OnPurchaseConfirmed(Order order)
+        {
+            switch (order)
+            {
+                case FailedOrder failedOrder:
+                    OnPurchaseConfirmationFailed(failedOrder);
+                    break;
+                case ConfirmedOrder confirmedOrder:
+                    OnPurchaseConfirmed(confirmedOrder);
+                    break;
+            }
+        }
+
+        private void OnPurchaseConfirmed(ConfirmedOrder confirmedOrder)
+        {
+            var product = confirmedOrder.CartOrdered.Items().FirstOrDefault()?.Product;
+            var productId = product?.definition.id;
+            var transactionId = confirmedOrder.Info.TransactionID;
+
+            Debug.Log($"[IAP] Purchase confirmed: {productId} | transactionId:{transactionId}");
+
+            bool isUserInitiated = _purchaseCallback != null && _pendingPurchaseProductId == productId;
+            bool isNoAdsPurchase = productId == NoAdsProductID || productId == NoAdsPackProductID;
+
+            if (isUserInitiated)
+            {
+                var settingsModel = _savedDataService.GetModel<SettingsModel>();
+                bool alreadyOwned = isNoAdsPurchase && settingsModel.IsNoAds;
+
+                if ((!isNoAdsPurchase || !alreadyOwned) && product != null)
+                    YoogoLabManager.IAP(product);
+            }
+
+            if (productId == NoAdsProductID || productId == NoAdsPackProductID)
+            {
+                var settingsModel = _savedDataService.GetModel<SettingsModel>();
                 settingsModel.IsNoAds = true;
-            }
-            else
-            {
-                Debug.Log("[IAP RESTORE] NO valid purchase → entitlement stays = " + settingsModel.IsNoAds);
+                _savedDataService.SaveData(settingsModel);
             }
 
-            _savedDataService.SaveData(settingsModel);
+            if (isUserInitiated)
+                _purchaseCallback.Invoke(true);
 
-            Debug.Log($"[IAP RESTORE] Final entitlement state = {settingsModel.IsNoAds}");
+            ClearPurchaseState();
+            DispatchBannerVisibility();
         }
+
+        private void OnPurchaseConfirmationFailed(FailedOrder failedOrder)
+        {
+            var productId = failedOrder.CartOrdered.Items().FirstOrDefault()?.Product.definition.id;
+            Debug.LogWarning($"[IAP] Purchase confirmation failed: {productId} | {failedOrder.FailureReason}");
+
+            bool isUserInitiated = _purchaseCallback != null && _pendingPurchaseProductId == productId;
+            if (isUserInitiated)
+                FailPurchase();
+        }
+
+        private void OnPurchaseFailed(FailedOrder failedOrder)
+        {
+            var productId = failedOrder.CartOrdered.Items().FirstOrDefault()?.Product.definition.id;
+            var failureReason = failedOrder.FailureReason;
+            Debug.LogWarning($"[IAP] Purchase failed: {productId} | {failureReason}");
+            FailPurchase();
+        }
+
 
         public void RestorePurchasesIOS()
         {
 #if UNITY_IOS
-            if (appleExtensions == null)
+            if (!IsInitialized || _storeController == null)
             {
-                Debug.LogWarning("RestorePurchases called before IAP was initialized.");
+                Debug.LogWarning("[IAP] RestorePurchases called before initialization.");
                 return;
             }
-
-            appleExtensions.RestoreTransactions((success, error) =>
+            Debug.Log("[IAP] iOS RestorePurchases → RestoreTransactions");
+            _storeController.RestoreTransactions((success, error) =>
             {
-                Debug.Log($"RestorePurchases completed. Success: {success} | Error: {error}");
+                Debug.Log($"[IAP] RestorePurchases completed. Success: {success} | Error: {error}");
 
-                if (m_StoreController != null)
+                if (success)
                 {
-                    RestorePurchases();
+                    _storeController.FetchPurchases();
+                    return;
                 }
+
+                DispatchBannerVisibility();
             });
 #endif
+        }
+
+
+        private void SyncNoAdsEntitlement(bool ownsNoAds, string source)
+        {
+            var settingsModel = _savedDataService.GetModel<SettingsModel>();
+            Debug.Log($"[IAP SYNC:{source}] before:{settingsModel.IsNoAds} → after:{ownsNoAds}");
+            settingsModel.IsNoAds = ownsNoAds;
+            _savedDataService.SaveData(settingsModel);
+            DispatchBannerVisibility();
+        }
+
+        public string GetLocalizedPrice(string productId)
+        {
+            if (string.IsNullOrEmpty(productId) || !IsInitialized || _storeController == null)
+                return string.Empty;
+
+            var product = _storeController.GetProductById(productId);
+            if (product?.metadata != null && !string.IsNullOrEmpty(product.metadata.localizedPriceString))
+                return product.metadata.localizedPriceString;
+
+            return string.Empty;
+        }
+
+        private void FailPurchase()
+        {
+            _purchaseCallback?.Invoke(false);
+            ClearPurchaseState();
+        }
+
+        private void ClearPurchaseState()
+        {
+            _purchaseCallback = null;
+            _pendingPurchaseProductId = null;
+        }
+
+        private void DispatchBannerVisibility()
+        {
+            var isNoAds = _savedDataService.GetModel<SettingsModel>().IsNoAds;
+            _eventDispatcherService.Dispatch(new BannerVisibilityChangedSignal(!isNoAds));
         }
     }
 }

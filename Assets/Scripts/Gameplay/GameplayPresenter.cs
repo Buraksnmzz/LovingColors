@@ -44,6 +44,71 @@ namespace Gameplay
             _eventDispatcherService.AddListener<ContinueWithRewardedSignal>(OnContinueWithRewardedSignal);
             _eventDispatcherService.AddListener<RestartButtonClickSignal>(OnRestartButtonClick);
         }
+        
+        private void TrackLevelEnd()
+        {
+            var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
+            int levelIndex;
+            if (_dailyChallengeService.HasActiveDailyChallengeGame)
+            {
+                levelIndex = _dailyChallengeService.GetPlayedLevelId();
+            }
+            else
+            {
+                levelIndex = levelProgressModel.CurrentLevelIndex + 1;
+            }
+            
+            var mode = _dailyChallengeService.HasActiveDailyChallengeGame
+                ? StringConstants.FirebaseModeDaily
+                : StringConstants.FirebaseModeNormal;
+            
+            YoogoLabManager.LogFirebaseEvent(
+                StringConstants.FirebaseParamLevelId, GetLevelId(levelIndex),
+                StringConstants.FirebaseParamMode, mode);
+        }
+        
+        private void TrackLevelStart()
+        {
+            var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
+            int levelIndex;
+            if (_dailyChallengeService.HasActiveDailyChallengeGame)
+            {
+                levelIndex = _dailyChallengeService.GetPlayedLevelId();
+            }
+            else
+            {
+                levelIndex = levelProgressModel.CurrentLevelIndex + 1;
+            }
+            
+            var levelId = GetLevelId(levelIndex);
+            var attempt = GetAttemptString(levelProgressModel.CurrentLevelAttemptCount);
+            var mode = _dailyChallengeService.HasActiveDailyChallengeGame
+                ? StringConstants.FirebaseModeDaily
+                : StringConstants.FirebaseModeNormal;
+
+            YoogoLabManager.LogFirebaseEvent(
+                StringConstants.FirebaseEventLevelStart,
+                StringConstants.FirebaseParamLevelId, levelId,
+                StringConstants.FirebaseParamAttempt, attempt,
+                StringConstants.FirebaseParamMode, mode);
+        }
+        
+        private static string GetLevelId(int levelIndex)
+        {
+            return $"{StringConstants.FirebaseLevelIdPrefix}{levelIndex:D5}";
+        }
+
+        private static string GetAttemptString(int attemptCount)
+        {
+            return $"{StringConstants.FirebaseAttemptPrefix}{attemptCount}";
+        }
+        
+        private void IncreaseCurrentLevelAttemptCount()
+        {
+            var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
+            levelProgressModel.CurrentLevelAttemptCount++;
+            _savedDataService.SaveData(levelProgressModel);
+        }
 
         private void OnRestartButtonClick(RestartButtonClickSignal obj)
         {
@@ -87,6 +152,7 @@ namespace Gameplay
         public override void ViewShown()
         {
             base.ViewShown();
+            
         }
 
         public override void Cleanup()
@@ -122,6 +188,8 @@ namespace Gameplay
 
             var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
             LoadLevelAtIndex(levelProgressModel.CurrentLevelIndex, true);
+            IncreaseCurrentLevelAttemptCount();
+            TrackLevelStart();
         }
 
         private void OnDebugLevelStepRequested(int levelStep)
@@ -190,8 +258,15 @@ namespace Gameplay
 
         private void OnViewSolved()
         {
+            var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
+            levelProgressModel.CurrentLevelIndex++;
+            _savedDataService.SaveData(levelProgressModel);
+            YoogoLabManager.LevelEnd(levelProgressModel.CurrentLevelIndex);
+            TrackLevelEnd();
             View.SetInteractionLocked(true);
         }
+        
+       
 
         private void OnViewMovesChanged(int moveCount, int totalMoveCount)
         {

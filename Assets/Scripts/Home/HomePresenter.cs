@@ -11,6 +11,7 @@ using Localization;
 using RemoteConfig;
 using SavedData;
 using Services;
+using Shop;
 using UI.General;
 using UI.Settings;
 using UI.Shop;
@@ -56,7 +57,7 @@ namespace MainMenu
 
         private void OnRemoveAdsClicked()
         {
-            //_uiService.ShowPopup<ShopPresenter, ShopOpenData>(ShopOpenData.Default);
+            _uiService.ShowPopup<ShopPresenter>();
         }
 
         private void OnCoinButtonClicked()

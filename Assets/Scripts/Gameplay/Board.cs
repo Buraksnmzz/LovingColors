@@ -5,6 +5,7 @@ using DefaultNamespace;
 using DG.Tweening;
 using Gameplay.Layouts;
 using Gameplay.Levels;
+using General;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -88,6 +89,11 @@ namespace Gameplay
         {
             reshuffleButton.onClick.RemoveListener(Reshuffle);
             StopFirstLevelTutorial();
+        }
+
+        private static string GetLevelId(int levelIndex)
+        {
+            return $"{StringConstants.FirebaseLevelIdPrefix}{levelIndex:D5}";
         }
 
         private void Reshuffle()
@@ -1114,7 +1120,6 @@ namespace Gameplay
                 return;
             }
 
-            var targetChangedCardCount = GetTargetChangedCardCount(cards.Count);
             var indices = new List<int>(cards.Count);
             for (var index = 0; index < cards.Count; index++)
             {
@@ -1122,17 +1127,38 @@ namespace Gameplay
             }
 
             ShuffleIndices(indices);
-            RotateCards(cards, indices, 0, targetChangedCardCount);
+            var remainingSwapCount = GetTargetMinimumSwapCount(cards.Count);
+            var startIndex = 0;
+            while (remainingSwapCount > 0)
+            {
+                var remainingCardCount = indices.Count - startIndex;
+                var cycleLength = GetNextShuffleCycleLength(remainingCardCount, remainingSwapCount);
+                RotateCards(cards, indices, startIndex, cycleLength);
+                startIndex += cycleLength;
+                remainingSwapCount -= cycleLength - 1;
+            }
         }
 
-        private static int GetTargetChangedCardCount(int cardCount)
+        private static int GetTargetMinimumSwapCount(int cardCount)
         {
             if (cardCount <= 1)
             {
                 return 0;
             }
 
-            return Mathf.Clamp(cardCount / 2 + 1, 2, cardCount);
+            return Mathf.Clamp(Mathf.CeilToInt(cardCount * 0.75f), 1, cardCount - 1);
+        }
+
+        private static int GetNextShuffleCycleLength(int remainingCardCount, int remainingSwapCount)
+        {
+            if (remainingSwapCount <= 1 || remainingCardCount <= 2)
+            {
+                return 2;
+            }
+
+            var maxCycleLength = Mathf.Min(remainingCardCount, remainingSwapCount + 1);
+            var minCycleLength = remainingCardCount - maxCycleLength >= 2 ? 2 : remainingCardCount;
+            return Random.Range(minCycleLength, maxCycleLength + 1);
         }
 
         private static void ShuffleIndices(List<int> indices)
