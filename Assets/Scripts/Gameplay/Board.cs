@@ -6,6 +6,7 @@ using DG.Tweening;
 using Gameplay.Layouts;
 using Gameplay.Levels;
 using General;
+using Sound;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,14 @@ namespace Gameplay
     [RequireComponent(typeof(GridLayoutGroup))]
     public class Board : MonoBehaviour
     {
+        [SerializeField] private Card cardPrefab;
+        [SerializeField] private ShapeCardCatalog shapeCardCatalog;
+        [SerializeField] private RectTransform boardRect;
+        [SerializeField] private GridLayoutGroup gridLayoutGroup;
+        [SerializeField] private Button reshuffleButton;
+        [SerializeField] private ParticleSystem winParticle;
+        [SerializeField] private bool showDebugSlotIndices;
+        
         private const float WinAnimationStartDelay = 0.5f;
         private const float WinColumnRotateDuration = 0.6f;
         private const float WinAnimationColumnDelay = 0.2f;
@@ -25,14 +34,9 @@ namespace Gameplay
         private const float ShuffleWaveDuration = 1.2f;
         private const float SwapDuration = 0.22f;
         private const float FirstLevelTutorialStartDelay = 0.25f;
-
-        [SerializeField] private Card cardPrefab;
-        [SerializeField] private ShapeCardCatalog shapeCardCatalog;
-        [SerializeField] private RectTransform boardRect;
-        [SerializeField] private GridLayoutGroup gridLayoutGroup;
-        [SerializeField] private Button reshuffleButton;
-        [SerializeField] private ParticleSystem winParticle;
-        [SerializeField] private bool showDebugSlotIndices;
+        
+        private ISoundService _soundService;
+        private IHapticService _hapticService;
 
         private int _rowCount;
         private int _columnCount;
@@ -83,6 +87,9 @@ namespace Gameplay
             _cards = new List<Card>();
             _activeCardPrefab = cardPrefab;
             reshuffleButton.onClick.AddListener(Reshuffle);
+            _soundService = ServiceLocator.GetService<ISoundService>();
+            _hapticService = ServiceLocator.GetService<IHapticService>();
+            
         }
 
         private void OnDestroy()
@@ -720,6 +727,7 @@ namespace Gameplay
                 var rectTransform = _cards[index].RectTransform;
                 rectTransform.sizeDelta = GetSlotSize(index);
                 _cards[index].SetBaseScale(Vector3.one);
+                _cards[index].RefreshSlicedPixelsPerUnitMultiplier();
             }
         }
 
@@ -951,6 +959,8 @@ namespace Gameplay
         private void StartSwap(Card firstCard, Card secondCard)
         {
             StartSwap(firstCard, secondCard, null);
+            _soundService.PlaySound(ClipName.CardSwap);
+            _hapticService.HapticMin();
         }
 
         private void StartSwap(Card firstCard, Card secondCard, Action completed)
@@ -1113,12 +1123,14 @@ namespace Gameplay
             }
         }
 
-        private static void ShuffleCards(List<Card> cards)
+        private void ShuffleCards(List<Card> cards)
         {
             if (cards.Count <= 1)
             {
                 return;
             }
+            
+            
 
             var indices = new List<int>(cards.Count);
             for (var index = 0; index < cards.Count; index++)
@@ -1188,9 +1200,7 @@ namespace Gameplay
 
         private void ShuffleCardsWithinPieceTypes(List<Card> cards, List<int> slotIndices)
         {
-            // Cards may only move to slots that share their piece type (e.g. a square
-            // can never land on a deltoid slot). Shuffle each piece-type group on its
-            // own set of positions. With a single piece type this is a full shuffle.
+            _soundService.PlaySound(ClipName.CardShuffle);
             var groups = new Dictionary<int, List<int>>();
             for (var positionIndex = 0; positionIndex < slotIndices.Count; positionIndex++)
             {

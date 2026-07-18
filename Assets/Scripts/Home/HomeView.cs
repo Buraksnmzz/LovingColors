@@ -86,6 +86,8 @@ namespace Home
             base.OnShown();
             PlayIntroAnimation();
         }
+        
+        
 
         protected override void OnHidden()
         {

@@ -18,6 +18,7 @@ namespace DailyChallenge
         [SerializeField] private float headerStartScale = 2f;
 
         public event Action ContinueClicked;
+        public event Action CompletedImageAnimationStarted;
         private Sequence _animationSequence;
 
         private void Start()
@@ -47,7 +48,7 @@ namespace DailyChallenge
             _animationSequence?.Kill();
             _animationSequence = DOTween.Sequence();
             _animationSequence.Insert(0f, headerImage.transform.DOScale(1, durations).SetEase(Ease.OutBack));
-            _animationSequence.Insert(stepDelay, completedImage.transform.DOScale(1, durations).SetEase(Ease.OutBack));
+            _animationSequence.Insert(stepDelay, completedImage.transform.DOScale(1, durations).SetEase(Ease.OutBack).OnStart(()=> CompletedImageAnimationStarted?.Invoke()));
             _animationSequence.Insert(stepDelay * 2f, completedText.DOFade(1f, durations).SetEase(Ease.Linear));
             _animationSequence.Insert(stepDelay * 3f, continueButton.transform.DOScale(1, durations).SetEase(Ease.OutBack));
         }

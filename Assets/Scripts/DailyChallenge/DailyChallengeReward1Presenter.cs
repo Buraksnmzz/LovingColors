@@ -1,3 +1,5 @@
+using General;
+using Sound;
 using UI.General;
 
 namespace DailyChallenge
@@ -5,12 +7,20 @@ namespace DailyChallenge
     public class DailyChallengeReward1Presenter : BasePresenter<DailyChallengeReward1View>
     {
         private IUIService _uiService;
+        private ISoundService _soundService;
 
         protected override void OnInitialize()
         {
             base.OnInitialize();
-            _uiService = General.ServiceLocator.GetService<IUIService>();
+            _uiService = ServiceLocator.GetService<IUIService>();
             View.ContinueClicked += OnContinueClicked;
+            View.CompletedImageAnimationStarted += OnCompletedImageAnimationStarted;
+            _soundService = ServiceLocator.GetService<ISoundService>();
+        }
+
+        private void OnCompletedImageAnimationStarted()
+        {
+            _soundService.PlaySound(ClipName.DailyChallengeReward);
         }
 
         public override void Cleanup()

@@ -9,6 +9,10 @@ namespace Sound
         CoinIncrease,
         CoinCreate,
         Lose,
-        PowerUp
+        PowerUp,
+        CardSelect,
+        CardSwap,
+        CardShuffle,
+        DailyChallengeReward,
     }
 }

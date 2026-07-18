@@ -1,3 +1,4 @@
+using Collectible;
 using DailyChallenge;
 using GameConfig;
 using Gameplay.Levels;
@@ -5,6 +6,8 @@ using Level;
 using SavedData;
 using General;
 using General.EventDispatcher;
+using GetHint;
+using Collectible;
 using MainMenu;
 using Sound;
 using UI.General;
@@ -40,11 +43,27 @@ namespace Gameplay
             View.MoveLimitReached += OnViewMoveLimitReached;
             View.DebugLevelStepRequested += OnDebugLevelStepRequested;
             View.BackButtonClicked += OnBackButtonClicked;
+            View.HintClicked += OnHintClicked;
             _eventDispatcherService.AddListener<ContinueWithCoinSignal>(OnContinueWithCoinSignal);
             _eventDispatcherService.AddListener<ContinueWithRewardedSignal>(OnContinueWithRewardedSignal);
             _eventDispatcherService.AddListener<RestartButtonClickSignal>(OnRestartButtonClick);
+            _eventDispatcherService.AddListener<HintChangedSignal>(OnHintChanged);
         }
-        
+
+        private void OnHintClicked()
+        {
+            var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
+            if (collectibleModel.TotalHints > 0)
+            {
+                collectibleModel.TotalHints--;
+                View.UseHint(collectibleModel.TotalHints);
+            }
+            else
+            {
+                _uiService.ShowPopup<GetHintPresenter>();
+            }
+        }
+
         private void TrackLevelEnd()
         {
             var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
@@ -57,16 +76,16 @@ namespace Gameplay
             {
                 levelIndex = levelProgressModel.CurrentLevelIndex + 1;
             }
-            
+
             var mode = _dailyChallengeService.HasActiveDailyChallengeGame
                 ? StringConstants.FirebaseModeDaily
                 : StringConstants.FirebaseModeNormal;
-            
+
             YoogoLabManager.LogFirebaseEvent(
                 StringConstants.FirebaseParamLevelId, GetLevelId(levelIndex),
                 StringConstants.FirebaseParamMode, mode);
         }
-        
+
         private void TrackLevelStart()
         {
             var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
@@ -79,7 +98,7 @@ namespace Gameplay
             {
                 levelIndex = levelProgressModel.CurrentLevelIndex + 1;
             }
-            
+
             var levelId = GetLevelId(levelIndex);
             var attempt = GetAttemptString(levelProgressModel.CurrentLevelAttemptCount);
             var mode = _dailyChallengeService.HasActiveDailyChallengeGame
@@ -92,7 +111,7 @@ namespace Gameplay
                 StringConstants.FirebaseParamAttempt, attempt,
                 StringConstants.FirebaseParamMode, mode);
         }
-        
+
         private static string GetLevelId(int levelIndex)
         {
             return $"{StringConstants.FirebaseLevelIdPrefix}{levelIndex:D5}";
@@ -102,7 +121,7 @@ namespace Gameplay
         {
             return $"{StringConstants.FirebaseAttemptPrefix}{attemptCount}";
         }
-        
+
         private void IncreaseCurrentLevelAttemptCount()
         {
             var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
@@ -124,6 +143,11 @@ namespace Gameplay
         private void OnContinueWithCoinSignal(ContinueWithCoinSignal obj)
         {
             HandleAddMoves();
+        }
+
+        private void OnHintChanged(HintChangedSignal _)
+        {
+            View.SetHintAmount(_savedDataService.GetModel<CollectibleModel>().TotalHints);
         }
 
         private void HandleAddMoves()
@@ -152,7 +176,14 @@ namespace Gameplay
         public override void ViewShown()
         {
             base.ViewShown();
-            
+            _soundService.PlayMusic();
+            View.SetHintAmount(_savedDataService.GetModel<CollectibleModel>().TotalHints);
+        }
+
+        public override void ViewHidden()
+        {
+            base.ViewHidden();
+            _soundService.StopMusic();
         }
 
         public override void Cleanup()
@@ -173,6 +204,7 @@ namespace Gameplay
                 _eventDispatcherService.RemoveListener<ContinueWithCoinSignal>(OnContinueWithCoinSignal);
                 _eventDispatcherService.RemoveListener<ContinueWithRewardedSignal>(OnContinueWithRewardedSignal);
                 _eventDispatcherService.RemoveListener<RestartButtonClickSignal>(OnRestartButtonClick);
+                _eventDispatcherService.RemoveListener<HintChangedSignal>(OnHintChanged);
             }
 
             base.Cleanup();
@@ -212,7 +244,6 @@ namespace Gameplay
                 if (levelId <= 0)
                     return;
             }
-
             View.SetDailyChallengeInfo(true, _dailyChallengeService.GetPlayedDateText());
             View.InitializeBoard(levelDefinition, true);
         }
@@ -243,7 +274,7 @@ namespace Gameplay
                 levelProgressModel.CurrentLevelIndex = currentLevelIndex;
                 _savedDataService.SaveData(levelProgressModel);
             }
-            View.SetDifficultyText(levelDefinition.Difficulty.ToString());
+            View.SetDifficultyText(levelDefinition.Difficulty);
             View.InitializeBoard(levelDefinition, false);
             if (ShouldShowFirstLevelTutorial(currentLevelIndex))
             {
@@ -265,8 +296,8 @@ namespace Gameplay
             TrackLevelEnd();
             View.SetInteractionLocked(true);
         }
-        
-       
+
+
 
         private void OnViewMovesChanged(int moveCount, int totalMoveCount)
         {

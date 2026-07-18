@@ -172,8 +172,9 @@ namespace SavedData
 
         private static bool IsProtectionEnabledFor(Type modelType)
         {
-            return modelType == typeof(CollectibleModel)
-                   || modelType == typeof(RemoteConfigModel);
+            // return modelType == typeof(CollectibleModel)
+            //        || modelType == typeof(RemoteConfigModel);
+            return modelType == typeof(RemoteConfigModel);
         }
     }
 }

@@ -1,5 +1,6 @@
 using Collectible;
 using DailyChallenge;
+using DG.Tweening;
 using Gameplay;
 using General;
 using General.EventDispatcher;
@@ -15,6 +16,7 @@ using Shop;
 using UI.General;
 using UI.Settings;
 using UI.Shop;
+using UnityEngine;
 using UnityEngine.Localization;
 
 namespace MainMenu
@@ -62,7 +64,7 @@ namespace MainMenu
 
         private void OnCoinButtonClicked()
         {
-            //_uiService.ShowPopup<ShopPresenter, ShopOpenData>(ShopOpenData.CoinOffers);
+            _uiService.ShowPopup<GetCoinsPresenter>();
         }
 
         private void OnPlayClicked()
@@ -97,6 +99,17 @@ namespace MainMenu
                 previousDifficultyTypes);
             View.SetFrameContentPositionYOffset(SafeAreaHelper.VerticalCompensationOffset);
             View.SetNoAdsView(settingsModel.IsNoAds);
+            DOVirtual.DelayedCall(0.5f, CheckAndShowDcUnlockPopup);
+        }
+
+        private void CheckAndShowDcUnlockPopup()
+        {
+            if (_savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex == 10 &&
+                PlayerPrefs.GetInt(StringConstants.IsDailyChallengeUnlockedShown, 0) == 0)
+            {
+                PlayerPrefs.SetInt(StringConstants.IsDailyChallengeUnlockedShown, 1);
+                _uiService.ShowPopup<DailyChallengeUnlockPresenter>();
+            }
         }
 
         private void OnCoinChanged(CoinChangedSignal _)

@@ -2,6 +2,7 @@
 using System;
 using DG.Tweening;
 using Gameplay.Levels;
+using Home;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,7 @@ namespace Gameplay
         public event Action BackButtonClicked;
         public event Action<int, int> MovesChanged;
         public event Action MoveLimitReached;
+        public event Action HintClicked;
         public event Action<int> DebugLevelStepRequested;
 
         [SerializeField] private Button debugNextButton;
@@ -25,12 +27,37 @@ namespace Gameplay
         [SerializeField] private Button debugCompleteButton;
         [SerializeField] private Button hintButton;
         [SerializeField] private Button backButton;
+        [SerializeField] private GameObject dcDate;
+        [SerializeField] private GameObject dcLevelInfo;
+        [SerializeField] private GameObject normalLevelInfo;
         [SerializeField] private TextMeshProUGUI levelText;
         [SerializeField] private TextMeshProUGUI difficultyText;
         [SerializeField] private TextMeshProUGUI dcDateText;
         [SerializeField] private TextMeshProUGUI movesText;
+        [SerializeField] private TextMeshProUGUI hintAmountText;
+        [SerializeField] private GameObject addHintImage;
         [SerializeField] private Image handImage;
-        [SerializeField] private Image tutorialInfoImage;
+        [SerializeField] private Image backButtonImage;
+        [SerializeField] private Image retryButtonImage;
+        [SerializeField] private Image levelInfoImage;
+        [SerializeField] private Image dcLevelInfoImage;
+        [SerializeField] private Image hintButtonImage;
+        [SerializeField] private Sprite backButtonNormalSprite;
+        [SerializeField] private Sprite backButtonHardSprite;
+        [SerializeField] private Sprite backButtonExtremeSprite;
+        [SerializeField] private Sprite retryButtonNormalSprite;
+        [SerializeField] private Sprite retryButtonHardSprite;
+        [SerializeField] private Sprite retryButtonExtremeSprite;
+        [SerializeField] private Sprite levelInfoNormalSprite;
+        [SerializeField] private Sprite levelInfoHardSprite;
+        [SerializeField] private Sprite levelInfoExtremeSprite;
+        [SerializeField] private Sprite hintButtonNormalSprite;
+        [SerializeField] private Sprite hintButtonHardSprite;
+        [SerializeField] private Sprite hintButtonExtremeSprite;
+        [SerializeField] private Sprite backgroundNormalSprite;
+        [SerializeField] private Sprite backgroundHardSprite;
+        [SerializeField] private Sprite backgroundExtremeSprite;
+
 
         private const float MovesTextFadeDuration = 0.25f;
 
@@ -76,13 +103,11 @@ namespace Gameplay
             var handRectTransform = handImage.rectTransform;
             _tutorialHandSequence = DOTween.Sequence();
             _tutorialHandSequence.Append(handImage.DOFade(1f, 0.2f));
-            _tutorialHandSequence.Join(tutorialInfoImage.DOFade(1f, 0.2f));
             _tutorialHandSequence.Append(handRectTransform.DOScale(Vector3.one * 1.12f, 0.15f).SetEase(Ease.OutBack));
             _tutorialHandSequence.Append(handRectTransform.DOMove(targetWorldPosition, 0.5f).SetEase(Ease.InOutQuad));
             _tutorialHandSequence.Append(handRectTransform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutQuad));
             _tutorialHandSequence.AppendInterval(0.35f);
             _tutorialHandSequence.Append(handImage.DOFade(0f, 0.25f));
-            _tutorialHandSequence.Join(tutorialInfoImage.DOFade(0f, 0.25f));
             _tutorialHandSequence.AppendCallback(() => handRectTransform.position = startWorldPosition);
             _tutorialHandSequence.AppendInterval(0.2f);
             _tutorialHandSequence.SetLoops(-1, LoopType.Restart);
@@ -107,12 +132,9 @@ namespace Gameplay
             _tutorialHandSequence?.Kill();
             var handRectTransform = handImage.rectTransform;
             handImage.gameObject.SetActive(true);
-            tutorialInfoImage.gameObject.SetActive(true);
             handImage.DOKill();
-            tutorialInfoImage.DOKill();
             handRectTransform.DOKill();
             handImage.color = new Color(handImage.color.r, handImage.color.g, handImage.color.b, alpha);
-            tutorialInfoImage.color = new Color(tutorialInfoImage.color.r, tutorialInfoImage.color.g, tutorialInfoImage.color.b, alpha);
             handRectTransform.position = worldPosition;
             handRectTransform.localScale = Vector3.one;
             handRectTransform.localRotation = Quaternion.identity;
@@ -122,14 +144,11 @@ namespace Gameplay
         {
             _tutorialHandSequence?.Kill();
             handImage.DOKill();
-            tutorialInfoImage.DOKill();
             handImage.rectTransform.DOKill();
             handImage.color = new Color(handImage.color.r, handImage.color.g, handImage.color.b, 0f);
-            tutorialInfoImage.color = new Color(tutorialInfoImage.color.r, tutorialInfoImage.color.g, tutorialInfoImage.color.b, 0f);
             handImage.rectTransform.localScale = Vector3.one;
             handImage.rectTransform.localRotation = Quaternion.identity;
             handImage.gameObject.SetActive(false);
-            tutorialInfoImage.gameObject.SetActive(false);
         }
 
         public void StartFirstLevelTutorial()
@@ -157,39 +176,65 @@ namespace Gameplay
         {
             levelText.text = "Level " + level;
         }
-        public void SetDifficultyText(string difficulty)
+        public void SetDifficultyText(LevelDifficultyType difficulty)
         {
-            difficultyText.text = difficulty;
+            difficultyText.text = difficulty.ToString();
+            difficultyText.gameObject.SetActive(difficulty != LevelDifficultyType.Normal);
+            SetDifficultySprites(difficulty);
+        }
+
+        private void SetDifficultySprites(LevelDifficultyType difficulty)
+        {
+            switch (difficulty)
+            {
+                case LevelDifficultyType.Hard:
+                    SetImageSprite(backButtonImage, backButtonHardSprite);
+                    SetImageSprite(retryButtonImage, retryButtonHardSprite);
+                    SetImageSprite(levelInfoImage, levelInfoHardSprite);
+                    SetImageSprite(hintButtonImage, hintButtonHardSprite);
+                    SetImageSprite(backgroundImage, backgroundHardSprite);
+                    SetImageSprite(dcLevelInfoImage, levelInfoHardSprite);
+                    break;
+                case LevelDifficultyType.SuperHard:
+                    SetImageSprite(backButtonImage, backButtonExtremeSprite);
+                    SetImageSprite(retryButtonImage, retryButtonExtremeSprite);
+                    SetImageSprite(levelInfoImage, levelInfoExtremeSprite);
+                    SetImageSprite(hintButtonImage, hintButtonExtremeSprite);
+                    SetImageSprite(backgroundImage, backgroundExtremeSprite);
+                    SetImageSprite(dcLevelInfoImage, levelInfoExtremeSprite);
+                    break;
+                default:
+                    SetImageSprite(backButtonImage, backButtonNormalSprite);
+                    SetImageSprite(retryButtonImage, retryButtonNormalSprite);
+                    SetImageSprite(levelInfoImage, levelInfoNormalSprite);
+                    SetImageSprite(hintButtonImage, hintButtonNormalSprite);
+                    SetImageSprite(backgroundImage, backgroundNormalSprite);
+                    SetImageSprite(dcLevelInfoImage, levelInfoNormalSprite);
+                    break;
+            }
+        }
+
+        private static void SetImageSprite(Image image, Sprite sprite)
+        {
+            if (image != null && sprite != null)
+            {
+                image.sprite = sprite;
+            }
         }
 
         public void SetDailyChallengeInfo(bool isDailyChallenge, string dateText)
         {
             _isDailyChallenge = isDailyChallenge;
             _hasShownDailyChallengeTargetMoves = false;
-
-            if (levelText != null)
-            {
-                levelText.gameObject.SetActive(!isDailyChallenge);
-            }
-
-            if (difficultyText != null)
-            {
-                difficultyText.gameObject.SetActive(!isDailyChallenge);
-            }
-
-            if (dcDateText != null)
-            {
-                dcDateText.gameObject.SetActive(isDailyChallenge);
-                dcDateText.text = dateText;
-            }
-
-            if (movesText != null)
-            {
-                movesText.gameObject.SetActive(isDailyChallenge);
-                movesText.text = isDailyChallenge ? "0/0" : string.Empty;
-                movesText.DOKill();
-                movesText.alpha = isDailyChallenge ? 0f : 1f;
-            }
+            levelText.gameObject.SetActive(!isDailyChallenge);
+            difficultyText.gameObject.SetActive(!isDailyChallenge);
+            dcDate.SetActive(isDailyChallenge);
+            normalLevelInfo.SetActive(!isDailyChallenge);
+            dcDateText.text = dateText;
+            dcLevelInfo.SetActive(isDailyChallenge);
+            movesText.text = isDailyChallenge ? "0/0" : string.Empty;
+            movesText.DOKill();
+            movesText.alpha = isDailyChallenge ? 0f : 1f;
         }
 
         public void SetMovesText(int moveCount, int totalMoveCount)
@@ -254,7 +299,29 @@ namespace Gameplay
 
         private void OnHintButtonClick()
         {
-            _board?.UseHint();
+            HintClicked?.Invoke();
+        }
+
+        public void UseHint(int remainingHint)
+        {
+            _board.UseHint();
+            SetHintAmount(remainingHint);
+        }
+
+        public void SetHintAmount(int amount)
+        {
+            hintAmountText.text = amount.ToString();
+
+            if (amount == 0)
+            {
+                addHintImage.SetActive(true);
+                hintAmountText.gameObject.SetActive(false);
+            }
+            else
+            {
+                addHintImage.SetActive(false);
+                hintAmountText.gameObject.SetActive(true);
+            }
         }
 
         protected override void OnShown()

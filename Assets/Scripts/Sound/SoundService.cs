@@ -31,7 +31,7 @@ namespace Core.Scripts.Services
                 collectionCheck: false,
                 defaultCapacity: _poolSize
             );
-            //InitializeMusic();
+            InitializeMusic();
         }
 
         private void InitializeMusic()

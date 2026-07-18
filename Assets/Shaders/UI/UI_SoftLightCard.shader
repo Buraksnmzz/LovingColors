@@ -3,7 +3,7 @@ Shader "UI/SoftLightCard"
     Properties
     {
         [PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
-        _BaseTex ("Main Texture", 2D) = "white" {}
+        [PerRendererData] _EffectTexSecondary ("Effect Secondary Texture", 2D) = "black" {}
         _EffectTex ("Effect Texture", 2D) = "white" {}
         _Color ("Tint", Color) = (1,1,1,1)
 
@@ -76,7 +76,7 @@ Shader "UI/SoftLightCard"
             };
 
             sampler2D _MainTex;
-            sampler2D _BaseTex;
+            sampler2D _EffectTexSecondary;
             sampler2D _EffectTex;
             fixed4 _Color;
             float4 _ClipRect;
@@ -118,15 +118,16 @@ Shader "UI/SoftLightCard"
 
             fixed4 frag(v2f IN) : SV_Target
             {
-                fixed4 spriteSample = tex2D(_MainTex, IN.texcoord);
-                fixed4 baseSample = tex2D(_BaseTex, IN.texcoord);
-                fixed4 effectSample = tex2D(_EffectTex, IN.texcoord);
+                fixed4 baseSample = tex2D(_MainTex, IN.texcoord);
+                fixed4 effectSecondarySample = tex2D(_EffectTexSecondary, IN.texcoord);
+                fixed4 materialEffectSample = tex2D(_EffectTex, IN.texcoord);
+                fixed4 effectSample = effectSecondarySample.a > 0.001 ? effectSecondarySample : materialEffectSample;
 
                 float3 tintedBaseRgb = baseSample.rgb * IN.color.rgb;
                 float3 blendedRgb = SoftLight(saturate(tintedBaseRgb), saturate(effectSample.rgb));
                 blendedRgb = lerp(tintedBaseRgb, blendedRgb, effectSample.a);
 
-                float alpha = baseSample.a * spriteSample.a * IN.color.a;
+                float alpha = baseSample.a * IN.color.a;
                 fixed4 result = fixed4(blendedRgb, alpha);
 
                 #ifdef UNITY_UI_CLIP_RECT

@@ -4,8 +4,9 @@ namespace Collectible
 {
     public class CollectibleModel : IModel
     {
-        public int TotalCoins = 10000;
+        public int TotalCoins = 100;
         public int TotalHints = 1;
-        public bool HasFreeHint;
+        public int TotalXp = 0;
+        public int CurrentBadgeIndex = 0;
     }
 }

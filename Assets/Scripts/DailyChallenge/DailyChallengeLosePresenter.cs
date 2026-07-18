@@ -36,9 +36,9 @@ namespace DailyChallenge
         public override void ViewShown()
         {
             base.ViewShown();
-           // _soundService.PlaySound(ClipName.Lose);
             var gameConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
             View.SetExtraMovesCostText(gameConfigModel.ExtraMovesCost);
+            _soundService.PlaySound(ClipName.Lose);
             //var youCanAddMovesText = _localizationService.GetLocalizedString(LocalizationStrings.YouCanAddXMoves, gameConfigModel.extraGivenMovesCount);
             //var plusXMovesText = _localizationService.GetLocalizedString(LocalizationStrings.PlusExtraMoves, gameConfigModel.extraGivenMovesCount);
             //View.SetYouCanAddMovesText(youCanAddMovesText);
