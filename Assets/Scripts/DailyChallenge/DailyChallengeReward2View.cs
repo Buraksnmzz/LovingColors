@@ -3,13 +3,14 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UI.General;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace DailyChallenge
 {
     public class DailyChallengeReward2View : BaseView
     {
-        [SerializeField] private TextMeshProUGUI headerText;
+        [SerializeField] private Image headerImage;
         [SerializeField] private TextMeshProUGUI coinWonAmountText;
         [SerializeField] private Image coinImage;
         [SerializeField] private Button claimDouble;
@@ -101,11 +102,11 @@ namespace DailyChallenge
             var animator = EnsureCoinFlyAnimatorInstance();
             if (animator != null)
                 animator.PlayHolderIntro();
-            _animationSequence.Insert(stepDelay, headerText.DOFade(1f, durations).SetEase(Ease.Linear));
+            _animationSequence.Insert(stepDelay, headerImage.DOFade(1f, durations).SetEase(Ease.Linear));
             _animationSequence.Insert(stepDelay * 2f, coinImage.transform.DOScale(1, durations).SetEase(Ease.OutBack));
             _animationSequence.Insert(stepDelay * 2f, coinWonAmountText.transform.DOScale(1, durations).SetEase(Ease.OutBack));
-            _animationSequence.Insert(stepDelay * 3f, claimDouble.transform.DOScale(1, durations).SetEase(Ease.OutBack));
-            _animationSequence.Insert(stepDelay * 4f, claim.transform.DOScale(1, durations).SetEase(Ease.OutBack));
+            _animationSequence.Insert(stepDelay * 4f, claimDouble.transform.DOScale(1, durations).SetEase(Ease.OutBack));
+            _animationSequence.Insert(stepDelay * 3f, claim.transform.DOScale(1, durations).SetEase(Ease.OutBack));
         }
 
         private void PrepareVisuals()
@@ -113,7 +114,7 @@ namespace DailyChallenge
             var animator = EnsureCoinFlyAnimatorInstance();
             if (animator != null)
                 animator.PrepareHolderIntro();
-            headerText.alpha = 0f;
+            headerImage.DOFade(0, 0);
             coinImage.transform.localScale = Vector3.zero;
             coinWonAmountText.transform.localScale = Vector3.zero;
             claimDouble.transform.localScale = Vector3.zero;

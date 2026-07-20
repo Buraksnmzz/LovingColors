@@ -1,7 +1,9 @@
 using Collectible;
 using GameConfig;
+using Gameplay.Levels;
 using General;
 using General.EventDispatcher;
+using Home;
 using Localization;
 using SavedData;
 using Services;
@@ -11,10 +13,12 @@ using UnityEngine.tvOS;
 
 namespace DailyChallenge
 {
-    public class DailyChallengeLosePresenter: BasePresenter<DailyChallengeLoseView>
+    public class DailyChallengeLosePresenter : BasePresenter<DailyChallengeLoseView>
     {
         IEventDispatcherService _eventDispatcher;
         ISavedDataService _savedDataService;
+        ILevelService _levelService;
+        IDailyChallengeService _dailyChallengeService;
         IUIService _uiService;
         ISoundService _soundService;
         IAdsService _adsService;
@@ -24,6 +28,8 @@ namespace DailyChallenge
             base.OnInitialize();
             _eventDispatcher = ServiceLocator.GetService<IEventDispatcherService>();
             _savedDataService = ServiceLocator.GetService<ISavedDataService>();
+            _levelService = ServiceLocator.GetService<ILevelService>();
+            _dailyChallengeService = ServiceLocator.GetService<IDailyChallengeService>();
             _uiService = ServiceLocator.GetService<IUIService>();
             //_soundService = ServiceLocator.GetService<ISoundService>();
             _adsService = ServiceLocator.GetService<IAdsService>();
@@ -38,11 +44,28 @@ namespace DailyChallenge
             base.ViewShown();
             var gameConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
             View.SetExtraMovesCostText(gameConfigModel.ExtraMovesCost);
+            View.SetDifficultySprites(GetCurrentDailyChallengeDifficulty());
             _soundService.PlaySound(ClipName.Lose);
             //var youCanAddMovesText = _localizationService.GetLocalizedString(LocalizationStrings.YouCanAddXMoves, gameConfigModel.extraGivenMovesCount);
             //var plusXMovesText = _localizationService.GetLocalizedString(LocalizationStrings.PlusExtraMoves, gameConfigModel.extraGivenMovesCount);
             //View.SetYouCanAddMovesText(youCanAddMovesText);
             //View.SetPlusXMovesText(plusXMovesText);
+        }
+
+        private LevelDifficultyType GetCurrentDailyChallengeDifficulty()
+        {
+            if (_dailyChallengeService == null || _levelService == null)
+            {
+                return LevelDifficultyType.Normal;
+            }
+
+            var levelId = _dailyChallengeService.GetPlayedLevelId();
+            if (_levelService.TryGetDailyChallengeLevelById(levelId, out var levelDefinition) && levelDefinition != null)
+            {
+                return levelDefinition.Difficulty;
+            }
+
+            return LevelDifficultyType.Normal;
         }
 
         private void OnContinueClick()
@@ -84,6 +107,6 @@ namespace DailyChallenge
             _eventDispatcher.Dispatch(new RestartButtonClickSignal());
             View.Hide();
         }
-        
+
     }
 }

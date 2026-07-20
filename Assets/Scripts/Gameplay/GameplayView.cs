@@ -58,14 +58,30 @@ namespace Gameplay
         [SerializeField] private Sprite backgroundHardSprite;
         [SerializeField] private Sprite backgroundExtremeSprite;
 
+        [SerializeField] private Image dcStampImage;
+        [SerializeField] private Transform dcStampTransform;
+        [SerializeField] private TextMeshProUGUI dcStampPlayingText;
+        [SerializeField] private TextMeshProUGUI dcStampDateText;
 
-        private const float MovesTextFadeDuration = 0.25f;
+
+
+
+        private const float MovesTextFadeDuration = 0.45f;
+        private const float DailyChallengeStampScaleDuration = 0.35f;
+        private const float DailyChallengeStampFadeDuration = 0.5f;
+        private const float DailyChallengeStampTextFadeDuration = 0.3f;
+        private const float DailyChallengeStampExitDelay = 1f;
+        private const float DailyChallengeStampExitDuration = 0.5f;
+        private const float DailyChallengeStampExitOffset = 1000f;
 
         private Board _board;
         private CanvasGroup _canvasGroup;
         private Sequence _tutorialHandSequence;
+        private Sequence _dailyChallengeStampSequence;
         private bool _isDailyChallenge;
         private bool _hasShownDailyChallengeTargetMoves;
+        private Vector3 _dailyChallengeStampInitialPosition;
+        private bool _hasDailyChallengeStampInitialPosition;
 
         protected override void Awake()
         {
@@ -89,10 +105,17 @@ namespace Gameplay
                 _board.WinSequenceCompleted += OnBoardCompleted;
                 _board.MovesChanged += OnBoardMovesChanged;
                 _board.MoveLimitReached += OnBoardMoveLimitReached;
+                _board.ShuffleCompleted += OnBoardShuffleCompleted;
                 _board.TutorialDragRequested += PlayTutorialDrag;
                 _board.TutorialTapRequested += PlayTutorialTap;
                 _board.TutorialHandHideRequested += HideTutorialHand;
                 _board.TutorialCompleted += OnBoardTutorialCompleted;
+            }
+
+            if (dcStampTransform != null)
+            {
+                _dailyChallengeStampInitialPosition = dcStampTransform.localPosition;
+                _hasDailyChallengeStampInitialPosition = true;
             }
         }
 
@@ -226,6 +249,7 @@ namespace Gameplay
         {
             _isDailyChallenge = isDailyChallenge;
             _hasShownDailyChallengeTargetMoves = false;
+            ResetDailyChallengeStamp();
             levelText.gameObject.SetActive(!isDailyChallenge);
             difficultyText.gameObject.SetActive(!isDailyChallenge);
             dcDate.SetActive(isDailyChallenge);
@@ -271,6 +295,7 @@ namespace Gameplay
                 _board.WinSequenceCompleted -= OnBoardCompleted;
                 _board.MovesChanged -= OnBoardMovesChanged;
                 _board.MoveLimitReached -= OnBoardMoveLimitReached;
+                _board.ShuffleCompleted -= OnBoardShuffleCompleted;
                 _board.TutorialDragRequested -= PlayTutorialDrag;
                 _board.TutorialTapRequested -= PlayTutorialTap;
                 _board.TutorialHandHideRequested -= HideTutorialHand;
@@ -283,6 +308,7 @@ namespace Gameplay
             debugPrev10Button.onClick.RemoveListener(OnDebugPrev10ButtonClick);
             debugCompleteButton.onClick.RemoveListener(OnDebugCompleteButtonClick);
             hintButton.onClick.RemoveListener(OnHintButtonClick);
+            _dailyChallengeStampSequence?.Kill();
             StopFirstLevelTutorial();
             base.OnDestroy();
         }
@@ -373,6 +399,59 @@ namespace Gameplay
         private void OnBoardMoveLimitReached()
         {
             MoveLimitReached?.Invoke();
+        }
+
+        private void OnBoardShuffleCompleted()
+        {
+            if (_isDailyChallenge)
+            {
+                PlayDailyChallengeStamp();
+            }
+        }
+
+        private void ResetDailyChallengeStamp()
+        {
+            _dailyChallengeStampSequence?.Kill();
+
+            if (dcStampImage == null || dcStampTransform == null || dcStampPlayingText == null || dcStampDateText == null)
+            {
+                return;
+            }
+
+            dcStampImage.DOKill();
+            dcStampTransform.DOKill();
+            dcStampPlayingText.DOKill();
+            dcStampDateText.DOKill();
+            if (_hasDailyChallengeStampInitialPosition)
+            {
+                dcStampTransform.localPosition = _dailyChallengeStampInitialPosition;
+            }
+            dcStampTransform.localScale = Vector3.one * 2f;
+            dcStampImage.DOFade(0, 0);
+            dcStampPlayingText.DOFade(0, 0);
+            dcStampDateText.DOFade(0, 0);
+        }
+
+        private void PlayDailyChallengeStamp()
+        {
+            ResetDailyChallengeStamp();
+            if (dcStampImage == null || dcStampTransform == null || dcStampPlayingText == null || dcStampDateText == null)
+            {
+                return;
+            }
+
+            var stampStartPosition = dcStampTransform.localPosition;
+            _dailyChallengeStampSequence = DOTween.Sequence();
+            _dailyChallengeStampSequence.Join(dcStampTransform.DOScale(Vector3.one, DailyChallengeStampScaleDuration).SetEase(Ease.OutBack));
+            _dailyChallengeStampSequence.Join(dcStampImage.DOFade(1f, DailyChallengeStampFadeDuration));
+            _dailyChallengeStampSequence.Append(dcStampPlayingText.DOFade(1f, DailyChallengeStampTextFadeDuration));
+            _dailyChallengeStampSequence.Insert(_dailyChallengeStampSequence.Duration() - DailyChallengeStampTextFadeDuration * 0.5f,
+                dcStampDateText.DOFade(1f, DailyChallengeStampTextFadeDuration));
+            _dailyChallengeStampSequence.AppendInterval(DailyChallengeStampExitDelay);
+            _dailyChallengeStampSequence.Append(dcStampImage.DOFade(0f, DailyChallengeStampExitDuration));
+            _dailyChallengeStampSequence.Join(dcStampTransform.DOLocalMoveX(stampStartPosition.x + DailyChallengeStampExitOffset, DailyChallengeStampExitDuration)
+                .SetEase(Ease.InQuad));
+            _dailyChallengeStampSequence.OnKill(() => _dailyChallengeStampSequence = null);
         }
 
         private void OnBoardTutorialCompleted()

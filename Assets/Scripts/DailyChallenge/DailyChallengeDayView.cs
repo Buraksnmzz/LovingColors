@@ -16,7 +16,7 @@ namespace DailyChallenge
         [SerializeField] private GameObject completedRoot;
         [SerializeField] private GameObject inactiveRoot;
         [SerializeField] private GameObject emptyRoot;
-        [SerializeField] private Color normalTextColor = Color.black;
+        [SerializeField] private Color normalTextColor = new Color(0.471f, 0.337f, 0.145f, 1f);
         [SerializeField] private Color selectedTextColor = Color.white;
         [SerializeField] private Color completedTextColor = Color.clear;
         [SerializeField] private Color futureTextColor = new Color(0.75f, 0.75f, 0.75f, 1f);

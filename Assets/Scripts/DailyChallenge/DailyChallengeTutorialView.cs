@@ -9,8 +9,8 @@ namespace DailyChallenge
     {
         [SerializeField] private Transform[] tutorialObjects;
         [SerializeField] private Button continueButton;
-        [SerializeField] private float stepDelay = 0.15f;
-        [SerializeField] private float scaleDuration = 0.45f;
+        [SerializeField] private float stepDelay = 0.25f;
+        [SerializeField] private float scaleDuration = 0.5f;
 
         public event Action ContinueClicked;
 
@@ -122,6 +122,8 @@ namespace DailyChallenge
                         .SetEase(Ease.OutBack)
                         .OnStart(() => continueButton.interactable = true));
             }
+
+            _animationSequence.OnComplete(StartAutoLoopButtonAnimation);
         }
     }
 }

@@ -1,8 +1,8 @@
 using System;
+using DailyChallenge.Award;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace DailyChallenge
@@ -13,7 +13,8 @@ namespace DailyChallenge
         [SerializeField] private Image completedImage;
         [SerializeField] private TextMeshProUGUI completedText;
         [SerializeField] private Button continueButton;
-        [SerializeField] private float stepDelay = 0.2f;
+        [SerializeField] private AwardMonthSpriteConfig awardMonthSpriteConfig;
+        [SerializeField] private float stepDelay = 0.25f;
         [SerializeField] private float durations = 0.5f;
         [SerializeField] private float headerStartScale = 2f;
 
@@ -34,6 +35,7 @@ namespace DailyChallenge
         public override void Show()
         {
             base.Show();
+            SetRewardSprite();
             PrepareVisuals();
         }
 
@@ -48,6 +50,7 @@ namespace DailyChallenge
             _animationSequence?.Kill();
             _animationSequence = DOTween.Sequence();
             _animationSequence.Insert(0f, headerImage.transform.DOScale(1, durations).SetEase(Ease.OutBack));
+            _animationSequence.Insert(0f, headerImage.DOFade(1f, durations).SetEase(Ease.Linear));
             _animationSequence.Insert(stepDelay, completedImage.transform.DOScale(1, durations).SetEase(Ease.OutBack).OnStart(()=> CompletedImageAnimationStarted?.Invoke()));
             _animationSequence.Insert(stepDelay * 2f, completedText.DOFade(1f, durations).SetEase(Ease.Linear));
             _animationSequence.Insert(stepDelay * 3f, continueButton.transform.DOScale(1, durations).SetEase(Ease.OutBack));
@@ -65,9 +68,19 @@ namespace DailyChallenge
         private void PrepareVisuals()
         {
             headerImage.transform.localScale = Vector3.one * headerStartScale;
+            var headerColor = headerImage.color;
+            headerColor.a = 0f;
+            headerImage.color = headerColor;
             completedImage.transform.localScale = Vector3.zero;
             completedText.alpha = 0f;
             continueButton.transform.localScale = Vector3.zero;
+        }
+
+        private void SetRewardSprite()
+        {
+            var rewardSprite = awardMonthSpriteConfig.GetCompletedSprite(DateTime.Today.Month);
+            if (rewardSprite != null)
+                completedImage.sprite = rewardSprite;
         }
     }
 }

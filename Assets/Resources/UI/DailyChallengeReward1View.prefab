@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 113}
-  m_SizeDelta: {x: 400, y: 400}
+  m_SizeDelta: {x: 516, y: 516}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &737185667009964466
 CanvasRenderer:
@@ -109,8 +109,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 607}
-  m_SizeDelta: {x: 460, y: 100}
+  m_AnchoredPosition: {x: 0, y: 463}
+  m_SizeDelta: {x: 720, y: 545}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8005227962359953219
 CanvasRenderer:
@@ -140,9 +140,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: fa51e8bc2b2694ca48fc9113f26f419a, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -217,8 +217,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: You have completed all the daily challenges for September 2025!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0cb6f7c7f602d43268606b16fad00238, type: 2}
+  m_sharedMaterial: {fileID: -3249514690444454413, guid: 0cb6f7c7f602d43268606b16fad00238, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.85
+  m_fontSize: 40.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -40
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -318,11 +318,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1200543334053128706, guid: bd270ab054ea3418bb598564a5613857, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 329.7
+      value: 372
       objectReference: {fileID: 0}
     - target: {fileID: 1200543334053128706, guid: bd270ab054ea3418bb598564a5613857, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 140.2
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 1200543334053128706, guid: bd270ab054ea3418bb598564a5613857, type: 3}
       propertyPath: m_LocalPosition.x
@@ -376,6 +376,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreenButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6566323546055213643, guid: bd270ab054ea3418bb598564a5613857, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636095023018952041, guid: bd270ab054ea3418bb598564a5613857, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636095023018952041, guid: bd270ab054ea3418bb598564a5613857, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c4281757784b745978bf8d31c3f07b8a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -543,10 +555,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundImage: {fileID: 7814781597253219692}
-  animationDuration: 0.15
+  animationDuration: 0
   animationType: 0
   panel: {fileID: 4122545611923956376}
-  fadeEndValue: 0.985
+  fadeEndValue: 0.992
   shouldMoveBackgroundToParent: 0
   autoLoopButton: {fileID: 5669593450064179376}
   autoLoopButtonScaleMultiplier: 1.08
@@ -555,6 +567,7 @@ MonoBehaviour:
   completedImage: {fileID: 7227888912188129585}
   completedText: {fileID: 7924549740475460753}
   continueButton: {fileID: 5669593450064179376}
+  awardMonthSpriteConfig: {fileID: 11400000, guid: 3a26dbd52b8cc433c8b6d25e3ae17a58, type: 2}
   stepDelay: 0.2
   durations: 0.35
   headerStartScale: 1.5

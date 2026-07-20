@@ -4,9 +4,11 @@ using Gameplay;
 using General;
 using Level;
 using MainMenu;
+using RateUs;
 using SavedData;
 using Sound;
 using UI.General;
+using UI.RateUs;
 using UnityEngine;
 
 namespace Win
@@ -20,6 +22,7 @@ namespace Win
         private BadgeSpriteConfig _badgeSpriteConfig;
         private int _rewardCoins;
         private bool _isNewBadgeUnlocked;
+        private bool _shouldShowRateUsAfterHide;
 
         protected override void OnInitialize()
         {
@@ -32,6 +35,8 @@ namespace Win
             View.NextButtonClicked += OnNextButtonClicked;
             View.ClaimButtonClicked += OnClaimButtonClicked;
             View.ClaimX2ButtonClicked += OnClaimX2ButtonClicked;
+            View.Hidden += OnViewHidden;
+            View.IntroAnimationFinished += OnIntroAnimationFinished;
         }
 
         private void OnNextButtonClicked()
@@ -149,6 +154,47 @@ namespace Win
         private void OnClaimCoinFlyCompleted()
         {
             OnNextButtonClicked();
+        }
+        
+        private void OnIntroAnimationFinished()
+        {
+            if (PlayerPrefs.GetInt(StringConstants.HasRatedGame) == 1)
+            {
+                _shouldShowRateUsAfterHide = false;
+                return;
+            }
+
+            var configModel = _savedDataService.GetModel<RemoteConfigModel>();
+            var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
+            var rateTriggerLevels = RateTriggerLevels.FromCommaSeparatedString(configModel.RateTriggerLevels);
+
+            var currentLevel = levelProgressModel.CurrentLevelIndex;
+            _shouldShowRateUsAfterHide = false;
+            for (var i = 0; i < rateTriggerLevels.TriggerLevels.Length; i++)
+            {
+                if (rateTriggerLevels.TriggerLevels[i] == currentLevel)
+                {
+                    _shouldShowRateUsAfterHide = true;
+                    break;
+                }
+            }
+        }
+        
+        private void OnViewHidden()
+        {
+            if (!_shouldShowRateUsAfterHide)
+            {
+                return;
+            }
+
+            _shouldShowRateUsAfterHide = false;
+#if UNITY_IOS
+            YoogoLabManager.ShowNativeReview();
+            PlayerPrefs.SetInt(StringConstants.HasRatedGame, 1);
+            PlayerPrefs.Save();
+            return;
+#endif
+            _uiService.ShowPopup<RateUsPresenter>();
         }
     }
 }

@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.57350594, b: 0.9622642, a: 0.7529412}
+  m_Color: {r: 0.05490196, g: 0.64705884, b: 0.24313726, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -186,7 +186,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 60, y: 36}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8431896291544222732
 CanvasRenderer:
@@ -218,15 +218,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0cb6f7c7f602d43268606b16fad00238, type: 2}
+  m_sharedMaterial: {fileID: -3249514690444454413, guid: 0cb6f7c7f602d43268606b16fad00238, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4280637048
+  m_fontColor: {r: 0.47058824, g: 0.3372549, b: 0.14509805, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.2
+  m_fontSize: 37.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -386,7 +386,9 @@ MonoBehaviour:
   completedRoot: {fileID: 3813106951811639837}
   inactiveRoot: {fileID: 0}
   emptyRoot: {fileID: 0}
-  normalTextColor: {r: 0, g: 0, b: 0, a: 1}
+  normalTextColor: {r: 0.47058824, g: 0.3372549, b: 0.14509805, a: 1}
   selectedTextColor: {r: 1, g: 1, b: 1, a: 1}
   completedTextColor: {r: 0, g: 0, b: 0, a: 0}
   futureTextColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
+  completedPulseScale: 1.25
+  completedPulseDuration: 0.2

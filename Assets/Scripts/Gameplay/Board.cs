@@ -24,7 +24,7 @@ namespace Gameplay
         [SerializeField] private Button reshuffleButton;
         [SerializeField] private ParticleSystem winParticle;
         [SerializeField] private bool showDebugSlotIndices;
-        
+
         private const float WinAnimationStartDelay = 0.5f;
         private const float WinColumnRotateDuration = 0.6f;
         private const float WinAnimationColumnDelay = 0.2f;
@@ -34,7 +34,7 @@ namespace Gameplay
         private const float ShuffleWaveDuration = 1.2f;
         private const float SwapDuration = 0.22f;
         private const float FirstLevelTutorialStartDelay = 0.25f;
-        
+
         private ISoundService _soundService;
         private IHapticService _hapticService;
 
@@ -76,6 +76,7 @@ namespace Gameplay
         public event Action WinSequenceCompleted;
         public event Action<int, int> MovesChanged;
         public event Action MoveLimitReached;
+        public event Action ShuffleCompleted;
         public event Action<Vector3, Vector3> TutorialDragRequested;
         public event Action<Vector3> TutorialTapRequested;
         public event Action TutorialHandHideRequested;
@@ -89,7 +90,7 @@ namespace Gameplay
             reshuffleButton.onClick.AddListener(Reshuffle);
             _soundService = ServiceLocator.GetService<ISoundService>();
             _hapticService = ServiceLocator.GetService<IHapticService>();
-            
+
         }
 
         private void OnDestroy()
@@ -472,6 +473,7 @@ namespace Gameplay
             if (unlockedCards.Count <= 1)
             {
                 RestoreCardInteractivity();
+                ShuffleCompleted?.Invoke();
                 yield break;
             }
 
@@ -515,6 +517,7 @@ namespace Gameplay
             }
 
             yield return showSequence.WaitForCompletion();
+            ShuffleCompleted?.Invoke();
             if (_shouldStartFirstLevelTutorialAfterShuffle)
             {
                 _shouldStartFirstLevelTutorialAfterShuffle = false;
@@ -1129,8 +1132,8 @@ namespace Gameplay
             {
                 return;
             }
-            
-            
+
+
 
             var indices = new List<int>(cards.Count);
             for (var index = 0; index < cards.Count; index++)

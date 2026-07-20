@@ -10,21 +10,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a887ec3d41424dec93fd42d0c236db27, type: 3}
-  m_Name: Sound So
+  m_Name: SoundSo
   m_EditorClassIdentifier: 
   audioClipsPair:
   - soundType: 0
-    audioClip: {fileID: 0}
-    volume: 0
+    audioClip: {fileID: 8300000, guid: 9ed29426b21ba4a9f8eb55f745ae749f, type: 3}
+    volume: 0.2
   - soundType: 1
     audioClip: {fileID: 8300000, guid: 0e9b21ceb3e0241b297692cbfd7fc3de, type: 3}
-    volume: 0
+    volume: 0.5
   - soundType: 2
     audioClip: {fileID: 8300000, guid: 8a6f0fefecd5e41239a4227ec0cc9f2f, type: 3}
-    volume: 0
+    volume: 1
   - soundType: 4
     audioClip: {fileID: 8300000, guid: ff872f395b8634c629cd838d54c6ac08, type: 3}
-    volume: 0
+    volume: 1
   - soundType: 3
     audioClip: {fileID: 8300000, guid: 17f95d48e56624cf383be1fb1f8d10c1, type: 3}
-    volume: 0
+    volume: 1
+  - soundType: 6
+    audioClip: {fileID: 8300000, guid: c0e477b8b8c544e15bbf59516e87fe92, type: 3}
+    volume: 0.6
+  - soundType: 8
+    audioClip: {fileID: 8300000, guid: c32b8177149d94c26b0621fda77c8df5, type: 3}
+    volume: 1
+  - soundType: 9
+    audioClip: {fileID: 8300000, guid: 27d738c04bdce48fbb6782f1a5dd3c02, type: 3}
+    volume: 1
+  - soundType: 10
+    audioClip: {fileID: 8300000, guid: 27d738c04bdce48fbb6782f1a5dd3c02, type: 3}
+    volume: 1
+  - soundType: 11
+    audioClip: {fileID: 8300000, guid: 27d738c04bdce48fbb6782f1a5dd3c02, type: 3}
+    volume: 1

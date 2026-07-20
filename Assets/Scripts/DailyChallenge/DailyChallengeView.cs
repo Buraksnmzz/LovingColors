@@ -46,6 +46,12 @@ namespace DailyChallenge
             backButton.onClick.AddListener(() => BackButtonClicked?.Invoke());
         }
 
+        protected override void OnShown()
+        {
+            base.OnShown();
+            StartAutoLoopButtonAnimation();
+        }
+
         public void SetMonthText(string value)
         {
             monthText.text = value;

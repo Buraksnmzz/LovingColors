@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace DailyChallenge
 {
-    public class DailyChallengeUnlockView: BaseView
+    public class DailyChallengeUnlockView : BaseView
     {
         [SerializeField] private Button playButton;
 
@@ -12,7 +12,13 @@ namespace DailyChallenge
 
         private void Start()
         {
-            playButton.onClick.AddListener(()=> PlayButtonClicked?.Invoke());
+            playButton.onClick.AddListener(() => PlayButtonClicked?.Invoke());
+        }
+
+        protected override void OnShown()
+        {
+            base.OnShown();
+            StartAutoLoopButtonAnimation();
         }
     }
 }

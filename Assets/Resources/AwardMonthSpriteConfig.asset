@@ -15,37 +15,37 @@ MonoBehaviour:
   monthSprites:
   - Month: 1
     ActiveSprite: {fileID: 21300000, guid: c1e3ddf20be295e4cb3a38f57f18680a, type: 3}
-    CompletedSprite: {fileID: 21300000, guid: 4d826c3bbb43f4e1497e61da11e55ff7, type: 3}
+    CompletedSprite: {fileID: 21300000, guid: 1d3848e285fed4004bc35de9919948cc, type: 3}
   - Month: 2
     ActiveSprite: {fileID: 21300000, guid: c1e3ddf20be295e4cb3a38f57f18680a, type: 3}
-    CompletedSprite: {fileID: 21300000, guid: 4d826c3bbb43f4e1497e61da11e55ff7, type: 3}
+    CompletedSprite: {fileID: 21300000, guid: 4a681ef29bfd14f8c8e50442bbdd5eda, type: 3}
   - Month: 3
     ActiveSprite: {fileID: 21300000, guid: c1e3ddf20be295e4cb3a38f57f18680a, type: 3}
-    CompletedSprite: {fileID: 21300000, guid: 4d826c3bbb43f4e1497e61da11e55ff7, type: 3}
+    CompletedSprite: {fileID: 21300000, guid: 138900196d87e48e9a4024ca9cb0f1dd, type: 3}
   - Month: 4
     ActiveSprite: {fileID: 21300000, guid: c1e3ddf20be295e4cb3a38f57f18680a, type: 3}
-    CompletedSprite: {fileID: 21300000, guid: 4d826c3bbb43f4e1497e61da11e55ff7, type: 3}
+    CompletedSprite: {fileID: 21300000, guid: b102369012a3b42a1880494a81ff9567, type: 3}
   - Month: 5
     ActiveSprite: {fileID: 21300000, guid: c1e3ddf20be295e4cb3a38f57f18680a, type: 3}
-    CompletedSprite: {fileID: 21300000, guid: 4d826c3bbb43f4e1497e61da11e55ff7, type: 3}
+    CompletedSprite: {fileID: 21300000, guid: 5cfdc030597b842a7b054a4cb723b889, type: 3}
   - Month: 6
     ActiveSprite: {fileID: 21300000, guid: 1b11d80e568a47143a1865eb7ae8976e, type: 3}
-    CompletedSprite: {fileID: 21300000, guid: 4d826c3bbb43f4e1497e61da11e55ff7, type: 3}
+    CompletedSprite: {fileID: 21300000, guid: 6caa8edebf5df4af492bd6232b475225, type: 3}
   - Month: 7
     ActiveSprite: {fileID: 21300000, guid: 1b11d80e568a47143a1865eb7ae8976e, type: 3}
-    CompletedSprite: {fileID: 21300000, guid: 4d826c3bbb43f4e1497e61da11e55ff7, type: 3}
+    CompletedSprite: {fileID: 21300000, guid: be0c70ee8b1e94dcdaf7358d3bc3527d, type: 3}
   - Month: 8
     ActiveSprite: {fileID: 21300000, guid: c1e3ddf20be295e4cb3a38f57f18680a, type: 3}
-    CompletedSprite: {fileID: 21300000, guid: 4d826c3bbb43f4e1497e61da11e55ff7, type: 3}
+    CompletedSprite: {fileID: 21300000, guid: fff9e885fca8f4bbdaf051584d272b1b, type: 3}
   - Month: 9
     ActiveSprite: {fileID: 21300000, guid: c1e3ddf20be295e4cb3a38f57f18680a, type: 3}
-    CompletedSprite: {fileID: 21300000, guid: bb6c909544a65460e833c76efaf5239c, type: 3}
+    CompletedSprite: {fileID: 21300000, guid: 1a53866a31ba84853a2ddcdf3cdff837, type: 3}
   - Month: 10
     ActiveSprite: {fileID: 21300000, guid: 1b11d80e568a47143a1865eb7ae8976e, type: 3}
-    CompletedSprite: {fileID: 21300000, guid: c27bb81add3834d74a33eac29527343e, type: 3}
+    CompletedSprite: {fileID: 21300000, guid: 2dfa76405779b4f6ebf447dcfe187929, type: 3}
   - Month: 11
     ActiveSprite: {fileID: 21300000, guid: c1e3ddf20be295e4cb3a38f57f18680a, type: 3}
-    CompletedSprite: {fileID: 21300000, guid: 4d826c3bbb43f4e1497e61da11e55ff7, type: 3}
+    CompletedSprite: {fileID: 21300000, guid: f981bc702395b49dda19b7fff4d739bb, type: 3}
   - Month: 12
     ActiveSprite: {fileID: 21300000, guid: c1e3ddf20be295e4cb3a38f57f18680a, type: 3}
-    CompletedSprite: {fileID: 21300000, guid: 4d826c3bbb43f4e1497e61da11e55ff7, type: 3}
+    CompletedSprite: {fileID: 21300000, guid: e693ef8a57d4f4bd68027c309743e092, type: 3}

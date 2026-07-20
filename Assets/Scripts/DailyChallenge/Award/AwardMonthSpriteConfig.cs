@@ -10,8 +10,9 @@ namespace DailyChallenge.Award
 
         public Sprite GetActiveSprite(int month)
         {
-            var sprites = GetSprites(month);
-            return sprites != null ? sprites.ActiveSprite : null;
+            return GetCompletedSprite(month);
+            // var sprites = GetSprites(month);
+            // return sprites != null ? sprites.ActiveSprite : null;
         }
 
         public Sprite GetCompletedSprite(int month)

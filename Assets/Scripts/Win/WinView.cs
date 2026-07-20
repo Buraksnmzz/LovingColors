@@ -35,6 +35,9 @@ namespace Win
         public event Action NextButtonClicked;
         public event Action ClaimButtonClicked;
         public event Action ClaimX2ButtonClicked;
+        public event Action Hidden;
+        public event Action IntroAnimationFinished;
+        
 
         private Sequence _animationSequence;
 
@@ -43,6 +46,12 @@ namespace Win
             nextButton.onClick.AddListener(OnNextButtonClick);
             claimButton.onClick.AddListener(OnClaimButtonClick);
             claimX2Button.onClick.AddListener(OnClaimX2ButtonClick);
+        }
+
+        protected override void OnHidden()
+        {
+            base.OnHidden();
+            Hidden?.Invoke();
         }
 
         public void SetRewardText(int amount)
@@ -87,6 +96,7 @@ namespace Win
 
         public void PlayWinAnimation(Sprite badgeSprite, int previousExperience, int currentExperience, int targetExperience, int totalCoin)
         {
+            StopAutoLoopButtonAnimation();
             SetNormalWinState();
             SetBadgeProgress(badgeSprite, previousExperience, targetExperience);
             _animationSequence = CreateSequence();
@@ -100,12 +110,16 @@ namespace Win
                 targetExperience > 0 ? Mathf.Clamp01((float)currentExperience / targetExperience) : 0f,
                 0.5f));
             _animationSequence.AppendCallback(() => experienceText.text = $"{currentExperience}/{targetExperience}");
-            _animationSequence.Append(nextButton.transform.DOScale(Vector3.one, animateDuration).SetEase(Ease.OutBack));
+            _animationSequence.Append(nextButton.transform.DOScale(Vector3.one, animateDuration).SetEase(Ease.OutBack)
+                .OnStart(() => IntroAnimationFinished?.Invoke()));
             _animationSequence.InsertCallback(_animationSequence.Duration() - animateDuration * 0.5f, () => PlayCoinFly(totalCoin));
+            _animationSequence.OnComplete(StartAutoLoopButtonAnimation);
+            
         }
 
         public void PlayNewBadgeAnimation(Sprite badgeSprite)
         {
+            StopAutoLoopButtonAnimation();
             SetNewBadgeState();
             newBadgeImage.sprite = badgeSprite;
             _animationSequence = CreateSequence();
@@ -114,9 +128,10 @@ namespace Win
             _animationSequence.Append(newBadgeHeader.DOScale(Vector3.one, animateDuration).SetEase(Ease.OutBack));
             FadeCanvasGroup(newBadgeHeader, 1f, animateDuration);
             _animationSequence.Insert(halfDuration, glow.DOScale(Vector3.one, animateDuration).SetEase(Ease.OutBack));
-            _animationSequence.Insert(animateDuration, reward.DOScale(Vector3.one, animateDuration).SetEase(Ease.OutBack));
+            _animationSequence.Insert(animateDuration, reward.DOScale(Vector3.one, animateDuration).SetEase(Ease.OutBack).OnComplete(() => IntroAnimationFinished?.Invoke()));
             _animationSequence.Insert(animateDuration + halfDuration, claimX2Button.transform.DOScale(Vector3.one, animateDuration).SetEase(Ease.OutBack));
             _animationSequence.Insert(animateDuration * 2f, claimButton.transform.DOScale(Vector3.one, animateDuration).SetEase(Ease.OutBack));
+            _animationSequence.OnComplete(StartAutoLoopButtonAnimation);
         }
 
         public void PlayParticles()

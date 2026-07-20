@@ -9,6 +9,7 @@ using General.EventDispatcher;
 using GetHint;
 using Collectible;
 using MainMenu;
+using Quit;
 using Sound;
 using UI.General;
 using UnityEngine;
@@ -161,16 +162,7 @@ namespace Gameplay
 
         private void OnBackButtonClicked()
         {
-            if (_dailyChallengeService.HasActiveDailyChallengeGame)
-            {
-                _dailyChallengeService.ClearActiveDailyChallengeGame();
-                _uiService.HidePopup<GameplayPresenter>();
-                _uiService.ShowPopup<DailyChallengePresenter>();
-                return;
-            }
-
-            _uiService.HidePopup<GameplayPresenter>();
-            _uiService.ShowPopup<HomePresenter>();
+            _uiService.ShowPopup<QuitPresenter>();
         }
 
         public override void ViewShown()
