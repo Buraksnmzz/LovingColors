@@ -20,7 +20,7 @@ namespace Gameplay.Layouts
     /// Prefabs should keep their sprite rotation at 0 so the layout fully controls
     /// each slot's rotation.
     /// </summary>
-    public sealed class WavePuzzleBoardLayout : PuzzleBoardLayout
+    public sealed class WavePuzzle3BoardLayout : PuzzleBoardLayout
     {
         private const int SquarePiece = 0;
         private const int DeltoidPiece = 1;
@@ -31,8 +31,8 @@ namespace Gameplay.Layouts
         private const float DeltoidHeightRatio = 256f;
 
         // Spacing between neighbouring slot centres.
-        private const float HorizontalStepRatio = 126f;
-        private const float VerticalStepRatio = 126f;
+        private const float HorizontalStepRatio = 120f;
+        private const float VerticalStepRatio = 120f;
 
         // Absolute Z rotation (degrees) per piece, depending on the row parity.
         private const float SquareRotationEvenRow = 24f;

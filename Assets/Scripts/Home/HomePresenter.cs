@@ -43,6 +43,12 @@ namespace MainMenu
             View.RemoveAdsButtonClicked += OnRemoveAdsClicked;
             View.CoinButtonClicked += OnCoinButtonClicked;
             View.DailyChallengeButtonClicked += OnDailyChallengeButtonClicked;
+            View.SettingsClicked += OnSettingsClicked;
+        }
+
+        private void OnSettingsClicked()
+        {
+            _uiService.ShowPopup<SettingsPresenter>();
         }
 
         private void OnDailyChallengeButtonClicked()

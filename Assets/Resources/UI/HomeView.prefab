@@ -3958,6 +3958,7 @@ MonoBehaviour:
   removeAdsButton: {fileID: 83044485138156767}
   coinButton: {fileID: 4859699228711405880}
   dailyChallengeButton: {fileID: 7887855403679387651}
+  settingsButton: {fileID: 8731412117169813665}
   currentLevelText: {fileID: 9102097545811995287}
   currentLevelTextHard: {fileID: 4856590532697579045}
   currentLevelTextSuperHard: {fileID: 666321989085353713}

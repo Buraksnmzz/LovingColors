@@ -9,7 +9,7 @@ namespace Gameplay.Layouts
         {
             { "hexPuzzle1", new HexPuzzleBoardLayout() },
             { "tiePuzzle2", new TiePuzzle2BoardLayout() },
-            { "wavePuzzle3", new WavePuzzleBoardLayout() },
+            { "wavePuzzle3", new WavePuzzle3BoardLayout() },
             { "OctaSquarePuzzle4", new OctaSquarePuzzle4BoardLayout() },
             { "hexSquareTrianglePuzzle5", new HexSquareTrianglePuzzle5BoardLayout() },
             { "hexTrianglePuzzle6", new HexTrianglePuzzle6BoardLayout() },
