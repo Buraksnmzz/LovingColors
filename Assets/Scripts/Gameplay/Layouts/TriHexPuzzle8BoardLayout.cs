@@ -18,7 +18,10 @@ namespace Gameplay.Layouts
     /// The triangle sprite is authored pointing to the right (apex at +x) at
     /// rotation 0, with bounding box width = R*sqrt(3)/2 (apex-to-base height) and
     /// height = R (base length). Since the apex points toward the hexagon centre,
-    /// each triangle is rotated to (30 + 60k + 180) deg.
+    /// each triangle is rotated to one of -30 or 30 deg. An equilateral triangle
+    /// has 120-degree rotational symmetry, so the six radial orientations can be
+    /// represented by those two visual rotations. Its position is compensated for
+    /// the selected visual apex direction so its geometric centroid stays fixed.
     ///
     /// Slot index order (predictable for lockedSlots): hexagon by hexagon, and
     /// within each hexagon the six triangles in increasing k (0..5).
@@ -97,16 +100,21 @@ namespace Gameplay.Layouts
                     var vB = centre + vertexOffsets[(k + 1) % 6];
                     var centroid = (centre + vA + vB) / 3f;
 
-                    // Apex points from the centroid toward the hexagon centre.
-                    var apexDir = (centre - centroid);
-                    if (apexDir.sqrMagnitude > Mathf.Epsilon)
-                    {
-                        apexDir.Normalize();
-                    }
+                    // A 120-degree rotation produces the same equilateral-triangle
+                    // silhouette. Keep the visual rotation to the two authored
+                    // orientations, then place the sprite pivot from that visual
+                    // orientation so its geometric centroid remains at `centroid`.
+                    // k = 0..5 has radial apex directions -150, -90, -30, 30,
+                    // 90 and 150 respectively. Their 120-degree equivalents
+                    // alternate exactly between -30 and 30. Derive this from k
+                    // rather than floating-point angles so an angle close to 30
+                    // cannot accidentally be classified as -30.
+                    var rotation = k % 2 == 0 ? -30f : 30f;
+                    var visualApexAngle = rotation * Mathf.Deg2Rad;
+                    var visualApexDir = new Vector2(Mathf.Cos(visualApexAngle), Mathf.Sin(visualApexAngle));
 
-                    var apexAngle = Mathf.Atan2(apexDir.y, apexDir.x) * Mathf.Rad2Deg;
-                    positions.Add(centroid + apexDir * CentroidApexOffset);
-                    rotations.Add(NormalizeAngle(apexAngle, 360f));
+                    positions.Add(centroid + visualApexDir * CentroidApexOffset);
+                    rotations.Add(rotation);
                     pieceTypes.Add(TrianglePiece);
                     sizeRatios.Add(triangleSize);
                 }
@@ -161,15 +169,5 @@ namespace Gameplay.Layouts
             return columnHeights;
         }
 
-        private static float NormalizeAngle(float angle, float period)
-        {
-            var result = angle % period;
-            if (result < 0f)
-            {
-                result += period;
-            }
-
-            return result;
-        }
     }
 }

@@ -1195,10 +1195,10 @@
     "rowCount": 2,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#AAC62C",
-      "topRight": "#4BEAD2",
-      "bottomLeft": "#ECA22B",
-      "bottomRight": "#95C535"
+      "topLeft": "#00E0BA",
+      "topRight": "#91008D",
+      "bottomLeft": "#FF3483",
+      "bottomRight": "#FFCF00"
     }
   },
   {

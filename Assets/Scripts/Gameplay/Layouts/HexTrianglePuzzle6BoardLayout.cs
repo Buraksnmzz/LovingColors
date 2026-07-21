@@ -44,16 +44,22 @@ namespace Gameplay.Layouts
         private const float HexHeightRatio = 180f; // 2a
 
         // Triangle sprite bounding box (apex horizontal): 78 wide x 90 tall.
-        private const float TriangleWidthRatio = 78f;   // a*sqrt(3)/2
-        private const float TriangleHeightRatio = 90f;  // a
+        private const float TriangleWidthRatio = 79f;   // a*sqrt(3)/2
+        private const float TriangleHeightRatio = 91f;  // a
 
         // Rotation (degrees) for the two fill-triangle orientations, assuming the
         // triangle sprite is authored pointing to the right at rotation 0.
-        private const float TriangleApexRightRotation = 180f;
+        private const float TriangleApexRightRotation = -60f;
         private const float TriangleApexLeftRotation = 0f;
 
         // Editor-tunable overrides in case the sprite's default facing differs.
         private const float TriangleRotationOffset = 0f;
+
+        // Moving the former -180-degree cards to -60 degrees requires this
+        // matching translation to keep their effects seated in the same gaps.
+        private static readonly Vector2 TriangleApexRightPositionOffset = new(
+            -TriangleCentroidApexOffset * 1.5f,
+            TriangleCentroidApexOffset * Mathf.Sqrt(3f) * 0.5f);
 
         // Signed distance from the fill triangle's geometric centroid to the
         // triangle sprite's pivot, measured along the edge normal (apex)
@@ -107,8 +113,8 @@ namespace Gameplay.Layouts
             var downRight = new Vector2(colStep, -rowStep * 0.5f);
             var downLeft = new Vector2(-colStep, -rowStep * 0.5f);
 
-            // Consecutive neighbour pairs around the hexagon and the apex direction
-            // of the triangle that fills each gap (apex left = 180, apex right = 0).
+            // Consecutive neighbour pairs around the hexagon and the visual rotation
+            // of the triangle that fills each gap (left = 0, right = -60).
             var neighbourPairs = new[]
             {
                 (up, upRight, TriangleApexLeftRotation),
@@ -228,6 +234,11 @@ namespace Gameplay.Layouts
             if (Mathf.Abs(relC.x) > Mathf.Abs(outlierX)) outlierX = relC.x;
             var apexSign = outlierX > 0f ? -1f : 1f;
             var offset = new Vector2(apexSign * TriangleCentroidApexOffset, 0f);
+
+            if (Mathf.Approximately(apexRotation, TriangleApexRightRotation))
+            {
+                offset += TriangleApexRightPositionOffset;
+            }
 
             positions.Add(centroid + offset);
             rotations.Add(rotation);

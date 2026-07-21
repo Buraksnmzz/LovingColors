@@ -37,6 +37,12 @@ namespace Gameplay.Layouts
         // so the centre-to-centre step is half an octagon plus half a square.
         private const float StepRatio = (OctagonSizeRatio + SquareSizeRatio) * 0.5f;
 
+        // Card effects make the visual vertical gap slightly larger than the
+        // mathematical gap. Keep horizontal spacing unchanged and pull rows
+        // together by this amount instead of enlarging every square.
+        private const float VerticalOverlapRatio = 2f;
+        private const float VerticalStepRatio = StepRatio - VerticalOverlapRatio;
+
         private const float OctagonRotation = 0f;
         private const float SquareRotation = 0f;
 
@@ -57,17 +63,18 @@ namespace Gameplay.Layouts
             // The octagons define the footprint; reserve one octagon of padding so
             // nothing clips at the edges.
             var horizontalExtent = (columnCount - 1) * StepRatio + OctagonSizeRatio;
-            var verticalExtent = (rowCount - 1) * StepRatio + OctagonSizeRatio;
+            var verticalExtent = (rowCount - 1) * VerticalStepRatio + OctagonSizeRatio;
             var scaleByWidth = boardRect.width / horizontalExtent;
             var scaleByHeight = boardRect.height / verticalExtent;
             var scale = Mathf.Min(scaleByWidth, scaleByHeight);
 
-            var step = StepRatio * scale;
+            var horizontalStep = StepRatio * scale;
+            var verticalStep = VerticalStepRatio * scale;
             var octagonSize = new Vector2(OctagonSizeRatio, OctagonSizeRatio) * scale;
             var squareSize = new Vector2(SquareSizeRatio, SquareSizeRatio) * scale;
 
-            var totalWidth = (columnCount - 1) * step;
-            var totalHeight = (rowCount - 1) * step;
+            var totalWidth = (columnCount - 1) * horizontalStep;
+            var totalHeight = (rowCount - 1) * verticalStep;
             var leftX = -totalWidth * 0.5f;
             var topY = totalHeight * 0.5f;
 
@@ -82,10 +89,10 @@ namespace Gameplay.Layouts
             // Row-major over the whole grid; piece type alternates by parity.
             for (var row = 0; row < rowCount; row++)
             {
-                var y = topY - row * step;
+                var y = topY - row * verticalStep;
                 for (var column = 0; column < columnCount; column++)
                 {
-                    var x = leftX + column * step;
+                    var x = leftX + column * horizontalStep;
                     var isOctagon = (row + column) % 2 == 0;
 
                     positions.Add(new Vector2(x, y));
