@@ -26,8 +26,10 @@ namespace Gameplay.Layouts
     ///
     /// The deltoid sprite is authored upright with its long axis vertical
     /// (bounding box width = R/sqrt(3), height = R) at rotation 0. Each deltoid is
-    /// rotated so its long axis aligns with the shared hexagon edge. The star
-    /// sprite is authored pointy-top and is not rotated.
+    /// rotated so its long axis aligns with the shared hexagon edge. Deltoid
+    /// rotations use the three canonical values -60, 0 and 60 degrees; 120 is
+    /// visually equivalent to -60 due to the rhombus' 180-degree symmetry. The
+    /// star sprite is authored pointy-top and is not rotated.
     ///
     /// Slot index order (predictable for lockedSlots): all stars first (in lattice
     /// order), then all deltoids (in adjacent-pair discovery order).
@@ -112,7 +114,7 @@ namespace Gameplay.Layouts
                     // direction. That works out to a rotation equal to the centre-to-
                     // centre angle itself.
                     var centreAngle = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
-                    deltoidRotations.Add(NormalizeAngle(centreAngle, 180f));
+                    deltoidRotations.Add(GetCanonicalDeltoidRotation(centreAngle));
                 }
             }
 
@@ -180,6 +182,12 @@ namespace Gameplay.Layouts
             }
 
             return result;
+        }
+
+        private static float GetCanonicalDeltoidRotation(float centreAngle)
+        {
+            var rotation = NormalizeAngle(centreAngle, 180f);
+            return rotation > 90f ? rotation - 180f : rotation;
         }
     }
 }

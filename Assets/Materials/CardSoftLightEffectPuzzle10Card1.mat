@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CardSoftLightEffectPuzzle8Card1
+  m_Name: CardSoftLightEffectPuzzle10Card1
   m_Shader: {fileID: 4800000, guid: 0f3b2bfdf2fd4f76b3a3dbfd76f527e7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EffectTex:
-        m_Texture: {fileID: 2800000, guid: 11ea8ca04c39c4c57854b9b22d6da91e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5c304e57dfd6f4b27815d665ea00b57a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EffectTexSecondary:
