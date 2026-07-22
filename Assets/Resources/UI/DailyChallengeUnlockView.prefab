@@ -344,7 +344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 686381245254711994, guid: bd270ab054ea3418bb598564a5613857, type: 3}
       propertyPath: m_fontSize
-      value: 59.9
+      value: 52.4
       objectReference: {fileID: 0}
     - target: {fileID: 1200543334053128706, guid: bd270ab054ea3418bb598564a5613857, type: 3}
       propertyPath: m_Pivot.x
@@ -369,14 +369,6 @@ PrefabInstance:
     - target: {fileID: 1200543334053128706, guid: bd270ab054ea3418bb598564a5613857, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1200543334053128706, guid: bd270ab054ea3418bb598564a5613857, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 372
-      objectReference: {fileID: 0}
-    - target: {fileID: 1200543334053128706, guid: bd270ab054ea3418bb598564a5613857, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 1200543334053128706, guid: bd270ab054ea3418bb598564a5613857, type: 3}
       propertyPath: m_LocalPosition.x
@@ -429,18 +421,6 @@ PrefabInstance:
     - target: {fileID: 2634138920291424670, guid: bd270ab054ea3418bb598564a5613857, type: 3}
       propertyPath: m_Name
       value: GreenButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 6566323546055213643, guid: bd270ab054ea3418bb598564a5613857, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 96
-      objectReference: {fileID: 0}
-    - target: {fileID: 6566323546055213643, guid: bd270ab054ea3418bb598564a5613857, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6566323546055213643, guid: bd270ab054ea3418bb598564a5613857, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 8636095023018952041, guid: bd270ab054ea3418bb598564a5613857, type: 3}
       propertyPath: m_Type

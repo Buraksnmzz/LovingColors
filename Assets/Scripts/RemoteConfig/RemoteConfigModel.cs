@@ -11,7 +11,7 @@ namespace GameConfig
         public int ShopCoinReward4 = 800;
         public int ShopCoinReward5 = 1000;
         public int ShopCoinVideoReward = 100;
-        public int ExtraMovesCost = 150;
+        public int ExtraMovesCost = 250;
         public int ExtraMovesCount = 10;
         public int HintCost = 150;
         public int WinRewardExperience = 20;

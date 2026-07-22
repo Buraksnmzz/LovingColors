@@ -2,12 +2,14 @@ using Collectible;
 using GameConfig;
 using Gameplay;
 using General;
+using General.EventDispatcher;
 using Level;
 using MainMenu;
 using RateUs;
 using SavedData;
 using Sound;
 using UI.General;
+using UI.Shop;
 using UI.RateUs;
 using UnityEngine;
 
@@ -19,6 +21,7 @@ namespace Win
         private IUIService _uiService;
         private ISoundService _soundService;
         private IAdsService _adsService;
+        private IEventDispatcherService _eventDispatcherService;
         private BadgeSpriteConfig _badgeSpriteConfig;
         private int _rewardCoins;
         private bool _isNewBadgeUnlocked;
@@ -31,6 +34,7 @@ namespace Win
             _uiService = ServiceLocator.GetService<IUIService>();
             _soundService = ServiceLocator.GetService<ISoundService>();
             _adsService = ServiceLocator.GetService<IAdsService>();
+            _eventDispatcherService = ServiceLocator.GetService<IEventDispatcherService>();
             _badgeSpriteConfig = Resources.Load<BadgeSpriteConfig>("BadgeSpriteConfig");
             View.NextButtonClicked += OnNextButtonClicked;
             View.ClaimButtonClicked += OnClaimButtonClicked;
@@ -70,8 +74,13 @@ namespace Win
             _soundService.PlaySound(ClipName.WinView);
             View.PlayParticles();
             AwardExperienceAndUpdateBadgeProgress();
+            var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
             if (_savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex == 10)
                 View.SetNextButtonText("Home");
+            else
+            {
+                View.SetNextButtonText("Level " + (levelProgressModel.CurrentLevelIndex + 1));
+            }
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
             var remoteConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
             _rewardCoins = remoteConfigModel.WinRewardCoins;
@@ -80,6 +89,7 @@ namespace Win
             {
                 collectibleModel.TotalCoins += _rewardCoins;
                 _savedDataService.SaveData(collectibleModel);
+                _eventDispatcherService.Dispatch(new CoinChangedSignal());
             }
 
             View.SetCoinCount(_isNewBadgeUnlocked ? collectibleModel.TotalCoins : collectibleModel.TotalCoins - _rewardCoins);
@@ -148,6 +158,7 @@ namespace Win
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
             collectibleModel.TotalCoins += amount;
             _savedDataService.SaveData(collectibleModel);
+            _eventDispatcherService.Dispatch(new CoinChangedSignal());
             View.PlayCoinFly(collectibleModel.TotalCoins, OnClaimCoinFlyCompleted);
         }
 
@@ -155,7 +166,7 @@ namespace Win
         {
             OnNextButtonClicked();
         }
-        
+
         private void OnIntroAnimationFinished()
         {
             if (PlayerPrefs.GetInt(StringConstants.HasRatedGame) == 1)
@@ -179,7 +190,7 @@ namespace Win
                 }
             }
         }
-        
+
         private void OnViewHidden()
         {
             if (!_shouldShowRateUsAfterHide)

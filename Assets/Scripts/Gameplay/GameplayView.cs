@@ -105,6 +105,7 @@ namespace Gameplay
                 _board.WinSequenceCompleted += OnBoardCompleted;
                 _board.MovesChanged += OnBoardMovesChanged;
                 _board.MoveLimitReached += OnBoardMoveLimitReached;
+                _board.ShuffleStarted += OnBoardShuffleStarted;
                 _board.ShuffleCompleted += OnBoardShuffleCompleted;
                 _board.TutorialDragRequested += PlayTutorialDrag;
                 _board.TutorialTapRequested += PlayTutorialTap;
@@ -295,6 +296,7 @@ namespace Gameplay
                 _board.WinSequenceCompleted -= OnBoardCompleted;
                 _board.MovesChanged -= OnBoardMovesChanged;
                 _board.MoveLimitReached -= OnBoardMoveLimitReached;
+                _board.ShuffleStarted -= OnBoardShuffleStarted;
                 _board.ShuffleCompleted -= OnBoardShuffleCompleted;
                 _board.TutorialDragRequested -= PlayTutorialDrag;
                 _board.TutorialTapRequested -= PlayTutorialTap;
@@ -401,8 +403,15 @@ namespace Gameplay
             MoveLimitReached?.Invoke();
         }
 
+        private void OnBoardShuffleStarted()
+        {
+            SetInteractionLocked(true);
+        }
+
         private void OnBoardShuffleCompleted()
         {
+            SetInteractionLocked(false);
+
             if (_isDailyChallenge)
             {
                 PlayDailyChallengeStamp();

@@ -20,7 +20,7 @@ namespace Shop
         IAdsService _adsService;
         IUIService _uiService;
         private Transform _buttonTransform;
-        
+
         protected override void OnInitialize()
         {
             base.OnInitialize();
@@ -34,12 +34,12 @@ namespace Shop
             _uiService = ServiceLocator.GetService<IUIService>();
             View.RewardedVideoButtonClicked += OnRewardedVideoButtonClicked;
         }
-        
+
         private void OnRewardedVideoButtonClicked()
         {
             _adsService.GetReward(CallbackReward);
         }
-        
+
         private void CallbackReward(bool success)
         {
             if (success)
@@ -58,6 +58,35 @@ namespace Shop
         public override void ViewShown()
         {
             base.ViewShown();
+            _eventDispatcherService.AddListener<CoinChangedSignal>(OnCoinChanged);
+            View.SetCoinCount(_savedDataService.GetModel<CollectibleModel>().TotalCoins);
+        }
+
+        public override void ViewHidden()
+        {
+            if (_eventDispatcherService != null)
+                _eventDispatcherService.RemoveListener<CoinChangedSignal>(OnCoinChanged);
+
+            base.ViewHidden();
+        }
+
+        public override void Cleanup()
+        {
+            if (View != null)
+                View.RewardedVideoButtonClicked -= OnRewardedVideoButtonClicked;
+
+            if (_eventDispatcherService != null)
+            {
+                _eventDispatcherService.RemoveListener<RewardGivenSignal>(OnRewardGiven);
+                _eventDispatcherService.RemoveListener<ShopRewardClosedSignal>(OnShopRewardClosed);
+                _eventDispatcherService.RemoveListener<CoinChangedSignal>(OnCoinChanged);
+            }
+
+            base.Cleanup();
+        }
+
+        private void OnCoinChanged(CoinChangedSignal _)
+        {
             View.SetCoinCount(_savedDataService.GetModel<CollectibleModel>().TotalCoins);
         }
 
@@ -67,7 +96,7 @@ namespace Shop
             _hapticService.HapticLow();
             _buttonTransform = rewardGivenSignal.ButtonTransform;
         }
-        
+
         private void OnShopRewardClosed(ShopRewardClosedSignal shopRewardClosedSignal)
         {
             View.PlayCoinFly(_savedDataService.GetModel<CollectibleModel>().TotalCoins, _buttonTransform);

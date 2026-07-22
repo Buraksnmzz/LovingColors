@@ -105,7 +105,37 @@ namespace MainMenu
                 previousDifficultyTypes);
             View.SetFrameContentPositionYOffset(SafeAreaHelper.VerticalCompensationOffset);
             View.SetNoAdsView(settingsModel.IsNoAds);
+            var isDailyChallengeUnlocked = currentLevelNumber >= 10;
+            View.SetDailyChallengeState(isDailyChallengeUnlocked);
             DOVirtual.DelayedCall(0.5f, CheckAndShowDcUnlockPopup);
+        }
+
+        public override void ViewHidden()
+        {
+            if (_eventDispatcherService != null)
+                _eventDispatcherService.RemoveListener<CoinChangedSignal>(OnCoinChanged);
+
+            base.ViewHidden();
+        }
+
+        public override void Cleanup()
+        {
+            if (_eventDispatcherService != null)
+            {
+                _eventDispatcherService.RemoveListener<RewardGivenSignal>(OnRewardGiven);
+                _eventDispatcherService.RemoveListener<CoinChangedSignal>(OnCoinChanged);
+            }
+
+            if (View != null)
+            {
+                View.PlayLevelButtonClicked -= OnPlayClicked;
+                View.RemoveAdsButtonClicked -= OnRemoveAdsClicked;
+                View.CoinButtonClicked -= OnCoinButtonClicked;
+                View.DailyChallengeButtonClicked -= OnDailyChallengeButtonClicked;
+                View.SettingsClicked -= OnSettingsClicked;
+            }
+
+            base.Cleanup();
         }
 
         private void CheckAndShowDcUnlockPopup()

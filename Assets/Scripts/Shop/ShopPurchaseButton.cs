@@ -90,6 +90,7 @@ namespace Shop
                 };
                 UIService.ShowPopup<ShopRewardPresenter, ShopRewardData>(shopRewardData);
                 SavedDataService.SaveData(collectibleModel);
+                EventDispatcherService.Dispatch(new CoinChangedSignal());
                 EventDispatcherService.Dispatch(new RewardGivenSignal(transform));
             }
         }

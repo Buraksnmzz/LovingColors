@@ -23,6 +23,7 @@ namespace Gameplay
         [SerializeField] private GridLayoutGroup gridLayoutGroup;
         [SerializeField] private Button reshuffleButton;
         [SerializeField] private ParticleSystem winParticle;
+        [SerializeField] private ParticleSystem winParticle2;
         [SerializeField] private bool showDebugSlotIndices;
 
         private const float WinAnimationStartDelay = 0.5f;
@@ -76,6 +77,7 @@ namespace Gameplay
         public event Action WinSequenceCompleted;
         public event Action<int, int> MovesChanged;
         public event Action MoveLimitReached;
+        public event Action ShuffleStarted;
         public event Action ShuffleCompleted;
         public event Action<Vector3, Vector3> TutorialDragRequested;
         public event Action<Vector3> TutorialTapRequested;
@@ -446,6 +448,7 @@ namespace Gameplay
         private void StartShuffleAnimation()
         {
             StopAllCoroutines();
+            ShuffleStarted?.Invoke();
             StartCoroutine(ShuffleUnlockedCardsRoutine());
         }
 
@@ -476,6 +479,7 @@ namespace Gameplay
                 ShuffleCompleted?.Invoke();
                 yield break;
             }
+            _soundService.PlaySound(ClipName.CardShuffle);
 
             var shuffleAnimationOrder = GetShuffleAnimationOrder(unlockedIndices);
             var shuffleStepDelay = GetShuffleStepDelay(shuffleAnimationOrder.Count);
@@ -1203,7 +1207,6 @@ namespace Gameplay
 
         private void ShuffleCardsWithinPieceTypes(List<Card> cards, List<int> slotIndices)
         {
-            _soundService.PlaySound(ClipName.CardShuffle);
             var groups = new Dictionary<int, List<int>>();
             for (var positionIndex = 0; positionIndex < slotIndices.Count; positionIndex++)
             {
@@ -1418,12 +1421,7 @@ namespace Gameplay
             _draggedCard = null;
             ClearSelection();
             ClearCurrentDragTarget();
-
-            if (reshuffleButton != null)
-            {
-                SetReshuffleInteractable(false);
-            }
-
+            SetReshuffleInteractable(false);
             foreach (var card in _cards)
             {
                 card.transform.DOKill();
@@ -1448,10 +1446,8 @@ namespace Gameplay
             sequence.AppendInterval(WinAnimationStartDelay);
             sequence.AppendCallback(() =>
             {
-                if (winParticle != null)
-                {
-                    winParticle.Play();
-                }
+                winParticle.Play();
+                winParticle2.Play();
             });
 
             for (var column = 0; column < _columnCount; column++)
@@ -1477,10 +1473,8 @@ namespace Gameplay
             sequence.AppendInterval(WinAnimationStartDelay);
             sequence.AppendCallback(() =>
             {
-                if (winParticle != null)
-                {
-                    winParticle.Play();
-                }
+                winParticle.Play();
+                winParticle2.Play();
             });
 
             var orderedIndices = new List<int>(_cards.Count);

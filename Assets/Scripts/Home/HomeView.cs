@@ -36,6 +36,10 @@ namespace Home
         [SerializeField] private VerticalLayoutGroup frameContentLayoutGroup;
         [SerializeField] private RectTransform playLevelButtonRectTransform;
         [SerializeField] private float currentFrameBottomOffset;
+        [SerializeField] private Image dailyChallengeImage;
+        [SerializeField] private Sprite dailyChallengeImageActive;
+        [SerializeField] private Sprite dailyChallengeImagePassive;
+        [SerializeField] private TextMeshProUGUI dailyChallengeText;
 
         private float _initialFrameContentPositionY;
         private Sequence _introSequence;
@@ -80,8 +84,8 @@ namespace Home
             playLevelButton.onClick.AddListener(() => PlayLevelButtonClicked?.Invoke());
             removeAdsButton.onClick.AddListener(() => RemoveAdsButtonClicked?.Invoke());
             coinButton.onClick.AddListener(() => CoinButtonClicked?.Invoke());
-            settingsButton.onClick.AddListener(() =>SettingsClicked?.Invoke());
-            dailyChallengeButton.onClick.AddListener(()=>DailyChallengeButtonClicked?.Invoke());
+            settingsButton.onClick.AddListener(() => SettingsClicked?.Invoke());
+            dailyChallengeButton.onClick.AddListener(() => DailyChallengeButtonClicked?.Invoke());
         }
 
         protected override void OnShown()
@@ -89,8 +93,8 @@ namespace Home
             base.OnShown();
             PlayIntroAnimation();
         }
-        
-        
+
+
 
         protected override void OnHidden()
         {
@@ -140,6 +144,13 @@ namespace Home
         public void SetFrameContentPositionYOffset(float yOffset)
         {
             frameContent.anchoredPosition = new Vector2(frameContent.anchoredPosition.x, _initialFrameContentPositionY + yOffset);
+        }
+
+        public void SetDailyChallengeState(bool isUnlocked)
+        {
+            dailyChallengeButton.interactable = isUnlocked;
+            dailyChallengeImage.sprite = isUnlocked ? dailyChallengeImageActive : dailyChallengeImagePassive;
+            dailyChallengeText.text = isUnlocked ? "Daily" : "LV 10";
         }
 
         public void SetLevelFrames(int currentLevelNumber, LevelDifficultyType currentDifficultyType,
@@ -203,6 +214,8 @@ namespace Home
             _introSequence.Join(topBar.DOLocalMove(_topBarInitialLocalPosition, TopBarMoveDuration).SetEase(Ease.OutBack));
             _introSequence.Join(playLevelButton.transform.DOScale(_playLevelButtonInitialScale, PlayLevelButtonScaleDuration)
                 .SetEase(Ease.OutBack));
+            _introSequence.Join(dailyChallengeButton.transform.DOScale(1, RemoveAdsScaleDuration)
+                .SetEase(Ease.OutBack));
 
             if (removeAdsButton.gameObject.activeSelf)
             {
@@ -226,6 +239,7 @@ namespace Home
         {
             topBar.localPosition = _topBarInitialLocalPosition + Vector3.up * TopBarStartOffsetY;
             playLevelButton.transform.localScale = Vector3.zero;
+            dailyChallengeButton.transform.localScale = Vector3.zero;
             removeAdsButton.transform.localScale = removeAdsButton.gameObject.activeSelf ? Vector3.zero : _removeAdsButtonInitialScale;
             pawnObject.localPosition = _pawnInitialLocalPosition + Vector3.up * PawnStartOffsetY;
             pawnObject.localScale = _pawnInitialScale;

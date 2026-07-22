@@ -2449,8 +2449,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -57.8, y: 0}
-  m_SizeDelta: {x: 112, y: 124}
+  m_AnchoredPosition: {x: -57.8, y: 5.2}
+  m_SizeDelta: {x: 69, y: 59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8633099805052216816
 CanvasRenderer:
@@ -2480,7 +2480,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ce59d6ef2072a4b2e8a680cfec63c9af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d3d02fb087ba4400cb82590b020f6744, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2636,8 +2636,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -5.899994, y: 0}
-  m_SizeDelta: {x: 81.5, y: 60}
+  m_AnchoredPosition: {x: -7, y: 0}
+  m_SizeDelta: {x: 72, y: 60}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &3370554582742452684
 CanvasRenderer:
@@ -2667,7 +2667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 999
+  m_text: 2350
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0cb6f7c7f602d43268606b16fad00238, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 05489616c8e7d4de8b0c7b303c0031c1, type: 2}
@@ -2694,7 +2694,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.45
+  m_fontSize: 33.2
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2801,7 +2801,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 120
+  m_text: Get
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0cb6f7c7f602d43268606b16fad00238, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 05489616c8e7d4de8b0c7b303c0031c1, type: 2}
@@ -3255,6 +3255,7 @@ MonoBehaviour:
   closeButton: {fileID: 1460328811443887777}
   hintAmountText: {fileID: 4613631252764427687}
   coinAmountText: {fileID: 9220379682302328517}
+  hintCostText: {fileID: 1635942296936590360}
   topBar: {fileID: 7100005376434118904}
   hintImage: {fileID: 7828321206906850541}
   hintImageTarget: {fileID: 2605899932644806078}

@@ -30,12 +30,21 @@ namespace DailyChallenge
         public override void ViewShown()
         {
             base.ViewShown();
+            _eventDispatcherService.AddListener<CoinChangedSignal>(OnCoinChanged);
             var remoteConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
             _rewardCoins = remoteConfigModel.WinRewardCoins;
             View.SetCoinWonAmount(_rewardCoins);
             View.SetCoinCount(collectibleModel.TotalCoins);
             View.SetButtonsInteractable(true);
+        }
+
+        public override void ViewHidden()
+        {
+            if (_eventDispatcherService != null)
+                _eventDispatcherService.RemoveListener<CoinChangedSignal>(OnCoinChanged);
+
+            base.ViewHidden();
         }
 
         public override void Cleanup()
@@ -46,7 +55,15 @@ namespace DailyChallenge
                 View.ClaimDoubleClicked -= OnClaimDoubleClicked;
             }
 
+            if (_eventDispatcherService != null)
+                _eventDispatcherService.RemoveListener<CoinChangedSignal>(OnCoinChanged);
+
             base.Cleanup();
+        }
+
+        private void OnCoinChanged(CoinChangedSignal _)
+        {
+            View.SetCoinCount(_savedDataService.GetModel<CollectibleModel>().TotalCoins);
         }
 
         private void OnClaimClicked()

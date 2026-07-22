@@ -13,6 +13,7 @@ namespace GetHint
         [SerializeField] private Button closeButton;
         [SerializeField] private TextMeshProUGUI hintAmountText;
         [SerializeField] private TextMeshProUGUI coinAmountText;
+        [SerializeField] private TextMeshProUGUI hintCostText;
         [SerializeField] private Transform topBar;
         [SerializeField] private Transform hintImage;
         [SerializeField] private Transform hintImageTarget;
@@ -40,6 +41,11 @@ namespace GetHint
             closeButton.onClick.AddListener(Hide);
             getHintWithCoinButton.onClick.AddListener(() => GetHintWithCoinButtonClicked?.Invoke());
             getHintWithVideoButton.onClick.AddListener(() => GetHintWithVideoButtonClicked?.Invoke());
+        }
+
+        public void SetHintCostText(int amount)
+        {
+            hintCostText.text = amount.ToString();
         }
 
         public override void Show()

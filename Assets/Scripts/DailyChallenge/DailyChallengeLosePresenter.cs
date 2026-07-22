@@ -9,6 +9,7 @@ using SavedData;
 using Services;
 using Sound;
 using UI.General;
+using UI.Shop;
 using UnityEngine.tvOS;
 
 namespace DailyChallenge
@@ -31,7 +32,7 @@ namespace DailyChallenge
             _levelService = ServiceLocator.GetService<ILevelService>();
             _dailyChallengeService = ServiceLocator.GetService<IDailyChallengeService>();
             _uiService = ServiceLocator.GetService<IUIService>();
-            //_soundService = ServiceLocator.GetService<ISoundService>();
+            _soundService = ServiceLocator.GetService<ISoundService>();
             _adsService = ServiceLocator.GetService<IAdsService>();
             //_localizationService = ServiceLocator.GetService<ILocalizationService>();
             View.RestartButtonClicked += OnRestartButtonClick;
@@ -42,10 +43,10 @@ namespace DailyChallenge
         public override void ViewShown()
         {
             base.ViewShown();
+            _soundService.PlaySound(ClipName.Lose);
             var gameConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
             View.SetExtraMovesCostText(gameConfigModel.ExtraMovesCost);
             View.SetDifficultySprites(GetCurrentDailyChallengeDifficulty());
-            _soundService.PlaySound(ClipName.Lose);
             //var youCanAddMovesText = _localizationService.GetLocalizedString(LocalizationStrings.YouCanAddXMoves, gameConfigModel.extraGivenMovesCount);
             //var plusXMovesText = _localizationService.GetLocalizedString(LocalizationStrings.PlusExtraMoves, gameConfigModel.extraGivenMovesCount);
             //View.SetYouCanAddMovesText(youCanAddMovesText);
@@ -79,6 +80,7 @@ namespace DailyChallenge
             }
             collectibleModel.TotalCoins -= gameConfigModel.ExtraMovesCost;
             _savedDataService.SaveData(collectibleModel);
+            _eventDispatcher.Dispatch(new CoinChangedSignal());
             _eventDispatcher.Dispatch(new ContinueWithCoinSignal());
             View.Hide();
         }

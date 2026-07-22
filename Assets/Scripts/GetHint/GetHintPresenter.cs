@@ -26,13 +26,28 @@ namespace GetHint
             _eventDispatcherService = ServiceLocator.GetService<IEventDispatcherService>();
             View.GetHintWithCoinButtonClicked += OnGetHintWithCoinButtonClicked;
             View.GetHintWithVideoButtonClicked += OnGetHintWithVideoButtonClicked;
+
         }
 
         public override void ViewShown()
         {
             base.ViewShown();
+            _eventDispatcherService.AddListener<CoinChangedSignal>(OnCoinChanged);
+            _eventDispatcherService.AddListener<HintChangedSignal>(OnHintChanged);
             RefreshView();
             View.SetButtonsInteractable(true);
+            View.SetHintCostText(_savedDataService.GetModel<RemoteConfigModel>().HintCost);
+        }
+
+        public override void ViewHidden()
+        {
+            if (_eventDispatcherService != null)
+            {
+                _eventDispatcherService.RemoveListener<CoinChangedSignal>(OnCoinChanged);
+                _eventDispatcherService.RemoveListener<HintChangedSignal>(OnHintChanged);
+            }
+
+            base.ViewHidden();
         }
 
         public override void Cleanup()
@@ -43,7 +58,23 @@ namespace GetHint
                 View.GetHintWithVideoButtonClicked -= OnGetHintWithVideoButtonClicked;
             }
 
+            if (_eventDispatcherService != null)
+            {
+                _eventDispatcherService.RemoveListener<CoinChangedSignal>(OnCoinChanged);
+                _eventDispatcherService.RemoveListener<HintChangedSignal>(OnHintChanged);
+            }
+
             base.Cleanup();
+        }
+
+        private void OnCoinChanged(CoinChangedSignal _)
+        {
+            View.SetCoinAmount(_savedDataService.GetModel<CollectibleModel>().TotalCoins);
+        }
+
+        private void OnHintChanged(HintChangedSignal _)
+        {
+            View.SetHintAmount(_savedDataService.GetModel<CollectibleModel>().TotalHints);
         }
 
         private void OnGetHintWithVideoButtonClicked()

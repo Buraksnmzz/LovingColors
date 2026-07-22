@@ -14,8 +14,9 @@ namespace DailyChallenge
         [SerializeField] private TextMeshProUGUI completedText;
         [SerializeField] private Button continueButton;
         [SerializeField] private AwardMonthSpriteConfig awardMonthSpriteConfig;
-        [SerializeField] private float stepDelay = 0.25f;
-        [SerializeField] private float durations = 0.5f;
+        [SerializeField] private ParticleSystem particle;
+        [SerializeField] private float stepDelay = 0.4f;
+        [SerializeField] private float durations = 0.6f;
         [SerializeField] private float headerStartScale = 2f;
 
         public event Action ContinueClicked;
@@ -51,7 +52,11 @@ namespace DailyChallenge
             _animationSequence = DOTween.Sequence();
             _animationSequence.Insert(0f, headerImage.transform.DOScale(1, durations).SetEase(Ease.OutBack));
             _animationSequence.Insert(0f, headerImage.DOFade(1f, durations).SetEase(Ease.Linear));
-            _animationSequence.Insert(stepDelay, completedImage.transform.DOScale(1, durations).SetEase(Ease.OutBack).OnStart(() => CompletedImageAnimationStarted?.Invoke()));
+            _animationSequence.Insert(stepDelay, completedImage.transform.DOScale(1, durations * 2).SetEase(Ease.OutBack).OnStart(() =>
+            {
+                CompletedImageAnimationStarted?.Invoke();
+                particle.Play();
+            }));
             _animationSequence.Insert(stepDelay * 2f, completedText.DOFade(1f, durations).SetEase(Ease.Linear));
             _animationSequence.Insert(stepDelay * 3f, continueButton.transform.DOScale(1, durations).SetEase(Ease.OutBack));
         }

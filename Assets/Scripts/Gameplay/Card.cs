@@ -259,6 +259,7 @@ namespace DefaultNamespace
             _isDragging = true;
             DragStarted?.Invoke(this);
             StartDragSquashStretch();
+            _soundService.PlaySound(ClipName.CardSelect);
         }
 
         public void OnDrag(PointerEventData eventData)
