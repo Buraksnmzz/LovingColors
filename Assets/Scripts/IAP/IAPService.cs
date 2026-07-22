@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using General;
 using General.EventDispatcher;
 using SavedData;
@@ -36,7 +37,7 @@ namespace IAP
             _ = InitializeAsync();
         }
 
-        private async System.Threading.Tasks.Task InitializeAsync()
+        private async Task InitializeAsync()
         {
             try
             {

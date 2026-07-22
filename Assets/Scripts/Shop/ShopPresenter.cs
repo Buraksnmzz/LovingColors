@@ -32,6 +32,7 @@ namespace Shop
         {
             if (shopRewardClosedSignal.IsNoAdsOnly)
             {
+                View.Hide();
                 return;
             }
 
@@ -50,7 +51,6 @@ namespace Shop
             _eventDispatcherService.AddListener<CoinChangedSignal>(OnCoinChanged);
             View.SetCoinCount(_savedDataService.GetModel<CollectibleModel>().TotalCoins);
             YoogoLabManager.HideBanner();
-            _eventDispatcherService.Dispatch(new BannerVisibilityChangedSignal(false));
         }
 
         public override void ViewHidden()

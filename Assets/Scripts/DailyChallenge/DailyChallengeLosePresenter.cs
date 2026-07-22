@@ -6,11 +6,9 @@ using General.EventDispatcher;
 using Home;
 using Localization;
 using SavedData;
-using Services;
 using Sound;
 using UI.General;
 using UI.Shop;
-using UnityEngine.tvOS;
 
 namespace DailyChallenge
 {

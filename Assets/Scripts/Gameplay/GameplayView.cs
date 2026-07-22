@@ -57,6 +57,9 @@ namespace Gameplay
         [SerializeField] private Sprite backgroundNormalSprite;
         [SerializeField] private Sprite backgroundHardSprite;
         [SerializeField] private Sprite backgroundExtremeSprite;
+        [SerializeField] private Sprite movesNormalSprite;
+        [SerializeField] private Sprite movesHardSprite;
+        [SerializeField] private Sprite movesExtremeSprite;
 
         [SerializeField] private Image dcStampImage;
         [SerializeField] private Transform dcStampTransform;
@@ -207,6 +210,12 @@ namespace Gameplay
             SetDifficultySprites(difficulty);
         }
 
+        public void SetLevelInfoImages(bool isDailyChallenge)
+        {
+            levelInfoImage.gameObject.SetActive(!isDailyChallenge);
+            dcLevelInfoImage.gameObject.SetActive(isDailyChallenge);
+        }
+
         private void SetDifficultySprites(LevelDifficultyType difficulty)
         {
             switch (difficulty)
@@ -217,7 +226,7 @@ namespace Gameplay
                     SetImageSprite(levelInfoImage, levelInfoHardSprite);
                     SetImageSprite(hintButtonImage, hintButtonHardSprite);
                     SetImageSprite(backgroundImage, backgroundHardSprite);
-                    SetImageSprite(dcLevelInfoImage, levelInfoHardSprite);
+                    SetImageSprite(dcLevelInfoImage, movesHardSprite);
                     break;
                 case LevelDifficultyType.SuperHard:
                     SetImageSprite(backButtonImage, backButtonExtremeSprite);
@@ -225,7 +234,7 @@ namespace Gameplay
                     SetImageSprite(levelInfoImage, levelInfoExtremeSprite);
                     SetImageSprite(hintButtonImage, hintButtonExtremeSprite);
                     SetImageSprite(backgroundImage, backgroundExtremeSprite);
-                    SetImageSprite(dcLevelInfoImage, levelInfoExtremeSprite);
+                    SetImageSprite(dcLevelInfoImage, movesExtremeSprite);
                     break;
                 default:
                     SetImageSprite(backButtonImage, backButtonNormalSprite);
@@ -233,7 +242,7 @@ namespace Gameplay
                     SetImageSprite(levelInfoImage, levelInfoNormalSprite);
                     SetImageSprite(hintButtonImage, hintButtonNormalSprite);
                     SetImageSprite(backgroundImage, backgroundNormalSprite);
-                    SetImageSprite(dcLevelInfoImage, levelInfoNormalSprite);
+                    SetImageSprite(dcLevelInfoImage, movesNormalSprite);
                     break;
             }
         }
@@ -256,6 +265,7 @@ namespace Gameplay
             dcDate.SetActive(isDailyChallenge);
             normalLevelInfo.SetActive(!isDailyChallenge);
             dcDateText.text = dateText;
+            dcStampDateText.text = dateText;
             dcLevelInfo.SetActive(isDailyChallenge);
             movesText.text = isDailyChallenge ? "0/0" : string.Empty;
             movesText.DOKill();

@@ -87,8 +87,7 @@ namespace MainMenu
             var settingsModel = _savedDataService.GetModel<SettingsModel>();
             _eventDispatcherService.AddListener<CoinChangedSignal>(OnCoinChanged);
             YoogoLabManager.HideBanner();
-            SafeAreaHelper.RefreshForBannerVisibility(false);
-            _eventDispatcherService.Dispatch(new BannerVisibilityChangedSignal(false));
+            SafeAreaHelper.RefreshForBannerVisibility(!settingsModel.IsNoAds);
             var currentLevelNumber = levelProgressModel.CurrentLevelIndex + 1;
             var currentDifficultyType = GetDifficultyType(currentLevelNumber);
             View.SetCoinText(collectibleModel.TotalCoins);

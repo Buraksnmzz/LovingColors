@@ -46,10 +46,12 @@ namespace Win
         private void OnNextButtonClicked()
         {
             View.CompleteCoinFly();
-            _uiService.HidePopup<GameplayPresenter>(false);
             _uiService.HidePopup<WinPresenter>();
             if (_savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex == 10)
+            {
                 _uiService.ShowPopup<HomePresenter>();
+                _uiService.HidePopup<GameplayPresenter>();
+            }
             else
             {
                 _uiService.ShowPopup<GameplayPresenter>();

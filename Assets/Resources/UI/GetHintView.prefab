@@ -772,7 +772,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -170}
+  m_AnchoredPosition: {x: 0, y: -140}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3797532096425076809
@@ -1005,10 +1005,10 @@ RectTransform:
   - {fileID: 270498711409621809}
   m_Father: {fileID: 5532634574996917280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -140, y: -17.653}
-  m_SizeDelta: {x: 260, y: 434.606}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -140, y: -407.653}
+  m_SizeDelta: {x: 260, y: 434.60596}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4891953970353355010
 GameObject:
@@ -1933,10 +1933,10 @@ RectTransform:
   - {fileID: 8435513534444124508}
   m_Father: {fileID: 5532634574996917280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 140, y: -17.653}
-  m_SizeDelta: {x: 260, y: 434.606}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 140, y: -407.653}
+  m_SizeDelta: {x: 260, y: 434.60596}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7168050877597846166
 GameObject:
@@ -2179,9 +2179,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5532634574996917280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 257}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -133}
   m_SizeDelta: {x: 414, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1160953630295417912
@@ -3146,6 +3146,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 615
       objectReference: {fileID: 0}
+    - target: {fileID: 1621151885550989746, guid: e9aa3d9a8bbd84eaab409dd88ac6bfe2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 730.4
+      objectReference: {fileID: 0}
     - target: {fileID: 2946582128745510153, guid: e9aa3d9a8bbd84eaab409dd88ac6bfe2, type: 3}
       propertyPath: m_Name
       value: GetHintView
@@ -3174,6 +3178,9 @@ PrefabInstance:
       addedObject: {fileID: 7100005376434118904}
     - targetCorrespondingSourceObject: {fileID: 1621151885550989746, guid: e9aa3d9a8bbd84eaab409dd88ac6bfe2, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 2343753174389076004}
+    - targetCorrespondingSourceObject: {fileID: 1621151885550989746, guid: e9aa3d9a8bbd84eaab409dd88ac6bfe2, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 8821616478310408445}
     - targetCorrespondingSourceObject: {fileID: 1621151885550989746, guid: e9aa3d9a8bbd84eaab409dd88ac6bfe2, type: 3}
       insertIndex: -1
@@ -3184,9 +3191,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1621151885550989746, guid: e9aa3d9a8bbd84eaab409dd88ac6bfe2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7828321206906850541}
-    - targetCorrespondingSourceObject: {fileID: 1621151885550989746, guid: e9aa3d9a8bbd84eaab409dd88ac6bfe2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2343753174389076004}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2946582128745510153, guid: e9aa3d9a8bbd84eaab409dd88ac6bfe2, type: 3}
       insertIndex: -1
@@ -3260,5 +3264,5 @@ MonoBehaviour:
   hintImage: {fileID: 7828321206906850541}
   hintImageTarget: {fileID: 2605899932644806078}
   topBarIntroDuration: 0.25
-  topBarIntroYOffset: 320
+  topBarIntroYOffset: 280
   hintFlyDuration: 0.5

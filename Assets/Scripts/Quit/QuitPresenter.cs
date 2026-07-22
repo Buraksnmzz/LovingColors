@@ -21,6 +21,7 @@ namespace Quit
 
         private void OnYesButtonClicked()
         {
+            _uiService.HidePopup<QuitPresenter>();
             if (_dailyChallengeService.HasActiveDailyChallengeGame)
             {
                 _dailyChallengeService.ClearActiveDailyChallengeGame();
@@ -28,10 +29,9 @@ namespace Quit
                 _uiService.ShowPopup<DailyChallengePresenter>();
                 return;
             }
-
             _uiService.HidePopup<GameplayPresenter>();
             _uiService.ShowPopup<HomePresenter>();
-            _uiService.HidePopup<QuitPresenter>();
+            
         }
     }
 }

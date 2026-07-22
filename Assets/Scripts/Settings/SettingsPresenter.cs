@@ -60,7 +60,6 @@ namespace UI.Settings
             base.ViewShown();
             _settingsModel = _savedDataService.GetModel<SettingsModel>();
             YoogoLabManager.HideBanner();
-            _eventDispatcherService.Dispatch(new BannerVisibilityChangedSignal(false));
             View.SetHapticState(_settingsModel.IsHapticOn);
             View.SetSoundState(_settingsModel.IsSoundOn);
             View.SetMusicState(_settingsModel.IsMusicOn);

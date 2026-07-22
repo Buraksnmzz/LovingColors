@@ -65,8 +65,8 @@ public class Installer : MonoBehaviour
         ServiceLocator.Register<ILevelService>(new LevelService(levelConfig, dailyChallengeLevelConfig));
         ServiceLocator.Register<IDailyChallengeService>(new DailyChallengeService());
         var savedDataService = ServiceLocator.GetService<ISavedDataService>();
-        if (!savedDataService.GetModel<SettingsModel>().IsNoAds)
-            YoogoLabManager.ShowBanner();
+        var eventDispatcherService = ServiceLocator.GetService<IEventDispatcherService>();
+        eventDispatcherService.Dispatch(new BannerVisibilityChangedSignal(!savedDataService.GetModel<SettingsModel>().IsNoAds));
 
         var uiService = ServiceLocator.GetService<IUIService>();
         if (PlayerPrefs.GetInt(StringConstants.IsTutorialShown) == 0)

@@ -112,7 +112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -45}
+  m_AnchoredPosition: {x: 0, y: -38.8}
   m_SizeDelta: {x: 232.7, y: 62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &881116616993726302
@@ -2071,10 +2071,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 7566644738070041874}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -5}
-  m_SizeDelta: {x: -32, y: -670}
+  m_AnchorMin: {x: 0.022222223, y: 0.10897436}
+  m_AnchorMax: {x: 0.9777778, y: 0.775641}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2052791613446615404
 MonoBehaviour:
@@ -2307,9 +2307,9 @@ RectTransform:
   - {fileID: 9012537253514699521}
   m_Father: {fileID: 7566644738070041874}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.5, y: -683.45}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 70}
   m_SizeDelta: {x: 675, y: 160.90002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6239784227155813479
@@ -3206,10 +3206,10 @@ RectTransform:
   - {fileID: 8174636873505920725}
   m_Father: {fileID: 7566644738070041874}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 646, y: 113}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -73}
+  m_SizeDelta: {x: -74, y: 113}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &8481626687479764850
 GameObject:
@@ -3906,7 +3906,7 @@ MonoBehaviour:
   backButtonExtremeSprite: {fileID: 21300000, guid: cc6503dd819c94f4597b15bc1a7ee768, type: 3}
   retryButtonNormalSprite: {fileID: 21300000, guid: 3f5ec49538e6842559d04f5043b39743, type: 3}
   retryButtonHardSprite: {fileID: 21300000, guid: 51a24851d77a4496fa40e30008431965, type: 3}
-  retryButtonExtremeSprite: {fileID: 21300000, guid: cc6503dd819c94f4597b15bc1a7ee768, type: 3}
+  retryButtonExtremeSprite: {fileID: 21300000, guid: e41600177f8c24c49b1df180ff6afb16, type: 3}
   levelInfoNormalSprite: {fileID: 21300000, guid: b9ba02d15d3da4f47b54d8fff54ffb50, type: 3}
   levelInfoHardSprite: {fileID: 21300000, guid: 39cb258c8df9c47b59ac6d49e6019759, type: 3}
   levelInfoExtremeSprite: {fileID: 21300000, guid: 608fb0b602e5349fba57f1fce636c078, type: 3}
@@ -3916,6 +3916,9 @@ MonoBehaviour:
   backgroundNormalSprite: {fileID: 21300000, guid: ac1f2710a1cf74abba47f2c7ce4ea451, type: 3}
   backgroundHardSprite: {fileID: 21300000, guid: 5d040faf8fee64032aa2da1ee5f30b27, type: 3}
   backgroundExtremeSprite: {fileID: 21300000, guid: d4a6cb5f90c514f618ab72e1c4cdd4ea, type: 3}
+  movesNormalSprite: {fileID: 21300000, guid: 4527536f534654a599d60bcd3a3eef7f, type: 3}
+  movesHardSprite: {fileID: 21300000, guid: e3850649cb09c4398868344a3cd81ca1, type: 3}
+  movesExtremeSprite: {fileID: 21300000, guid: ea6da1bcb187648969010e9f7ac8cfe8, type: 3}
   dcStampImage: {fileID: 3528514109345898978}
   dcStampTransform: {fileID: 2849238248582805535}
   dcStampPlayingText: {fileID: 376823373815442167}

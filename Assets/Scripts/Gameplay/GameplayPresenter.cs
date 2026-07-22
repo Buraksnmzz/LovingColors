@@ -37,7 +37,7 @@ namespace Gameplay
             _eventDispatcherService = ServiceLocator.GetService<IEventDispatcherService>();
             _soundService = ServiceLocator.GetService<ISoundService>();
             _hapticService = ServiceLocator.GetService<IHapticService>();
-            View.Shown += OnViewShownCompleted;
+            //View.Shown += OnViewShownCompleted;
             View.Solved += OnViewSolved;
             View.Completed += OnViewCompleted;
             View.MovesChanged += OnViewMovesChanged;
@@ -168,13 +168,26 @@ namespace Gameplay
         public override void ViewShown()
         {
             base.ViewShown();
+            _eventDispatcherService.Dispatch(new GameplayVisibilityChangedSignal(true));
             _soundService.PlayMusic();
             View.SetHintAmount(_savedDataService.GetModel<CollectibleModel>().TotalHints);
+            View.SetLevelInfoImages(_dailyChallengeService.HasActiveDailyChallengeGame);
+            if (_dailyChallengeService.HasActiveDailyChallengeGame)
+            {
+                LoadDailyChallengeLevel();
+                return;
+            }
+
+            var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
+            LoadLevelAtIndex(levelProgressModel.CurrentLevelIndex, true);
+            IncreaseCurrentLevelAttemptCount();
+            TrackLevelStart();
         }
 
         public override void ViewHidden()
         {
             base.ViewHidden();
+            _eventDispatcherService.Dispatch(new GameplayVisibilityChangedSignal(false));
             _soundService.StopMusic();
         }
 
@@ -182,7 +195,7 @@ namespace Gameplay
         {
             if (View != null)
             {
-                View.Shown -= OnViewShownCompleted;
+                //View.Shown -= OnViewShownCompleted;
                 View.Solved -= OnViewSolved;
                 View.Completed -= OnViewCompleted;
                 View.MovesChanged -= OnViewMovesChanged;
@@ -202,19 +215,19 @@ namespace Gameplay
             base.Cleanup();
         }
 
-        private void OnViewShownCompleted()
-        {
-            if (_dailyChallengeService.HasActiveDailyChallengeGame)
-            {
-                LoadDailyChallengeLevel();
-                return;
-            }
-
-            var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
-            LoadLevelAtIndex(levelProgressModel.CurrentLevelIndex, true);
-            IncreaseCurrentLevelAttemptCount();
-            TrackLevelStart();
-        }
+        // private void OnViewShownCompleted()
+        // {
+        //     if (_dailyChallengeService.HasActiveDailyChallengeGame)
+        //     {
+        //         LoadDailyChallengeLevel();
+        //         return;
+        //     }
+        //
+        //     var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
+        //     LoadLevelAtIndex(levelProgressModel.CurrentLevelIndex, true);
+        //     IncreaseCurrentLevelAttemptCount();
+        //     TrackLevelStart();
+        // }
 
         private void OnDebugLevelStepRequested(int levelStep)
         {
@@ -236,6 +249,7 @@ namespace Gameplay
                 if (levelId <= 0)
                     return;
             }
+            View.SetDifficultyText(levelDefinition.Difficulty);
             View.SetDailyChallengeInfo(true, _dailyChallengeService.GetPlayedDateText());
             View.InitializeBoard(levelDefinition, true);
         }

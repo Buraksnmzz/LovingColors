@@ -99,5 +99,46 @@ namespace Gameplay.Layouts
                 SlotSizes = sizes
             };
         }
+
+        public override IReadOnlyList<int> BuildLockedSlots(BoardLayoutResult layoutResult, int rowCount, int columnCount)
+        {
+            if (layoutResult == null)
+            {
+                return Array.Empty<int>();
+            }
+
+            var lockedFlags = new bool[layoutResult.SlotPositions.Count];
+
+            var hullBoundary = GetConvexHullBoundarySlotIndices(layoutResult.SlotPositions);
+            for (var index = 0; index < hullBoundary.Count; index++)
+            {
+                var slotIndex = hullBoundary[index];
+                if (slotIndex >= 0 && slotIndex < lockedFlags.Length)
+                {
+                    lockedFlags[slotIndex] = true;
+                }
+            }
+
+            var angularBoundary = GetAngularGapBoundarySlotIndices(layoutResult.SlotPositions, 1.8f, 140f);
+            for (var index = 0; index < angularBoundary.Count; index++)
+            {
+                var slotIndex = angularBoundary[index];
+                if (slotIndex >= 0 && slotIndex < lockedFlags.Length)
+                {
+                    lockedFlags[slotIndex] = true;
+                }
+            }
+
+            var lockedSlots = new List<int>(lockedFlags.Length);
+            for (var index = 0; index < lockedFlags.Length; index++)
+            {
+                if (lockedFlags[index])
+                {
+                    lockedSlots.Add(index);
+                }
+            }
+
+            return lockedSlots;
+        }
     }
 }

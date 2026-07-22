@@ -5,9 +5,9 @@ namespace UI.Settings
 {
     public class SettingsModel: IModel
     {
-        public bool IsHapticOn { get; set; }
-        public bool IsSoundOn { get; set; }
-        public bool IsMusicOn { get; set; }
+        public bool IsHapticOn { get; set; } = true;
+        public bool IsSoundOn { get; set; } = true;
+        public bool IsMusicOn { get; set; } = true;
         public bool IsNoAds { get; set; }
         public SystemLanguage CurrentLanguage { get; set; }
     }
