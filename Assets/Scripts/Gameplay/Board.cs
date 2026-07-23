@@ -1447,6 +1447,7 @@ namespace Gameplay
             sequence.AppendInterval(WinAnimationStartDelay);
             sequence.AppendCallback(() =>
             {
+                _soundService.PlaySound(ClipName.BoardComplete);
                 winParticle.Play();
                 winParticle2.Play();
             });

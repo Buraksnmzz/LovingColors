@@ -20,8 +20,8 @@ namespace DailyChallenge
         [SerializeField] private Color selectedTextColor = Color.white;
         [SerializeField] private Color completedTextColor = Color.clear;
         [SerializeField] private Color futureTextColor = new Color(0.75f, 0.75f, 0.75f, 1f);
-        [SerializeField] private float completedPulseScale = 1.25f;
-        [SerializeField] private float completedPulseDuration = 0.2f;
+        [SerializeField] private float completedPulseScale = 1.6f;
+        [SerializeField] private float completedPulseDuration = 0.6f;
 
         private int _dayNumber;
         private Tween _completedPulseTween;
@@ -122,7 +122,7 @@ namespace DailyChallenge
             _completedPulseTween?.Kill();
             completedRoot.transform.localScale = _completedRootInitialScale;
             _completedPulseTween = DOTween.Sequence()
-                .Append(completedRoot.transform.DOScale(_completedRootInitialScale * completedPulseScale, completedPulseDuration).SetEase(Ease.OutBack))
+                .Append(completedRoot.transform.DOScale(_completedRootInitialScale * completedPulseScale, completedPulseDuration).SetEase(Ease.OutBack).SetDelay(0.2f))
                 .Append(completedRoot.transform.DOScale(_completedRootInitialScale, completedPulseDuration).SetEase(Ease.InOutSine))
                 .OnComplete(() => onComplete?.Invoke());
         }

@@ -139,8 +139,10 @@ namespace DailyChallenge
             if (!playedDate.HasValue)
                 return;
 
-            _shouldShowCompletedReward = true;
             _dailyChallengeService.SetDisplayedMonth(playedDate.Value.Year, playedDate.Value.Month);
+            var completedCount = _dailyChallengeService.GetCompletedCountInDisplayedMonth();
+            var activeCount = _dailyChallengeService.GetActiveCountInDisplayedMonth();
+            _shouldShowCompletedReward = activeCount > 0 && completedCount >= activeCount;
             RefreshView();
             View.PlayCompletedDayPulse(playedDate.Value.Day);
         }

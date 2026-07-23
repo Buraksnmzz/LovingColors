@@ -14,5 +14,6 @@ namespace Sound
         CardSwap,
         CardShuffle,
         DailyChallengeReward,
+        BoardComplete,
     }
 }
