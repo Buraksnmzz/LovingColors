@@ -85,6 +85,7 @@ namespace Gameplay
         private bool _hasShownDailyChallengeTargetMoves;
         private Vector3 _dailyChallengeStampInitialPosition;
         private bool _hasDailyChallengeStampInitialPosition;
+        private Button[] _debugButtons;
 
         protected override void Awake()
         {
@@ -95,6 +96,18 @@ namespace Gameplay
             {
                 _canvasGroup = gameObject.AddComponent<CanvasGroup>();
             }
+
+            _debugButtons = new[]
+            {
+                debugNextButton,
+                debugNext10Button,
+                debugPrevButton,
+                debugPrev10Button,
+                debugCompleteButton
+            };
+
+            ConfigureDebugButtonsToIgnoreInteractionLock();
+
             debugNextButton.onClick.AddListener(OnDebugNextButtonClick);
             debugPrevButton.onClick.AddListener(OnDebugPrevButtonClick);
             debugNext10Button.onClick.AddListener(OnDebugNext10ButtonClick);
@@ -390,6 +403,32 @@ namespace Gameplay
 
             _canvasGroup.interactable = !isLocked;
             _canvasGroup.blocksRaycasts = !isLocked;
+        }
+
+        private void ConfigureDebugButtonsToIgnoreInteractionLock()
+        {
+            if (_debugButtons == null)
+            {
+                return;
+            }
+
+            foreach (var button in _debugButtons)
+            {
+                if (button == null)
+                {
+                    continue;
+                }
+
+                var debugCanvasGroup = button.GetComponent<CanvasGroup>();
+                if (debugCanvasGroup == null)
+                {
+                    debugCanvasGroup = button.gameObject.AddComponent<CanvasGroup>();
+                }
+
+                debugCanvasGroup.ignoreParentGroups = true;
+                debugCanvasGroup.interactable = true;
+                debugCanvasGroup.blocksRaycasts = true;
+            }
         }
 
         private void OnBoardSolved()
