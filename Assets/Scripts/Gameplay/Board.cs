@@ -980,6 +980,7 @@ namespace Gameplay
             _isInteractionLocked = true;
             ClearSelection();
             ClearCurrentDragTarget();
+            RestoreCardInteractivity();
             BringCardsToFront(firstCard, secondCard);
 
             var firstIndex = firstCard.Order;
