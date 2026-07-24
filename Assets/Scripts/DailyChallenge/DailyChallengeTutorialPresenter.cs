@@ -1,4 +1,5 @@
 using General;
+using MainMenu;
 using UI.General;
 
 namespace DailyChallenge
@@ -25,6 +26,7 @@ namespace DailyChallenge
         private void OnContinueClicked()
         {
             _uiService.HidePopup<DailyChallengeTutorialPresenter>();
+            _uiService.HidePopup<HomePresenter>();
             _uiService.ShowPopup<DailyChallengePresenter>();
         }
     }

@@ -102,7 +102,7 @@ namespace Win
             View.SetDifficultyView(currentDifficultyType);
             View.SetCoinCount(_isNewBadgeUnlocked ? collectibleModel.TotalCoins : collectibleModel.TotalCoins - _rewardCoins);
         }
-        
+
         private LevelDifficultyType GetDifficultyType(int levelNumber)
         {
             if (levelNumber < 1 || !_levelService.TryGetLevelById(levelNumber, out var levelDefinition))

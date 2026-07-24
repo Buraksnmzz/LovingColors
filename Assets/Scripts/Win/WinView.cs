@@ -27,7 +27,7 @@ namespace Win
         [SerializeField] private TextMeshProUGUI experienceText;
         [SerializeField] private TextMeshProUGUI rewardText;
         [SerializeField] private float animateDuration = 0.35f;
-        
+
         [SerializeField] private GameObject playButtonNormalImage;
         [SerializeField] private GameObject playButtonHardImage;
         [SerializeField] private GameObject playButtonSuperHardImage;
@@ -42,7 +42,7 @@ namespace Win
         public event Action ClaimX2ButtonClicked;
         public event Action Hidden;
         public event Action IntroAnimationFinished;
-        
+
 
         private Sequence _animationSequence;
 
@@ -52,7 +52,7 @@ namespace Win
             claimButton.onClick.AddListener(OnClaimButtonClick);
             claimX2Button.onClick.AddListener(OnClaimX2ButtonClick);
         }
-        
+
         public void SetDifficultyView(LevelDifficultyType levelDifficultyType)
         {
             playButtonNormalImage.SetActive(false);
@@ -134,7 +134,7 @@ namespace Win
                 .OnStart(() => IntroAnimationFinished?.Invoke()));
             _animationSequence.InsertCallback(_animationSequence.Duration() - animateDuration * 0.5f, () => PlayCoinFly(totalCoin));
             _animationSequence.OnComplete(StartAutoLoopButtonAnimation);
-            
+
         }
 
         public void PlayNewBadgeAnimation(Sprite previousBadgeSprite, Sprite newBadgeSprite)
