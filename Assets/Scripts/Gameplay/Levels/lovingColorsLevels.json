@@ -242,7 +242,7 @@
     "rules": "LockCorners",
     "columnCount": 9,
     "rowCount": 9,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#B526BD",
       "topRight": "#A17B3A",
@@ -254,7 +254,7 @@
     "levelId": 19,
     "rules": "LockOneRowSkipOne",
     "columnCount": 10,
-    "rowCount": 10,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#80A71B",
@@ -382,7 +382,7 @@
     "rules": "LockCorners",
     "columnCount": 8,
     "rowCount": 8,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#9400D3",
       "topRight": "#B960E5",
@@ -658,7 +658,7 @@
     "rules": "LockCorners",
     "columnCount": 8,
     "rowCount": 8,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#34EC3D",
       "topRight": "#AD4417",
@@ -794,7 +794,7 @@
     "rules": "LockCorners",
     "columnCount": 9,
     "rowCount": 9,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#E12210",
       "topRight": "#34C85E",
@@ -846,7 +846,7 @@
     "rules": "LockEdges",
     "columnCount": 11,
     "rowCount": 11,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#21B3EC",
       "topRight": "#A3DA50",
@@ -928,7 +928,7 @@
     "rules": "LockCorners",
     "columnCount": 10,
     "rowCount": 10,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#11D01A",
       "topRight": "#C34F15",
@@ -1068,7 +1068,7 @@
     "rules": "LockCorners",
     "columnCount": 9,
     "rowCount": 9,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#5CCE2B",
       "topRight": "#C6ED5B",
@@ -1080,7 +1080,7 @@
     "levelId": 73,
     "rules": "LockOneRowSkipOne",
     "columnCount": 10,
-    "rowCount": 10,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#88BE1D",
@@ -1189,7 +1189,7 @@
     "rules": "LockOneByOne",
     "columnCount": 3,
     "rowCount": 2,
-    "difficulty": "Normal",
+    "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#00E0BA",
       "topRight": "#91008D",
@@ -1202,7 +1202,7 @@
     "rules": "LockCorners",
     "columnCount": 10,
     "rowCount": 10,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#9E0A3E",
       "topRight": "#D01F19",
@@ -1340,7 +1340,7 @@
     "rules": "LockCorners",
     "columnCount": 3,
     "rowCount": 4,
-    "difficulty": "SuperHard",
+    "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#26B12B",
       "topRight": "#E76D1B",
@@ -1352,7 +1352,7 @@
     "levelId": 91,
     "rules": "LockOneRowSkipOne",
     "columnCount": 8,
-    "rowCount": 8,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#CEAF23",
@@ -1457,7 +1457,7 @@
     "rules": "LockCorners",
     "columnCount": 8,
     "rowCount": 8,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#E03D40",
       "topRight": "#6343C2",
@@ -1609,7 +1609,7 @@
     "levelId": 109,
     "rules": "LockOneRowSkipOne",
     "columnCount": 8,
-    "rowCount": 8,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#4E33E7",
@@ -1731,7 +1731,7 @@
     "rules": "LockCorners",
     "columnCount": 10,
     "rowCount": 10,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#7113A3",
       "topRight": "#3ABC65",
@@ -1743,7 +1743,7 @@
     "levelId": 118,
     "rules": "LockOneRowSkipOne",
     "columnCount": 10,
-    "rowCount": 10,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#3579A1",
@@ -1875,7 +1875,7 @@
     "rules": "LockCorners",
     "columnCount": 12,
     "rowCount": 12,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#A25838",
       "topRight": "#3E83DF",
@@ -1954,7 +1954,7 @@
     "rules": "LockEdges",
     "columnCount": 6,
     "rowCount": 8,
-    "difficulty": "SuperHard",
+    "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#D8196F",
       "topRight": "#3F42AB",
@@ -2019,7 +2019,7 @@
     "rules": "LockCorners",
     "columnCount": 9,
     "rowCount": 9,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#2AD892",
       "topRight": "#2959B7",
@@ -2031,7 +2031,7 @@
     "levelId": 136,
     "rules": "LockOneRowSkipOne",
     "columnCount": 8,
-    "rowCount": 8,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#D7476B",
@@ -2159,7 +2159,7 @@
     "rules": "LockCorners",
     "columnCount": 8,
     "rowCount": 8,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#9A2D50",
       "topRight": "#8645AF",
@@ -2264,7 +2264,7 @@
     "rules": "LockMiddle",
     "columnCount": 3,
     "rowCount": 5,
-    "difficulty": "Normal",
+    "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#4E10A5",
       "topRight": "#D1DF53",
@@ -2303,7 +2303,7 @@
     "rules": "LockCorners",
     "columnCount": 9,
     "rowCount": 9,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#C12066",
       "topRight": "#45EAAE",
@@ -2315,7 +2315,7 @@
     "levelId": 154,
     "rules": "LockOneRowSkipOne",
     "columnCount": 10,
-    "rowCount": 10,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#3C79C4",
@@ -2419,7 +2419,7 @@
     "rules": "LockInPairsAndUnlockLines",
     "columnCount": 5,
     "rowCount": 5,
-    "difficulty": "Normal",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#A935BB",
       "topRight": "#28AFD1",
@@ -2445,7 +2445,7 @@
     "rules": "LockCorners",
     "columnCount": 10,
     "rowCount": 10,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#B5EF52",
       "topRight": "#B70E57",
@@ -2589,7 +2589,7 @@
     "rules": "LockCorners",
     "columnCount": 11,
     "rowCount": 11,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#4A2DB2",
       "topRight": "#C6341D",
@@ -2601,7 +2601,7 @@
     "levelId": 172,
     "rules": "LockOneRowSkipOne",
     "columnCount": 10,
-    "rowCount": 10,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#1F3CB0",
@@ -2727,7 +2727,7 @@
     "rules": "LockCorners",
     "columnCount": 5,
     "rowCount": 2,
-    "difficulty": "Hard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#CC24CF",
       "topRight": "#14BF11",
@@ -2844,7 +2844,7 @@
     "rules": "LockCorners",
     "columnCount": 11,
     "rowCount": 11,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#23DCC4",
       "topRight": "#569A1B",
@@ -2988,7 +2988,7 @@
     "rules": "LockCorners",
     "columnCount": 12,
     "rowCount": 12,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#A9A924",
       "topRight": "#3017EB",
@@ -3067,7 +3067,7 @@
     "rules": "LockEdges",
     "columnCount": 5,
     "rowCount": 8,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#7035DD",
       "topRight": "#9C36B3",
@@ -3132,7 +3132,7 @@
     "rules": "LockCorners",
     "columnCount": 8,
     "rowCount": 8,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#E79121",
       "topRight": "#67C833",
@@ -3144,7 +3144,7 @@
     "levelId": 208,
     "rules": "LockOneRowSkipOne",
     "columnCount": 8,
-    "rowCount": 8,
+    "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#7E9F1C",
@@ -3196,7 +3196,7 @@
     "rules": "UnLockSideEdgesOnly",
     "columnCount": 7,
     "rowCount": 6,
-    "difficulty": "Normal",
+    "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#8AC125",
       "topRight": "#2ACE4E",
@@ -3274,7 +3274,7 @@
     "rules": "LockCorners",
     "columnCount": 9,
     "rowCount": 9,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#C1EF0D",
       "topRight": "#DFEC28",
@@ -3285,8 +3285,8 @@
   {
     "levelId": 217,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#3D98B7",
@@ -3418,7 +3418,7 @@
     "rules": "LockCorners",
     "columnCount": 11,
     "rowCount": 11,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#4CC7D9",
       "topRight": "#26D6B5",
@@ -3514,7 +3514,7 @@
     "rules": "LockOneLineSkipTwo",
     "columnCount": 6,
     "rowCount": 10,
-    "difficulty": "Normal",
+    "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#4FE335",
       "topRight": "#C4CC4B",
@@ -3566,7 +3566,7 @@
     "rules": "LockCorners",
     "columnCount": 12,
     "rowCount": 12,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#9C2769",
       "topRight": "#E85875",
@@ -3706,7 +3706,7 @@
     "rules": "LockCorners",
     "columnCount": 9,
     "rowCount": 9,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#2EC3E1",
       "topRight": "#A5398A",
@@ -3718,7 +3718,7 @@
     "levelId": 244,
     "rules": "LockOneRowSkipOne",
     "columnCount": 8,
-    "rowCount": 8,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#76C63D",
@@ -3988,7 +3988,7 @@
     "rules": "LockCorners",
     "columnCount": 9,
     "rowCount": 9,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#44D52A",
       "topRight": "#0CAF1F",
@@ -3999,8 +3999,8 @@
   {
     "levelId": 262,
     "rules": "LockOneRowSkipOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "columnCount": 9,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#AB4055",
@@ -4132,7 +4132,7 @@
     "rules": "LockCorners",
     "columnCount": 5,
     "rowCount": 9,
-    "difficulty": "SuperHard",
+    "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#A728B3",
       "topRight": "#2A5EE1",
@@ -4184,7 +4184,7 @@
     "rules": "LockEdges",
     "columnCount": 12,
     "rowCount": 12,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#3AAF8C",
       "topRight": "#CF562E",
@@ -4249,7 +4249,7 @@
     "rules": "LockCorners",
     "columnCount": 11,
     "rowCount": 11,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#C8B54D",
       "topRight": "#094B9C",
@@ -4291,7 +4291,7 @@
     "rules": "LockOneRowSkipOne",
     "columnCount": 3,
     "rowCount": 5,
-    "difficulty": "Normal",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#50A725",
       "topRight": "#E87742",
@@ -4395,7 +4395,7 @@
     "rules": "LockCorners",
     "columnCount": 10,
     "rowCount": 10,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#C01BE1",
       "topRight": "#8139C3",
@@ -4539,7 +4539,7 @@
     "rules": "LockCorners",
     "columnCount": 11,
     "rowCount": 11,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#BE9E0C",
       "topRight": "#1577EE",
@@ -4551,7 +4551,7 @@
     "levelId": 298,
     "rules": "LockOneRowSkipOne",
     "columnCount": 12,
-    "rowCount": 12,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#9941AC",
@@ -4685,7 +4685,7 @@
     "rules": "LockCorners",
     "columnCount": 8,
     "rowCount": 9,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#B21573",
       "topRight": "#90B337",
@@ -4827,7 +4827,7 @@
     "rules": "LockCorners",
     "columnCount": 9,
     "rowCount": 9,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#5AEF6B",
       "topRight": "#A63F7F",
@@ -4839,7 +4839,7 @@
     "levelId": 316,
     "rules": "LockOneRowSkipOne",
     "columnCount": 10,
-    "rowCount": 10,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#9E2313",
@@ -4927,7 +4927,7 @@
     "rules": "LockOneLineSkipTwo",
     "columnCount": 8,
     "rowCount": 10,
-    "difficulty": "Normal",
+    "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#18BFE5",
       "topRight": "#2DC878",
@@ -4991,7 +4991,7 @@
     "levelId": 325,
     "rules": "LockOneRowSkipOne",
     "columnCount": 12,
-    "rowCount": 12,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#46C965",
@@ -5127,7 +5127,7 @@
     "rules": "LockCorners",
     "columnCount": 12,
     "rowCount": 12,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#CF2F27",
       "topRight": "#5438B9",
@@ -5271,7 +5271,7 @@
     "rules": "LockCorners",
     "columnCount": 13,
     "rowCount": 13,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#1C479B",
       "topRight": "#0BE0E0",
@@ -5283,7 +5283,7 @@
     "levelId": 343,
     "rules": "LockOneRowSkipOne",
     "columnCount": 10,
-    "rowCount": 10,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#B1117B",
@@ -5323,7 +5323,7 @@
     "rules": "LockEdges",
     "columnCount": 11,
     "rowCount": 11,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#9438BE",
       "topRight": "#41DDE8",
@@ -5410,7 +5410,7 @@
     "rules": "LockOneByOne",
     "columnCount": 5,
     "rowCount": 5,
-    "difficulty": "Normal",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#3BD76A",
       "topRight": "#C08838",
@@ -5423,7 +5423,7 @@
     "rules": "LockCorners",
     "columnCount": 10,
     "rowCount": 10,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#741BCD",
       "topRight": "#5E38C7",
@@ -5561,7 +5561,7 @@
     "rules": "LockCorners",
     "columnCount": 5,
     "rowCount": 3,
-    "difficulty": "SuperHard",
+    "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#6312C7",
       "topRight": "#D23CE6",
@@ -5573,7 +5573,7 @@
     "levelId": 361,
     "rules": "LockOneRowSkipOne",
     "columnCount": 10,
-    "rowCount": 10,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#29BC29",
@@ -5678,7 +5678,7 @@
     "rules": "LockCorners",
     "columnCount": 10,
     "rowCount": 10,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#3719DD",
       "topRight": "#C1BE0B",
@@ -5826,7 +5826,7 @@
     "rules": "LockCorners",
     "columnCount": 11,
     "rowCount": 11,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#D59331",
       "topRight": "#27A529",
@@ -5838,7 +5838,7 @@
     "levelId": 379,
     "rules": "LockOneRowSkipOne",
     "columnCount": 12,
-    "rowCount": 12,
+    "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#D65D48",
@@ -5881,7 +5881,7 @@
     "rules": "LockEdgesAndWindow",
     "columnCount": 5,
     "rowCount": 4,
-    "difficulty": "Normal",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#11AD9B",
       "topRight": "#98E024",
@@ -5972,7 +5972,7 @@
     "rules": "LockCorners",
     "columnCount": 12,
     "rowCount": 12,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#2936C5",
       "topRight": "#E214B6",
@@ -6128,7 +6128,7 @@
     "levelId": 397,
     "rules": "LockOneRowSkipOne",
     "columnCount": 12,
-    "rowCount": 12,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#8DC51E",
@@ -6262,7 +6262,7 @@
     "rules": "LockCorners",
     "columnCount": 8,
     "rowCount": 9,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#96269E",
       "topRight": "#BC0B81",
@@ -6404,7 +6404,7 @@
     "rules": "LockCorners",
     "columnCount": 11,
     "rowCount": 11,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#7A25F1",
       "topRight": "#10E943",
@@ -6456,7 +6456,7 @@
     "rules": "LockEdges",
     "columnCount": 11,
     "rowCount": 11,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#B63F47",
       "topRight": "#2452AE",
@@ -6513,7 +6513,7 @@
     "rules": "LockMiddle",
     "columnCount": 7,
     "rowCount": 9,
-    "difficulty": "Normal",
+    "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#9F192B",
       "topRight": "#8FB640",
@@ -6552,7 +6552,7 @@
     "rules": "LockCorners",
     "columnCount": 12,
     "rowCount": 12,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#742DC5",
       "topRight": "#64A829",
@@ -6674,7 +6674,7 @@
     "rules": "LockInPairsAndUnlockLines",
     "columnCount": 7,
     "rowCount": 9,
-    "difficulty": "Normal",
+    "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#55E67E",
       "topRight": "#9D2982",
@@ -6700,7 +6700,7 @@
     "rules": "LockCorners",
     "columnCount": 11,
     "rowCount": 11,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#0AA82F",
       "topRight": "#419E21",
@@ -6712,7 +6712,7 @@
     "levelId": 433,
     "rules": "LockOneRowSkipOne",
     "columnCount": 12,
-    "rowCount": 12,
+    "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#A39D31",
@@ -6831,7 +6831,7 @@
     "rules": "LockOneByOne",
     "columnCount": 6,
     "rowCount": 8,
-    "difficulty": "Normal",
+    "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#41CDCF",
       "topRight": "#0E3DD4",
@@ -6844,7 +6844,7 @@
     "rules": "LockCorners",
     "columnCount": 12,
     "rowCount": 12,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#B8C14D",
       "topRight": "#A3E90E",
@@ -6988,7 +6988,7 @@
     "rules": "LockCorners",
     "columnCount": 5,
     "rowCount": 3,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#C23BAE",
       "topRight": "#1B18DA",
@@ -7000,7 +7000,7 @@
     "levelId": 451,
     "rules": "LockOneRowSkipOne",
     "columnCount": 10,
-    "rowCount": 10,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#8328F1",
@@ -7105,7 +7105,7 @@
     "rules": "LockCorners",
     "columnCount": 10,
     "rowCount": 10,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#1DB8A6",
       "topRight": "#ED971F",
@@ -7143,7 +7143,7 @@
     "rules": "LockOneRowSkipOne",
     "columnCount": 5,
     "rowCount": 5,
-    "difficulty": "Normal",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#C30D2C",
       "topRight": "#CE15DB",
@@ -7259,7 +7259,7 @@
     "levelId": 469,
     "rules": "LockOneRowSkipOne",
     "columnCount": 10,
-    "rowCount": 10,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#2D25B4",
@@ -7395,7 +7395,7 @@
     "rules": "LockCorners",
     "columnCount": 10,
     "rowCount": 10,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#CD2D2A",
       "topRight": "#397EA6",
@@ -7463,7 +7463,7 @@
     "rules": "UnLockSideEdgesOnly",
     "columnCount": 3,
     "rowCount": 5,
-    "difficulty": "Normal",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#D0CB4B",
       "topRight": "#A7652E",
@@ -7541,7 +7541,7 @@
     "rules": "LockCorners",
     "columnCount": 11,
     "rowCount": 11,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#9B1C88",
       "topRight": "#2DE2DF",
@@ -7553,7 +7553,7 @@
     "levelId": 487,
     "rules": "LockOneRowSkipOne",
     "columnCount": 12,
-    "rowCount": 12,
+    "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#65A23A",
@@ -7626,7 +7626,7 @@
     "rules": "LockEdges",
     "columnCount": 4,
     "rowCount": 6,
-    "difficulty": "SuperHard",
+    "difficulty": "Hard",
     "cornerColors": {
       "topLeft": "#A25D13",
       "topRight": "#8B9A28",
@@ -7691,7 +7691,7 @@
     "rules": "LockCorners",
     "columnCount": 12,
     "rowCount": 12,
-    "difficulty": "SuperHard",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#E3F124",
       "topRight": "#C58D0C",
@@ -7787,7 +7787,7 @@
     "rules": "LockOneLineSkipTwo",
     "columnCount": 8,
     "rowCount": 8,
-    "difficulty": "Normal",
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#B0900F",
       "topRight": "#68CA1C",

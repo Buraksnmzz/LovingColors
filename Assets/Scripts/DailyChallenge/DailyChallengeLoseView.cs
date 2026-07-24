@@ -79,7 +79,7 @@ namespace DailyChallenge
                     SetImageSprite(headerImage, headerSpriteHard);
                     SetImageSprite(middleImage, middleSpriteHard);
                     break;
-                case LevelDifficultyType.SuperHard:
+                case LevelDifficultyType.Extreme:
                     SetImageSprite(headerImage, headerSpriteExtreme);
                     SetImageSprite(middleImage, middleSpriteExtreme);
                     break;

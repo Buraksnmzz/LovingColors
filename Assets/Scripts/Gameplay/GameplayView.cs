@@ -3,8 +3,10 @@ using System;
 using DG.Tweening;
 using Gameplay.Levels;
 using Home;
+using Spine.Unity;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Gameplay
@@ -66,7 +68,7 @@ namespace Gameplay
         [SerializeField] private TextMeshProUGUI dcStampPlayingText;
         [SerializeField] private TextMeshProUGUI dcStampDateText;
 
-
+        [SerializeField] private SkeletonGraphic skeletonGraphic;
 
 
         private const float MovesTextFadeDuration = 0.45f;
@@ -241,7 +243,7 @@ namespace Gameplay
                     SetImageSprite(backgroundImage, backgroundHardSprite);
                     SetImageSprite(dcLevelInfoImage, movesHardSprite);
                     break;
-                case LevelDifficultyType.SuperHard:
+                case LevelDifficultyType.Extreme:
                     SetImageSprite(backButtonImage, backButtonExtremeSprite);
                     SetImageSprite(retryButtonImage, retryButtonExtremeSprite);
                     SetImageSprite(levelInfoImage, levelInfoExtremeSprite);
@@ -375,11 +377,31 @@ namespace Gameplay
             }
         }
 
+        public void SetSpineAnimation(LevelDifficultyType difficulty)
+        {
+            
+            if (difficulty == LevelDifficultyType.Hard)
+            {
+                skeletonGraphic.gameObject.SetActive(true);
+                skeletonGraphic.AnimationState.SetAnimation(0, "hard_level", false);
+            }
+            else if (difficulty == LevelDifficultyType.Extreme)
+            {
+                skeletonGraphic.gameObject.SetActive(true);
+                skeletonGraphic.AnimationState.SetAnimation(0, "super_hard", false);
+            }
+            else
+            {
+                skeletonGraphic.gameObject.SetActive(false);
+            }
+        }
+
         protected override void OnShown()
         {
             base.OnShown();
             SetInteractionLocked(false);
             Shown?.Invoke();
+            
         }
 
         public void InitializeBoard(LevelDefinition levelDefinition, bool isMoveLimitEnabled)

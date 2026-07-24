@@ -8,6 +8,7 @@ using General;
 using General.EventDispatcher;
 using GetHint;
 using Collectible;
+using Home;
 using MainMenu;
 using Quit;
 using Sound;
@@ -26,6 +27,7 @@ namespace Gameplay
         private IEventDispatcherService _eventDispatcherService;
         private ISoundService _soundService;
         private IHapticService _hapticService;
+        private LevelDifficultyType _currentLevelDifficulty;
 
         protected override void OnInitialize()
         {
@@ -175,6 +177,7 @@ namespace Gameplay
             if (_dailyChallengeService.HasActiveDailyChallengeGame)
             {
                 LoadDailyChallengeLevel();
+                View.SetSpineAnimation(_currentLevelDifficulty);
                 return;
             }
 
@@ -182,6 +185,7 @@ namespace Gameplay
             LoadLevelAtIndex(levelProgressModel.CurrentLevelIndex, true);
             IncreaseCurrentLevelAttemptCount();
             TrackLevelStart();
+            View.SetSpineAnimation(_currentLevelDifficulty);
         }
 
         public override void ViewHidden()
@@ -249,6 +253,7 @@ namespace Gameplay
                 if (levelId <= 0)
                     return;
             }
+            _currentLevelDifficulty = levelDefinition.Difficulty;
             View.SetDifficultyText(levelDefinition.Difficulty);
             View.SetDailyChallengeInfo(true, _dailyChallengeService.GetPlayedDateText());
             View.InitializeBoard(levelDefinition, true);
@@ -280,6 +285,7 @@ namespace Gameplay
                 levelProgressModel.CurrentLevelIndex = currentLevelIndex;
                 _savedDataService.SaveData(levelProgressModel);
             }
+            _currentLevelDifficulty = levelDefinition.Difficulty;
             View.SetDifficultyText(levelDefinition.Difficulty);
             View.InitializeBoard(levelDefinition, false);
             if (ShouldShowFirstLevelTutorial(currentLevelIndex))

@@ -1,8 +1,10 @@
 using Collectible;
 using GameConfig;
 using Gameplay;
+using Gameplay.Levels;
 using General;
 using General.EventDispatcher;
+using Home;
 using Level;
 using MainMenu;
 using RateUs;
@@ -26,6 +28,7 @@ namespace Win
         private int _rewardCoins;
         private bool _isNewBadgeUnlocked;
         private bool _shouldShowRateUsAfterHide;
+        private ILevelService _levelService;
 
         protected override void OnInitialize()
         {
@@ -35,6 +38,7 @@ namespace Win
             _soundService = ServiceLocator.GetService<ISoundService>();
             _adsService = ServiceLocator.GetService<IAdsService>();
             _eventDispatcherService = ServiceLocator.GetService<IEventDispatcherService>();
+            _levelService = ServiceLocator.GetService<ILevelService>();
             _badgeSpriteConfig = Resources.Load<BadgeSpriteConfig>("BadgeSpriteConfig");
             View.NextButtonClicked += OnNextButtonClicked;
             View.ClaimButtonClicked += OnClaimButtonClicked;
@@ -93,8 +97,20 @@ namespace Win
                 _savedDataService.SaveData(collectibleModel);
                 _eventDispatcherService.Dispatch(new CoinChangedSignal());
             }
-
+            var currentLevelNumber = levelProgressModel.CurrentLevelIndex + 1;
+            var currentDifficultyType = GetDifficultyType(currentLevelNumber);
+            View.SetDifficultyView(currentDifficultyType);
             View.SetCoinCount(_isNewBadgeUnlocked ? collectibleModel.TotalCoins : collectibleModel.TotalCoins - _rewardCoins);
+        }
+        
+        private LevelDifficultyType GetDifficultyType(int levelNumber)
+        {
+            if (levelNumber < 1 || !_levelService.TryGetLevelById(levelNumber, out var levelDefinition))
+            {
+                return LevelDifficultyType.Normal;
+            }
+
+            return levelDefinition.Difficulty;
         }
 
         private void AwardExperienceAndUpdateBadgeProgress()

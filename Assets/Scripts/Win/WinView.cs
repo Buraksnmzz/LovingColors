@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using Home;
 using TMPro;
 using UI.General;
 using UnityEngine;
@@ -26,6 +27,10 @@ namespace Win
         [SerializeField] private TextMeshProUGUI experienceText;
         [SerializeField] private TextMeshProUGUI rewardText;
         [SerializeField] private float animateDuration = 0.35f;
+        
+        [SerializeField] private GameObject playButtonNormalImage;
+        [SerializeField] private GameObject playButtonHardImage;
+        [SerializeField] private GameObject playButtonSuperHardImage;
 
 
         [SerializeField] private ParticleSystem fireworkParticle1;
@@ -46,6 +51,21 @@ namespace Win
             nextButton.onClick.AddListener(OnNextButtonClick);
             claimButton.onClick.AddListener(OnClaimButtonClick);
             claimX2Button.onClick.AddListener(OnClaimX2ButtonClick);
+        }
+        
+        public void SetDifficultyView(LevelDifficultyType levelDifficultyType)
+        {
+            playButtonNormalImage.SetActive(false);
+            playButtonHardImage.SetActive(false);
+            playButtonSuperHardImage.SetActive(false);
+            if (levelDifficultyType == LevelDifficultyType.Normal)
+                playButtonNormalImage.SetActive(true);
+
+            else if (levelDifficultyType == LevelDifficultyType.Hard)
+                playButtonHardImage.SetActive(true);
+
+            else
+                playButtonSuperHardImage.SetActive(true);
         }
 
         protected override void OnHidden()

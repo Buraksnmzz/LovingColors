@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Are you sure want to exit the game?
+  m_text: Are you sure want to exit the level?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0cb6f7c7f602d43268606b16fad00238, type: 2}
   m_sharedMaterial: {fileID: -3249514690444454413, guid: 0cb6f7c7f602d43268606b16fad00238, type: 2}
@@ -232,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2946582128745510153, guid: e9aa3d9a8bbd84eaab409dd88ac6bfe2, type: 3}
       propertyPath: m_Name
-      value: QuitView Variant
+      value: QuitView
       objectReference: {fileID: 0}
     - target: {fileID: 8973979557210435171, guid: e9aa3d9a8bbd84eaab409dd88ac6bfe2, type: 3}
       propertyPath: m_text

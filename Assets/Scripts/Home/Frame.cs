@@ -44,7 +44,7 @@ namespace Home
 
             normalImage.SetActive(levelDifficultyType == LevelDifficultyType.Normal);
             hardImage.SetActive(levelDifficultyType == LevelDifficultyType.Hard);
-            superHardImage.SetActive(levelDifficultyType == LevelDifficultyType.SuperHard);
+            superHardImage.SetActive(levelDifficultyType == LevelDifficultyType.Extreme);
         }
     }
 }
