@@ -137,18 +137,26 @@ namespace Win
             
         }
 
-        public void PlayNewBadgeAnimation(Sprite badgeSprite)
+        public void PlayNewBadgeAnimation(Sprite previousBadgeSprite, Sprite newBadgeSprite)
         {
             StopAutoLoopButtonAnimation();
             SetNewBadgeState();
-            newBadgeImage.sprite = badgeSprite;
+            newBadgeImage.sprite = previousBadgeSprite != null ? previousBadgeSprite : newBadgeSprite;
             _animationSequence = CreateSequence();
             var halfDuration = animateDuration * 0.5f;
+            var badgeScaleDuration = animateDuration;
+            var badgeSwapStartTime = animateDuration + halfDuration;
 
             _animationSequence.Append(newBadgeHeader.DOScale(Vector3.one, animateDuration).SetEase(Ease.OutBack));
             FadeCanvasGroup(newBadgeHeader, 1f, animateDuration);
             _animationSequence.Insert(halfDuration, glow.DOScale(Vector3.one, animateDuration).SetEase(Ease.OutBack));
             _animationSequence.Insert(animateDuration, reward.DOScale(Vector3.one, animateDuration).SetEase(Ease.OutBack).OnComplete(() => IntroAnimationFinished?.Invoke()));
+            _animationSequence.Insert(badgeSwapStartTime,
+                newBadgeImage.transform.DOScale(Vector3.zero, badgeScaleDuration).SetEase(Ease.InBack));
+            _animationSequence.InsertCallback(badgeSwapStartTime + badgeScaleDuration,
+                () => newBadgeImage.sprite = newBadgeSprite);
+            _animationSequence.Insert(badgeSwapStartTime + badgeScaleDuration,
+                newBadgeImage.transform.DOScale(Vector3.one, badgeScaleDuration).SetEase(Ease.OutBack));
             _animationSequence.Insert(animateDuration + halfDuration, claimX2Button.transform.DOScale(Vector3.one, animateDuration).SetEase(Ease.OutBack));
             _animationSequence.Insert(animateDuration * 2f, claimButton.transform.DOScale(Vector3.one, animateDuration).SetEase(Ease.OutBack));
             _animationSequence.OnComplete(StartAutoLoopButtonAnimation);
@@ -222,6 +230,7 @@ namespace Win
             SetCanvasGroupAlpha(newBadgeHeader, 0f);
             glow.localScale = Vector3.zero;
             reward.localScale = Vector3.zero;
+            newBadgeImage.transform.localScale = Vector3.one;
             claimButton.transform.localScale = Vector3.zero;
             claimX2Button.transform.localScale = Vector3.zero;
             SetClaimButtonsInteractable(true);

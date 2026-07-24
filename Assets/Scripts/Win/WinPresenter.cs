@@ -119,6 +119,7 @@ namespace Win
             var remoteConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
             var targetExperience = Mathf.Max(1, remoteConfigModel.TargetExperience);
             var previousExperience = collectibleModel.TotalXp;
+            var previousBadgeIndex = collectibleModel.CurrentBadgeIndex;
 
             collectibleModel.TotalXp += Mathf.Max(0, remoteConfigModel.WinRewardExperience);
             _isNewBadgeUnlocked = false;
@@ -130,17 +131,20 @@ namespace Win
             }
 
             _savedDataService.SaveData(collectibleModel);
-            var badgeSprite = _badgeSpriteConfig != null
+            var previousBadgeSprite = _badgeSpriteConfig != null
+                ? _badgeSpriteConfig.GetBadgeSprite(previousBadgeIndex)
+                : null;
+            var currentBadgeSprite = _badgeSpriteConfig != null
                 ? _badgeSpriteConfig.GetBadgeSprite(collectibleModel.CurrentBadgeIndex)
                 : null;
 
             if (_isNewBadgeUnlocked)
             {
-                View.PlayNewBadgeAnimation(badgeSprite);
+                View.PlayNewBadgeAnimation(previousBadgeSprite, currentBadgeSprite);
             }
             else
             {
-                View.PlayWinAnimation(badgeSprite, previousExperience, collectibleModel.TotalXp, targetExperience,
+                View.PlayWinAnimation(currentBadgeSprite, previousExperience, collectibleModel.TotalXp, targetExperience,
                     collectibleModel.TotalCoins + remoteConfigModel.WinRewardCoins);
             }
         }
