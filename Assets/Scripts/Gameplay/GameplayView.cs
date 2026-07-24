@@ -109,6 +109,7 @@ namespace Gameplay
             };
 
             ConfigureDebugButtonsToIgnoreInteractionLock();
+            ConfigureButtonToIgnoreInteractionLock(backButton);
 
             debugNextButton.onClick.AddListener(OnDebugNextButtonClick);
             debugPrevButton.onClick.AddListener(OnDebugPrevButtonClick);
@@ -379,7 +380,7 @@ namespace Gameplay
 
         public void SetSpineAnimation(LevelDifficultyType difficulty)
         {
-            
+            skeletonGraphic.AnimationState.ClearTracks();
             if (difficulty == LevelDifficultyType.Hard)
             {
                 skeletonGraphic.gameObject.SetActive(true);
@@ -401,7 +402,7 @@ namespace Gameplay
             base.OnShown();
             SetInteractionLocked(false);
             Shown?.Invoke();
-            
+
         }
 
         public void InitializeBoard(LevelDefinition levelDefinition, bool isMoveLimitEnabled)
@@ -451,6 +452,24 @@ namespace Gameplay
                 debugCanvasGroup.interactable = true;
                 debugCanvasGroup.blocksRaycasts = true;
             }
+        }
+
+        private static void ConfigureButtonToIgnoreInteractionLock(Button button)
+        {
+            if (button == null)
+            {
+                return;
+            }
+
+            var buttonCanvasGroup = button.GetComponent<CanvasGroup>();
+            if (buttonCanvasGroup == null)
+            {
+                buttonCanvasGroup = button.gameObject.AddComponent<CanvasGroup>();
+            }
+
+            buttonCanvasGroup.ignoreParentGroups = true;
+            buttonCanvasGroup.interactable = true;
+            buttonCanvasGroup.blocksRaycasts = true;
         }
 
         private void OnBoardSolved()

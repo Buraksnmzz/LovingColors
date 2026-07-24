@@ -480,7 +480,10 @@ namespace DailyChallenge
             if (monthDate > CurrentMonthDate)
                 return AwardState.Inactive;
 
-            return IsMonthCompleted(monthDate) ? AwardState.Completed : AwardState.Active;
+            if (IsMonthCompleted(monthDate))
+                return AwardState.Completed;
+
+            return HasAnyCompletedDayInMonth(monthDate) ? AwardState.Active : AwardState.Inactive;
         }
 
         private bool IsMonthCompleted(DateTime monthDate)
@@ -497,6 +500,22 @@ namespace DailyChallenge
             }
 
             return monthDate <= CurrentMonthDate;
+        }
+
+        private bool HasAnyCompletedDayInMonth(DateTime monthDate)
+        {
+            var daysInMonth = DateTime.DaysInMonth(monthDate.Year, monthDate.Month);
+            for (var day = 1; day <= daysInMonth; day++)
+            {
+                var date = new DateTime(monthDate.Year, monthDate.Month, day);
+                if (date > DateTime.Today)
+                    break;
+
+                if (IsCompleted(date))
+                    return true;
+            }
+
+            return false;
         }
 
         private void CompleteDay(DateTime date)
