@@ -51,6 +51,11 @@ namespace DailyChallenge
             base.OnDestroy();
         }
 
+        public void SetDateText(string text)
+        {
+            dateText.text = text;
+        }
+
         private void OnContinueButtonClicked()
         {
             ContinueClicked?.Invoke();

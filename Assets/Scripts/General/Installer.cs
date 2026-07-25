@@ -54,7 +54,6 @@ public class Installer : MonoBehaviour
 
     private void InstallServices()
     {
-        ServiceLocator.Register<IEventDispatcherService>(new EventDispatcherService());
         ServiceLocator.Register<ISoundService>(new SoundService());
         ServiceLocator.Register<IHapticService>(new HapticService());
         ServiceLocator.Register<IUIService>(new UIService(uiRoot));

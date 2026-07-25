@@ -7,6 +7,7 @@ namespace DailyChallenge.Award
     {
         public int Year;
         public int Month;
+        public string MonthName;
         public AwardState State;
 
         public DateTime Date => new DateTime(Year, Month, 1);

@@ -1,0 +1,227 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: LanguageTable_no
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: no
+  m_SharedData: {fileID: 11400000, guid: 59a087d5d6a1b448ab32740d371ebe4d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Norsk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: Laster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Om
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Tilbakemelding
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "Personvernerkl\xE6ring"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "Vilk\xE5r for bruk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: Trofeer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: "Du har fullf\xF8rt alle daglige utfordringer for"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: Fortsett
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: Hent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: Daglig utfordring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: Velkommen til daglig utfordring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: "Fullf\xF8r de daglige spillene"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: "Tjen et unikt bilde og flotte bel\xF8nninger!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: "L\xE5st opp n\xE5. Kom og spill!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: Spill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: Trekk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: "Start p\xE5 nytt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: "Du har fullf\xF8rt den daglige utfordringen for"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: Spiller daglig utfordring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: Vanskelig
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: Ekstrem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: Hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: "St\xE5r du fast? Avdekk dit neste trekk umiddelbart!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: Hent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: Ingen reklamer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: "Niv\xE5"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: "Er du sikker p\xE5 at du vil g\xE5 ut av niv\xE5et?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: Ja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: Nei
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: Vurderingstid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: Liker du spillet? Evaluer oss!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: Musikk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: Lyd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: Vibrasjon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: "Gjenopprett kj\xF8p"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: "Spr\xE5k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: Om spillet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: "Bel\xF8nning"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: '- Fjern obligatoriske reklamer'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: '- Fjern bannerreklamer nederst'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Localized: "- Behold valgfrie reklamer for bel\xF8nninger"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: Fjern reklame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: Reklamefri pakke
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: Ingen reklamer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: "Din bel\xF8nning:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: Daglig
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: Slutte?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Localized: OK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Localized: Hjem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: Innstillinger
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

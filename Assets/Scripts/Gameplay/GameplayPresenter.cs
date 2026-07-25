@@ -9,8 +9,10 @@ using General.EventDispatcher;
 using GetHint;
 using Collectible;
 using Home;
+using Localization;
 using MainMenu;
 using Quit;
+using Services;
 using Sound;
 using UI.General;
 using UnityEngine;
@@ -27,6 +29,7 @@ namespace Gameplay
         private IEventDispatcherService _eventDispatcherService;
         private ISoundService _soundService;
         private IHapticService _hapticService;
+        private ILocalizationService _localizationService;
         private LevelDifficultyType _currentLevelDifficulty;
 
         protected override void OnInitialize()
@@ -39,6 +42,7 @@ namespace Gameplay
             _eventDispatcherService = ServiceLocator.GetService<IEventDispatcherService>();
             _soundService = ServiceLocator.GetService<ISoundService>();
             _hapticService = ServiceLocator.GetService<IHapticService>();
+            _localizationService = ServiceLocator.GetService<ILocalizationService>();
             //View.Shown += OnViewShownCompleted;
             View.Solved += OnViewSolved;
             View.Completed += OnViewCompleted;
@@ -253,8 +257,19 @@ namespace Gameplay
                 if (levelId <= 0)
                     return;
             }
+
+            var diffText = "";
+            if (levelDefinition.Difficulty == LevelDifficultyType.Hard)
+            {
+                diffText = _localizationService.GetLocalizedString(LocalizationStrings.Hard);
+            }
+            else if (levelDefinition.Difficulty == LevelDifficultyType.Extreme)
+            {
+                diffText = _localizationService.GetLocalizedString(LocalizationStrings.Extreme);
+            }
+            
             _currentLevelDifficulty = levelDefinition.Difficulty;
-            View.SetDifficultyText(levelDefinition.Difficulty);
+            View.SetDifficultyText(levelDefinition.Difficulty, diffText);
             View.SetDailyChallengeInfo(true, _dailyChallengeService.GetPlayedDateText());
             View.InitializeBoard(levelDefinition, true);
         }
@@ -262,8 +277,8 @@ namespace Gameplay
         private void LoadLevelAtIndex(int levelIndex, bool clampToPreviousValidLevel)
         {
             View.SetDailyChallengeInfo(false, string.Empty);
-            View.SetLevelText(levelIndex + 1);
-
+            var text = _localizationService.GetLocalizedString(LocalizationStrings.Level);
+            View.SetLevelText(text + " " + (levelIndex + 1));
             var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
             var currentLevelIndex = Mathf.Max(0, levelIndex);
             var currentLevelId = currentLevelIndex + 1;
@@ -279,6 +294,16 @@ namespace Gameplay
                 currentLevelIndex--;
                 currentLevelId = currentLevelIndex + 1;
             }
+            
+            var diffText = "";
+            if (levelDefinition.Difficulty == LevelDifficultyType.Hard)
+            {
+                diffText = _localizationService.GetLocalizedString(LocalizationStrings.Hard);
+            }
+            else if (levelDefinition.Difficulty == LevelDifficultyType.Extreme)
+            {
+                diffText = _localizationService.GetLocalizedString(LocalizationStrings.Extreme);
+            }
 
             if (currentLevelIndex != levelProgressModel.CurrentLevelIndex)
             {
@@ -286,7 +311,7 @@ namespace Gameplay
                 _savedDataService.SaveData(levelProgressModel);
             }
             _currentLevelDifficulty = levelDefinition.Difficulty;
-            View.SetDifficultyText(levelDefinition.Difficulty);
+            View.SetDifficultyText(levelDefinition.Difficulty, diffText);
             View.InitializeBoard(levelDefinition, false);
             if (ShouldShowFirstLevelTutorial(currentLevelIndex))
             {

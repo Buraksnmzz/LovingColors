@@ -77,7 +77,7 @@ namespace UI.Settings
 
         private void OnLanguageClicked()
         {
-            //_uiService.ShowPopup<LanguageSelectPresenter>();
+            _uiService.ShowPopup<LanguageSelectPresenter>();
         }
 
         private void OnAboutClicked()

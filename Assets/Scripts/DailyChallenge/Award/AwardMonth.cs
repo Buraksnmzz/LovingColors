@@ -21,7 +21,9 @@ namespace DailyChallenge.Award
             SetImageActive(awardImageCompleted, model.State == AwardState.Completed);
 
             if (monthName != null)
-                monthName.text = model.Date.ToString("MMMM");
+                monthName.text = !string.IsNullOrEmpty(model.MonthName)
+                    ? model.MonthName
+                    : model.Date.ToString("MMMM");
         }
 
         private static void SetImageSprite(Image image, Sprite sprite)

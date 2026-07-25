@@ -1,0 +1,227 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: LanguageTable_pt
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pt
+  m_SharedData: {fileID: 11400000, guid: 59a087d5d6a1b448ab32740d371ebe4d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: "Portugu\xEAs"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: Carregando
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Sobre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: "Coment\xE1rios"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "Pol\xEDtica de Privacidade"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "Termos de Servi\xE7o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: "Trof\xE9us"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: "Voc\xEA concluiu todos os desafios di\xE1rios de"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: Continuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: Resgatar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: "Desafio Di\xE1rio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: "Boas-vindas ao desafio di\xE1rio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: "Conclua os jogos di\xE1rios"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: "Ganhe uma imagem \xFAnica e \xF3timas recompensas!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: Desbloqueado! Venha jogar!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: Jogar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: Movimentos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Reiniciar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: "Voc\xEA concluiu o desafio di\xE1rio de"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: "Jogando Desafio Di\xE1rio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: "Dif\xEDcil"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: Extremo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: Dica
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: "Empacou? Revele seu pr\xF3ximo movimento instantaneamente!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: Obter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: "Sem An\xFAncios"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: "N\xEDvel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: "Tem certeza de que deseja sair do n\xEDvel?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: Sim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: "N\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: Hora de avaliar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: "Est\xE1 gostando do jogo? Avalie-nos!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: "M\xFAsica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: Som
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: "Vibra\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: Restaurar compras
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: Idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: Sobre o jogo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: Recompensa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: "- Remover an\xFAncios obrigat\xF3rios"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: '- Remover banners inferiores'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Localized: "- Manter an\xFAncios opcionais por recompensa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: "Remover An\xFAncios"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: "Pacote Sem An\xFAncios"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: "Sem An\xFAncios"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: 'Sua recompensa:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: "Di\xE1rio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: Desistir?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Localized: OK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Localized: Lar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: "Configura\xE7\xF5es"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

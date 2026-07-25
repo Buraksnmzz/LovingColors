@@ -6,9 +6,11 @@ using General;
 using General.EventDispatcher;
 using Home;
 using Level;
+using Localization;
 using MainMenu;
 using RateUs;
 using SavedData;
+using Services;
 using Sound;
 using UI.General;
 using UI.Shop;
@@ -24,6 +26,7 @@ namespace Win
         private ISoundService _soundService;
         private IAdsService _adsService;
         private IEventDispatcherService _eventDispatcherService;
+        private ILocalizationService _localizationService;
         private BadgeSpriteConfig _badgeSpriteConfig;
         private int _rewardCoins;
         private bool _isNewBadgeUnlocked;
@@ -39,6 +42,7 @@ namespace Win
             _adsService = ServiceLocator.GetService<IAdsService>();
             _eventDispatcherService = ServiceLocator.GetService<IEventDispatcherService>();
             _levelService = ServiceLocator.GetService<ILevelService>();
+            _localizationService = ServiceLocator.GetService<ILocalizationService>();
             _badgeSpriteConfig = Resources.Load<BadgeSpriteConfig>("BadgeSpriteConfig");
             View.NextButtonClicked += OnNextButtonClicked;
             View.ClaimButtonClicked += OnClaimButtonClicked;
@@ -81,12 +85,17 @@ namespace Win
             View.PlayParticles();
             AwardExperienceAndUpdateBadgeProgress();
             var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
+            var homeText = _localizationService.GetLocalizedString(LocalizationStrings.Home);
+            var levelText = _localizationService.GetLocalizedString(LocalizationStrings.Level);
+            var claimText = _localizationService.GetLocalizedString(LocalizationStrings.Claim);
             if (_savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex == 10)
-                View.SetNextButtonText("Home");
+                View.SetNextButtonText(homeText);
             else
             {
-                View.SetNextButtonText("Level " + (levelProgressModel.CurrentLevelIndex + 1));
+                View.SetNextButtonText(levelText + " " + (levelProgressModel.CurrentLevelIndex + 1));
             }
+            
+            View.SetClaim2ButtonText(claimText + " " + "x2");
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
             var remoteConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
             _rewardCoins = remoteConfigModel.WinRewardCoins;

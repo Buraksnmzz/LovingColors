@@ -1,5 +1,6 @@
 using System.Collections;
 using System.IO;
+using General.EventDispatcher;
 using Localization;
 using RemoteConfig;
 using SavedData;
@@ -25,9 +26,10 @@ namespace General
 
         private void Awake()
         {
+            ServiceLocator.Register<IEventDispatcherService>(new EventDispatcherService());
             ServiceLocator.Register<ISavedDataService>(new SavedDataService());
             ServiceLocator.Register<IRemoteConfigService>(new RemoteConfigService());
-            //ServiceLocator.Register<ILocalizationService>(new LocalizationService());
+            ServiceLocator.Register<ILocalizationService>(new LocalizationService());
         }
 
         private void Start()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using General;
+using General.EventDispatcher;
 using Localization;
 using SavedData;
 using UI.Settings;
@@ -25,11 +26,13 @@ namespace Services
     {
         private readonly ISavedDataService _savedDataService;
         private readonly SettingsModel _settingsModel;
+        private readonly IEventDispatcherService _eventDispatcherService;
         
         public LocalizationService()
         {
             _savedDataService = ServiceLocator.GetService<ISavedDataService>();
             _settingsModel = _savedDataService.LoadData<SettingsModel>();
+            _eventDispatcherService = ServiceLocator.GetService<IEventDispatcherService>();
             LocalizationSettings.InitializationOperation.Completed += OnLocalizationInitialized;
         }
 
@@ -73,6 +76,7 @@ namespace Services
                 LocalizationSettings.SelectedLocale = locale;
                 _settingsModel.CurrentLanguage = language;
                 _savedDataService.SaveData(_settingsModel);
+                _eventDispatcherService.Dispatch(new LanguageChangedSignal(language));
             }
             else if (locale == null)
             {

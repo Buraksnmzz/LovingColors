@@ -1,0 +1,228 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: LanguageTable_pl
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pl
+  m_SharedData: {fileID: 11400000, guid: 59a087d5d6a1b448ab32740d371ebe4d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Polski
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: "\u0141adowanie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: "O \u0438\u0433\u0440\u0435"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Opinia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "Polityka prywatno\u015Bci"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: Regulamin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: Trofea
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: "Uko\u0144czono wszystkie wyzwania dzienne na dzie\u0144"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: Kontynuuj
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: Odbierz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: Wyzwanie dzienne
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: Witaj w wyzwaniu dziennym
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: "Uko\u0144cz gry dzienne"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: "Zdob\u0105d\u017A unikalny obrazek i \u015Bwietne nagrody!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: Odblokowano! Zagraj teraz!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: Graj
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: Ruchy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: "Uko\u0144czono wyzwanie dzienne na dzie\u0144"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: Wyzwanie dzienne w toku
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: Trudny
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: Ekstremalny
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: "Wskaz\xF3wka"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: "Utkn\u0105\u0142e\u015B? Ods\u0142o\u0144 sw\xF3j nast\u0119pny
+      ruch natychmiast!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: Odbierz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: Bez reklam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: Poziom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: "Czy na pewno chcesz opu\u015Bci\u0107 \u0443\u0440\u043E\u0432\u0435\u043D\u044C?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: Tak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: Nie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: "Czas na recenzj\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: "Podoba Ci si\u0119 gra? Oce\u0144 nas!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: Muzyka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: "D\u017Awi\u0119k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: Wibracje
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: "Przywr\xF3\u0107 zakupy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: "J\u0119zyk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: O grze
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: Nagroda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: "- Usu\u0144 obowi\u0105zkowe reklamy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: "- Usu\u0144 banery reklamowe na dole"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Localized: '- Zachowaj opcjonalne reklamy z nagrodami'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: "Usu\u0144 reklamy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: Pakiet bez reklam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: Bez reklam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: 'Twoja nagroda:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: Codziennie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: "Zrezygnowa\u0107?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Localized: OK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Localized: Dom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: Ustawienia
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

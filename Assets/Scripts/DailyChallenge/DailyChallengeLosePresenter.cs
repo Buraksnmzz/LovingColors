@@ -6,6 +6,7 @@ using General.EventDispatcher;
 using Home;
 using Localization;
 using SavedData;
+using Services;
 using Sound;
 using UI.General;
 using UI.Shop;
@@ -32,7 +33,7 @@ namespace DailyChallenge
             _uiService = ServiceLocator.GetService<IUIService>();
             _soundService = ServiceLocator.GetService<ISoundService>();
             _adsService = ServiceLocator.GetService<IAdsService>();
-            //_localizationService = ServiceLocator.GetService<ILocalizationService>();
+            _localizationService = ServiceLocator.GetService<ILocalizationService>();
             View.RestartButtonClicked += OnRestartButtonClick;
             View.AddMovesClicked += OnAddMovesClick;
             View.ContinueButtonClicked += OnContinueClick;
@@ -42,13 +43,11 @@ namespace DailyChallenge
         {
             base.ViewShown();
             _soundService.PlaySound(ClipName.Lose);
-            var gameConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
-            View.SetExtraMovesCostText(gameConfigModel.ExtraMovesCost);
+            var remoteConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
+            View.SetExtraMovesCostText(remoteConfigModel.ExtraMovesCost);
             View.SetDifficultySprites(GetCurrentDailyChallengeDifficulty());
-            //var youCanAddMovesText = _localizationService.GetLocalizedString(LocalizationStrings.YouCanAddXMoves, gameConfigModel.extraGivenMovesCount);
-            //var plusXMovesText = _localizationService.GetLocalizedString(LocalizationStrings.PlusExtraMoves, gameConfigModel.extraGivenMovesCount);
-            //View.SetYouCanAddMovesText(youCanAddMovesText);
-            //View.SetPlusXMovesText(plusXMovesText);
+            var plusXMovesText = _localizationService.GetLocalizedString(LocalizationStrings.Moves);
+            View.SetPlusXMovesText(remoteConfigModel.ExtraMovesCount + " " + plusXMovesText);
         }
 
         private LevelDifficultyType GetCurrentDailyChallengeDifficulty()

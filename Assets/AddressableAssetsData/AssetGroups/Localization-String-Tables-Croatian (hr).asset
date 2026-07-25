@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Croatian (hr)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Croatian (hr)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 67d9668623a864a2aab87b52d64f5f72
+  m_SerializeEntries:
+  - m_GUID: 130bfb67c293c49acb740de3f6ed31ed
+    m_Address: LanguageTable_hr
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hr
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: caffedd4cb4b44be5a9a29b3364720ff, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: d2d8f011082d64781a14fa32608bef0a, type: 2}
+    - {fileID: 11400000, guid: 4c773b92e241841d3ba9ee7e76f84222, type: 2}

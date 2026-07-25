@@ -26,9 +26,12 @@ namespace DailyChallenge
         DateTime? GetSelectedDate();
         DateTime? GetPlayedDate();
         string GetPlayedDateText();
+        string GetPlayedMonthYearText();
         int GetSelectedLevelId();
         int GetPlayedLevelId();
         int GetLevelId(DateTime date);
+        string GetDisplayedMonthText();
+        IReadOnlyList<string> GetAbbreviatedWeekdayNames();
         int GetCompletedCountInDisplayedMonth();
         int GetActiveCountInDisplayedMonth();
         int GetTotalCountInDisplayedMonth();

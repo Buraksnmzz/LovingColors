@@ -1,0 +1,227 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: LanguageTable_sv
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: sv
+  m_SharedData: {fileID: 11400000, guid: 59a087d5d6a1b448ab32740d371ebe4d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Svenska
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: Laddar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Om
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Feedback
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: Integritetspolicy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "Anv\xE4ndarvillkor"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: "Trof\xE9er"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: "Du har klarat alla dagliga utmaningar f\xF6r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: "Forts\xE4tt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: "H\xE4mta"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: Daglig utmaning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: "V\xE4lkommen till dagliga utmaningen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: Klara de dagliga spelen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: "Tj\xE4na en unik bild och fantastiska bel\xF6ningar!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: "Uppl\xE5st nu. Kom och spela!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: Spela
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: Drag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Starta om
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: "Du har klarat den dagliga utmaningen f\xF6r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: Spelar daglig utmaning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: "Sv\xE5r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: Extrem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: Tips
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: "Fastnat? Visa ditt n\xE4sta drag direkt!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: "H\xE4mta"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: Ingen reklam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: "Niv\xE5"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: "\xC4r du s\xE4ker p\xE5 att du vill l\xE4mna niv\xE5n?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: Ja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: Nej
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: Dags att recensera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: "Gillar du spelet? Betygs\xE4tt oss!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: Musik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: Ljud
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: Vibration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: "\xC5terst\xE4ll k\xF6p"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: "Spr\xE5k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: Om spelet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: "Bel\xF6ning"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: '- Ta bort obligatorisk reklam'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: '- Ta bort bannerreklam i botten'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Localized: "- Beh\xE5ll frivillig reklam f\xF6r bel\xF6ningar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: Ta bort reklam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: Reklamfritt pakete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: Ingen reklam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: "Din bel\xF6ning:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: Dagligen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: Sluta?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Localized: Ok
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Localized: Hem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: "Inst\xE4llningar"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

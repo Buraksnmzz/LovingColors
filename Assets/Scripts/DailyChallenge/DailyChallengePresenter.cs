@@ -119,10 +119,10 @@ namespace DailyChallenge
 
         private void RefreshView()
         {
-            var displayedMonth = _dailyChallengeService.DisplayedMonthDate;
             var selectedDay = _dailyChallengeService.GetSelectedDay();
 
-            View.SetMonthText(displayedMonth.ToString("MMMM yyyy"));
+            View.SetMonthText(_dailyChallengeService.GetDisplayedMonthText());
+            View.SetWeekdayHeaderLabels(_dailyChallengeService.GetAbbreviatedWeekdayNames());
             View.SetNavigationButtons(
                 _dailyChallengeService.CanNavigateToPreviousMonth(),
                 _dailyChallengeService.CanNavigateToNextMonth());

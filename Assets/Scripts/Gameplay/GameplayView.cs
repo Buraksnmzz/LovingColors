@@ -215,13 +215,13 @@ namespace Gameplay
             DebugLevelStepRequested?.Invoke(10);
         }
 
-        public void SetLevelText(int level)
+        public void SetLevelText(string text)
         {
-            levelText.text = "Level " + level;
+            levelText.text = text;
         }
-        public void SetDifficultyText(LevelDifficultyType difficulty)
+        public void SetDifficultyText(LevelDifficultyType difficulty, string difficultyLocText)
         {
-            difficultyText.text = difficulty.ToString();
+            difficultyText.text = difficultyLocText;
             difficultyText.gameObject.SetActive(difficulty != LevelDifficultyType.Normal);
             SetDifficultySprites(difficulty);
         }

@@ -36,9 +36,10 @@ namespace MainMenu
             _uiService = ServiceLocator.GetService<IUIService>();
             _eventDispatcherService = ServiceLocator.GetService<IEventDispatcherService>();
             _remoteConfigService = ServiceLocator.GetService<IRemoteConfigService>();
-            //_localizationService = ServiceLocator.GetService<ILocalizationService>();
+            _localizationService = ServiceLocator.GetService<ILocalizationService>();
             _levelService = ServiceLocator.GetService<ILevelService>();
             _eventDispatcherService.AddListener<RewardGivenSignal>(OnRewardGiven);
+            _eventDispatcherService.AddListener<LanguageChangedSignal>(OnLanguageChanged);
             View.PlayLevelButtonClicked += OnPlayClicked;
             View.RemoveAdsButtonClicked += OnRemoveAdsClicked;
             View.CoinButtonClicked += OnCoinButtonClicked;
@@ -91,9 +92,6 @@ namespace MainMenu
             var currentLevelNumber = levelProgressModel.CurrentLevelIndex + 1;
             var currentDifficultyType = GetDifficultyType(currentLevelNumber);
             View.SetCoinText(collectibleModel.TotalCoins);
-            //var levelText = _localizationService.GetLocalizedString(LocalizationStrings.Level);
-            var levelText = "Level";
-            View.SetLevelText(levelText + " " + currentLevelNumber);
             View.SetDifficultyView(currentDifficultyType);
             var nextDifficultyTypes = GetNextDifficultyTypes(currentLevelNumber, View.NextFrameCount);
             var previousDifficultyTypes = GetPreviousDifficultyTypes(currentLevelNumber, View.PreviousFrameCount);
@@ -104,8 +102,7 @@ namespace MainMenu
                 previousDifficultyTypes);
             View.SetFrameContentPositionYOffset(SafeAreaHelper.VerticalCompensationOffset);
             View.SetNoAdsView(settingsModel.IsNoAds);
-            var isDailyChallengeUnlocked = currentLevelNumber >= 10;
-            View.SetDailyChallengeState(isDailyChallengeUnlocked);
+            RefreshLocalizedTexts();
             DOVirtual.DelayedCall(0.5f, CheckAndShowDcUnlockPopup);
         }
 
@@ -123,6 +120,7 @@ namespace MainMenu
             {
                 _eventDispatcherService.RemoveListener<RewardGivenSignal>(OnRewardGiven);
                 _eventDispatcherService.RemoveListener<CoinChangedSignal>(OnCoinChanged);
+                _eventDispatcherService.RemoveListener<LanguageChangedSignal>(OnLanguageChanged);
             }
 
             if (View != null)
@@ -150,6 +148,24 @@ namespace MainMenu
         private void OnCoinChanged(CoinChangedSignal _)
         {
             View.SetCoinText(_savedDataService.GetModel<CollectibleModel>().TotalCoins);
+        }
+
+        private void OnLanguageChanged(LanguageChangedSignal _)
+        {
+            RefreshLocalizedTexts();
+        }
+
+        private void RefreshLocalizedTexts()
+        {
+            if (View == null)
+                return;
+
+            var currentLevelNumber = _savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex + 1;
+            var levelText = _localizationService.GetLocalizedString(LocalizationStrings.Level);
+            View.SetLevelText(levelText + " " + currentLevelNumber);
+            var isDailyChallengeUnlocked = currentLevelNumber >= 10;
+            var dailyText = _localizationService.GetLocalizedString(LocalizationStrings.Daily);
+            View.SetDailyChallengeState(isDailyChallengeUnlocked, dailyText);
         }
 
         private LevelDifficultyType[] GetNextDifficultyTypes(int currentLevelNumber, int frameCount)

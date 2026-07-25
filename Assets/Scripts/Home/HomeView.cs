@@ -26,8 +26,6 @@ namespace Home
         [SerializeField] private Button dailyChallengeButton;
         [SerializeField] private Button settingsButton;
         [SerializeField] private TextMeshProUGUI currentLevelText;
-        [SerializeField] private TextMeshProUGUI currentLevelTextHard;
-        [SerializeField] private TextMeshProUGUI currentLevelTextSuperHard;
         [SerializeField] private TextMeshProUGUI coinCount;
         [SerializeField] private CurrentFrame currentFrame;
         [SerializeField] private Frame[] nextFrames;
@@ -137,8 +135,6 @@ namespace Home
         public void SetLevelText(string levelText)
         {
             currentLevelText.text = levelText;
-            currentLevelTextHard.text = levelText;
-            currentLevelTextSuperHard.text = levelText;
         }
 
         public void SetFrameContentPositionYOffset(float yOffset)
@@ -146,11 +142,11 @@ namespace Home
             frameContent.anchoredPosition = new Vector2(frameContent.anchoredPosition.x, _initialFrameContentPositionY + yOffset);
         }
 
-        public void SetDailyChallengeState(bool isUnlocked)
+        public void SetDailyChallengeState(bool isUnlocked, string text)
         {
             dailyChallengeButton.interactable = isUnlocked;
             dailyChallengeImage.sprite = isUnlocked ? dailyChallengeImageActive : dailyChallengeImagePassive;
-            dailyChallengeText.text = isUnlocked ? "Daily" : "LV 10";
+            dailyChallengeText.text = isUnlocked ? text : "LV 10";
         }
 
         public void SetLevelFrames(int currentLevelNumber, LevelDifficultyType currentDifficultyType,

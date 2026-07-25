@@ -8,5 +8,6 @@ namespace Collectible
         public int TotalHints = 1;
         public int TotalXp = 0;
         public int CurrentBadgeIndex = 0;
+        public int TotalPins = 0;
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Collectible;
 using GameConfig;
 using General;
 using Newtonsoft.Json.Linq;
@@ -18,6 +19,19 @@ namespace RemoteConfig
             _savedDataService = ServiceLocator.GetService<ISavedDataService>();
             _remoteConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
         }
+        
+        private void SetCollectibleModel()
+        {
+            if (_savedDataService.HasData<CollectibleModel>())
+            {
+                return;
+            }
+            var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
+            collectibleModel.TotalCoins = _remoteConfigModel.StartingCoins;
+            collectibleModel.TotalHints = _remoteConfigModel.StartingHints;
+            collectibleModel.TotalPins = _remoteConfigModel.StartingPins;
+            _savedDataService.SaveData(collectibleModel);
+        }
 
         public bool ApplyFromRemoteConfigJson(string rawJson)
         {
@@ -30,7 +44,25 @@ namespace RemoteConfig
                 ApplyString(root, "rate_trigger_levels", v => _remoteConfigModel.RateTriggerLevels = v);
                 ApplyInt(root, "starting_coins", v => _remoteConfigModel.StartingCoins = v);
                 ApplyInt(root, "win_reward_coins", v => _remoteConfigModel.WinRewardCoins = v);
+                ApplyInt(root, "win_reward_experience", v => _remoteConfigModel.WinRewardExperience = v);
+                ApplyInt(root, "target_experience", v => _remoteConfigModel.TargetExperience = v);
+                ApplyInt(root, "starting_coins", v => _remoteConfigModel.StartingCoins = v);
+                ApplyInt(root, "starting_hints", v => _remoteConfigModel.StartingHints = v);
+                ApplyInt(root, "magnet_pins", v => _remoteConfigModel.StartingPins = v);
+                ApplyInt(root, "hint_cost", v => _remoteConfigModel.HintCost = v);
+                ApplyInt(root, "pin_cost", v => _remoteConfigModel.PinCost = v);
+                ApplyInt(root, "extra_moves_cost", v => _remoteConfigModel.ExtraMovesCost = v);
+                ApplyInt(root, "extra_moves_count", v => _remoteConfigModel.ExtraMovesCount = v);
+                ApplyInt(root, "no_ads_pack_coin_reward", v => _remoteConfigModel.NoAdsPackCoinReward = v);
+                ApplyInt(root, "shop_coin_video_reward", v => _remoteConfigModel.ShopCoinVideoReward = v);
+                ApplyInt(root, "shop_coin_reward1", v => _remoteConfigModel.ShopCoinReward1 = v);
+                ApplyInt(root, "shop_coin_reward2", v => _remoteConfigModel.ShopCoinReward2 = v);
+                ApplyInt(root, "shop_coin_reward3", v => _remoteConfigModel.ShopCoinReward3 = v);
+                ApplyInt(root, "shop_coin_reward4", v => _remoteConfigModel.ShopCoinReward4 = v);
+                ApplyInt(root, "shop_coin_reward5", v => _remoteConfigModel.ShopCoinReward5 = v);
+                
                 _savedDataService.SaveData(_remoteConfigModel);
+                SetCollectibleModel();
                 return true;
             }
             catch (Exception e)

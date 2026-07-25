@@ -9,6 +9,6 @@ namespace UI.Settings
         public bool IsSoundOn { get; set; } = true;
         public bool IsMusicOn { get; set; } = true;
         public bool IsNoAds { get; set; }
-        public SystemLanguage CurrentLanguage { get; set; }
+        public SystemLanguage CurrentLanguage { get; set; } = SystemLanguage.Turkish;
     }
 }

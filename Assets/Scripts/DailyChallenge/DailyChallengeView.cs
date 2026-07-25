@@ -31,6 +31,7 @@ namespace DailyChallenge
         [SerializeField] private TextMeshProUGUI progressText;
         [SerializeField] private Transform dayContainer;
         [SerializeField] private DailyChallengeDayView dayPrefab;
+        [SerializeField] private TMP_Text[] weekdayHeaderLabels;
 
         private readonly List<DailyChallengeDayView> _dayViews = new List<DailyChallengeDayView>();
 
@@ -55,6 +56,19 @@ namespace DailyChallenge
         public void SetMonthText(string value)
         {
             monthText.text = value;
+        }
+
+        public void SetWeekdayHeaderLabels(IReadOnlyList<string> weekdayLabels)
+        {
+            if (weekdayHeaderLabels == null || weekdayLabels == null)
+                return;
+
+            var count = Mathf.Min(weekdayHeaderLabels.Length, weekdayLabels.Count);
+            for (var index = 0; index < count; index++)
+            {
+                if (weekdayHeaderLabels[index] != null)
+                    weekdayHeaderLabels[index].text = weekdayLabels[index];
+            }
         }
 
         public void SetNavigationButtons(bool canGoPrevious, bool canGoNext)

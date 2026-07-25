@@ -26,6 +26,7 @@ namespace Win
         [SerializeField] private Image experienceFillImage;
         [SerializeField] private TextMeshProUGUI experienceText;
         [SerializeField] private TextMeshProUGUI rewardText;
+        [SerializeField] private TextMeshProUGUI claim2Text;
         [SerializeField] private float animateDuration = 0.35f;
 
         [SerializeField] private GameObject playButtonNormalImage;
@@ -103,6 +104,11 @@ namespace Win
         public void SetNextButtonText(string text)
         {
             nextButtonText.text = text;
+        }
+
+        public void SetClaim2ButtonText(string text)
+        {
+            claim2Text.text = text;
         }
 
         public void SetBadgeProgress(Sprite badgeSprite, int experience, int targetExperience)

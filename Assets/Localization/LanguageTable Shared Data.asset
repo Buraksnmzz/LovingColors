@@ -1,0 +1,232 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: LanguageTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: LanguageTable
+  m_TableCollectionNameGuidString: 59a087d5d6a1b448ab32740d371ebe4d
+  m_Entries:
+  - m_Id: 1
+    m_Key: ENGLISH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Key: LOADING
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Key: ABOUT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Key: FEEDBACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Key: PRIVACY_POLICY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Key: TERMS_OF_SERVICE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Key: TROPHIES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Key: YOU_HAVE_COMPLETED_ALL_THE_DAILY_CHALLENGES_FOR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Key: CONTINUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Key: CLAIM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Key: DAILY_CHALLENGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Key: WELCOME_TO_DAILY_CHALLENGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Key: COMPLETE_THE_DAILY_GAMES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Key: EARN_A_UNIQUE_IMAGE_AND_A_GREAT_REWARDS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Key: UNLOCKED_NOW_COME_PLAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Key: PLAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Key: MOVES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Key: RESTART
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Key: YOU_HAVE_COMPLETED_THE_DAILY_CHALLENGE_FOR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Key: PLAYING_DAILY_CHALLENGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Key: HARD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Key: EXTREME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Key: HINT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Key: STUCK_REVEAL_YOUR_NEXT_MOVE_INSTANTLY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Key: GET
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Key: NO_ADS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Key: LEVEL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Key: QUIT_ARE_YOU_SURE_WANT_TO_EXIT_THE_LEVEL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Key: YES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Key: NO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Key: REVIEW_TIME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Key: ARE_YOU_ENJOYING_THE_GAME_RATE_US
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Key: MUSIC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Key: SOUND
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Key: VIBRATE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Key: RESTORE_PURCHASES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Key: LANGUAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Key: ABOUT_THE_GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Key: REWARD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Key: REMOVE_OBLIGATORY_ADS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Key: REMOVE_BOTTOM_BANNER_ADS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Key: KEEP_OPTIONAL_ADS_FOR_REWARDS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Key: REMOVE_ADS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Key: NO_ADS_PACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Key: NO_ADS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Key: YOUR_REWARD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Key: DAILY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Key: QUIT?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Key: OK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Key: HOME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Key: SETTINGS
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5361718436171087896
+  references:
+    version: 2
+    RefIds:
+    - rid: 5361718436171087896
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1784917606194

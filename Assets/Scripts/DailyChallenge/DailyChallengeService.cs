@@ -1,17 +1,21 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using DailyChallenge.Award;
 using General;
+using Localization;
 using SavedData;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 namespace DailyChallenge
 {
     public class DailyChallengeService : IDailyChallengeService
     {
         private readonly ISavedDataService _savedDataService;
+        private readonly ILocalizationService _localizationService;
         private readonly DailyChallengeModel _model;
         private bool _hasActiveDailyChallengeGame;
 
@@ -28,6 +32,7 @@ namespace DailyChallenge
         public DailyChallengeService()
         {
             _savedDataService = ServiceLocator.GetService<ISavedDataService>();
+            _localizationService = ServiceLocator.GetService<ILocalizationService>();
             _model = _savedDataService.LoadData<DailyChallengeModel>();
             EnsureInitialized();
         }
@@ -56,6 +61,7 @@ namespace DailyChallenge
                 {
                     Year = monthDate.Year,
                     Month = monthDate.Month,
+                    MonthName = GetMonthName(monthDate),
                     State = GetAwardState(monthDate)
                 });
 
@@ -152,6 +158,14 @@ namespace DailyChallenge
             return playedDate.HasValue ? playedDate.Value.ToString("dd/MM/yyyy") : string.Empty;
         }
 
+        public string GetPlayedMonthYearText()
+        {
+            var playedDate = GetPlayedDate();
+            return playedDate.HasValue
+                ? playedDate.Value.ToString("MMMM yyyy", GetCurrentCulture())
+                : string.Empty;
+        }
+
         public int GetSelectedLevelId()
         {
             var selectedDate = GetSelectedDate();
@@ -167,6 +181,16 @@ namespace DailyChallenge
         public int GetLevelId(DateTime date)
         {
             return date.DayOfYear;
+        }
+
+        public string GetDisplayedMonthText()
+        {
+            return DisplayedMonthDate.ToString("MMMM yyyy", GetCurrentCulture());
+        }
+
+        public IReadOnlyList<string> GetAbbreviatedWeekdayNames()
+        {
+            return GetCurrentCulture().DateTimeFormat.AbbreviatedDayNames;
         }
 
         public int GetCompletedCountInDisplayedMonth()
@@ -473,6 +497,23 @@ namespace DailyChallenge
         private bool IsCompleted(DateTime date)
         {
             return _model.CompletedDays.Contains(ToKey(date));
+        }
+
+        private CultureInfo GetCurrentCulture()
+        {
+            var selectedLanguage = _localizationService != null
+                ? _localizationService.GetCurrentLanguage()
+                : Application.systemLanguage;
+
+            var locale = LocalizationSettings.AvailableLocales.GetLocale(selectedLanguage);
+            return locale != null && locale.Identifier.CultureInfo != null
+                ? locale.Identifier.CultureInfo
+                : CultureInfo.CurrentCulture;
+        }
+
+        private string GetMonthName(DateTime monthDate)
+        {
+            return monthDate.ToString("MMMM", GetCurrentCulture());
         }
 
         private AwardState GetAwardState(DateTime monthDate)

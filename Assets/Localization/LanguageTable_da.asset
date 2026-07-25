@@ -1,0 +1,227 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: LanguageTable_da
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: da
+  m_SharedData: {fileID: 11400000, guid: 59a087d5d6a1b448ab32740d371ebe4d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Dansk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: "Indl\xE6ser"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Om
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Feedback
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: Fortrolighedspolitik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "Servicevilk\xE5r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: "Trof\xE6er"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: "Du har gennemf\xF8rt alle daglige udfordringer for"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: "Forts\xE6t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: Hent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: Daglig udfordring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: Velkommen til daglig udfordring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: "Gennemf\xF8r de daglige spil"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: "Optjen et unikt billede og fantastiske bel\xF8nninger!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: "L\xE5st op nu. Kom og spil!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: Spil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: "Tr\xE6k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Genstart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: "Du har gennemf\xF8rt den daglige udfordring for "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: Spiller daglig udfordring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: "Sv\xE6r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: Ekstrem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: Tip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: "Siddet fast? Afsl\xF8r dit n\xE6ste tr\xE6k med det samme!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: Hent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: Ingen reklamer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: Niveau
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: "Er du sikker p\xE5, at du vil forlade niveauet?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: Ja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: Nej
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: Anmeldelsestid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: "Nyder du spillet? Bed\xF8m os!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: Musik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: Lyd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: Vibration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: "Gendan k\xF8b"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: Sprog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: Om spillet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: "Bel\xF8nning"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: '- Fjern obligatoriske reklamer'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: '- Fjern bannerreklamer i bunden'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Localized: "- Behold valgfrie reklamer for bel\xF8nninger"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: Fjern reklamer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: Ingen reklamer-pakke
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: Ingen reklamer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: "Din bel\xF8nning:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: Daglig
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: Forlade?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Localized: Okay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Localized: Hjem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: Indstillinger
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
