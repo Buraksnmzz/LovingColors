@@ -94,7 +94,7 @@ namespace Win
             {
                 View.SetNextButtonText(levelText + " " + (levelProgressModel.CurrentLevelIndex + 1));
             }
-            
+
             View.SetClaim2ButtonText(claimText + " " + "x2");
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
             var remoteConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
@@ -106,6 +106,8 @@ namespace Win
                 _savedDataService.SaveData(collectibleModel);
                 _eventDispatcherService.Dispatch(new CoinChangedSignal());
             }
+
+            View.SetCoinFlyAnimatorActive(!_isNewBadgeUnlocked);
             var currentLevelNumber = levelProgressModel.CurrentLevelIndex + 1;
             var currentDifficultyType = GetDifficultyType(currentLevelNumber);
             View.SetDifficultyView(currentDifficultyType);
@@ -190,6 +192,13 @@ namespace Win
             collectibleModel.TotalCoins += amount;
             _savedDataService.SaveData(collectibleModel);
             _eventDispatcherService.Dispatch(new CoinChangedSignal());
+
+            if (_isNewBadgeUnlocked)
+            {
+                OnClaimCoinFlyCompleted();
+                return;
+            }
+
             View.PlayCoinFly(collectibleModel.TotalCoins, OnClaimCoinFlyCompleted);
         }
 

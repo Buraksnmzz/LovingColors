@@ -16,5 +16,6 @@ namespace Sound
         DailyChallengeReward,
         BoardComplete,
         CorrectPlaced,
+        Booster,
     }
 }

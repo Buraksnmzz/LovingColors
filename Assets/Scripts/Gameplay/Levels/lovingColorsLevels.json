@@ -6,10 +6,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#6DFDFF",
-      "topRight": "#6DFDFF",
-      "bottomLeft": "#28A6FF",
-      "bottomRight": "#28A6FF"
+      "topLeft": "#EEF627",
+      "topRight": "#009DD2",
+      "bottomLeft": "#E33E2A",
+      "bottomRight": "#52229A"
     }
   },
   {

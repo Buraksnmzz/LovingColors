@@ -827,7 +827,7 @@ MonoBehaviour:
   animationDuration: 0.2
   animationType: 0
   panel: {fileID: 7791045306364721093}
-  fadeEndValue: 0.6
+  fadeEndValue: 0.96
   shouldMoveBackgroundToParent: 0
   autoLoopButton: {fileID: 5574937183253964601}
   autoLoopButtonScaleMultiplier: 1.08

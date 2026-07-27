@@ -87,6 +87,7 @@ namespace Gameplay
             {
                 collectibleModel.TotalHints--;
                 View.UseHint(collectibleModel.TotalHints);
+                _soundService.PlaySound(ClipName.Booster);
             }
             else
             {
@@ -112,7 +113,7 @@ namespace Gameplay
             {
                 return;
             }
-
+            _soundService.PlaySound(ClipName.Booster);
             collectibleModel.TotalPins--;
             _savedDataService.SaveData(collectibleModel);
             View.SetPinAmount(collectibleModel.TotalPins);
@@ -137,7 +138,7 @@ namespace Gameplay
             {
                 return;
             }
-
+            _soundService.PlaySound(ClipName.Booster);
             collectibleModel.TotalSuperPins--;
             _savedDataService.SaveData(collectibleModel);
             _hasUsedSuperPinInCurrentLevel = true;
@@ -537,7 +538,10 @@ namespace Gameplay
                 _currentLevelDifficulty == LevelDifficultyType.Extreme)
             {
                 _isWaitingForSuperPinOfferToStartShuffle = true;
-                _uiService.ShowPopup<SuperPinOfferPresenter>();
+                DOVirtual.DelayedCall(2f, () =>
+                {
+                    _uiService.ShowPopup<SuperPinOfferPresenter>();
+                });
                 return;
             }
 
