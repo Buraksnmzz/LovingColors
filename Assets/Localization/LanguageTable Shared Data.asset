@@ -219,6 +219,30 @@ MonoBehaviour:
     m_Key: SETTINGS
     m_Metadata:
       m_Items: []
+  - m_Id: 52
+    m_Key: MARKS_AND_LOCKS_CORRECTLY_PLACED_TILES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Key: MARKS_AND_LOCKS_CORRECTLY_PLACED_TILES_DURING_LEVEL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Key: PIN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Key: SUPER_PIN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Key: NO_THANKS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Key: FREE
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

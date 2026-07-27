@@ -27,7 +27,7 @@ namespace Services
         private readonly ISavedDataService _savedDataService;
         private readonly SettingsModel _settingsModel;
         private readonly IEventDispatcherService _eventDispatcherService;
-        
+
         public LocalizationService()
         {
             _savedDataService = ServiceLocator.GetService<ISavedDataService>();
@@ -86,14 +86,14 @@ namespace Services
 
         public SystemLanguage GetCurrentLanguage()
         {
-            if (_settingsModel !=null && _settingsModel.CurrentLanguage != SystemLanguage.Unknown)
+            if (_settingsModel != null && _settingsModel.CurrentLanguage != SystemLanguage.Unknown)
             {
                 return _settingsModel.CurrentLanguage;
             }
-            
+
             var deviceLanguage = Application.systemLanguage;
             var availableLanguages = GetAvailableLanguages().Select(l => l.Language).ToList();
-            
+
             return availableLanguages.Contains(deviceLanguage) ? deviceLanguage : SystemLanguage.English;
         }
 

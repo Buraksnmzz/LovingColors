@@ -8,15 +8,32 @@ namespace GetHint
 {
     public class GetHintView : BaseView
     {
+        [SerializeField] private TextMeshProUGUI headerText;
+        [SerializeField] private TextMeshProUGUI infoText;
+        [SerializeField] private GameObject withCoinObject;
+        [SerializeField] private GameObject withVideoObject;
         [SerializeField] private Button getHintWithCoinButton;
         [SerializeField] private Button getHintWithVideoButton;
         [SerializeField] private Button closeButton;
+        [SerializeField] private Image middleImageWithCoin;
+        [SerializeField] private Image middleImageWithVideo;
+        [SerializeField] private Sprite hintSpriteMiddle;
+        [SerializeField] private Sprite pinSpriteMiddle;
+        [SerializeField] private Sprite superPinSpriteMiddle;
         [SerializeField] private TextMeshProUGUI hintAmountText;
+        [SerializeField] private TextMeshProUGUI pinAmountText;
+        [SerializeField] private TextMeshProUGUI superPinAmountText;
         [SerializeField] private TextMeshProUGUI coinAmountText;
-        [SerializeField] private TextMeshProUGUI hintCostText;
+        [SerializeField] private TextMeshProUGUI boosterCostText;
+        [SerializeField] private TextMeshProUGUI boosterRewardAmountText;
         [SerializeField] private Transform topBar;
-        [SerializeField] private Transform hintImage;
+        [SerializeField] private Transform flyHintImage;
         [SerializeField] private Transform hintImageTarget;
+        [SerializeField] private Transform pinImageTarget;
+        [SerializeField] private Transform superPinImageTarget;
+        [SerializeField] private Sprite flyHintSprite;
+        [SerializeField] private Sprite flyPinSprite;
+        [SerializeField] private Sprite flySuperPinSprite;
         [SerializeField] private float topBarIntroDuration = 0.35f;
         [SerializeField] private float topBarIntroYOffset = 260f;
         [SerializeField] private float hintFlyDuration = 0.5f;
@@ -30,22 +47,36 @@ namespace GetHint
         private bool _hasTopBarInitialLocalPosition;
         private Vector3 _hintImageInitialPosition;
         private bool _hasHintImageInitialPosition;
+        private Image _flyImage;
+        private GetHintPopupType _popupType = GetHintPopupType.Hint;
 
         private void Start()
         {
             CacheTopBarPosition();
             CacheHintImagePosition();
-            if (hintImage != null)
-                hintImage.gameObject.SetActive(false);
+            _flyImage = flyHintImage != null ? flyHintImage.GetComponent<Image>() : null;
+            if (flyHintImage != null)
+                flyHintImage.gameObject.SetActive(false);
 
             closeButton.onClick.AddListener(Hide);
             getHintWithCoinButton.onClick.AddListener(() => GetHintWithCoinButtonClicked?.Invoke());
             getHintWithVideoButton.onClick.AddListener(() => GetHintWithVideoButtonClicked?.Invoke());
         }
 
-        public void SetHintCostText(int amount)
+        public void SetBoosterCostText(int amount)
         {
-            hintCostText.text = amount.ToString();
+            boosterCostText.text = amount.ToString();
+        }
+
+        public void SetBoosterRewardAmountText(int amount)
+        {
+            boosterRewardAmountText.text = "x" + amount;
+        }
+
+        public void SetHeaderAndInfoText(string header, string info)
+        {
+            headerText.text = header;
+            infoText.text = info;
         }
 
         public override void Show()
@@ -66,11 +97,6 @@ namespace GetHint
             PlayTopBarClose();
         }
 
-        protected override void OnHidden()
-        {
-            base.OnHidden();
-        }
-
         protected override void OnDestroy()
         {
             _topBarTween?.Kill();
@@ -80,45 +106,116 @@ namespace GetHint
 
         public void SetHintAmount(int value)
         {
-            if (hintAmountText != null)
-                hintAmountText.text = value.ToString();
+            hintAmountText.text = value.ToString();
+        }
+
+        public void SetPinAmount(int value)
+        {
+            pinAmountText.text = value.ToString();
+        }
+
+        public void SetSuperPinAmount(int value)
+        {
+            superPinAmountText.text = value.ToString();
         }
 
         public void SetCoinAmount(int value)
         {
-            if (coinAmountText != null)
-                coinAmountText.text = value.ToString();
+            coinAmountText.text = value.ToString();
         }
 
         public void SetButtonsInteractable(bool isInteractable)
         {
-            if (getHintWithCoinButton != null)
-                getHintWithCoinButton.interactable = isInteractable;
-            if (getHintWithVideoButton != null)
-                getHintWithVideoButton.interactable = isInteractable;
+            getHintWithCoinButton.interactable = isInteractable;
+            getHintWithVideoButton.interactable = isInteractable;
         }
 
         public void PlayHintFly(Action onCompleted)
         {
-            if (hintImage == null || hintImageTarget == null)
+            if (flyHintImage == null)
             {
                 onCompleted?.Invoke();
                 return;
             }
 
+            var target = ResolveFlyTarget(_popupType);
+            if (target == null)
+            {
+                onCompleted?.Invoke();
+                return;
+            }
+
+            if (_flyImage != null)
+            {
+                _flyImage.sprite = ResolveFlySprite(_popupType);
+            }
+
             CacheHintImagePosition();
             _hintFlyTween?.Kill();
-            hintImage.gameObject.SetActive(true);
-            hintImage.position = _hintImageInitialPosition;
+            flyHintImage.gameObject.SetActive(true);
+            flyHintImage.position = _hintImageInitialPosition;
 
-            _hintFlyTween = hintImage.DOMove(hintImageTarget.position, hintFlyDuration)
+            _hintFlyTween = flyHintImage.DOMove(target.position, hintFlyDuration)
                 .SetEase(Ease.InBack)
                 .OnComplete(() =>
                 {
-                    hintImage.gameObject.SetActive(false);
-                    hintImage.position = _hintImageInitialPosition;
+                    flyHintImage.gameObject.SetActive(false);
+                    flyHintImage.position = _hintImageInitialPosition;
                     onCompleted?.Invoke();
                 });
+        }
+
+        public void ConfigurePopup(GetHintPopupType popupType)
+        {
+            _popupType = popupType;
+            var isHint = popupType == GetHintPopupType.Hint;
+            var isPin = popupType == GetHintPopupType.Pin;
+            var isSuperPin = popupType == GetHintPopupType.SuperPin;
+
+            if (isHint)
+            {
+                middleImageWithCoin.sprite = hintSpriteMiddle;
+                middleImageWithVideo.sprite = hintSpriteMiddle;
+            }
+            else if (isPin)
+            {
+                middleImageWithCoin.sprite = pinSpriteMiddle;
+                middleImageWithVideo.sprite = pinSpriteMiddle;
+            }
+            else if (isSuperPin)
+            {
+                middleImageWithCoin.sprite = superPinSpriteMiddle;
+                middleImageWithVideo.sprite = superPinSpriteMiddle;
+            }
+
+            withVideoObject.SetActive(!isSuperPin);
+            withCoinObject.SetActive(true);
+        }
+
+        private Transform ResolveFlyTarget(GetHintPopupType popupType)
+        {
+            switch (popupType)
+            {
+                case GetHintPopupType.Pin:
+                    return pinImageTarget;
+                case GetHintPopupType.SuperPin:
+                    return superPinImageTarget;
+                default:
+                    return hintImageTarget;
+            }
+        }
+
+        private Sprite ResolveFlySprite(GetHintPopupType popupType)
+        {
+            switch (popupType)
+            {
+                case GetHintPopupType.Pin:
+                    return flyPinSprite;
+                case GetHintPopupType.SuperPin:
+                    return flySuperPinSprite;
+                default:
+                    return flyHintSprite;
+            }
         }
 
         private void CacheTopBarPosition()
@@ -132,10 +229,10 @@ namespace GetHint
 
         private void CacheHintImagePosition()
         {
-            if (_hasHintImageInitialPosition || hintImage == null)
+            if (_hasHintImageInitialPosition || flyHintImage == null)
                 return;
 
-            _hintImageInitialPosition = hintImage.position;
+            _hintImageInitialPosition = flyHintImage.position;
             _hasHintImageInitialPosition = true;
         }
 
@@ -158,7 +255,7 @@ namespace GetHint
             _topBarTween = topBar.DOLocalMove(_topBarInitialLocalPosition, topBarIntroDuration)
                 .SetEase(Ease.OutBack);
         }
-        
+
         private void PlayTopBarClose()
         {
             CacheTopBarPosition();

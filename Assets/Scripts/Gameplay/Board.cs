@@ -35,6 +35,10 @@ namespace Gameplay
         private const float ShuffleWaveDuration = 1.2f;
         private const float SwapDuration = 0.22f;
         private const float FirstLevelTutorialStartDelay = 0.25f;
+        private const float PinLockScaleMultiplier = 3f;
+        private const float PinLockScaleUpDuration = 0.3f;
+        private const float PinLockHoldDuration = 0.5f;
+        private const float PinLockScaleDownDuration = 0.3f;
 
         private ISoundService _soundService;
         private IHapticService _hapticService;
@@ -72,6 +76,11 @@ namespace Gameplay
         private Card _tutorialFirstCard;
         private Card _tutorialTargetCard;
         private Tween _firstLevelTutorialDelayTween;
+        private bool _isSuperPinActive;
+        private bool _hasUsedSuperPin;
+        private bool _shouldStartInitialShuffleImmediately;
+        private bool _isInitialShuffleReady;
+        private bool _hasQueuedSuperPinActivation;
 
         public event Action Solved;
         public event Action WinSequenceCompleted;
@@ -79,6 +88,7 @@ namespace Gameplay
         public event Action MoveLimitReached;
         public event Action ShuffleStarted;
         public event Action ShuffleCompleted;
+        public event Action CorrectCardPlaced;
         public event Action<Vector3, Vector3> TutorialDragRequested;
         public event Action<Vector3> TutorialTapRequested;
         public event Action TutorialHandHideRequested;
@@ -132,6 +142,32 @@ namespace Gameplay
             }
 
             StartSwap(currentCard, correctCard);
+        }
+
+        public bool UsePin()
+        {
+            if (_isInteractionLocked || _draggedCard != null || _hasCompletedBoard || _isFirstLevelTutorialActive)
+            {
+                return false;
+            }
+
+            LockCardsInCorrectPositions(true);
+            RestoreCardInteractivity();
+            return true;
+        }
+
+        public bool UseSuperPin()
+        {
+            if (_isInteractionLocked || _draggedCard != null || _hasCompletedBoard || _isFirstLevelTutorialActive || _hasUsedSuperPin)
+            {
+                return false;
+            }
+
+            _hasUsedSuperPin = true;
+            _isSuperPinActive = true;
+            LockCardsInCorrectPositions(true);
+            RestoreCardInteractivity();
+            return true;
         }
 
         public void CompleteImmediately()
@@ -217,10 +253,15 @@ namespace Gameplay
             }
         }
 
-        public void Initialize(LevelDefinition levelDefinition, bool isMoveLimitEnabled)
+        public void Initialize(LevelDefinition levelDefinition, bool isMoveLimitEnabled, bool startInitialShuffleImmediately = true)
         {
             StopFirstLevelTutorial();
             _hasCompletedBoard = false;
+            _isSuperPinActive = false;
+            _hasUsedSuperPin = false;
+            _hasQueuedSuperPinActivation = false;
+            _isInitialShuffleReady = false;
+            _shouldStartInitialShuffleImmediately = startInitialShuffleImmediately;
             _isMoveLimitEnabled = isMoveLimitEnabled;
             _hasReachedMoveLimit = false;
             _moveCount = 0;
@@ -277,7 +318,11 @@ namespace Gameplay
             Canvas.ForceUpdateCanvases();
             CacheSlotPositions();
             SnapAllCardsToSlots();
-            _shuffleDelayTween = DOVirtual.DelayedCall(0.6f, StartShuffleAnimation);
+            _isInitialShuffleReady = true;
+            if (_shouldStartInitialShuffleImmediately)
+            {
+                ScheduleInitialShuffle();
+            }
         }
 
         private IEnumerator PrepareCustomLayoutAndShuffleRoutine(BoardLayoutResult layoutResult)
@@ -291,7 +336,32 @@ namespace Gameplay
             CacheCustomSlotPositions(layoutResult.SlotPositions);
             CacheCustomSlotRotations(layoutResult.SlotRotations);
             SnapAllCardsToSlots();
-            _shuffleDelayTween = DOVirtual.DelayedCall(0.6f, StartShuffleAnimation);
+            _isInitialShuffleReady = true;
+            if (_shouldStartInitialShuffleImmediately)
+            {
+                ScheduleInitialShuffle();
+            }
+        }
+
+        public void StartInitialShuffle()
+        {
+            _shouldStartInitialShuffleImmediately = true;
+            if (!_isInitialShuffleReady)
+            {
+                return;
+            }
+
+            ScheduleInitialShuffle();
+        }
+
+        public void QueueSuperPinActivationAfterShuffle()
+        {
+            if (_hasCompletedBoard || _hasUsedSuperPin)
+            {
+                return;
+            }
+
+            _hasQueuedSuperPinActivation = true;
         }
 
         private void CreateCards(int totalCardCount)
@@ -307,6 +377,7 @@ namespace Gameplay
                 card.IsLocked = false;
                 card.IsSelected = false;
                 card.IsClickable = true;
+                card.IsDraggable = true;
                 SubscribeToCard(card);
                 _cards.Add(card);
             }
@@ -439,10 +510,22 @@ namespace Gameplay
             _selectedCard = null;
             _draggedCard = null;
             _currentDragTarget = null;
+            _isInitialShuffleReady = false;
+            _hasQueuedSuperPinActivation = false;
             _isInteractionLocked = false;
             _hasCompletedBoard = false;
             _cards.Clear();
             _slotPositions.Clear();
+        }
+
+        private void ScheduleInitialShuffle()
+        {
+            if (_shuffleDelayTween != null && _shuffleDelayTween.IsActive())
+            {
+                return;
+            }
+
+            _shuffleDelayTween = DOVirtual.DelayedCall(0.6f, StartShuffleAnimation);
         }
 
         private void StartShuffleAnimation()
@@ -475,6 +558,7 @@ namespace Gameplay
 
             if (unlockedCards.Count <= 1)
             {
+                TryApplyQueuedSuperPinActivation();
                 RestoreCardInteractivity();
                 ShuffleCompleted?.Invoke();
                 yield break;
@@ -521,6 +605,7 @@ namespace Gameplay
             }
 
             yield return showSequence.WaitForCompletion();
+            TryApplyQueuedSuperPinActivation();
             ShuffleCompleted?.Invoke();
             if (_shouldStartFirstLevelTutorialAfterShuffle)
             {
@@ -531,6 +616,19 @@ namespace Gameplay
             }
 
             RestoreCardInteractivity();
+        }
+
+        private void TryApplyQueuedSuperPinActivation()
+        {
+            if (!_hasQueuedSuperPinActivation || _hasUsedSuperPin)
+            {
+                return;
+            }
+
+            _hasQueuedSuperPinActivation = false;
+            _hasUsedSuperPin = true;
+            _isSuperPinActive = true;
+            LockCardsInCorrectPositions(true);
         }
 
         private void PlayFirstTutorialDrag()
@@ -662,22 +760,26 @@ namespace Gameplay
                 if (_isFirstLevelTutorialWaitingForFirstCard)
                 {
                     card.IsClickable = card == _tutorialFirstCard && !card.IsLocked;
+                    card.IsDraggable = false;
                     continue;
                 }
 
                 if (_isFirstLevelTutorialWaitingForTargetCard)
                 {
                     card.IsClickable = card == _tutorialTargetCard && !card.IsLocked;
+                    card.IsDraggable = false;
                     continue;
                 }
 
                 if (_isFirstLevelTutorialWaitingForDrag)
                 {
                     card.IsClickable = card == _tutorialFirstCard && !card.IsLocked && _draggedCard == null;
+                    card.IsDraggable = card == _tutorialFirstCard && !card.IsLocked && _draggedCard == null;
                     continue;
                 }
 
                 card.IsClickable = !_isInteractionLocked && _draggedCard == null && !card.IsLocked;
+                card.IsDraggable = !_isInteractionLocked && _draggedCard == null && !card.IsLocked;
             }
         }
 
@@ -812,6 +914,11 @@ namespace Gameplay
 
         private void HandleCardDragStarted(Card draggedCard)
         {
+            if (_draggedCard != null)
+            {
+                return;
+            }
+
             if (_isFirstLevelTutorialActive && !_isFirstLevelTutorialWaitingForDrag)
             {
                 return;
@@ -842,6 +949,7 @@ namespace Gameplay
                 if (card != draggedCard && !card.IsLocked)
                 {
                     card.IsClickable = false;
+                    card.IsDraggable = false;
                 }
             }
         }
@@ -895,16 +1003,18 @@ namespace Gameplay
                         return;
                     }
 
+                    _isInteractionLocked = true;
+                    RestoreCardInteractivity();
                     draggedCard.TweenMoveTo(_slotPositions[draggedCard.Order], SwapDuration)
                         .OnComplete(() =>
                         {
+                            _isInteractionLocked = false;
                             _draggedCard = null;
                             RestoreCardInteractivity();
                             NormalizeSiblingOrder();
                             TutorialDragRequested?.Invoke(_tutorialFirstCard.RectTransform.position, _tutorialTargetCard.RectTransform.position);
                         });
                     draggedCard.TweenRotateTo(GetSlotRotation(draggedCard.Order), SwapDuration);
-                    _draggedCard = null;
                     return;
                 }
 
@@ -913,9 +1023,12 @@ namespace Gameplay
                 return;
             }
 
+            _isInteractionLocked = true;
+            RestoreCardInteractivity();
             draggedCard.TweenMoveTo(_slotPositions[draggedCard.Order], SwapDuration)
                 .OnComplete(() =>
                 {
+                    _isInteractionLocked = false;
                     _draggedCard = null;
                     RestoreCardInteractivity();
                     NormalizeSiblingOrder();
@@ -1002,6 +1115,17 @@ namespace Gameplay
             sequence.Join(secondCard.TweenRotateTo(GetSlotRotation(firstIndex), SwapDuration));
             sequence.OnComplete(() =>
             {
+                if (_isSuperPinActive)
+                {
+                    LockCardsInCorrectPositions();
+                    if (IsCorrectlyPlaced(firstCard, secondCard))
+                        _soundService.PlaySound(ClipName.CorrectPlaced);
+                }
+                else if (IsCorrectlyPlaced(firstCard, secondCard))
+                {
+                    CorrectCardPlaced?.Invoke();
+                }
+
                 if (TryCompleteBoard())
                 {
                     return;
@@ -1024,6 +1148,55 @@ namespace Gameplay
                 NormalizeSiblingOrder();
                 completed?.Invoke();
             });
+        }
+
+        private static bool IsCorrectlyPlaced(Card firstCard, Card secondCard)
+        {
+            return firstCard.CardId == firstCard.Order || secondCard.CardId == secondCard.Order;
+        }
+
+        private void LockCardsInCorrectPositions(bool animateNewlyLocked = false)
+        {
+            List<Card> newlyLockedCards = null;
+            if (animateNewlyLocked)
+            {
+                newlyLockedCards = new List<Card>();
+            }
+
+            for (var index = 0; index < _cards.Count; index++)
+            {
+                var card = _cards[index];
+                if (card.CardId != index || card.IsLocked)
+                {
+                    continue;
+                }
+
+                card.IsLocked = true;
+                newlyLockedCards?.Add(card);
+            }
+
+            if (newlyLockedCards == null || newlyLockedCards.Count == 0)
+            {
+                return;
+            }
+
+            CorrectCardPlaced?.Invoke();
+
+            for (var index = 0; index < newlyLockedCards.Count; index++)
+            {
+                var card = newlyLockedCards[index];
+                if (card == null || card.RectTransform == null)
+                {
+                    continue;
+                }
+
+                var lockImageTransform = card.lockImage.transform;
+                lockImageTransform.DOKill();
+                var sequence = DOTween.Sequence();
+                sequence.Append(lockImageTransform.DOScale(1 * PinLockScaleMultiplier, PinLockScaleUpDuration).SetEase(Ease.OutQuad));
+                sequence.AppendInterval(PinLockHoldDuration);
+                sequence.Append(lockImageTransform.DOScale(1, PinLockScaleDownDuration).SetEase(Ease.InOutQuad));
+            }
         }
 
         private bool TryHandleFirstLevelTutorialClick(Card clickedCard)
@@ -1475,6 +1648,7 @@ namespace Gameplay
             sequence.AppendInterval(WinAnimationStartDelay);
             sequence.AppendCallback(() =>
             {
+                _soundService.PlaySound(ClipName.BoardComplete);
                 winParticle.Play();
                 winParticle2.Play();
             });

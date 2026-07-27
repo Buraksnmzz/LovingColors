@@ -25,9 +25,9 @@ namespace DefaultNamespace
         private static readonly Vector3 TargetPreviewScale = new(0.9f, 0.9f, 1f);
 
         [SerializeField] private Button button;
-        [SerializeField] private GameObject lockImage;
+        [SerializeField] public GameObject lockImage;
         [SerializeField] private GameObject selectImage;
-        
+
         private ISoundService _soundService;
         private IHapticService _hapticService;
 
@@ -52,6 +52,7 @@ namespace DefaultNamespace
         public event Action<Card> DragEnded;
 
         private bool _isClickable;
+        private bool _isDraggable = true;
 
         public int CardId { get; set; }
         public int Order { get; set; }
@@ -67,6 +68,12 @@ namespace DefaultNamespace
                 _isClickable = value;
                 RefreshInteractableState();
             }
+        }
+
+        public bool IsDraggable
+        {
+            get => _isDraggable;
+            set => _isDraggable = value;
         }
 
         public bool IsSelected
@@ -250,7 +257,7 @@ namespace DefaultNamespace
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            if (!CanInteract())
+            if (!CanInteract() || !_isDraggable)
             {
                 return;
             }

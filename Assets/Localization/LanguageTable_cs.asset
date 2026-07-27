@@ -222,6 +222,32 @@ MonoBehaviour:
     m_Localized: "Nastaven\xED"
     m_Metadata:
       m_Items: []
+  - m_Id: 52
+    m_Localized: "Ozna\u010D\xED a zajist\xED spr\xE1vn\u011B um\xEDst\u011Bn\xE9
+      dla\u017Edice"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: "Ozna\u010Duje a uzamyk\xE1 spr\xE1vn\u011B um\xEDst\u011Bn\xE9
+      dla\u017Edice po celou dobu trv\xE1n\xED \xFArovn\u011B"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: "Kol\xEDk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: Super pin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: "Ne, d\u011Bkuji"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: Uvolnit
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -19,7 +19,7 @@ namespace RemoteConfig
             _savedDataService = ServiceLocator.GetService<ISavedDataService>();
             _remoteConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
         }
-        
+
         private void SetCollectibleModel()
         {
             if (_savedDataService.HasData<CollectibleModel>())
@@ -29,7 +29,6 @@ namespace RemoteConfig
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
             collectibleModel.TotalCoins = _remoteConfigModel.StartingCoins;
             collectibleModel.TotalHints = _remoteConfigModel.StartingHints;
-            collectibleModel.TotalPins = _remoteConfigModel.StartingPins;
             _savedDataService.SaveData(collectibleModel);
         }
 
@@ -49,8 +48,11 @@ namespace RemoteConfig
                 ApplyInt(root, "starting_coins", v => _remoteConfigModel.StartingCoins = v);
                 ApplyInt(root, "starting_hints", v => _remoteConfigModel.StartingHints = v);
                 ApplyInt(root, "magnet_pins", v => _remoteConfigModel.StartingPins = v);
+                ApplyInt(root, "starting_pins", v => _remoteConfigModel.StartingPins = v);
+                ApplyInt(root, "starting_super_pins", v => _remoteConfigModel.StartingSuperPins = v);
                 ApplyInt(root, "hint_cost", v => _remoteConfigModel.HintCost = v);
                 ApplyInt(root, "pin_cost", v => _remoteConfigModel.PinCost = v);
+                ApplyInt(root, "super_pin_cost", v => _remoteConfigModel.SuperPinCost = v);
                 ApplyInt(root, "extra_moves_cost", v => _remoteConfigModel.ExtraMovesCost = v);
                 ApplyInt(root, "extra_moves_count", v => _remoteConfigModel.ExtraMovesCount = v);
                 ApplyInt(root, "no_ads_pack_coin_reward", v => _remoteConfigModel.NoAdsPackCoinReward = v);
@@ -60,7 +62,10 @@ namespace RemoteConfig
                 ApplyInt(root, "shop_coin_reward3", v => _remoteConfigModel.ShopCoinReward3 = v);
                 ApplyInt(root, "shop_coin_reward4", v => _remoteConfigModel.ShopCoinReward4 = v);
                 ApplyInt(root, "shop_coin_reward5", v => _remoteConfigModel.ShopCoinReward5 = v);
-                
+                ApplyInt(root, "hint_reward_with_coin", v => _remoteConfigModel.HintRewardWithCoin = v);
+                ApplyInt(root, "pin_reward_with_coin", v => _remoteConfigModel.PinRewardWithCoin = v);
+                ApplyInt(root, "super_pin_reward_with_coin", v => _remoteConfigModel.SuperPinRewardWithCoin = v);
+
                 _savedDataService.SaveData(_remoteConfigModel);
                 SetCollectibleModel();
                 return true;
@@ -72,7 +77,7 @@ namespace RemoteConfig
             }
         }
 
-        
+
         private void ApplyString(JObject root, string key, Action<string> setter)
         {
             if (!root.TryGetValue(key, out var token))

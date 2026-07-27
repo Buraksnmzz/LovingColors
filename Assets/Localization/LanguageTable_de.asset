@@ -222,6 +222,31 @@ MonoBehaviour:
     m_Localized: Einstellungen
     m_Metadata:
       m_Items: []
+  - m_Id: 52
+    m_Localized: Markiert und fixiert die korrekt platzierten Fliesen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: "Markiert und fixiert die korrekt platzierten Spielsteine \u200B\u200Bw\xE4hrend
+      der gesamten Dauer des Levels."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: Stift
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: Super Pin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: Nein danke
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: Frei
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -13,5 +13,11 @@ namespace Services
         public const string Moves = "MOVES";
         public const string Daily = "DAILY";
         public const string Home = "HOME";
+        public const string Hint = "HINT";
+        public const string Pin = "PIN";
+        public const string SuperPin = "SUPER_PIN";
+        public const string HintInfo = "STUCK_REVEAL_YOUR_NEXT_MOVE_INSTANTLY";
+        public const string PinInfo = "MARKS_AND_LOCKS_CORRECTLY_PLACED_TILES";
+        public const string SuperPinInfo = "MARKS_AND_LOCKS_CORRECTLY_PLACED_TILES_DURING_LEVEL";
     }
 }

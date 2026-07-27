@@ -1,5 +1,6 @@
 using Collectible;
 using DailyChallenge;
+using DG.Tweening;
 using GameConfig;
 using Gameplay.Levels;
 using Level;
@@ -7,14 +8,15 @@ using SavedData;
 using General;
 using General.EventDispatcher;
 using GetHint;
-using Collectible;
 using Home;
 using Localization;
 using MainMenu;
 using Quit;
 using Services;
 using Sound;
+using SuperPinOffer;
 using UI.General;
+using UI.Settings;
 using UnityEngine;
 using Win;
 
@@ -30,7 +32,15 @@ namespace Gameplay
         private ISoundService _soundService;
         private IHapticService _hapticService;
         private ILocalizationService _localizationService;
+        private SettingsModel _settingsModel;
         private LevelDifficultyType _currentLevelDifficulty;
+        private bool _hasUsedSuperPinInCurrentLevel;
+        private bool _isWaitingForSuperPinOfferToStartShuffle;
+        private Tween _boosterIntroTween;
+        private bool _isBoosterIntroPaused;
+        private Tween _handHintTween;
+        private bool _hasUnlockedBoosterIntroTimerForLevel;
+
 
         protected override void OnInitialize()
         {
@@ -43,22 +53,35 @@ namespace Gameplay
             _soundService = ServiceLocator.GetService<ISoundService>();
             _hapticService = ServiceLocator.GetService<IHapticService>();
             _localizationService = ServiceLocator.GetService<ILocalizationService>();
+            _settingsModel = _savedDataService.GetModel<SettingsModel>();
             //View.Shown += OnViewShownCompleted;
             View.Solved += OnViewSolved;
             View.Completed += OnViewCompleted;
             View.MovesChanged += OnViewMovesChanged;
             View.MoveLimitReached += OnViewMoveLimitReached;
+            View.ShuffleCompleted += OnViewShuffleCompleted;
+            View.CorrectCardPlaced += OnViewCorrectCardPlaced;
             View.DebugLevelStepRequested += OnDebugLevelStepRequested;
             View.BackButtonClicked += OnBackButtonClicked;
             View.HintClicked += OnHintClicked;
+            View.PinClicked += OnPinClicked;
+            View.SuperPinClicked += OnSuperPinClicked;
+            _eventDispatcherService.AddListener<BoosterIntroShownSignal>(OnBoosterIntroShown);
+            _eventDispatcherService.AddListener<BoosterIntroClosedSignal>(OnBoosterIntroClosed);
             _eventDispatcherService.AddListener<ContinueWithCoinSignal>(OnContinueWithCoinSignal);
             _eventDispatcherService.AddListener<ContinueWithRewardedSignal>(OnContinueWithRewardedSignal);
             _eventDispatcherService.AddListener<RestartButtonClickSignal>(OnRestartButtonClick);
             _eventDispatcherService.AddListener<HintChangedSignal>(OnHintChanged);
+            _eventDispatcherService.AddListener<PinChangedSignal>(OnPinChanged);
+            _eventDispatcherService.AddListener<SuperPinChangedSignal>(OnSuperPinChanged);
+            _eventDispatcherService.AddListener<SuperPinOfferClosedSignal>(OnSuperPinOfferClosed);
         }
 
         private void OnHintClicked()
         {
+            HideHandHint();
+            KillHandHintTimer();
+
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
             if (collectibleModel.TotalHints > 0)
             {
@@ -67,8 +90,60 @@ namespace Gameplay
             }
             else
             {
-                _uiService.ShowPopup<GetHintPresenter>();
+                ShowGetHintPopup(GetHintPopupType.Hint);
             }
+        }
+
+        private void OnPinClicked()
+        {
+            if (_hasUsedSuperPinInCurrentLevel)
+            {
+                return;
+            }
+
+            var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
+            if (collectibleModel.TotalPins <= 0)
+            {
+                ShowGetHintPopup(GetHintPopupType.Pin);
+                return;
+            }
+
+            if (!View.UsePin())
+            {
+                return;
+            }
+
+            collectibleModel.TotalPins--;
+            _savedDataService.SaveData(collectibleModel);
+            View.SetPinAmount(collectibleModel.TotalPins);
+            _eventDispatcherService.Dispatch(new PinChangedSignal());
+        }
+
+        private void OnSuperPinClicked()
+        {
+            if (_hasUsedSuperPinInCurrentLevel)
+            {
+                return;
+            }
+
+            var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
+            if (collectibleModel.TotalSuperPins <= 0)
+            {
+                ShowGetHintPopup(GetHintPopupType.SuperPin);
+                return;
+            }
+
+            if (!View.UseSuperPin())
+            {
+                return;
+            }
+
+            collectibleModel.TotalSuperPins--;
+            _savedDataService.SaveData(collectibleModel);
+            _hasUsedSuperPinInCurrentLevel = true;
+            View.SetSuperPinAmount(collectibleModel.TotalSuperPins);
+            View.SetPinAndSuperPinInteractable(false);
+            _eventDispatcherService.Dispatch(new SuperPinChangedSignal());
         }
 
         private void TrackLevelEnd()
@@ -155,6 +230,267 @@ namespace Gameplay
         private void OnHintChanged(HintChangedSignal _)
         {
             View.SetHintAmount(_savedDataService.GetModel<CollectibleModel>().TotalHints);
+            ResetBoosterIntroTimer();
+        }
+
+        private void OnSuperPinChanged(SuperPinChangedSignal _)
+        {
+            View.SetSuperPinAmount(_savedDataService.GetModel<CollectibleModel>().TotalSuperPins);
+            ResetBoosterIntroTimer();
+        }
+
+        private void OnPinChanged(PinChangedSignal _)
+        {
+            View.SetPinAmount(_savedDataService.GetModel<CollectibleModel>().TotalPins);
+            ResetBoosterIntroTimer();
+        }
+
+        private void OnBoosterIntroShown(BoosterIntroShownSignal _)
+        {
+            PauseBoosterIntroTimer();
+        }
+
+        private void OnBoosterIntroClosed(BoosterIntroClosedSignal _)
+        {
+            if (HasShownAllBoosterIntros())
+            {
+                KillBoosterIntroTimer();
+                return;
+            }
+
+            ResumeBoosterIntroTimer();
+        }
+
+        private void OnSuperPinOfferClosed(SuperPinOfferClosedSignal signal)
+        {
+            if (!_isWaitingForSuperPinOfferToStartShuffle)
+            {
+                return;
+            }
+
+            if (signal.HasGrantedFreeSuperPin)
+            {
+                UseFreeSuperPinFromOffer();
+            }
+
+            _isWaitingForSuperPinOfferToStartShuffle = false;
+            View.StartInitialShuffle();
+        }
+
+        private void OnViewShuffleCompleted()
+        {
+            ResetHandHintTimer();
+            ResetBoosterIntroTimer();
+        }
+
+        private void OnViewCorrectCardPlaced()
+        {
+            _hasUnlockedBoosterIntroTimerForLevel = true;
+            HideHandHint();
+            KillHandHintTimer();
+            ResetBoosterIntroTimer();
+        }
+
+        private void ResetHandHintTimer()
+        {
+            if (!IsTutorialCompleted())
+            {
+                HideHandHint();
+                KillHandHintTimer();
+                return;
+            }
+
+            if (HasShownHandHint())
+            {
+                return;
+            }
+
+            var remoteConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
+
+            _handHintTween?.Kill();
+            _handHintTween = DOVirtual.DelayedCall(remoteConfigModel.HintIntroDelay, OnHandHintTimerCompleted, false);
+        }
+
+        private void OnHandHintTimerCompleted()
+        {
+            _handHintTween = null;
+
+            if (HasShownHandHint())
+            {
+                return;
+            }
+
+            ShowHandHint();
+        }
+
+        private void ShowHandHint()
+        {
+            if (HasShownHandHint())
+            {
+                return;
+            }
+
+            _settingsModel.HasShownHandHint = true;
+            _savedDataService.SaveData(_settingsModel);
+            View.ShowHandHint();
+        }
+
+        private void HideHandHint()
+        {
+            View.HideHandHint();
+        }
+
+        private void KillHandHintTimer()
+        {
+            _handHintTween?.Kill();
+            _handHintTween = null;
+        }
+
+        private void ResetBoosterIntroTimer()
+        {
+            if (!IsTutorialCompleted())
+            {
+                KillBoosterIntroTimer();
+                return;
+            }
+
+            if (_isBoosterIntroPaused)
+            {
+                return;
+            }
+
+            if (!_hasUnlockedBoosterIntroTimerForLevel)
+            {
+                KillBoosterIntroTimer();
+                return;
+            }
+
+            ScheduleNextBoosterIntro();
+        }
+
+        private void ScheduleNextBoosterIntro()
+        {
+            _boosterIntroTween?.Kill();
+
+            var delay = GetNextBoosterIntroDelay();
+            if (delay <= 0f)
+            {
+                return;
+            }
+
+            _boosterIntroTween = DOVirtual.DelayedCall(delay, OnBoosterIntroTimerCompleted, false);
+        }
+
+        private void OnBoosterIntroTimerCompleted()
+        {
+            _boosterIntroTween = null;
+
+            if (_isBoosterIntroPaused)
+            {
+                return;
+            }
+
+            if (!HasShownPinBoosterIntro())
+            {
+                ShowPinBoosterIntro();
+                return;
+            }
+
+            if (!HasShownSuperPinBoosterIntro())
+            {
+                ShowSuperPinBoosterIntro();
+            }
+        }
+
+        private float GetNextBoosterIntroDelay()
+        {
+            var remoteConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
+            if (!HasShownPinBoosterIntro())
+            {
+                return remoteConfigModel.PinBoosterIntroDelay;
+            }
+
+            if (!HasShownSuperPinBoosterIntro())
+            {
+                return remoteConfigModel.SuperPinBoosterIntroDelay;
+            }
+
+            return 0f;
+        }
+
+        private void ShowPinBoosterIntro()
+        {
+            if (HasShownPinBoosterIntro())
+            {
+                return;
+            }
+
+            _settingsModel.HasShownPinBoosterIntro = true;
+            _savedDataService.SaveData(_settingsModel);
+            _uiService.ShowPopup<BoosterIntroPresenter, GetHintPopupData>(new GetHintPopupData(GetHintPopupType.Pin));
+        }
+
+        private void ShowSuperPinBoosterIntro()
+        {
+            if (HasShownSuperPinBoosterIntro())
+            {
+                return;
+            }
+
+            _settingsModel.HasShownSuperPinBoosterIntro = true;
+            _savedDataService.SaveData(_settingsModel);
+            _uiService.ShowPopup<BoosterIntroPresenter, GetHintPopupData>(new GetHintPopupData(GetHintPopupType.SuperPin));
+        }
+
+        private void PauseBoosterIntroTimer()
+        {
+            _isBoosterIntroPaused = true;
+            _boosterIntroTween?.Kill();
+            _boosterIntroTween = null;
+        }
+
+        private void ResumeBoosterIntroTimer()
+        {
+            _isBoosterIntroPaused = false;
+            ScheduleNextBoosterIntro();
+        }
+
+        private void KillBoosterIntroTimer()
+        {
+            _isBoosterIntroPaused = false;
+            _boosterIntroTween?.Kill();
+            _boosterIntroTween = null;
+        }
+
+        private void ResetBoosterIntroStateForLevel()
+        {
+            _hasUnlockedBoosterIntroTimerForLevel = false;
+            KillBoosterIntroTimer();
+        }
+
+        private bool HasShownHandHint()
+        {
+            return _settingsModel.HasShownHandHint;
+        }
+
+        private bool HasShownPinBoosterIntro()
+        {
+            return _settingsModel.HasShownPinBoosterIntro;
+        }
+
+        private bool HasShownSuperPinBoosterIntro()
+        {
+            return _settingsModel.HasShownSuperPinBoosterIntro;
+        }
+
+        private bool HasShownAllBoosterIntros()
+        {
+            return HasShownPinBoosterIntro() && HasShownSuperPinBoosterIntro();
+        }
+
+        private static bool IsTutorialCompleted()
+        {
+            return PlayerPrefs.GetInt(StringConstants.IsTutorialShown) == 1;
         }
 
         private void HandleAddMoves()
@@ -176,8 +512,15 @@ namespace Gameplay
             base.ViewShown();
             _eventDispatcherService.Dispatch(new GameplayVisibilityChangedSignal(true));
             _soundService.PlayMusic();
-            View.SetHintAmount(_savedDataService.GetModel<CollectibleModel>().TotalHints);
+            var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
+            View.SetHintAmount(collectibleModel.TotalHints);
+            View.SetPinAmount(collectibleModel.TotalPins);
+            View.SetSuperPinAmount(collectibleModel.TotalSuperPins);
             View.SetLevelInfoImages(_dailyChallengeService.HasActiveDailyChallengeGame);
+            if (HasShownHandHint())
+            {
+                View.HideHandHint();
+            }
             if (_dailyChallengeService.HasActiveDailyChallengeGame)
             {
                 LoadDailyChallengeLevel();
@@ -186,15 +529,27 @@ namespace Gameplay
             }
 
             var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
-            LoadLevelAtIndex(levelProgressModel.CurrentLevelIndex, true);
+            LoadLevelAtIndex(levelProgressModel.CurrentLevelIndex, true, false);
             IncreaseCurrentLevelAttemptCount();
             TrackLevelStart();
             View.SetSpineAnimation(_currentLevelDifficulty);
+            if (_currentLevelDifficulty == LevelDifficultyType.Hard ||
+                _currentLevelDifficulty == LevelDifficultyType.Extreme)
+            {
+                _isWaitingForSuperPinOfferToStartShuffle = true;
+                _uiService.ShowPopup<SuperPinOfferPresenter>();
+                return;
+            }
+
+            View.StartInitialShuffle();
         }
 
         public override void ViewHidden()
         {
             base.ViewHidden();
+            KillHandHintTimer();
+            HideHandHint();
+            KillBoosterIntroTimer();
             _eventDispatcherService.Dispatch(new GameplayVisibilityChangedSignal(false));
             _soundService.StopMusic();
         }
@@ -208,8 +563,13 @@ namespace Gameplay
                 View.Completed -= OnViewCompleted;
                 View.MovesChanged -= OnViewMovesChanged;
                 View.MoveLimitReached -= OnViewMoveLimitReached;
+                View.ShuffleCompleted -= OnViewShuffleCompleted;
+                View.CorrectCardPlaced -= OnViewCorrectCardPlaced;
                 View.DebugLevelStepRequested -= OnDebugLevelStepRequested;
                 View.BackButtonClicked -= OnBackButtonClicked;
+                View.HintClicked -= OnHintClicked;
+                View.PinClicked -= OnPinClicked;
+                View.SuperPinClicked -= OnSuperPinClicked;
             }
 
             if (_eventDispatcherService != null)
@@ -217,8 +577,16 @@ namespace Gameplay
                 _eventDispatcherService.RemoveListener<ContinueWithCoinSignal>(OnContinueWithCoinSignal);
                 _eventDispatcherService.RemoveListener<ContinueWithRewardedSignal>(OnContinueWithRewardedSignal);
                 _eventDispatcherService.RemoveListener<RestartButtonClickSignal>(OnRestartButtonClick);
+                _eventDispatcherService.RemoveListener<BoosterIntroShownSignal>(OnBoosterIntroShown);
+                _eventDispatcherService.RemoveListener<BoosterIntroClosedSignal>(OnBoosterIntroClosed);
                 _eventDispatcherService.RemoveListener<HintChangedSignal>(OnHintChanged);
+                _eventDispatcherService.RemoveListener<PinChangedSignal>(OnPinChanged);
+                _eventDispatcherService.RemoveListener<SuperPinChangedSignal>(OnSuperPinChanged);
+                _eventDispatcherService.RemoveListener<SuperPinOfferClosedSignal>(OnSuperPinOfferClosed);
             }
+
+            KillBoosterIntroTimer();
+            KillHandHintTimer();
 
             base.Cleanup();
         }
@@ -267,14 +635,16 @@ namespace Gameplay
             {
                 diffText = _localizationService.GetLocalizedString(LocalizationStrings.Extreme);
             }
-            
+
             _currentLevelDifficulty = levelDefinition.Difficulty;
             View.SetDifficultyText(levelDefinition.Difficulty, diffText);
             View.SetDailyChallengeInfo(true, _dailyChallengeService.GetPlayedDateText());
             View.InitializeBoard(levelDefinition, true);
+            ResetBoosterButtonsForLevel();
+            ResetBoosterIntroStateForLevel();
         }
 
-        private void LoadLevelAtIndex(int levelIndex, bool clampToPreviousValidLevel)
+        private void LoadLevelAtIndex(int levelIndex, bool clampToPreviousValidLevel, bool startInitialShuffleImmediately = true)
         {
             View.SetDailyChallengeInfo(false, string.Empty);
             var text = _localizationService.GetLocalizedString(LocalizationStrings.Level);
@@ -294,7 +664,7 @@ namespace Gameplay
                 currentLevelIndex--;
                 currentLevelId = currentLevelIndex + 1;
             }
-            
+
             var diffText = "";
             if (levelDefinition.Difficulty == LevelDifficultyType.Hard)
             {
@@ -312,7 +682,9 @@ namespace Gameplay
             }
             _currentLevelDifficulty = levelDefinition.Difficulty;
             View.SetDifficultyText(levelDefinition.Difficulty, diffText);
-            View.InitializeBoard(levelDefinition, false);
+            View.InitializeBoard(levelDefinition, false, startInitialShuffleImmediately);
+            ResetBoosterButtonsForLevel();
+            ResetBoosterIntroStateForLevel();
             if (ShouldShowFirstLevelTutorial(currentLevelIndex))
             {
                 View.StartFirstLevelTutorial();
@@ -326,6 +698,7 @@ namespace Gameplay
 
         private void OnViewSolved()
         {
+            KillBoosterIntroTimer();
             var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
             levelProgressModel.CurrentLevelIndex++;
             _savedDataService.SaveData(levelProgressModel);
@@ -365,11 +738,22 @@ namespace Gameplay
             }
 
             var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
-            LoadLevelAtIndex(levelProgressModel.CurrentLevelIndex, true);
+            LoadLevelAtIndex(levelProgressModel.CurrentLevelIndex, true, false);
+            View.SetSpineAnimation(_currentLevelDifficulty);
+            if (_currentLevelDifficulty == LevelDifficultyType.Hard ||
+                _currentLevelDifficulty == LevelDifficultyType.Extreme)
+            {
+                _isWaitingForSuperPinOfferToStartShuffle = true;
+                _uiService.ShowPopup<SuperPinOfferPresenter>();
+                return;
+            }
+
+            View.StartInitialShuffle();
         }
 
         private void OnViewCompleted()
         {
+            KillBoosterIntroTimer();
             if (_dailyChallengeService.HasActiveDailyChallengeGame)
             {
                 _dailyChallengeService.CompletePlayedDay();
@@ -384,6 +768,30 @@ namespace Gameplay
             }
 
             _uiService.ShowPopup<WinPresenter>();
+        }
+
+        private void ResetBoosterButtonsForLevel()
+        {
+            _hasUsedSuperPinInCurrentLevel = false;
+            _isWaitingForSuperPinOfferToStartShuffle = false;
+            View.SetPinAndSuperPinInteractable(true);
+        }
+
+        private void UseFreeSuperPinFromOffer()
+        {
+            if (_hasUsedSuperPinInCurrentLevel)
+            {
+                return;
+            }
+
+            _hasUsedSuperPinInCurrentLevel = true;
+            View.QueueSuperPinActivationAfterShuffle();
+            View.SetPinAndSuperPinInteractable(false);
+        }
+
+        private void ShowGetHintPopup(GetHintPopupType popupType)
+        {
+            _uiService.ShowPopup<GetHintPresenter, GetHintPopupData>(new GetHintPopupData(popupType));
         }
     }
 }

@@ -222,6 +222,31 @@ MonoBehaviour:
     m_Localized: "Be\xE1ll\xEDt\xE1sok"
     m_Metadata:
       m_Items: []
+  - m_Id: 52
+    m_Localized: "Megjel\xF6li \xE9s r\xF6gz\xEDti a helyesen elhelyezett csemp\xE9ket"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: "Megjel\xF6li \xE9s r\xF6gz\xEDti a helyesen elhelyezett csemp\xE9ket
+      a szint teljes id\u0151tartama alatt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: Pin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: Szuper Pin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: "Nem, k\xF6sz\xF6n\xF6m"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: Ingyenes
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -15,5 +15,6 @@ namespace Sound
         CardShuffle,
         DailyChallengeReward,
         BoardComplete,
+        CorrectPlaced,
     }
 }

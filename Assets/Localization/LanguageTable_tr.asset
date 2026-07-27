@@ -222,6 +222,32 @@ MonoBehaviour:
     m_Localized: Ayarlar
     m_Metadata:
       m_Items: []
+  - m_Id: 52
+    m_Localized: "Do\u011Fru yerle\u015Ftirilmi\u015F karolar\u0131 i\u015Faretler
+      ve kilitler."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: "Seviyenin tamam\u0131 boyunca do\u011Fru yerle\u015Ftirilmi\u015F
+      karolar\u0131 i\u015Faretler ve kilitler."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: Pin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: "S\xFCper Pin"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: "Hay\u0131r, te\u015Fekk\xFCrler"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: Bedava
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

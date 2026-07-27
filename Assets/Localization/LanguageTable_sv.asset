@@ -222,6 +222,31 @@ MonoBehaviour:
     m_Localized: "Inst\xE4llningar"
     m_Metadata:
       m_Items: []
+  - m_Id: 52
+    m_Localized: "Markerar och l\xE5ser de korrekt placerade plattorna"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: "Markerar och l\xE5ser de korrekt placerade brickorna under hela
+      niv\xE5ns varaktighet"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: Stift
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: "Supern\xE5l"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: Nej tack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: Gratis
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

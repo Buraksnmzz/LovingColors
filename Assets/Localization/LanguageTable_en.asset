@@ -222,6 +222,31 @@ MonoBehaviour:
     m_Localized: Settings
     m_Metadata:
       m_Items: []
+  - m_Id: 52
+    m_Localized: Marks and locks the correctly placed tiles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: Marks and locks the correctly placed tiles during the full duration
+      of the level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: Pin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: Super Pin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: No Thanks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: Free
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

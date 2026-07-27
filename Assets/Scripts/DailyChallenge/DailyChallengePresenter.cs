@@ -129,6 +129,7 @@ namespace DailyChallenge
             View.SetProgress(
                 _dailyChallengeService.GetCompletedCountInDisplayedMonth(),
                 _dailyChallengeService.GetActiveCountInDisplayedMonth());
+            View.SetAward(_dailyChallengeService.DisplayedMonthDate.Month, _dailyChallengeService.GetDisplayedMonthAwardState());
             View.SetPlayButton(selectedDay != null && selectedDay.Active && !selectedDay.Completed);
             View.SetDays(_dailyChallengeService.GetCalendarGrid());
         }

@@ -222,6 +222,31 @@ MonoBehaviour:
     m_Localized: Pengaturan
     m_Metadata:
       m_Items: []
+  - m_Id: 52
+    m_Localized: Menandai dan mengunci ubin yang ditempatkan dengan benar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: Menandai dan mengunci ubin yang ditempatkan dengan benar selama
+      durasi level penuh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: Pin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: Pin Super
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: Tidak, terima kasih
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: Bebas
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

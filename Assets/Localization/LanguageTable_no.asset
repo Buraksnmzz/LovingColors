@@ -222,6 +222,31 @@ MonoBehaviour:
     m_Localized: Innstillinger
     m_Metadata:
       m_Items: []
+  - m_Id: 52
+    m_Localized: "Markerer og l\xE5ser de riktig plasserte flisene"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: "Markerer og l\xE5ser de riktig plasserte brikkene i l\xF8pet av
+      hele niv\xE5ets varighet"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: Fest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: "Supern\xE5l"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: Nei takk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: Gratis
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

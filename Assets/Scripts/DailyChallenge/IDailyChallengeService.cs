@@ -32,6 +32,7 @@ namespace DailyChallenge
         int GetLevelId(DateTime date);
         string GetDisplayedMonthText();
         IReadOnlyList<string> GetAbbreviatedWeekdayNames();
+        AwardState GetDisplayedMonthAwardState();
         int GetCompletedCountInDisplayedMonth();
         int GetActiveCountInDisplayedMonth();
         int GetTotalCountInDisplayedMonth();

@@ -16,10 +16,14 @@ namespace Gameplay
         public event Action Shown;
         public event Action Solved;
         public event Action Completed;
+        public event Action ShuffleCompleted;
+        public event Action CorrectCardPlaced;
         public event Action BackButtonClicked;
         public event Action<int, int> MovesChanged;
         public event Action MoveLimitReached;
         public event Action HintClicked;
+        public event Action PinClicked;
+        public event Action SuperPinClicked;
         public event Action<int> DebugLevelStepRequested;
 
         [SerializeField] private Button debugNextButton;
@@ -28,6 +32,8 @@ namespace Gameplay
         [SerializeField] private Button debugPrev10Button;
         [SerializeField] private Button debugCompleteButton;
         [SerializeField] private Button hintButton;
+        [SerializeField] private Button pinButton;
+        [SerializeField] private Button superPinButton;
         [SerializeField] private Button backButton;
         [SerializeField] private GameObject dcDate;
         [SerializeField] private GameObject dcLevelInfo;
@@ -37,13 +43,21 @@ namespace Gameplay
         [SerializeField] private TextMeshProUGUI dcDateText;
         [SerializeField] private TextMeshProUGUI movesText;
         [SerializeField] private TextMeshProUGUI hintAmountText;
+        [SerializeField] private TextMeshProUGUI pinAmountText;
+        [SerializeField] private TextMeshProUGUI superPinAmountText;
         [SerializeField] private GameObject addHintImage;
+        [SerializeField] private GameObject addPinImage;
+        [SerializeField] private GameObject addSuperPinImage;
         [SerializeField] private Image handImage;
         [SerializeField] private Image backButtonImage;
         [SerializeField] private Image retryButtonImage;
         [SerializeField] private Image levelInfoImage;
         [SerializeField] private Image dcLevelInfoImage;
         [SerializeField] private Image hintButtonImage;
+        [SerializeField] private Image pinButtonImage;
+        [SerializeField] private Image superPinButtonImage;
+        [SerializeField] private CanvasGroup superPinButtonCanvasGroup;
+        [SerializeField] private CanvasGroup pinButtonCanvasGroup;
         [SerializeField] private Sprite backButtonNormalSprite;
         [SerializeField] private Sprite backButtonHardSprite;
         [SerializeField] private Sprite backButtonExtremeSprite;
@@ -65,6 +79,7 @@ namespace Gameplay
 
         [SerializeField] private Image dcStampImage;
         [SerializeField] private Transform dcStampTransform;
+        [SerializeField] private Transform handHintImage;
         [SerializeField] private TextMeshProUGUI dcStampPlayingText;
         [SerializeField] private TextMeshProUGUI dcStampDateText;
 
@@ -78,11 +93,14 @@ namespace Gameplay
         private const float DailyChallengeStampExitDelay = 1f;
         private const float DailyChallengeStampExitDuration = 0.5f;
         private const float DailyChallengeStampExitOffset = 1000f;
+        private const float HandHintPulseDuration = 0.4f;
+        private const float HandHintPulseScale = 1.1f;
 
         private Board _board;
         private CanvasGroup _canvasGroup;
         private Sequence _tutorialHandSequence;
         private Sequence _dailyChallengeStampSequence;
+        private Sequence _handHintSequence;
         private bool _isDailyChallenge;
         private bool _hasShownDailyChallengeTargetMoves;
         private Vector3 _dailyChallengeStampInitialPosition;
@@ -117,6 +135,15 @@ namespace Gameplay
             debugPrev10Button.onClick.AddListener(OnDebugPrev10ButtonClick);
             debugCompleteButton.onClick.AddListener(OnDebugCompleteButtonClick);
             hintButton.onClick.AddListener(OnHintButtonClick);
+            if (pinButton != null)
+            {
+                pinButton.onClick.AddListener(OnPinButtonClick);
+            }
+
+            if (superPinButton != null)
+            {
+                superPinButton.onClick.AddListener(OnSuperPinButtonClick);
+            }
             backButton.onClick.AddListener(() => BackButtonClicked?.Invoke());
             if (_board != null)
             {
@@ -126,6 +153,7 @@ namespace Gameplay
                 _board.MoveLimitReached += OnBoardMoveLimitReached;
                 _board.ShuffleStarted += OnBoardShuffleStarted;
                 _board.ShuffleCompleted += OnBoardShuffleCompleted;
+                _board.CorrectCardPlaced += OnBoardCorrectCardPlaced;
                 _board.TutorialDragRequested += PlayTutorialDrag;
                 _board.TutorialTapRequested += PlayTutorialTap;
                 _board.TutorialHandHideRequested += HideTutorialHand;
@@ -137,6 +165,8 @@ namespace Gameplay
                 _dailyChallengeStampInitialPosition = dcStampTransform.localPosition;
                 _hasDailyChallengeStampInitialPosition = true;
             }
+
+            HideHandHint();
         }
 
         private void PlayTutorialDrag(Vector3 startWorldPosition, Vector3 targetWorldPosition)
@@ -194,6 +224,38 @@ namespace Gameplay
             handImage.gameObject.SetActive(false);
         }
 
+        public void ShowHandHint()
+        {
+            if (handHintImage == null)
+            {
+                return;
+            }
+
+            _handHintSequence?.Kill();
+            handHintImage.gameObject.SetActive(true);
+            handHintImage.DOKill();
+            handHintImage.localScale = Vector3.one;
+
+            _handHintSequence = DOTween.Sequence();
+            _handHintSequence.Append(handHintImage.DOScale(Vector3.one * HandHintPulseScale, HandHintPulseDuration).SetEase(Ease.InOutSine));
+            _handHintSequence.Append(handHintImage.DOScale(Vector3.one, HandHintPulseDuration).SetEase(Ease.InOutSine));
+            _handHintSequence.SetLoops(-1, LoopType.Restart);
+            _handHintSequence.OnKill(() => _handHintSequence = null);
+        }
+
+        public void HideHandHint()
+        {
+            if (handHintImage == null)
+            {
+                return;
+            }
+
+            _handHintSequence?.Kill();
+            handHintImage.DOKill();
+            handHintImage.localScale = Vector3.one;
+            handHintImage.gameObject.SetActive(false);
+        }
+
         public void StartFirstLevelTutorial()
         {
             _board?.StartFirstLevelTutorial();
@@ -241,6 +303,8 @@ namespace Gameplay
                     SetImageSprite(retryButtonImage, retryButtonHardSprite);
                     SetImageSprite(levelInfoImage, levelInfoHardSprite);
                     SetImageSprite(hintButtonImage, hintButtonHardSprite);
+                    SetImageSprite(pinButtonImage, hintButtonHardSprite);
+                    SetImageSprite(superPinButtonImage, hintButtonHardSprite);
                     SetImageSprite(backgroundImage, backgroundHardSprite);
                     SetImageSprite(dcLevelInfoImage, movesHardSprite);
                     break;
@@ -249,6 +313,8 @@ namespace Gameplay
                     SetImageSprite(retryButtonImage, retryButtonExtremeSprite);
                     SetImageSprite(levelInfoImage, levelInfoExtremeSprite);
                     SetImageSprite(hintButtonImage, hintButtonExtremeSprite);
+                    SetImageSprite(pinButtonImage, hintButtonExtremeSprite);
+                    SetImageSprite(superPinButtonImage, hintButtonExtremeSprite);
                     SetImageSprite(backgroundImage, backgroundExtremeSprite);
                     SetImageSprite(dcLevelInfoImage, movesExtremeSprite);
                     break;
@@ -257,6 +323,8 @@ namespace Gameplay
                     SetImageSprite(retryButtonImage, retryButtonNormalSprite);
                     SetImageSprite(levelInfoImage, levelInfoNormalSprite);
                     SetImageSprite(hintButtonImage, hintButtonNormalSprite);
+                    SetImageSprite(pinButtonImage, hintButtonNormalSprite);
+                    SetImageSprite(superPinButtonImage, hintButtonNormalSprite);
                     SetImageSprite(backgroundImage, backgroundNormalSprite);
                     SetImageSprite(dcLevelInfoImage, movesNormalSprite);
                     break;
@@ -324,6 +392,7 @@ namespace Gameplay
                 _board.MoveLimitReached -= OnBoardMoveLimitReached;
                 _board.ShuffleStarted -= OnBoardShuffleStarted;
                 _board.ShuffleCompleted -= OnBoardShuffleCompleted;
+                _board.CorrectCardPlaced -= OnBoardCorrectCardPlaced;
                 _board.TutorialDragRequested -= PlayTutorialDrag;
                 _board.TutorialTapRequested -= PlayTutorialTap;
                 _board.TutorialHandHideRequested -= HideTutorialHand;
@@ -336,7 +405,17 @@ namespace Gameplay
             debugPrev10Button.onClick.RemoveListener(OnDebugPrev10ButtonClick);
             debugCompleteButton.onClick.RemoveListener(OnDebugCompleteButtonClick);
             hintButton.onClick.RemoveListener(OnHintButtonClick);
+            if (pinButton != null)
+            {
+                pinButton.onClick.RemoveListener(OnPinButtonClick);
+            }
+
+            if (superPinButton != null)
+            {
+                superPinButton.onClick.RemoveListener(OnSuperPinButtonClick);
+            }
             _dailyChallengeStampSequence?.Kill();
+            _handHintSequence?.Kill();
             StopFirstLevelTutorial();
             base.OnDestroy();
         }
@@ -356,10 +435,30 @@ namespace Gameplay
             HintClicked?.Invoke();
         }
 
+        private void OnPinButtonClick()
+        {
+            PinClicked?.Invoke();
+        }
+
+        private void OnSuperPinButtonClick()
+        {
+            SuperPinClicked?.Invoke();
+        }
+
         public void UseHint(int remainingHint)
         {
             _board.UseHint();
             SetHintAmount(remainingHint);
+        }
+
+        public bool UsePin()
+        {
+            return _board != null && _board.UsePin();
+        }
+
+        public bool UseSuperPin()
+        {
+            return _board != null && _board.UseSuperPin();
         }
 
         public void SetHintAmount(int amount)
@@ -376,6 +475,46 @@ namespace Gameplay
                 addHintImage.SetActive(false);
                 hintAmountText.gameObject.SetActive(true);
             }
+        }
+
+        public void SetPinAmount(int amount)
+        {
+            pinAmountText.text = amount.ToString();
+
+            if (amount == 0)
+            {
+                addPinImage?.SetActive(true);
+                pinAmountText.gameObject.SetActive(false);
+            }
+            else
+            {
+                addPinImage?.SetActive(false);
+                pinAmountText.gameObject.SetActive(true);
+            }
+        }
+
+        public void SetSuperPinAmount(int amount)
+        {
+            superPinAmountText.text = amount.ToString();
+
+            if (amount == 0)
+            {
+                addSuperPinImage?.SetActive(true);
+                superPinAmountText.gameObject.SetActive(false);
+            }
+            else
+            {
+                addSuperPinImage?.SetActive(false);
+                superPinAmountText.gameObject.SetActive(true);
+            }
+        }
+
+        public void SetPinAndSuperPinInteractable(bool isInteractable)
+        {
+            pinButton.interactable = isInteractable;
+            superPinButton.interactable = isInteractable;
+            pinButtonCanvasGroup.alpha = isInteractable ? 1f : 0.2f;
+            superPinButtonCanvasGroup.alpha = isInteractable ? 1f : 0.2f;
         }
 
         public void SetSpineAnimation(LevelDifficultyType difficulty)
@@ -405,7 +544,7 @@ namespace Gameplay
 
         }
 
-        public void InitializeBoard(LevelDefinition levelDefinition, bool isMoveLimitEnabled)
+        public void InitializeBoard(LevelDefinition levelDefinition, bool isMoveLimitEnabled, bool startInitialShuffleImmediately = true)
         {
             StopFirstLevelTutorial();
             if (levelDefinition == null)
@@ -414,7 +553,17 @@ namespace Gameplay
             }
 
             SetInteractionLocked(false);
-            _board.Initialize(levelDefinition, isMoveLimitEnabled);
+            _board.Initialize(levelDefinition, isMoveLimitEnabled, startInitialShuffleImmediately);
+        }
+
+        public void StartInitialShuffle()
+        {
+            _board?.StartInitialShuffle();
+        }
+
+        public void QueueSuperPinActivationAfterShuffle()
+        {
+            _board?.QueueSuperPinActivationAfterShuffle();
         }
 
         public void SetInteractionLocked(bool isLocked)
@@ -501,11 +650,17 @@ namespace Gameplay
         private void OnBoardShuffleCompleted()
         {
             SetInteractionLocked(false);
+            ShuffleCompleted?.Invoke();
 
             if (_isDailyChallenge)
             {
                 PlayDailyChallengeStamp();
             }
+        }
+
+        private void OnBoardCorrectCardPlaced()
+        {
+            CorrectCardPlaced?.Invoke();
         }
 
         private void ResetDailyChallengeStamp()

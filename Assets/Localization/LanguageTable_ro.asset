@@ -222,6 +222,31 @@ MonoBehaviour:
     m_Localized: "Set\u0103ri"
     m_Metadata:
       m_Items: []
+  - m_Id: 52
+    m_Localized: "Marcheaz\u0103 \u0219i blocheaz\u0103 pl\u0103cile plasate corect"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: "Marcheaz\u0103 \u0219i blocheaz\u0103 pl\u0103cu\u021Bele plasate
+      corect pe \xEEntreaga durat\u0103 a nivelului"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: "Fixeaz\u0103"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: Super Pin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: "Nu, mul\u021Bumesc"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: Gratuit
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

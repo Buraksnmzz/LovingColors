@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DailyChallenge.Award;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,6 +33,10 @@ namespace DailyChallenge
         [SerializeField] private Transform dayContainer;
         [SerializeField] private DailyChallengeDayView dayPrefab;
         [SerializeField] private TMP_Text[] weekdayHeaderLabels;
+        [SerializeField] private Image awardImageActive;
+        [SerializeField] private Image awardImageInactive;
+        [SerializeField] private Image awardImageCompleted;
+        [SerializeField] private AwardMonthSpriteConfig awardMonthSpriteConfig;
 
         private readonly List<DailyChallengeDayView> _dayViews = new List<DailyChallengeDayView>();
 
@@ -85,6 +90,16 @@ namespace DailyChallenge
         public void SetProgress(int completedCount, int activeCount)
         {
             progressText.text = completedCount + "/" + activeCount;
+        }
+
+        public void SetAward(int month, AwardState state)
+        {
+            SetImageSprite(awardImageActive, awardMonthSpriteConfig != null ? awardMonthSpriteConfig.GetActiveSprite(month) : null);
+            SetImageSprite(awardImageCompleted, awardMonthSpriteConfig != null ? awardMonthSpriteConfig.GetCompletedSprite(month) : null);
+
+            SetImageActive(awardImageActive, state == AwardState.Active);
+            SetImageActive(awardImageInactive, state == AwardState.Inactive);
+            SetImageActive(awardImageCompleted, state == AwardState.Completed);
         }
 
         public void SetDays(IReadOnlyList<DailyChallengeDayModel> days)
@@ -158,6 +173,20 @@ namespace DailyChallenge
         private void OnDayClicked(int day)
         {
             DayClicked?.Invoke(day);
+        }
+
+        private static void SetImageSprite(Image image, Sprite sprite)
+        {
+            if (image == null || sprite == null)
+                return;
+
+            image.sprite = sprite;
+        }
+
+        private static void SetImageActive(Image image, bool isActive)
+        {
+            if (image != null)
+                image.gameObject.SetActive(isActive);
         }
     }
 }

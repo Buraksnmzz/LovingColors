@@ -46,3 +46,6 @@ MonoBehaviour:
   - soundType: 12
     audioClip: {fileID: 8300000, guid: 044a0098b9dc248ce8f5682014fd06d8, type: 3}
     volume: 1
+  - soundType: 13
+    audioClip: {fileID: 8300000, guid: ef78305c58df5487da06a7a40ffb1dce, type: 3}
+    volume: 0.2

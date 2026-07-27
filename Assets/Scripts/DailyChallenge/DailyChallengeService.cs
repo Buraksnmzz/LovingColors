@@ -193,6 +193,11 @@ namespace DailyChallenge
             return GetCurrentCulture().DateTimeFormat.AbbreviatedDayNames;
         }
 
+        public AwardState GetDisplayedMonthAwardState()
+        {
+            return GetAwardState(DisplayedMonthDate);
+        }
+
         public int GetCompletedCountInDisplayedMonth()
         {
             var completedCount = 0;
