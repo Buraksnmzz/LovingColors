@@ -1712,7 +1712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d057839ff4b43eb85ca5ec907c95202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: lovingcolors_noads
+  productId: lovingcolor_no_ads
   purchaseButton: {fileID: 3881400384721937943}
   purchaseValueText: {fileID: 7776917587743632623}
   coinRewardText: {fileID: 0}
@@ -2031,7 +2031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7defa71117049fea51d8016475cea0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: lovingcolors_noadspack
+  productId: lovingcolor_pack
   purchaseButton: {fileID: 1840889744573793424}
   purchaseValueText: {fileID: 5848658943069556573}
   coinRewardText: {fileID: 5178226511843679471}

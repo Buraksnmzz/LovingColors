@@ -7,13 +7,13 @@ namespace IAP
     // Replace the placeholder ids below with the real ids from your store/catalog.
     public static class ProductIds
     {
-        public const string CoinPack1 = "lovingcolors_pack_1";
-        public const string CoinPack2 = "lovingcolors_pack_2";
-        public const string CoinPack3 = "lovingcolors_pack_3";
-        public const string CoinPack4 = "lovingcolors_pack_4";
-        public const string CoinPack5 = "lovingcolors_pack_5";
-        public const string NoAdsOnly = "lovingcolors_noads";
-        public const string NoAdsPack = "lovingcolors_noadspack"; 
+        public const string CoinPack1 = "lovingcolor_coins_t1";
+        public const string CoinPack2 = "lovingcolor_coins_t2";
+        public const string CoinPack3 = "lovingcolor_coins_t3";
+        public const string CoinPack4 = "lovingcolor_coins_t4";
+        public const string CoinPack5 = "lovingcolor_coins_t5";
+        public const string NoAdsOnly = "lovingcolor_no_ads";
+        public const string NoAdsPack = "lovingcolor_pack"; 
 
         public static readonly Dictionary<string, ProductType> ProductTypeMap = new Dictionary<string, ProductType>
         {

@@ -597,7 +597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9012689981230843430, guid: 3de6a455bca9e48e19422f384ab6fef8, type: 3}
       propertyPath: productId
-      value: lovingcolors_pack_1
+      value: lovingcolor_coins_t1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -731,7 +731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9012689981230843430, guid: 3de6a455bca9e48e19422f384ab6fef8, type: 3}
       propertyPath: productId
-      value: lovingcolors_pack_2
+      value: lovingcolor_coins_t2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -865,7 +865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9012689981230843430, guid: 3de6a455bca9e48e19422f384ab6fef8, type: 3}
       propertyPath: productId
-      value: lovingcolors_pack_3
+      value: lovingcolor_coins_t3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -999,7 +999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9012689981230843430, guid: 3de6a455bca9e48e19422f384ab6fef8, type: 3}
       propertyPath: productId
-      value: lovingcolors_pack_4
+      value: lovingcolor_coins_t4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1275,7 +1275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9012689981230843430, guid: 3de6a455bca9e48e19422f384ab6fef8, type: 3}
       propertyPath: productId
-      value: lovingcolors_pack_5
+      value: lovingcolor_coins_t5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
