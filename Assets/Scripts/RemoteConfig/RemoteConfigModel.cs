@@ -29,7 +29,10 @@ namespace GameConfig
         public int HintIntroDelay = 10;
         public int NewBadgeRewardCoins = 50;
         public int StartingCoins { get; set; } = 100;
-        public int WinRewardCoins { get; set; } = 25;
+        public int WinRewardCoins = 25;
+        public int WinRewardCoinsHard = 30;
+        public int WinRewardCoinsExtreme = 40;
+        public int CompleteMonthCoinReward = 250;
         public int NoAdsPackCoinReward { get; set; } = 500;
     }
 }

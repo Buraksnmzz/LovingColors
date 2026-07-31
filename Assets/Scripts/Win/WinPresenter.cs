@@ -95,6 +95,9 @@ namespace Win
             View.PlayParticles();
             AwardExperienceAndUpdateBadgeProgress();
             var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
+            var currentLevelNumber = levelProgressModel.CurrentLevelIndex + 1;
+            var currentDifficultyType = GetDifficultyType(currentLevelNumber);
+            var prevDifficultyType = GetDifficultyType(currentLevelNumber - 1);
             var homeText = _localizationService.GetLocalizedString(LocalizationStrings.Home);
             var levelText = _localizationService.GetLocalizedString(LocalizationStrings.Level);
             var claimText = _localizationService.GetLocalizedString(LocalizationStrings.Claim);
@@ -109,7 +112,7 @@ namespace Win
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
             _rewardCoins = _isNewBadgeUnlocked
                 ? _remoteConfigModel.NewBadgeRewardCoins
-                : _remoteConfigModel.WinRewardCoins;
+                : GetWinRewardCoins(prevDifficultyType);
             View.SetRewardText(_rewardCoins);
             if (!_isNewBadgeUnlocked)
             {
@@ -119,8 +122,6 @@ namespace Win
             }
 
             View.SetCoinFlyAnimatorActive(!_isNewBadgeUnlocked);
-            var currentLevelNumber = levelProgressModel.CurrentLevelIndex + 1;
-            var currentDifficultyType = GetDifficultyType(currentLevelNumber);
             View.SetDifficultyView(currentDifficultyType);
             View.SetCoinCount(_isNewBadgeUnlocked ? collectibleModel.TotalCoins : collectibleModel.TotalCoins - _rewardCoins);
         }
@@ -186,6 +187,21 @@ namespace Win
             }
 
             return (int)threshold;
+        }
+
+        private int GetWinRewardCoins(LevelDifficultyType difficultyType)
+        {
+            if (difficultyType == LevelDifficultyType.Hard)
+            {
+                return _remoteConfigModel.WinRewardCoinsHard;
+            }
+
+            if (difficultyType == LevelDifficultyType.Extreme)
+            {
+                return _remoteConfigModel.WinRewardCoinsExtreme;
+            }
+
+            return _remoteConfigModel.WinRewardCoins;
         }
 
         private void OnClaimButtonClicked()
