@@ -99,6 +99,11 @@ namespace Gameplay
 
         private void OnPinClicked()
         {
+            if (!IsPinUnlockedForCurrentLevel())
+            {
+                return;
+            }
+
             if (_hasUsedSuperPinInCurrentLevel)
             {
                 return;
@@ -124,6 +129,11 @@ namespace Gameplay
 
         private void OnSuperPinClicked()
         {
+            if (!IsSuperPinUnlockedForCurrentLevel())
+            {
+                return;
+            }
+
             if (_hasUsedSuperPinInCurrentLevel)
             {
                 return;
@@ -359,6 +369,7 @@ namespace Gameplay
 
             _settingsModel.HasShownPinBoosterIntro = true;
             _savedDataService.SaveData(_settingsModel);
+            RefreshBoosterUnlockStateForCurrentLevel();
             _uiService.ShowPopup<BoosterIntroPresenter, GetHintPopupData>(new GetHintPopupData(GetHintPopupType.Pin));
         }
 
@@ -371,6 +382,7 @@ namespace Gameplay
 
             _settingsModel.HasShownSuperPinBoosterIntro = true;
             _savedDataService.SaveData(_settingsModel);
+            RefreshBoosterUnlockStateForCurrentLevel();
             _uiService.ShowPopup<BoosterIntroPresenter, GetHintPopupData>(new GetHintPopupData(GetHintPopupType.SuperPin));
         }
 
@@ -529,7 +541,7 @@ namespace Gameplay
             View.SetDifficultyText(levelDefinition.Difficulty, diffText);
             View.SetDailyChallengeInfo(true, _dailyChallengeService.GetPlayedDateText());
             View.InitializeBoard(levelDefinition, true);
-            ResetBoosterButtonsForLevel();
+            ResetBoosterButtonsForLevel(GetCurrentProgressLevelNumber());
         }
 
         private void LoadLevelAtIndex(int levelIndex, bool clampToPreviousValidLevel, bool startInitialShuffleImmediately = true)
@@ -571,7 +583,7 @@ namespace Gameplay
             _currentLevelDifficulty = levelDefinition.Difficulty;
             View.SetDifficultyText(levelDefinition.Difficulty, diffText);
             View.InitializeBoard(levelDefinition, false, startInitialShuffleImmediately);
-            ResetBoosterButtonsForLevel();
+            ResetBoosterButtonsForLevel(currentLevelId);
             if (ShouldShowFirstLevelTutorial(currentLevelIndex))
             {
                 View.StartFirstLevelTutorial();
@@ -657,11 +669,44 @@ namespace Gameplay
             _uiService.ShowPopup<WinPresenter>();
         }
 
-        private void ResetBoosterButtonsForLevel()
+        private void ResetBoosterButtonsForLevel(int currentLevel)
         {
             _hasUsedSuperPinInCurrentLevel = false;
             _isWaitingForSuperPinOfferToStartShuffle = false;
+            View.SetBoosterUnlockState(IsPinUnlockedForLevel(currentLevel), IsSuperPinUnlockedForLevel(currentLevel));
             View.SetPinAndSuperPinInteractable(true);
+        }
+
+        private void RefreshBoosterUnlockStateForCurrentLevel()
+        {
+            var currentLevel = GetCurrentProgressLevelNumber();
+            View.SetBoosterUnlockState(IsPinUnlockedForLevel(currentLevel), IsSuperPinUnlockedForLevel(currentLevel));
+            View.SetPinAndSuperPinInteractable(true);
+        }
+
+        private int GetCurrentProgressLevelNumber()
+        {
+            return _savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex + 1;
+        }
+
+        private bool IsPinUnlockedForCurrentLevel()
+        {
+            return IsPinUnlockedForLevel(GetCurrentProgressLevelNumber());
+        }
+
+        private bool IsSuperPinUnlockedForCurrentLevel()
+        {
+            return IsSuperPinUnlockedForLevel(GetCurrentProgressLevelNumber());
+        }
+
+        private bool IsPinUnlockedForLevel(int currentLevel)
+        {
+            return currentLevel > PinBoosterIntroLevel || HasShownPinBoosterIntro();
+        }
+
+        private bool IsSuperPinUnlockedForLevel(int currentLevel)
+        {
+            return currentLevel > SuperPinBoosterIntroLevel || HasShownSuperPinBoosterIntro();
         }
 
         private void UseFreeSuperPinFromOffer()

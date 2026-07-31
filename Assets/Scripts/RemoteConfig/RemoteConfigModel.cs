@@ -4,7 +4,7 @@ namespace GameConfig
 {
     public class RemoteConfigModel:IModel
     {
-        public string RateTriggerLevels = "6,20,50";
+        public string RateTriggerLevels = "5,20,50";
         public int ShopCoinReward1 = 250;
         public int ShopCoinReward2 = 600;
         public int ShopCoinReward3 = 1500;

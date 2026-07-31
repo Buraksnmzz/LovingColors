@@ -5198,6 +5198,8 @@ MonoBehaviour:
   handHintImage: {fileID: 5797158893170099797}
   dcStampPlayingText: {fileID: 376823373815442167}
   dcStampDateText: {fileID: 7568955850976278066}
+  pinAmountHolder: {fileID: 6362476450629706754}
+  superPinAmountHolder: {fileID: 6783323082596947681}
   skeletonGraphic: {fileID: 405997451987273127}
 --- !u!114 &4343590301699752678 stripped
 MonoBehaviour:

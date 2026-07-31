@@ -82,6 +82,9 @@ namespace Gameplay
         [SerializeField] private Transform handHintImage;
         [SerializeField] private TextMeshProUGUI dcStampPlayingText;
         [SerializeField] private TextMeshProUGUI dcStampDateText;
+        [SerializeField] private GameObject pinAmountHolder;
+        [SerializeField] private GameObject superPinAmountHolder;
+
 
         [SerializeField] private SkeletonGraphic skeletonGraphic;
 
@@ -106,6 +109,11 @@ namespace Gameplay
         private Vector3 _dailyChallengeStampInitialPosition;
         private bool _hasDailyChallengeStampInitialPosition;
         private Button[] _debugButtons;
+        private bool _areBoosterButtonsInteractable = true;
+        private bool _isPinUnlockedForCurrentLevel;
+        private bool _isSuperPinUnlockedForCurrentLevel;
+        private int _currentPinAmount;
+        private int _currentSuperPinAmount;
 
         protected override void Awake()
         {
@@ -478,15 +486,26 @@ namespace Gameplay
 
         public void SetPinAmount(int amount)
         {
+            _currentPinAmount = amount;
             pinAmountText.text = amount.ToString();
+
+            if (!_isPinUnlockedForCurrentLevel)
+            {
+                pinAmountHolder.SetActive(false);
+                addPinImage?.SetActive(false);
+                pinAmountText.gameObject.SetActive(false);
+                return;
+            }
 
             if (amount == 0)
             {
+                pinAmountHolder.SetActive(true);
                 addPinImage?.SetActive(true);
                 pinAmountText.gameObject.SetActive(false);
             }
             else
             {
+                pinAmountHolder.SetActive(true);
                 addPinImage?.SetActive(false);
                 pinAmountText.gameObject.SetActive(true);
             }
@@ -494,26 +513,73 @@ namespace Gameplay
 
         public void SetSuperPinAmount(int amount)
         {
+            _currentSuperPinAmount = amount;
             superPinAmountText.text = amount.ToString();
+
+            if (!_isSuperPinUnlockedForCurrentLevel)
+            {
+                superPinAmountHolder.SetActive(false);
+                return;
+            }
 
             if (amount == 0)
             {
+                superPinAmountHolder.SetActive(true);
                 addSuperPinImage?.SetActive(true);
                 superPinAmountText.gameObject.SetActive(false);
             }
             else
             {
+                superPinAmountHolder.SetActive(true);
                 addSuperPinImage?.SetActive(false);
                 superPinAmountText.gameObject.SetActive(true);
             }
         }
 
+        public void SetBoosterUnlockState(bool isPinUnlocked, bool isSuperPinUnlocked)
+        {
+            _isPinUnlockedForCurrentLevel = isPinUnlocked;
+            _isSuperPinUnlockedForCurrentLevel = isSuperPinUnlocked;
+            RefreshBoosterButtonsState();
+            RefreshBoosterAmountState();
+        }
+
         public void SetPinAndSuperPinInteractable(bool isInteractable)
         {
-            pinButton.interactable = isInteractable;
-            superPinButton.interactable = isInteractable;
-            pinButtonCanvasGroup.alpha = isInteractable ? 1f : 0.2f;
-            superPinButtonCanvasGroup.alpha = isInteractable ? 1f : 0.2f;
+            _areBoosterButtonsInteractable = isInteractable;
+            RefreshBoosterButtonsState();
+        }
+
+        private void RefreshBoosterButtonsState()
+        {
+            var isPinInteractable = _areBoosterButtonsInteractable && _isPinUnlockedForCurrentLevel;
+            var isSuperPinInteractable = _areBoosterButtonsInteractable && _isSuperPinUnlockedForCurrentLevel;
+
+            if (pinButton != null)
+            {
+                pinButton.interactable = isPinInteractable;
+            }
+
+            if (superPinButton != null)
+            {
+                superPinButton.interactable = isSuperPinInteractable;
+            }
+
+            if (pinButtonCanvasGroup != null)
+            {
+                pinButtonCanvasGroup.alpha = isPinInteractable ? 1f : 0.2f;
+            }
+
+            if (superPinButtonCanvasGroup != null)
+            {
+                superPinButtonCanvasGroup.alpha = isSuperPinInteractable ? 1f : 0.2f;
+            }
+        }
+
+        private void RefreshBoosterAmountState()
+        {
+            SetPinAmount(_currentPinAmount);
+            SetSuperPinAmount(_currentSuperPinAmount);
         }
 
         public void SetSpineAnimation(LevelDifficultyType difficulty)

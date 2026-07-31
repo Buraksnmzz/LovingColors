@@ -1120,7 +1120,10 @@ namespace Gameplay
                 {
                     LockCardsInCorrectPositions();
                     if (IsCorrectlyPlaced(firstCard, secondCard))
+                    {
+                        CorrectCardPlaced?.Invoke();
                         _soundService.PlaySound(ClipName.CorrectPlaced);
+                    }
                 }
                 else if (IsCorrectlyPlaced(firstCard, secondCard))
                 {
