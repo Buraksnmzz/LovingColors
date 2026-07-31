@@ -21,6 +21,8 @@ namespace Win
 {
     public class WinPresenter : BasePresenter<WinView>
     {
+        private const int BaseBadgeTargetExperience = 100;
+
         private ISavedDataService _savedDataService;
         private IUIService _uiService;
         private ISoundService _soundService;
@@ -32,6 +34,7 @@ namespace Win
         private bool _isNewBadgeUnlocked;
         private bool _shouldShowRateUsAfterHide;
         private ILevelService _levelService;
+        private RemoteConfigModel _remoteConfigModel;
 
         protected override void OnInitialize()
         {
@@ -43,6 +46,7 @@ namespace Win
             _eventDispatcherService = ServiceLocator.GetService<IEventDispatcherService>();
             _levelService = ServiceLocator.GetService<ILevelService>();
             _localizationService = ServiceLocator.GetService<ILocalizationService>();
+            _remoteConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
             _badgeSpriteConfig = Resources.Load<BadgeSpriteConfig>("BadgeSpriteConfig");
             View.NextButtonClicked += OnNextButtonClicked;
             View.ClaimButtonClicked += OnClaimButtonClicked;
@@ -103,8 +107,7 @@ namespace Win
 
             View.SetClaim2ButtonText(claimText + " " + "x2");
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
-            var remoteConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
-            _rewardCoins = remoteConfigModel.WinRewardCoins;
+            _rewardCoins = _remoteConfigModel.WinRewardCoins;
             View.SetRewardText(_rewardCoins);
             if (!_isNewBadgeUnlocked)
             {
@@ -133,19 +136,21 @@ namespace Win
         private void AwardExperienceAndUpdateBadgeProgress()
         {
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
-            var remoteConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
-            var targetExperience = Mathf.Max(1, remoteConfigModel.TargetExperience);
             var previousExperience = collectibleModel.TotalXp;
             var previousBadgeIndex = collectibleModel.CurrentBadgeIndex;
 
-            collectibleModel.TotalXp += Mathf.Max(0, remoteConfigModel.WinRewardExperience);
+            collectibleModel.TotalXp += Mathf.Max(0, _remoteConfigModel.WinRewardExperience);
             _isNewBadgeUnlocked = false;
-            while (collectibleModel.TotalXp >= targetExperience)
+            var currentBadgeTargetExperience = GetTargetExperienceForBadgeIndex(collectibleModel.CurrentBadgeIndex);
+            while (collectibleModel.TotalXp >= currentBadgeTargetExperience)
             {
-                collectibleModel.TotalXp -= targetExperience;
+                collectibleModel.TotalXp -= currentBadgeTargetExperience;
                 collectibleModel.CurrentBadgeIndex++;
                 _isNewBadgeUnlocked = true;
+                currentBadgeTargetExperience = GetTargetExperienceForBadgeIndex(collectibleModel.CurrentBadgeIndex);
             }
+
+            var targetExperience = currentBadgeTargetExperience;
 
             _savedDataService.SaveData(collectibleModel);
             var previousBadgeSprite = _badgeSpriteConfig != null
@@ -162,8 +167,23 @@ namespace Win
             else
             {
                 View.PlayWinAnimation(currentBadgeSprite, previousExperience, collectibleModel.TotalXp, targetExperience,
-                    collectibleModel.TotalCoins + remoteConfigModel.WinRewardCoins);
+                    collectibleModel.TotalCoins + _remoteConfigModel.WinRewardCoins);
             }
+        }
+
+        private int GetTargetExperienceForBadgeIndex(int badgeIndex)
+        {
+            var safeBadgeIndex = Mathf.Max(0, badgeIndex);
+            var threshold = (long)_remoteConfigModel.TargetExperience;
+
+            for (var i = 0; i < safeBadgeIndex; i++)
+            {
+                threshold *= 2;
+                if (threshold >= int.MaxValue)
+                    return int.MaxValue;
+            }
+
+            return (int)threshold;
         }
 
         private void OnClaimButtonClicked()
