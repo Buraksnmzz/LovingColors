@@ -73,8 +73,6 @@ namespace GetHint
             var remoteConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
 
             View.ConfigurePopup(_popupType);
-            View.SetPinAmount(collectibleModel.TotalPins);
-            View.SetSuperPinAmount(collectibleModel.TotalSuperPins);
             View.SetBoosterRewardAmountText(GetRewardAmount(remoteConfigModel));
 
             if (_popupType == GetHintPopupType.SuperPin)
@@ -101,12 +99,6 @@ namespace GetHint
             var remoteConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
             var rewardAmount = GetRewardAmount(remoteConfigModel);
 
-            if (rewardAmount <= 0)
-            {
-                _uiService.HidePopup<BoosterIntroPresenter>();
-                return;
-            }
-
             _isClaimInProgress = true;
 
             if (_popupType == GetHintPopupType.SuperPin)
@@ -117,25 +109,7 @@ namespace GetHint
             {
                 collectibleModel.TotalPins += rewardAmount;
             }
-
-            _savedDataService.SaveData(collectibleModel);
-
-            try
-            {
-                View.PlayBoosterFly(OnBoosterFlyCompleted);
-            }
-            catch
-            {
-                OnBoosterFlyCompleted();
-            }
-        }
-
-        private void OnBoosterFlyCompleted()
-        {
-            var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
-            View.SetPinAmount(collectibleModel.TotalPins);
-            View.SetSuperPinAmount(collectibleModel.TotalSuperPins);
-
+            
             if (_popupType == GetHintPopupType.SuperPin)
             {
                 _eventDispatcherService.Dispatch(new SuperPinChangedSignal());
@@ -145,7 +119,7 @@ namespace GetHint
                 _eventDispatcherService.Dispatch(new PinChangedSignal());
             }
 
-            _isClaimInProgress = false;
+            _savedDataService.SaveData(collectibleModel);
             _uiService.HidePopup<BoosterIntroPresenter>();
         }
 

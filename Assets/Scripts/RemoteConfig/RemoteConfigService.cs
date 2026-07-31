@@ -63,6 +63,10 @@ namespace RemoteConfig
                 ApplyInt(root, "hint_reward_with_coin", v => _remoteConfigModel.HintRewardWithCoin = v);
                 ApplyInt(root, "pin_reward_with_coin", v => _remoteConfigModel.PinRewardWithCoin = v);
                 ApplyInt(root, "super_pin_reward_with_coin", v => _remoteConfigModel.SuperPinRewardWithCoin = v);
+                ApplyInt(root, "pin_booster_intro_level", v => _remoteConfigModel.PinBoosterIntroLevel = v);
+                ApplyInt(root, "super_pin_booster_intro_level", v => _remoteConfigModel.SuperPinBoosterIntroLevel = v);
+                ApplyInt(root, "hint_intro_delay", v => _remoteConfigModel.HintIntroDelay = v);
+                ApplyInt(root, "new_badge_reward_coins", v => _remoteConfigModel.NewBadgeRewardCoins = v);
 
                 _savedDataService.SaveData(_remoteConfigModel);
                 SetCollectibleModel();

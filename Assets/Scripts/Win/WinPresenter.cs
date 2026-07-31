@@ -107,7 +107,9 @@ namespace Win
 
             View.SetClaim2ButtonText(claimText + " " + "x2");
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
-            _rewardCoins = _remoteConfigModel.WinRewardCoins;
+            _rewardCoins = _isNewBadgeUnlocked
+                ? _remoteConfigModel.NewBadgeRewardCoins
+                : _remoteConfigModel.WinRewardCoins;
             View.SetRewardText(_rewardCoins);
             if (!_isNewBadgeUnlocked)
             {

@@ -24,9 +24,10 @@ namespace GameConfig
         public int StartingHints = 3;
         public int StartingPins = 3;
         public int StartingSuperPins = 3;
-        public int PinBoosterIntroDelay = 10;
-        public int SuperPinBoosterIntroDelay = 20;
-        public int HintIntroDelay = 5;
+        public int PinBoosterIntroLevel = 4;
+        public int SuperPinBoosterIntroLevel = 7;
+        public int HintIntroDelay = 10;
+        public int NewBadgeRewardCoins = 50;
         public int StartingCoins { get; set; } = 100;
         public int WinRewardCoins { get; set; } = 25;
         public int NoAdsPackCoinReward { get; set; } = 500;
