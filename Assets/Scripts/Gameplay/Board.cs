@@ -121,27 +121,28 @@ namespace Gameplay
             StartShuffleAnimation();
         }
 
-        public void UseHint()
+        public bool UseHint()
         {
             if (_isInteractionLocked || _draggedCard != null || _hasCompletedBoard)
             {
-                return;
+                return false;
             }
 
             var targetIndex = GetFirstMisplacedCardIndex();
             if (targetIndex < 0)
             {
-                return;
+                return false;
             }
 
             var currentCard = _cards[targetIndex];
             var correctCard = FindCardById(targetIndex);
             if (correctCard == null || correctCard == currentCard || currentCard.IsLocked || correctCard.IsLocked)
             {
-                return;
+                return false;
             }
 
-            StartSwap(currentCard, correctCard);
+            StartSwap(currentCard, correctCard, 0.7f);
+            return true;
         }
 
         public bool UsePin()
@@ -1076,14 +1077,14 @@ namespace Gameplay
             return nearestCard;
         }
 
-        private void StartSwap(Card firstCard, Card secondCard)
+        private void StartSwap(Card firstCard, Card secondCard, float swapDuration = SwapDuration)
         {
-            StartSwap(firstCard, secondCard, null);
+            StartSwap(firstCard, secondCard, null, swapDuration);
             _soundService.PlaySound(ClipName.CardSwap);
             _hapticService.HapticMin();
         }
 
-        private void StartSwap(Card firstCard, Card secondCard, Action completed)
+        private void StartSwap(Card firstCard, Card secondCard, Action completed, float swapDuration = SwapDuration)
         {
             if (firstCard == null || secondCard == null || firstCard == secondCard)
             {
@@ -1109,10 +1110,10 @@ namespace Gameplay
             secondCard.Order = firstIndex;
 
             var sequence = DOTween.Sequence();
-            sequence.Join(firstCard.TweenMoveTo(firstTargetPosition, SwapDuration));
-            sequence.Join(secondCard.TweenMoveTo(secondTargetPosition, SwapDuration));
-            sequence.Join(firstCard.TweenRotateTo(GetSlotRotation(secondIndex), SwapDuration));
-            sequence.Join(secondCard.TweenRotateTo(GetSlotRotation(firstIndex), SwapDuration));
+            sequence.Join(firstCard.TweenMoveTo(firstTargetPosition, swapDuration));
+            sequence.Join(secondCard.TweenMoveTo(secondTargetPosition, swapDuration));
+            sequence.Join(firstCard.TweenRotateTo(GetSlotRotation(secondIndex), swapDuration));
+            sequence.Join(secondCard.TweenRotateTo(GetSlotRotation(firstIndex), swapDuration));
             sequence.OnComplete(() =>
             {
                 if (_isSuperPinActive)

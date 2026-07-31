@@ -20,7 +20,7 @@ namespace Settings
         {
             var builder = new StringBuilder();
             builder.AppendLine(Separator);
-            builder.AppendLine("Name: Loving Colors");
+            builder.AppendLine("Name:Loving_Colors");
             builder.AppendLine($"Version:{FormatValue(Application.version)}");
             builder.AppendLine($"Country:{FormatValue(GetCountryCode())}");
             builder.AppendLine($"Language:{FormatValue(Application.systemLanguage.ToString())}");

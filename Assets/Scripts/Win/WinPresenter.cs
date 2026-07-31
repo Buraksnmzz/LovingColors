@@ -55,7 +55,7 @@ namespace Win
         {
             View.CompleteCoinFly();
             _uiService.HidePopup<WinPresenter>();
-            if (_savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex == 10)
+            if (_savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex == 9)
             {
                 _uiService.ShowPopup<HomePresenter>();
                 _uiService.HidePopup<GameplayPresenter>();
@@ -88,7 +88,7 @@ namespace Win
             var homeText = _localizationService.GetLocalizedString(LocalizationStrings.Home);
             var levelText = _localizationService.GetLocalizedString(LocalizationStrings.Level);
             var claimText = _localizationService.GetLocalizedString(LocalizationStrings.Claim);
-            if (_savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex == 10)
+            if (_savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex == 9)
                 View.SetNextButtonText(homeText);
             else
             {

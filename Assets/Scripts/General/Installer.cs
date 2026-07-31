@@ -68,6 +68,8 @@ public class Installer : MonoBehaviour
         eventDispatcherService.Dispatch(new BannerVisibilityChangedSignal(!savedDataService.GetModel<SettingsModel>().IsNoAds));
 
         var uiService = ServiceLocator.GetService<IUIService>();
+        var soundService = ServiceLocator.GetService<ISoundService>();
+        soundService.PlayMusic();
         if (PlayerPrefs.GetInt(StringConstants.IsTutorialShown) == 0)
         {
             uiService.ShowPopup<GameplayPresenter>();

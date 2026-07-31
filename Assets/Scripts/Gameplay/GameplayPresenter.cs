@@ -83,16 +83,20 @@ namespace Gameplay
             KillHandHintTimer();
 
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
-            if (collectibleModel.TotalHints > 0)
-            {
-                collectibleModel.TotalHints--;
-                View.UseHint(collectibleModel.TotalHints);
-                _soundService.PlaySound(ClipName.Booster);
-            }
-            else
+            if (collectibleModel.TotalHints <= 0)
             {
                 ShowGetHintPopup(GetHintPopupType.Hint);
+                return;
             }
+
+            if (!View.UseHint())
+            {
+                return;
+            }
+
+            collectibleModel.TotalHints--;
+            View.SetHintAmount(collectibleModel.TotalHints);
+            _soundService.PlaySound(ClipName.Booster);
         }
 
         private void OnPinClicked()
@@ -512,7 +516,6 @@ namespace Gameplay
         {
             base.ViewShown();
             _eventDispatcherService.Dispatch(new GameplayVisibilityChangedSignal(true));
-            _soundService.PlayMusic();
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
             View.SetHintAmount(collectibleModel.TotalHints);
             View.SetPinAmount(collectibleModel.TotalPins);
@@ -555,7 +558,6 @@ namespace Gameplay
             HideHandHint();
             KillBoosterIntroTimer();
             _eventDispatcherService.Dispatch(new GameplayVisibilityChangedSignal(false));
-            _soundService.StopMusic();
         }
 
         public override void Cleanup()

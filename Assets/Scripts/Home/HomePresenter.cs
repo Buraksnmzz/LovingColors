@@ -137,7 +137,7 @@ namespace MainMenu
 
         private void CheckAndShowDcUnlockPopup()
         {
-            if (_savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex == 10 &&
+            if (_savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex == 9 &&
                 PlayerPrefs.GetInt(StringConstants.IsDailyChallengeUnlockedShown, 0) == 0)
             {
                 PlayerPrefs.SetInt(StringConstants.IsDailyChallengeUnlockedShown, 1);

@@ -445,10 +445,9 @@ namespace Gameplay
             SuperPinClicked?.Invoke();
         }
 
-        public void UseHint(int remainingHint)
+        public bool UseHint()
         {
-            _board.UseHint();
-            SetHintAmount(remainingHint);
+            return _board != null && _board.UseHint();
         }
 
         public bool UsePin()

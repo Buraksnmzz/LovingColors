@@ -45,9 +45,7 @@ namespace RemoteConfig
                 ApplyInt(root, "win_reward_coins", v => _remoteConfigModel.WinRewardCoins = v);
                 ApplyInt(root, "win_reward_experience", v => _remoteConfigModel.WinRewardExperience = v);
                 ApplyInt(root, "target_experience", v => _remoteConfigModel.TargetExperience = v);
-                ApplyInt(root, "starting_coins", v => _remoteConfigModel.StartingCoins = v);
                 ApplyInt(root, "starting_hints", v => _remoteConfigModel.StartingHints = v);
-                ApplyInt(root, "magnet_pins", v => _remoteConfigModel.StartingPins = v);
                 ApplyInt(root, "starting_pins", v => _remoteConfigModel.StartingPins = v);
                 ApplyInt(root, "starting_super_pins", v => _remoteConfigModel.StartingSuperPins = v);
                 ApplyInt(root, "hint_cost", v => _remoteConfigModel.HintCost = v);

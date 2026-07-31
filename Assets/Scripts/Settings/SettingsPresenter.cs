@@ -39,6 +39,15 @@ namespace UI.Settings
             _settingsModel.IsMusicOn = !_settingsModel.IsMusicOn;
             View.SetMusicState(_settingsModel.IsMusicOn);
             _savedDataService.SaveData(_settingsModel);
+            if (_settingsModel.IsMusicOn)
+            {
+                _soundService.PlayMusic();
+            }
+            else
+            {
+                _soundService.StopMusic();
+            }
+           
         }
 
         private void OnHapticToggle()
