@@ -263,7 +263,7 @@ namespace Gameplay
                 return;
             }
 
-            ResumeBoosterIntroTimer();
+            ResetBoosterIntroTimer();
         }
 
         private void OnSuperPinOfferClosed(SuperPinOfferClosedSignal signal)
@@ -280,6 +280,7 @@ namespace Gameplay
 
             _isWaitingForSuperPinOfferToStartShuffle = false;
             View.StartInitialShuffle();
+            ResetBoosterIntroTimer();
         }
 
         private void OnViewShuffleCompleted()
@@ -361,13 +362,12 @@ namespace Gameplay
 
             if (_isBoosterIntroPaused)
             {
-                return;
+                _isBoosterIntroPaused = false;
             }
 
             if (!_hasUnlockedBoosterIntroTimerForLevel)
             {
-                KillBoosterIntroTimer();
-                return;
+                _hasUnlockedBoosterIntroTimerForLevel = true;
             }
 
             ScheduleNextBoosterIntro();
@@ -469,7 +469,7 @@ namespace Gameplay
 
         private void ResetBoosterIntroStateForLevel()
         {
-            _hasUnlockedBoosterIntroTimerForLevel = false;
+            _hasUnlockedBoosterIntroTimerForLevel = true;
             KillBoosterIntroTimer();
         }
 
@@ -549,6 +549,7 @@ namespace Gameplay
             }
 
             View.StartInitialShuffle();
+            ResetBoosterIntroTimer();
         }
 
         public override void ViewHidden()
@@ -556,7 +557,7 @@ namespace Gameplay
             base.ViewHidden();
             KillHandHintTimer();
             HideHandHint();
-            KillBoosterIntroTimer();
+            PauseBoosterIntroTimer();
             _eventDispatcherService.Dispatch(new GameplayVisibilityChangedSignal(false));
         }
 
@@ -648,6 +649,7 @@ namespace Gameplay
             View.InitializeBoard(levelDefinition, true);
             ResetBoosterButtonsForLevel();
             ResetBoosterIntroStateForLevel();
+            ResetBoosterIntroTimer();
         }
 
         private void LoadLevelAtIndex(int levelIndex, bool clampToPreviousValidLevel, bool startInitialShuffleImmediately = true)
@@ -691,6 +693,7 @@ namespace Gameplay
             View.InitializeBoard(levelDefinition, false, startInitialShuffleImmediately);
             ResetBoosterButtonsForLevel();
             ResetBoosterIntroStateForLevel();
+            ResetBoosterIntroTimer();
             if (ShouldShowFirstLevelTutorial(currentLevelIndex))
             {
                 View.StartFirstLevelTutorial();
@@ -704,7 +707,7 @@ namespace Gameplay
 
         private void OnViewSolved()
         {
-            KillBoosterIntroTimer();
+            ResetBoosterIntroStateForLevel();
             var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
             levelProgressModel.CurrentLevelIndex++;
             _savedDataService.SaveData(levelProgressModel);
@@ -755,11 +758,12 @@ namespace Gameplay
             }
 
             View.StartInitialShuffle();
+            ResetBoosterIntroTimer();
         }
 
         private void OnViewCompleted()
         {
-            KillBoosterIntroTimer();
+            ResetBoosterIntroStateForLevel();
             if (_dailyChallengeService.HasActiveDailyChallengeGame)
             {
                 _dailyChallengeService.CompletePlayedDay();
