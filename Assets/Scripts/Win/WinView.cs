@@ -45,6 +45,7 @@ namespace Win
         public event Action ClaimX2ButtonClicked;
         public event Action Hidden;
         public event Action IntroAnimationFinished;
+        public event Action NewBadgeAnimationStarted;
 
 
         private Sequence _animationSequence;
@@ -190,7 +191,11 @@ namespace Win
                 () => newBadgeImage.sprite = newBadgeSprite);
             _animationSequence.Insert(newBadgeScaleUpStartTime,
                 newBadgeImage.transform.DOScale(Vector3.one, badgeScaleDuration).SetEase(Ease.OutBack)
-                    .OnStart(() => newBadgeParticle?.Play()));
+                    .OnStart(() =>
+                    {
+                        newBadgeParticle?.Play();
+                        NewBadgeAnimationStarted?.Invoke();
+                    }));
             _animationSequence.Insert(postBadgeAnimationsStartTime,
                 reward.DOScale(Vector3.one, animateDuration).SetEase(Ease.OutBack)
                     .OnStart(() => IntroAnimationFinished?.Invoke()));

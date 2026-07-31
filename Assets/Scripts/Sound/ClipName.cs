@@ -17,5 +17,6 @@ namespace Sound
         BoardComplete,
         CorrectPlaced,
         Booster,
+        NewBadge,
     }
 }

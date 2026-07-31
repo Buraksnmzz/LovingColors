@@ -49,6 +49,12 @@ namespace Win
             View.ClaimX2ButtonClicked += OnClaimX2ButtonClicked;
             View.Hidden += OnViewHidden;
             View.IntroAnimationFinished += OnIntroAnimationFinished;
+            View.NewBadgeAnimationStarted += OnNewBadgeAnimationStarted;
+        }
+
+        private void OnNewBadgeAnimationStarted()
+        {
+            _soundService.PlaySound(ClipName.NewBadge);
         }
 
         private void OnNextButtonClicked()
