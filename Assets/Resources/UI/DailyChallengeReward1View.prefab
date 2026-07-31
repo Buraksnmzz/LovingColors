@@ -756,6 +756,6 @@ MonoBehaviour:
   continueButton: {fileID: 5669593450064179376}
   awardMonthSpriteConfig: {fileID: 11400000, guid: 3a26dbd52b8cc433c8b6d25e3ae17a58, type: 2}
   particle: {fileID: 2250031774657879676}
-  stepDelay: 0.2
-  durations: 0.35
+  stepDelay: 0.3
+  durations: 0.5
   headerStartScale: 1.5

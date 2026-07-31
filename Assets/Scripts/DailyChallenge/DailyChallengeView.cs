@@ -36,6 +36,7 @@ namespace DailyChallenge
         [SerializeField] private Image awardImageActive;
         [SerializeField] private Image awardImageInactive;
         [SerializeField] private Image awardImageCompleted;
+        [SerializeField] private RectTransform rewardParent;
         [SerializeField] private AwardMonthSpriteConfig awardMonthSpriteConfig;
 
         private readonly List<DailyChallengeDayView> _dayViews = new List<DailyChallengeDayView>();
@@ -85,6 +86,14 @@ namespace DailyChallenge
         public void SetPlayButton(bool isInteractable)
         {
             playButton.gameObject.SetActive(isInteractable);
+            if (isInteractable)
+            {
+                rewardParent.sizeDelta = new Vector2(400, 400);
+            }
+            else
+            {
+                rewardParent.sizeDelta = new Vector2(540, 540);
+            }
         }
 
         public void SetProgress(int completedCount, int activeCount)

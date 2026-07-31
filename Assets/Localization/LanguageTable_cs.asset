@@ -248,6 +248,10 @@ MonoBehaviour:
     m_Localized: Uvolnit
     m_Metadata:
       m_Items: []
+  - m_Id: 58
+    m_Localized: "Rozum\xEDm"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

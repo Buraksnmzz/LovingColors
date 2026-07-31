@@ -248,6 +248,10 @@ MonoBehaviour:
     m_Localized: Bedava
     m_Metadata:
       m_Items: []
+  - m_Id: 58
+    m_Localized: "Anlad\u0131m"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

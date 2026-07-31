@@ -255,6 +255,10 @@ MonoBehaviour:
     m_Localized: "Mi\u1EC5n ph\xED"
     m_Metadata:
       m_Items: []
+  - m_Id: 58
+    m_Localized: "Hi\u1EC3u r\u1ED3i"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

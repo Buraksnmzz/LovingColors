@@ -243,6 +243,10 @@ MonoBehaviour:
     m_Key: FREE
     m_Metadata:
       m_Items: []
+  - m_Id: 58
+    m_Key: GOT_IT
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

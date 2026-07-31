@@ -248,6 +248,10 @@ MonoBehaviour:
     m_Localized: "Bezp\u0142atny"
     m_Metadata:
       m_Items: []
+  - m_Id: 58
+    m_Localized: "Zrozumia\u0142em"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

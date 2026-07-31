@@ -247,6 +247,10 @@ MonoBehaviour:
     m_Localized: Bebas
     m_Metadata:
       m_Items: []
+  - m_Id: 58
+    m_Localized: Mengerti
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

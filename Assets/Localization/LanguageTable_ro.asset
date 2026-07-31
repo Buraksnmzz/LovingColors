@@ -247,6 +247,10 @@ MonoBehaviour:
     m_Localized: Gratuit
     m_Metadata:
       m_Items: []
+  - m_Id: 58
+    m_Localized: "Am \xEEn\u0163eles"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -1493,10 +1493,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5311260022355269525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 3}
-  m_SizeDelta: {x: 400, y: 393}
+  m_SizeDelta: {x: 0, y: -7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4585806400195935261
 CanvasRenderer:
@@ -2033,10 +2033,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5311260022355269525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 8}
-  m_SizeDelta: {x: 322, y: 332}
+  m_SizeDelta: {x: -78, y: -68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5354069195883059069
 CanvasRenderer:
@@ -3951,4 +3951,5 @@ MonoBehaviour:
   awardImageActive: {fileID: 2343331088023032247}
   awardImageInactive: {fileID: 3587398020531399578}
   awardImageCompleted: {fileID: 1576392420638502812}
+  rewardParent: {fileID: 5311260022355269525}
   awardMonthSpriteConfig: {fileID: 11400000, guid: 3a26dbd52b8cc433c8b6d25e3ae17a58, type: 2}

@@ -248,6 +248,10 @@ MonoBehaviour:
     m_Localized: Gratuit
     m_Metadata:
       m_Items: []
+  - m_Id: 58
+    m_Localized: J'ai compris
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
