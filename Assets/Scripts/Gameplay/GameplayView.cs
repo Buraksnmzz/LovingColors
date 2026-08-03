@@ -697,7 +697,7 @@ namespace Gameplay
             base.OnShown();
             SetInteractionLocked(false);
             Shown?.Invoke();
-
+            YoogoLabManager.ShowBanner();
         }
 
         public void InitializeBoard(LevelDefinition levelDefinition, bool isMoveLimitEnabled, bool startInitialShuffleImmediately = true)

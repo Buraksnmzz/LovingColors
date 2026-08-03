@@ -42,6 +42,7 @@ namespace Gameplay
         private const int BoosterHandHintCorrectSwapThreshold = 4;
         private GetHintPopupType _pendingBoosterHandHintType;
         private int _correctSwapsAfterBoosterIntroClosed;
+        private int _openPopupCount;
 
 
         protected override void OnInitialize()
@@ -77,6 +78,28 @@ namespace Gameplay
             _eventDispatcherService.AddListener<SuperPinChangedSignal>(OnSuperPinChanged);
             _eventDispatcherService.AddListener<SuperPinOfferClosedSignal>(OnSuperPinOfferClosed);
             _eventDispatcherService.AddListener<BoosterIntroClosedSignal>(OnBoosterIntroClosed);
+            _eventDispatcherService.AddListener<PopupVisibilityChangedSignal>(OnPopupVisibilityChanged);
+        }
+
+        private void OnPopupVisibilityChanged(PopupVisibilityChangedSignal signal)
+        {
+            if (signal.ViewType == typeof(GameplayView))
+            {
+                return;
+            }
+
+            if (signal.IsVisible)
+            {
+                _openPopupCount++;
+                PauseHandHintTimer();
+                return;
+            }
+
+            _openPopupCount = Mathf.Max(0, _openPopupCount - 1);
+            if (_openPopupCount == 0)
+            {
+                ResumeHandHintTimer();
+            }
         }
 
         private void OnHintClicked()
@@ -419,6 +442,10 @@ namespace Gameplay
 
             _handHintTween?.Kill();
             _handHintTween = DOVirtual.DelayedCall(remoteConfigModel.HintIntroDelay, OnHandHintTimerCompleted, false);
+            if (_openPopupCount > 0)
+            {
+                _handHintTween.Pause();
+            }
         }
 
         private void OnHandHintTimerCompleted()
@@ -454,6 +481,22 @@ namespace Gameplay
         {
             _handHintTween?.Kill();
             _handHintTween = null;
+        }
+
+        private void PauseHandHintTimer()
+        {
+            if (_handHintTween != null && _handHintTween.IsActive())
+            {
+                _handHintTween.Pause();
+            }
+        }
+
+        private void ResumeHandHintTimer()
+        {
+            if (_handHintTween != null && _handHintTween.IsActive())
+            {
+                _handHintTween.Play();
+            }
         }
 
         private void ShowPinBoosterIntro()
@@ -525,6 +568,7 @@ namespace Gameplay
         public override void ViewShown()
         {
             base.ViewShown();
+            _openPopupCount = 0;
             _eventDispatcherService.Dispatch(new GameplayVisibilityChangedSignal(true));
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
             View.SetFreeBoosterState(collectibleModel.HasFreePin, collectibleModel.HasFreeSuperPin);
@@ -598,6 +642,7 @@ namespace Gameplay
                 _eventDispatcherService.RemoveListener<SuperPinChangedSignal>(OnSuperPinChanged);
                 _eventDispatcherService.RemoveListener<SuperPinOfferClosedSignal>(OnSuperPinOfferClosed);
                 _eventDispatcherService.RemoveListener<BoosterIntroClosedSignal>(OnBoosterIntroClosed);
+                _eventDispatcherService.RemoveListener<PopupVisibilityChangedSignal>(OnPopupVisibilityChanged);
             }
 
             KillHandHintTimer();

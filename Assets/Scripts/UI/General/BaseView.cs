@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using Core.Scripts.Services;
 using General;
+using General.EventDispatcher;
 using Sound;
 using UI.General;
 using Sequence = DG.Tweening.Sequence;
@@ -34,6 +35,7 @@ public abstract class BaseView : MonoBehaviour, IView
     private CanvasGroup _panelCanvasGroup;
     private ISoundService _soundService;
     private IHapticService _hapticService;
+    private IEventDispatcherService _eventDispatcherService;
     private List<Button> _subscribedButtons;
     private PopupAnimationType? _nextShowAnimationOverride;
     private PopupAnimationType? _nextHideAnimationOverride;
@@ -44,6 +46,8 @@ public abstract class BaseView : MonoBehaviour, IView
 
     protected virtual void Awake()
     {
+        _eventDispatcherService = ServiceLocator.GetService<IEventDispatcherService>();
+
         if (backgroundImage != null)
         {
             _backgroundRectTransform = backgroundImage.rectTransform;
@@ -406,6 +410,7 @@ public abstract class BaseView : MonoBehaviour, IView
         }
 
         _isVisible = true;
+        _eventDispatcherService?.Dispatch(new PopupVisibilityChangedSignal(GetType(), true));
     }
 
     private void ApplyHiddenState()
@@ -435,6 +440,7 @@ public abstract class BaseView : MonoBehaviour, IView
 
         _isVisible = false;
         gameObject.SetActive(false);
+        _eventDispatcherService?.Dispatch(new PopupVisibilityChangedSignal(GetType(), false));
     }
 
     private void PreparePanelForShow(PopupAnimationType effectiveAnimationType)
