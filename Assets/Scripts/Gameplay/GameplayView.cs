@@ -84,6 +84,9 @@ namespace Gameplay
         [SerializeField] private TextMeshProUGUI dcStampDateText;
         [SerializeField] private GameObject pinAmountHolder;
         [SerializeField] private GameObject superPinAmountHolder;
+        [SerializeField] private GameObject pinFreeHolder;
+        [SerializeField] private GameObject superPinFreeHolder;
+        [SerializeField] private GameObject boardGreyMaker;
 
 
         [SerializeField] private SkeletonGraphic skeletonGraphic;
@@ -112,8 +115,12 @@ namespace Gameplay
         private bool _areBoosterButtonsInteractable = true;
         private bool _isPinUnlockedForCurrentLevel;
         private bool _isSuperPinUnlockedForCurrentLevel;
+        private bool _hasFreePin;
+        private bool _hasFreeSuperPin;
         private int _currentPinAmount;
         private int _currentSuperPinAmount;
+        private Vector3 _handHintInitialPosition;
+        private bool _hasHandHintInitialPosition;
 
         protected override void Awake()
         {
@@ -173,6 +180,14 @@ namespace Gameplay
                 _dailyChallengeStampInitialPosition = dcStampTransform.localPosition;
                 _hasDailyChallengeStampInitialPosition = true;
             }
+
+            if (handHintImage != null)
+            {
+                _handHintInitialPosition = handHintImage.position;
+                _hasHandHintInitialPosition = true;
+            }
+
+            boardGreyMaker?.SetActive(false);
 
             HideHandHint();
         }
@@ -239,6 +254,35 @@ namespace Gameplay
                 return;
             }
 
+            RestoreHandHintPosition();
+
+            _handHintSequence?.Kill();
+            handHintImage.gameObject.SetActive(true);
+            handHintImage.DOKill();
+            handHintImage.localScale = Vector3.one;
+
+            _handHintSequence = DOTween.Sequence();
+            _handHintSequence.Append(handHintImage.DOScale(Vector3.one * HandHintPulseScale, HandHintPulseDuration).SetEase(Ease.InOutSine));
+            _handHintSequence.Append(handHintImage.DOScale(Vector3.one, HandHintPulseDuration).SetEase(Ease.InOutSine));
+            _handHintSequence.SetLoops(-1, LoopType.Restart);
+            _handHintSequence.OnKill(() => _handHintSequence = null);
+        }
+
+        public void ShowBoosterHandHint(bool showForSuperPin)
+        {
+            if (handHintImage == null)
+            {
+                return;
+            }
+
+            boardGreyMaker?.SetActive(true);
+            var targetButton = showForSuperPin ? superPinButton : pinButton;
+            if (targetButton == null)
+            {
+                return;
+            }
+
+            handHintImage.position = targetButton.transform.position;
             _handHintSequence?.Kill();
             handHintImage.gameObject.SetActive(true);
             handHintImage.DOKill();
@@ -262,6 +306,18 @@ namespace Gameplay
             handHintImage.DOKill();
             handHintImage.localScale = Vector3.one;
             handHintImage.gameObject.SetActive(false);
+            boardGreyMaker?.SetActive(false);
+            RestoreHandHintPosition();
+        }
+
+        private void RestoreHandHintPosition()
+        {
+            if (handHintImage == null || !_hasHandHintInitialPosition)
+            {
+                return;
+            }
+
+            handHintImage.position = _handHintInitialPosition;
         }
 
         public void StartFirstLevelTutorial()
@@ -492,10 +548,22 @@ namespace Gameplay
             if (!_isPinUnlockedForCurrentLevel)
             {
                 pinAmountHolder.SetActive(false);
+                pinFreeHolder?.SetActive(false);
                 addPinImage?.SetActive(false);
                 pinAmountText.gameObject.SetActive(false);
                 return;
             }
+
+            if (_hasFreePin)
+            {
+                pinAmountHolder.SetActive(false);
+                pinFreeHolder?.SetActive(true);
+                addPinImage?.SetActive(false);
+                pinAmountText.gameObject.SetActive(false);
+                return;
+            }
+
+            pinFreeHolder?.SetActive(false);
 
             if (amount == 0)
             {
@@ -519,8 +587,22 @@ namespace Gameplay
             if (!_isSuperPinUnlockedForCurrentLevel)
             {
                 superPinAmountHolder.SetActive(false);
+                superPinFreeHolder?.SetActive(false);
+                addSuperPinImage?.SetActive(false);
+                superPinAmountText.gameObject.SetActive(false);
                 return;
             }
+
+            if (_hasFreeSuperPin)
+            {
+                superPinAmountHolder.SetActive(false);
+                superPinFreeHolder?.SetActive(true);
+                addSuperPinImage?.SetActive(false);
+                superPinAmountText.gameObject.SetActive(false);
+                return;
+            }
+
+            superPinFreeHolder?.SetActive(false);
 
             if (amount == 0)
             {
@@ -541,6 +623,13 @@ namespace Gameplay
             _isPinUnlockedForCurrentLevel = isPinUnlocked;
             _isSuperPinUnlockedForCurrentLevel = isSuperPinUnlocked;
             RefreshBoosterButtonsState();
+            RefreshBoosterAmountState();
+        }
+
+        public void SetFreeBoosterState(bool hasFreePin, bool hasFreeSuperPin)
+        {
+            _hasFreePin = hasFreePin;
+            _hasFreeSuperPin = hasFreeSuperPin;
             RefreshBoosterAmountState();
         }
 
@@ -589,11 +678,13 @@ namespace Gameplay
             {
                 skeletonGraphic.gameObject.SetActive(true);
                 skeletonGraphic.AnimationState.SetAnimation(0, "hard_level", false);
+                DOVirtual.DelayedCall(3, () => skeletonGraphic.gameObject.SetActive(false));
             }
             else if (difficulty == LevelDifficultyType.Extreme)
             {
                 skeletonGraphic.gameObject.SetActive(true);
                 skeletonGraphic.AnimationState.SetAnimation(0, "super_hard", false);
+                DOVirtual.DelayedCall(3, () => skeletonGraphic.gameObject.SetActive(false));
             }
             else
             {

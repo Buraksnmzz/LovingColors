@@ -33,6 +33,7 @@ namespace GameConfig
         public int WinRewardCoinsHard = 30;
         public int WinRewardCoinsExtreme = 40;
         public int CompleteMonthCoinReward = 250;
+        public int DailyChallengeUnlockLevel = 30;
         public int NoAdsPackCoinReward { get; set; } = 500;
     }
 }

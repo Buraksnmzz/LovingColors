@@ -39,6 +39,9 @@ namespace Gameplay
         private bool _isWaitingForSuperPinOfferToStartShuffle;
         private Tween _handHintTween;
         private RemoteConfigModel _remoteConfigModel;
+        private const int BoosterHandHintCorrectSwapThreshold = 4;
+        private GetHintPopupType _pendingBoosterHandHintType;
+        private int _correctSwapsAfterBoosterIntroClosed;
 
 
         protected override void OnInitialize()
@@ -73,6 +76,7 @@ namespace Gameplay
             _eventDispatcherService.AddListener<PinChangedSignal>(OnPinChanged);
             _eventDispatcherService.AddListener<SuperPinChangedSignal>(OnSuperPinChanged);
             _eventDispatcherService.AddListener<SuperPinOfferClosedSignal>(OnSuperPinOfferClosed);
+            _eventDispatcherService.AddListener<BoosterIntroClosedSignal>(OnBoosterIntroClosed);
         }
 
         private void OnHintClicked()
@@ -110,7 +114,8 @@ namespace Gameplay
             }
 
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
-            if (collectibleModel.TotalPins <= 0)
+            var hasFreePin = collectibleModel.HasFreePin;
+            if (!hasFreePin && collectibleModel.TotalPins <= 0)
             {
                 ShowGetHintPopup(GetHintPopupType.Pin);
                 return;
@@ -120,9 +125,22 @@ namespace Gameplay
             {
                 return;
             }
+
+            HideHandHint();
+            ClearPendingBoosterHandHint();
+
             _soundService.PlaySound(ClipName.Booster);
-            collectibleModel.TotalPins--;
+            if (hasFreePin)
+            {
+                collectibleModel.HasFreePin = false;
+            }
+            else
+            {
+                collectibleModel.TotalPins--;
+            }
+
             _savedDataService.SaveData(collectibleModel);
+            View.SetFreeBoosterState(collectibleModel.HasFreePin, collectibleModel.HasFreeSuperPin);
             View.SetPinAmount(collectibleModel.TotalPins);
             _eventDispatcherService.Dispatch(new PinChangedSignal());
         }
@@ -140,7 +158,8 @@ namespace Gameplay
             }
 
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
-            if (collectibleModel.TotalSuperPins <= 0)
+            var hasFreeSuperPin = collectibleModel.HasFreeSuperPin;
+            if (!hasFreeSuperPin && collectibleModel.TotalSuperPins <= 0)
             {
                 ShowGetHintPopup(GetHintPopupType.SuperPin);
                 return;
@@ -150,10 +169,23 @@ namespace Gameplay
             {
                 return;
             }
+
+            HideHandHint();
+            ClearPendingBoosterHandHint();
+
             _soundService.PlaySound(ClipName.Booster);
-            collectibleModel.TotalSuperPins--;
+            if (hasFreeSuperPin)
+            {
+                collectibleModel.HasFreeSuperPin = false;
+            }
+            else
+            {
+                collectibleModel.TotalSuperPins--;
+            }
+
             _savedDataService.SaveData(collectibleModel);
             _hasUsedSuperPinInCurrentLevel = true;
+            View.SetFreeBoosterState(collectibleModel.HasFreePin, collectibleModel.HasFreeSuperPin);
             View.SetSuperPinAmount(collectibleModel.TotalSuperPins);
             View.SetPinAndSuperPinInteractable(false);
             _eventDispatcherService.Dispatch(new SuperPinChangedSignal());
@@ -247,12 +279,16 @@ namespace Gameplay
 
         private void OnSuperPinChanged(SuperPinChangedSignal _)
         {
-            View.SetSuperPinAmount(_savedDataService.GetModel<CollectibleModel>().TotalSuperPins);
+            var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
+            View.SetFreeBoosterState(collectibleModel.HasFreePin, collectibleModel.HasFreeSuperPin);
+            View.SetSuperPinAmount(collectibleModel.TotalSuperPins);
         }
 
         private void OnPinChanged(PinChangedSignal _)
         {
-            View.SetPinAmount(_savedDataService.GetModel<CollectibleModel>().TotalPins);
+            var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
+            View.SetFreeBoosterState(collectibleModel.HasFreePin, collectibleModel.HasFreeSuperPin);
+            View.SetPinAmount(collectibleModel.TotalPins);
         }
 
         private void OnSuperPinOfferClosed(SuperPinOfferClosedSignal signal)
@@ -269,6 +305,27 @@ namespace Gameplay
 
             _isWaitingForSuperPinOfferToStartShuffle = false;
             View.StartInitialShuffle();
+        }
+
+        private void OnBoosterIntroClosed(BoosterIntroClosedSignal signal)
+        {
+            var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
+
+            if (signal.PopupType == GetHintPopupType.Pin && collectibleModel.HasFreePin)
+            {
+                _pendingBoosterHandHintType = GetHintPopupType.Pin;
+                _correctSwapsAfterBoosterIntroClosed = 0;
+                return;
+            }
+
+            if (signal.PopupType == GetHintPopupType.SuperPin && collectibleModel.HasFreeSuperPin)
+            {
+                _pendingBoosterHandHintType = GetHintPopupType.SuperPin;
+                _correctSwapsAfterBoosterIntroClosed = 0;
+                return;
+            }
+
+            ClearPendingBoosterHandHint();
         }
 
         private void OnViewShuffleCompleted()
@@ -302,7 +359,46 @@ namespace Gameplay
         private void OnViewCorrectCardPlaced()
         {
             HideHandHint();
+            RegisterBoosterHandHintProgress();
             ResetHandHintTimer();
+        }
+
+        private void RegisterBoosterHandHintProgress()
+        {
+            if (_pendingBoosterHandHintType != GetHintPopupType.Pin &&
+                _pendingBoosterHandHintType != GetHintPopupType.SuperPin)
+            {
+                return;
+            }
+
+            _correctSwapsAfterBoosterIntroClosed++;
+            if (_correctSwapsAfterBoosterIntroClosed < BoosterHandHintCorrectSwapThreshold)
+            {
+                return;
+            }
+
+            var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
+            if (_pendingBoosterHandHintType == GetHintPopupType.Pin)
+            {
+                if (!collectibleModel.HasFreePin)
+                {
+                    ClearPendingBoosterHandHint();
+                    return;
+                }
+
+                View.ShowBoosterHandHint(false);
+                ClearPendingBoosterHandHint();
+                return;
+            }
+
+            if (!collectibleModel.HasFreeSuperPin)
+            {
+                ClearPendingBoosterHandHint();
+                return;
+            }
+
+            View.ShowBoosterHandHint(true);
+            ClearPendingBoosterHandHint();
         }
 
         private void ResetHandHintTimer()
@@ -431,6 +527,7 @@ namespace Gameplay
             base.ViewShown();
             _eventDispatcherService.Dispatch(new GameplayVisibilityChangedSignal(true));
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
+            View.SetFreeBoosterState(collectibleModel.HasFreePin, collectibleModel.HasFreeSuperPin);
             View.SetHintAmount(collectibleModel.TotalHints);
             View.SetPinAmount(collectibleModel.TotalPins);
             View.SetSuperPinAmount(collectibleModel.TotalSuperPins);
@@ -470,6 +567,7 @@ namespace Gameplay
             base.ViewHidden();
             KillHandHintTimer();
             HideHandHint();
+            ClearPendingBoosterHandHint();
             _eventDispatcherService.Dispatch(new GameplayVisibilityChangedSignal(false));
         }
 
@@ -499,6 +597,7 @@ namespace Gameplay
                 _eventDispatcherService.RemoveListener<PinChangedSignal>(OnPinChanged);
                 _eventDispatcherService.RemoveListener<SuperPinChangedSignal>(OnSuperPinChanged);
                 _eventDispatcherService.RemoveListener<SuperPinOfferClosedSignal>(OnSuperPinOfferClosed);
+                _eventDispatcherService.RemoveListener<BoosterIntroClosedSignal>(OnBoosterIntroClosed);
             }
 
             KillHandHintTimer();
@@ -673,6 +772,7 @@ namespace Gameplay
         {
             _hasUsedSuperPinInCurrentLevel = false;
             _isWaitingForSuperPinOfferToStartShuffle = false;
+            ClearPendingBoosterHandHint();
             View.SetBoosterUnlockState(IsPinUnlockedForLevel(currentLevel), IsSuperPinUnlockedForLevel(currentLevel));
             View.SetPinAndSuperPinInteractable(true);
         }
@@ -724,6 +824,12 @@ namespace Gameplay
         private void ShowGetHintPopup(GetHintPopupType popupType)
         {
             _uiService.ShowPopup<GetHintPresenter, GetHintPopupData>(new GetHintPopupData(popupType));
+        }
+
+        private void ClearPendingBoosterHandHint()
+        {
+            _pendingBoosterHandHintType = GetHintPopupType.Hint;
+            _correctSwapsAfterBoosterIntroClosed = 0;
         }
     }
 }

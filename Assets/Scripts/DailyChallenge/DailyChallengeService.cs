@@ -538,9 +538,6 @@ namespace DailyChallenge
             for (var day = 1; day <= daysInMonth; day++)
             {
                 var date = new DateTime(monthDate.Year, monthDate.Month, day);
-                if (date > DateTime.Today)
-                    break;
-
                 if (!IsCompleted(date))
                     return false;
             }

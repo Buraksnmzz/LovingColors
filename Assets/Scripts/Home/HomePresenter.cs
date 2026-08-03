@@ -1,6 +1,7 @@
 using Collectible;
 using DailyChallenge;
 using DG.Tweening;
+using GameConfig;
 using Gameplay;
 using General;
 using General.EventDispatcher;
@@ -29,6 +30,7 @@ namespace MainMenu
         private IRemoteConfigService _remoteConfigService;
         private ILocalizationService _localizationService;
         private ILevelService _levelService;
+        private RemoteConfigModel _remoteConfigModel;
         protected override void OnInitialize()
         {
             base.OnInitialize();
@@ -38,6 +40,7 @@ namespace MainMenu
             _remoteConfigService = ServiceLocator.GetService<IRemoteConfigService>();
             _localizationService = ServiceLocator.GetService<ILocalizationService>();
             _levelService = ServiceLocator.GetService<ILevelService>();
+            _remoteConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
             _eventDispatcherService.AddListener<RewardGivenSignal>(OnRewardGiven);
             _eventDispatcherService.AddListener<LanguageChangedSignal>(OnLanguageChanged);
             View.PlayLevelButtonClicked += OnPlayClicked;
@@ -137,7 +140,7 @@ namespace MainMenu
 
         private void CheckAndShowDcUnlockPopup()
         {
-            if (_savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex == 9 &&
+            if (_savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex == _remoteConfigModel.DailyChallengeUnlockLevel-1 &&
                 PlayerPrefs.GetInt(StringConstants.IsDailyChallengeUnlockedShown, 0) == 0)
             {
                 PlayerPrefs.SetInt(StringConstants.IsDailyChallengeUnlockedShown, 1);
@@ -163,9 +166,9 @@ namespace MainMenu
             var currentLevelNumber = _savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex + 1;
             var levelText = _localizationService.GetLocalizedString(LocalizationStrings.Level);
             View.SetLevelText(levelText + " " + currentLevelNumber);
-            var isDailyChallengeUnlocked = currentLevelNumber >= 10;
+            var isDailyChallengeUnlocked = currentLevelNumber >= _remoteConfigModel.DailyChallengeUnlockLevel;
             var dailyText = _localizationService.GetLocalizedString(LocalizationStrings.Daily);
-            View.SetDailyChallengeState(isDailyChallengeUnlocked, dailyText);
+            View.SetDailyChallengeState(isDailyChallengeUnlocked, dailyText, _remoteConfigModel.DailyChallengeUnlockLevel);
         }
 
         private LevelDifficultyType[] GetNextDifficultyTypes(int currentLevelNumber, int frameCount)

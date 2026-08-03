@@ -142,11 +142,11 @@ namespace Home
             frameContent.anchoredPosition = new Vector2(frameContent.anchoredPosition.x, _initialFrameContentPositionY + yOffset);
         }
 
-        public void SetDailyChallengeState(bool isUnlocked, string text)
+        public void SetDailyChallengeState(bool isUnlocked, string text, int dailyUnlockLevel)
         {
             dailyChallengeButton.interactable = isUnlocked;
             dailyChallengeImage.sprite = isUnlocked ? dailyChallengeImageActive : dailyChallengeImagePassive;
-            dailyChallengeText.text = isUnlocked ? text : "LV 10";
+            dailyChallengeText.text = isUnlocked ? text : "LV " + dailyUnlockLevel;
         }
 
         public void SetLevelFrames(int currentLevelNumber, LevelDifficultyType currentDifficultyType,

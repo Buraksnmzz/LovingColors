@@ -69,7 +69,6 @@ namespace GetHint
 
         private void RefreshView()
         {
-            var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
             var remoteConfigModel = _savedDataService.GetModel<RemoteConfigModel>();
 
             View.ConfigurePopup(_popupType);
@@ -103,13 +102,17 @@ namespace GetHint
 
             if (_popupType == GetHintPopupType.SuperPin)
             {
+                collectibleModel.HasFreeSuperPin = true;
                 collectibleModel.TotalSuperPins += rewardAmount;
             }
             else
             {
+                collectibleModel.HasFreePin = true;
                 collectibleModel.TotalPins += rewardAmount;
             }
-            
+
+            _savedDataService.SaveData(collectibleModel);
+
             if (_popupType == GetHintPopupType.SuperPin)
             {
                 _eventDispatcherService.Dispatch(new SuperPinChangedSignal());
@@ -118,8 +121,6 @@ namespace GetHint
             {
                 _eventDispatcherService.Dispatch(new PinChangedSignal());
             }
-
-            _savedDataService.SaveData(collectibleModel);
             _uiService.HidePopup<BoosterIntroPresenter>();
         }
 

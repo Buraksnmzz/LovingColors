@@ -128,7 +128,7 @@ namespace DailyChallenge
                 _dailyChallengeService.CanNavigateToNextMonth());
             View.SetProgress(
                 _dailyChallengeService.GetCompletedCountInDisplayedMonth(),
-                _dailyChallengeService.GetActiveCountInDisplayedMonth());
+                _dailyChallengeService.GetTotalCountInDisplayedMonth());
             View.SetAward(_dailyChallengeService.DisplayedMonthDate.Month, _dailyChallengeService.GetDisplayedMonthAwardState());
             View.SetPlayButton(selectedDay != null && selectedDay.Active && !selectedDay.Completed);
             View.SetDays(_dailyChallengeService.GetCalendarGrid());
@@ -142,8 +142,8 @@ namespace DailyChallenge
 
             _dailyChallengeService.SetDisplayedMonth(playedDate.Value.Year, playedDate.Value.Month);
             var completedCount = _dailyChallengeService.GetCompletedCountInDisplayedMonth();
-            var activeCount = _dailyChallengeService.GetActiveCountInDisplayedMonth();
-            _shouldShowCompletedReward = activeCount > 0 && completedCount >= activeCount;
+            var totalCount = _dailyChallengeService.GetTotalCountInDisplayedMonth();
+            _shouldShowCompletedReward = totalCount > 0 && completedCount >= totalCount;
             RefreshView();
             View.PlayCompletedDayPulse(playedDate.Value.Day);
         }

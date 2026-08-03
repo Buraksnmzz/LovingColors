@@ -70,6 +70,7 @@ namespace RemoteConfig
                 ApplyInt(root, "win_reward_coins_hard", v => _remoteConfigModel.WinRewardCoinsHard = v);
                 ApplyInt(root, "win_reward_coins_extreme", v => _remoteConfigModel.WinRewardCoinsExtreme = v);
                 ApplyInt(root, "complete_month_coin_reward", v => _remoteConfigModel.CompleteMonthCoinReward = v);
+                ApplyInt(root, "daily_challenge_unlock_level", v => _remoteConfigModel.DailyChallengeUnlockLevel = v);
 
                 _savedDataService.SaveData(_remoteConfigModel);
                 SetCollectibleModel();

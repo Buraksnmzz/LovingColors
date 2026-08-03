@@ -96,9 +96,9 @@ namespace DailyChallenge
             }
         }
 
-        public void SetProgress(int completedCount, int activeCount)
+        public void SetProgress(int completedCount, int totalCount)
         {
-            progressText.text = completedCount + "/" + activeCount;
+            progressText.text = completedCount + "/" + totalCount;
         }
 
         public void SetAward(int month, AwardState state)

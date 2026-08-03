@@ -713,7 +713,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.8
+  m_fontSize: 43.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -957,7 +957,7 @@ MonoBehaviour:
   animationDuration: 0.3
   animationType: 5
   panel: {fileID: 6857894577478011022}
-  fadeEndValue: 0.985
+  fadeEndValue: 0.99
   shouldMoveBackgroundToParent: 0
   autoLoopButton: {fileID: 4270118754067384055}
   autoLoopButtonScaleMultiplier: 1.08
