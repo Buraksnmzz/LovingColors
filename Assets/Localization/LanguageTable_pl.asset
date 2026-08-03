@@ -252,6 +252,10 @@ MonoBehaviour:
     m_Localized: "Zrozumia\u0142em"
     m_Metadata:
       m_Items: []
+  - m_Id: 59
+    m_Localized: Potrzebujesz pomocy?\nRozpocznij poziom z Super Pinem
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -247,6 +247,10 @@ MonoBehaviour:
     m_Key: GOT_IT
     m_Metadata:
       m_Items: []
+  - m_Id: 59
+    m_Key: NEED_HELP_START_THE_LEVEL_WITH_SUPER_PIN
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

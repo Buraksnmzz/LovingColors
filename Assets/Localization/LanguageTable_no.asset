@@ -251,6 +251,10 @@ MonoBehaviour:
     m_Localized: "Forst\xE5tt"
     m_Metadata:
       m_Items: []
+  - m_Id: 59
+    m_Localized: "Trenger du hjelp?\\nStart niv\xE5et med en supern\xE5l"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

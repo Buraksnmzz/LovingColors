@@ -251,6 +251,11 @@ MonoBehaviour:
     m_Localized: "\xC9rtem"
     m_Metadata:
       m_Items: []
+  - m_Id: 59
+    m_Localized: "Seg\xEDts\xE9gre van sz\xFCks\xE9ged?\\nKezdd a p\xE1ly\xE1t egy
+      Super Pinnel"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -252,6 +252,10 @@ MonoBehaviour:
     m_Localized: J'ai compris
     m_Metadata:
       m_Items: []
+  - m_Id: 59
+    m_Localized: "Besoin d'aide\_? Commencez le niveau avec un Super Pin"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

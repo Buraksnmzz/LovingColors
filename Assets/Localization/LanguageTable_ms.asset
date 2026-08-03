@@ -251,6 +251,10 @@ MonoBehaviour:
     m_Localized: Faham
     m_Metadata:
       m_Items: []
+  - m_Id: 59
+    m_Localized: Perlukan Bantuan?\nMulakan tahap dengan Super Pin
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

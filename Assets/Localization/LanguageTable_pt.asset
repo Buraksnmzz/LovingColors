@@ -251,6 +251,10 @@ MonoBehaviour:
     m_Localized: Entendi
     m_Metadata:
       m_Items: []
+  - m_Id: 59
+    m_Localized: Precisa de ajuda?\nComece a fase com um Super Pino
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

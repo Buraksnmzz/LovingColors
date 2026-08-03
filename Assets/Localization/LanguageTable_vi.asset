@@ -259,6 +259,11 @@ MonoBehaviour:
     m_Localized: "Hi\u1EC3u r\u1ED3i"
     m_Metadata:
       m_Items: []
+  - m_Id: 59
+    m_Localized: "C\u1EA7n tr\u1EE3 gi\xFAp?\\nB\u1EAFt \u0111\u1EA7u m\xE0n ch\u01A1i
+      v\u1EDBi m\u1ED9t Ghim Si\xEAu C\u1EA5p"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

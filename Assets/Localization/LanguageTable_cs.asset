@@ -252,6 +252,11 @@ MonoBehaviour:
     m_Localized: "Rozum\xEDm"
     m_Metadata:
       m_Items: []
+  - m_Id: 59
+    m_Localized: "Pot\u0159ebujete pomoc?\\nZa\u010Dn\u011Bte \xFArove\u0148 se Super
+      Pinem"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

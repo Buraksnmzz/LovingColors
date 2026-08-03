@@ -251,6 +251,10 @@ MonoBehaviour:
     m_Localized: Shvatio/la sam
     m_Metadata:
       m_Items: []
+  - m_Id: 59
+    m_Localized: "Trebate pomo\u0107?\\nZapo\u010Dnite razinu sa Super Pinom"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -251,6 +251,10 @@ MonoBehaviour:
     m_Localized: "Forst\xE5et"
     m_Metadata:
       m_Items: []
+  - m_Id: 59
+    m_Localized: "Brug for hj\xE6lp?\\nStart niveauet med en supern\xE5l"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
