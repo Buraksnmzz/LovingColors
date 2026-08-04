@@ -13,6 +13,8 @@ namespace Home
         public event Action CoinButtonClicked;
         public event Action DailyChallengeButtonClicked;
         public event Action SettingsClicked;
+        public event Action DebugSuperPinAlwaysActiveButtonClicked;
+        public event Action DebugSuperPinNotActiveButtonClicked;
 
         [SerializeField] private Transform topBar;
         [SerializeField] private Transform pawnObject;
@@ -38,6 +40,9 @@ namespace Home
         [SerializeField] private Sprite dailyChallengeImageActive;
         [SerializeField] private Sprite dailyChallengeImagePassive;
         [SerializeField] private TextMeshProUGUI dailyChallengeText;
+
+        [SerializeField] private Button debugSuperPinAlwaysActiveButton;
+        [SerializeField] private Button debugSuperPinNotActiveButton;
 
         private float _initialFrameContentPositionY;
         private Sequence _introSequence;
@@ -79,11 +84,20 @@ namespace Home
 
         private void Start()
         {
-            playLevelButton.onClick.AddListener(() => PlayLevelButtonClicked?.Invoke());
-            removeAdsButton.onClick.AddListener(() => RemoveAdsButtonClicked?.Invoke());
-            coinButton.onClick.AddListener(() => CoinButtonClicked?.Invoke());
-            settingsButton.onClick.AddListener(() => SettingsClicked?.Invoke());
-            dailyChallengeButton.onClick.AddListener(() => DailyChallengeButtonClicked?.Invoke());
+            playLevelButton.onClick.AddListener(OnPlayLevelButtonClicked);
+            removeAdsButton.onClick.AddListener(OnRemoveAdsButtonClicked);
+            coinButton.onClick.AddListener(OnCoinButtonClicked);
+            settingsButton.onClick.AddListener(OnSettingsButtonClicked);
+            dailyChallengeButton.onClick.AddListener(OnDailyChallengeButtonClicked);
+            if (debugSuperPinAlwaysActiveButton != null)
+            {
+                debugSuperPinAlwaysActiveButton.onClick.AddListener(OnDebugSuperPinAlwaysActiveButtonClicked);
+            }
+
+            if (debugSuperPinNotActiveButton != null)
+            {
+                debugSuperPinNotActiveButton.onClick.AddListener(OnDebugSuperPinNotActiveButtonClicked);
+            }
         }
 
         protected override void OnShown()
@@ -103,8 +117,59 @@ namespace Home
 
         protected override void OnDestroy()
         {
+            playLevelButton.onClick.RemoveListener(OnPlayLevelButtonClicked);
+            removeAdsButton.onClick.RemoveListener(OnRemoveAdsButtonClicked);
+            coinButton.onClick.RemoveListener(OnCoinButtonClicked);
+            settingsButton.onClick.RemoveListener(OnSettingsButtonClicked);
+            dailyChallengeButton.onClick.RemoveListener(OnDailyChallengeButtonClicked);
+
+            if (debugSuperPinAlwaysActiveButton != null)
+            {
+                debugSuperPinAlwaysActiveButton.onClick.RemoveListener(OnDebugSuperPinAlwaysActiveButtonClicked);
+            }
+
+            if (debugSuperPinNotActiveButton != null)
+            {
+                debugSuperPinNotActiveButton.onClick.RemoveListener(OnDebugSuperPinNotActiveButtonClicked);
+            }
+
             KillIntroAnimation();
             base.OnDestroy();
+        }
+
+        private void OnPlayLevelButtonClicked()
+        {
+            PlayLevelButtonClicked?.Invoke();
+        }
+
+        private void OnRemoveAdsButtonClicked()
+        {
+            RemoveAdsButtonClicked?.Invoke();
+        }
+
+        private void OnCoinButtonClicked()
+        {
+            CoinButtonClicked?.Invoke();
+        }
+
+        private void OnDailyChallengeButtonClicked()
+        {
+            DailyChallengeButtonClicked?.Invoke();
+        }
+
+        private void OnSettingsButtonClicked()
+        {
+            SettingsClicked?.Invoke();
+        }
+
+        private void OnDebugSuperPinAlwaysActiveButtonClicked()
+        {
+            DebugSuperPinAlwaysActiveButtonClicked?.Invoke();
+        }
+
+        private void OnDebugSuperPinNotActiveButtonClicked()
+        {
+            DebugSuperPinNotActiveButtonClicked?.Invoke();
         }
 
         public void SetDifficultyView(LevelDifficultyType levelDifficultyType)

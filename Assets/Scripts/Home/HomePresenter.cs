@@ -48,6 +48,25 @@ namespace MainMenu
             View.CoinButtonClicked += OnCoinButtonClicked;
             View.DailyChallengeButtonClicked += OnDailyChallengeButtonClicked;
             View.SettingsClicked += OnSettingsClicked;
+            View.DebugSuperPinAlwaysActiveButtonClicked += OnDebugSuperPinAlwaysActiveButtonClicked;
+            View.DebugSuperPinNotActiveButtonClicked += OnDebugSuperPinNotActiveButtonClicked;
+        }
+
+        private void OnDebugSuperPinAlwaysActiveButtonClicked()
+        {
+            SimulateSuperPinDefaultModeFromRemoteConfig(true);
+        }
+
+        private void OnDebugSuperPinNotActiveButtonClicked()
+        {
+            SimulateSuperPinDefaultModeFromRemoteConfig(false);
+        }
+
+        private void SimulateSuperPinDefaultModeFromRemoteConfig(bool isSuperPinActiveInDefault)
+        {
+            var debugJson = "{\"is_super_pin_active_in_default\":" + (isSuperPinActiveInDefault ? "true" : "false") + "}";
+            var isApplied = _remoteConfigService.ApplyFromRemoteConfigJson(debugJson);
+            Debug.Log("[RemoteConfig-Debug] Simulated is_super_pin_active_in_default=" + isSuperPinActiveInDefault + ", applied=" + isApplied);
         }
 
         private void OnSettingsClicked()
@@ -133,6 +152,8 @@ namespace MainMenu
                 View.CoinButtonClicked -= OnCoinButtonClicked;
                 View.DailyChallengeButtonClicked -= OnDailyChallengeButtonClicked;
                 View.SettingsClicked -= OnSettingsClicked;
+                View.DebugSuperPinAlwaysActiveButtonClicked -= OnDebugSuperPinAlwaysActiveButtonClicked;
+                View.DebugSuperPinNotActiveButtonClicked -= OnDebugSuperPinNotActiveButtonClicked;
             }
 
             base.Cleanup();
@@ -140,7 +161,7 @@ namespace MainMenu
 
         private void CheckAndShowDcUnlockPopup()
         {
-            if (_savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex == _remoteConfigModel.DailyChallengeUnlockLevel-1 &&
+            if (_savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex == _remoteConfigModel.DailyChallengeUnlockLevel - 1 &&
                 PlayerPrefs.GetInt(StringConstants.IsDailyChallengeUnlockedShown, 0) == 0)
             {
                 PlayerPrefs.SetInt(StringConstants.IsDailyChallengeUnlockedShown, 1);

@@ -10,6 +10,7 @@ using General.EventDispatcher;
 using GetHint;
 using Home;
 using Localization;
+using PinBoostersActivated;
 using Quit;
 using Services;
 using Sound;
@@ -43,6 +44,7 @@ namespace Gameplay
         private GetHintPopupType _pendingBoosterHandHintType;
         private int _correctSwapsAfterBoosterIntroClosed;
         private int _openPopupCount;
+        private bool _isWaitingForPinBoostersActivatedToContinueFlow;
 
 
         protected override void OnInitialize()
@@ -100,6 +102,13 @@ namespace Gameplay
             {
                 ResumeHandHintTimer();
             }
+
+            if (signal.ViewType == typeof(PinBoostersActivatedView) &&
+                !signal.IsVisible &&
+                _openPopupCount == 0)
+            {
+                ContinueSuperPinFlowAfterPinBoostersActivatedClosed();
+            }
         }
 
         private void OnHintClicked()
@@ -126,6 +135,11 @@ namespace Gameplay
 
         private void OnPinClicked()
         {
+            if (IsDefaultSuperPinModeActive())
+            {
+                return;
+            }
+
             if (!IsPinUnlockedForCurrentLevel())
             {
                 return;
@@ -170,6 +184,11 @@ namespace Gameplay
 
         private void OnSuperPinClicked()
         {
+            if (IsDefaultSuperPinModeActive())
+            {
+                return;
+            }
+
             if (!IsSuperPinUnlockedForCurrentLevel())
             {
                 return;
@@ -334,6 +353,11 @@ namespace Gameplay
 
         private void OnBoosterIntroClosed(BoosterIntroClosedSignal signal)
         {
+            if (IsDefaultSuperPinModeActive())
+            {
+                return;
+            }
+
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
 
             if (signal.PopupType == GetHintPopupType.Pin && collectibleModel.HasFreePin)
@@ -361,7 +385,7 @@ namespace Gameplay
 
         private void TryShowBoosterIntroAfterShuffle()
         {
-            if (_dailyChallengeService.HasActiveDailyChallengeGame || HasShownAllBoosterIntros())
+            if (IsDefaultSuperPinModeActive() || _dailyChallengeService.HasActiveDailyChallengeGame || HasShownAllBoosterIntros())
             {
                 return;
             }
@@ -390,6 +414,11 @@ namespace Gameplay
 
         private void RegisterBoosterHandHintProgress()
         {
+            if (IsDefaultSuperPinModeActive())
+            {
+                return;
+            }
+
             if (_pendingBoosterHandHintType != GetHintPopupType.Pin &&
                 _pendingBoosterHandHintType != GetHintPopupType.SuperPin)
             {
@@ -503,6 +532,11 @@ namespace Gameplay
 
         private void ShowPinBoosterIntro()
         {
+            if (IsDefaultSuperPinModeActive())
+            {
+                return;
+            }
+
             if (HasShownPinBoosterIntro())
             {
                 return;
@@ -516,6 +550,11 @@ namespace Gameplay
 
         private void ShowSuperPinBoosterIntro()
         {
+            if (IsDefaultSuperPinModeActive())
+            {
+                return;
+            }
+
             if (HasShownSuperPinBoosterIntro())
             {
                 return;
@@ -571,7 +610,9 @@ namespace Gameplay
         {
             base.ViewShown();
             _openPopupCount = 0;
+            _isWaitingForPinBoostersActivatedToContinueFlow = false;
             _eventDispatcherService.Dispatch(new GameplayVisibilityChangedSignal(true));
+            ApplyPinBoostersVisibilityForCurrentMode();
             var collectibleModel = _savedDataService.GetModel<CollectibleModel>();
             View.SetFreeBoosterState(collectibleModel.HasFreePin, collectibleModel.HasFreeSuperPin);
             View.SetHintAmount(collectibleModel.TotalHints);
@@ -598,26 +639,59 @@ namespace Gameplay
         private void ShowSuperPinOfferIfPossible()
         {
             View.SetSpineAnimation(_currentLevelDifficulty);
-            if (_currentLevelDifficulty == LevelDifficultyType.Hard ||
-                _currentLevelDifficulty == LevelDifficultyType.Extreme)
+
+            if (IsHardOrExtremeLevel())
             {
                 View.SetBackButtonInteractable(false);
                 View.SetDebugButtonsInteractable(false);
                 _isWaitingForSuperPinOfferToStartShuffle = true;
-                DOVirtual.DelayedCall(2f, () =>
-                {
-                    View.SetBackButtonInteractable(true);
-                    var superPinOfferPresenter = _uiService.ShowPopup<SuperPinOfferPresenter>();
-                    if (superPinOfferPresenter == null)
-                    {
-                        _isWaitingForSuperPinOfferToStartShuffle = false;
-                        View.SetDebugButtonsInteractable(true);
-                        View.StartInitialShuffle();
-                    }
-                });
+                DOVirtual.DelayedCall(2f, BeginSuperPinFlowAfterEntryDelay);
                 return;
             }
 
+            BeginSuperPinFlowAfterEntryDelay();
+        }
+
+        private void BeginSuperPinFlowAfterEntryDelay()
+        {
+            if (TryShowPinBoostersActivatedPopupIfNeeded())
+            {
+                _isWaitingForPinBoostersActivatedToContinueFlow = true;
+                return;
+            }
+
+            ContinueSuperPinFlowAfterPinBoostersActivatedClosed();
+        }
+
+        private void ContinueSuperPinFlowAfterPinBoostersActivatedClosed()
+        {
+            _isWaitingForPinBoostersActivatedToContinueFlow = false;
+
+            if (IsDefaultSuperPinModeActive())
+            {
+                UseFreeSuperPinFromOffer();
+                _isWaitingForSuperPinOfferToStartShuffle = false;
+                View.SetBackButtonInteractable(true);
+                View.SetDebugButtonsInteractable(true);
+                View.StartInitialShuffle();
+                return;
+            }
+
+            if (IsHardOrExtremeLevel())
+            {
+                View.SetBackButtonInteractable(true);
+                var superPinOfferPresenter = _uiService.ShowPopup<SuperPinOfferPresenter>();
+                if (superPinOfferPresenter == null)
+                {
+                    _isWaitingForSuperPinOfferToStartShuffle = false;
+                    View.SetDebugButtonsInteractable(true);
+                    View.StartInitialShuffle();
+                }
+
+                return;
+            }
+
+            _isWaitingForSuperPinOfferToStartShuffle = false;
             View.SetDebugButtonsInteractable(true);
             View.StartInitialShuffle();
         }
@@ -625,6 +699,7 @@ namespace Gameplay
         public override void ViewHidden()
         {
             base.ViewHidden();
+            _isWaitingForPinBoostersActivatedToContinueFlow = false;
             KillHandHintTimer();
             HideHandHint();
             ClearPendingBoosterHandHint();
@@ -839,16 +914,19 @@ namespace Gameplay
         {
             _hasUsedSuperPinInCurrentLevel = false;
             _isWaitingForSuperPinOfferToStartShuffle = false;
+            _isWaitingForPinBoostersActivatedToContinueFlow = false;
             ClearPendingBoosterHandHint();
+            ApplyPinBoostersVisibilityForCurrentMode();
             View.SetBoosterUnlockState(IsPinUnlockedForLevel(currentLevel), IsSuperPinUnlockedForLevel(currentLevel));
-            View.SetPinAndSuperPinInteractable(true);
+            View.SetPinAndSuperPinInteractable(!IsDefaultSuperPinModeActive());
         }
 
         private void RefreshBoosterUnlockStateForCurrentLevel()
         {
             var currentLevel = GetCurrentProgressLevelNumber();
+            ApplyPinBoostersVisibilityForCurrentMode();
             View.SetBoosterUnlockState(IsPinUnlockedForLevel(currentLevel), IsSuperPinUnlockedForLevel(currentLevel));
-            View.SetPinAndSuperPinInteractable(true);
+            View.SetPinAndSuperPinInteractable(!IsDefaultSuperPinModeActive());
         }
 
         private int GetCurrentProgressLevelNumber()
@@ -868,11 +946,21 @@ namespace Gameplay
 
         private bool IsPinUnlockedForLevel(int currentLevel)
         {
+            if (IsDefaultSuperPinModeActive())
+            {
+                return false;
+            }
+
             return currentLevel > PinBoosterIntroLevel || HasShownPinBoosterIntro();
         }
 
         private bool IsSuperPinUnlockedForLevel(int currentLevel)
         {
+            if (IsDefaultSuperPinModeActive())
+            {
+                return false;
+            }
+
             return currentLevel > SuperPinBoosterIntroLevel || HasShownSuperPinBoosterIntro();
         }
 
@@ -890,6 +978,11 @@ namespace Gameplay
 
         private void ShowGetHintPopup(GetHintPopupType popupType)
         {
+            if (IsDefaultSuperPinModeActive() && popupType != GetHintPopupType.Hint)
+            {
+                return;
+            }
+
             _uiService.ShowPopup<GetHintPresenter, GetHintPopupData>(new GetHintPopupData(popupType));
         }
 
@@ -897,6 +990,50 @@ namespace Gameplay
         {
             _pendingBoosterHandHintType = GetHintPopupType.Hint;
             _correctSwapsAfterBoosterIntroClosed = 0;
+        }
+
+        private bool IsDefaultSuperPinModeActive()
+        {
+            return _remoteConfigModel != null && _remoteConfigModel.IsSuperPinActiveInDefault;
+        }
+
+        private void ApplyPinBoostersVisibilityForCurrentMode()
+        {
+            View.SetPinBoostersVisible(!IsDefaultSuperPinModeActive());
+        }
+
+        private bool TryShowPinBoostersActivatedPopupIfNeeded()
+        {
+            if (IsDefaultSuperPinModeActive())
+            {
+                return false;
+            }
+
+            if (!_settingsModel.HasStoredInitialSuperPinActiveInDefault)
+            {
+                return false;
+            }
+
+            if (!_settingsModel.InitialSuperPinActiveInDefault)
+            {
+                return false;
+            }
+
+            if (_settingsModel.HasShownPinBoostersActivatedPopup)
+            {
+                return false;
+            }
+
+            _settingsModel.HasShownPinBoostersActivatedPopup = true;
+            _savedDataService.SaveData(_settingsModel);
+            _uiService.ShowPopup<PinBoostersActivatedPresenter>();
+            return true;
+        }
+
+        private bool IsHardOrExtremeLevel()
+        {
+            return _currentLevelDifficulty == LevelDifficultyType.Hard ||
+                   _currentLevelDifficulty == LevelDifficultyType.Extreme;
         }
     }
 }

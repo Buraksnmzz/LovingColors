@@ -5,6 +5,7 @@ using GameConfig;
 using General;
 using Newtonsoft.Json.Linq;
 using SavedData;
+using UI.Settings;
 using UnityEngine;
 
 namespace RemoteConfig
@@ -40,6 +41,7 @@ namespace RemoteConfig
             try
             {
                 var root = JObject.Parse(rawJson);
+                var settingsModel = _savedDataService.GetModel<SettingsModel>();
                 ApplyString(root, "rate_trigger_levels", v => _remoteConfigModel.RateTriggerLevels = v);
                 ApplyInt(root, "starting_coins", v => _remoteConfigModel.StartingCoins = v);
                 ApplyInt(root, "win_reward_coins", v => _remoteConfigModel.WinRewardCoins = v);
@@ -48,6 +50,8 @@ namespace RemoteConfig
                 ApplyInt(root, "starting_hints", v => _remoteConfigModel.StartingHints = v);
                 ApplyInt(root, "starting_pins", v => _remoteConfigModel.StartingPins = v);
                 ApplyInt(root, "starting_super_pins", v => _remoteConfigModel.StartingSuperPins = v);
+                ApplyBool(root, "is_super_pin_active_in_default", v => _remoteConfigModel.IsSuperPinActiveInDefault = v);
+                ApplyBool(root, "isSuperPinActiveInDefault", v => _remoteConfigModel.IsSuperPinActiveInDefault = v);
                 ApplyInt(root, "hint_cost", v => _remoteConfigModel.HintCost = v);
                 ApplyInt(root, "pin_cost", v => _remoteConfigModel.PinCost = v);
                 ApplyInt(root, "super_pin_cost", v => _remoteConfigModel.SuperPinCost = v);
@@ -71,6 +75,15 @@ namespace RemoteConfig
                 ApplyInt(root, "win_reward_coins_extreme", v => _remoteConfigModel.WinRewardCoinsExtreme = v);
                 ApplyInt(root, "complete_month_coin_reward", v => _remoteConfigModel.CompleteMonthCoinReward = v);
                 ApplyInt(root, "daily_challenge_unlock_level", v => _remoteConfigModel.DailyChallengeUnlockLevel = v);
+
+                if (!settingsModel.HasStoredInitialSuperPinActiveInDefault &&
+                    TryGetBool(root, out var initialIsSuperPinActiveInDefault,
+                        "is_super_pin_active_in_default", "isSuperPinActiveInDefault"))
+                {
+                    settingsModel.HasStoredInitialSuperPinActiveInDefault = true;
+                    settingsModel.InitialSuperPinActiveInDefault = initialIsSuperPinActiveInDefault;
+                    _savedDataService.SaveData(settingsModel);
+                }
 
                 _savedDataService.SaveData(_remoteConfigModel);
                 SetCollectibleModel();
@@ -117,6 +130,34 @@ namespace RemoteConfig
                 return;
 
             setter(value);
+        }
+
+        private void ApplyBool(JObject root, string key, Action<bool> setter)
+        {
+            if (!TryGetBool(root, out var value, key))
+                return;
+
+            setter(value);
+        }
+
+        private bool TryGetBool(JObject root, out bool value, params string[] keys)
+        {
+            for (var i = 0; i < keys.Length; i++)
+            {
+                var key = keys[i];
+                if (!root.TryGetValue(key, out var token))
+                {
+                    continue;
+                }
+
+                if (TryReadBool(token, out value))
+                {
+                    return true;
+                }
+            }
+
+            value = false;
+            return false;
         }
 
         private bool TryReadInt(JToken token, out int value)
@@ -178,6 +219,46 @@ namespace RemoteConfig
                 return new[] { single };
 
             return Array.Empty<int>();
+        }
+
+        private bool TryReadBool(JToken token, out bool value)
+        {
+            if (token.Type == JTokenType.Boolean)
+            {
+                value = token.Value<bool>();
+                return true;
+            }
+
+            if (token.Type == JTokenType.Integer)
+            {
+                value = token.Value<int>() != 0;
+                return true;
+            }
+
+            if (token.Type == JTokenType.String)
+            {
+                var raw = token.Value<string>();
+                if (string.IsNullOrWhiteSpace(raw))
+                {
+                    value = false;
+                    return false;
+                }
+
+                if (bool.TryParse(raw, out var parsedBool))
+                {
+                    value = parsedBool;
+                    return true;
+                }
+
+                if (int.TryParse(raw, out var parsedInt))
+                {
+                    value = parsedInt != 0;
+                    return true;
+                }
+            }
+
+            value = false;
+            return false;
         }
     }
 }

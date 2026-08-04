@@ -12,6 +12,9 @@ namespace UI.Settings
         public bool HasShownPinBoosterIntro { get; set; }
         public bool HasShownSuperPinBoosterIntro { get; set; }
         public bool HasShownHandHint { get; set; }
+        public bool HasStoredInitialSuperPinActiveInDefault { get; set; }
+        public bool InitialSuperPinActiveInDefault { get; set; }
+        public bool HasShownPinBoostersActivatedPopup { get; set; }
         public SystemLanguage CurrentLanguage { get; set; } = SystemLanguage.Unknown;
     }
 }

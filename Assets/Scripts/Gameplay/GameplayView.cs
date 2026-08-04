@@ -113,6 +113,7 @@ namespace Gameplay
         private bool _hasDailyChallengeStampInitialPosition;
         private Button[] _debugButtons;
         private bool _areBoosterButtonsInteractable = true;
+        private bool _arePinBoostersVisible = true;
         private bool _isPinUnlockedForCurrentLevel;
         private bool _isSuperPinUnlockedForCurrentLevel;
         private bool _hasFreePin;
@@ -275,9 +276,14 @@ namespace Gameplay
                 return;
             }
 
+            if (!_arePinBoostersVisible)
+            {
+                return;
+            }
+
             boardGreyMaker?.SetActive(true);
             var targetButton = showForSuperPin ? superPinButton : pinButton;
-            if (targetButton == null)
+            if (targetButton == null || !targetButton.gameObject.activeInHierarchy)
             {
                 return;
             }
@@ -545,6 +551,20 @@ namespace Gameplay
             _currentPinAmount = amount;
             pinAmountText.text = amount.ToString();
 
+            if (!_arePinBoostersVisible)
+            {
+                if (pinButton != null)
+                {
+                    pinButton.gameObject.SetActive(false);
+                }
+
+                pinAmountHolder.SetActive(false);
+                pinFreeHolder?.SetActive(false);
+                addPinImage?.SetActive(false);
+                pinAmountText.gameObject.SetActive(false);
+                return;
+            }
+
             if (!_isPinUnlockedForCurrentLevel)
             {
                 pinAmountHolder.SetActive(false);
@@ -583,6 +603,20 @@ namespace Gameplay
         {
             _currentSuperPinAmount = amount;
             superPinAmountText.text = amount.ToString();
+
+            if (!_arePinBoostersVisible)
+            {
+                if (superPinButton != null)
+                {
+                    superPinButton.gameObject.SetActive(false);
+                }
+
+                superPinAmountHolder.SetActive(false);
+                superPinFreeHolder?.SetActive(false);
+                addSuperPinImage?.SetActive(false);
+                superPinAmountText.gameObject.SetActive(false);
+                return;
+            }
 
             if (!_isSuperPinUnlockedForCurrentLevel)
             {
@@ -639,8 +673,43 @@ namespace Gameplay
             RefreshBoosterButtonsState();
         }
 
+        public void SetPinBoostersVisible(bool isVisible)
+        {
+            _arePinBoostersVisible = isVisible;
+
+            if (pinButton != null)
+            {
+                pinButton.gameObject.SetActive(isVisible);
+            }
+
+            if (superPinButton != null)
+            {
+                superPinButton.gameObject.SetActive(isVisible);
+            }
+
+            if (!isVisible)
+            {
+                pinAmountHolder.SetActive(false);
+                superPinAmountHolder.SetActive(false);
+                pinFreeHolder?.SetActive(false);
+                superPinFreeHolder?.SetActive(false);
+                addPinImage?.SetActive(false);
+                addSuperPinImage?.SetActive(false);
+                pinAmountText.gameObject.SetActive(false);
+                superPinAmountText.gameObject.SetActive(false);
+            }
+
+            RefreshBoosterButtonsState();
+            RefreshBoosterAmountState();
+        }
+
         private void RefreshBoosterButtonsState()
         {
+            if (!_arePinBoostersVisible)
+            {
+                return;
+            }
+
             var isPinInteractable = _areBoosterButtonsInteractable && _isPinUnlockedForCurrentLevel;
             var isSuperPinInteractable = _areBoosterButtonsInteractable && _isSuperPinUnlockedForCurrentLevel;
 

@@ -2,7 +2,7 @@ using SavedData;
 
 namespace GameConfig
 {
-    public class RemoteConfigModel:IModel
+    public class RemoteConfigModel : IModel
     {
         public string RateTriggerLevels = "5,20,50";
         public int ShopCoinReward1 = 250;
@@ -24,6 +24,7 @@ namespace GameConfig
         public int StartingHints = 3;
         public int StartingPins = 3;
         public int StartingSuperPins = 3;
+        public bool IsSuperPinActiveInDefault = false;
         public int PinBoosterIntroLevel = 4;
         public int SuperPinBoosterIntroLevel = 7;
         public int HintIntroDelay = 10;
