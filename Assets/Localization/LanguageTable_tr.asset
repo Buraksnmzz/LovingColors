@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: tr
   m_SharedData: {fileID: 11400000, guid: 59a087d5d6a1b448ab32740d371ebe4d, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 4259793998027948051
   m_TableData:
   - m_Id: 1
     m_Localized: "T\xFCrk\xE7e"
@@ -256,7 +257,14 @@ MonoBehaviour:
     m_Localized: "Yard\u0131ma m\u0131 ihtiyac\u0131n\u0131z var?\\nSeviyeye S\xFCper
       \u0130\u011Fne ile ba\u015Flay\u0131n"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948051
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 4259793998027948051
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 59

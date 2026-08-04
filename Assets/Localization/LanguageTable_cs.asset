@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: cs
   m_SharedData: {fileID: 11400000, guid: 59a087d5d6a1b448ab32740d371ebe4d, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 4259793998027948035
   m_TableData:
   - m_Id: 1
     m_Localized: "\u010De\u0161tina"
@@ -256,7 +257,14 @@ MonoBehaviour:
     m_Localized: "Pot\u0159ebujete pomoc?\\nZa\u010Dn\u011Bte \xFArove\u0148 se Super
       Pinem"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948035
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 4259793998027948035
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 59

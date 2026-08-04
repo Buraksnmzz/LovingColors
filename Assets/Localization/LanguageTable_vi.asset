@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: vi
   m_SharedData: {fileID: 11400000, guid: 59a087d5d6a1b448ab32740d371ebe4d, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 4259793998027948052
   m_TableData:
   - m_Id: 1
     m_Localized: "Ti\u1EBFng Vi\u1EC7t"
@@ -263,7 +264,14 @@ MonoBehaviour:
     m_Localized: "C\u1EA7n tr\u1EE3 gi\xFAp?\\nB\u1EAFt \u0111\u1EA7u m\xE0n ch\u01A1i
       v\u1EDBi m\u1ED9t Ghim Si\xEAu C\u1EA5p"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948052
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 4259793998027948052
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 59

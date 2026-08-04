@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: de
   m_SharedData: {fileID: 11400000, guid: 59a087d5d6a1b448ab32740d371ebe4d, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 4259793998027948039
   m_TableData:
   - m_Id: 1
     m_Localized: Deutsch
@@ -254,7 +255,14 @@ MonoBehaviour:
   - m_Id: 59
     m_Localized: Brauchst du Hilfe?\nStarte das Level mit einem Super Pin.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948039
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 4259793998027948039
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 59

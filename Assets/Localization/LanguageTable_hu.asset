@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: hu
   m_SharedData: {fileID: 11400000, guid: 59a087d5d6a1b448ab32740d371ebe4d, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 4259793998027948040
   m_TableData:
   - m_Id: 1
     m_Localized: Magyar
@@ -255,7 +256,14 @@ MonoBehaviour:
     m_Localized: "Seg\xEDts\xE9gre van sz\xFCks\xE9ged?\\nKezdd a p\xE1ly\xE1t egy
       Super Pinnel"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948040
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 4259793998027948040
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 59
