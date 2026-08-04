@@ -759,6 +759,31 @@ namespace Gameplay
             }
         }
 
+        public void SetDebugButtonsInteractable(bool isInteractable)
+        {
+            if (_debugButtons == null)
+            {
+                return;
+            }
+
+            foreach (var button in _debugButtons)
+            {
+                if (button == null)
+                {
+                    continue;
+                }
+
+                button.interactable = isInteractable;
+
+                var debugCanvasGroup = button.GetComponent<CanvasGroup>();
+                if (debugCanvasGroup != null)
+                {
+                    debugCanvasGroup.interactable = isInteractable;
+                    debugCanvasGroup.blocksRaycasts = isInteractable;
+                }
+            }
+        }
+
         private static void ConfigureButtonToIgnoreInteractionLock(Button button)
         {
             if (button == null)
@@ -867,6 +892,11 @@ namespace Gameplay
         private void OnBoardTutorialCompleted()
         {
             HideTutorialHand();
+        }
+
+        public void SetBackButtonInteractable(bool isInteractable)
+        {
+            backButton.interactable = isInteractable;
         }
     }
 }

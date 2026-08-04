@@ -321,6 +321,8 @@ namespace Gameplay
                 return;
             }
 
+            View.SetDebugButtonsInteractable(true);
+
             if (signal.HasGrantedFreeSuperPin)
             {
                 UseFreeSuperPinFromOffer();
@@ -582,8 +584,7 @@ namespace Gameplay
             }
             if (_dailyChallengeService.HasActiveDailyChallengeGame)
             {
-                LoadDailyChallengeLevel();
-                View.SetSpineAnimation(_currentLevelDifficulty);
+                LoadDailyChallengeLevel(false);
                 return;
             }
 
@@ -591,18 +592,33 @@ namespace Gameplay
             LoadLevelAtIndex(levelProgressModel.CurrentLevelIndex, true, false);
             IncreaseCurrentLevelAttemptCount();
             TrackLevelStart();
+            ShowSuperPinOfferIfPossible();
+        }
+
+        private void ShowSuperPinOfferIfPossible()
+        {
             View.SetSpineAnimation(_currentLevelDifficulty);
             if (_currentLevelDifficulty == LevelDifficultyType.Hard ||
                 _currentLevelDifficulty == LevelDifficultyType.Extreme)
             {
+                View.SetBackButtonInteractable(false);
+                View.SetDebugButtonsInteractable(false);
                 _isWaitingForSuperPinOfferToStartShuffle = true;
                 DOVirtual.DelayedCall(2f, () =>
                 {
-                    _uiService.ShowPopup<SuperPinOfferPresenter>();
+                    View.SetBackButtonInteractable(true);
+                    var superPinOfferPresenter = _uiService.ShowPopup<SuperPinOfferPresenter>();
+                    if (superPinOfferPresenter == null)
+                    {
+                        _isWaitingForSuperPinOfferToStartShuffle = false;
+                        View.SetDebugButtonsInteractable(true);
+                        View.StartInitialShuffle();
+                    }
                 });
                 return;
             }
 
+            View.SetDebugButtonsInteractable(true);
             View.StartInitialShuffle();
         }
 
@@ -660,7 +676,7 @@ namespace Gameplay
             LoadLevelAtIndex(nextLevelIndex, false);
         }
 
-        private void LoadDailyChallengeLevel()
+        private void LoadDailyChallengeLevel(bool startInitialShuffleImmediately = true)
         {
             var levelId = _dailyChallengeService.GetPlayedLevelId();
             LevelDefinition levelDefinition;
@@ -684,8 +700,14 @@ namespace Gameplay
             _currentLevelDifficulty = levelDefinition.Difficulty;
             View.SetDifficultyText(levelDefinition.Difficulty, diffText);
             View.SetDailyChallengeInfo(true, _dailyChallengeService.GetPlayedDateText());
-            View.InitializeBoard(levelDefinition, true);
+            View.InitializeBoard(levelDefinition, true, startInitialShuffleImmediately);
+
             ResetBoosterButtonsForLevel(GetCurrentProgressLevelNumber());
+
+            View.SetSpineAnimation(_currentLevelDifficulty);
+            ShowSuperPinOfferIfPossible();
+
+
         }
 
         private void LoadLevelAtIndex(int levelIndex, bool clampToPreviousValidLevel, bool startInitialShuffleImmediately = true)
@@ -777,22 +799,22 @@ namespace Gameplay
         {
             if (_dailyChallengeService.HasActiveDailyChallengeGame)
             {
-                LoadDailyChallengeLevel();
+                LoadDailyChallengeLevel(false);
                 return;
             }
 
-            var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
-            LoadLevelAtIndex(levelProgressModel.CurrentLevelIndex, true, false);
-            View.SetSpineAnimation(_currentLevelDifficulty);
-            if (_currentLevelDifficulty == LevelDifficultyType.Hard ||
-                _currentLevelDifficulty == LevelDifficultyType.Extreme)
-            {
-                _isWaitingForSuperPinOfferToStartShuffle = true;
-                _uiService.ShowPopup<SuperPinOfferPresenter>();
-                return;
-            }
-
-            View.StartInitialShuffle();
+            // var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
+            // LoadLevelAtIndex(levelProgressModel.CurrentLevelIndex, true, false);
+            // View.SetSpineAnimation(_currentLevelDifficulty);
+            // if (_currentLevelDifficulty == LevelDifficultyType.Hard ||
+            //     _currentLevelDifficulty == LevelDifficultyType.Extreme)
+            // {
+            //     _isWaitingForSuperPinOfferToStartShuffle = true;
+            //     _uiService.ShowPopup<SuperPinOfferPresenter>();
+            //     return;
+            // }
+            //
+            // View.StartInitialShuffle();
         }
 
         private void OnViewCompleted()
