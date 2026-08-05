@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiRoot: {fileID: 812436615}
-  levelConfig: {fileID: 4900000, guid: c8033de18f1cf43c7944da08b1ca85e8, type: 3}
-  dailyChallengeLevelConfig: {fileID: 4900000, guid: ce38c76159b75466dbf0bda65bc9c57b, type: 3}
+  levelConfig: {fileID: 4900000, guid: 3a173b28b9eee4300a1a7c5f50b4ae30, type: 3}
+  dailyChallengeLevelConfig: {fileID: 4900000, guid: 13ae67d0a23034539a0d6a1e85401b0f, type: 3}
 --- !u!1 &578165656
 GameObject:
   m_ObjectHideFlags: 0

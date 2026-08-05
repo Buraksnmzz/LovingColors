@@ -1,8 +1,8 @@
 [
   {
     "levelId": 1,
-    "rules": "LockEdges",
-    "columnCount": 3,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 7,
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
@@ -14,9 +14,9 @@
   },
   {
     "levelId": 2,
-    "rules": "LockEdges",
-    "columnCount": 4,
-    "rowCount": 7,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#F8E88B",
@@ -27,9 +27,9 @@
   },
   {
     "levelId": 3,
-    "rules": "UnLockSideEdgesOnly",
-    "columnCount": 5,
-    "rowCount": 7,
+    "rules": "LockEdges",
+    "columnCount": 8,
+    "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#08C2FF",
@@ -40,8 +40,8 @@
   },
   {
     "levelId": 4,
-    "rules": "LockEdges",
-    "columnCount": 6,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 9,
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
@@ -53,26 +53,9 @@
   },
   {
     "levelId": 5,
-    "shapeId": "hexPuzzle1",
-    "lockedSlots": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      8,
-      9,
-      14,
-      15,
-      19,
-      20,
-      21,
-      22,
-      23
-    ],
-    "rules": "LockOneRowSkipOne",
-    "columnCount": 5,
-    "rowCount": 4,
+    "rules": "LockMiddle",
+    "columnCount": 7,
+    "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#3EC1D3",
@@ -83,9 +66,9 @@
   },
   {
     "levelId": 6,
-    "rules": "LockMiddle",
-    "columnCount": 6,
-    "rowCount": 7,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 7,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#AAD10D",
@@ -96,9 +79,9 @@
   },
   {
     "levelId": 7,
-    "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 7,
-    "rowCount": 7,
+    "rules": "LockOneByOne",
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#FF6F3C",
@@ -109,10 +92,10 @@
   },
   {
     "levelId": 8,
-    "rules": "LockOneByOne",
-    "columnCount": 7,
-    "rowCount": 7,
-    "difficulty": "Normal",
+    "rules": "LockCorners",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Extreme",
     "cornerColors": {
       "topLeft": "#FF76CE",
       "topRight": "#EC347C",
@@ -122,10 +105,10 @@
   },
   {
     "levelId": 9,
-    "rules": "LockCorners",
-    "columnCount": 7,
-    "rowCount": 7,
-    "difficulty": "Hard",
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 10,
+    "rowCount": 11,
+    "difficulty": "Normal",
     "cornerColors": {
       "topLeft": "#D8A418",
       "topRight": "#AB3D57",
@@ -140,10 +123,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#BAE92D",
-      "topRight": "#D53AC3",
-      "bottomLeft": "#319C73",
-      "bottomRight": "#1FEFB0"
+      "topLeft": "#82C342",
+      "topRight": "#E1C641",
+      "bottomLeft": "#1DDF54",
+      "bottomRight": "#3B73E3"
     }
   },
   {
@@ -153,10 +136,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#FF6600",
-      "topRight": "#F5F5F5",
-      "bottomLeft": "#8FD14F",
-      "bottomRight": "#604CC3"
+      "topLeft": "#BAE92D",
+      "topRight": "#D53AC3",
+      "bottomLeft": "#319C73",
+      "bottomRight": "#1FEFB0"
     }
   },
   {
@@ -757,10 +740,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#321DA7",
-      "topRight": "#D7153B",
-      "bottomLeft": "#12B9D3",
-      "bottomRight": "#4AB7E9"
+      "topLeft": "#E85E98",
+      "topRight": "#ADF179",
+      "bottomLeft": "#B50CCF",
+      "bottomRight": "#53B8EA"
     }
   },
   {
@@ -770,10 +753,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#D18F15",
-      "topRight": "#4BC440",
-      "bottomLeft": "#32EF6E",
-      "bottomRight": "#824BD3"
+      "topLeft": "#28BA12",
+      "topRight": "#4C8CF6",
+      "bottomLeft": "#ECED4A",
+      "bottomRight": "#F86DCE"
     }
   },
   {
@@ -783,10 +766,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#BC1872",
-      "topRight": "#D01DB2",
-      "bottomLeft": "#167BA6",
-      "bottomRight": "#1FEF0C"
+      "topLeft": "#6C51F5",
+      "topRight": "#ED7E85",
+      "bottomLeft": "#66F9DE",
+      "bottomRight": "#C7E656"
     }
   },
   {
@@ -796,10 +779,10 @@
     "rowCount": 9,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#E12210",
-      "topRight": "#34C85E",
-      "bottomLeft": "#AEA915",
-      "bottomRight": "#AC085A"
+      "topLeft": "#DB8843",
+      "topRight": "#51F0A9",
+      "bottomLeft": "#F1468C",
+      "bottomRight": "#0E16C4"
     }
   },
   {
@@ -809,10 +792,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#EC0E24",
-      "topRight": "#B7168F",
-      "bottomLeft": "#315B99",
-      "bottomRight": "#6154EB"
+      "topLeft": "#5EE8C5",
+      "topRight": "#D770FA",
+      "bottomLeft": "#64CD18",
+      "bottomRight": "#E2655A"
     }
   },
   {
@@ -822,10 +805,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#4AD72A",
-      "topRight": "#36D8EA",
-      "bottomLeft": "#3214C6",
-      "bottomRight": "#F07856"
+      "topLeft": "#EB33E4",
+      "topRight": "#EAC457",
+      "bottomLeft": "#429BF5",
+      "bottomRight": "#73F28F"
     }
   },
   {
@@ -835,10 +818,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#44D3F0",
-      "topRight": "#23DE7A",
-      "bottomLeft": "#E428C8",
-      "bottomRight": "#20759A"
+      "topLeft": "#54780D",
+      "topRight": "#0B9962",
+      "bottomLeft": "#A50933",
+      "bottomRight": "#9A6EED"
     }
   },
   {
@@ -848,10 +831,10 @@
     "rowCount": 11,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#21B3EC",
-      "topRight": "#A3DA50",
-      "bottomLeft": "#9B195C",
-      "bottomRight": "#B7833E"
+      "topLeft": "#437CDB",
+      "topRight": "#E55DB2",
+      "bottomLeft": "#3EF9B9",
+      "bottomRight": "#C4AB17"
     }
   },
   {
@@ -861,10 +844,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#5359D1",
-      "topRight": "#4BDFAD",
-      "bottomLeft": "#AB332A",
-      "bottomRight": "#BF2988"
+      "topLeft": "#E85E6A",
+      "topRight": "#AFF179",
+      "bottomLeft": "#C06BF5",
+      "bottomRight": "#45CEF7"
     }
   },
   {
@@ -891,10 +874,10 @@
     "rowCount": 3,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#A24C1E",
-      "topRight": "#3C2F9E",
-      "bottomLeft": "#D3AD44",
-      "bottomRight": "#75C927"
+      "topLeft": "#14CC3A",
+      "topRight": "#6F4CF6",
+      "bottomLeft": "#B0EB4C",
+      "bottomRight": "#EC7988"
     }
   },
   {
@@ -904,10 +887,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#B05D3A",
-      "topRight": "#328CA8",
-      "bottomLeft": "#A80D67",
-      "bottomRight": "#98D42F"
+      "topLeft": "#A351F5",
+      "topRight": "#B7681A",
+      "bottomLeft": "#68D7F8",
+      "bottomRight": "#49F35F"
     }
   },
   {
@@ -917,10 +900,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#AD1D35",
-      "topRight": "#46D4BE",
-      "bottomLeft": "#74CA32",
-      "bottomRight": "#C67723"
+      "topLeft": "#DBBB43",
+      "topRight": "#51F08A",
+      "bottomLeft": "#EF48BC",
+      "bottomRight": "#7C8FE9"
     }
   },
   {
@@ -930,10 +913,10 @@
     "rowCount": 10,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#11D01A",
-      "topRight": "#C34F15",
-      "bottomLeft": "#BA2E97",
-      "bottomRight": "#A8AA0C"
+      "topLeft": "#119AA6",
+      "topRight": "#420DBF",
+      "bottomLeft": "#6DB80A",
+      "bottomRight": "#EA8566"
     }
   },
   {
@@ -943,10 +926,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#AC681F",
-      "topRight": "#AFCD1C",
-      "bottomLeft": "#57E7E0",
-      "bottomRight": "#A935A5"
+      "topLeft": "#7A0B50",
+      "topRight": "#9D7B07",
+      "bottomLeft": "#0807A6",
+      "bottomRight": "#57EF6F"
     }
   },
   {
@@ -956,10 +939,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#D40A68",
-      "topRight": "#5D25A8",
-      "bottomLeft": "#E54B25",
-      "bottomRight": "#1BBD56"
+      "topLeft": "#88F551",
+      "topRight": "#75E0F5",
+      "bottomLeft": "#F0A570",
+      "bottomRight": "#D251EC"
     }
   },
   {
@@ -969,10 +952,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#32BDEF",
-      "topRight": "#2A1E9C",
-      "bottomLeft": "#37EEC1",
-      "bottomRight": "#7A40E7"
+      "topLeft": "#4349DB",
+      "topRight": "#E55D70",
+      "bottomLeft": "#40DAF7",
+      "bottomRight": "#6EC507"
     }
   },
   {
@@ -982,10 +965,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#CB4341",
-      "topRight": "#102AEF",
-      "bottomLeft": "#B9770C",
-      "bottomRight": "#C91BBD"
+      "topLeft": "#E8815E",
+      "topRight": "#79F197",
+      "bottomLeft": "#D01187",
+      "bottomRight": "#5483E8"
     }
   },
   {
@@ -995,10 +978,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#941ECF",
-      "topRight": "#0FD2E8",
-      "bottomLeft": "#4EBF15",
-      "bottomRight": "#3BC654"
+      "topLeft": "#33EB96",
+      "topRight": "#4C50F6",
+      "bottomLeft": "#D8E94E",
+      "bottomRight": "#F76E84"
     }
   },
   {
@@ -1008,10 +991,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#3CBA0E",
-      "topRight": "#E7991C",
-      "bottomLeft": "#EB1A52",
-      "bottomRight": "#3C2DE5"
+      "topLeft": "#DA51F5",
+      "topRight": "#C9AF1D",
+      "bottomLeft": "#6A7AF6",
+      "bottomRight": "#58E492"
     }
   },
   {
@@ -1044,10 +1027,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#E72EA3",
-      "topRight": "#EF588F",
-      "bottomLeft": "#3BD5B4",
-      "bottomRight": "#AC4AE4"
+      "topLeft": "#C8DB43",
+      "topRight": "#51F0DC",
+      "bottomLeft": "#ED4A51",
+      "bottomRight": "#6310C6"
     }
   },
   {
@@ -1057,10 +1040,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#69CF41",
-      "topRight": "#14AD68",
-      "bottomLeft": "#12B037",
-      "bottomRight": "#1F21AC"
+      "topLeft": "#094C7C",
+      "topRight": "#8C0F95",
+      "bottomLeft": "#36A805",
+      "bottomRight": "#F6B96F"
     }
   },
   {
@@ -1070,10 +1053,10 @@
     "rowCount": 9,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#5CCE2B",
-      "topRight": "#C6ED5B",
-      "bottomLeft": "#3DEC4B",
-      "bottomRight": "#8C30BE"
+      "topLeft": "#C81448",
+      "topRight": "#6EEA57",
+      "bottomLeft": "#E746F1",
+      "bottomRight": "#75C2F0"
     }
   },
   {
@@ -1083,10 +1066,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#88BE1D",
-      "topRight": "#3EC034",
-      "bottomLeft": "#A22AD6",
-      "bottomRight": "#11A76B"
+      "topLeft": "#52F551",
+      "topRight": "#0D0DBF",
+      "bottomLeft": "#EAEE72",
+      "bottomRight": "#F943CF"
     }
   },
   {
@@ -1096,10 +1079,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#2384E5",
-      "topRight": "#26E07D",
-      "bottomLeft": "#8E36A0",
-      "bottomRight": "#C1B125"
+      "topLeft": "#6F43DB",
+      "topRight": "#E55E5D",
+      "bottomLeft": "#42F5E5",
+      "bottomRight": "#B9ED78"
     }
   },
   {
@@ -1109,10 +1092,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#45ACBA",
-      "topRight": "#9E2D6F",
-      "bottomLeft": "#9331AC",
-      "bottomRight": "#20CB78"
+      "topLeft": "#E8AF5E",
+      "topRight": "#79F1B5",
+      "bottomLeft": "#BF124C",
+      "bottomRight": "#8147F5"
     }
   },
   {
@@ -1122,10 +1105,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#1CBEB0",
-      "topRight": "#70B12A",
-      "bottomLeft": "#C03B1A",
-      "bottomRight": "#71B140"
+      "topLeft": "#0D9685",
+      "topRight": "#1E07A6",
+      "bottomLeft": "#7DCE09",
+      "bottomRight": "#EF767F"
     }
   },
   {
@@ -1135,10 +1118,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#6CBC0B",
-      "topRight": "#6E40BE",
-      "bottomLeft": "#0B32BE",
-      "bottomRight": "#AE9132"
+      "topLeft": "#F551DA",
+      "topRight": "#EDD87E",
+      "bottomLeft": "#6BA2F5",
+      "bottomRight": "#4BF196"
     }
   },
   {
@@ -1148,10 +1131,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#339D36",
-      "topRight": "#8EE54B",
-      "bottomLeft": "#AE673B",
-      "bottomRight": "#EF3284"
+      "topLeft": "#477E07",
+      "topRight": "#0B8C99",
+      "bottomLeft": "#AA0308",
+      "bottomRight": "#9258F9"
     }
   },
   {
@@ -1161,10 +1144,10 @@
     "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#9415CA",
-      "topRight": "#A6BE1E",
-      "bottomLeft": "#B8495D",
-      "bottomRight": "#27A88E"
+      "topLeft": "#5E81E8",
+      "topRight": "#FA7093",
+      "bottomLeft": "#0AD192",
+      "bottomRight": "#C0EE4F"
     }
   },
   {
@@ -1193,10 +1176,10 @@
     "rowCount": 5,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#00E0BA",
-      "topRight": "#91008D",
-      "bottomLeft": "#FF3483",
-      "bottomRight": "#FFCF00"
+      "topLeft": "#EB3B33",
+      "topRight": "#8EEA57",
+      "bottomLeft": "#BE48EF",
+      "bottomRight": "#81E0E4"
     }
   },
   {
@@ -1206,10 +1189,10 @@
     "rowCount": 10,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#9E0A3E",
-      "topRight": "#D01F19",
-      "bottomLeft": "#2CB039",
-      "bottomRight": "#C4930D"
+      "topLeft": "#51F588",
+      "topRight": "#6D0FD2",
+      "bottomLeft": "#B7FB65",
+      "bottomRight": "#EA535F"
     }
   },
   {
@@ -1219,10 +1202,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#3459B5",
-      "topRight": "#B35914",
-      "bottomLeft": "#89BB1D",
-      "bottomRight": "#48B4C2"
+      "topLeft": "#A243DB",
+      "topRight": "#E5905D",
+      "bottomLeft": "#446EF3",
+      "bottomRight": "#09C815"
     }
   },
   {
@@ -1232,10 +1215,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#22CC7F",
-      "topRight": "#9042AC",
-      "bottomLeft": "#1D95BD",
-      "bottomRight": "#ED288A"
+      "topLeft": "#E8DD5E",
+      "topRight": "#79F1AD",
+      "bottomLeft": "#F070BD",
+      "bottomRight": "#5E56E6"
     }
   },
   {
@@ -1245,10 +1228,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#2AF14B",
-      "topRight": "#9A3116",
-      "bottomLeft": "#0FD2F0",
-      "bottomRight": "#453AAB"
+      "topLeft": "#139EC3",
+      "topRight": "#F64CDD",
+      "bottomLeft": "#40F79D",
+      "bottomRight": "#F5E570"
     }
   },
   {
@@ -1258,10 +1241,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#8EE012",
-      "topRight": "#A3350D",
-      "bottomLeft": "#A6833E",
-      "bottomRight": "#31C756"
+      "topLeft": "#800542",
+      "topRight": "#9D6B07",
+      "bottomLeft": "#023AAC",
+      "bottomRight": "#54E86D"
     }
   },
   {
@@ -1271,10 +1254,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#2CA9A2",
-      "topRight": "#E94755",
-      "bottomLeft": "#32A96E",
-      "bottomRight": "#5B4AE1"
+      "topLeft": "#62DB43",
+      "topRight": "#51C9F0",
+      "bottomLeft": "#E99D4E",
+      "bottomRight": "#F273EA"
     }
   },
   {
@@ -1284,10 +1267,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#79A123",
-      "topRight": "#29A76C",
-      "bottomLeft": "#ABCB0B",
-      "bottomRight": "#CF261A"
+      "topLeft": "#6A5EE8",
+      "topRight": "#FA8370",
+      "bottomLeft": "#0B96C1",
+      "bottomRight": "#73DE5E"
     }
   },
   {
@@ -1297,10 +1280,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#A33A8A",
-      "topRight": "#3241C3",
-      "bottomLeft": "#19A0D6",
-      "bottomRight": "#A95035"
+      "topLeft": "#CC5A14",
+      "topRight": "#57EA6A",
+      "bottomLeft": "#ED4AAA",
+      "bottomRight": "#76A5EF"
     }
   },
   {
@@ -1310,44 +1293,42 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#1ECCA0",
-      "topRight": "#B42692",
-      "bottomLeft": "#C13415",
-      "bottomRight": "#E01D3D"
+      "topLeft": "#09865C",
+      "topRight": "#1316C3",
+      "bottomLeft": "#8FE407",
+      "bottomRight": "#EE5891"
     }
   },
   {
     "levelId": 90,
-    "shapeId": "starTrianglePuzzle9",
+    "shapeId": "octaSquarePuzzle4",
     "lockedSlots": [
       0,
       1,
       2,
       3,
-      5,
-      6,
+      4,
       7,
       8,
-      9,
-      10,
       11,
-      13,
+      12,
+      15,
       16,
-      18,
-      24,
-      25,
-      26,
-      27
+      19,
+      20,
+      21,
+      22,
+      23
     ],
     "rules": "LockCorners",
-    "columnCount": 3,
-    "rowCount": 4,
+    "columnCount": 4,
+    "rowCount": 6,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#26B12B",
-      "topRight": "#E76D1B",
-      "bottomLeft": "#CA2115",
-      "bottomRight": "#53CEF0"
+      "topLeft": "#D543DB",
+      "topRight": "#E5C95D",
+      "bottomLeft": "#464DF1",
+      "bottomRight": "#1DC96C"
     }
   },
   {
@@ -1357,10 +1338,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#CEAF23",
-      "topRight": "#207ADB",
-      "bottomLeft": "#24A18A",
-      "bottomRight": "#B6B619"
+      "topLeft": "#C5E85E",
+      "topRight": "#79D3F1",
+      "bottomLeft": "#C01619",
+      "bottomRight": "#E049F3"
     }
   },
   {
@@ -1370,10 +1351,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#BF6B11",
-      "topRight": "#9D3827",
-      "bottomLeft": "#51BA13",
-      "bottomRight": "#0D9B24"
+      "topLeft": "#0F3E76",
+      "topRight": "#7D0F95",
+      "bottomLeft": "#13A30A",
+      "bottomRight": "#EFB56B"
     }
   },
   {
@@ -1383,10 +1364,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#DA3E7C",
-      "topRight": "#56EB8D",
-      "bottomLeft": "#A3F15B",
-      "bottomRight": "#A10D23"
+      "topLeft": "#F5516C",
+      "topRight": "#3FC01B",
+      "bottomLeft": "#F26EEF",
+      "bottomRight": "#4DABEF"
     }
   },
   {
@@ -1396,10 +1377,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#29A659",
-      "topRight": "#44E451",
-      "bottomLeft": "#E96036",
-      "bottomRight": "#295BA7"
+      "topLeft": "#43DB56",
+      "topRight": "#5165F0",
+      "bottomLeft": "#EEF93E",
+      "bottomRight": "#AA2250"
     }
   },
   {
@@ -1409,10 +1390,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#A81031",
-      "topRight": "#801AA8",
-      "bottomLeft": "#CE2CB6",
-      "bottomRight": "#1965B7"
+      "topLeft": "#985EE8",
+      "topRight": "#FA7C70",
+      "bottomLeft": "#6BF4F5",
+      "bottomRight": "#84EC51"
     }
   },
   {
@@ -1422,10 +1403,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#3162A2",
-      "topRight": "#B1933A",
-      "bottomLeft": "#6CDB12",
-      "bottomRight": "#DD0BD3"
+      "topLeft": "#BE8D13",
+      "topRight": "#57EACA",
+      "bottomLeft": "#EB4C75",
+      "bottomRight": "#A16BFA"
     }
   },
   {
@@ -1435,10 +1416,10 @@
     "rowCount": 9,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#9C8222",
-      "topRight": "#1682BD",
-      "bottomLeft": "#A8EC2A",
-      "bottomRight": "#1FEEE7"
+      "topLeft": "#51F4F5",
+      "topRight": "#D70FD6",
+      "bottomLeft": "#68F87C",
+      "bottomRight": "#E89554"
     }
   },
   {
@@ -1448,10 +1429,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#4A379D",
-      "topRight": "#3E52C3",
-      "bottomLeft": "#6C12B5",
-      "bottomRight": "#32D3C8"
+      "topLeft": "#DB43AE",
+      "topRight": "#E5D65D",
+      "bottomLeft": "#5B48EF",
+      "bottomRight": "#6EF792"
     }
   },
   {
@@ -1461,10 +1442,10 @@
     "rowCount": 8,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#E03D40",
-      "topRight": "#6343C2",
-      "bottomLeft": "#B7D012",
-      "bottomRight": "#9829AE"
+      "topLeft": "#39780D",
+      "topRight": "#0B9997",
+      "bottomLeft": "#A52B09",
+      "bottomRight": "#8F54F2"
     }
   },
   {
@@ -1497,10 +1478,10 @@
     "rowCount": 6,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#B44074",
-      "topRight": "#B7E923",
-      "bottomLeft": "#4FF052",
-      "bottomRight": "#9BEC30"
+      "topLeft": "#142AC8",
+      "topRight": "#F64C8B",
+      "bottomLeft": "#44F3C1",
+      "bottomRight": "#D8F471"
     }
   },
   {
@@ -1510,10 +1491,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#46D4D4",
-      "topRight": "#A07F32",
-      "bottomLeft": "#1CD619",
-      "bottomRight": "#C41AE6"
+      "topLeft": "#F56D51",
+      "topRight": "#9EED7E",
+      "bottomLeft": "#D770F0",
+      "bottomRight": "#5CBCE0"
     }
   },
   {
@@ -1523,10 +1504,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#C42EDF",
-      "topRight": "#0DDFDF",
-      "bottomLeft": "#99092D",
-      "bottomRight": "#47EE9D"
+      "topLeft": "#0AB85A",
+      "topRight": "#0C27AC",
+      "bottomLeft": "#B48D04",
+      "bottomRight": "#F368C7"
     }
   },
   {
@@ -1536,10 +1517,10 @@
     "rowCount": 8,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#A7F014",
-      "topRight": "#B44277",
-      "bottomLeft": "#15B577",
-      "bottomRight": "#79C92E"
+      "topLeft": "#C65EE8",
+      "topRight": "#FAD870",
+      "bottomLeft": "#1036C1",
+      "bottomRight": "#45F943"
     }
   },
   {
@@ -1549,10 +1530,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#2B36D6",
-      "topRight": "#C54857",
-      "bottomLeft": "#285BC2",
-      "bottomRight": "#D99A41"
+      "topLeft": "#E2EB33",
+      "topRight": "#57EAA2",
+      "bottomLeft": "#E94E9C",
+      "bottomRight": "#9878ED"
     }
   },
   {
@@ -1562,10 +1543,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#25ACA5",
-      "topRight": "#3ECDC6",
-      "bottomLeft": "#32E71A",
-      "bottomRight": "#8BA32B"
+      "topLeft": "#51BEF5",
+      "topRight": "#C80E7A",
+      "bottomLeft": "#6AF6BC",
+      "bottomRight": "#F5E747"
     }
   },
   {
@@ -1575,10 +1556,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#AF394F",
-      "topRight": "#32C832",
-      "bottomLeft": "#CB4B9A",
-      "bottomRight": "#D24931"
+      "topLeft": "#7A0B34",
+      "topRight": "#879D07",
+      "bottomLeft": "#0715A6",
+      "bottomRight": "#6DF8D7"
     }
   },
   {
@@ -1588,10 +1569,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#5DF113",
-      "topRight": "#A6E016",
-      "bottomLeft": "#BDB81D",
-      "bottomRight": "#E50F3A"
+      "topLeft": "#69E85E",
+      "topRight": "#7999F1",
+      "bottomLeft": "#F9BF66",
+      "bottomRight": "#DC4BF1"
     }
   },
   {
@@ -1601,10 +1582,10 @@
     "rowCount": 8,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#A0762E",
-      "topRight": "#8C2BB2",
-      "bottomLeft": "#68E34C",
-      "bottomRight": "#B2AA40"
+      "topLeft": "#3612BA",
+      "topRight": "#F6594C",
+      "bottomLeft": "#46BCF1",
+      "bottomRight": "#8AE77E"
     }
   },
   {
@@ -1614,10 +1595,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#4E33E7",
-      "topRight": "#4CC4A4",
-      "bottomLeft": "#B61E83",
-      "bottomRight": "#8DC846"
+      "topLeft": "#F5A451",
+      "topRight": "#1CC471",
+      "bottomLeft": "#EE72B8",
+      "bottomRight": "#554FEE"
     }
   },
   {
@@ -1644,10 +1625,10 @@
     "rowCount": 4,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#115EA1",
-      "topRight": "#A0931D",
-      "bottomLeft": "#29A709",
-      "bottomRight": "#0BC56E"
+      "topLeft": "#43DBBC",
+      "topRight": "#A851F0",
+      "bottomLeft": "#C0F542",
+      "bottomRight": "#E4818D"
     }
   },
   {
@@ -1657,10 +1638,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#C6DF22",
-      "topRight": "#54BB38",
-      "bottomLeft": "#9B5F27",
-      "bottomRight": "#20B398"
+      "topLeft": "#E85EDC",
+      "topRight": "#F0FA70",
+      "bottomLeft": "#5A14D2",
+      "bottomRight": "#53EAD1"
     }
   },
   {
@@ -1670,10 +1651,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#C90F19",
-      "topRight": "#AE901A",
-      "bottomLeft": "#CA863E",
-      "bottomRight": "#BD4027"
+      "topLeft": "#80C313",
+      "topRight": "#57D7EA",
+      "bottomLeft": "#F99E3E",
+      "bottomRight": "#DE6DF8"
     }
   },
   {
@@ -1683,10 +1664,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#2A6EE2",
-      "topRight": "#A46729",
-      "bottomLeft": "#8C49B8",
-      "bottomRight": "#A51974"
+      "topLeft": "#092E7C",
+      "topRight": "#950F6C",
+      "bottomLeft": "#05A824",
+      "bottomRight": "#E8B268"
     }
   },
   {
@@ -1696,10 +1677,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#99B12C",
-      "topRight": "#EDAD0B",
-      "bottomLeft": "#2EBAB3",
-      "bottomRight": "#28A535"
+      "topLeft": "#DB4348",
+      "topRight": "#5DE565",
+      "bottomLeft": "#EB4CDC",
+      "bottomRight": "#0E75CD"
     }
   },
   {
@@ -1709,10 +1690,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#2EE5C4",
-      "topRight": "#6F9F34",
-      "bottomLeft": "#1D54B3",
-      "bottomRight": "#B27D34"
+      "topLeft": "#06A72F",
+      "topRight": "#094DD7",
+      "bottomLeft": "#CA9902",
+      "bottomRight": "#F349F2"
     }
   },
   {
@@ -1722,10 +1703,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#7D37C2",
-      "topRight": "#0D429D",
-      "bottomLeft": "#A5EB3D",
-      "bottomRight": "#555ED7"
+      "topLeft": "#9733EB",
+      "topRight": "#F6684C",
+      "bottomLeft": "#48DFEF",
+      "bottomRight": "#B5F273"
     }
   },
   {
@@ -1735,10 +1716,10 @@
     "rowCount": 10,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#7113A3",
-      "topRight": "#3ABC65",
-      "bottomLeft": "#67E419",
-      "bottomRight": "#A71C7B"
+      "topLeft": "#F5DB51",
+      "topRight": "#1AB78B",
+      "bottomLeft": "#FB7C65",
+      "bottomRight": "#945EDE"
     }
   },
   {
@@ -1748,10 +1729,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#3579A1",
-      "topRight": "#E35259",
-      "bottomLeft": "#A84ED5",
-      "bottomRight": "#0ECA56"
+      "topLeft": "#43C7DB",
+      "topRight": "#DD51F0",
+      "bottomLeft": "#44F361",
+      "bottomRight": "#CD5A18"
     }
   },
   {
@@ -1761,10 +1742,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#37E951",
-      "topRight": "#BA594A",
-      "bottomLeft": "#45990C",
-      "bottomRight": "#B73C9A"
+      "topLeft": "#E85EAE",
+      "topRight": "#FAF670",
+      "bottomLeft": "#8A70F0",
+      "bottomRight": "#45F79C"
     }
   },
   {
@@ -1801,10 +1782,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#B4254B",
-      "topRight": "#A89A1D",
-      "bottomLeft": "#B23FAC",
-      "bottomRight": "#4E41C2"
+      "topLeft": "#297E07",
+      "topRight": "#0B9988",
+      "bottomLeft": "#AA0317",
+      "bottomRight": "#8C52EB"
     }
   },
   {
@@ -1814,10 +1795,10 @@
     "rowCount": 9,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#38D70C",
-      "topRight": "#B08320",
-      "bottomLeft": "#D11683",
-      "bottomRight": "#AD1608"
+      "topLeft": "#5351F5",
+      "topRight": "#CD0F0E",
+      "bottomLeft": "#6DF3D0",
+      "bottomRight": "#86F349"
     }
   },
   {
@@ -1827,10 +1808,10 @@
     "rowCount": 10,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#4CC7E3",
-      "topRight": "#A32774",
-      "bottomLeft": "#B5BE0A",
-      "bottomRight": "#310FBA"
+      "topLeft": "#DB7043",
+      "topRight": "#7AE55D",
+      "bottomLeft": "#D94EE9",
+      "bottomRight": "#7CB3E9"
     }
   },
   {
@@ -1840,10 +1821,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#5F42A6",
-      "topRight": "#2485A3",
-      "bottomLeft": "#8F3AAB",
-      "bottomRight": "#DF1AD5"
+      "topLeft": "#5EE8B0",
+      "topRight": "#CE79F1",
+      "bottomLeft": "#5BD40C",
+      "bottomRight": "#EF844D"
     }
   },
   {
@@ -1853,10 +1834,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#46AA21",
-      "topRight": "#BE1A98",
-      "bottomLeft": "#D42EC7",
-      "bottomRight": "#7714B0"
+      "topLeft": "#AA13BE",
+      "topRight": "#F6B74C",
+      "bottomLeft": "#4A68ED",
+      "bottomRight": "#7FE6AA"
     }
   },
   {
@@ -1866,10 +1847,10 @@
     "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#ED526C",
-      "topRight": "#D01C25",
-      "bottomLeft": "#195AB4",
-      "bottomRight": "#EBD232"
+      "topLeft": "#D9F551",
+      "topRight": "#7EEDBF",
+      "bottomLeft": "#F966A3",
+      "bottomRight": "#5F51EC"
     }
   },
   {
@@ -1879,10 +1860,10 @@
     "rowCount": 12,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#A25838",
-      "topRight": "#3E83DF",
-      "bottomLeft": "#B21187",
-      "bottomRight": "#4B29C3"
+      "topLeft": "#4394DB",
+      "topRight": "#F051B6",
+      "bottomLeft": "#46F1B8",
+      "bottomRight": "#CFC807"
     }
   },
   {
@@ -1892,10 +1873,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#B828C8",
-      "topRight": "#2A4B99",
-      "bottomLeft": "#EC3862",
-      "bottomRight": "#E08D55"
+      "topLeft": "#800523",
+      "topRight": "#979D07",
+      "bottomLeft": "#1C02AC",
+      "bottomRight": "#69F2D3"
     }
   },
   {
@@ -1905,10 +1886,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#E84E84",
-      "topRight": "#0E8EBC",
-      "bottomLeft": "#5C3CB3",
-      "bottomRight": "#349E6E"
+      "topLeft": "#118817",
+      "topRight": "#115EB0",
+      "bottomLeft": "#D39E0D",
+      "bottomRight": "#F759CB"
     }
   },
   {
@@ -1918,10 +1899,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#24B73F",
-      "topRight": "#AB1795",
-      "bottomLeft": "#F0C84F",
-      "bottomRight": "#9D2648"
+      "topLeft": "#8951F5",
+      "topRight": "#BF4D0D",
+      "bottomLeft": "#6EBEF2",
+      "bottomRight": "#63E458"
     }
   },
   {
@@ -1958,10 +1939,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#D8196F",
-      "topRight": "#3F42AB",
-      "bottomLeft": "#33B194",
-      "bottomRight": "#D3E835"
+      "topLeft": "#DBA343",
+      "topRight": "#5DE591",
+      "bottomLeft": "#F93EA2",
+      "bottomRight": "#1117D0"
     }
   },
   {
@@ -1971,10 +1952,10 @@
     "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#3F3BB2",
-      "topRight": "#D6C34A",
-      "bottomLeft": "#6A36EC",
-      "bottomRight": "#D96A4E"
+      "topLeft": "#5EE8DE",
+      "topRight": "#C479F1",
+      "bottomLeft": "#BFF56B",
+      "bottomRight": "#E06A5C"
     }
   },
   {
@@ -1984,10 +1965,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#1B10DC",
-      "topRight": "#6EBD24",
-      "bottomLeft": "#1EA6C5",
-      "bottomRight": "#5E3ADF"
+      "topLeft": "#D115A8",
+      "topRight": "#BAF64C",
+      "bottomLeft": "#934CEB",
+      "bottomRight": "#75F0E2"
     }
   },
   {
@@ -1997,10 +1978,10 @@
     "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#240BA1",
-      "topRight": "#B22585",
-      "bottomLeft": "#1351D6",
-      "bottomRight": "#ECC539"
+      "topLeft": "#A2F551",
+      "topRight": "#1B6ABB",
+      "bottomLeft": "#F8B668",
+      "bottomRight": "#CA43F9"
     }
   },
   {
@@ -2010,10 +1991,10 @@
     "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#B54663",
-      "topRight": "#D7E518",
-      "bottomLeft": "#5250CA",
-      "bottomRight": "#5A0DB7"
+      "topLeft": "#0F2376",
+      "topRight": "#950F7A",
+      "bottomLeft": "#0AA34C",
+      "bottomRight": "#F5B151"
     }
   },
   {
@@ -2023,10 +2004,10 @@
     "rowCount": 9,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#2AD892",
-      "topRight": "#2959B7",
-      "bottomLeft": "#17AAEE",
-      "bottomRight": "#4B3BAA"
+      "topLeft": "#E86B5E",
+      "topRight": "#70FA71",
+      "bottomLeft": "#D605B1",
+      "bottomRight": "#4763F5"
     }
   },
   {
@@ -2036,10 +2017,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#D7476B",
-      "topRight": "#7FA241",
-      "bottomLeft": "#979A36",
-      "bottomRight": "#1C82E9"
+      "topLeft": "#12BA52",
+      "topRight": "#6B57EA",
+      "bottomLeft": "#DFF344",
+      "bottomRight": "#EA7C7B"
     }
   },
   {
@@ -2049,10 +2030,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#196EDD",
-      "topRight": "#18CE45",
-      "bottomLeft": "#DA4D88",
-      "bottomRight": "#44C1D7"
+      "topLeft": "#C051F5",
+      "topRight": "#F59475",
+      "bottomLeft": "#70D7F0",
+      "bottomRight": "#7BF14B"
     }
   },
   {
@@ -2062,10 +2043,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#6AB52C",
-      "topRight": "#2CBADA",
-      "bottomLeft": "#0CB3CD",
-      "bottomRight": "#D6B313"
+      "topLeft": "#DBD643",
+      "topRight": "#5DE5E5",
+      "bottomLeft": "#F76B40",
+      "bottomRight": "#6420B1"
     }
   },
   {
@@ -2075,10 +2056,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#71BE2D",
-      "topRight": "#EE1710",
-      "bottomLeft": "#20D8AD",
-      "bottomRight": "#3697A6"
+      "topLeft": "#5EC4E8",
+      "topRight": "#F179D2",
+      "bottomLeft": "#11D437",
+      "bottomRight": "#EECC4F"
     }
   },
   {
@@ -2111,10 +2092,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#0F9B0F",
-      "topRight": "#D4F053",
-      "bottomLeft": "#2ECC75",
-      "bottomRight": "#3C4EEE"
+      "topLeft": "#EB3386",
+      "topRight": "#EDF64C",
+      "bottomLeft": "#7D4EE9",
+      "bottomRight": "#81E4C8"
     }
   },
   {
@@ -2124,10 +2105,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#1377B0",
-      "topRight": "#400AAC",
-      "bottomLeft": "#BFBF3D",
-      "bottomRight": "#48D4A0"
+      "topLeft": "#1E780D",
+      "topRight": "#0B6699",
+      "bottomLeft": "#A51C09",
+      "bottomRight": "#F76BFA"
     }
   },
   {
@@ -2137,10 +2118,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#EA7318",
-      "topRight": "#45A5D6",
-      "bottomLeft": "#BDA30D",
-      "bottomRight": "#6017DE"
+      "topLeft": "#5743DB",
+      "topRight": "#F05164",
+      "bottomLeft": "#4AC2ED",
+      "bottomRight": "#60D10A"
     }
   },
   {
@@ -2150,10 +2131,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#DB973E",
-      "topRight": "#B3139D",
-      "bottomLeft": "#979B3C",
-      "bottomRight": "#43B599"
+      "topLeft": "#E8995E",
+      "topRight": "#84FA70",
+      "bottomLeft": "#F866F9",
+      "bottomRight": "#567EE6"
     }
   },
   {
@@ -2163,10 +2144,10 @@
     "rowCount": 8,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#9A2D50",
-      "topRight": "#8645AF",
-      "bottomLeft": "#D96B34",
-      "bottomRight": "#2D45CD"
+      "topLeft": "#14CC98",
+      "topRight": "#B757EA",
+      "bottomLeft": "#46F149",
+      "bottomRight": "#F5A370"
     }
   },
   {
@@ -2176,10 +2157,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#22F0D5",
-      "topRight": "#C0A234",
-      "bottomLeft": "#7E3BB7",
-      "bottomRight": "#AF1F76"
+      "topLeft": "#F551F3",
+      "topRight": "#C2C40E",
+      "bottomLeft": "#7285EE",
+      "bottomRight": "#5AE289"
     }
   },
   {
@@ -2189,10 +2170,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#E62AC7",
-      "topRight": "#E38F20",
-      "bottomLeft": "#CA3116",
-      "bottomRight": "#AA3935"
+      "topLeft": "#ADDB43",
+      "topRight": "#5DD9E5",
+      "bottomLeft": "#F55442",
+      "bottomRight": "#9B73F2"
     }
   },
   {
@@ -2202,10 +2183,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#45DE9B",
-      "topRight": "#45AF1F",
-      "bottomLeft": "#B0A70F",
-      "bottomRight": "#B6E51B"
+      "topLeft": "#5E96E8",
+      "topRight": "#F179A4",
+      "bottomLeft": "#12C496",
+      "bottomRight": "#B2DE5E"
     }
   },
   {
@@ -2215,10 +2196,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#1DE7AE",
-      "topRight": "#AED72A",
-      "bottomLeft": "#F142D1",
-      "bottomRight": "#791AC6"
+      "topLeft": "#7A0B17",
+      "topRight": "#4F9D07",
+      "bottomLeft": "#4707A6",
+      "bottomRight": "#66EBCE"
     }
   },
   {
@@ -2228,10 +2209,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#316BD6",
-      "topRight": "#514FE2",
-      "bottomLeft": "#7919A9",
-      "bottomRight": "#A01EAE"
+      "topLeft": "#51F56E",
+      "topRight": "#7E89ED",
+      "bottomLeft": "#F5D86B",
+      "bottomRight": "#F745BD"
     }
   },
   {
@@ -2268,10 +2249,10 @@
     "rowCount": 5,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#4E10A5",
-      "topRight": "#D1DF53",
-      "bottomLeft": "#369C2C",
-      "bottomRight": "#4D52D4"
+      "topLeft": "#8A43DB",
+      "topRight": "#F08151",
+      "bottomLeft": "#4CA1EB",
+      "bottomRight": "#1EB319"
     }
   },
   {
@@ -2281,10 +2262,10 @@
     "rowCount": 9,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#AF38A3",
-      "topRight": "#CE7640",
-      "bottomLeft": "#DA7C50",
-      "bottomRight": "#E32F77"
+      "topLeft": "#E8C75E",
+      "topRight": "#70FAD9",
+      "bottomLeft": "#D60A72",
+      "bottomRight": "#8C49F3"
     }
   },
   {
@@ -2294,10 +2275,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#52B53B",
-      "topRight": "#80EF12",
-      "bottomLeft": "#2AD057",
-      "bottomRight": "#909E24"
+      "topLeft": "#33E1EB",
+      "topRight": "#BE57EA",
+      "bottomLeft": "#9EEF48",
+      "bottomRight": "#E9A17C"
     }
   },
   {
@@ -2307,10 +2288,10 @@
     "rowCount": 9,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#C12066",
-      "topRight": "#45EAAE",
-      "bottomLeft": "#1F5F9F",
-      "bottomRight": "#7830A1"
+      "topLeft": "#F551BD",
+      "topRight": "#9CD70F",
+      "bottomLeft": "#B465FB",
+      "bottomRight": "#4DEFE4"
     }
   },
   {
@@ -2320,10 +2301,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#3C79C4",
-      "topRight": "#AD3770",
-      "bottomLeft": "#94A126",
-      "bottomRight": "#2EBC40"
+      "topLeft": "#47A90F",
+      "topRight": "#089EC4",
+      "bottomLeft": "#BA1A08",
+      "bottomRight": "#BA5EE8"
     }
   },
   {
@@ -2333,10 +2314,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#17949D",
-      "topRight": "#51A42B",
-      "bottomLeft": "#DF7422",
-      "bottomRight": "#29CCC7"
+      "topLeft": "#09117C",
+      "topRight": "#950F88",
+      "bottomLeft": "#05A815",
+      "bottomRight": "#EEAD4F"
     }
   },
   {
@@ -2346,10 +2327,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#3CCA9D",
-      "topRight": "#7A4DEB",
-      "bottomLeft": "#DE6E2E",
-      "bottomRight": "#EEBA38"
+      "topLeft": "#C83B14",
+      "topRight": "#4CF67C",
+      "bottomLeft": "#F740C9",
+      "bottomRight": "#6B7CFA"
     }
   },
   {
@@ -2359,10 +2340,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#BE2FA6",
-      "topRight": "#D14339",
-      "bottomLeft": "#45E94E",
-      "bottomRight": "#D1A925"
+      "topLeft": "#51F5A5",
+      "topRight": "#6819B3",
+      "bottomLeft": "#9DF36D",
+      "bottomRight": "#E8545D"
     }
   },
   {
@@ -2372,10 +2353,10 @@
     "rowCount": 13,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#5E81EC",
-      "topRight": "#EE642A",
-      "bottomLeft": "#AED319",
-      "bottomRight": "#E8A843"
+      "topLeft": "#BD43DB",
+      "topRight": "#F08451",
+      "bottomLeft": "#4EBDE9",
+      "bottomRight": "#77F76E"
     }
   },
   {
@@ -2385,10 +2366,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#DF392A",
-      "topRight": "#2117DB",
-      "bottomLeft": "#2BA989",
-      "bottomRight": "#353DD2"
+      "topLeft": "#DBE85E",
+      "topRight": "#70FAF2",
+      "bottomLeft": "#C6450C",
+      "bottomRight": "#CE58E4"
     }
   },
   {
@@ -2423,10 +2404,10 @@
     "rowCount": 5,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#A935BB",
-      "topRight": "#28AFD1",
-      "bottomLeft": "#BEBE40",
-      "bottomRight": "#27A616"
+      "topLeft": "#1588D1",
+      "topRight": "#EA57D6",
+      "bottomLeft": "#4AED6E",
+      "bottomRight": "#F4CF71"
     }
   },
   {
@@ -2436,10 +2417,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#26AE8C",
-      "topRight": "#0B5BA1",
-      "bottomLeft": "#178EAB",
-      "bottomRight": "#B08238"
+      "topLeft": "#F55186",
+      "topRight": "#E5F575",
+      "bottomLeft": "#A066F9",
+      "bottomRight": "#5CE0D9"
     }
   },
   {
@@ -2449,10 +2430,10 @@
     "rowCount": 10,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#B5EF52",
-      "topRight": "#B70E57",
-      "bottomLeft": "#2CA081",
-      "bottomRight": "#3F90DC"
+      "topLeft": "#0A7E07",
+      "topRight": "#0B7599",
+      "bottomLeft": "#AA4103",
+      "bottomRight": "#F266F4"
     }
   },
   {
@@ -2462,10 +2443,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#15D1AF",
-      "topRight": "#D79431",
-      "bottomLeft": "#AD1561",
-      "bottomRight": "#6125C9"
+      "topLeft": "#825EE8",
+      "topRight": "#F19979",
+      "bottomLeft": "#1791C4",
+      "bottomRight": "#9FF943"
     }
   },
   {
@@ -2475,10 +2456,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#4EA63C",
-      "topRight": "#2C69BD",
-      "bottomLeft": "#CBBB0C",
-      "bottomRight": "#31BED7"
+      "topLeft": "#EB9933",
+      "topRight": "#4CF688",
+      "bottomLeft": "#F542E6",
+      "bottomRight": "#78AEED"
     }
   },
   {
@@ -2488,10 +2469,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#541AE5",
-      "topRight": "#1444B4",
-      "bottomLeft": "#12C060",
-      "bottomRight": "#1354B6"
+      "topLeft": "#51F5DC",
+      "topRight": "#B81CC4",
+      "bottomLeft": "#6EF27B",
+      "bottomRight": "#F59247"
     }
   },
   {
@@ -2501,10 +2482,10 @@
     "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#373BAB",
-      "topRight": "#1C6C9B",
-      "bottomLeft": "#27AD78",
-      "bottomRight": "#C88E22"
+      "topLeft": "#DB43C6",
+      "topRight": "#F0DE51",
+      "bottomLeft": "#3E56F9",
+      "bottomRight": "#1CB592"
     }
   },
   {
@@ -2514,10 +2495,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#50BE4A",
-      "topRight": "#EB0D4C",
-      "bottomLeft": "#29ACD8",
-      "bottomRight": "#2E68C5"
+      "topLeft": "#5C990B",
+      "topRight": "#10979E",
+      "bottomLeft": "#D01606",
+      "bottomRight": "#9C6EED"
     }
   },
   {
@@ -2527,10 +2508,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#C214C5",
-      "topRight": "#742FAD",
-      "bottomLeft": "#D90D95",
-      "bottomRight": "#A77F30"
+      "topLeft": "#1344C3",
+      "topRight": "#EA5794",
+      "bottomLeft": "#4CEBCF",
+      "bottomRight": "#BEE77E"
     }
   },
   {
@@ -2540,10 +2521,10 @@
     "rowCount": 9,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#34AC9C",
-      "topRight": "#5019A2",
-      "bottomLeft": "#219F94",
-      "bottomRight": "#4D5CE6"
+      "topLeft": "#800605",
+      "topRight": "#5F9D07",
+      "bottomLeft": "#6F02AC",
+      "bottomRight": "#4FF8D5"
     }
   },
   {
@@ -2580,23 +2561,23 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#0B33AB",
-      "topRight": "#2D9C6E",
-      "bottomLeft": "#92AE15",
-      "bottomRight": "#4086C7"
+      "topLeft": "#43DB71",
+      "topRight": "#5D61E5",
+      "bottomLeft": "#EFDC48",
+      "bottomRight": "#E481AD"
     }
   },
   {
     "levelId": 171,
     "rules": "LockCorners",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#4A2DB2",
-      "topRight": "#C6341D",
-      "bottomLeft": "#35B815",
-      "bottomRight": "#27C4AA"
+      "topLeft": "#B05EE8",
+      "topRight": "#F1BF79",
+      "bottomLeft": "#051CC7",
+      "bottomRight": "#53EA87"
     }
   },
   {
@@ -2606,10 +2587,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#1F3CB0",
-      "topRight": "#3DBCEA",
-      "bottomLeft": "#A43278",
-      "bottomRight": "#BE8925"
+      "topLeft": "#CCB814",
+      "topRight": "#4CF6B8",
+      "bottomLeft": "#F34844",
+      "bottomRight": "#9A6DF8"
     }
   },
   {
@@ -2619,10 +2600,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#B71BC5",
-      "topRight": "#2BF2BD",
-      "bottomLeft": "#41E73B",
-      "bottomRight": "#AF903F"
+      "topLeft": "#51D8F5",
+      "topRight": "#D47EED",
+      "bottomLeft": "#70F070",
+      "bottomRight": "#E66B56"
     }
   },
   {
@@ -2632,10 +2613,10 @@
     "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#2A42BC",
-      "topRight": "#35ED8B",
-      "bottomLeft": "#3AB953",
-      "bottomRight": "#AABE0E"
+      "topLeft": "#DB4393",
+      "topRight": "#95F051",
+      "bottomLeft": "#AF40F7",
+      "bottomRight": "#0FD7D1"
     }
   },
   {
@@ -2645,10 +2626,10 @@
     "rowCount": 9,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#C0C536",
-      "topRight": "#3C319C",
-      "bottomLeft": "#3B7EA2",
-      "bottomRight": "#2BA122"
+      "topLeft": "#7FE85E",
+      "topRight": "#7091FA",
+      "bottomLeft": "#C67D10",
+      "bottomRight": "#E25AD5"
     }
   },
   {
@@ -2658,10 +2639,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#0C7BA7",
-      "topRight": "#B71A34",
-      "bottomLeft": "#6E25BD",
-      "bottomRight": "#44E1BC"
+      "topLeft": "#140F76",
+      "topRight": "#950F48",
+      "bottomLeft": "#0AA33E",
+      "bottomRight": "#D6EC79"
     }
   },
   {
@@ -2671,10 +2652,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#9C256A",
-      "topRight": "#2DB0AA",
-      "bottomLeft": "#D04E4E",
-      "bottomRight": "#3FC35B"
+      "topLeft": "#F58A51",
+      "topRight": "#0ECD3A",
+      "bottomLeft": "#F66A99",
+      "bottomRight": "#5E67DE"
     }
   },
   {
@@ -2684,10 +2665,10 @@
     "rowCount": 9,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#0FF070",
-      "topRight": "#38A20E",
-      "bottomLeft": "#30CA22",
-      "bottomRight": "#2C9F97"
+      "topLeft": "#43DBA4",
+      "topRight": "#925DE5",
+      "bottomLeft": "#7FED4A",
+      "bottomRight": "#B7152A"
     }
   },
   {
@@ -2697,10 +2678,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#9E8734",
-      "topRight": "#A83838",
-      "bottomLeft": "#EF0E2C",
-      "bottomRight": "#E6A249"
+      "topLeft": "#DE5EE8",
+      "topRight": "#F1A979",
+      "bottomLeft": "#66C2F9",
+      "bottomRight": "#45F762"
     }
   },
   {
@@ -2731,10 +2712,10 @@
     "rowCount": 6,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#CC24CF",
-      "topRight": "#14BF11",
-      "bottomLeft": "#EC0C32",
-      "bottomRight": "#1C679D"
+      "topLeft": "#6B8807",
+      "topRight": "#0EC8B4",
+      "bottomLeft": "#E6057C",
+      "bottomRight": "#5850ED"
     }
   },
   {
@@ -2744,10 +2725,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#379F53",
-      "topRight": "#7641B2",
-      "bottomLeft": "#292EC0",
-      "bottomRight": "#7D50E5"
+      "topLeft": "#51A1F5",
+      "topRight": "#C91D70",
+      "bottomLeft": "#72EE90",
+      "bottomRight": "#DAF349"
     }
   },
   {
@@ -2757,10 +2738,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#9421A9",
-      "topRight": "#E927B6",
-      "bottomLeft": "#15BABF",
-      "bottomRight": "#99D53F"
+      "topLeft": "#DB4360",
+      "topRight": "#8DF051",
+      "bottomLeft": "#9A42F5",
+      "bottomRight": "#7CE9CE"
     }
   },
   {
@@ -2770,10 +2751,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#9F3789",
-      "topRight": "#8333A5",
-      "bottomLeft": "#BC2729",
-      "bottomRight": "#0C13CC"
+      "topLeft": "#0D7817",
+      "topRight": "#0B3199",
+      "bottomLeft": "#A56909",
+      "bottomRight": "#ED63EE"
     }
   },
   {
@@ -2783,10 +2764,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#3954BF",
-      "topRight": "#A9813B",
-      "bottomLeft": "#E88030",
-      "bottomRight": "#AFCD1B"
+      "topLeft": "#5A14C8",
+      "topRight": "#EA6C57",
+      "bottomLeft": "#3EBDF9",
+      "bottomRight": "#87E67F"
     }
   },
   {
@@ -2796,10 +2777,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#1ABA8D",
-      "topRight": "#238DB7",
-      "bottomLeft": "#350DE9",
-      "bottomRight": "#DA50B5"
+      "topLeft": "#F5C151",
+      "topRight": "#75F5AC",
+      "bottomLeft": "#F56BDC",
+      "bottomRight": "#5175EC"
     }
   },
   {
@@ -2809,10 +2790,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#2785EA",
-      "topRight": "#4E39B8",
-      "bottomLeft": "#456DB6",
-      "bottomRight": "#1EB0AE"
+      "topLeft": "#43DBD7",
+      "topRight": "#D35DE5",
+      "bottomLeft": "#4CEB68",
+      "bottomRight": "#D96B08"
     }
   },
   {
@@ -2822,10 +2803,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#B9AA0C",
-      "topRight": "#64C10D",
-      "bottomLeft": "#339928",
-      "bottomRight": "#3F6BB7"
+      "topLeft": "#E85EC4",
+      "topRight": "#D1F179",
+      "bottomLeft": "#5509C8",
+      "bottomRight": "#54E8BB"
     }
   },
   {
@@ -2835,63 +2816,59 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#F12491",
-      "topRight": "#61C14B",
-      "bottomLeft": "#51BAD8",
-      "bottomRight": "#673A9A"
+      "topLeft": "#84EB33",
+      "topRight": "#4CCDF6",
+      "bottomLeft": "#EF7848",
+      "bottomRight": "#D86EF7"
     }
   },
   {
     "levelId": 189,
     "rules": "LockCorners",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#23DCC4",
-      "topRight": "#569A1B",
-      "bottomLeft": "#32A438",
-      "bottomRight": "#BC2933"
+      "topLeft": "#516AF5",
+      "topRight": "#BB1B30",
+      "bottomLeft": "#65FBEC",
+      "bottomRight": "#A8E458"
     }
   },
   {
     "levelId": 190,
-    "shapeId": "starTrianglePuzzle9",
+    "shapeId": "octaSquarePuzzle4",
     "lockedSlots": [
       0,
       1,
       2,
       3,
+      4,
       5,
-      6,
       9,
       10,
-      11,
-      12,
-      13,
       14,
       15,
-      16,
-      18,
-      21,
-      23,
+      19,
+      20,
+      24,
+      25,
       29,
+      30,
       31,
-      40,
-      41,
-      42,
-      43,
-      44
+      32,
+      33,
+      34
     ],
     "rules": "LockOneRowSkipOne",
-    "columnCount": 3,
-    "rowCount": 5,
+    "columnCount": 5,
+    "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#228CCE",
-      "topRight": "#DC4479",
-      "bottomLeft": "#994D0E",
-      "bottomRight": "#E7335A"
+      "topLeft": "#7A1A0B",
+      "topRight": "#6F9D07",
+      "bottomLeft": "#3807A6",
+      "bottomRight": "#4CF0D1"
     }
   },
   {
@@ -2901,10 +2878,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#7FB72C",
-      "topRight": "#3E63C0",
-      "bottomLeft": "#AE3BC8",
-      "bottomRight": "#3834A4"
+      "topLeft": "#5EE89A",
+      "topRight": "#7770FA",
+      "bottomLeft": "#F0EE70",
+      "bottomRight": "#E05CB0"
     }
   },
   {
@@ -2914,10 +2891,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#23CB3A",
-      "topRight": "#DA4615",
-      "bottomLeft": "#36A26E",
-      "bottomRight": "#611FD4"
+      "topLeft": "#8B12BA",
+      "topRight": "#EAD557",
+      "bottomLeft": "#4048F7",
+      "bottomRight": "#75F0A5"
     }
   },
   {
@@ -2927,10 +2904,10 @@
     "rowCount": 9,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#0F489C",
-      "topRight": "#15BEAA",
-      "bottomLeft": "#13AB7E",
-      "bottomRight": "#AF2750"
+      "topLeft": "#B8BB07",
+      "topRight": "#07B083",
+      "bottomLeft": "#B60265",
+      "bottomRight": "#5F84F1"
     }
   },
   {
@@ -2940,10 +2917,10 @@
     "rowCount": 10,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#2CC391",
-      "topRight": "#C6131F",
-      "bottomLeft": "#2788D1",
-      "bottomRight": "#96C116"
+      "topLeft": "#43ACDB",
+      "topRight": "#D15DE5",
+      "bottomLeft": "#4EE95C",
+      "bottomRight": "#EDA478"
     }
   },
   {
@@ -2953,10 +2930,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#45AFE9",
-      "topRight": "#96EB35",
-      "bottomLeft": "#24D37E",
-      "bottomRight": "#E5E239"
+      "topLeft": "#E85E96",
+      "topRight": "#B3F179",
+      "bottomLeft": "#980DD9",
+      "bottomRight": "#47B8F5"
     }
   },
   {
@@ -2966,10 +2943,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#19A0E3",
-      "topRight": "#13CA99",
-      "bottomLeft": "#B2513D",
-      "bottomRight": "#833CE0"
+      "topLeft": "#26C313",
+      "topRight": "#4C89F6",
+      "bottomLeft": "#EDB04A",
+      "bottomRight": "#EA7BB0"
     }
   },
   {
@@ -2979,23 +2956,23 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#10D337",
-      "topRight": "#0E64CD",
-      "bottomLeft": "#E6DD3E",
-      "bottomRight": "#BF2B48"
+      "topLeft": "#1E097C",
+      "topRight": "#950F56",
+      "bottomLeft": "#05A864",
+      "bottomRight": "#DAF764"
     }
   },
   {
     "levelId": 198,
     "rules": "LockCorners",
-    "columnCount": 12,
-    "rowCount": 12,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#A9A924",
-      "topRight": "#3017EB",
-      "bottomLeft": "#49C3D6",
-      "bottomRight": "#85D015"
+      "topLeft": "#DB8B43",
+      "topRight": "#51F0A2",
+      "bottomLeft": "#F14672",
+      "bottomRight": "#2226B9"
     }
   },
   {
@@ -3005,10 +2982,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#3DB247",
-      "topRight": "#2259A5",
-      "bottomLeft": "#22BB1D",
-      "bottomRight": "#1344B5"
+      "topLeft": "#5EE8C8",
+      "topRight": "#DA70FA",
+      "bottomLeft": "#46B715",
+      "bottomRight": "#EE7E4F"
     }
   },
   {
@@ -3045,10 +3022,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#6CD621",
-      "topRight": "#DB2AAF",
-      "bottomLeft": "#149B24",
-      "bottomRight": "#C14D64"
+      "topLeft": "#EB33E0",
+      "topRight": "#EA9D57",
+      "bottomLeft": "#42A0F5",
+      "bottomRight": "#83E481"
     }
   },
   {
@@ -3058,10 +3035,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#32A759",
-      "topRight": "#25B078",
-      "bottomLeft": "#C54CC5",
-      "bottomRight": "#65F13E"
+      "topLeft": "#BCF551",
+      "topRight": "#0E69C4",
+      "bottomLeft": "#F2AC6E",
+      "bottomRight": "#E053EA"
     }
   },
   {
@@ -3069,12 +3046,12 @@
     "rules": "LockEdges",
     "columnCount": 5,
     "rowCount": 8,
-    "difficulty": "Extreme",
+    "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#7035DD",
-      "topRight": "#9C36B3",
-      "bottomLeft": "#A63B48",
-      "bottomRight": "#146FAF"
+      "topLeft": "#4379DB",
+      "topRight": "#E55DAF",
+      "bottomLeft": "#3EF9CF",
+      "bottomRight": "#CBDB0A"
     }
   },
   {
@@ -3084,10 +3061,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#CC4B74",
-      "topRight": "#B1CC45",
-      "bottomLeft": "#E54340",
-      "bottomRight": "#33A898"
+      "topLeft": "#E85E67",
+      "topRight": "#9DF179",
+      "bottomLeft": "#BB6BF5",
+      "bottomRight": "#56E6E3"
     }
   },
   {
@@ -3097,10 +3074,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#0DD071",
-      "topRight": "#2143C8",
-      "bottomLeft": "#C04B7E",
-      "bottomRight": "#3D28C6"
+      "topLeft": "#077E22",
+      "topRight": "#0B4099",
+      "bottomLeft": "#AA9203",
+      "bottomRight": "#E660E5"
     }
   },
   {
@@ -3110,10 +3087,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#1EAD9E",
-      "topRight": "#4468D7",
-      "bottomLeft": "#AA34CB",
-      "bottomRight": "#7C4AC1"
+      "topLeft": "#A651F5",
+      "topRight": "#C0711B",
+      "bottomLeft": "#68C5F8",
+      "bottomRight": "#6FE25A"
     }
   },
   {
@@ -3123,10 +3100,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#206FEE",
-      "topRight": "#C447C7",
-      "bottomLeft": "#399FCB",
-      "bottomRight": "#15F14C"
+      "topLeft": "#9A8113",
+      "topRight": "#16CC14",
+      "bottomLeft": "#C00C73",
+      "bottomRight": "#7370F5"
     }
   },
   {
@@ -3136,10 +3113,10 @@
     "rowCount": 8,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#E79121",
-      "topRight": "#67C833",
-      "bottomLeft": "#64A020",
-      "bottomRight": "#8BA320"
+      "topLeft": "#5EDAE8",
+      "topRight": "#FA70E5",
+      "bottomLeft": "#06DB3B",
+      "bottomRight": "#DECB5E"
     }
   },
   {
@@ -3149,10 +3126,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#7E9F1C",
-      "topRight": "#C156D8",
-      "bottomLeft": "#DA5E1B",
-      "bottomRight": "#5A1AB4"
+      "topLeft": "#BE137B",
+      "topRight": "#D5EA57",
+      "bottomLeft": "#8F44F3",
+      "bottomRight": "#76EFC2"
     }
   },
   {
@@ -3162,10 +3139,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#5BF174",
-      "topRight": "#3A5CD7",
-      "bottomLeft": "#99179E",
-      "bottomRight": "#30A49D"
+      "topLeft": "#85F551",
+      "topRight": "#75CCF5",
+      "bottomLeft": "#F0A170",
+      "bottomRight": "#F745F7"
     }
   },
   {
@@ -3200,10 +3177,10 @@
     "rowCount": 6,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#8AC125",
-      "topRight": "#2ACE4E",
-      "bottomLeft": "#CF8139",
-      "bottomRight": "#23B612"
+      "topLeft": "#4346DB",
+      "topRight": "#E55D77",
+      "bottomLeft": "#40F7F3",
+      "bottomRight": "#6FBB1B"
     }
   },
   {
@@ -3213,10 +3190,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#2DC41C",
-      "topRight": "#7F1DB4",
-      "bottomLeft": "#D02841",
-      "bottomRight": "#B28128"
+      "topLeft": "#802605",
+      "topRight": "#279D07",
+      "bottomLeft": "#5F02AC",
+      "bottomRight": "#77BEEE"
     }
   },
   {
@@ -3226,10 +3203,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#C254D8",
-      "topRight": "#533FAB",
-      "bottomLeft": "#C236F0",
-      "bottomRight": "#1D9C5F"
+      "topLeft": "#33EB9A",
+      "topRight": "#614CF6",
+      "bottomLeft": "#DDE94E",
+      "bottomRight": "#E97CA8"
     }
   },
   {
@@ -3239,10 +3216,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#C9D24C",
-      "topRight": "#5517C1",
-      "bottomLeft": "#44A03F",
-      "bottomRight": "#5551D7"
+      "topLeft": "#DD51F5",
+      "topRight": "#B39419",
+      "bottomLeft": "#6F6AF6",
+      "bottomRight": "#4DEF94"
     }
   },
   {
@@ -3252,10 +3229,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#10A113",
-      "topRight": "#139A64",
-      "bottomLeft": "#2FA4C7",
-      "bottomRight": "#43B030"
+      "topLeft": "#C5DB43",
+      "topRight": "#51F0DF",
+      "bottomLeft": "#ED574A",
+      "bottomRight": "#8B25BB"
     }
   },
   {
@@ -3265,10 +3242,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#511AA4",
-      "topRight": "#33C463",
-      "bottomLeft": "#3EB630",
-      "bottomRight": "#7B1EB4"
+      "topLeft": "#5EACE8",
+      "topRight": "#F170FA",
+      "bottomLeft": "#66F982",
+      "bottomRight": "#ECAE51"
     }
   },
   {
@@ -3278,10 +3255,10 @@
     "rowCount": 9,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#C1EF0D",
-      "topRight": "#DFEC28",
-      "bottomLeft": "#CE5919",
-      "bottomRight": "#D71737"
+      "topLeft": "#D11548",
+      "topRight": "#75EA57",
+      "bottomLeft": "#C846F1",
+      "bottomRight": "#6BC2FA"
     }
   },
   {
@@ -3291,10 +3268,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#3D98B7",
-      "topRight": "#3438A8",
-      "bottomLeft": "#BB31AD",
-      "bottomRight": "#A740DE"
+      "topLeft": "#51F555",
+      "topRight": "#110EC8",
+      "bottomLeft": "#DBEE72",
+      "bottomRight": "#E854A5"
     }
   },
   {
@@ -3304,10 +3281,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#86AA19",
-      "topRight": "#14B029",
-      "bottomLeft": "#21D7C7",
-      "bottomRight": "#D63110"
+      "topLeft": "#2F0F76",
+      "topRight": "#950F16",
+      "bottomLeft": "#0AA389",
+      "bottomRight": "#D2F060"
     }
   },
   {
@@ -3317,10 +3294,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#8F28CF",
-      "topRight": "#F045A0",
-      "bottomLeft": "#EAA124",
-      "bottomRight": "#C71E5C"
+      "topLeft": "#8A590F",
+      "topRight": "#28B50D",
+      "bottomLeft": "#B10BD5",
+      "bottomRight": "#517FF6"
     }
   },
   {
@@ -3357,10 +3334,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#1DC96D",
-      "topRight": "#6333D3",
-      "bottomLeft": "#70DE21",
-      "bottomRight": "#2657A4"
+      "topLeft": "#12BAA8",
+      "topRight": "#B94CF6",
+      "bottomLeft": "#71F93E",
+      "bottomRight": "#F48F71"
     }
   },
   {
@@ -3370,10 +3347,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#44369F",
-      "topRight": "#BFD64A",
-      "bottomLeft": "#D63F68",
-      "bottomRight": "#AD1F36"
+      "topLeft": "#F551D6",
+      "topRight": "#EDE97E",
+      "bottomLeft": "#6B6DF5",
+      "bottomRight": "#5CE077"
     }
   },
   {
@@ -3383,10 +3360,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#2FDC0D",
-      "topRight": "#863DA0",
-      "bottomLeft": "#610BD3",
-      "bottomRight": "#3426B3"
+      "topLeft": "#92DB43",
+      "topRight": "#51A9F0",
+      "bottomLeft": "#EBA34C",
+      "bottomRight": "#B914BD"
     }
   },
   {
@@ -3396,10 +3373,10 @@
     "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#42B2A1",
-      "topRight": "#A23F88",
-      "bottomLeft": "#1379B5",
-      "bottomRight": "#53A13F"
+      "topLeft": "#5E7EE8",
+      "topRight": "#FA7090",
+      "bottomLeft": "#0ADBB2",
+      "bottomRight": "#F9F943"
     }
   },
   {
@@ -3409,10 +3386,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#CE0B93",
-      "topRight": "#1874B2",
-      "bottomLeft": "#E845E5",
-      "bottomRight": "#641CD9"
+      "topLeft": "#EB3E33",
+      "topRight": "#78EA57",
+      "bottomLeft": "#B948EF",
+      "bottomRight": "#78D4ED"
     }
   },
   {
@@ -3422,10 +3399,10 @@
     "rowCount": 11,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#4CC7D9",
-      "topRight": "#26D6B5",
-      "bottomLeft": "#E24F74",
-      "bottomRight": "#B4782A"
+      "topLeft": "#0D7833",
+      "topRight": "#0B4F99",
+      "bottomLeft": "#A55A09",
+      "bottomRight": "#F349F0"
     }
   },
   {
@@ -3435,10 +3412,10 @@
     "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#D08E37",
-      "topRight": "#3809AF",
-      "bottomLeft": "#B05518",
-      "bottomRight": "#D013E1"
+      "topLeft": "#A543DB",
+      "topRight": "#E5925D",
+      "bottomLeft": "#44B1F3",
+      "bottomRight": "#1EBE4A"
     }
   },
   {
@@ -3448,10 +3425,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#43B92C",
-      "topRight": "#DC0E3E",
-      "bottomLeft": "#3856BB",
-      "bottomRight": "#38DDEC"
+      "topLeft": "#E8DF5E",
+      "topRight": "#79F1BF",
+      "bottomLeft": "#F070C1",
+      "bottomRight": "#6F4BF1"
     }
   },
   {
@@ -3461,10 +3438,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#5E39A3",
-      "topRight": "#442DD7",
-      "bottomLeft": "#CE3535",
-      "bottomRight": "#9F149A"
+      "topLeft": "#14A2CC",
+      "topRight": "#F64CE5",
+      "bottomLeft": "#40F77C",
+      "bottomRight": "#E7DC7E"
     }
   },
   {
@@ -3474,10 +3451,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#EDE35B",
-      "topRight": "#AB863C",
-      "bottomLeft": "#9EBF1C",
-      "bottomRight": "#16C1C1"
+      "topLeft": "#F551A0",
+      "topRight": "#65B71A",
+      "bottomLeft": "#AA6DF3",
+      "bottomRight": "#4FE5EE"
     }
   },
   {
@@ -3518,10 +3495,10 @@
     "rowCount": 10,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#4FE335",
-      "topRight": "#C4CC4B",
-      "bottomLeft": "#4968D8",
-      "bottomRight": "#64B71C"
+      "topLeft": "#5FDB43",
+      "topRight": "#51B1F0",
+      "bottomLeft": "#E9984E",
+      "bottomRight": "#D281E4"
     }
   },
   {
@@ -3531,10 +3508,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#269A94",
-      "topRight": "#B6AC20",
-      "bottomLeft": "#2C489C",
-      "bottomRight": "#C90E2D"
+      "topLeft": "#6D5EE8",
+      "topRight": "#FA7C70",
+      "bottomLeft": "#0C81CA",
+      "bottomRight": "#69EA53"
     }
   },
   {
@@ -3544,10 +3521,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#52C248",
-      "topRight": "#B313C2",
-      "bottomLeft": "#B87345",
-      "bottomRight": "#0D4F9C"
+      "topLeft": "#7A370B",
+      "topRight": "#379D07",
+      "bottomLeft": "#8607A6",
+      "bottomRight": "#62BBF9"
     }
   },
   {
@@ -3557,23 +3534,23 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#91A43A",
-      "topRight": "#AA2DED",
-      "bottomLeft": "#EA5DBB",
-      "bottomRight": "#2609A4"
+      "topLeft": "#51F5C2",
+      "topRight": "#8F75F5",
+      "bottomLeft": "#E0F966",
+      "bottomRight": "#E65670"
     }
   },
   {
     "levelId": 234,
     "rules": "LockCorners",
-    "columnCount": 12,
-    "rowCount": 12,
+    "columnCount": 11,
+    "rowCount": 11,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#9C2769",
-      "topRight": "#E85875",
-      "bottomLeft": "#166BEC",
-      "bottomRight": "#E38635"
+      "topLeft": "#D843DB",
+      "topRight": "#DAE55D",
+      "bottomLeft": "#5946F1",
+      "bottomRight": "#0DBF62"
     }
   },
   {
@@ -3583,10 +3560,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#14B727",
-      "topRight": "#1BCFE7",
-      "bottomLeft": "#7BD34F",
-      "bottomRight": "#269E96"
+      "topLeft": "#C3E85E",
+      "topRight": "#79D0F1",
+      "bottomLeft": "#C92A18",
+      "bottomRight": "#AC5AE2"
     }
   },
   {
@@ -3596,10 +3573,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#38CE5B",
-      "topRight": "#48B98C",
-      "bottomLeft": "#2FDBC4",
-      "bottomRight": "#BF1CD4"
+      "topLeft": "#3383EB",
+      "topRight": "#F64CF3",
+      "bottomLeft": "#42F574",
+      "bottomRight": "#F2DC73"
     }
   },
   {
@@ -3609,10 +3586,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#20AB7A",
-      "topRight": "#9356DD",
-      "bottomLeft": "#13C7AC",
-      "bottomRight": "#21EC65"
+      "topLeft": "#F55169",
+      "topRight": "#4AC91D",
+      "bottomLeft": "#F26EDB",
+      "bottomRight": "#5EA6DE"
     }
   },
   {
@@ -3622,10 +3599,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#2976F1",
-      "topRight": "#13AA16",
-      "bottomLeft": "#1B20BF",
-      "bottomRight": "#903AA8"
+      "topLeft": "#43DB59",
+      "topRight": "#5162F0",
+      "bottomLeft": "#D7F93E",
+      "bottomRight": "#C0167F"
     }
   },
   {
@@ -3635,10 +3612,10 @@
     "rowCount": 13,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#A94742",
-      "topRight": "#0CB0CE",
-      "bottomLeft": "#A47821",
-      "bottomRight": "#D6EC46"
+      "topLeft": "#3B097C",
+      "topRight": "#950F24",
+      "bottomLeft": "#059CA8",
+      "bottomRight": "#CAE95D"
     }
   },
   {
@@ -3671,10 +3648,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#E820B6",
-      "topRight": "#3BB87D",
-      "bottomLeft": "#DF713B",
-      "bottomRight": "#47D634"
+      "topLeft": "#C89714",
+      "topRight": "#57EAC3",
+      "bottomLeft": "#EB4C5C",
+      "bottomRight": "#A779EC"
     }
   },
   {
@@ -3684,10 +3661,10 @@
     "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#1859BA",
-      "topRight": "#0EAE2E",
-      "bottomLeft": "#CB3D7B",
-      "bottomRight": "#84A71B"
+      "topLeft": "#51F1F5",
+      "topRight": "#BF0DBB",
+      "bottomLeft": "#8BF868",
+      "bottomRight": "#F3B949"
     }
   },
   {
@@ -3697,10 +3674,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#97279F",
-      "topRight": "#BB57F1",
-      "bottomLeft": "#C78A19",
-      "bottomRight": "#E82FA1"
+      "topLeft": "#DB43AB",
+      "topRight": "#DEE55D",
+      "bottomLeft": "#5548EF",
+      "bottomRight": "#7CE9AB"
     }
   },
   {
@@ -3710,10 +3687,10 @@
     "rowCount": 9,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#2EC3E1",
-      "topRight": "#A5398A",
-      "bottomLeft": "#7122A5",
-      "bottomRight": "#53EF6B"
+      "topLeft": "#95E85E",
+      "topRight": "#799AF1",
+      "bottomLeft": "#CC8105",
+      "bottomRight": "#EF4DB6"
     }
   },
   {
@@ -3723,10 +3700,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#76C63D",
-      "topRight": "#B8101B",
-      "bottomLeft": "#BA29A2",
-      "bottomRight": "#0B3BB4"
+      "topLeft": "#1528D1",
+      "topRight": "#F64C88",
+      "bottomLeft": "#44F3D5",
+      "bottomRight": "#BAE67F"
     }
   },
   {
@@ -3736,10 +3713,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#73CC2A",
-      "topRight": "#23BC1B",
-      "bottomLeft": "#39B89F",
-      "bottomRight": "#E2447B"
+      "topLeft": "#AC2A0C",
+      "topRight": "#62BA12",
+      "bottomLeft": "#9306BC",
+      "bottomRight": "#56D7E6"
     }
   },
   {
@@ -3749,10 +3726,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#C87545",
-      "topRight": "#7A45DD",
-      "bottomLeft": "#2684BA",
-      "bottomRight": "#2DD53B"
+      "topLeft": "#077E40",
+      "topRight": "#0B0B99",
+      "bottomLeft": "#AA8303",
+      "bottomRight": "#F075A4"
     }
   },
   {
@@ -3762,10 +3739,10 @@
     "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#E8E539",
-      "topRight": "#673EC7",
-      "bottomLeft": "#AFF121",
-      "bottomRight": "#9D236A"
+      "topLeft": "#C95EE8",
+      "topRight": "#FADB70",
+      "bottomLeft": "#1022CB",
+      "bottomRight": "#54E873"
     }
   },
   {
@@ -3775,10 +3752,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#1A3CE7",
-      "topRight": "#17AD64",
-      "bottomLeft": "#2E6DA5",
-      "bottomRight": "#9FC439"
+      "topLeft": "#DFEB33",
+      "topRight": "#57EAB9",
+      "bottomLeft": "#E94E60",
+      "bottomRight": "#736EF7"
     }
   },
   {
@@ -3788,10 +3765,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#86EF1D",
-      "topRight": "#D648E3",
-      "bottomLeft": "#388A9E",
-      "bottomRight": "#CB355B"
+      "topLeft": "#51BBF5",
+      "topRight": "#D20F89",
+      "bottomLeft": "#6AF6A3",
+      "bottomRight": "#E4DB58"
     }
   },
   {
@@ -3828,10 +3805,10 @@
     "rowCount": 3,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#2F83D3",
-      "topRight": "#8A24B3",
-      "bottomLeft": "#20D7AC",
-      "bottomRight": "#194E9D"
+      "topLeft": "#DB4378",
+      "topRight": "#AEE55D",
+      "bottomLeft": "#994AED",
+      "bottomRight": "#10C1BE"
     }
   },
   {
@@ -3841,10 +3818,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#1CD34A",
-      "topRight": "#ACD611",
-      "bottomLeft": "#2DB9C0",
-      "bottomRight": "#A61896"
+      "topLeft": "#67E85E",
+      "topRight": "#79B8F1",
+      "bottomLeft": "#F9BB66",
+      "bottomRight": "#E05CDB"
     }
   },
   {
@@ -3854,10 +3831,10 @@
     "rowCount": 8,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#37D1F0",
-      "topRight": "#68149C",
-      "bottomLeft": "#BA940C",
-      "bottomRight": "#5166D0"
+      "topLeft": "#3C13C3",
+      "topRight": "#F68A4C",
+      "bottomLeft": "#46A1F1",
+      "bottomRight": "#81F075"
     }
   },
   {
@@ -3867,10 +3844,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#13BA3A",
-      "topRight": "#9A3EC5",
-      "bottomLeft": "#EB2662",
-      "bottomRight": "#1C82E2"
+      "topLeft": "#804505",
+      "topRight": "#079D1E",
+      "bottomLeft": "#AC02A5",
+      "bottomRight": "#5EB4F3"
     }
   },
   {
@@ -3880,10 +3857,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#C6E914",
-      "topRight": "#AD24CC",
-      "bottomLeft": "#EA8725",
-      "bottomRight": "#11AF7B"
+      "topLeft": "#43DBBF",
+      "topRight": "#7E51F0",
+      "bottomLeft": "#C6F542",
+      "bottomRight": "#ED7D78"
     }
   },
   {
@@ -3893,10 +3870,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#7B12B7",
-      "topRight": "#35BCDB",
-      "bottomLeft": "#3769A3",
-      "bottomRight": "#56C332"
+      "topLeft": "#E85ED9",
+      "topRight": "#F7FA70",
+      "bottomLeft": "#3211BB",
+      "bottomRight": "#47F5DC"
     }
   },
   {
@@ -3906,10 +3883,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#B6233E",
-      "topRight": "#A1C20C",
-      "bottomLeft": "#4BC8CA",
-      "bottomRight": "#4F9B1F"
+      "topLeft": "#83CC14",
+      "topRight": "#57D4EA",
+      "bottomLeft": "#F9573E",
+      "bottomRight": "#EA7BE7"
     }
   },
   {
@@ -3919,10 +3896,10 @@
     "rowCount": 13,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#10BCEB",
-      "topRight": "#DBD336",
-      "bottomLeft": "#793FE4",
-      "bottomRight": "#9C255A"
+      "topLeft": "#5184F5",
+      "topRight": "#F575B4",
+      "bottomLeft": "#6BF59F",
+      "bottomRight": "#F1B64B"
     }
   },
   {
@@ -3932,10 +3909,10 @@
     "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#2626DA",
-      "topRight": "#A646C0",
-      "bottomLeft": "#5ECDF2",
-      "bottomRight": "#F0C31F"
+      "topLeft": "#9B080B",
+      "topRight": "#6BA20B",
+      "bottomLeft": "#2604D2",
+      "bottomRight": "#66EBD0"
     }
   },
   {
@@ -3945,10 +3922,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#BA1D25",
-      "topRight": "#CCE842",
-      "bottomLeft": "#C7973F",
-      "bottomRight": "#21A3BD"
+      "topLeft": "#5EE884",
+      "topRight": "#9A79F1",
+      "bottomLeft": "#A4CD0A",
+      "bottomRight": "#EE4F6D"
     }
   },
   {
@@ -3979,10 +3956,10 @@
     "rowCount": 5,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#302E9B",
-      "topRight": "#23D62C",
-      "bottomLeft": "#E0BA0E",
-      "bottomRight": "#8718BB"
+      "topLeft": "#490F76",
+      "topRight": "#950F32",
+      "bottomLeft": "#0AA37A",
+      "bottomRight": "#CDF646"
     }
   },
   {
@@ -3992,10 +3969,10 @@
     "rowCount": 9,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#44D52A",
-      "topRight": "#0CAF1F",
-      "bottomLeft": "#779D0D",
-      "bottomRight": "#3FC878"
+      "topLeft": "#F5DE51",
+      "topRight": "#1BBFC0",
+      "bottomLeft": "#FB6569",
+      "bottomRight": "#9553EA"
     }
   },
   {
@@ -4005,10 +3982,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#AB4055",
-      "topRight": "#46DEEC",
-      "bottomLeft": "#0C5E9E",
-      "bottomRight": "#16A149"
+      "topLeft": "#43C4DB",
+      "topRight": "#E051F0",
+      "bottomLeft": "#44F376",
+      "bottomRight": "#C37509"
     }
   },
   {
@@ -4018,10 +3995,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#0C9968",
-      "topRight": "#3F33A1",
-      "bottomLeft": "#A6C121",
-      "bottomRight": "#43B14A"
+      "topLeft": "#E85EAB",
+      "topRight": "#E9FA70",
+      "bottomLeft": "#8670F0",
+      "bottomRight": "#56E6B5"
     }
   },
   {
@@ -4031,10 +4008,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#BB115E",
-      "topRight": "#416CB2",
-      "bottomLeft": "#4BC680",
-      "bottomRight": "#CD6727"
+      "topLeft": "#41BE13",
+      "topRight": "#5788EA",
+      "bottomLeft": "#F1F740",
+      "bottomRight": "#F570C0"
     }
   },
   {
@@ -4044,10 +4021,10 @@
     "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#AF3663",
-      "topRight": "#1E7A9B",
-      "bottomLeft": "#B126C3",
-      "bottomRight": "#DB2E25"
+      "topLeft": "#5651F5",
+      "topRight": "#D7140F",
+      "bottomLeft": "#6DF3E0",
+      "bottomRight": "#B1E25A"
     }
   },
   {
@@ -4057,10 +4034,10 @@
     "rowCount": 13,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#6F4CC9",
-      "topRight": "#55D912",
-      "bottomLeft": "#1132F2",
-      "bottomRight": "#9C41BD"
+      "topLeft": "#DB7343",
+      "topRight": "#66E55D",
+      "bottomLeft": "#D54EE9",
+      "bottomRight": "#73D2F2"
     }
   },
   {
@@ -4070,10 +4047,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#B17532",
-      "topRight": "#F020BF",
-      "bottomLeft": "#17A5D9",
-      "bottomRight": "#D04B51"
+      "topLeft": "#0D784E",
+      "topRight": "#0B1A99",
+      "bottomLeft": "#A3A509",
+      "bottomRight": "#EA719E"
     }
   },
   {
@@ -4083,10 +4060,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#DDD20B",
-      "topRight": "#B05C32",
-      "bottomLeft": "#3D26E7",
-      "bottomRight": "#941DB1"
+      "topLeft": "#B614C8",
+      "topRight": "#F6BA4C",
+      "bottomLeft": "#4A55ED",
+      "bottomRight": "#76EF86"
     }
   },
   {
@@ -4096,10 +4073,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#76F133",
-      "topRight": "#5AEA77",
-      "bottomLeft": "#49D1E3",
-      "bottomRight": "#D12EAE"
+      "topLeft": "#D5F551",
+      "topRight": "#7EEDD0",
+      "bottomLeft": "#F9666A",
+      "bottomRight": "#7345F7"
     }
   },
   {
@@ -4136,10 +4113,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#A728B3",
-      "topRight": "#2A5EE1",
-      "bottomLeft": "#4A8CC3",
-      "bottomRight": "#4528A6"
+      "topLeft": "#4391DB",
+      "topRight": "#F051BE",
+      "bottomLeft": "#46F199",
+      "bottomRight": "#C4C21C"
     }
   },
   {
@@ -4149,10 +4126,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#16CB88",
-      "topRight": "#BCEE18",
-      "bottomLeft": "#9C48B8",
-      "bottomRight": "#E1923F"
+      "topLeft": "#8A0523",
+      "topRight": "#A4CE09",
+      "bottomLeft": "#2302E8",
+      "bottomRight": "#75F0B2"
     }
   },
   {
@@ -4162,10 +4139,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#A15B0B",
-      "topRight": "#C140C7",
-      "bottomLeft": "#0D7AA2",
-      "bottomRight": "#7EAD38"
+      "topLeft": "#33EB3F",
+      "topRight": "#5799EA",
+      "bottomLeft": "#F5BA42",
+      "bottomRight": "#E97CCC"
     }
   },
   {
@@ -4175,10 +4152,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#D2145D",
-      "topRight": "#4867CE",
-      "bottomLeft": "#AF3C0F",
-      "bottomRight": "#3FE3AC"
+      "topLeft": "#8C51F5",
+      "topRight": "#C8480E",
+      "bottomLeft": "#6EAAF2",
+      "bottomRight": "#56EF4D"
     }
   },
   {
@@ -4188,10 +4165,10 @@
     "rowCount": 12,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#3AAF8C",
-      "topRight": "#CF562E",
-      "bottomLeft": "#E7B43D",
-      "bottomRight": "#F05E76"
+      "topLeft": "#7A530B",
+      "topRight": "#079D0E",
+      "bottomLeft": "#A60779",
+      "bottomRight": "#5BADEC"
     }
   },
   {
@@ -4201,10 +4178,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#A70F3D",
-      "topRight": "#E3DD38",
-      "bottomLeft": "#211699",
-      "bottomRight": "#1094BC"
+      "topLeft": "#5EE8E0",
+      "topRight": "#A479F1",
+      "bottomLeft": "#C3F56B",
+      "bottomRight": "#EC5166"
     }
   },
   {
@@ -4214,10 +4191,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#B03BB4",
-      "topRight": "#5112CF",
-      "bottomLeft": "#D85844",
-      "bottomRight": "#5CDA4E"
+      "topLeft": "#BA1292",
+      "topRight": "#C2F64C",
+      "bottomLeft": "#774CEB",
+      "bottomRight": "#6BFAEC"
     }
   },
   {
@@ -4227,10 +4204,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#E1E730",
-      "topRight": "#E0C256",
-      "bottomLeft": "#BD2E3F",
-      "bottomRight": "#A53465"
+      "topLeft": "#9FF551",
+      "topRight": "#1C6CC4",
+      "bottomLeft": "#F8C768",
+      "bottomRight": "#E254E8"
     }
   },
   {
@@ -4240,23 +4217,23 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#A732C8",
-      "topRight": "#362CC7",
-      "bottomLeft": "#539EDC",
-      "bottomRight": "#B9C324"
+      "topLeft": "#435EDB",
+      "topRight": "#F05193",
+      "bottomLeft": "#48EF96",
+      "bottomRight": "#F7E56E"
     }
   },
   {
     "levelId": 279,
     "rules": "LockCorners",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#C8B54D",
-      "topRight": "#094B9C",
-      "bottomLeft": "#DADA12",
-      "bottomRight": "#58C4DF"
+      "topLeft": "#E86E5E",
+      "topRight": "#76FA70",
+      "bottomLeft": "#E00698",
+      "bottomRight": "#586CE4"
     }
   },
   {
@@ -4285,10 +4262,10 @@
     "rowCount": 5,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#50A725",
-      "topRight": "#E87742",
-      "bottomLeft": "#B324B8",
-      "bottomRight": "#EE1980"
+      "topLeft": "#13C35A",
+      "topRight": "#6D57EA",
+      "bottomLeft": "#CAF344",
+      "bottomRight": "#F47194"
     }
   },
   {
@@ -4298,10 +4275,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#256BB2",
-      "topRight": "#81D82F",
-      "bottomLeft": "#DA7138",
-      "bottomRight": "#66D940"
+      "topLeft": "#59097C",
+      "topRight": "#952B0F",
+      "bottomLeft": "#05A8A5",
+      "bottomRight": "#88F372"
     }
   },
   {
@@ -4311,10 +4288,10 @@
     "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#EC784A",
-      "topRight": "#EE844F",
-      "bottomLeft": "#E23B94",
-      "bottomRight": "#3EA583"
+      "topLeft": "#DBD943",
+      "topRight": "#5DE5DE",
+      "bottomLeft": "#F74A40",
+      "bottomRight": "#6B15C6"
     }
   },
   {
@@ -4324,10 +4301,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#48EC6E",
-      "topRight": "#D2EC2D",
-      "bottomLeft": "#3681A4",
-      "bottomRight": "#10A066"
+      "topLeft": "#5EC2E8",
+      "topRight": "#F179D0",
+      "bottomLeft": "#0FBD45",
+      "bottomRight": "#F9A043"
     }
   },
   {
@@ -4337,10 +4314,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#A37A28",
-      "topRight": "#71CD21",
-      "bottomLeft": "#2FE797",
-      "bottomRight": "#1BB835"
+      "topLeft": "#AC1556",
+      "topRight": "#9FA711",
+      "bottomLeft": "#1E0BAD",
+      "bottomRight": "#57EFCC"
     }
   },
   {
@@ -4350,10 +4327,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#43D765",
-      "topRight": "#ED685E",
-      "bottomLeft": "#132FE4",
-      "bottomRight": "#E4BB52"
+      "topLeft": "#68F551",
+      "topRight": "#1A23B7",
+      "bottomLeft": "#E7F66A",
+      "bottomRight": "#F547A8"
     }
   },
   {
@@ -4363,10 +4340,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#41CA44",
-      "topRight": "#50A02E",
-      "bottomLeft": "#EA5B0E",
-      "bottomRight": "#F11D56"
+      "topLeft": "#5A43DB",
+      "topRight": "#F05161",
+      "bottomLeft": "#4AEDDB",
+      "bottomRight": "#43C71F"
     }
   },
   {
@@ -4376,10 +4353,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#D97B16",
-      "topRight": "#DE4ABE",
-      "bottomLeft": "#3E8EDF",
-      "bottomRight": "#8E18B6"
+      "topLeft": "#E89C5E",
+      "topRight": "#70FA72",
+      "bottomLeft": "#F466F9",
+      "bottomRight": "#4BA2F1"
     }
   },
   {
@@ -4389,10 +4366,10 @@
     "rowCount": 10,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#C01BE1",
-      "topRight": "#8139C3",
-      "bottomLeft": "#BDA229",
-      "bottomRight": "#2EA8C7"
+      "topLeft": "#077E5F",
+      "topRight": "#3F0B99",
+      "bottomLeft": "#80AA03",
+      "bottomRight": "#F55B93"
     }
   },
   {
@@ -4402,50 +4379,46 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#BB543F",
-      "topRight": "#0E099A",
-      "bottomLeft": "#2A11A7",
-      "bottomRight": "#10BA4E"
+      "topLeft": "#F551F0",
+      "topRight": "#C8CD0E",
+      "bottomLeft": "#7276EE",
+      "bottomRight": "#4FEEA8"
     }
   },
   {
     "levelId": 290,
-    "shapeId": "starTrianglePuzzle9",
+    "shapeId": "octaSquarePuzzle4",
     "lockedSlots": [
       0,
       1,
       2,
       3,
+      4,
       5,
-      6,
       9,
       10,
-      11,
-      12,
-      13,
       14,
       15,
-      16,
-      18,
-      21,
-      23,
+      19,
+      20,
+      24,
+      25,
       29,
+      30,
       31,
-      40,
-      41,
-      42,
-      43,
-      44
+      32,
+      33,
+      34
     ],
     "rules": "LockEdgesAndWindow",
-    "columnCount": 3,
-    "rowCount": 5,
+    "columnCount": 5,
+    "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#3F0BDA",
-      "topRight": "#F06656",
-      "bottomLeft": "#0F9908",
-      "bottomRight": "#C01C84"
+      "topLeft": "#AADB43",
+      "topRight": "#5DE5CC",
+      "bottomLeft": "#F54F42",
+      "bottomRight": "#B181E4"
     }
   },
   {
@@ -4455,10 +4428,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#0D9A19",
-      "topRight": "#8B9B31",
-      "bottomLeft": "#E75160",
-      "bottomRight": "#2ADE60"
+      "topLeft": "#5E94E8",
+      "topRight": "#F179AA",
+      "bottomLeft": "#13CDBA",
+      "bottomRight": "#B3EA53"
     }
   },
   {
@@ -4468,10 +4441,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#2E0BDC",
-      "topRight": "#3874AF",
-      "bottomLeft": "#DAE92B",
-      "bottomRight": "#A852E5"
+      "topLeft": "#BE1323",
+      "topRight": "#87F64C",
+      "bottomLeft": "#F93EF2",
+      "bottomRight": "#6DC9F8"
     }
   },
   {
@@ -4481,10 +4454,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#41BEB1",
-      "topRight": "#3CCE76",
-      "bottomLeft": "#9DC129",
-      "bottomRight": "#E352AC"
+      "topLeft": "#51F571",
+      "topRight": "#7EA7ED",
+      "bottomLeft": "#F5D46B",
+      "bottomRight": "#E6569F"
     }
   },
   {
@@ -4494,10 +4467,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#A226BB",
-      "topRight": "#3D9BCD",
-      "bottomLeft": "#6E48D4",
-      "bottomRight": "#20C7C5"
+      "topLeft": "#8D43DB",
+      "topRight": "#F0AF51",
+      "bottomLeft": "#4C88EB",
+      "bottomRight": "#10C80E"
     }
   },
   {
@@ -4507,10 +4480,10 @@
     "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#47A0B2",
-      "topRight": "#38D091",
-      "bottomLeft": "#3E993B",
-      "bottomRight": "#C37521"
+      "topLeft": "#806505",
+      "topRight": "#0F9D07",
+      "bottomLeft": "#A202AC",
+      "bottomRight": "#43A8F9"
     }
   },
   {
@@ -4520,23 +4493,23 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#9930A9",
-      "topRight": "#9B1A8A",
-      "bottomLeft": "#A06830",
-      "bottomRight": "#4649C8"
+      "topLeft": "#33DEEB",
+      "topRight": "#D557EA",
+      "bottomLeft": "#5EEF48",
+      "bottomRight": "#F27E73"
     }
   },
   {
     "levelId": 297,
     "rules": "LockCorners",
-    "columnCount": 11,
-    "rowCount": 11,
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#BE9E0C",
-      "topRight": "#1577EE",
-      "bottomLeft": "#D126E8",
-      "bottomRight": "#3652A0"
+      "topLeft": "#9D106A",
+      "topRight": "#D2BE0F",
+      "bottomLeft": "#1C0AC2",
+      "bottomRight": "#67F4A8"
     }
   },
   {
@@ -4546,10 +4519,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#9941AC",
-      "topRight": "#7AC243",
-      "bottomLeft": "#BD594B",
-      "bottomRight": "#A45609"
+      "topLeft": "#77DB43",
+      "topRight": "#5DAEE5",
+      "bottomLeft": "#F3BC44",
+      "bottomRight": "#B518C9"
     }
   },
   {
@@ -4559,10 +4532,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#EE3C21",
-      "topRight": "#4BDAC7",
-      "bottomLeft": "#38EC62",
-      "bottomRight": "#369E2E"
+      "topLeft": "#5E66E8",
+      "topRight": "#F179A1",
+      "bottomLeft": "#70F0B8",
+      "bottomRight": "#E6F745"
     }
   },
   {
@@ -4601,10 +4574,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#8C3ABF",
-      "topRight": "#2DEEC1",
-      "bottomLeft": "#B6E840",
-      "bottomRight": "#B17C28"
+      "topLeft": "#D14215",
+      "topRight": "#4CF674",
+      "bottomLeft": "#F740AD",
+      "bottomRight": "#7984EC"
     }
   },
   {
@@ -4614,10 +4587,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#1326B2",
-      "topRight": "#1B5CAC",
-      "bottomLeft": "#8516CB",
-      "bottomRight": "#42E16D"
+      "topLeft": "#51F5A8",
+      "topRight": "#701BBB",
+      "bottomLeft": "#D0F36D",
+      "bottomRight": "#F36549"
     }
   },
   {
@@ -4627,10 +4600,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#D17F20",
-      "topRight": "#28CE83",
-      "bottomLeft": "#2F67C1",
-      "bottomRight": "#D2325C"
+      "topLeft": "#640F76",
+      "topRight": "#951D0F",
+      "bottomLeft": "#0A81A3",
+      "bottomRight": "#83EC6F"
     }
   },
   {
@@ -4640,10 +4613,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#EF31A9",
-      "topRight": "#4C25A2",
-      "bottomLeft": "#9C2BA9",
-      "bottomRight": "#50E622"
+      "topLeft": "#D8E85E",
+      "topRight": "#70DAFA",
+      "bottomLeft": "#CF260C",
+      "bottomRight": "#D94DEF"
     }
   },
   {
@@ -4653,10 +4626,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#4410AE",
-      "topRight": "#3262AB",
-      "bottomLeft": "#19ABB0",
-      "bottomRight": "#CB4E78"
+      "topLeft": "#1276BA",
+      "topRight": "#EA57D3",
+      "bottomLeft": "#4AED81",
+      "bottomRight": "#E6DF7F"
     }
   },
   {
@@ -4666,10 +4639,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#1E9F43",
-      "topRight": "#259B1E",
-      "bottomLeft": "#3ECBDE",
-      "bottomRight": "#3113DB"
+      "topLeft": "#F55183",
+      "topRight": "#D1F575",
+      "bottomLeft": "#9C66F9",
+      "bottomRight": "#51ECBD"
     }
   },
   {
@@ -4679,10 +4652,10 @@
     "rowCount": 9,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#B21573",
-      "topRight": "#90B337",
-      "bottomLeft": "#62CE44",
-      "bottomRight": "#BCAF39"
+      "topLeft": "#44DB43",
+      "topRight": "#5D6CE5",
+      "bottomLeft": "#D1F146",
+      "bottomRight": "#CA076B"
     }
   },
   {
@@ -4692,10 +4665,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#E15C58",
-      "topRight": "#45D90F",
-      "bottomLeft": "#D8D33D",
-      "bottomRight": "#CDF05A"
+      "topLeft": "#855EE8",
+      "topRight": "#F19B79",
+      "bottomLeft": "#1882CD",
+      "bottomRight": "#7FE854"
     }
   },
   {
@@ -4705,10 +4678,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#288FB8",
-      "topRight": "#7BBD30",
-      "bottomLeft": "#D2E319",
-      "bottomRight": "#3D9E58"
+      "topLeft": "#EB9C33",
+      "topRight": "#4CF65B",
+      "bottomLeft": "#F542EB",
+      "bottomRight": "#6E96F7"
     }
   },
   {
@@ -4718,10 +4691,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#2AD2C9",
-      "topRight": "#7032E3",
-      "bottomLeft": "#0FCA4A",
-      "bottomRight": "#57A239"
+      "topLeft": "#0D7869",
+      "topRight": "#300B99",
+      "bottomLeft": "#57A509",
+      "bottomRight": "#EE588D"
     }
   },
   {
@@ -4756,10 +4729,10 @@
     "rowCount": 6,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#AB37E9",
-      "topRight": "#386AC7",
-      "bottomLeft": "#B00D39",
-      "bottomRight": "#82C63F"
+      "topLeft": "#8D0C79",
+      "topRight": "#BA8C08",
+      "bottomLeft": "#0972D7",
+      "bottomRight": "#48F463"
     }
   },
   {
@@ -4769,10 +4742,10 @@
     "rowCount": 7,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#291CB9",
-      "topRight": "#9D1B4A",
-      "bottomLeft": "#EFEC1C",
-      "bottomRight": "#DA28D4"
+      "topLeft": "#AAE85E",
+      "topRight": "#70FAEC",
+      "bottomLeft": "#F5826B",
+      "bottomRight": "#BA5CE0"
     }
   },
   {
@@ -4782,10 +4755,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#E5314F",
-      "topRight": "#AC106B",
-      "bottomLeft": "#78349A",
-      "bottomRight": "#A21280"
+      "topLeft": "#1444CC",
+      "topRight": "#EA576A",
+      "bottomLeft": "#4CEBE7",
+      "bottomRight": "#BEF075"
     }
   },
   {
@@ -4795,10 +4768,10 @@
     "rowCount": 10,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#993F2F",
-      "topRight": "#713FC0",
-      "bottomLeft": "#DB9B56",
-      "bottomRight": "#54B846"
+      "topLeft": "#F55751",
+      "topRight": "#0EC413",
+      "bottomLeft": "#F868EF",
+      "bottomRight": "#43C9F9"
     }
   },
   {
@@ -4808,10 +4781,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#5320C2",
-      "topRight": "#8AD43F",
-      "bottomLeft": "#389E81",
-      "bottomRight": "#C01F93"
+      "topLeft": "#43DB74",
+      "topRight": "#6E5DE5",
+      "bottomLeft": "#EFD748",
+      "bottomRight": "#ED78C9"
     }
   },
   {
@@ -4821,10 +4794,10 @@
     "rowCount": 9,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#5AEF6B",
-      "topRight": "#A63F7F",
-      "bottomLeft": "#27D3CB",
-      "bottomRight": "#E85F2E"
+      "topLeft": "#B35EE8",
+      "topRight": "#F1B979",
+      "bottomLeft": "#0543D1",
+      "bottomRight": "#47F587"
     }
   },
   {
@@ -4834,10 +4807,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#9E2313",
-      "topRight": "#9CA82E",
-      "bottomLeft": "#0E34F0",
-      "bottomRight": "#35D89F"
+      "topLeft": "#7A700B",
+      "topRight": "#079D46",
+      "bottomLeft": "#A60788",
+      "bottomRight": "#7570F5"
     }
   },
   {
@@ -4847,10 +4820,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#9C6E38",
-      "topRight": "#9C2C9A",
-      "bottomLeft": "#B63EC8",
-      "bottomRight": "#52BA29"
+      "topLeft": "#51D4F5",
+      "topRight": "#E57EED",
+      "bottomLeft": "#74F070",
+      "bottomRight": "#F17F4B"
     }
   },
   {
@@ -4860,10 +4833,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#CB9B4C",
-      "topRight": "#2DDA80",
-      "bottomLeft": "#12F125",
-      "bottomRight": "#BD1886"
+      "topLeft": "#DB4390",
+      "topRight": "#9DF051",
+      "bottomLeft": "#CB40F7",
+      "bottomRight": "#20ACAB"
     }
   },
   {
@@ -4873,10 +4846,10 @@
     "rowCount": 12,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#9B9D3C",
-      "topRight": "#33A11A",
-      "bottomLeft": "#87DF3F",
-      "bottomRight": "#8EE30F"
+      "topLeft": "#7CE85E",
+      "topRight": "#708EFA",
+      "bottomLeft": "#D09911",
+      "bottomRight": "#EE4FBB"
     }
   },
   {
@@ -4921,10 +4894,10 @@
     "rowCount": 10,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#18BFE5",
-      "topRight": "#2DC878",
-      "bottomLeft": "#3338A3",
-      "bottomRight": "#B42756"
+      "topLeft": "#4033EB",
+      "topRight": "#EA577D",
+      "bottomLeft": "#4EE9B4",
+      "bottomRight": "#C4E481"
     }
   },
   {
@@ -4934,10 +4907,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#5F24E0",
-      "topRight": "#2BDC34",
-      "bottomLeft": "#16B261",
-      "bottomRight": "#27509B"
+      "topLeft": "#F58D51",
+      "topRight": "#0FD776",
+      "bottomLeft": "#F66AB2",
+      "bottomRight": "#535AEA"
     }
   },
   {
@@ -4947,10 +4920,10 @@
     "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#DE4B11",
-      "topRight": "#62C342",
-      "bottomLeft": "#1AE75B",
-      "bottomRight": "#7FAA2F"
+      "topLeft": "#43DBA7",
+      "topRight": "#945DE5",
+      "bottomLeft": "#6CED4A",
+      "bottomRight": "#CD1B0A"
     }
   },
   {
@@ -4960,10 +4933,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#B22EB5",
-      "topRight": "#0BBCB0",
-      "bottomLeft": "#31B467",
-      "bottomRight": "#AD5F23"
+      "topLeft": "#76097C",
+      "topRight": "#955D0F",
+      "bottomLeft": "#055CA8",
+      "bottomRight": "#71F859"
     }
   },
   {
@@ -4973,10 +4946,10 @@
     "rowCount": 11,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#3F72E8",
-      "topRight": "#BB1712",
-      "bottomLeft": "#BF4BE5",
-      "bottomRight": "#12CCCC"
+      "topLeft": "#9CC814",
+      "topRight": "#4CD8F6",
+      "bottomLeft": "#F1A346",
+      "bottomRight": "#E970F5"
     }
   },
   {
@@ -4986,10 +4959,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#46C965",
-      "topRight": "#0C6AD6",
-      "bottomLeft": "#39BC8E",
-      "bottomRight": "#579D38"
+      "topLeft": "#519EF5",
+      "topRight": "#B31961",
+      "bottomLeft": "#72EE9F",
+      "bottomRight": "#E2D05A"
     }
   },
   {
@@ -4999,10 +4972,10 @@
     "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#B7F03D",
-      "topRight": "#32E960",
-      "bottomLeft": "#5A39B0",
-      "bottomRight": "#AD0C1E"
+      "topLeft": "#DB435D",
+      "topRight": "#B7F051",
+      "bottomLeft": "#9442F5",
+      "bottomRight": "#73F2E8"
     }
   },
   {
@@ -5012,10 +4985,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#1ECB30",
-      "topRight": "#3550A2",
-      "bottomLeft": "#ED1854",
-      "bottomRight": "#8FAA22"
+      "topLeft": "#5EE86E",
+      "topRight": "#8770FA",
+      "bottomLeft": "#91BF12",
+      "bottomRight": "#DE5E6F"
     }
   },
   {
@@ -5025,10 +4998,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#22BDA6",
-      "topRight": "#45CE13",
-      "bottomLeft": "#16B03A",
-      "bottomRight": "#DB4FD0"
+      "topLeft": "#6215D1",
+      "topRight": "#EA6E57",
+      "bottomLeft": "#3EA6F9",
+      "bottomRight": "#A1EF76"
     }
   },
   {
@@ -5038,10 +5011,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#ED0C44",
-      "topRight": "#5B3EA4",
-      "bottomLeft": "#8B0BB6",
-      "bottomRight": "#1CBAB5"
+      "topLeft": "#F5C451",
+      "topRight": "#75F58A",
+      "bottomLeft": "#F56BE0",
+      "bottomRight": "#4551F7"
     }
   },
   {
@@ -5082,10 +5055,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#0CDB66",
-      "topRight": "#D638E7",
-      "bottomLeft": "#9B5932",
-      "bottomRight": "#A70F3A"
+      "topLeft": "#077E7D",
+      "topRight": "#210B99",
+      "bottomLeft": "#8FAA03",
+      "bottomRight": "#E75587"
     }
   },
   {
@@ -5095,10 +5068,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#B343BE",
-      "topRight": "#76CF43",
-      "bottomLeft": "#12C453",
-      "bottomRight": "#A23B64"
+      "topLeft": "#E85EC1",
+      "topRight": "#CFF179",
+      "bottomLeft": "#0D0AD1",
+      "bottomRight": "#49F3E5"
     }
   },
   {
@@ -5108,23 +5081,23 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#B7277B",
-      "topRight": "#BC481A",
-      "bottomLeft": "#EE3CD6",
-      "bottomRight": "#34B96E"
+      "topLeft": "#81EB33",
+      "topRight": "#4CB3F6",
+      "bottomLeft": "#EF7348",
+      "bottomRight": "#B57CE9"
     }
   },
   {
     "levelId": 333,
     "rules": "LockCorners",
-    "columnCount": 12,
-    "rowCount": 12,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#CF2F27",
-      "topRight": "#5438B9",
-      "bottomLeft": "#CDD23F",
-      "bottomRight": "#BF3147"
+      "topLeft": "#5167F5",
+      "topRight": "#C41C3B",
+      "bottomLeft": "#65F3FB",
+      "bottomRight": "#A6EF4D"
     }
   },
   {
@@ -5134,10 +5107,10 @@
     "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#DF2B3D",
-      "topRight": "#3986B9",
-      "bottomLeft": "#521EB4",
-      "bottomRight": "#493FC9"
+      "topLeft": "#DB5B43",
+      "topRight": "#60F051",
+      "bottomLeft": "#F344E3",
+      "bottomRight": "#234EAF"
     }
   },
   {
@@ -5147,10 +5120,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#5BB72D",
-      "topRight": "#AD43A1",
-      "bottomLeft": "#AB8816",
-      "bottomRight": "#23B42C"
+      "topLeft": "#5EE89C",
+      "topRight": "#8C70FA",
+      "bottomLeft": "#F0EA70",
+      "bottomRight": "#EC5199"
     }
   },
   {
@@ -5160,10 +5133,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#E31149",
-      "topRight": "#379B81",
-      "bottomLeft": "#3EA97A",
-      "bottomRight": "#4185A9"
+      "topLeft": "#8409AE",
+      "topRight": "#BF590D",
+      "bottomLeft": "#046BBE",
+      "bottomRight": "#AEEA7B"
     }
   },
   {
@@ -5173,10 +5146,10 @@
     "rowCount": 10,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#49B343",
-      "topRight": "#AB4499",
-      "bottomLeft": "#A43F34",
-      "bottomRight": "#5137C8"
+      "topLeft": "#7C8005",
+      "topRight": "#079D36",
+      "bottomLeft": "#AC0262",
+      "bottomRight": "#736CEF"
     }
   },
   {
@@ -5186,10 +5159,10 @@
     "rowCount": 13,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#2A86BC",
-      "topRight": "#D2225F",
-      "bottomLeft": "#AF7F41",
-      "bottomRight": "#EDD657"
+      "topLeft": "#43A9DB",
+      "topRight": "#E55DE3",
+      "bottomLeft": "#4EE957",
+      "bottomRight": "#F7B86E"
     }
   },
   {
@@ -5199,10 +5172,10 @@
     "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#A42C7A",
-      "topRight": "#ECDB22",
-      "bottomLeft": "#F149E6",
-      "bottomRight": "#2193BD"
+      "topLeft": "#E85E93",
+      "topRight": "#B9F179",
+      "bottomLeft": "#A30BC1",
+      "bottomRight": "#58B0E4"
     }
   },
   {
@@ -5239,10 +5212,10 @@
     "rowCount": 8,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#B9563A",
-      "topRight": "#59C042",
-      "bottomLeft": "#77329C",
-      "bottomRight": "#DB4B6A"
+      "topLeft": "#25CC14",
+      "topRight": "#4C85F6",
+      "bottomLeft": "#EDC34A",
+      "bottomRight": "#F471D4"
     }
   },
   {
@@ -5252,23 +5225,23 @@
     "rowCount": 13,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#C52250",
-      "topRight": "#9E2D69",
-      "bottomLeft": "#CF8320",
-      "bottomRight": "#84A331"
+      "topLeft": "#7351F5",
+      "topRight": "#ED7E92",
+      "bottomLeft": "#66F9D5",
+      "bottomRight": "#CEE05C"
     }
   },
   {
     "levelId": 342,
     "rules": "LockCorners",
-    "columnCount": 13,
-    "rowCount": 13,
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#1C479B",
-      "topRight": "#0BE0E0",
-      "bottomLeft": "#AE251E",
-      "bottomRight": "#C816AB"
+      "topLeft": "#DB8E43",
+      "topRight": "#51F09A",
+      "bottomLeft": "#F14691",
+      "bottomRight": "#1617D0"
     }
   },
   {
@@ -5278,10 +5251,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#B1117B",
-      "topRight": "#EB2C21",
-      "bottomLeft": "#B43DA1",
-      "bottomRight": "#98E951"
+      "topLeft": "#5EE8CB",
+      "topRight": "#DC70FA",
+      "bottomLeft": "#35C016",
+      "bottomRight": "#F94643"
     }
   },
   {
@@ -5291,10 +5264,10 @@
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#EA1EB7",
-      "topRight": "#71AF1B",
-      "bottomLeft": "#ED232A",
-      "bottomRight": "#A4204C"
+      "topLeft": "#760F6E",
+      "topRight": "#954F0F",
+      "bottomLeft": "#0A37A3",
+      "bottomRight": "#6BF155"
     }
   },
   {
@@ -5304,10 +5277,10 @@
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#9B9F30",
-      "topRight": "#5496D4",
-      "bottomLeft": "#3923B9",
-      "bottomRight": "#AD5B1C"
+      "topLeft": "#B9F551",
+      "topRight": "#0E77CD",
+      "bottomLeft": "#F2C06E",
+      "bottomRight": "#ED47F5"
     }
   },
   {
@@ -5317,10 +5290,10 @@
     "rowCount": 11,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#9438BE",
-      "topRight": "#41DDE8",
-      "bottomLeft": "#BD2998",
-      "bottomRight": "#190D9C"
+      "topLeft": "#4376DB",
+      "topRight": "#E55DAD",
+      "bottomLeft": "#3EF988",
+      "bottomRight": "#85B01C"
     }
   },
   {
@@ -5330,10 +5303,10 @@
     "rowCount": 13,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#71F04D",
-      "topRight": "#29C5BB",
-      "bottomLeft": "#3ED259",
-      "bottomRight": "#95CA0D"
+      "topLeft": "#E85E65",
+      "topRight": "#BDF179",
+      "bottomLeft": "#B76BF5",
+      "bottomRight": "#4BD8F1"
     }
   },
   {
@@ -5343,10 +5316,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#329D77",
-      "topRight": "#46CA8C",
-      "bottomLeft": "#A9288B",
-      "bottomRight": "#4672CA"
+      "topLeft": "#13BE3D",
+      "topRight": "#5F4CF6",
+      "bottomLeft": "#B4EB4C",
+      "bottomRight": "#E77E87"
     }
   },
   {
@@ -5356,10 +5329,10 @@
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#2DD05E",
-      "topRight": "#19B011",
-      "bottomLeft": "#611CA6",
-      "bottomRight": "#71D835"
+      "topLeft": "#57069D",
+      "topRight": "#A63207",
+      "bottomLeft": "#02D4B2",
+      "bottomRight": "#C8E95D"
     }
   },
   {
@@ -5404,278 +5377,278 @@
     "rowCount": 5,
     "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#3BD76A",
-      "topRight": "#C08838",
-      "bottomLeft": "#4788E4",
-      "bottomRight": "#5C19A8"
+      "topLeft": "#DBC143",
+      "topRight": "#51F078",
+      "bottomLeft": "#EF48C6",
+      "bottomRight": "#819AE4"
     }
   },
   {
     "levelId": 351,
-    "rules": "LockCorners",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Extreme",
+    "rules": "LockOneByOne",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#741BCD",
-      "topRight": "#5E38C7",
-      "bottomLeft": "#F040C1",
-      "bottomRight": "#35F0A5"
+      "topLeft": "#94EE2F",
+      "topRight": "#4CEBDA",
+      "bottomLeft": "#F47684",
+      "bottomRight": "#7106C6"
     }
   },
   {
     "levelId": 352,
+    "rules": "LockCorners",
+    "columnCount": 8,
+    "rowCount": 8,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#4C74F6",
+      "topRight": "#F466BC",
+      "bottomLeft": "#18C36E",
+      "bottomRight": "#E5A638"
+    }
+  },
+  {
+    "levelId": 353,
     "rules": "LockOneRowSkipOne",
     "columnCount": 9,
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#3ED33E",
-      "topRight": "#C62E20",
-      "bottomLeft": "#C98D0A",
-      "bottomRight": "#357E99"
-    }
-  },
-  {
-    "levelId": 353,
-    "rules": "LockEdgesAndWindow",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#D0952F",
-      "topRight": "#35CC3A",
-      "bottomLeft": "#E61D2B",
-      "bottomRight": "#2E38EF"
+      "topLeft": "#E48781",
+      "topRight": "#A7F92F",
+      "bottomLeft": "#BD63F8",
+      "bottomRight": "#4ED1F4"
     }
   },
   {
     "levelId": 354,
+    "rules": "LockEdgesAndWindow",
+    "columnCount": 9,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#52E083",
+      "topRight": "#1926B8",
+      "bottomLeft": "#EEBB3A",
+      "bottomRight": "#E97CCA"
+    }
+  },
+  {
+    "levelId": 355,
     "rules": "UnLockSideEdgesOnly",
     "columnCount": 11,
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#63D815",
-      "topRight": "#24CBB8",
-      "bottomLeft": "#1C96BF",
-      "bottomRight": "#B20922"
-    }
-  },
-  {
-    "levelId": 355,
-    "rules": "LockEdges",
-    "columnCount": 12,
-    "rowCount": 12,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#E650AD",
-      "topRight": "#53E137",
-      "bottomLeft": "#D6371E",
-      "bottomRight": "#0EA9BD"
+      "topLeft": "#7708B4",
+      "topRight": "#C1190B",
+      "bottomLeft": "#03B1CE",
+      "bottomRight": "#B4F745"
     }
   },
   {
     "levelId": 356,
-    "rules": "LockOneLineSkipTwo",
-    "columnCount": 11,
+    "rules": "LockEdges",
+    "columnCount": 10,
     "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#9D813C",
-      "topRight": "#E232D6",
-      "bottomLeft": "#26C2A3",
-      "bottomRight": "#5BAC25"
+      "topLeft": "#E9DD3A",
+      "topRight": "#47F592",
+      "bottomLeft": "#F4259A",
+      "bottomRight": "#5D67F9"
     }
   },
   {
     "levelId": 357,
+    "rules": "LockOneLineSkipTwo",
+    "columnCount": 11,
+    "rowCount": 13,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#109DC6",
+      "topRight": "#E277E9",
+      "bottomLeft": "#97EF4E",
+      "bottomRight": "#E53F3E"
+    }
+  },
+  {
+    "levelId": 358,
     "rules": "LockMiddle",
     "columnCount": 12,
     "rowCount": 12,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#10C3AB",
-      "topRight": "#E7B44D",
-      "bottomLeft": "#408DAC",
-      "bottomRight": "#2850E3"
-    }
-  },
-  {
-    "levelId": 358,
-    "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 13,
-    "rowCount": 13,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#27BF66",
-      "topRight": "#64BF15",
-      "bottomLeft": "#9844BC",
-      "bottomRight": "#AA3F5B"
+      "topLeft": "#F872B3",
+      "topRight": "#CDC418",
+      "bottomLeft": "#8674EC",
+      "bottomRight": "#53F3B1"
     }
   },
   {
     "levelId": 359,
-    "rules": "LockOneByOne",
-    "columnCount": 10,
-    "rowCount": 10,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 9,
+    "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#622FD0",
-      "topRight": "#23799E",
-      "bottomLeft": "#CA7E4B",
-      "bottomRight": "#2F24C8"
+      "topLeft": "#74DC5B",
+      "topRight": "#5EAFF3",
+      "bottomLeft": "#F36939",
+      "bottomRight": "#C581E9"
     }
   },
   {
     "levelId": 360,
     "shapeId": "hexTrianglePuzzle6",
     "lockedSlots": [
-      22,
-      23,
-      27,
-      31,
+      19,
+      20,
+      24,
+      28,
       32,
       36,
-      43,
-      46,
-      47,
+      37,
+      40,
+      41,
+      50,
+      52,
       54,
-      56,
+      55,
+      57,
       59,
-      64,
-      67,
-      68,
-      70,
-      71,
-      72
+      61,
+      62,
+      63
     ],
-    "rules": "LockCorners",
-    "columnCount": 5,
-    "rowCount": 3,
-    "difficulty": "Hard",
+    "rules": "LockOneByOne",
+    "columnCount": 3,
+    "rowCount": 5,
+    "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#6312C7",
-      "topRight": "#D23CE6",
-      "bottomLeft": "#70AA3D",
-      "bottomRight": "#B4217C"
+      "topLeft": "#8074E7",
+      "topRight": "#F72696",
+      "bottomLeft": "#14C856",
+      "bottomRight": "#C6EC4B"
     }
   },
   {
     "levelId": 361,
-    "rules": "LockOneRowSkipOne",
-    "columnCount": 10,
-    "rowCount": 11,
-    "difficulty": "Normal",
+    "rules": "LockCorners",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Extreme",
     "cornerColors": {
-      "topLeft": "#29BC29",
-      "topRight": "#C16D15",
-      "bottomLeft": "#A634E7",
-      "bottomRight": "#AD26B9"
+      "topLeft": "#AA5118",
+      "topRight": "#5DE75A",
+      "bottomLeft": "#DF3BE3",
+      "bottomRight": "#62CAF8"
     }
   },
   {
     "levelId": 362,
+    "rules": "LockOneRowSkipOne",
+    "columnCount": 9,
+    "rowCount": 11,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#0F805C",
+      "topRight": "#0B218E",
+      "bottomLeft": "#D3C60D",
+      "bottomRight": "#E65CB3"
+    }
+  },
+  {
+    "levelId": 363,
     "rules": "LockEdgesAndWindow",
     "columnCount": 11,
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#4B47D1",
-      "topRight": "#1C64A3",
-      "bottomLeft": "#DAD349",
-      "bottomRight": "#44B23A"
-    }
-  },
-  {
-    "levelId": 363,
-    "rules": "UnLockSideEdgesOnly",
-    "columnCount": 12,
-    "rowCount": 12,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#74A43A",
-      "topRight": "#0BA632",
-      "bottomLeft": "#71D752",
-      "bottomRight": "#3045E8"
+      "topLeft": "#8D0D91",
+      "topRight": "#AB3407",
+      "bottomLeft": "#096DC8",
+      "bottomRight": "#88F075"
     }
   },
   {
     "levelId": 364,
-    "rules": "LockEdges",
-    "columnCount": 11,
-    "rowCount": 11,
+    "rules": "UnLockSideEdgesOnly",
+    "columnCount": 10,
+    "rowCount": 10,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#6716B2",
-      "topRight": "#BE530C",
-      "bottomLeft": "#1773E3",
-      "bottomRight": "#DBC057"
+      "topLeft": "#C7F547",
+      "topRight": "#6FE7E7",
+      "bottomLeft": "#C1062B",
+      "bottomRight": "#423DDB"
     }
   },
   {
     "levelId": 365,
+    "rules": "LockEdges",
+    "columnCount": 11,
+    "rowCount": 11,
+    "difficulty": "Hard",
+    "cornerColors": {
+      "topLeft": "#7DAAE3",
+      "topRight": "#E73CE5",
+      "bottomLeft": "#6FF462",
+      "bottomRight": "#ECAF51"
+    }
+  },
+  {
+    "levelId": 366,
     "rules": "LockOneLineSkipTwo",
     "columnCount": 12,
     "rowCount": 13,
     "difficulty": "Hard",
     "cornerColors": {
-      "topLeft": "#BE4644",
-      "topRight": "#B10F83",
-      "bottomLeft": "#B4C93A",
-      "bottomRight": "#BE3BD3"
-    }
-  },
-  {
-    "levelId": 366,
-    "rules": "LockMiddle",
-    "columnCount": 13,
-    "rowCount": 13,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#45E1AD",
-      "topRight": "#B3C136",
-      "bottomLeft": "#BB3A3E",
-      "bottomRight": "#D15A22"
+      "topLeft": "#E04D63",
+      "topRight": "#6FD411",
+      "bottomLeft": "#943AE9",
+      "bottomRight": "#68F8CA"
     }
   },
   {
     "levelId": 367,
-    "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Hard",
+    "rules": "LockMiddle",
+    "columnCount": 9,
+    "rowCount": 9,
+    "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#3AC952",
-      "topRight": "#C7D324",
-      "bottomLeft": "#4DB620",
-      "bottomRight": "#4AD039"
+      "topLeft": "#67E97A",
+      "topRight": "#71B1F9",
+      "bottomLeft": "#F9B94E",
+      "bottomRight": "#B11B8A"
     }
   },
   {
     "levelId": 368,
+    "rules": "LockInPairsAndUnlockLines",
+    "columnCount": 9,
+    "rowCount": 7,
+    "difficulty": "Normal",
+    "cornerColors": {
+      "topLeft": "#8335E9",
+      "topRight": "#E55752",
+      "bottomLeft": "#75F5D3",
+      "bottomRight": "#C1F25F"
+    }
+  },
+  {
+    "levelId": 369,
     "rules": "LockOneByOne",
     "columnCount": 9,
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#9A197E",
-      "topRight": "#AA542D",
-      "bottomLeft": "#7F3FCD",
-      "bottomRight": "#37BCD4"
-    }
-  },
-  {
-    "levelId": 369,
-    "rules": "LockCorners",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Extreme",
-    "cornerColors": {
-      "topLeft": "#3719DD",
-      "topRight": "#C1BE0B",
-      "bottomLeft": "#9B2E73",
-      "bottomRight": "#25DE14"
+      "topLeft": "#A2790B",
+      "topRight": "#0FA336",
+      "bottomLeft": "#7F05AD",
+      "bottomRight": "#5BB8EC"
     }
   },
   {
@@ -5688,2101 +5661,47 @@
       3,
       4,
       5,
-      6,
-      7,
-      13,
-      14,
-      20,
-      21,
-      27,
-      28,
-      34,
-      35,
-      41,
-      42,
-      48,
-      49,
-      55,
-      56,
-      57,
-      58,
-      59,
-      60,
-      61,
-      62
-    ],
-    "rules": "LockOneRowSkipOne",
-    "columnCount": 7,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#23139C",
-      "topRight": "#A749D2",
-      "bottomLeft": "#7C0EA3",
-      "bottomRight": "#0BB598"
-    }
-  },
-  {
-    "levelId": 371,
-    "rules": "LockEdgesAndWindow",
-    "columnCount": 11,
-    "rowCount": 13,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#4F22D4",
-      "topRight": "#2EA5DC",
-      "bottomLeft": "#B226C8",
-      "bottomRight": "#0BA382"
-    }
-  },
-  {
-    "levelId": 372,
-    "rules": "UnLockSideEdgesOnly",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#681DCA",
-      "topRight": "#A42211",
-      "bottomLeft": "#405FD0",
-      "bottomRight": "#AF27A2"
-    }
-  },
-  {
-    "levelId": 373,
-    "rules": "LockEdges",
-    "columnCount": 12,
-    "rowCount": 12,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#C8EE57",
-      "topRight": "#33B3AD",
-      "bottomLeft": "#152EBA",
-      "bottomRight": "#C34459"
-    }
-  },
-  {
-    "levelId": 374,
-    "rules": "LockOneLineSkipTwo",
-    "columnCount": 13,
-    "rowCount": 13,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#4ED11E",
-      "topRight": "#E93F39",
-      "bottomLeft": "#9A9828",
-      "bottomRight": "#3ECFC3"
-    }
-  },
-  {
-    "levelId": 375,
-    "rules": "LockMiddle",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#41D918",
-      "topRight": "#20289E",
-      "bottomLeft": "#DF7D44",
-      "bottomRight": "#1FB861"
-    }
-  },
-  {
-    "levelId": 376,
-    "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#CB932C",
-      "topRight": "#4B1ABE",
-      "bottomLeft": "#3479BD",
-      "bottomRight": "#2ACDB7"
-    }
-  },
-  {
-    "levelId": 377,
-    "rules": "LockOneByOne",
-    "columnCount": 11,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#BD7640",
-      "topRight": "#CBEF2C",
-      "bottomLeft": "#459DC9",
-      "bottomRight": "#DAD742"
-    }
-  },
-  {
-    "levelId": 378,
-    "rules": "LockCorners",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Extreme",
-    "cornerColors": {
-      "topLeft": "#D59331",
-      "topRight": "#27A529",
-      "bottomLeft": "#8E34A0",
-      "bottomRight": "#43B076"
-    }
-  },
-  {
-    "levelId": 379,
-    "rules": "LockOneRowSkipOne",
-    "columnCount": 12,
-    "rowCount": 13,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#D65D48",
-      "topRight": "#4A68CB",
-      "bottomLeft": "#51CE3B",
-      "bottomRight": "#4330D3"
-    }
-  },
-  {
-    "levelId": 380,
-    "shapeId": "hexPuzzle1",
-    "lockedSlots": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      14,
-      15,
-      23,
-      24,
-      33,
-      34,
-      42,
-      43,
-      50,
-      51,
-      52,
-      53,
-      54,
-      55,
-      56,
-      57
-    ],
-    "rules": "LockEdgesAndWindow",
-    "columnCount": 7,
-    "rowCount": 7,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#11AD9B",
-      "topRight": "#98E024",
-      "bottomLeft": "#DF1E6E",
-      "bottomRight": "#A33032"
-    }
-  },
-  {
-    "levelId": 381,
-    "rules": "UnLockSideEdgesOnly",
-    "columnCount": 12,
-    "rowCount": 12,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#E69255",
-      "topRight": "#22A35E",
-      "bottomLeft": "#1327A7",
-      "bottomRight": "#67AE3D"
-    }
-  },
-  {
-    "levelId": 382,
-    "rules": "LockEdges",
-    "columnCount": 13,
-    "rowCount": 13,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#2EE20F",
-      "topRight": "#BC9A2C",
-      "bottomLeft": "#43D281",
-      "bottomRight": "#35C8C8"
-    }
-  },
-  {
-    "levelId": 383,
-    "rules": "LockOneLineSkipTwo",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#1D75C2",
-      "topRight": "#CB441F",
-      "bottomLeft": "#E7162B",
-      "bottomRight": "#4E0AB4"
-    }
-  },
-  {
-    "levelId": 384,
-    "rules": "LockMiddle",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#DC3A37",
-      "topRight": "#4FB5C9",
-      "bottomLeft": "#1417AB",
-      "bottomRight": "#B64687"
-    }
-  },
-  {
-    "levelId": 385,
-    "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#A9A137",
-      "topRight": "#DF4F42",
-      "bottomLeft": "#9A3AC0",
-      "bottomRight": "#9E2D7A"
-    }
-  },
-  {
-    "levelId": 386,
-    "rules": "LockOneByOne",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#28C674",
-      "topRight": "#9A49D3",
-      "bottomLeft": "#B96E2C",
-      "bottomRight": "#DE0C91"
-    }
-  },
-  {
-    "levelId": 387,
-    "rules": "LockCorners",
-    "columnCount": 12,
-    "rowCount": 12,
-    "difficulty": "Extreme",
-    "cornerColors": {
-      "topLeft": "#2936C5",
-      "topRight": "#E214B6",
-      "bottomLeft": "#982DA6",
-      "bottomRight": "#E9560C"
-    }
-  },
-  {
-    "levelId": 388,
-    "rules": "LockOneRowSkipOne",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#8CAC3C",
-      "topRight": "#53E1EE",
-      "bottomLeft": "#89AA26",
-      "bottomRight": "#A537A7"
-    }
-  },
-  {
-    "levelId": 389,
-    "rules": "LockEdgesAndWindow",
-    "columnCount": 13,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#D35E49",
-      "topRight": "#1A64CB",
-      "bottomLeft": "#1FA5DF",
-      "bottomRight": "#67AA3A"
-    }
-  },
-  {
-    "levelId": 390,
-    "shapeId": "starTrianglePuzzle9",
-    "lockedSlots": [
-      0,
-      1,
-      2,
-      3,
-      5,
-      6,
       9,
       10,
-      11,
-      12,
-      13,
       14,
       15,
-      16,
-      18,
-      21,
-      23,
+      19,
+      20,
+      24,
+      25,
       29,
-      31,
+      30,
+      34,
+      35,
+      39,
       40,
       41,
       42,
       43,
       44
     ],
-    "rules": "UnLockSideEdgesOnly",
-    "columnCount": 4,
-    "rowCount": 5,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#51DCD3",
-      "topRight": "#CE249B",
-      "bottomLeft": "#EF331F",
-      "bottomRight": "#3721C4"
-    }
-  },
-  {
-    "levelId": 391,
-    "rules": "LockEdges",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#1A6CA3",
-      "topRight": "#18A19C",
-      "bottomLeft": "#B5DC40",
-      "bottomRight": "#75E958"
-    }
-  },
-  {
-    "levelId": 392,
-    "rules": "LockOneLineSkipTwo",
-    "columnCount": 9,
-    "rowCount": 7,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#68B73B",
-      "topRight": "#BB9E1C",
-      "bottomLeft": "#387DD8",
-      "bottomRight": "#6B23BD"
-    }
-  },
-  {
-    "levelId": 393,
-    "rules": "LockMiddle",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#0FC11E",
-      "topRight": "#16E980",
-      "bottomLeft": "#25BEB1",
-      "bottomRight": "#9C26B4"
-    }
-  },
-  {
-    "levelId": 394,
-    "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#BF24DF",
-      "topRight": "#1DDCED",
-      "bottomLeft": "#3D9DC3",
-      "bottomRight": "#34C921"
-    }
-  },
-  {
-    "levelId": 395,
-    "rules": "LockOneByOne",
-    "columnCount": 13,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#602FC3",
-      "topRight": "#2ED539",
-      "bottomLeft": "#E8C549",
-      "bottomRight": "#99290A"
-    }
-  },
-  {
-    "levelId": 396,
-    "rules": "LockCorners",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#CB5133",
-      "topRight": "#9B57DB",
-      "bottomLeft": "#8CBF33",
-      "bottomRight": "#94C01B"
-    }
-  },
-  {
-    "levelId": 397,
-    "rules": "LockOneRowSkipOne",
-    "columnCount": 12,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#8DC51E",
-      "topRight": "#294DDC",
-      "bottomLeft": "#AB40AB",
-      "bottomRight": "#1E13EB"
-    }
-  },
-  {
-    "levelId": 398,
-    "rules": "LockEdgesAndWindow",
-    "columnCount": 13,
-    "rowCount": 13,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#D4B84B",
-      "topRight": "#D70E91",
-      "bottomLeft": "#18E918",
-      "bottomRight": "#C1C424"
-    }
-  },
-  {
-    "levelId": 399,
-    "rules": "UnLockSideEdgesOnly",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#A3334D",
-      "topRight": "#7BDE45",
-      "bottomLeft": "#901EE7",
-      "bottomRight": "#B5B92E"
-    }
-  },
-  {
-    "levelId": 400,
-    "shapeId": "arrowPuzzle10",
-    "lockedSlots": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      13,
-      14,
-      20,
-      21,
-      27,
-      28,
-      34,
-      35,
-      41,
-      42,
-      48,
-      49,
-      50,
-      51,
-      52,
-      53,
-      54,
-      55
-    ],
-    "rules": "LockEdges",
-    "columnCount": 8,
-    "rowCount": 7,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#D94952",
-      "topRight": "#29E27F",
-      "bottomLeft": "#880899",
-      "bottomRight": "#493BA0"
-    }
-  },
-  {
-    "levelId": 401,
-    "rules": "LockOneLineSkipTwo",
-    "columnCount": 7,
-    "rowCount": 7,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#CB2A1E",
-      "topRight": "#AFC948",
-      "bottomLeft": "#39D94B",
-      "bottomRight": "#E74A35"
-    }
-  },
-  {
-    "levelId": 402,
-    "rules": "LockMiddle",
-    "columnCount": 6,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#C850E0",
-      "topRight": "#87C549",
-      "bottomLeft": "#ED0E72",
-      "bottomRight": "#9238CA"
-    }
-  },
-  {
-    "levelId": 403,
-    "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 7,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#EE2EEB",
-      "topRight": "#28A42C",
-      "bottomLeft": "#5DB2EE",
-      "bottomRight": "#36C59D"
-    }
-  },
-  {
-    "levelId": 404,
-    "rules": "LockOneByOne",
-    "columnCount": 7,
-    "rowCount": 7,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#9A6826",
-      "topRight": "#6D3A9C",
-      "bottomLeft": "#E63D7B",
-      "bottomRight": "#DE5F51"
-    }
-  },
-  {
-    "levelId": 405,
-    "rules": "LockCorners",
-    "columnCount": 8,
-    "rowCount": 9,
-    "difficulty": "Extreme",
-    "cornerColors": {
-      "topLeft": "#96269E",
-      "topRight": "#BC0B81",
-      "bottomLeft": "#2A9DE5",
-      "bottomRight": "#8A39AA"
-    }
-  },
-  {
-    "levelId": 406,
-    "rules": "LockOneRowSkipOne",
-    "columnCount": 8,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#4D6DE1",
-      "topRight": "#C51449",
-      "bottomLeft": "#1AE2BD",
-      "bottomRight": "#A31C0A"
-    }
-  },
-  {
-    "levelId": 407,
-    "rules": "LockEdgesAndWindow",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#E4B723",
-      "topRight": "#23A614",
-      "bottomLeft": "#623A9F",
-      "bottomRight": "#29BEDC"
-    }
-  },
-  {
-    "levelId": 408,
-    "rules": "UnLockSideEdgesOnly",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#42E22D",
-      "topRight": "#C44586",
-      "bottomLeft": "#A6532F",
-      "bottomRight": "#E89D35"
-    }
-  },
-  {
-    "levelId": 409,
-    "rules": "LockEdges",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#9AA737",
-      "topRight": "#15A02C",
-      "bottomLeft": "#0A98BF",
-      "bottomRight": "#410CEE"
-    }
-  },
-  {
-    "levelId": 410,
-    "shapeId": "hexPuzzle1",
-    "lockedSlots": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      12,
-      13,
-      20,
-      21,
-      29,
-      30,
-      37,
-      38,
-      44,
-      45,
-      46,
-      47,
-      48,
-      49,
-      50
-    ],
-    "rules": "LockOneLineSkipTwo",
-    "columnCount": 7,
-    "rowCount": 6,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#C46E46",
-      "topRight": "#61B430",
-      "bottomLeft": "#33B835",
-      "bottomRight": "#7E2E9B"
-    }
-  },
-  {
-    "levelId": 411,
-    "rules": "LockMiddle",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#31C76B",
-      "topRight": "#72B43B",
-      "bottomLeft": "#AC2F78",
-      "bottomRight": "#BE5F20"
-    }
-  },
-  {
-    "levelId": 412,
-    "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#4282A7",
-      "topRight": "#B93D89",
-      "bottomLeft": "#55D249",
-      "bottomRight": "#F14998"
-    }
-  },
-  {
-    "levelId": 413,
-    "rules": "LockOneByOne",
-    "columnCount": 11,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#B9411C",
-      "topRight": "#39B550",
-      "bottomLeft": "#9B480C",
-      "bottomRight": "#C0C612"
-    }
-  },
-  {
-    "levelId": 414,
-    "rules": "LockCorners",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Extreme",
-    "cornerColors": {
-      "topLeft": "#7A25F1",
-      "topRight": "#10E943",
-      "bottomLeft": "#85DD37",
-      "bottomRight": "#2383A6"
-    }
-  },
-  {
-    "levelId": 415,
-    "rules": "LockOneRowSkipOne",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#304CC7",
-      "topRight": "#5DF0C9",
-      "bottomLeft": "#B31263",
-      "bottomRight": "#6CEF30"
-    }
-  },
-  {
-    "levelId": 416,
-    "rules": "LockEdgesAndWindow",
-    "columnCount": 9,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#6EEB52",
-      "topRight": "#2471B4",
-      "bottomLeft": "#D62DD4",
-      "bottomRight": "#3CC4B4"
-    }
-  },
-  {
-    "levelId": 417,
-    "rules": "UnLockSideEdgesOnly",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#312ABA",
-      "topRight": "#1B2DD2",
-      "bottomLeft": "#6B14BD",
-      "bottomRight": "#42ECB6"
-    }
-  },
-  {
-    "levelId": 418,
-    "rules": "LockEdges",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Extreme",
-    "cornerColors": {
-      "topLeft": "#B63F47",
-      "topRight": "#2452AE",
-      "bottomLeft": "#A77E2E",
-      "bottomRight": "#AB2DA0"
-    }
-  },
-  {
-    "levelId": 419,
-    "rules": "LockOneLineSkipTwo",
-    "columnCount": 12,
-    "rowCount": 13,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#879B15",
-      "topRight": "#E556D9",
-      "bottomLeft": "#1AD148",
-      "bottomRight": "#A352D5"
-    }
-  },
-  {
-    "levelId": 420,
-    "shapeId": "tiePuzzle2",
-    "lockedSlots": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      13,
-      14,
-      20,
-      21,
-      27,
-      28,
-      34,
-      35,
-      41,
-      42,
-      48,
-      49,
-      55,
-      56,
-      57,
-      58,
-      59,
-      60,
-      61,
-      62
-    ],
-    "rules": "LockMiddle",
-    "columnCount": 7,
-    "rowCount": 9,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#9F192B",
-      "topRight": "#8FB640",
-      "bottomLeft": "#54A2D9",
-      "bottomRight": "#1619C7"
-    }
-  },
-  {
-    "levelId": 421,
-    "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#820BB9",
-      "topRight": "#9B983E",
-      "bottomLeft": "#3288D8",
-      "bottomRight": "#26C4B4"
-    }
-  },
-  {
-    "levelId": 422,
-    "rules": "LockOneByOne",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#D85436",
-      "topRight": "#1D80AB",
-      "bottomLeft": "#18D2D9",
-      "bottomRight": "#CE2ABB"
-    }
-  },
-  {
-    "levelId": 423,
-    "rules": "LockCorners",
-    "columnCount": 12,
-    "rowCount": 12,
-    "difficulty": "Extreme",
-    "cornerColors": {
-      "topLeft": "#742DC5",
-      "topRight": "#64A829",
-      "bottomLeft": "#24CCD2",
-      "bottomRight": "#2397B4"
-    }
-  },
-  {
-    "levelId": 424,
-    "rules": "LockOneRowSkipOne",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#B54777",
-      "topRight": "#D253D6",
-      "bottomLeft": "#245FDD",
-      "bottomRight": "#D0110B"
-    }
-  },
-  {
-    "levelId": 425,
-    "rules": "LockEdgesAndWindow",
-    "columnCount": 13,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#AFDB3E",
-      "topRight": "#4ACB33",
-      "bottomLeft": "#C06121",
-      "bottomRight": "#F03262"
-    }
-  },
-  {
-    "levelId": 426,
-    "rules": "UnLockSideEdgesOnly",
-    "columnCount": 13,
-    "rowCount": 13,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#9D122B",
-      "topRight": "#7B149D",
-      "bottomLeft": "#993807",
-      "bottomRight": "#B1841B"
-    }
-  },
-  {
-    "levelId": 427,
-    "rules": "LockEdges",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#1B87D3",
-      "topRight": "#4D56CC",
-      "bottomLeft": "#8D15A2",
-      "bottomRight": "#9A4AE9"
-    }
-  },
-  {
-    "levelId": 428,
-    "rules": "LockOneLineSkipTwo",
-    "columnCount": 9,
-    "rowCount": 7,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#1AADE2",
-      "topRight": "#B04BDE",
-      "bottomLeft": "#B69F0D",
-      "bottomRight": "#D33499"
-    }
-  },
-  {
-    "levelId": 429,
-    "rules": "LockMiddle",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#17C13F",
-      "topRight": "#739C14",
-      "bottomLeft": "#9137DB",
-      "bottomRight": "#55DEA9"
-    }
-  },
-  {
-    "levelId": 430,
-    "shapeId": "wavePuzzle3",
-    "lockedSlots": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      13,
-      14,
-      20,
-      21,
-      27,
-      28,
-      34,
-      35,
-      41,
-      42,
-      48,
-      49,
-      55,
-      56,
-      57,
-      58,
-      59,
-      60,
-      61,
-      62
-    ],
-    "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 7,
-    "rowCount": 9,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#55E67E",
-      "topRight": "#9D2982",
-      "bottomLeft": "#20B6B8",
-      "bottomRight": "#46990E"
-    }
-  },
-  {
-    "levelId": 431,
-    "rules": "LockOneByOne",
-    "columnCount": 13,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#7C3FA1",
-      "topRight": "#25BFB2",
-      "bottomLeft": "#5AC620",
-      "bottomRight": "#B6413A"
-    }
-  },
-  {
-    "levelId": 432,
-    "rules": "LockCorners",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Extreme",
-    "cornerColors": {
-      "topLeft": "#0AA82F",
-      "topRight": "#419E21",
-      "bottomLeft": "#424BC3",
-      "bottomRight": "#BA7535"
-    }
-  },
-  {
-    "levelId": 433,
-    "rules": "LockOneRowSkipOne",
-    "columnCount": 12,
-    "rowCount": 13,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#A39D31",
-      "topRight": "#ED0C17",
-      "bottomLeft": "#E01844",
-      "bottomRight": "#2EB77C"
-    }
-  },
-  {
-    "levelId": 434,
-    "rules": "LockEdgesAndWindow",
-    "columnCount": 13,
-    "rowCount": 13,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#9744C1",
-      "topRight": "#EF0D20",
-      "bottomLeft": "#593BB2",
-      "bottomRight": "#BF6B45"
-    }
-  },
-  {
-    "levelId": 435,
-    "rules": "UnLockSideEdgesOnly",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#85CC12",
-      "topRight": "#26A0CC",
-      "bottomLeft": "#DA45AD",
-      "bottomRight": "#CA200E"
-    }
-  },
-  {
-    "levelId": 436,
-    "rules": "LockEdges",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#CABF28",
-      "topRight": "#D72862",
-      "bottomLeft": "#D8CC1E",
-      "bottomRight": "#268CA6"
-    }
-  },
-  {
-    "levelId": 437,
-    "rules": "LockOneLineSkipTwo",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#39AB5D",
-      "topRight": "#DA21E7",
-      "bottomLeft": "#5C3ED4",
-      "bottomRight": "#B50BA4"
-    }
-  },
-  {
-    "levelId": 438,
-    "rules": "LockMiddle",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#A746D3",
-      "topRight": "#4052C4",
-      "bottomLeft": "#2B46BE",
-      "bottomRight": "#EC49C6"
-    }
-  },
-  {
-    "levelId": 439,
-    "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 12,
-    "rowCount": 12,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#2F34D7",
-      "topRight": "#E86524",
-      "bottomLeft": "#9ECA51",
-      "bottomRight": "#15B1D8"
-    }
-  },
-  {
-    "levelId": 440,
-    "shapeId": "octaSquarePuzzle4",
-    "lockedSlots": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      11,
-      12,
-      17,
-      18,
-      23,
-      24,
-      29,
-      30,
-      35,
-      36,
-      41,
-      42,
-      43,
-      44,
-      45,
-      46,
-      47
-    ],
-    "rules": "LockOneByOne",
-    "columnCount": 6,
-    "rowCount": 8,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#41CDCF",
-      "topRight": "#0E3DD4",
-      "bottomLeft": "#0EAD1E",
-      "bottomRight": "#28EB8D"
-    }
-  },
-  {
-    "levelId": 441,
-    "rules": "LockCorners",
-    "columnCount": 12,
-    "rowCount": 12,
-    "difficulty": "Extreme",
-    "cornerColors": {
-      "topLeft": "#B8C14D",
-      "topRight": "#A3E90E",
-      "bottomLeft": "#1EE442",
-      "bottomRight": "#3D82D0"
-    }
-  },
-  {
-    "levelId": 442,
-    "rules": "LockOneRowSkipOne",
-    "columnCount": 13,
-    "rowCount": 13,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#AE387F",
-      "topRight": "#D11BD4",
-      "bottomLeft": "#719D38",
-      "bottomRight": "#E44A61"
-    }
-  },
-  {
-    "levelId": 443,
-    "rules": "LockEdgesAndWindow",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#2367D5",
-      "topRight": "#E0A956",
-      "bottomLeft": "#3518C6",
-      "bottomRight": "#3BD9B4"
-    }
-  },
-  {
-    "levelId": 444,
-    "rules": "UnLockSideEdgesOnly",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#BC2BCA",
-      "topRight": "#6E3DC9",
-      "bottomLeft": "#242DD6",
-      "bottomRight": "#9FA413"
-    }
-  },
-  {
-    "levelId": 445,
-    "rules": "LockEdges",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#521FC2",
-      "topRight": "#397EDF",
-      "bottomLeft": "#11AD5A",
-      "bottomRight": "#B63645"
-    }
-  },
-  {
-    "levelId": 446,
-    "rules": "LockOneLineSkipTwo",
-    "columnCount": 11,
-    "rowCount": 10,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#99691A",
-      "topRight": "#812CAC",
-      "bottomLeft": "#2F41AA",
-      "bottomRight": "#532CE3"
-    }
-  },
-  {
-    "levelId": 447,
-    "rules": "LockMiddle",
-    "columnCount": 12,
-    "rowCount": 12,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#1A77A5",
-      "topRight": "#A02399",
-      "bottomLeft": "#A6387F",
-      "bottomRight": "#B81C26"
-    }
-  },
-  {
-    "levelId": 448,
-    "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#9F2711",
-      "topRight": "#9E3D75",
-      "bottomLeft": "#7134CB",
-      "bottomRight": "#43CEF1"
-    }
-  },
-  {
-    "levelId": 449,
-    "rules": "LockOneByOne",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#8919A8",
-      "topRight": "#D4914F",
-      "bottomLeft": "#18A18A",
-      "bottomRight": "#1C4BA1"
-    }
-  },
-  {
-    "levelId": 450,
-    "shapeId": "hexSquareTrianglePuzzle5",
-    "lockedSlots": [
-      0,
-      1,
-      2,
-      3,
-      6,
-      7,
-      11,
-      12,
-      15,
-      16,
-      17,
-      18,
-      19,
-      21,
-      23,
-      26,
-      33,
-      35,
-      36,
-      47,
-      55,
-      56,
-      58,
-      60
-    ],
     "rules": "LockCorners",
     "columnCount": 5,
-    "rowCount": 3,
-    "difficulty": "Extreme",
-    "cornerColors": {
-      "topLeft": "#C23BAE",
-      "topRight": "#1B18DA",
-      "bottomLeft": "#BC324E",
-      "bottomRight": "#EBCD38"
-    }
-  },
-  {
-    "levelId": 451,
-    "rules": "LockOneRowSkipOne",
-    "columnCount": 10,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#8328F1",
-      "topRight": "#4C64F0",
-      "bottomLeft": "#AC26C4",
-      "bottomRight": "#1FE3E7"
-    }
-  },
-  {
-    "levelId": 452,
-    "rules": "LockEdgesAndWindow",
-    "columnCount": 9,
     "rowCount": 9,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#5C7FEA",
-      "topRight": "#2CD90D",
-      "bottomLeft": "#14D6EF",
-      "bottomRight": "#BE210C"
+      "topLeft": "#6EF5F7",
+      "topRight": "#720DC5",
+      "bottomLeft": "#B5F862",
+      "bottomRight": "#EB5658"
     }
   },
   {
-    "levelId": 453,
-    "rules": "UnLockSideEdgesOnly",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#EAD955",
-      "topRight": "#B54B28",
-      "bottomLeft": "#13E990",
-      "bottomRight": "#3A5BD1"
-    }
-  },
-  {
-    "levelId": 454,
-    "rules": "LockEdges",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#DD2D24",
-      "topRight": "#DECF46",
-      "bottomLeft": "#3597B2",
-      "bottomRight": "#B1780E"
-    }
-  },
-  {
-    "levelId": 455,
-    "rules": "LockOneLineSkipTwo",
-    "columnCount": 12,
-    "rowCount": 10,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#CC42A5",
-      "topRight": "#BB9333",
-      "bottomLeft": "#6D20A1",
-      "bottomRight": "#BE4B2B"
-    }
-  },
-  {
-    "levelId": 456,
-    "rules": "LockMiddle",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#ED4CA7",
-      "topRight": "#DD52BF",
-      "bottomLeft": "#9A5718",
-      "bottomRight": "#BB43EE"
-    }
-  },
-  {
-    "levelId": 457,
-    "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 13,
-    "rowCount": 11,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#1BAB42",
-      "topRight": "#6047B8",
-      "bottomLeft": "#4CDEAE",
-      "bottomRight": "#28B9D5"
-    }
-  },
-  {
-    "levelId": 458,
-    "rules": "LockOneByOne",
-    "columnCount": 13,
-    "rowCount": 13,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#3909B0",
-      "topRight": "#386BE1",
-      "bottomLeft": "#57D834",
-      "bottomRight": "#BD14B1"
-    }
-  },
-  {
-    "levelId": 459,
-    "rules": "LockCorners",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Extreme",
-    "cornerColors": {
-      "topLeft": "#1DB8A6",
-      "topRight": "#ED971F",
-      "bottomLeft": "#D5B748",
-      "bottomRight": "#29B054"
-    }
-  },
-  {
-    "levelId": 460,
-    "shapeId": "hexTrianglePuzzle6",
-    "lockedSlots": [
-      32,
-      33,
-      37,
-      41,
-      45,
-      49,
-      50,
-      54,
-      65,
-      68,
-      69,
-      80,
-      82,
-      85,
-      94,
-      97,
-      98,
-      100,
-      102,
-      104,
-      105,
-      106
-    ],
-    "rules": "LockOneRowSkipOne",
-    "columnCount": 5,
-    "rowCount": 5,
-    "difficulty": "Extreme",
-    "cornerColors": {
-      "topLeft": "#C30D2C",
-      "topRight": "#CE15DB",
-      "bottomLeft": "#BB4822",
-      "bottomRight": "#D10EA0"
-    }
-  },
-  {
-    "levelId": 461,
-    "rules": "LockEdgesAndWindow",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#E01990",
-      "topRight": "#3599A8",
-      "bottomLeft": "#ED6347",
-      "bottomRight": "#AD436D"
-    }
-  },
-  {
-    "levelId": 462,
-    "rules": "UnLockSideEdgesOnly",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#1F4E9F",
-      "topRight": "#2379A4",
-      "bottomLeft": "#404AB7",
-      "bottomRight": "#7538B2"
-    }
-  },
-  {
-    "levelId": 463,
-    "rules": "LockEdges",
-    "columnCount": 12,
-    "rowCount": 12,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#522FD3",
-      "topRight": "#AEEB58",
-      "bottomLeft": "#E125AF",
-      "bottomRight": "#B7383A"
-    }
-  },
-  {
-    "levelId": 464,
-    "rules": "LockOneLineSkipTwo",
-    "columnCount": 11,
-    "rowCount": 13,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#52B03D",
-      "topRight": "#CD4C4C",
-      "bottomLeft": "#0CA120",
-      "bottomRight": "#B0C321"
-    }
-  },
-  {
-    "levelId": 465,
-    "rules": "LockMiddle",
-    "columnCount": 12,
-    "rowCount": 12,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#2C6ACE",
-      "topRight": "#2FA58F",
-      "bottomLeft": "#18E079",
-      "bottomRight": "#80DF4D"
-    }
-  },
-  {
-    "levelId": 466,
-    "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 13,
-    "rowCount": 13,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#C04651",
-      "topRight": "#4A52DC",
-      "bottomLeft": "#17A5D4",
-      "bottomRight": "#28AB9E"
-    }
-  },
-  {
-    "levelId": 467,
-    "rules": "LockOneByOne",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#226FBB",
-      "topRight": "#34A1AB",
-      "bottomLeft": "#5BDF40",
-      "bottomRight": "#B3DA4E"
-    }
-  },
-  {
-    "levelId": 468,
-    "rules": "LockCorners",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#3B97DE",
-      "topRight": "#7A44B9",
-      "bottomLeft": "#33CD4D",
-      "bottomRight": "#DA8D3A"
-    }
-  },
-  {
-    "levelId": 469,
-    "rules": "LockOneRowSkipOne",
-    "columnCount": 10,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#2D25B4",
-      "topRight": "#0FBFC5",
-      "bottomLeft": "#22EF85",
-      "bottomRight": "#2BAAD4"
-    }
-  },
-  {
-    "levelId": 470,
-    "shapeId": "octaSquarePuzzle7",
-    "lockedSlots": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      13,
-      14,
-      20,
-      21,
-      27,
-      28,
-      34,
-      35,
-      41,
-      42,
-      48,
-      49,
-      55,
-      56,
-      57,
-      58,
-      59,
-      60,
-      61,
-      62
-    ],
-    "rules": "LockEdgesAndWindow",
-    "columnCount": 7,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#21D38C",
-      "topRight": "#BF36D7",
-      "bottomLeft": "#EEE31F",
-      "bottomRight": "#C22684"
-    }
-  },
-  {
-    "levelId": 471,
-    "rules": "UnLockSideEdgesOnly",
-    "columnCount": 12,
-    "rowCount": 12,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#B5A320",
-      "topRight": "#12429A",
-      "bottomLeft": "#C734E1",
-      "bottomRight": "#4E16E9"
-    }
-  },
-  {
-    "levelId": 472,
-    "rules": "LockEdges",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#A72A1C",
-      "topRight": "#ACCB0D",
-      "bottomLeft": "#3121E0",
-      "bottomRight": "#C8640C"
-    }
-  },
-  {
-    "levelId": 473,
-    "rules": "LockOneLineSkipTwo",
-    "columnCount": 12,
-    "rowCount": 13,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#1BA562",
-      "topRight": "#B6B61A",
-      "bottomLeft": "#CC1357",
-      "bottomRight": "#CF32E7"
-    }
-  },
-  {
-    "levelId": 474,
-    "rules": "LockMiddle",
-    "columnCount": 13,
-    "rowCount": 13,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#35B9A3",
-      "topRight": "#7D34AA",
-      "bottomLeft": "#15AE3E",
-      "bottomRight": "#33B5CF"
-    }
-  },
-  {
-    "levelId": 475,
-    "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#EF267A",
-      "topRight": "#9D333E",
-      "bottomLeft": "#12A94E",
-      "bottomRight": "#6F19A1"
-    }
-  },
-  {
-    "levelId": 476,
-    "rules": "LockOneByOne",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#AB2360",
-      "topRight": "#0BCC14",
-      "bottomLeft": "#ACB646",
-      "bottomRight": "#8619E5"
-    }
-  },
-  {
-    "levelId": 477,
-    "rules": "LockCorners",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Extreme",
-    "cornerColors": {
-      "topLeft": "#CD2D2A",
-      "topRight": "#397EA6",
-      "bottomLeft": "#179F25",
-      "bottomRight": "#25959B"
-    }
-  },
-  {
-    "levelId": 478,
+    "levelId": 371,
     "rules": "LockOneRowSkipOne",
     "columnCount": 11,
     "rowCount": 11,
     "difficulty": "Normal",
     "cornerColors": {
-      "topLeft": "#7031A8",
-      "topRight": "#51329F",
-      "bottomLeft": "#16B643",
-      "bottomRight": "#0FC8C2"
-    }
-  },
-  {
-    "levelId": 479,
-    "rules": "LockEdgesAndWindow",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#C60FBD",
-      "topRight": "#37B8C1",
-      "bottomLeft": "#D2B10C",
-      "bottomRight": "#9B1012"
-    }
-  },
-  {
-    "levelId": 480,
-    "shapeId": "hexPuzzle1",
-    "lockedSlots": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      12,
-      13,
-      20,
-      21,
-      29,
-      30,
-      39,
-      40,
-      48,
-      49,
-      56,
-      57,
-      63,
-      64,
-      65,
-      66,
-      67,
-      68,
-      69
-    ],
-    "rules": "UnLockSideEdgesOnly",
-    "columnCount": 9,
-    "rowCount": 6,
-    "difficulty": "Extreme",
-    "cornerColors": {
-      "topLeft": "#D0CB4B",
-      "topRight": "#A7652E",
-      "bottomLeft": "#B3670A",
-      "bottomRight": "#6239C2"
-    }
-  },
-  {
-    "levelId": 481,
-    "rules": "LockEdges",
-    "columnCount": 12,
-    "rowCount": 12,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#15A88F",
-      "topRight": "#382EA2",
-      "bottomLeft": "#3A59AD",
-      "bottomRight": "#B020CA"
-    }
-  },
-  {
-    "levelId": 482,
-    "rules": "LockOneLineSkipTwo",
-    "columnCount": 13,
-    "rowCount": 13,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#6B47EF",
-      "topRight": "#B6BF13",
-      "bottomLeft": "#A53043",
-      "bottomRight": "#3FE198"
-    }
-  },
-  {
-    "levelId": 483,
-    "rules": "LockMiddle",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#54E93D",
-      "topRight": "#E9CF3F",
-      "bottomLeft": "#55DCAB",
-      "bottomRight": "#803DAD"
-    }
-  },
-  {
-    "levelId": 484,
-    "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#8DC53F",
-      "topRight": "#AC29D0",
-      "bottomLeft": "#79E547",
-      "bottomRight": "#F0499C"
-    }
-  },
-  {
-    "levelId": 485,
-    "rules": "LockOneByOne",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#3FA347",
-      "topRight": "#1E74D1",
-      "bottomLeft": "#37AD53",
-      "bottomRight": "#B52ADB"
-    }
-  },
-  {
-    "levelId": 486,
-    "rules": "LockCorners",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Extreme",
-    "cornerColors": {
-      "topLeft": "#9B1C88",
-      "topRight": "#2DE2DF",
-      "bottomLeft": "#6D29EC",
-      "bottomRight": "#A26629"
-    }
-  },
-  {
-    "levelId": 487,
-    "rules": "LockOneRowSkipOne",
-    "columnCount": 12,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#65A23A",
-      "topRight": "#A02B8B",
-      "bottomLeft": "#A83D4D",
-      "bottomRight": "#5B9B3B"
-    }
-  },
-  {
-    "levelId": 488,
-    "rules": "LockEdgesAndWindow",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#0DA237",
-      "topRight": "#57E345",
-      "bottomLeft": "#674CE0",
-      "bottomRight": "#EB572E"
-    }
-  },
-  {
-    "levelId": 489,
-    "rules": "UnLockSideEdgesOnly",
-    "columnCount": 12,
-    "rowCount": 12,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#8FE940",
-      "topRight": "#CD330C",
-      "bottomLeft": "#3553AD",
-      "bottomRight": "#41A0A8"
-    }
-  },
-  {
-    "levelId": 490,
-    "shapeId": "starTrianglePuzzle9",
-    "lockedSlots": [
-      0,
-      1,
-      2,
-      3,
-      5,
-      6,
-      9,
-      10,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19,
-      20,
-      21,
-      22,
-      24,
-      27,
-      29,
-      35,
-      37,
-      46,
-      48,
-      60,
-      61,
-      62,
-      63,
-      64,
-      65
-    ],
-    "rules": "LockEdges",
-    "columnCount": 4,
-    "rowCount": 6,
-    "difficulty": "Hard",
-    "cornerColors": {
-      "topLeft": "#A25D13",
-      "topRight": "#8B9A28",
-      "bottomLeft": "#EC2B89",
-      "bottomRight": "#0F7AED"
-    }
-  },
-  {
-    "levelId": 491,
-    "rules": "LockOneLineSkipTwo",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#C4B44A",
-      "topRight": "#31C3D7",
-      "bottomLeft": "#D93D1A",
-      "bottomRight": "#749D2D"
-    }
-  },
-  {
-    "levelId": 492,
-    "rules": "LockMiddle",
-    "columnCount": 9,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#8EDF23",
-      "topRight": "#0DA817",
-      "bottomLeft": "#699920",
-      "bottomRight": "#16A870"
-    }
-  },
-  {
-    "levelId": 493,
-    "rules": "LockInPairsAndUnlockLines",
-    "columnCount": 11,
-    "rowCount": 9,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#5DCC4F",
-      "topRight": "#224FAF",
-      "bottomLeft": "#DB568C",
-      "bottomRight": "#6FA71C"
-    }
-  },
-  {
-    "levelId": 494,
-    "rules": "LockOneByOne",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#A147D1",
-      "topRight": "#7BA71C",
-      "bottomLeft": "#26D63E",
-      "bottomRight": "#D34515"
-    }
-  },
-  {
-    "levelId": 495,
-    "rules": "LockCorners",
-    "columnCount": 12,
-    "rowCount": 12,
-    "difficulty": "Extreme",
-    "cornerColors": {
-      "topLeft": "#E3F124",
-      "topRight": "#C58D0C",
-      "bottomLeft": "#B445B4",
-      "bottomRight": "#24A962"
-    }
-  },
-  {
-    "levelId": 496,
-    "rules": "LockOneRowSkipOne",
-    "columnCount": 11,
-    "rowCount": 11,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#0CE3D1",
-      "topRight": "#E54B65",
-      "bottomLeft": "#4859C9",
-      "bottomRight": "#446CBC"
-    }
-  },
-  {
-    "levelId": 497,
-    "rules": "LockEdgesAndWindow",
-    "columnCount": 13,
-    "rowCount": 13,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#86DE47",
-      "topRight": "#1E90B3",
-      "bottomLeft": "#190CCE",
-      "bottomRight": "#35E94A"
-    }
-  },
-  {
-    "levelId": 498,
-    "rules": "UnLockSideEdgesOnly",
-    "columnCount": 13,
-    "rowCount": 13,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#549C20",
-      "topRight": "#A93FA1",
-      "bottomLeft": "#186BAF",
-      "bottomRight": "#9B2E16"
-    }
-  },
-  {
-    "levelId": 499,
-    "rules": "LockEdges",
-    "columnCount": 10,
-    "rowCount": 10,
-    "difficulty": "Normal",
-    "cornerColors": {
-      "topLeft": "#E33832",
-      "topRight": "#C20EAD",
-      "bottomLeft": "#63A634",
-      "bottomRight": "#BE7E20"
-    }
-  },
-  {
-    "levelId": 500,
-    "shapeId": "arrowPuzzle10",
-    "lockedSlots": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      15,
-      16,
-      23,
-      24,
-      31,
-      32,
-      39,
-      40,
-      47,
-      48,
-      55,
-      56,
-      57,
-      58,
-      59,
-      60,
-      61,
-      62,
-      63
-    ],
-    "rules": "LockOneLineSkipTwo",
-    "columnCount": 8,
-    "rowCount": 8,
-    "difficulty": "Extreme",
-    "cornerColors": {
-      "topLeft": "#B0900F",
-      "topRight": "#68CA1C",
-      "bottomLeft": "#50EE5D",
-      "bottomRight": "#38D660"
+      "topLeft": "#DB57B2",
+      "topRight": "#E4AD67",
+      "bottomLeft": "#3989EF",
+      "bottomRight": "#6EF776"
     }
   }
 ]
