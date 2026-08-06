@@ -18,7 +18,6 @@ namespace SavedData
 
         public SavedDataService()
         {
-            Debug.Log("SavedData initialized");
             _localDataProtector = new AesCbcLocalDataProtector(new PersistentFileLocalSecretProvider());
             RegisterModels();
         }

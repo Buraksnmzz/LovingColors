@@ -64,14 +64,17 @@ namespace Win
         private void OnNextButtonClicked()
         {
             View.CompleteCoinFly();
-            _uiService.HidePopup<WinPresenter>();
-            if (_savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex == _remoteConfigModel.DailyChallengeUnlockLevel -1)
+            if (_savedDataService.GetModel<LevelProgressModel>().CurrentLevelIndex == _remoteConfigModel.DailyChallengeUnlockLevel - 1)
             {
+                _eventDispatcherService.Dispatch(new RateUsShuffleDelaySignal(false));
+                _uiService.HidePopup<WinPresenter>();
                 _uiService.ShowPopup<HomePresenter>();
                 _uiService.HidePopup<GameplayPresenter>();
             }
             else
             {
+                _eventDispatcherService.Dispatch(new RateUsShuffleDelaySignal(_shouldShowRateUsAfterHide));
+                _uiService.HidePopup<WinPresenter>();
                 _uiService.ShowPopup<GameplayPresenter>();
             }
         }

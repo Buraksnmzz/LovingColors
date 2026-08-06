@@ -258,6 +258,25 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 4259793998027948038
+  - m_Id: 60
+    m_Localized: Rendons les choses un peu plus difficiles !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "Le verrouillage automatique des tuiles lorsqu'elles sont correctement
+      plac\xE9es est d\xE9sormais d\xE9sactiv\xE9, mais nous vous proposons deux
+      nouveaux bonus pour vous aider\_:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: "Marque et verrouille les tuiles correctement plac\xE9es au fur
+      et \xE0 mesure."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "Marque et verrouille les carreaux d\xE9j\xE0 correctement positionn\xE9s"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

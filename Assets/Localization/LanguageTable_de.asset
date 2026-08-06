@@ -257,6 +257,26 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 4259793998027948039
+  - m_Id: 60
+    m_Localized: Machen wir es uns ein bisschen schwerer!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: 'Die automatische Sperrung von Kacheln bei korrekter Platzierung
+      ist nun deaktiviert, aber wir bieten Ihnen jetzt zwei neue Booster an, die
+      Ihnen helfen sollen:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: "Markiert und verriegelt die korrekt platzierten Elemente w\xE4hrend
+      des Vorgangs."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "Markiert und verriegelt die bereits ordnungsgem\xE4\xDF platzierten
+      Spalten"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

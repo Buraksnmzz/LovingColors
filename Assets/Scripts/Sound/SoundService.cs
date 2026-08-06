@@ -20,7 +20,6 @@ namespace Core.Scripts.Services
 
         public SoundService()
         {
-            Debug.Log("SoundService initialized");
             _savedDataService = ServiceLocator.GetService<ISavedDataService>();
             _soundSo = Resources.Load<SoundSo>("SoundSo");
             _audioSourcePool = new ObjectPool<AudioSource>(

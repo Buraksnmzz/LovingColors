@@ -257,6 +257,25 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 4259793998027948034
+  - m_Id: 60
+    m_Localized: "U\u010Dinimo stvari malo te\u017Eima!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "Automatsko zaklju\u010Davanje plo\u010Dica kada su pravilno postavljene
+      sada je onemogu\u0107eno, ali sada nudimo dva nova poja\u010Diva\u010Da koja
+      \u0107e vam pomo\u0107i:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: "Ozna\u010Dava i zaklju\u010Dava pravilno postavljene trake dok
+      radite"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "Ozna\u010Dava i zaklju\u010Dava ve\u0107 pravilno postavljene letvice"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

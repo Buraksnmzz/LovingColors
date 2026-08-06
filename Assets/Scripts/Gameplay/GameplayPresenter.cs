@@ -12,10 +12,12 @@ using Home;
 using Localization;
 using PinBoostersActivated;
 using Quit;
+using RateUs;
 using Services;
 using Sound;
 using SuperPinOffer;
 using UI.General;
+using UI.RateUs;
 using UI.Settings;
 using UnityEngine;
 using Win;
@@ -45,6 +47,8 @@ namespace Gameplay
         private int _correctSwapsAfterBoosterIntroClosed;
         private int _openPopupCount;
         private bool _isWaitingForPinBoostersActivatedToContinueFlow;
+        private bool _waitForRateUsPopupToCloseBeforeInitialShuffle;
+        private bool _hasPendingInitialShuffleRequest;
 
 
         protected override void OnInitialize()
@@ -81,6 +85,16 @@ namespace Gameplay
             _eventDispatcherService.AddListener<SuperPinOfferClosedSignal>(OnSuperPinOfferClosed);
             _eventDispatcherService.AddListener<BoosterIntroClosedSignal>(OnBoosterIntroClosed);
             _eventDispatcherService.AddListener<PopupVisibilityChangedSignal>(OnPopupVisibilityChanged);
+            _eventDispatcherService.AddListener<RateUsShuffleDelaySignal>(OnRateUsShuffleDelaySignal);
+        }
+
+        private void OnRateUsShuffleDelaySignal(RateUsShuffleDelaySignal signal)
+        {
+            _waitForRateUsPopupToCloseBeforeInitialShuffle = signal.ShouldDelayInitialShuffle;
+            if (!signal.ShouldDelayInitialShuffle)
+            {
+                TryStartPendingInitialShuffle();
+            }
         }
 
         private void OnPopupVisibilityChanged(PopupVisibilityChangedSignal signal)
@@ -101,6 +115,13 @@ namespace Gameplay
             if (_openPopupCount == 0)
             {
                 ResumeHandHintTimer();
+                TryStartPendingInitialShuffle();
+            }
+
+            if (signal.ViewType == typeof(RateUsView) && !signal.IsVisible)
+            {
+                _waitForRateUsPopupToCloseBeforeInitialShuffle = false;
+                TryStartPendingInitialShuffle();
             }
 
             if (signal.ViewType == typeof(PinBoostersActivatedView) &&
@@ -129,6 +150,7 @@ namespace Gameplay
             }
 
             collectibleModel.TotalHints--;
+            _savedDataService.SaveData(collectibleModel);
             View.SetHintAmount(collectibleModel.TotalHints);
             _soundService.PlaySound(ClipName.Booster);
         }
@@ -243,7 +265,7 @@ namespace Gameplay
             }
             else
             {
-                levelIndex = levelProgressModel.CurrentLevelIndex + 1;
+                levelIndex = levelProgressModel.CurrentLevelIndex;
             }
 
             var mode = _dailyChallengeService.HasActiveDailyChallengeGame
@@ -257,19 +279,22 @@ namespace Gameplay
 
         private void TrackLevelStart()
         {
-            var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
             int levelIndex;
+            int attemptCount;
             if (_dailyChallengeService.HasActiveDailyChallengeGame)
             {
                 levelIndex = _dailyChallengeService.GetPlayedLevelId();
+                attemptCount = _dailyChallengeService.GetPlayedAttemptCount();
             }
             else
             {
+                var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
                 levelIndex = levelProgressModel.CurrentLevelIndex + 1;
+                attemptCount = levelProgressModel.CurrentLevelAttemptCount;
             }
 
             var levelId = GetLevelId(levelIndex);
-            var attempt = GetAttemptString(levelProgressModel.CurrentLevelAttemptCount);
+            var attempt = GetAttemptString(attemptCount);
             var mode = _dailyChallengeService.HasActiveDailyChallengeGame
                 ? StringConstants.FirebaseModeDaily
                 : StringConstants.FirebaseModeNormal;
@@ -296,6 +321,11 @@ namespace Gameplay
             var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
             levelProgressModel.CurrentLevelAttemptCount++;
             _savedDataService.SaveData(levelProgressModel);
+        }
+
+        private void IncreaseDailyChallengeAttemptCount()
+        {
+            _dailyChallengeService.IncreasePlayedAttemptCount();
         }
 
         private void OnRestartButtonClick(RestartButtonClickSignal obj)
@@ -673,7 +703,7 @@ namespace Gameplay
                 _isWaitingForSuperPinOfferToStartShuffle = false;
                 View.SetBackButtonInteractable(true);
                 View.SetDebugButtonsInteractable(true);
-                View.StartInitialShuffle();
+                RequestInitialShuffleStart();
                 return;
             }
 
@@ -685,7 +715,7 @@ namespace Gameplay
                 {
                     _isWaitingForSuperPinOfferToStartShuffle = false;
                     View.SetDebugButtonsInteractable(true);
-                    View.StartInitialShuffle();
+                    RequestInitialShuffleStart();
                 }
 
                 return;
@@ -693,6 +723,33 @@ namespace Gameplay
 
             _isWaitingForSuperPinOfferToStartShuffle = false;
             View.SetDebugButtonsInteractable(true);
+            RequestInitialShuffleStart();
+        }
+
+        private void RequestInitialShuffleStart()
+        {
+            _hasPendingInitialShuffleRequest = true;
+            TryStartPendingInitialShuffle();
+        }
+
+        private void TryStartPendingInitialShuffle()
+        {
+            if (!_hasPendingInitialShuffleRequest)
+            {
+                return;
+            }
+
+            if (_waitForRateUsPopupToCloseBeforeInitialShuffle)
+            {
+                return;
+            }
+
+            if (_openPopupCount > 0)
+            {
+                return;
+            }
+
+            _hasPendingInitialShuffleRequest = false;
             View.StartInitialShuffle();
         }
 
@@ -700,6 +757,8 @@ namespace Gameplay
         {
             base.ViewHidden();
             _isWaitingForPinBoostersActivatedToContinueFlow = false;
+            _hasPendingInitialShuffleRequest = false;
+            _waitForRateUsPopupToCloseBeforeInitialShuffle = false;
             KillHandHintTimer();
             HideHandHint();
             ClearPendingBoosterHandHint();
@@ -734,6 +793,7 @@ namespace Gameplay
                 _eventDispatcherService.RemoveListener<SuperPinOfferClosedSignal>(OnSuperPinOfferClosed);
                 _eventDispatcherService.RemoveListener<BoosterIntroClosedSignal>(OnBoosterIntroClosed);
                 _eventDispatcherService.RemoveListener<PopupVisibilityChangedSignal>(OnPopupVisibilityChanged);
+                _eventDispatcherService.RemoveListener<RateUsShuffleDelaySignal>(OnRateUsShuffleDelaySignal);
             }
 
             KillHandHintTimer();
@@ -781,8 +841,8 @@ namespace Gameplay
 
             View.SetSpineAnimation(_currentLevelDifficulty);
             ShowSuperPinOfferIfPossible();
-
-
+            IncreaseDailyChallengeAttemptCount();
+            TrackLevelStart();
         }
 
         private void LoadLevelAtIndex(int levelIndex, bool clampToPreviousValidLevel, bool startInitialShuffleImmediately = true)
@@ -841,9 +901,21 @@ namespace Gameplay
             HideHandHint();
             KillHandHintTimer();
             var levelProgressModel = _savedDataService.GetModel<LevelProgressModel>();
-            levelProgressModel.CurrentLevelIndex++;
-            _savedDataService.SaveData(levelProgressModel);
-            YoogoLabManager.LevelEnd(levelProgressModel.CurrentLevelIndex);
+            int levelEndId;
+
+            if (!_dailyChallengeService.HasActiveDailyChallengeGame)
+            {
+                levelProgressModel.CurrentLevelIndex++;
+                levelProgressModel.CurrentLevelAttemptCount = 0;
+                _savedDataService.SaveData(levelProgressModel);
+                levelEndId = levelProgressModel.CurrentLevelIndex;
+            }
+            else
+            {
+                levelEndId = _dailyChallengeService.GetPlayedLevelId();
+            }
+
+            YoogoLabManager.LevelEnd(levelEndId);
             TrackLevelEnd();
             View.SetInteractionLocked(true);
         }

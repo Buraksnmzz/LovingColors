@@ -257,6 +257,24 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 4259793998027948046
+  - m_Id: 60
+    m_Localized: "Vamos tornar as coisas um pouco mais dif\xEDceis!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "O travamento autom\xE1tico de pe\xE7as quando posicionadas corretamente
+      foi desativado, mas agora oferecemos dois novos refor\xE7os para te ajudar:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: "Marca e fixa as telhas corretamente posicionadas \xE0 medida que
+      avan\xE7a."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "Marca e trava as telhas j\xE1 devidamente posicionadas."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

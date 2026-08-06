@@ -257,6 +257,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 4259793998027948050
+  - m_Id: 60
+    m_Localized: "L\xE5t oss g\xF6ra saker och ting lite sv\xE5rare!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "Automatiskt l\xE5sta brickor n\xE4r de placeras korrekt inaktiveras
+      nu, men vi erbjuder nu tv\xE5 nya boosters som kan hj\xE4lpa dig:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: "Markerar och l\xE5ser de korrekt placerade rutorna allt eftersom"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "Markerar och l\xE5ser de redan korrekt placerade skyltarna"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

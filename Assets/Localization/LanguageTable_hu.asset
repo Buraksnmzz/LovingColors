@@ -258,6 +258,26 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 4259793998027948040
+  - m_Id: 60
+    m_Localized: "Nehez\xEDts\xFCk meg egy kicsit a dolgokat!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "A megfelel\u0151 elhelyez\xE9s eset\xE9n automatikusan z\xE1r\xF3d\xF3
+      csemp\xE9ket mostant\xF3l letiltottuk, de most k\xE9t \xFAj gyors\xEDt\xF3t
+      k\xEDn\xE1lunk a seg\xEDts\xE9gedre:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: "Megjel\xF6li \xE9s r\xF6gz\xEDti a megfelel\u0151en elhelyezett
+      tlle-ket menet k\xF6zben"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "Megjel\xF6li \xE9s r\xF6gz\xEDti a m\xE1r megfelel\u0151en elhelyezett
+      tlle-ket"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

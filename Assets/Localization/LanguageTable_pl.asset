@@ -258,6 +258,25 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 4259793998027948045
+  - m_Id: 60
+    m_Localized: "Utrudnijmy sobie troch\u0119 \u017Cycie!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "Automatyczne blokowanie kafelk\xF3w po ich poprawnym umieszczeniu
+      zostanie wy\u0142\u0105czone, ale oferujemy teraz dwa nowe wzmacniacze, kt\xF3re
+      Ci w tym pomog\u0105:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: "Zaznacza i blokuje prawid\u0142owo umieszczone znaczniki w miar\u0119
+      post\u0119p\xF3w"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "Zaznacza i blokuje ju\u017C prawid\u0142owo umieszczone znaczniki"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

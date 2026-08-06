@@ -29,6 +29,7 @@ namespace DailyChallenge
         string GetPlayedMonthYearText();
         int GetSelectedLevelId();
         int GetPlayedLevelId();
+        int GetPlayedAttemptCount();
         int GetLevelId(DateTime date);
         string GetDisplayedMonthText();
         IReadOnlyList<string> GetAbbreviatedWeekdayNames();
@@ -47,6 +48,8 @@ namespace DailyChallenge
         bool SelectLatestPlayableUncompletedDay();
         bool SelectFirstPlayableUncompletedDay();
         void StartSelectedDayGame();
+        void IncreasePlayedAttemptCount();
+        void ResetPlayedAttemptCount();
         void ClearActiveDailyChallengeGame();
         void CompletePlayedDay();
         void CompleteSelectedDay();

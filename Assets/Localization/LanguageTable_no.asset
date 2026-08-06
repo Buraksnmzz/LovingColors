@@ -212,7 +212,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 49
-    m_Localized: OK
+    m_Localized: Ok
     m_Metadata:
       m_Items: []
   - m_Id: 50
@@ -257,6 +257,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 4259793998027948044
+  - m_Id: 60
+    m_Localized: "La oss gj\xF8re ting litt vanskeligere!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "Automatisk l\xE5sing av brikker n\xE5r de plasseres riktig er n\xE5
+      deaktivert, men vi tilbyr n\xE5 to nye boostere for \xE5 hjelpe deg:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: "Markerer og l\xE5ser de riktig plasserte tellene underveis"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "Markerer og l\xE5ser de allerede riktig plasserte tellene"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

@@ -254,11 +254,31 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 59
-    m_Localized: "Pot\u0159ebujete pomoc?\\nZa\u010Dn\u011Bte \xFArove\u0148 se Super
-      Pinem"
+    m_Localized: "Pot\u0159ebujete pomoc?\\nZa\u010Dn\u011Bte \xFArove\u0148 se super
+      odznakem"
     m_Metadata:
       m_Items:
       - rid: 4259793998027948035
+  - m_Id: 60
+    m_Localized: "Poj\u010Fme si to trochu zkomplikovat!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "Automatick\xE9 uzam\u010Den\xED dla\u017Edic p\u0159i spr\xE1vn\xE9m
+      um\xEDst\u011Bn\xED je nyn\xED deaktivov\xE1no, ale nyn\xED nab\xEDz\xEDme
+      dva nov\xE9 boostery, kter\xE9 v\xE1m s t\xEDm pomohou:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: "Ozna\u010Duje a zaji\u0161\u0165uje spr\xE1vn\u011B um\xEDst\u011Bn\xE9
+      ty\u010De za pochodu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "Ozna\u010Duje a uzamyk\xE1 ji\u017E spr\xE1vn\u011B um\xEDst\u011Bn\xE9
+      sloupky"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

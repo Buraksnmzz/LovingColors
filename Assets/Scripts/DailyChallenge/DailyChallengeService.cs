@@ -178,6 +178,11 @@ namespace DailyChallenge
             return playedDate.HasValue ? GetLevelId(playedDate.Value) : GetSelectedLevelId();
         }
 
+        public int GetPlayedAttemptCount()
+        {
+            return Mathf.Max(0, _model.PlayedAttemptCount);
+        }
+
         public int GetLevelId(DateTime date)
         {
             return date.DayOfYear;
@@ -351,7 +356,23 @@ namespace DailyChallenge
             _model.PlayedYear = selectedDate.Value.Year;
             _model.PlayedMonth = selectedDate.Value.Month;
             _model.PlayedDay = selectedDate.Value.Day;
+            _model.PlayedAttemptCount = 0;
             _hasActiveDailyChallengeGame = true;
+            _savedDataService.SaveData(_model);
+        }
+
+        public void IncreasePlayedAttemptCount()
+        {
+            _model.PlayedAttemptCount++;
+            _savedDataService.SaveData(_model);
+        }
+
+        public void ResetPlayedAttemptCount()
+        {
+            if (_model.PlayedAttemptCount == 0)
+                return;
+
+            _model.PlayedAttemptCount = 0;
             _savedDataService.SaveData(_model);
         }
 
@@ -367,6 +388,7 @@ namespace DailyChallenge
                 return;
 
             CompleteDay(playedDate.Value);
+            ResetPlayedAttemptCount();
             ClearActiveDailyChallengeGame();
         }
 

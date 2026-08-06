@@ -257,6 +257,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 4259793998027948042
+  - m_Id: 60
+    m_Localized: "Rendiamo le cose un po' pi\xF9 difficili!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "La funzione di blocco automatico delle tessere posizionate correttamente
+      \xE8 stata disattivata, ma ora offriamo due nuovi potenziamenti per aiutarti:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: Segna e blocca le caselle posizionate correttamente mentre procedi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "Contrassegna e blocca le piastrelle gi\xE0 posizionate correttamente"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

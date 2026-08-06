@@ -17,6 +17,7 @@ namespace DailyChallenge
         public int PlayedYear { get; set; }
         public int PlayedMonth { get; set; }
         public int PlayedDay { get; set; }
+        public int PlayedAttemptCount { get; set; }
         public List<string> CompletedDays { get; set; } = new List<string>();
     }
 }

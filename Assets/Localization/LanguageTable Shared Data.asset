@@ -251,6 +251,22 @@ MonoBehaviour:
     m_Key: NEED_HELP_START_THE_LEVEL_WITH_SUPER_PIN
     m_Metadata:
       m_Items: []
+  - m_Id: 60
+    m_Key: LETS_MAKE_THINGS_LITTLE_HARDER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Key: AUTOMATIC_LOCKED_TILES_WHEN_PROPERLY_PLACED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Key: MARKS_AND_LOCKS_PROPERLY_PLACED_TILES_AS_YOU_GO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Key: MARKS_AND_LOCKS_ALREADY_PROPERLY_PLACED_TILES
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

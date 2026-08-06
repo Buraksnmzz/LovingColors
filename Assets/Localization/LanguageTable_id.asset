@@ -257,6 +257,25 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 4259793998027948041
+  - m_Id: 60
+    m_Localized: Mari kita buat sedikit lebih sulit!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: 'Fitur penguncian ubin otomatis saat ditempatkan dengan benar kini
+      dinonaktifkan, tetapi kami sekarang menawarkan dua booster baru untuk membantu
+      Anda:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: Tandai dan kunci ubin yang sudah ditempatkan dengan benar saat Anda
+      mengerjakannya.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: Menandai dan mengunci ubin yang sudah ditempatkan dengan benar.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

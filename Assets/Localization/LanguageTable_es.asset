@@ -257,6 +257,24 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 4259793998027948049
+  - m_Id: 60
+    m_Localized: "\xA1Hagamos las cosas un poco m\xE1s dif\xEDciles!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "El bloqueo autom\xE1tico de las fichas al colocarlas correctamente
+      se ha desactivado, pero ahora ofrecemos dos nuevos potenciadores para ayudarte:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: Marca y bloquea las piezas colocadas correctamente a medida que
+      avanzas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: Marca y bloquea las hojas ya colocadas correctamente.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

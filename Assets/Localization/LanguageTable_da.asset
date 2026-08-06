@@ -257,6 +257,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 4259793998027948036
+  - m_Id: 60
+    m_Localized: "Lad os g\xF8re tingene lidt sv\xE6rere!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "Automatisk l\xE5sning af felter, n\xE5r de placeres korrekt, er
+      nu deaktiveret, men vi tilbyder nu to nye boostere, der kan hj\xE6lpe dig:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: "Markerer og l\xE5ser de korrekt placerede felter undervejs"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "Markerer og l\xE5ser de allerede korrekt placerede terninger"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

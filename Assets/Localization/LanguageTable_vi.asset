@@ -266,6 +266,28 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 4259793998027948052
+  - m_Id: 60
+    m_Localized: "H\xE3y l\xE0m m\u1ECDi th\u1EE9 kh\xF3 kh\u0103n h\u01A1n m\u1ED9t
+      ch\xFAt!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "T\xEDnh n\u0103ng t\u1EF1 \u0111\u1ED9ng kh\xF3a \xF4 khi \u0111\u1EB7t
+      \u0111\xFAng v\u1ECB tr\xED hi\u1EC7n \u0111\xE3 b\u1ECB v\xF4 hi\u1EC7u h\xF3a,
+      nh\u01B0ng ch\xFAng t\xF4i hi\u1EC7n \u0111ang cung c\u1EA5p hai v\u1EADt ph\u1EA9m
+      h\u1ED7 tr\u1EE3 m\u1EDBi \u0111\u1EC3 gi\xFAp b\u1EA1n:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: "\u0110\xE1nh d\u1EA5u v\xE0 kh\xF3a c\xE1c \xF4 \u0111\xE3 \u0111\u01B0\u1EE3c
+      \u0111\u1EB7t \u0111\xFAng v\u1ECB tr\xED khi b\u1EA1n th\u1EF1c hi\u1EC7n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "\u0110\xE1nh d\u1EA5u v\xE0 kh\xF3a c\xE1c \xF4 \u0111\xE3 \u0111\u01B0\u1EE3c
+      \u0111\u1EB7t \u0111\xFAng v\u1ECB tr\xED."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

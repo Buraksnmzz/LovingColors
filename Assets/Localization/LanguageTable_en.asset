@@ -257,6 +257,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 4259793998027948037
+  - m_Id: 60
+    m_Localized: Let's make things a little Harder!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: 'Automatic locked tiles when properly placed is now being disabled
+      but we are now offering two new boosters to help you out:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: Marks and locks the properly placed tlles as you go
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: Marks and locks the already properly placed tlles
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

@@ -10,7 +10,6 @@ namespace General
         
         public HapticService()
         {
-            Debug.Log("HapticService initialized");
             _savedDataService = ServiceLocator.GetService<ISavedDataService>();
         }
 

@@ -259,6 +259,26 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 4259793998027948051
+  - m_Id: 60
+    m_Localized: "Hadi i\u015Fleri biraz daha zorla\u015Ft\u0131ral\u0131m!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "Do\u011Fru yerle\u015Ftirildi\u011Finde otomatik olarak kilitlenen
+      karolar art\u0131k devre d\u0131\u015F\u0131 b\u0131rak\u0131l\u0131yor, ancak
+      size yard\u0131mc\u0131 olmak i\xE7in iki yeni g\xFC\xE7lendirici sunuyoruz:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: "Do\u011Fru yerle\u015Ftirilmi\u015F karolar\u0131 i\u015Faretler
+      ve kilitler."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "\xD6nceden do\u011Fru \u015Fekilde yerle\u015Ftirilmi\u015F olan
+      karolar\u0131 i\u015Faretler ve kilitler"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

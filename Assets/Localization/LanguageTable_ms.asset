@@ -257,6 +257,25 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 4259793998027948043
+  - m_Id: 60
+    m_Localized: Mari kita jadikan keadaan lebih sukar sedikit!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: 'Jubin yang dikunci secara automatik apabila diletakkan dengan betul
+      kini dinyahdayakan tetapi kami kini menawarkan dua penggalak baharu untuk membantu
+      anda:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: Menanda dan mengunci tiang yang diletakkan dengan betul semasa anda
+      menggunakannya
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: Menanda dan mengunci tiang yang telah diletakkan dengan betul
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

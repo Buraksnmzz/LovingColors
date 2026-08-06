@@ -257,6 +257,26 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 4259793998027948047
+  - m_Id: 60
+    m_Localized: "Hai s\u0103 facem lucrurile pu\u021Bin mai dificile!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "Blocarea automat\u0103 a pl\u0103cu\u021Belor atunci c\xE2nd sunt
+      plasate corect este acum dezactivat\u0103, dar oferim acum dou\u0103 noi booster-uri
+      pentru a v\u0103 ajuta:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: "Marcheaz\u0103 \u0219i blocheaz\u0103 ghilele plasate corect pe
+      m\u0103sur\u0103 ce avansa\u021Bi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "Marcheaz\u0103 \u0219i blocheaz\u0103 ghirlandele deja plasate
+      corect"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
