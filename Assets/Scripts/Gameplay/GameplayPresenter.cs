@@ -273,6 +273,7 @@ namespace Gameplay
                 : StringConstants.FirebaseModeNormal;
 
             YoogoLabManager.LogFirebaseEvent(
+                StringConstants.FirebaseEventLevelEnd,
                 StringConstants.FirebaseParamLevelId, GetLevelId(levelIndex),
                 StringConstants.FirebaseParamMode, mode);
         }
