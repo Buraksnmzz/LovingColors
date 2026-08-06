@@ -255,7 +255,7 @@ namespace Gameplay
                 return;
             }
 
-            RestoreHandHintPosition();
+            PositionHandHintAtButton(hintButton);
 
             _handHintSequence?.Kill();
             handHintImage.gameObject.SetActive(true);
@@ -288,7 +288,7 @@ namespace Gameplay
                 return;
             }
 
-            handHintImage.position = targetButton.transform.position;
+            PositionHandHintAtButton(targetButton);
             _handHintSequence?.Kill();
             handHintImage.gameObject.SetActive(true);
             handHintImage.DOKill();
@@ -314,6 +314,16 @@ namespace Gameplay
             handHintImage.gameObject.SetActive(false);
             boardGreyMaker?.SetActive(false);
             RestoreHandHintPosition();
+        }
+
+        private void PositionHandHintAtButton(Button targetButton)
+        {
+            if (handHintImage == null || targetButton == null)
+            {
+                return;
+            }
+
+            handHintImage.position = targetButton.transform.position;
         }
 
         private void RestoreHandHintPosition()
@@ -766,7 +776,6 @@ namespace Gameplay
             base.OnShown();
             SetInteractionLocked(false);
             Shown?.Invoke();
-            YoogoLabManager.ShowBanner();
         }
 
         public void InitializeBoard(LevelDefinition levelDefinition, bool isMoveLimitEnabled, bool startInitialShuffleImmediately = true)
