@@ -73,7 +73,11 @@ namespace Win
             }
             else
             {
-                _eventDispatcherService.Dispatch(new RateUsShuffleDelaySignal(_shouldShowRateUsAfterHide));
+                var shouldDelayInitialShuffle = _shouldShowRateUsAfterHide;
+#if UNITY_IOS
+                shouldDelayInitialShuffle = false;
+#endif
+                _eventDispatcherService.Dispatch(new RateUsShuffleDelaySignal(shouldDelayInitialShuffle));
                 _uiService.HidePopup<WinPresenter>();
                 _uiService.ShowPopup<GameplayPresenter>();
             }
