@@ -371,7 +371,7 @@ namespace Gameplay
                 return;
             }
 
-            View.SetDebugButtonsInteractable(true);
+            //View.SetDebugButtonsInteractable(true);
 
             if (signal.HasGrantedFreeSuperPin)
             {
@@ -674,7 +674,7 @@ namespace Gameplay
             if (IsHardOrExtremeLevel())
             {
                 View.SetBackButtonInteractable(false);
-                View.SetDebugButtonsInteractable(false);
+                //View.SetDebugButtonsInteractable(false);
                 _isWaitingForSuperPinOfferToStartShuffle = true;
                 DOVirtual.DelayedCall(2f, BeginSuperPinFlowAfterEntryDelay);
                 return;
@@ -703,7 +703,7 @@ namespace Gameplay
                 UseFreeSuperPinFromOffer();
                 _isWaitingForSuperPinOfferToStartShuffle = false;
                 View.SetBackButtonInteractable(true);
-                View.SetDebugButtonsInteractable(true);
+                //View.SetDebugButtonsInteractable(true);
                 RequestInitialShuffleStart();
                 return;
             }
@@ -715,7 +715,7 @@ namespace Gameplay
                 if (superPinOfferPresenter == null)
                 {
                     _isWaitingForSuperPinOfferToStartShuffle = false;
-                    View.SetDebugButtonsInteractable(true);
+                    //View.SetDebugButtonsInteractable(true);
                     RequestInitialShuffleStart();
                 }
 
@@ -723,7 +723,7 @@ namespace Gameplay
             }
 
             _isWaitingForSuperPinOfferToStartShuffle = false;
-            View.SetDebugButtonsInteractable(true);
+            //View.SetDebugButtonsInteractable(true);
             RequestInitialShuffleStart();
         }
 
@@ -967,6 +967,12 @@ namespace Gameplay
 
         private void OnViewCompleted()
         {
+            var hasNoAds = _savedDataService.GetModel<SettingsModel>().IsNoAds;
+            if (!hasNoAds)
+            {
+                YoogoLabManager.ShowInterstitial();
+            }
+            
             if (_dailyChallengeService.HasActiveDailyChallengeGame)
             {
                 _dailyChallengeService.CompletePlayedDay();

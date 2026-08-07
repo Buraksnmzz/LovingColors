@@ -142,7 +142,7 @@ namespace Gameplay
                 debugCompleteButton
             };
 
-            ConfigureDebugButtonsToIgnoreInteractionLock();
+            //ConfigureDebugButtonsToIgnoreInteractionLock();
             ConfigureButtonToIgnoreInteractionLock(backButton);
 
             debugNextButton.onClick.AddListener(OnDebugNextButtonClick);
@@ -837,30 +837,30 @@ namespace Gameplay
             }
         }
 
-        public void SetDebugButtonsInteractable(bool isInteractable)
-        {
-            if (_debugButtons == null)
-            {
-                return;
-            }
-
-            foreach (var button in _debugButtons)
-            {
-                if (button == null)
-                {
-                    continue;
-                }
-
-                button.interactable = isInteractable;
-
-                var debugCanvasGroup = button.GetComponent<CanvasGroup>();
-                if (debugCanvasGroup != null)
-                {
-                    debugCanvasGroup.interactable = isInteractable;
-                    debugCanvasGroup.blocksRaycasts = isInteractable;
-                }
-            }
-        }
+        // public void SetDebugButtonsInteractable(bool isInteractable)
+        // {
+        //     if (_debugButtons == null)
+        //     {
+        //         return;
+        //     }
+        //
+        //     foreach (var button in _debugButtons)
+        //     {
+        //         if (button == null)
+        //         {
+        //             continue;
+        //         }
+        //
+        //         button.interactable = isInteractable;
+        //
+        //         var debugCanvasGroup = button.GetComponent<CanvasGroup>();
+        //         if (debugCanvasGroup != null)
+        //         {
+        //             debugCanvasGroup.interactable = isInteractable;
+        //             debugCanvasGroup.blocksRaycasts = isInteractable;
+        //         }
+        //     }
+        // }
 
         private static void ConfigureButtonToIgnoreInteractionLock(Button button)
         {
