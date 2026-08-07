@@ -13,6 +13,7 @@ using Localization;
 using PinBoostersActivated;
 using Quit;
 using RateUs;
+using RemoveAds;
 using Services;
 using Sound;
 using SuperPinOffer;
@@ -964,29 +965,44 @@ namespace Gameplay
             //
             // View.StartInitialShuffle();
         }
+        
+        private bool ShouldShowRemoveAdsView()
+        {
+            return !_savedDataService.GetModel<SettingsModel>().IsNoAds && YoogoLabManager.IsInterstitialAvailable() &&
+                   PlayerPrefs.GetInt(StringConstants.IsFirstInterstitialShown) != 1;
+        }
 
         private void OnViewCompleted()
         {
-            var hasNoAds = _savedDataService.GetModel<SettingsModel>().IsNoAds;
-            if (!hasNoAds)
-            {
-                YoogoLabManager.ShowInterstitial();
-            }
-            
-            if (_dailyChallengeService.HasActiveDailyChallengeGame)
-            {
-                _dailyChallengeService.CompletePlayedDay();
-                _uiService.ShowPopup<DailyChallengeWinPresenter>();
-                return;
-            }
-
             if (PlayerPrefs.GetInt(StringConstants.IsTutorialShown) == 0)
             {
                 PlayerPrefs.SetInt(StringConstants.IsTutorialShown, 1);
                 PlayerPrefs.Save();
             }
+            
+            var hasNoAds = _savedDataService.GetModel<SettingsModel>().IsNoAds;
+            if (ShouldShowRemoveAdsView())
+            {
+                _uiService.ShowPopup<RemoveAdsPresenter>();
+                PlayerPrefs.SetInt(StringConstants.IsFirstInterstitialShown, 1);
+            }
 
-            _uiService.ShowPopup<WinPresenter>();
+            else
+            {
+                if (!hasNoAds)
+                {
+                    YoogoLabManager.ShowInterstitial();
+                }
+                
+                if (_dailyChallengeService.HasActiveDailyChallengeGame)
+                {
+                    _dailyChallengeService.CompletePlayedDay();
+                    _uiService.ShowPopup<DailyChallengeWinPresenter>();
+                    return;
+                }
+            
+                _uiService.ShowPopup<WinPresenter>();
+            }
         }
 
         private void ResetBoosterButtonsForLevel(int currentLevel)

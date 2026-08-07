@@ -275,6 +275,24 @@ MonoBehaviour:
     m_Localized: "Marca e trava as telhas j\xE1 devidamente posicionadas."
     m_Metadata:
       m_Items: []
+  - m_Id: 64
+    m_Localized: "Os an\xFAncios ajudam no desenvolvimento do Loving Colors. Oferecemos
+      op\xE7\xF5es para jogar sem interrup\xE7\xF5es."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: "Os an\xFAncios est\xE3o ok para si."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: "Remover todos os an\xFAncios for\xE7ados. Os v\xEDdeos premiados
+      continuar\xE3o a ser opcionais."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: "Jogar com an\xFAncios"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

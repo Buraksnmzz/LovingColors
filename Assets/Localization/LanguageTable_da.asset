@@ -274,6 +274,24 @@ MonoBehaviour:
     m_Localized: "Markerer og l\xE5ser de allerede korrekt placerede terninger"
     m_Metadata:
       m_Items: []
+  - m_Id: 64
+    m_Localized: "Annoncer underst\xF8tter udviklingen af \u200B\u200BLoving Colors\\n\\nVi
+      tilbyder muligheder for at spille uden afbrydelser."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: Annoncer er ok for dig.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: "Fjern alle tvungne annoncer. Bel\xF8nnede videoer vil stadig v\xE6re
+      valgfrie."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: Spil med annoncer
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

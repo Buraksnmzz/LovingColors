@@ -276,6 +276,24 @@ MonoBehaviour:
     m_Localized: Menanda dan mengunci tiang yang telah diletakkan dengan betul
     m_Metadata:
       m_Items: []
+  - m_Id: 64
+    m_Localized: Iklan menyokong pembangunan Loving Colors\n\nKami menawarkan pilihan
+      untuk bermain tanpa gangguan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: Iklan ok untuk anda.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: Alih keluar semua iklan paksa. Video ganjaran akan tetap menjadi
+      pilihan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: Main dengan iklan
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

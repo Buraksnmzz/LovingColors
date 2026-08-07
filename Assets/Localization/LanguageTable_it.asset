@@ -274,6 +274,23 @@ MonoBehaviour:
     m_Localized: "Contrassegna e blocca le piastrelle gi\xE0 posizionate correttamente"
     m_Metadata:
       m_Items: []
+  - m_Id: 64
+    m_Localized: "Gli annunci pubblicitari supportano lo sviluppo di Loving Colors.\\n\\nOffriamo
+      la possibilit\xE0 di giocare senza interruzioni."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: Gli annunci vanno bene per te.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: Rimuovi tutti gli annunci forzati. I video premiati rimarranno opzionali.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: Gioca con gli annunci
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

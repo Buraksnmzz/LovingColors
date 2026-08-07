@@ -274,6 +274,23 @@ MonoBehaviour:
     m_Localized: Marks and locks the already properly placed tlles
     m_Metadata:
       m_Items: []
+  - m_Id: 64
+    m_Localized: Ads support Loving Colors development\n\nWe offer options to play
+      without interruptions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: ADS are ok for you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: Remove all forced ads. Rewarded videos will still be optional.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: Play with ads
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

@@ -212,7 +212,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 49
-    m_Localized: Ok
+    m_Localized: OK
     m_Metadata:
       m_Items: []
   - m_Id: 50
@@ -272,6 +272,24 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 63
     m_Localized: "Markerer og l\xE5ser de allerede riktig plasserte tellene"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64
+    m_Localized: "Annonser st\xF8tter utviklingen av Loving Colors.\\n\\nVi tilbyr
+      muligheter for \xE5 spille uten avbrudd."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: Annonser er ok for deg.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: "Fjern alle tvungne annoncer. Bel\xF8nningsvideoer vil fortsatt
+      v\xE6re valgfrie."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: Spill med annonser
     m_Metadata:
       m_Items: []
   references:

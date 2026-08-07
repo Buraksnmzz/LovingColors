@@ -278,6 +278,24 @@ MonoBehaviour:
       tlle-ket"
     m_Metadata:
       m_Items: []
+  - m_Id: 64
+    m_Localized: "A hirdet\xE9sek t\xE1mogatj\xE1k a Loving Colors fejleszt\xE9s\xE9t\\n\\nLehet\u0151s\xE9geket
+      k\xEDn\xE1lunk a megszak\xEDt\xE1sok n\xE9lk\xFCli j\xE1t\xE9kra."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: "A hirdet\xE9sek rendben vannak sz\xE1modra."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: "\xD6sszes k\xE9nyszer\xEDtett hirdet\xE9s elt\xE1vol\xEDt\xE1sa.
+      A jutalmas vide\xF3k tov\xE1bbra is v\xE1laszthat\xF3ak maradnak."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: "J\xE1t\xE9k hirdet\xE9sekkel"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

@@ -276,6 +276,23 @@ MonoBehaviour:
     m_Localized: Menandai dan mengunci ubin yang sudah ditempatkan dengan benar.
     m_Metadata:
       m_Items: []
+  - m_Id: 64
+    m_Localized: Iklan mendukung pengembangan Loving Colors\n\nKami menawarkan opsi
+      untuk bermain tanpa gangguan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: Iklan tidak masalah bagi Anda.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: Hapus semua iklan paksa. Video berhadiah akan tetap opsional.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: Main dengan iklan
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

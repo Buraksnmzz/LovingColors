@@ -277,6 +277,24 @@ MonoBehaviour:
     m_Localized: "Zaznacza i blokuje ju\u017C prawid\u0142owo umieszczone znaczniki"
     m_Metadata:
       m_Items: []
+  - m_Id: 64
+    m_Localized: "Reklamy wspieraj\u0105 rozw\xF3j Loving Colors\\n\\nOferujemy mo\u017Cliwo\u015B\u0107
+      grania bez przerw."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: "Reklamy s\u0105 dla Ciebie ok."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: "Usu\u0144 wszystkie wymuszone reklamy. Filmy z nagrodami nadal
+      b\u0119d\u0105 opcjonalne."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: Graj z reklamami
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

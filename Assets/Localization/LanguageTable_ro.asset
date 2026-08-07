@@ -277,6 +277,24 @@ MonoBehaviour:
       corect"
     m_Metadata:
       m_Items: []
+  - m_Id: 64
+    m_Localized: "Reclamele sus\u021Bin dezvoltarea Loving Colors\\n\\nOferim op\u021Biuni
+      de joc f\u0103r\u0103 \xEEntreruperi."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: "Reclamele sunt \xEEn regul\u0103 pentru tine."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: "Elimin\u0103 toate reclamele for\u021Bate. Videoclipurile cu recompens\u0103
+      vor r\u0103m\xE2ne op\u021Bionale."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: "Joac\u0103 cu reclame"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

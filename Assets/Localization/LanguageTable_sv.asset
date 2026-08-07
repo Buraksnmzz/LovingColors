@@ -274,6 +274,24 @@ MonoBehaviour:
     m_Localized: "Markerar och l\xE5ser de redan korrekt placerade skyltarna"
     m_Metadata:
       m_Items: []
+  - m_Id: 64
+    m_Localized: "Annonser st\xF6der utvecklingen av Loving Colors\\n\\nVi erbjuder
+      alternativ f\xF6r att spela utan avbrott."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: "Annonser \xE4r ok f\xF6r dig."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: "Ta bort alla tvingade annonser. Bel\xF6ningsvideor kommer fortfarande
+      att vara valfria."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: Spela med annonser
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

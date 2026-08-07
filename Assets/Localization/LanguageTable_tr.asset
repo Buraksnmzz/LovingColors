@@ -279,6 +279,24 @@ MonoBehaviour:
       karolar\u0131 i\u015Faretler ve kilitler"
     m_Metadata:
       m_Items: []
+  - m_Id: 64
+    m_Localized: "Reklamlar Loving Colors'\u0131n geli\u015Ftirilmesine destek sa\u011Fl\u0131yor.\\n\\nKesintisiz
+      oyun oynama se\xE7enekleri sunuyoruz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: "Reklamlar senin i\xE7in uygun."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: "T\xFCm zorunlu reklamlar\u0131 kald\u0131r. \xD6d\xFCll\xFC videolar
+      iste\u011Fe ba\u011Fl\u0131 kalmaya devam eder."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: Reklamlarla oyna
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

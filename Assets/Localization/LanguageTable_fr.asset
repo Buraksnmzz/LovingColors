@@ -277,6 +277,24 @@ MonoBehaviour:
     m_Localized: "Marque et verrouille les carreaux d\xE9j\xE0 correctement positionn\xE9s"
     m_Metadata:
       m_Items: []
+  - m_Id: 64
+    m_Localized: "La publicit\xE9 soutient le d\xE9veloppement de Loving Colors\\n\\nNous
+      proposons des options pour jouer sans interruption."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: "Les publicit\xE9s vous conviennent."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: "Supprimer toutes les publicit\xE9s forc\xE9es. Les vid\xE9os r\xE9compens\xE9es
+      resteront optionnelles."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: "Jouer avec des publicit\xE9s"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

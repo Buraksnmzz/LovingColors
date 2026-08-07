@@ -276,6 +276,24 @@ MonoBehaviour:
     m_Localized: "Ozna\u010Dava i zaklju\u010Dava ve\u0107 pravilno postavljene letvice"
     m_Metadata:
       m_Items: []
+  - m_Id: 64
+    m_Localized: "Oglasi podr\u017Eavaju razvoj Loving Colors\\n\\nNudimo mogu\u0107nosti
+      igranja bez prekida."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: Oglasi su ti u redu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: "Ukloni sve prisilne oglase. Nagradni videozapisi i dalje \u0107e
+      biti neobavezni."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: Igraj s oglasima
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

@@ -267,6 +267,22 @@ MonoBehaviour:
     m_Key: MARKS_AND_LOCKS_ALREADY_PROPERLY_PLACED_TILES
     m_Metadata:
       m_Items: []
+  - m_Id: 64
+    m_Key: ADS_SUPPORT_LOVING_COLORS_DEVELOPMENT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Key: ADS_ARE_OK_FOR_YOU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Key: REMOVE_ALL_FORCED_ADS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Key: PLAY_WITH_ADS
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

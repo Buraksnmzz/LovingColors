@@ -288,6 +288,25 @@ MonoBehaviour:
       \u0111\u1EB7t \u0111\xFAng v\u1ECB tr\xED."
     m_Metadata:
       m_Items: []
+  - m_Id: 64
+    m_Localized: "Qu\u1EA3ng c\xE1o h\u1ED7 tr\u1EE3 ph\xE1t tri\u1EC3n Loving Colors\\n\\nCh\xFAng
+      t\xF4i cung c\u1EA5p c\xE1c t\xF9y ch\u1ECDn \u0111\u1EC3 ch\u01A1i m\xE0 kh\xF4ng
+      b\u1ECB gi\xE1n \u0111o\u1EA1n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: "Qu\u1EA3ng c\xE1o c\u0169ng \u1ED5n v\u1EDBi b\u1EA1n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: "X\xF3a t\u1EA5t c\u1EA3 qu\u1EA3ng c\xE1o b\u1EAFt bu\u1ED9c. Video
+      khen th\u01B0\u1EDFng v\u1EABn s\u1EBD l\xE0 t\xF9y ch\u1ECDn."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: "Ch\u01A1i v\u1EDBi qu\u1EA3ng c\xE1o"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

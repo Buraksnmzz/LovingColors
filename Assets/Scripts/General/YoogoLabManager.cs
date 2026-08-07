@@ -10,6 +10,11 @@ public class YoogoLabManager : MonoBehaviour
 
     public delegate void OnRewardedReady();
     public static OnRewardedReady onRewardedReady;
+    
+    public static bool IsInterstitialAvailable()
+    {
+        return true;
+    }
 
     public static void TryStartGame(Action callback)
     {

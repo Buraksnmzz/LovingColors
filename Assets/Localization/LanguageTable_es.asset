@@ -275,6 +275,24 @@ MonoBehaviour:
     m_Localized: Marca y bloquea las hojas ya colocadas correctamente.
     m_Metadata:
       m_Items: []
+  - m_Id: 64
+    m_Localized: Los anuncios apoyan el desarrollo de Loving Colors.\n\nOfrecemos
+      opciones para jugar sin interrupciones.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: "Los anuncios est\xE1n bien para ti."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: "Eliminar todos los anuncios forzados. Los v\xEDdeos con recompensa
+      seguir\xE1n siendo opcionales."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: Jugar con anuncios
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

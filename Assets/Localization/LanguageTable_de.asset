@@ -277,6 +277,23 @@ MonoBehaviour:
       Spalten"
     m_Metadata:
       m_Items: []
+  - m_Id: 64
+    m_Localized: "Werbung unterst\xFCtzt die Entwicklung von Loving Colors\\n\\nWir
+      bieten Optionen f\xFCr ungest\xF6rtes Spielen an."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: "Anzeigen sind ok f\xFCr dich."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: Alle erzwungenen Anzeigen entfernen. Belohnte Videos bleiben optional.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: Mit Anzeigen spielen
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

@@ -5,6 +5,7 @@ using SavedData;
 using UI.General;
 using UI.Settings;
 using UnityEngine;
+using Win;
 
 namespace RemoveAds
 {
@@ -30,7 +31,7 @@ namespace RemoveAds
             View.Hide();
             YoogoLabManager.ShowInterstitial();
             Debug.Log("IS Shown");
-            //_uiService.ShowPopup<WinAnimPresenter>();
+            _uiService.ShowPopup<WinPresenter>();
         }
 
         private void OnRemoveAdsButtonClicked()
@@ -52,7 +53,7 @@ namespace RemoveAds
                 YoogoLabManager.ShowInterstitial();
                 Debug.Log("IS Shown");
             }
-            //_uiService.ShowPopup<WinAnimPresenter>();
+            _uiService.ShowPopup<WinPresenter>();
             View.Hide();
         }
     }

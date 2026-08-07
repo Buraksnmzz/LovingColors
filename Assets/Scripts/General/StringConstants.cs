@@ -14,5 +14,6 @@ namespace General
         public const string FirebaseModeNormal = "Normal";
         public const string FirebaseModeDaily = "Daily Challenge";
         public const string IsDailyChallengeUnlockedShown = "IsDailyChallengeUnlockedShown";
+        public const string IsFirstInterstitialShown = "IsFirstInterstitialShown";
     }
 }
