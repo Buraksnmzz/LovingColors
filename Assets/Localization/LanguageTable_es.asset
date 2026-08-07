@@ -279,7 +279,8 @@ MonoBehaviour:
     m_Localized: Los anuncios apoyan el desarrollo de Loving Colors.\n\nOfrecemos
       opciones para jugar sin interrupciones.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948049
   - m_Id: 65
     m_Localized: "Los anuncios est\xE1n bien para ti."
     m_Metadata:
@@ -302,3 +303,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 59
+        - id: 64

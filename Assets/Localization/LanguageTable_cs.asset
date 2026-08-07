@@ -283,7 +283,8 @@ MonoBehaviour:
     m_Localized: "Reklamy podporuj\xED v\xFDvoj Loving Colors. Nab\xEDz\xEDme mo\u017Enosti
       hran\xED bez p\u0159eru\u0161en\xED."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948035
   - m_Id: 65
     m_Localized: "Reklamy jsou pro tebe v pohod\u011B."
     m_Metadata:
@@ -306,3 +307,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 59
+        - id: 64

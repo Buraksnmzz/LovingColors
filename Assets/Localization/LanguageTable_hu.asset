@@ -282,7 +282,8 @@ MonoBehaviour:
     m_Localized: "A hirdet\xE9sek t\xE1mogatj\xE1k a Loving Colors fejleszt\xE9s\xE9t\\n\\nLehet\u0151s\xE9geket
       k\xEDn\xE1lunk a megszak\xEDt\xE1sok n\xE9lk\xFCli j\xE1t\xE9kra."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948040
   - m_Id: 65
     m_Localized: "A hirdet\xE9sek rendben vannak sz\xE1modra."
     m_Metadata:
@@ -305,3 +306,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 59
+        - id: 64

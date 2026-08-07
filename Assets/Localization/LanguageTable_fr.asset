@@ -281,7 +281,8 @@ MonoBehaviour:
     m_Localized: "La publicit\xE9 soutient le d\xE9veloppement de Loving Colors\\n\\nNous
       proposons des options pour jouer sans interruption."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948038
   - m_Id: 65
     m_Localized: "Les publicit\xE9s vous conviennent."
     m_Metadata:
@@ -304,3 +305,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 59
+        - id: 64

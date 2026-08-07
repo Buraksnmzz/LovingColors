@@ -281,7 +281,8 @@ MonoBehaviour:
     m_Localized: "Reklamy wspieraj\u0105 rozw\xF3j Loving Colors\\n\\nOferujemy mo\u017Cliwo\u015B\u0107
       grania bez przerw."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948045
   - m_Id: 65
     m_Localized: "Reklamy s\u0105 dla Ciebie ok."
     m_Metadata:
@@ -304,3 +305,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 59
+        - id: 64

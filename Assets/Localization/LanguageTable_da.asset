@@ -278,7 +278,8 @@ MonoBehaviour:
     m_Localized: "Annoncer underst\xF8tter udviklingen af \u200B\u200BLoving Colors\\n\\nVi
       tilbyder muligheder for at spille uden afbrydelser."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948036
   - m_Id: 65
     m_Localized: Annoncer er ok for dig.
     m_Metadata:
@@ -301,3 +302,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 59
+        - id: 64

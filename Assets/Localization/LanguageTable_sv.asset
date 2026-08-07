@@ -278,7 +278,8 @@ MonoBehaviour:
     m_Localized: "Annonser st\xF6der utvecklingen av Loving Colors\\n\\nVi erbjuder
       alternativ f\xF6r att spela utan avbrott."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948050
   - m_Id: 65
     m_Localized: "Annonser \xE4r ok f\xF6r dig."
     m_Metadata:
@@ -301,3 +302,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 59
+        - id: 64

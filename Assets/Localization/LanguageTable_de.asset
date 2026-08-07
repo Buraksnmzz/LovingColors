@@ -281,7 +281,8 @@ MonoBehaviour:
     m_Localized: "Werbung unterst\xFCtzt die Entwicklung von Loving Colors\\n\\nWir
       bieten Optionen f\xFCr ungest\xF6rtes Spielen an."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948039
   - m_Id: 65
     m_Localized: "Anzeigen sind ok f\xFCr dich."
     m_Metadata:
@@ -303,3 +304,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 59
+        - id: 64

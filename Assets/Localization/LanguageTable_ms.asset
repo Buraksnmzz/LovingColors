@@ -280,7 +280,8 @@ MonoBehaviour:
     m_Localized: Iklan menyokong pembangunan Loving Colors\n\nKami menawarkan pilihan
       untuk bermain tanpa gangguan.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948043
   - m_Id: 65
     m_Localized: Iklan ok untuk anda.
     m_Metadata:
@@ -303,3 +304,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 59
+        - id: 64

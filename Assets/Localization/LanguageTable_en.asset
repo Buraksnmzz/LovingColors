@@ -278,7 +278,8 @@ MonoBehaviour:
     m_Localized: Ads support Loving Colors development\n\nWe offer options to play
       without interruptions.
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948037
   - m_Id: 65
     m_Localized: ADS are ok for you.
     m_Metadata:
@@ -300,3 +301,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 59
+        - id: 64

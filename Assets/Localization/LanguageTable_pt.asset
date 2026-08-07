@@ -279,7 +279,8 @@ MonoBehaviour:
     m_Localized: "Os an\xFAncios ajudam no desenvolvimento do Loving Colors. Oferecemos
       op\xE7\xF5es para jogar sem interrup\xE7\xF5es."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948046
   - m_Id: 65
     m_Localized: "Os an\xFAncios est\xE3o ok para si."
     m_Metadata:
@@ -302,3 +303,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 59
+        - id: 64

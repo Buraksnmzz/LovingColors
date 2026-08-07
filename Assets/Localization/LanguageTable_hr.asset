@@ -280,7 +280,8 @@ MonoBehaviour:
     m_Localized: "Oglasi podr\u017Eavaju razvoj Loving Colors\\n\\nNudimo mogu\u0107nosti
       igranja bez prekida."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948034
   - m_Id: 65
     m_Localized: Oglasi su ti u redu.
     m_Metadata:
@@ -303,3 +304,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 59
+        - id: 64

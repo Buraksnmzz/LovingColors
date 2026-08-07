@@ -293,7 +293,8 @@ MonoBehaviour:
       t\xF4i cung c\u1EA5p c\xE1c t\xF9y ch\u1ECDn \u0111\u1EC3 ch\u01A1i m\xE0 kh\xF4ng
       b\u1ECB gi\xE1n \u0111o\u1EA1n."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948052
   - m_Id: 65
     m_Localized: "Qu\u1EA3ng c\xE1o c\u0169ng \u1ED5n v\u1EDBi b\u1EA1n."
     m_Metadata:
@@ -316,3 +317,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 59
+        - id: 64

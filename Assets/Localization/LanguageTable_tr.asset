@@ -283,7 +283,8 @@ MonoBehaviour:
     m_Localized: "Reklamlar Loving Colors'\u0131n geli\u015Ftirilmesine destek sa\u011Fl\u0131yor.\\n\\nKesintisiz
       oyun oynama se\xE7enekleri sunuyoruz."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948051
   - m_Id: 65
     m_Localized: "Reklamlar senin i\xE7in uygun."
     m_Metadata:
@@ -306,3 +307,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 59
+        - id: 64

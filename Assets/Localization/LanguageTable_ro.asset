@@ -281,7 +281,8 @@ MonoBehaviour:
     m_Localized: "Reclamele sus\u021Bin dezvoltarea Loving Colors\\n\\nOferim op\u021Biuni
       de joc f\u0103r\u0103 \xEEntreruperi."
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 4259793998027948047
   - m_Id: 65
     m_Localized: "Reclamele sunt \xEEn regul\u0103 pentru tine."
     m_Metadata:
@@ -304,3 +305,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 59
+        - id: 64
